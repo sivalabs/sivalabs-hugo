@@ -1,10 +1,10 @@
 ---
 Title: About me
 Description: "My bio"
-Section: pages
-Slug: about
-tags: ["welcome","blog","about"]
 date: 2015-06-02
+Section: page
+Slug: aboutme
+menu: ["main"]
 ---
 
 I am Siva, working as a Software Developer.

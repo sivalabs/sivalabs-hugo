@@ -8,6 +8,7 @@ title = "Siva"
 canonifyurls = true
 theme = "hyde"
 pygmentsstyle = "borland"
+disqusShortname = "sivalabs"
 
 [taxonomies]
   category = "categories"
