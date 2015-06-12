@@ -1,2 +1,2 @@
 # sivalabs-hugo
-Sivalabs Hugo Content
+Hugo content for sivalabs.github.io

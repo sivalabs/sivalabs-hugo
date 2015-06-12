@@ -1,0 +1,18 @@
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+builddrafts = true
+baseURL = "http://sivalabs.github.io/"
+languageCode = "en-us"
+title = "Siva"
+canonifyurls = true
+theme = "hyde"
+pygmentsstyle = "borland"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  description = "My Tech Notes"
+  author = "K. Siva Prasad Reddy"
