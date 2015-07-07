@@ -3,7 +3,7 @@
     <div class="sidebar-about">
       <h1>{{ .Site.Title }}</h1>
       <p class="lead">
-      {{ with .Site.Params.description }} {{.}} {{ else }}An elegant open source and mobile first theme for <a href="http://hugo.spf13.com">hugo</a> made by <a href="http://twitter.com/mdo">@mdo</a>. Originally made for Jekyll.{{end}}
+      {{ with .Site.Params.description }} {{.}} {{ else }} This is my new Blog powered by Hugo.{{end}}
       </p>
     </div>
 
@@ -13,7 +13,17 @@
         <li><a href="{{.Url}}"> {{ .Name }} </a></li>
       {{end}}
     </ul>
+    
+    <div class="sidebar-about">
+      {{ with .Site.Params.github }}<a href="{{ . }}" target="_blank"><i class="fa fa-github-square fa-2x"></i></a>{{ end }}
+      {{ with .Site.Params.bitbucket }}<a href="{{ . }}" target="_blank"><i class="fa fa-bitbucket-square fa-2x"></i></a>{{ end }}
+      {{ with .Site.Params.linkedin }}<a href="{{ . }}" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>{{ end }}
+      {{ with .Site.Params.googleplus }}<a href="{{ . }}" target="_blank"><i class="fa fa-google-plus-square fa-2x"></i></a>{{ end }}
+      {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>{{ end }}
+      {{ with .Site.Params.twitter }}<a href="{{ . }}" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>{{ end }}
+    </div>
+    
 
-    <p>{{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{.Now.Format "2006"}}. All rights reserved. {{end}}</p>
+    <p>Copyright {{ with .Site.Params.copyright }}{{.}}{{ else }}&copy; {{.Now.Format "2006"}}. <br/> All rights reserved. {{end}}</p>
   </div>
 </div>

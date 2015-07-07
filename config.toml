@@ -17,3 +17,15 @@ disqusShortname = "sivalabs"
 [params]
   description = "My Tech Notes"
   author = "K. Siva Prasad Reddy"
+  theme = "theme-base-0d"
+  # Sidebar social links, these must be full URLs.
+  github = "http://github.com/sivalabs"
+  twitter = "http://www.twitter.com/sivalabs"
+  facebook = "https://facebook.com/sivaprasadreddy"
+  #bitbucket = "http://bitbucket.com/sivalabs"
+  #linkedin = "http://www.linkedin.com/in/sivaprasadreddy"
+  #googleplus = "https://plus.google.com/+sivaprasadreddy"
+  
+
+[author]
+  name = "Siva"
