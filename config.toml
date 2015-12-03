@@ -4,9 +4,9 @@ publishdir = "public"
 builddrafts = true
 baseURL = "http://sivalabs.github.io/"
 languageCode = "en-us"
-title = "Siva"
+title = "SivaLabs"
 canonifyurls = true
-theme = "hyde"
+theme = "sivalabs"
 pygmentsstyle = "borland"
 disqusShortname = "sivalabs"
 
@@ -17,7 +17,7 @@ disqusShortname = "sivalabs"
 [params]
   description = "My Tech Notes"
   author = "K. Siva Prasad Reddy"
-  theme = "theme-base-0d"
+  #theme = "theme-base-0d"
   # Sidebar social links, these must be full URLs.
   github = "http://github.com/sivalabs"
   twitter = "http://www.twitter.com/sivalabs"

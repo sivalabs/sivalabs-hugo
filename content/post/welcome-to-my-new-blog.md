@@ -6,6 +6,7 @@ date: 2015-06-12
 Section: post
 Slug: welcome-to-my-new-blog
 tags: ["welcome","hugo"]
+categories: ["Java","Blog"]
 menu: ["welcome"]
 ---
 
