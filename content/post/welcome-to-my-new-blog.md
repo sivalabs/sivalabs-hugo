@@ -23,3 +23,10 @@ public class HelloWorld
 }
 {{< /highlight >}}
 
+XML Example
+
+{{< highlight xml >}}
+<hello>
+	<name>Wordl</name>
+</hello>
+{{< /highlight >}}
