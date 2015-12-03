@@ -22,7 +22,7 @@
 				style="position: absolute; left: 530px; top: 0px;">
 				<h3 class="widget-title">Recent Posts</h3>
 				<ul>
-					{{ range first 5 .Site.Pages.ByDate  }}
+					{{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
 				    <li>
 				    	<a href="{{ .Permalink }}">{{ .Title }}</a>
 				    </li>

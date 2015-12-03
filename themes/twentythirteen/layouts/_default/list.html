@@ -9,7 +9,7 @@
 		    <div class="col-md-8">
 		    	<div class="posts">
 		
-					{{ range .Paginator.Pages }}
+					{{ range (where .Paginator.Pages "Section" "post") }}
 				    	<article id="post-1" class="post type-post status-publish format-standard hentry">
 							<header class="entry-header">
 								
