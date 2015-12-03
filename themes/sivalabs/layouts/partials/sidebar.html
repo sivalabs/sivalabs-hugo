@@ -13,7 +13,7 @@
         <h4>Latest Posts</h4>
     </div>
     <ul class="list-group">
-	    {{ range .Data.Pages.ByDate.Reverse }}
+	    {{ range first 5 .Site.Pages.ByDate.Reverse }}
 	    <li class="list-group-item">
 	    	<a href="{{ .Permalink }}">{{ .Title }}</a>
 	    </li>

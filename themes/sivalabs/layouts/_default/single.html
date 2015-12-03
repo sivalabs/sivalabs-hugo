@@ -10,8 +10,10 @@
 				 	<h1>{{ .Title }}</h1>
 				 	<p id="tags">
 				  	Tags: 
-					  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-					    <a href="{{ $baseUrl }}/tags/{{ $name | urlize }}">{{ $name | title}}</a> &nbsp;
+					  {{ range .Params.tags }}
+					    <a href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+					    	<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> {{ . | title}}
+					    </a> &nbsp;
 					  {{ end }}
 					</p>
 				  <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>

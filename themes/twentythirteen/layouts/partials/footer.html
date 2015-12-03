@@ -1,0 +1,44 @@
+<footer id="colophon" class="site-footer" role="contentinfo">
+	<div id="secondary" class="sidebar-container" role="complementary">
+		<div class="widget-area masonry"
+			style="position: relative; height: 350px;">
+			<aside id="categories-3"
+				class="widget widget_categories masonry-brick"
+				style="position: absolute; left: 0px; top: 0px;">
+				
+				<h3 class="widget-title">Categories</h3>
+				<ul>
+					{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+				    <li class="cat-item">
+						<a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a>
+					</li>
+				  {{ end }}
+					
+				</ul>
+			</aside>
+			
+			<aside id="recent-posts-3"
+				class="widget widget_recent_entries masonry-brick"
+				style="position: absolute; left: 530px; top: 0px;">
+				<h3 class="widget-title">Recent Posts</h3>
+				<ul>
+					{{ range first 5 .Site.Pages.ByDate  }}
+				    <li>
+				    	<a href="{{ .Permalink }}">{{ .Title }}</a>
+				    </li>
+					{{ end }}
+				</ul>
+			</aside>
+						
+			
+		</div>
+		<!-- .widget-area -->
+	</div>
+	<!-- #secondary -->
+
+	<div class="site-info">
+		Copyright {{ with .Site.Params.copyright }}{{.}}{{ else }} SivaLabs &copy; {{.Now.Format "2006"}}. All rights reserved. {{end}}
+		
+	</div>
+	<!-- .site-info -->
+</footer>

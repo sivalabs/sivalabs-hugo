@@ -9,24 +9,28 @@
 		    <div class="col-md-8">
 				<div class="posts">
 		
-					{{ range .Data.Pages }}
-					<div class="post">
+					{{ range .Paginator.Pages }}
+					<div class="well post">
 						<h1 class="post-title">
 							<a href="{{ .Permalink }}"> {{ .Title }} </a>
 						</h1>
 						<p id="tags">
 						Tags: 
-						  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-						    <a href="{{ $baseUrl }}tags/{{ $name | urlize }}">{{ $name | title}}</a> &nbsp;
+						  {{ range .Params.tags }}
+						    <a href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+						    	<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> {{ . | title}}
+						    </a> &nbsp;
 						  {{ end }}
 						</p>
 						<span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-						{{ .Content }}
+						<p>{{ .Summary }}</p>
+						<div>
 						{{ partial "social-share.html" . }}
+						</div>
 					</div>
 					{{ end }}
 				</div>
-			
+				{{ template "_internal/pagination.html" . }}
 		</div>
 		<div class="col-md-4">
 			{{ partial "sidebar.html" . }}

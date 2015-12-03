@@ -1,0 +1,50 @@
+<!-- SIDEBAR -->
+<!-- Subscribe to my feed widget -->
+{{ $baseURL := .Site.BaseURL }}
+<div>
+<aside id="subscription" class="widget widget_subscription">
+	<h3 class="widget-title">Don't want to miss updates?</h3>
+	<div class="subscription">
+		 <input type="email" name="subscriberEmail" placeholder="Email Address"/>
+		<button>Subscribe</button>		 		
+	</div>
+</aside>
+
+<aside id="recent-posts" class="widget widget_recent_entries">		
+	<h3 class="widget-title">Recent Posts</h3>		
+	<ul>
+		{{ range first 5 .Site.Pages.ByDate  }}
+	    <li>
+	    	<a href="{{ .Permalink }}">{{ .Title }}</a>
+	    </li>
+		{{ end }}
+			
+	</ul>
+</aside>
+
+
+<aside id="categories" class="widget widget_categories">
+	<h3 class="widget-title">Categories</h3>		
+	<ul>
+		{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+		    <li class="cat-item">
+				<a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a>
+			</li>
+		  {{ end }}
+		  
+	</ul>
+</aside>
+
+<aside id="tag_cloud" class="widget widget_tag_cloud">
+	<h3 class="widget-title">Tags</h3>
+	<div class="tagcloud">
+		{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+		    	<a class="tag-link" href="{{ $baseURL }}tags/{{ $name | urlize }}">
+		    		<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> {{ $name | title }} &nbsp;
+		    	</a>
+		  {{ end }}
+		
+	</div>
+</aside>
+ 
+</div>

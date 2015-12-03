@@ -8,6 +8,7 @@ Slug: welcome-to-my-new-blog
 tags: ["welcome","hugo"]
 categories: ["Java","Blog"]
 menu: ["welcome"]
+summary: This is my new blog created using Hugo and hosted on GitHub Pages.
 ---
 
 Hey

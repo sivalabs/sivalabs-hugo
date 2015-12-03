@@ -1,0 +1,31 @@
+
+<header id="masthead" class="site-header" role="banner">
+	<a class="home-link" href="{{ .Site.BaseURL }}"
+		title="{{ .Site.Title }}" rel="home">
+		<h1 class="site-title">{{ .Site.Title }}</h1>
+		<h2 class="site-description">{{ .Site.Params.description }}</h2>
+	</a>
+
+	<div id="navbar" class="navbar">
+		<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+			<button class="menu-toggle">Menu</button>
+			<a class="screen-reader-text skip-link" href="#content"
+				title="Skip to content">Skip to content</a>
+			<div id="primary-menu" class="nav-menu">
+				<ul>
+					<li class="page_item"><a href="{{ .Site.BaseURL }}">Home</a></li>
+					<li class="page_item page_item_has_children">
+						<a href="#">Services</a>
+						<ul class="children">
+							<li class="page_item"><a href="#">Trainings</a></li>
+							<li class="page_item"><a href="#">Freelance</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+		</nav>
+		<!-- #site-navigation -->
+	</div>
+	<!-- #navbar -->
+</header>
