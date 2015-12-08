@@ -1,0 +1,40 @@
+---
+author: siva
+comments: true
+date: 2010-09-06 06:56:00+00:00
+layout: post
+slug: tostring-method-implementation
+title: toString() method implementation
+wordpress_id: 293
+categories:
+- Java
+tags:
+- Java
+---
+
+Implementing toString() method which displays all the property names along with values will be very much helpful while debugging the application. But implementing toString() method for a java class containing lot of properties is painful.   
+  
+For implementing toString() method we can use any of the following easy approaches:  
+  
+1. If you are using eclipse 3.5 or above:  
+   a)Right Click on the file.  
+   b)Select source  
+   c)Select generate toString()  
+   d) Choose what are all the fields you want to display then OK  
+  
+It will create a toString() method something like this:  
+@Override  
+public String toString()  
+{  
+return "User [address=" + address + ", id=" + id + ", name=" + name+ "]";  
+}  
+  
+2)Use commons-lang API "ToStringBuilder"  
+@Override  
+public String toString()  
+{  
+return ToStringBuilder.reflectionToString(this);  
+}  
+  
+This will display the object as   
+com.javautils.test.User@578ceb[id=1,name=siva,address=hyd]
