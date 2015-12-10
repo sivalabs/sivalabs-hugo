@@ -1,0 +1,60 @@
+<!-- SIDEBAR -->
+{{ $baseURL := .Site.BaseURL }}
+
+<div class="widget search">
+     <form role="form">
+             <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+     </form>
+</div><!--/.search-->
+
+<div class="widget categories">
+    <h3>Latest Posts</h3>
+    <div class="row">
+        {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
+        <div class="col-sm-12">
+            <div class="single_comments">                
+                <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>                
+            </div>            
+        </div>
+        {{ end }}
+    </div> 
+</div><!--/.recent comments-->
+  
+
+ <div class="widget categories">
+     <h3>Categories</h3>
+     <div class="row">
+         <div class="col-sm-6">
+             <ul class="blog_category">
+             	{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+             	 	<li><a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a></li>
+	  			{{ end }}
+             </ul>
+         </div>
+     </div>                     
+ </div><!--/.categories-->
+
+ <div class="widget tags">
+     <h3>Tag Cloud</h3>
+     <ul class="tag-cloud">
+     	 {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+		    <li><a class="btn btn-xs btn-primary" href="{{ $baseURL }}tags/{{ $name | urlize }}">{{ $name | title }}</a></li>
+		  {{ end }}         
+     </ul>
+ </div><!--/.tags-->
+   
+
+<div class="widget archieve">
+    <h3>Archieve</h3>
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="blog_archieve">
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
+                <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
+            </ul>
+        </div>
+    </div>                     
+</div><!--/.archieve-->
+   

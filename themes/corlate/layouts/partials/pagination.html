@@ -1,0 +1,32 @@
+{{ if gt $.Paginator.TotalPages 1 }}
+<center>
+  <ul class="pagination pagination-lg">
+    {{ $baseurl := .Site.BaseURL }}
+	{{ $pag := .Paginator }}
+	{{ if gt $pag.TotalPages 1 }}
+	<li {{ if not $pag.HasPrev }} class="disabled" {{ end }}>
+	  <a aria-label="First" href="{{ $baseurl }}{{ $pag.First.URL }}">
+		<span aria-hidden="true"><i class="fa fa-fast-backward"></i> First</span>
+	  </a>
+	</li>
+
+	<li {{ if not $pag.HasPrev }} class="disabled" {{ end }}>
+	  <a aria-label="Previous" href="{{ if $pag.HasPrev }}{{ $baseurl }}{{ $pag.Prev.URL }}{{ else }}#{{ end }}">
+		<span aria-hidden="true"><i class="fa fa-long-arrow-left"></i> Previous</span>
+		</a>
+	</li>
+	
+	<li {{ if not $pag.HasNext }} class="disabled" {{ end }}>
+	  <a aria-label="Next" href="{{ if $pag.HasNext }}{{ $baseurl }}{{ $pag.Next.URL }}{{ else }}#{{ end }}">
+		<span aria-hidden="true">Next <i class="fa fa-long-arrow-right"></i></span>
+		</a>
+	</li>
+	<li {{ if not $pag.HasNext }} class="disabled" {{ end }}>
+	  <a aria-label="Last" href="{{ $baseurl }}{{ $pag.Last.URL }}">
+		<span aria-hidden="true">Last <i class="fa fa-fast-forward"></i></span>
+	  </a>
+	</li>
+	{{ end }}
+  </ul>
+</center>
+{{ end }}

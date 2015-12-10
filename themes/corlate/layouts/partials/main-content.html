@@ -1,0 +1,50 @@
+{{ $baseUrl := .Site.BaseURL }}
+<section id="blog" class="container">
+        
+
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-8">
+                 	{{ range (where .Paginator.Pages "Section" "post") }}
+	                    <div class="blog-item">
+	                        <div class="row">
+	                            <div class="col-xs-12 col-sm-2 text-center">
+	                                <div class="entry-meta">
+	                                    <span id="publish_date">{{ .Date.Format "Jan 2, 2006" }}</span>
+	                                    <span><i class="fa fa-user"></i> <a href="#">John Doe</a></span>
+	                                    <span><i class="fa fa-comment"></i> <a href="blog-item.html#comments">2 Comments</a></span>
+                                    	<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>	                                    
+	                                </div>
+	                            </div>
+	                                
+	                            <div class="col-xs-12 col-sm-10 blog-content">
+	                            	<a href=""><img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" /></a>
+	                                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	                                <p>{{ .Summary }}</p>
+	                                <div class="post-tags">
+                                        <strong>Tags: </strong> 
+                                        {{ range .Params.tags }}
+                                        	<a href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+										    	{{ . | title}} &nbsp;&nbsp;
+										    </a>
+									  	{{ end }}                                        
+                                    </div>
+                                    <br/>
+                                    <p>
+		                                <a class="btn btn-primary readmore" href="{{ .Permalink }}">Read More <i class="fa fa-angle-right"></i></a>
+                                    </p>
+	                            </div>
+	                        </div>    
+	                    </div><!--/.blog-item-->
+                    {{ end }}
+                        
+                    {{ partial "pagination.html" . }}                                
+                                        
+                </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                   {{ partial "sidebar.html" . }}    				
+    			</aside>  
+            </div><!--/.row-->
+        </div>
+    </section><!--/#blog-->

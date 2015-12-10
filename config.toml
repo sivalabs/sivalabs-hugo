@@ -6,11 +6,11 @@ baseURL = "http://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
 canonifyurls = true
-#theme = "sivalabs"
-theme = "twentythirteen"
+theme = "corlate"
+#theme = "twentythirteen"
 pygmentsstyle = "borland"
 disqusShortname = "sivalabs"
-paginate = 10
+paginate = 5
 
 [taxonomies]
   category = "categories"
