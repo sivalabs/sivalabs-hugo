@@ -4,7 +4,7 @@
 
         <div class="blog">
             <div class="row">
-                 <div class="col-md-8">
+                 <div class="col-md-9">
                  	{{ range (where .Paginator.Pages "Section" "post") }}
 	                    <div class="blog-item">
 	                        <div class="row">
@@ -18,9 +18,8 @@
 	                            </div>
 	                                
 	                            <div class="col-xs-12 col-sm-10 blog-content">
-	                            	<a href=""><img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" /></a>
-	                                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-	                                <p>{{ .Summary }}</p>
+	                            	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	                                <p>{{ .Description }}</p>
 	                                <div class="post-tags">
                                         <strong>Tags: </strong> 
                                         {{ range .Params.tags }}
@@ -40,9 +39,9 @@
                         
                     {{ partial "pagination.html" . }}                                
                                         
-                </div><!--/.col-md-8-->
+                </div><!--/.col-md-9-->
 
-                <aside class="col-md-4">
+                <aside class="col-md-3">
                    {{ partial "sidebar.html" . }}    				
     			</aside>  
             </div><!--/.row-->

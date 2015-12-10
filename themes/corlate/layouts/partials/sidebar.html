@@ -21,19 +21,6 @@
 </div><!--/.recent comments-->
   
 
- <div class="widget categories">
-     <h3>Categories</h3>
-     <div class="row">
-         <div class="col-sm-6">
-             <ul class="blog_category">
-             	{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-             	 	<li><a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a></li>
-	  			{{ end }}
-             </ul>
-         </div>
-     </div>                     
- </div><!--/.categories-->
-
  <div class="widget tags">
      <h3>Tag Cloud</h3>
      <ul class="tag-cloud">
@@ -44,17 +31,17 @@
  </div><!--/.tags-->
    
 
-<div class="widget archieve">
-    <h3>Archieve</h3>
-    <div class="row">
-        <div class="col-sm-12">
-            <ul class="blog_archieve">
-                <li><a href="#"><i class="fa fa-angle-double-right"></i> December 2013 <span class="pull-right">(97)</span></a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i> November 2013 <span class="pull-right">(32)</a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i> October 2013 <span class="pull-right">(19)</a></li>
-                <li><a href="#"><i class="fa fa-angle-double-right"></i> September 2013 <span class="pull-right">(08)</a></li>
-            </ul>
-        </div>
-    </div>                     
-</div><!--/.archieve-->
+ <div class="widget categories">
+     <h3>Categories</h3>
+     <div class="row">
+         <div class="col-sm-6">
+             <ul class="blog_archieve">
+             	{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+             	 	<li><i class="fa fa-angle-double-right"></i> <a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a></li>
+	  			{{ end }}
+             </ul>
+         </div>
+     </div>                     
+ </div><!--/.categories-->
+
    
