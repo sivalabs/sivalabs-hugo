@@ -6,10 +6,18 @@
 **************************/
 
 body {
-  background: #fff;
+  /* background: #fff; */
+  background-image: url(/images/bg.png);
+  /* background-color: #353e49; */
   font-family: 'Open Sans', sans-serif;
-  color:#4e4e4e;
+  /* color:#4e4e4e; */
+  
   line-height: 22px;
+}
+
+.page-container {
+    background-color: #fff;
+   
 }
 
 h1,
@@ -45,7 +53,7 @@ h4{
 
 a {
   /* color: #c52d2f; */
-  color: #000;
+  color: #555;
  
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
