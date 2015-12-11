@@ -45,6 +45,7 @@ h4{
 
 a {
   color: #c52d2f;
+  /*color: #003f80;*/
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -53,6 +54,7 @@ a {
 
 a:hover, a:focus {
   color: #d43133;
+ /* color: #4169E1;*/
 }
 
 hr {
@@ -2132,6 +2134,7 @@ ul.faq li > div h3 {
 
 .readmore{
   margin-top: 0;
+  padding: 1px 5px;
 }
 
 .blog .blog-item .blog-content h3 {
