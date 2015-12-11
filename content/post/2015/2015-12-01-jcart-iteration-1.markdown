@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 04:10:08+00:00
 layout: post
-slug: jcart-iteration-1
+Url: jcart-iteration-1
 title: 'JCart : Iteration-1'
 wordpress_id: 460
 categories:

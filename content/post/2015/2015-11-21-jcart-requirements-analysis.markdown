@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-11-21 11:29:54+00:00
 layout: post
-slug: jcart-requirements-analysis
+Url: jcart-requirements-analysis
 title: JCart Requirements Analysis
 wordpress_id: 177
 categories:

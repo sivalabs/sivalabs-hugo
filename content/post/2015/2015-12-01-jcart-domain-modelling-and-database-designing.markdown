@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 04:22:19+00:00
 layout: post
-slug: jcart-domain-modelling-and-database-designing
+Url: jcart-domain-modelling-and-database-designing
 title: 'JCart: Domain Modelling and Database Designing'
 wordpress_id: 501
 categories:

@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 04:38:56+00:00
 layout: post
-slug: jcart-admin-ui-layout-setup
+Url: jcart-admin-ui-layout-setup
 title: 'JCart: Admin UI Layout SetUp'
 wordpress_id: 507
 categories:

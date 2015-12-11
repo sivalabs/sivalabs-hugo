@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-06 10:23:36+00:00
 layout: post
-slug: jcart-email-service-setup
+Url: jcart-email-service-setup
 title: 'JCart: Email Service SetUp'
 wordpress_id: 535
 tags:

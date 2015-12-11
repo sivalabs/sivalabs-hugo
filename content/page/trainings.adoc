@@ -1,0 +1,15 @@
+---
+Title: Trainings
+Description: "Trainings"
+Url: trainings
+date: 2015-01-01T19:20:04-07:00
+tags: []
+draft: false
+---
+
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-css: style
+
+
+Trainings

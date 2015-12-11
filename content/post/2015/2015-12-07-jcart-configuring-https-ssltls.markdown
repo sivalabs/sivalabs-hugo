@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-07 13:17:45+00:00
 layout: post
-slug: jcart-configuring-https-ssltls
+Url: jcart-configuring-https-ssltls
 title: 'JCart: Configuring HTTPS SSL/TLS'
 wordpress_id: 545
 tags:

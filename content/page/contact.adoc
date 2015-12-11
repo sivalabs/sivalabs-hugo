@@ -1,0 +1,32 @@
+---
+Title: Contact
+Description: "Contact"
+Url: contact
+date: 2015-01-01T19:20:04-07:00
+tags: []
+draft: false
+---
+
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-css: style
+
+Hi,
+I am a Software developer working on Java platform since 2005.
+
+My primary skills include:
+
+* Java
+* Spring
+* JavaEE 7
+* MyBatis
+* JSF/PrimeFaces
+* AngularJS
+
+If you are looking for Freelancing Java developers please contact me at **sivaprasadreddy.k@gmail.com**
+
+You can also reach me at
+
+* Gmail: sivaprasadreddy.k@gmail.com
+* Twitter: https://twitter.com/sivalabs
+* GitHub: https://github.com/sivaprasadreddy

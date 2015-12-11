@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-06 10:41:22+00:00
 layout: post
-slug: jcart-admin-reset-password
+Url: jcart-admin-reset-password
 title: 'JCart: Admin Reset Password'
 wordpress_id: 541
 tags:

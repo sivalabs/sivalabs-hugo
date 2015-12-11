@@ -1,8 +1,10 @@
-{{ if gt $.Paginator.TotalPages 1 }}
+{{ $baseurl := .Site.BaseURL }}
+{{ $pag := .Paginator }}
+
+{{ if gt $pag.TotalPages 1 }}
 <center>
   <ul class="pagination pagination-lg">
-    {{ $baseurl := .Site.BaseURL }}
-	{{ $pag := .Paginator }}
+   
 	{{ if gt $pag.TotalPages 1 }}
 	<li {{ if not $pag.HasPrev }} class="disabled" {{ end }}>
 	  <a aria-label="First" href="{{ $baseurl }}{{ $pag.First.URL }}">

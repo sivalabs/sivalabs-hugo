@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-11-22 05:17:20+00:00
 layout: post
-slug: selecting-the-technology-stack-for-jcart
+Url: selecting-the-technology-stack-for-jcart
 title: Selecting The Technology Stack for JCart
 wordpress_id: 185
 categories:

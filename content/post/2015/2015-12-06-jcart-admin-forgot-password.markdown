@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-06 10:34:33+00:00
 layout: post
-slug: jcart-admin-forgot-password
+Url: jcart-admin-forgot-password
 title: 'JCart: Admin Forgot Password'
 wordpress_id: 537
 categories:

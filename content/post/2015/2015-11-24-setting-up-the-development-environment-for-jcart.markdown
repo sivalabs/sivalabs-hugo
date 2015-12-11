@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-11-24 04:34:03+00:00
 layout: post
-slug: setting-up-the-development-environment-for-jcart
+Url: setting-up-the-development-environment-for-jcart
 title: Setting up the Development Environment for JCart
 wordpress_id: 193
 categories:

@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 04:26:41+00:00
 layout: post
-slug: jcart-create-jpa-entities
+Url: jcart-create-jpa-entities
 title: 'JCart: Create JPA Entities'
 wordpress_id: 503
 categories:

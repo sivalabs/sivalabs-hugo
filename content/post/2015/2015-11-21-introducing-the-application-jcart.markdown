@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-11-21 02:28:23+00:00
 layout: post
-slug: introducing-the-application-jcart
+Url: introducing-the-application-jcart
 title: Introducing the application JCart
 wordpress_id: 156
 categories:

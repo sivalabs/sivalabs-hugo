@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 04:14:09+00:00
 layout: post
-slug: jcart-initial-code-setup
+Url: jcart-initial-code-setup
 title: 'JCart: Initial Code SetUp'
 wordpress_id: 498
 categories:

@@ -1,7 +1,7 @@
 {{ $baseUrl := .Site.BaseURL }}
 <section id="blog" class="container">
         
-
+		{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         <div class="blog">
             <div class="row">
                  <div class="col-md-9">
@@ -11,9 +11,9 @@
 	                            <div class="col-xs-12 col-sm-2 text-center">
 	                                <div class="entry-meta">
 	                                    <span id="publish_date">{{ .Date.Format "Jan 2, 2006" }}</span>
-	                                    <span><i class="fa fa-user"></i> <a href="#">John Doe</a></span>
-	                                    <span><i class="fa fa-comment"></i> <a href="blog-item.html#comments">2 Comments</a></span>
-                                    	<span><i class="fa fa-heart"></i><a href="#">56 Likes</a></span>	                                    
+	                                    <span><i class="fa fa-user"></i> <a href="#">{{ .Site.Params.nickname}}</a></span>
+	                                    <span><i class="fa fa-comment"></i> <a href="{{ .Permalink }}">0 Comments</a></span>
+                                    	<span><i class="fa fa-heart"></i><a href="{{ .Permalink }}">0 Likes</a></span>	                                    
 	                                </div>
 	                            </div>
 	                                

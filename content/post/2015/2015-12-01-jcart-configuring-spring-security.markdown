@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-12-01 05:27:15+00:00
 layout: post
-slug: jcart-configuring-spring-security
+Url: jcart-configuring-spring-security
 title: 'JCart: Configuring Spring Security'
 wordpress_id: 516
 categories:

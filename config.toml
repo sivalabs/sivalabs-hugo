@@ -19,6 +19,7 @@ paginate = 5
 [params]
   description = "My Experiments on Technology"
   author = "K. Siva Prasad Reddy"
+  nickname = "Siva"
   # Sidebar social links, these must be full URLs.
   github = "http://github.com/sivalabs"
   twitter = "http://www.twitter.com/sivalabs"

@@ -3,7 +3,7 @@ author: siva
 comments: true
 date: 2015-11-24 04:26:20+00:00
 layout: post
-slug: jcart-release-planning
+Url: jcart-release-planning
 title: JCart Release Planning
 wordpress_id: 191
 categories:

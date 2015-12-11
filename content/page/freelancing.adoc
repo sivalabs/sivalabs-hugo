@@ -1,0 +1,15 @@
+---
+Title: Freelancing
+Description: "Freelancing"
+Url: freelancing
+date: 2015-01-01T19:20:04-07:00
+tags: []
+draft: false
+---
+
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+:pygments-css: style
+
+
+Contact me @ sivaprasadreddy.k@gmail.com for freelancing work.
