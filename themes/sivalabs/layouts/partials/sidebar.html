@@ -8,19 +8,40 @@
      </form>
 </div><!--/.search-->
 
+<div class="widget">
+
+	<aside id="subscription">
+		<strong>Want to receive new post notifications?</strong>
+		<form action="//sivalabs.us9.list-manage.com/subscribe/post?u=a244435ef0378fac204b5a2d4&amp;id=bdded8d3db" 
+			  method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
+			  class="validate" target="_blank" novalidate>
+			<p><input type="email" value="" name="EMAIL" class="required email form-control" 
+						placeholder="Email" id="mce-EMAIL"></p>
+			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" 
+			class="btn btn-xs btn-primary">
+			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+				<input type="text" name="b_a244435ef0378fac204b5a2d4_bdded8d3db" tabindex="-1" value="">
+			</div>
+		    <div class="clear"></div>
+		</form>
+		
+	</aside>
+
+</div>
 <div class="widget categories">
     <h2>Latest Posts</h2>
     <div class="row">
         {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
         <div class="col-sm-12">
             <div class="single_comments">                
-                <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>                
+                <p><i class="fa fa-angle-double-right"></i> <a href="{{ .Permalink }}">{{ .Title }}</a></p>                
             </div>            
         </div>
         {{ end }}
     </div> 
 </div><!--/.recent comments-->
-  
+ 
 
  <div class="widget tags">
      <h2>Tag Cloud</h2>
