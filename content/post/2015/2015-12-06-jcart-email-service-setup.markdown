@@ -9,6 +9,7 @@ wordpress_id: 535
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 We are going to implement Admin User Forgot Password functionality where we need to send the Password Reset link to User email address. So let us look at how to configure Email server and send emails.

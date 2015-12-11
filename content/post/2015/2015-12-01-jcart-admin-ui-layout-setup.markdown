@@ -11,6 +11,7 @@ categories:
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 As I am not really a good UI designer I searched for a free good looking UI website Admin templates and I found this fantastic template [https://almsaeedstudio.com/preview](https://almsaeedstudio.com/preview). We will be using this template for our Administration web application.

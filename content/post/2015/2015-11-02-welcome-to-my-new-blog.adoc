@@ -10,9 +10,7 @@ menu: ["welcome"]
 draft: false
 ---
 
-:source-highlighter: pygments
-:pygments-linenums-mode: inline
-:pygments-css: style
+include::data/ascii-settings.txt[]
 
 Hi, +
 My name is Siva and by profession I am a Software Developer primarily working on Java platform.

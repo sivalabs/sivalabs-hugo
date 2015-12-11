@@ -11,6 +11,7 @@ categories:
 tags:
 - E-Commerce
 - jcart
+draft : true
 ---
 
 In our previous article [JCart Requirements Analysis](http://sivalabs.in/jcart-requirements-analysis/)  we have listed out all the requirements that we need to implement for JCart application.  Now we need to come up with an implementation and release plan. As we are following iteration model, we will plan for N iterations where in each iteration we will implement some usecases.

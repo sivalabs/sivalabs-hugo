@@ -11,6 +11,7 @@ categories:
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 Our JCart Administration site should only be accessible to authorized users only. So, we are going to use SpringSecurity to define the security constraints.

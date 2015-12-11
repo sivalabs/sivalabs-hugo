@@ -9,6 +9,7 @@ wordpress_id: 545
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 So far our JCart application is running on Tomcat default port **8080** using **HTTP** protocol. In this article we will configure to use HTTPS by using Self Signed Certificate. For real projects you would have to buy certificate from a Trusted Authority.

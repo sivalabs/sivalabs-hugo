@@ -10,6 +10,7 @@ categories:
 - E-Commerce
 tags:
 - E-Commerce
+draft : true
 ---
 
 For building our JCart e-commerce application we will develop two web applications, one for ShoppingCart and another one for Administration. Let us explore the requirements of both ShoppingCart and Administration websites in detail.

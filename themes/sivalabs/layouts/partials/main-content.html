@@ -1,0 +1,51 @@
+{{ $baseUrl := .Site.BaseURL }}
+<section id="blog" class="container">
+        
+		{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-9">
+                 	{{ range (where .Paginator.Pages "Section" "post") }}
+	                    <div class="blog-item">
+	                        <div class="row">
+	                            <div class="col-xs-12 col-sm-2 text-center">
+	                                <div class="entry-meta">
+	                                    <span id="publish_date">{{ .Date.Format "Jan 2, 2006" }}</span>
+	                                    <span><i class="fa fa-user"></i> <a href="#">{{ .Site.Params.nickname}}</a></span>
+	                                    <span><i class="fa fa-comment"></i> <a href="{{ .Permalink }}">0 Comments</a></span>
+                                    	<span><i class="fa fa-heart"></i><a href="{{ .Permalink }}">0 Likes</a></span>	                                    
+	                                </div>
+	                            </div>
+	                                
+	                            <div class="col-xs-12 col-sm-10 blog-content">
+	                            	<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+	                                <p>
+	                                	{{ .Description }} <br/>
+	                                	<a class="btn btn-primary btn-xs readmore" href="{{ .Permalink }}">Read More <i class="fa fa-angle-right"></i></a>
+	                                </p>
+	                                <br/>
+	                                <div class="post-tags">
+                                        <strong>Tags: </strong> 
+                                        {{ range .Params.tags }}
+                                        	<a class="btn btn-primary btn-xs readmore" href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+										    	{{ . | title}} &nbsp;&nbsp;
+										    </a>
+									  	{{ end }}
+                                    </div>
+                                    <br/>
+                                    
+	                            </div>
+	                        </div>    
+	                    </div><!--/.blog-item-->
+                    {{ end }}
+                        
+                    {{ partial "pagination.html" . }}                                
+                                        
+                </div><!--/.col-md-9-->
+
+                <aside class="col-md-3">
+                   {{ partial "sidebar.html" . }}    				
+    			</aside>  
+            </div><!--/.row-->
+        </div>
+    </section><!--/#blog-->

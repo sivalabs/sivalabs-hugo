@@ -11,6 +11,7 @@ categories:
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 Let us create a root pom type maven project with 3 sub-modules jcart-core, jcart-admin and jcart-site.

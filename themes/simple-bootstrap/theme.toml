@@ -1,6 +1,6 @@
-name = "Corlate"
+name = "simple-bootstrap"
 license = "MIT"
-description = "An elegant open source and mobile first theme"
+description = "An simple bootstrap theme"
 homepage = "http://localhost:1313/"
 tags = ["blog", "company"]
 features = ["blog" ]

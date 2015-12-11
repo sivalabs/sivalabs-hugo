@@ -11,6 +11,7 @@ categories:
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 We are going to create the JPA Entities for the database tables we designed.

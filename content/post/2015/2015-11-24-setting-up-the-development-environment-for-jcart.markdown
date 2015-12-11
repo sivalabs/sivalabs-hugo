@@ -11,6 +11,7 @@ categories:
 tags:
 - E-Commerce
 - jcart
+draft : true
 ---
 
 For our JCart application development we will be using the following Softwares/Tools.

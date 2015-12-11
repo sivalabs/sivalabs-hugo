@@ -1,0 +1,26 @@
+---
+Title: Title
+Description: ""
+Url: url
+date: 2015-11-02T19:20:04-07:00
+Section: post
+tags: ["Blogging"]
+categories: ["Blogging"]
+menu: ["welcome"]
+draft: true
+---
+
+include::data/ascii-settings.txt[]
+
+[source,java]
+----
+public class HelloWorld
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Welcome to my new blog!!");
+	}
+}
+----
+
+

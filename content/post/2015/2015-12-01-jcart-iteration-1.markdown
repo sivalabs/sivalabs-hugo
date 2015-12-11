@@ -10,6 +10,7 @@ categories:
 - E-Commerce
 tags:
 - jcart
+draft : true
 ---
 
 Now that we have completed the most difficult part (writing Introduction to technical article series is much harder than you think!!), so let's start the fun part. **Coding**!!!

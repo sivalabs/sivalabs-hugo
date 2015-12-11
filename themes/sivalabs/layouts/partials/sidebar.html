@@ -1,49 +1,48 @@
 <!-- SIDEBAR -->
-<!-- Subscribe to my feed widget -->
 {{ $baseURL := .Site.BaseURL }}
-   <div class="well text-center">
-       <p class="lead">
-           Don't want to miss updates? Please click the below button!
-       </p>
-       <button class="btn btn-primary btn-lg">Subscribe to my feed</button>
-   </div>
-   
-   <div class="panel panel-default">
-    <div class="panel-heading">
-        <h4>Latest Posts</h4>
-    </div>
-    <ul class="list-group">
-	    {{ range first 5 .Site.Pages.ByDate.Reverse }}
-	    <li class="list-group-item">
-	    	<a href="{{ .Permalink }}">{{ .Title }}</a>
-	    </li>
-		{{ end }}        
-    </ul>
-</div>
+<div id="sidebar">
+				
+<div class="widget search">
+     <form role="form">
+             <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+     </form>
+</div><!--/.search-->
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4>Categories</h4>
-    </div>
-    <ul class="list-group">
-	  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-	    <li class="list-group-item"><a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a></li>
-	  {{ end }}
-	</ul>
+<div class="widget categories">
+    <h2>Latest Posts</h2>
+    <div class="row">
+        {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
+        <div class="col-sm-12">
+            <div class="single_comments">                
+                <p><a href="{{ .Permalink }}">{{ .Title }}</a></p>                
+            </div>            
+        </div>
+        {{ end }}
+    </div> 
+</div><!--/.recent comments-->
+  
+
+ <div class="widget tags">
+     <h2>Tag Cloud</h2>
+     <ul class="tag-cloud">
+     	 {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+		    <li><a class="btn btn-xs btn-primary" href="{{ $baseURL }}tags/{{ $name | urlize }}">{{ $name | title }}</a></li>
+		  {{ end }}         
+     </ul>
+ </div><!--/.tags-->
    
-</div>
- 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h4>Tags</h4>
-    </div>
-    <div class="panel-body">
-    	
-    	<ul class="list-inline">
-		  {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-		    <li><a href="{{ $baseURL }}tags/{{ $name | urlize }}">{{ $name | title }}</a></li>
-		  {{ end }}
-		</ul>
-        
-    </div>
-</div>
+
+ <div class="widget categories">
+     <h2>Categories</h2>
+     <div class="row">
+         <div class="col-sm-6">
+             <ul class="blog_archieve">
+             	{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+             	 	<li><i class="fa fa-angle-double-right"></i> <a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a></li>
+	  			{{ end }}
+             </ul>
+         </div>
+     </div>                     
+ </div><!--/.categories-->
+
+</div>   

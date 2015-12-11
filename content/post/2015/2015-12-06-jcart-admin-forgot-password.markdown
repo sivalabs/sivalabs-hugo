@@ -11,6 +11,7 @@ categories:
 tags:
 - jcart
 - SpringBoot
+draft : true
 ---
 
 We will provide a link to Forgot Password in Login page and create **jcart-admin/src/main/resources/templates/public/forgotPwd.html** template as follows:
