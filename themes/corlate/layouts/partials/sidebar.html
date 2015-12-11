@@ -9,7 +9,7 @@
 </div><!--/.search-->
 
 <div class="widget categories">
-    <h3>Latest Posts</h3>
+    <h2>Latest Posts</h2>
     <div class="row">
         {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
         <div class="col-sm-12">
@@ -23,7 +23,7 @@
   
 
  <div class="widget tags">
-     <h3>Tag Cloud</h3>
+     <h2>Tag Cloud</h2>
      <ul class="tag-cloud">
      	 {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
 		    <li><a class="btn btn-xs btn-primary" href="{{ $baseURL }}tags/{{ $name | urlize }}">{{ $name | title }}</a></li>
@@ -33,7 +33,7 @@
    
 
  <div class="widget categories">
-     <h3>Categories</h3>
+     <h2>Categories</h2>
      <div class="row">
          <div class="col-sm-6">
              <ul class="blog_archieve">
