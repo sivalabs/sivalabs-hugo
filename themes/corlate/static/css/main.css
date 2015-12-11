@@ -44,8 +44,9 @@ h4{
 }
 
 a {
-  color: #c52d2f;
-  /*color: #003f80;*/
+  /* color: #c52d2f; */
+  color: #000;
+ 
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -54,7 +55,9 @@ a {
 
 a:hover, a:focus {
   color: #d43133;
- /* color: #4169E1;*/
+  /* color: #111; */
+  text-decoration: none;
+  outline: none;
 }
 
 hr {
@@ -88,13 +91,6 @@ hr {
 
 .btn-transparent:hover {
   border-color: rgba(255, 255, 255, 0.5);
-}
-
-a:hover,
-a:focus {
-  color: #111;
-  text-decoration: none;
-  outline: none;
 }
 
 .dropdown-menu {
@@ -1956,7 +1952,8 @@ textarea#message{
 
 .widget {
   margin-bottom: 60px;
-  padding-left: 0;
+  padding: 10;
+	
 }
 
 .single_comments {
@@ -2550,4 +2547,9 @@ shortcodes page css
 
 .icon-reddit{
     color:#95d9ec;
+}
+
+#sidebar {
+	border : 2px;
+	border-color: black;
 }
