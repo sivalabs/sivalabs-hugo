@@ -10,7 +10,7 @@ categories: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 tags: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 
 draft: false
-:icons: font
+
 ---
 
 include::data/ascii-settings.txt[]

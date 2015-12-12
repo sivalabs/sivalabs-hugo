@@ -6,6 +6,7 @@
 **************************/
 
 body {
+  padding-top: 80px;
   /* background: #fff; */
   background-image: url(/images/bg.png);
   /* background-color: #353e49; */

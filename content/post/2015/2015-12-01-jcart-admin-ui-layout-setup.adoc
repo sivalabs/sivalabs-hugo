@@ -1,18 +1,21 @@
+
 ---
-author: siva
-comments: true
-date: 2015-12-01 04:38:56+00:00
-layout: post
+author: Siva
 Url: jcart-admin-ui-layout-setup
 title: 'JCart: Admin UI Layout SetUp'
-wordpress_id: 507
-categories:
-- E-Commerce
-tags:
-- jcart
-- SpringBoot
-draft : true
+date: 2015-12-01 04:38:56+00:00
+Section: post
+Description: "For building our JCart e-commerce application we will develop two web applications, one for ShoppingCart and another one for Administration. Let us explore the requirements of both ShoppingCart and Administration websites in detail"
+categories: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
+tags: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
+
+draft: false
+
 ---
+
+include::data/ascii-settings.txt[]
+
+
 
 As I am not really a good UI designer I searched for a free good looking UI website Admin templates and I found this fantastic template [https://almsaeedstudio.com/preview](https://almsaeedstudio.com/preview). We will be using this template for our Administration web application.
 
@@ -20,7 +23,7 @@ We are going to use Thymeleaf templates for our View layer. Thymeleaf offers fac
 
 
 
-## Setup AdminLTE Theme Resources
+== Setup AdminLTE Theme Resources
 
 
 
@@ -45,20 +48,21 @@ We are going to start with basic template and include what is necessary instead 
 
 
 
-<blockquote>Note: I don't want to dump all the HTML content along with CSS styles on this post itself. Instead I will put only the key parts of the HTML content and give a link to the complete file on GitHub repository [https://github.com/sivaprasadreddy/jcart](https://github.com/sivaprasadreddy/jcart).</blockquote>
+NOTE: I don't want to dump all the HTML content along with CSS styles on this post itself. Instead I will put only the key parts of the HTML content and give a link to the complete file on GitHub repository [https://github.com/sivaprasadreddy/jcart](https://github.com/sivaprasadreddy/jcart).
 
 
 
 
 
-## GuestLayout Template
+== GuestLayout Template
 
 
 
 Create the guest layout thymeleaf template jcart-admin/src/main/resources/templates/layout/guestLayout.html as follows:
 
 
-    
+[source,html]
+----   
     
     
     <html xmlns="http://www.w3.org/1999/xhtml" 
@@ -85,14 +89,14 @@ Create the guest layout thymeleaf template jcart-admin/src/main/resources/templa
       </body>
     </html>
     
-
+---- 
 
 
 This is guest layout skeleton page. Observe the place holder <div layout:fragment="content"> ... </div> for the content to be dynamically included at runtime.
 
 
 
-## Login Page
+== Login Page
 
 
 
@@ -100,7 +104,8 @@ Create login view page **jcart-admin/src/main/resources/templates/public/login.h
 
 
     
-    
+[source,html]
+----   
     
     <html xmlns="http://www.w3.org/1999/xhtml" 
     	  xmlns:th="http://www.thymeleaf.org"
@@ -132,12 +137,12 @@ Create login view page **jcart-admin/src/main/resources/templates/public/login.h
        </body>
     </html>
     
+---- 
 
 
 
 
-
-### Things to observe here:
+=== Things to observe here:
 
 
 		
@@ -169,14 +174,15 @@ For more information on using Thymeleaf Layouts refer [http://www.thymeleaf.org/
 
 
 
-## Using ResourceBundles for Internationalization (I18N)
+== Using ResourceBundles for Internationalization (I18N)
 
 
 Create the default ResourceBundle **jcart-admin/src/main/resources/messages.properties**. 
 For now we are supporting only English Locale.
 
 
-    
+[source,java]
+----   
     
     label.jcart_admin=JCart Admin
     label.email=Email
@@ -187,13 +193,14 @@ For now we are supporting only English Locale.
     info.logout_success=You have been logged out
     error.login_failed=Invalid Email and Password
     
-
+---- 
 
 
 Now create **JCartAdminApplication.java** which is starting point for our Administration application. 
 
 
-    
+[source,java]
+----    
     
     package com.sivalabs.jcart;
     
@@ -209,18 +216,19 @@ Now create **JCartAdminApplication.java** which is starting point for our Admini
     	}
     }
     
+---- 
 
 
 
 
-
-## WebMVC Configuration
+== WebMVC Configuration
 
 
 Create a Spring WebMVC Configuration class to configure things like ViewControllers, Interceptors etc.
 
 
-    
+[source,java]
+----    
     
     @Configuration
     public class WebConfig extends WebMvcConfigurerAdapter
@@ -235,7 +243,7 @@ Create a Spring WebMVC Configuration class to configure things like ViewControll
     	}
     	
     }
-    
+----     
 
 
 
@@ -243,7 +251,7 @@ Now we can run JCartAdminApplication as a Java Application and point your browse
 
 
 
-## Authorized Users Layout
+== Authorized Users Layout
 
 
 
@@ -251,7 +259,8 @@ Create the main layout thymeleaf template **jcart-admin/src/main/resources/templ
 
 
     
-    
+[source,html]
+----   
     
     <html xmlns="http://www.w3.org/1999/xhtml" 
     	  xmlns:th="http://www.thymeleaf.org">
@@ -336,14 +345,15 @@ Create the main layout thymeleaf template **jcart-admin/src/main/resources/templ
         
        </body>
     </html>
-    
+----     
 
 
 
 
 Create Home page thymeleaf view **jcart-admin/src/main/resources/templates/home.html** as follows:
 
-
+[source,html]
+----
     
     
     
@@ -368,7 +378,7 @@ Create Home page thymeleaf view **jcart-admin/src/main/resources/templates/home.
         	</div>
        </body>
     </html>
-    
+----     
 
 
 
@@ -376,7 +386,8 @@ Create a simple controller to display Home page.
 
 
     
-    
+[source,java]
+----   
     @Controller
     public class HomeController 
     {	
@@ -386,7 +397,7 @@ Create a simple controller to display Home page.
     	return "home";
     	}
     }
-    
+----     
 
 
 
@@ -395,7 +406,7 @@ Now you can run JCartAdminApplication as a Java Application and point your brows
 
 
 
-## ResourceBundle for Hibernate Validation Errors
+== ResourceBundle for Hibernate Validation Errors
 
 
 
@@ -403,7 +414,8 @@ If you observe the JPA entities, we are using Hibernate Validation annotations f
 If you want to use **messages.properties** for both I18N and Hibernate Validation error messages you can register the Validator Bean as follows:
 
 
-    
+[source,java]
+----    
     
     @Configuration
     public class WebConfig extends WebMvcConfigurerAdapter
@@ -423,7 +435,7 @@ If you want to use **messages.properties** for both I18N and Hibernate Validatio
     	
     }
     
-
+---- 
 
 
 Now we have the layout templates ready and basic MVC configuration is in place. Next we will look into how to configure Spring Security.
