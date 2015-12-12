@@ -1,5 +1,9 @@
 
 :imagesdir: /images
+
+
 :source-highlighter: pygments
 :pygments-linenums-mode: inline
 :pygments-css: style
+
+:icons: font
