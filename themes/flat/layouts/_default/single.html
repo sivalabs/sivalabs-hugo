@@ -1,0 +1,67 @@
+{{ $baseUrl := .Site.BaseURL }}
+<!DOCTYPE html>
+<html lang="en">
+	{{ partial "head.html" . }}
+	<body>
+		{{ partial "header.html" . }}
+
+		<section id="blog" class="container page-container">
+			<div class="row">
+	        	<aside class="col-sm-3 col-sm-push-9">
+	                {{ partial "sidebar.html" . }}    	
+	            </aside>        
+	            <div class="col-sm-9 col-sm-pull-3">
+	            	<div class="blog">
+                    <div class="blog-item">
+                        <!-- <img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" /> -->
+                        <div class="blog-content">
+                            <h3>{{ .Title }}</h3>
+                            <div class="entry-meta">
+                                <span><i class="icon-user"></i> {{ .Site.Params.nickname}}</span>
+                                <span><i class="icon-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
+                            </div>
+                            <p>{{ .Content }}</p>
+
+                            <hr>
+
+                            <div class="tags">
+                                <i class="icon-tags"></i> Tags 
+                                {{ range .Params.tags }}
+                                        	<a class="btn btn-primary btn-xs" href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+										    	{{ . | title}} &nbsp;&nbsp;
+										    </a>
+									  	{{ end }}
+                            </div>
+
+                            <p>&nbsp;</p>
+
+                            <div class="author well">
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="avatar img-thumbnail authorpic-thumbnail" src="{{ .Site.BaseURL }}images/siva.jpg" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="media-heading">
+                                            <strong>K. Siva Prasad Reddy</strong>
+                                        </div>
+                                        <p>A software developer with 10 years of experience in developing Enterprise application using Java platform.</p>
+                                    </div>
+                                </div>
+                            </div><!--/.author-->
+
+                            
+                        </div>
+                        <div>
+                        	<p>{{ partial "social-share.html" . }}</p>
+                        </div>
+                    </div><!--/.blog-item-->
+                </div>
+	            </div>
+            </div>
+            
+
+    </section><!--/#blog-->
+{{ partial "footer.html" . }}
+</body>
+</html>
+

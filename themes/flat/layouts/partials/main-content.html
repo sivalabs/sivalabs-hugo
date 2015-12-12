@@ -1,0 +1,41 @@
+{{ $baseUrl := .Site.BaseURL }}
+<section id="blog" class="container">
+	{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+        <div class="row">
+            <aside class="col-sm-3 col-sm-push-9">
+                {{ partial "sidebar.html" . }}    	
+            </aside>        
+            <div class="col-sm-9 col-sm-pull-3">
+                <div class="blog">
+                	{{ range (where .Paginator.Pages "Section" "post") }}
+                    <div class="blog-item">
+                        <!-- <img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" /> -->
+                        <div class="blog-content">
+                        	<a href="{{ .Permalink }}"><h3>{{ .Title }}</h3></a>
+                            
+                            <div class="entry-meta">
+                                <span><i class="icon-user"></i> {{ .Site.Params.nickname}}</span>
+                                <span><i class="icon-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
+                            </div>
+                            <p>{{ .Description }} <br/></p>
+                            <div class="post-tags">
+                                <strong>Tags: </strong> 
+                                {{ range .Params.tags }}
+                                <a class="btn btn-primary btn-xs readmore" href="{{ $baseUrl }}tags/{{ . | urlize }}" rel="category">
+							    	{{ . | title}} &nbsp;&nbsp;
+							    </a>
+						  		{{ end }}
+                            </div>
+                            <br/>
+                            <a class="btn btn-default" href="{{ .Permalink }}">Read More <i class="icon-angle-right"></i></a>
+                        </div>
+                    </div><!--/.blog-item-->
+                    {{ end }}
+                    
+                    {{ partial "pagination.html" . }}
+                    
+                </div>
+            </div><!--/.col-md-8-->
+        </div><!--/.row-->
+    </section><!--/#blog-->
+    
