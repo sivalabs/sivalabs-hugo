@@ -23,7 +23,6 @@
 	                                    <span><i class="fa fa-user"></i> {{ .Site.Params.nickname}}</span>&nbsp;&nbsp;
                                         <span><i class="fa fa-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
                                     </div>
-                                    <p>{{ .Content }}</p>
 
                                     <div class="post-tags">
                                         <strong>Tags: </strong> 
@@ -34,6 +33,8 @@
 									  	{{ end }}
                                         
                                     </div>
+                                    <br/>
+                                    <p>{{ .Content }}</p>
                                     <div>
                                     	<p>{{ partial "social-share.html" . }}</p>
                                     	

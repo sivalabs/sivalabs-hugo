@@ -5,5 +5,7 @@
 :source-highlighter: pygments
 //:pygments-linenums-mode: inline
 :pygments-css: style
+//:pygments-style: monokai
 
 :icons: font
+:linkattrs:

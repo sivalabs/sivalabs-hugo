@@ -1,7 +1,7 @@
 
 ---
 author: Siva
-Url: jcart-configuring-https-ssltls
+url: jcart-configuring-https-ssltls
 title: 'JCart: Configuring HTTPS SSL/TLS'
 date: 2015-12-07 13:17:45+00:00
 Section: post
@@ -25,11 +25,11 @@ Similarly I would like to run Administration site on **https://host:9443** and i
 from **http://host:9090** it should redirect to https://host:9443.
 
 With SpringBoot it is really very simple. 
-See http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl
+See http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl[http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl, window="_blank"]
 
 
 
-TIP: You can simply follow this article https://www.drissamri.be/blog/java/enable-https-in-spring-boot/
+TIP: You can simply follow this article https://www.drissamri.be/blog/java/enable-https-in-spring-boot/[https://www.drissamri.be/blog/java/enable-https-in-spring-boot/^]
  which describes what exactly we are trying to do. Thanks to Driss Amri. **Give credit where credit is due :-)**
  
 {nbsp}

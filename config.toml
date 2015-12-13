@@ -6,6 +6,7 @@ baseURL = "http://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
 canonifyurls = true
+uglyurls = false
 theme = "sivalabs"
 #theme = "flat"
 #theme = "twentythirteen"
