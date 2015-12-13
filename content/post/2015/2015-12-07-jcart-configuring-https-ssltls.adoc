@@ -9,6 +9,9 @@ Description: "We will learn how to setup HTTPS for JCart"
 categories: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 tags: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 draft: false
+
+aliases:
+    - /2015/12/07/jcart-configuring-https-ssltls.html
 ---
 
 include::data/ascii-settings.txt[]
