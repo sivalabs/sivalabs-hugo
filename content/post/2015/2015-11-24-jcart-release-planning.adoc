@@ -5,7 +5,7 @@ Url: jcart-release-planning
 title: JCart Release Planning
 date: 2015-11-24 04:26:20+00:00
 Section: post
-Description: "For building our JCart e-commerce application we will develop two web applications, one for ShoppingCart and another one for Administration. Let us explore the requirements of both ShoppingCart and Administration websites in detail"
+Description: "We will divide the tasks and plan iterations"
 categories: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 tags: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 

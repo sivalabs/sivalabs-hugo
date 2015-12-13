@@ -4,7 +4,8 @@ Url: jcart-configuring-spring-security
 title: 'JCart: Configuring Spring Security'
 date: 2015-12-01 05:27:15+00:00
 Section: post
-Description: "We can find plenty of information on any technical topic, be it Java, .NET, Python or any frameworks like Spring, Hibernate, CDI, JSF etc. You can find hundreds of well written blogs on many of these topics. For example, you can find lot of tutorials on how to use SpringBoot or how to use various mappings in JPA/Hibernate or how to do form validations in JSF etc. Also, there are plenty of books published by well established publishers on most of the technologies."
+Description: "Our JCart Administration site should only be accessible to authorized users only. 
+			 So, we are going to use SpringSecurity to define the security constraints."
 categories: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 tags: ["E-Commerce","Java","JCart","Spring","SpringBoot"]
 draft: false
@@ -17,7 +18,7 @@ Our JCart Administration site should only be accessible to authorized users only
 Let us add the following spring-security dependencies to **jcart-admin/pom.xml**.
 
 
-[source,xml]    
+[source,xml,linenums]    
 ----    
 <dependency>
 	<groupid>org.springframework.boot</groupid>
