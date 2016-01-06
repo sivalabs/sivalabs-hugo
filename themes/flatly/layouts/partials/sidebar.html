@@ -1,13 +1,13 @@
 <!-- SIDEBAR -->
 {{ $baseURL := .Site.BaseURL }}
 <div id="sidebar">
-<!-- 
+
 <div class="widget">
-	<h2>K. Siva Prasad Reddy</h2>
+	<h3>K. Siva Prasad Reddy</h3>
 	<img class="authorpic" src="{{ .Site.BaseURL }}images/Siva-1.jpg" alt="Siva"/>
 	
 </div>	
- -->			
+			
 <!-- 
 <div class="widget search">
     <form role="form">
@@ -19,7 +19,7 @@
         </div>
     </form>
 </div>
--->
+
                 
 <div class="widget">
 
@@ -31,8 +31,8 @@
 			<p><input type="email" value="" name="EMAIL" class="required email form-control" 
 						placeholder="Email" id="mce-EMAIL"></p>
 			<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" 
-			class="btn btn-xs btn-primary">
-			<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+			class="btn btn-sm btn-primary">
+			
 		    <div style="position: absolute; left: -5000px;" aria-hidden="true">
 				<input type="text" name="b_a244435ef0378fac204b5a2d4_bdded8d3db" tabindex="-1" value="">
 			</div>
@@ -42,21 +42,21 @@
 	</aside>
 
 </div>
-
+-->
 
                 
-<div class="widget categories">
+<div class="widget">
     <h2>Latest Posts</h2>
     <div class="row">
         {{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
         <div class="col-sm-12">
-            <div class="single_comments">                
+            <div>                
                 <p><i class="fa fa-angle-double-right"></i> <a href="{{ .Permalink }}">{{ .Title }}</a></p>                
             </div>            
         </div>
         {{ end }}
     </div> 
-</div><!--/.recent comments-->
+</div>
  
 
 <div class="widget tags">
@@ -66,7 +66,7 @@
         <li><a class="btn btn-xs btn-primary" href="{{ $baseURL }}tags/{{ $name | urlize }}">{{ $name | title }}</a></li>
         {{ end }}    
     </ul>
-</div><!--/.tags-->
+</div>
 
 <div class="widget categories">
     <h3>Blog Categories</h3>
@@ -80,6 +80,6 @@
         </div>
         
     </div>                     
-</div><!--/.categories-->
+</div>
 
 </div>   
