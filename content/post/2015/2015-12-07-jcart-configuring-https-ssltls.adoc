@@ -84,8 +84,7 @@ server.ssl.keyAlias=jcartadmintomcat
 To redirect from HTTP to HTTPS let us configure **TomcatEmbeddedServletContainerFactory ** bean in our **WebConfig.java**
 
 [source,java,linenums]    
-----
-    
+----    
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {
@@ -96,7 +95,8 @@ public class WebConfig extends WebMvcConfigurerAdapter
     @Bean
     public EmbeddedServletContainerFactory servletContainer() 
     {
-        TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory() {
+        TomcatEmbeddedServletContainerFactory tomcat = 
+        		new TomcatEmbeddedServletContainerFactory() {
             @Override
             protected void postProcessContext(Context context) {
                 SecurityConstraint securityConstraint = new SecurityConstraint();
@@ -113,7 +113,8 @@ public class WebConfig extends WebMvcConfigurerAdapter
     }
 
     private Connector initiateHttpConnector() {
-        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+        Connector connector = 
+        	new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setScheme("http");
         connector.setPort(9090);
         connector.setSecure(false);
