@@ -252,8 +252,8 @@ ul.tag-cloud li {
 }
 
 .authorpic {
-	width: 240px;
-	height: 300px;
+	width: 200px;
+	height: 260px;
 }
 
 .authorpic-thumbnail {
@@ -283,4 +283,8 @@ ul.tag-cloud li {
 
 .icon-reddit{
     color:#95d9ec;
+}
+
+.icon-github{
+    color:#3B3A3A;
 }
