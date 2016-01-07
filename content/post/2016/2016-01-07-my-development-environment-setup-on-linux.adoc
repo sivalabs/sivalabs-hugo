@@ -1,0 +1,158 @@
+---
+Title: My Development Environment Setup on Linux
+Description: "In this post we will look into how to install various softwares like Java, NodeJS, Yoeman, jekyll, MySQL, Ruby 
+on Ubuntu based Linux OS"
+Url: my-development-environment-setup-on-linux
+date: 2016-01-07T10:00:00-00:00
+Section: post
+tags: ["Linux"]
+categories: ["Linux"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+As I mentioned in my previous post link:/thinking-of-moving-from-windows-to-linux/[Thinking of moving from Windows to Linux?] 
+I am moving from Windows to Linux. Setting up my development environment is a bit tedious because I have to hunt down the applications 
+and execute various commands to setup. So I thought of make a note of them in a post so that it will be easier for me next time.
+
+I am using **Ubuntu/LinuxMint** system so I am using **apt-get** to install, if you are using **Fedora/CentOS** you can use **yum/dnf**.
+
+The very first thing I do after installing Linux is updating the system and in case I am working on VirtualBox VM installing VirtualBox Guest Additions.
+
+`sudo apt-get update` +
+`sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11`
+
+**Setting up Java Development Environment**
+
+Some Linux distros come with OpenJDK by default. You may want to remove *OpenJDK* first and install *Oracle JDK*.
+
+`sudo apt-get purge openjdk-*` +
+`sudo add-apt-repository ppa:webupd8team/java` +
+`sudo apt-get update`
+
+To install Java 7 `sudo apt-get install oracle-java7-installer` +
+To install Java 8 `sudo apt-get install oracle-java8-installer`
+
+If you want to set **JAVA_HOME** environment variable for a particular user then you can add JAVA_HOME in **~/.bash_profile** 
+or if you want to setup for all the users globally then you can add it to **/etc/profile** file.
+
+`> vi ~/.bash_profile` or `vi /etc/profile`
+
+Append the following to the file:
+
+`export JAVA_HOME=/usr/lib/jvm/java-8-oracle` +
+`export PATH=$PATH:$JAVA_HOME/bin`
+
+Reload the configuration updates +
+`> source ~/.bash_profile` or `source /etc/profile`
+
+After installing JDK you may want to download your favorite IDE from the following locations:
+
+* Eclipse http://www.eclipse.org/downloads/
+* STS https://spring.io/tools/sts/all
+* JBoss Developer Studio http://tools.jboss.org/downloads/devstudio/index.html
+* NetbeansIDE https://netbeans.org/downloads/
+* Intellij IDEA https://www.jetbrains.com/idea/download/
+
+Most of the times I work with either **Tomcat** or **JBoss/Wildfly** servers. +
+You cand ownload them from the following locations:
+
+* Tomcat https://tomcat.apache.org/download-80.cgi
+* Wildfly http://wildfly.org/downloads/
+
+To install build tools like **Ant** or **Maven**
+
+`> sudo apt-get install ant` +
+`> sudo apt-get install maven`
+
+We can install various softwares like **Groovy**, **Grails**, **Gradle** etc you can use  http://sdkman.io/[**SDKMan**] 
+which was previously known as **GVM**.
+
+`> curl -s http://get.sdkman.io | bash` +
+`> source "$HOME/.sdkman/bin/sdkman-init.sh"` +
+`> sdk version` +
+`> sdk install groovy` +
+`> sdk install grails` +
+`> sdk install gradle` +
+
+**Install MySQL server**
+You can install MySQL server and MySQL Workbench from Ubuntu Software Center.
+
+But if you prefer commandline installation
+
+`> sudo apt-get install mysql-server` +
+`> sudo apt-get install mysql-workbench`
+
+**Installing NodeJS**
+Installing NodeJS become a little bit complicated because it is going through some changes(nodejs, nodejs-legacy, io.js etc).
+
+You can install latest NodeJS using following commands:
+
+`> sudo apt-get install curl` +
+`> curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -` +
+`> sudo apt-get install nodejs`
+
+For further details refer https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
+
+**Install yeoman and generators**
+ http://yeoman.io/[Yeoman] makes it easy to develop front-end applications by automating various tasks using bower, grunt or gulp.
+
+Install yeoman 
+
+`sudo npm install -g yo bower grunt-cli gulp`
+
+**Install various generators**
+
+`> sudo npm install -g generator-webapp` +
+`> sudo npm install -g generator-angular` +
+`> sudo npm install -g generator-jhipster` +
+`> sudo npm install -g generator-meanjs` +
+`> sudo npm install -g cordova ionic`
+
+**Installing Ruby and RubyOnRails**
+
+You may be using **Ruby** or tools that depends on Ruby like **OpenShift** commandline tools, **Jekyll** etc.
+
+You can find the very detailed instructions on how to install Ruby/RubyOnRails at https://gorails.com/setup/ubuntu/15.04
+
+Just for the sake of quick reference I am repeating the steps here:
+
+`> sudo apt-get update` +
+`> sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev`
+
+`> cd` +
+`> git clone git://github.com/sstephenson/rbenv.git .rbenv` +
+`> echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc` +
+`> echo 'eval "$(rbenv init -)"' >> ~/.bashrc` +
+`> exec $SHELL`
+
+`> git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build` +
+`> echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc` +
+`> exec $SHELL`
+
+`> git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash`
+
+`> rbenv install 2.2.3` +
+`> rbenv global 2.2.3` +
+`> ruby -v`
+
+`> echo "gem: --no-ri --no-rdoc" > ~/.gemrc` +
+`> gem install bundler`
+
+`> gem install rails -v 4.2.4`
+
+**Installing Jekyll**
+https://jekyllrb.com[Jekyll] is a static site generator which you can use to generate your site and host it on github.
+
+`> gem install jekyll`
+
+**Test drive Jekyll**
+
+`> jekyll new myblog` +
+`> cd myblog` +
+`> jekyll serve`
+
+Hope these installation instructions helps!!
+
+*Note: All the images belong to their respective owners.*
