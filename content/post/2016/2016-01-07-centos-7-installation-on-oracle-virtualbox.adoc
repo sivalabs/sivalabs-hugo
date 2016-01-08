@@ -1,7 +1,7 @@
 ---
 Title: CentOS 7 Installation on Oracle Virtualbox
 Url: centos-7-installation-on-oracle-virtualbox
-date: 2016-01-07T09:00:00-00:00
+date: 2016-01-07T09:00:00+05:30
 Section: post
 tags: ["Linux", "VirtualBox"]
 categories: ["Linux"]

@@ -2,7 +2,7 @@
 Title: Welcome to my new blog
 Description: "This is my welcome post to my new Hugo based blog"
 Url: welcome-to-my-new-blog
-date: 2016-01-06T19:20:04-07:00
+date: 2016-01-06T19:20:04+05:30
 Section: post
 tags: ["Blogging"]
 categories: ["Blogging"]

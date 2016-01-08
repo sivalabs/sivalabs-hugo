@@ -1,7 +1,7 @@
 ---
 Title: My Linux Journey Begins
 Url: my-linux-journey-begins
-date: 2016-01-07T08:00:00-00:00
+date: 2016-01-07T08:00:00+05:30
 Section: post
 tags: ["Linux"]
 categories: ["Linux"]

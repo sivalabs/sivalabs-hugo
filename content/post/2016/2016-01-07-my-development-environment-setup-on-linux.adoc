@@ -3,7 +3,7 @@ Title: My Development Environment Setup on Linux
 Description: "In this post we will look into how to install various softwares like Java, NodeJS, Yoeman, jekyll, MySQL, Ruby 
 on Ubuntu based Linux OS"
 Url: my-development-environment-setup-on-linux
-date: 2016-01-07T10:00:00-00:00
+date: 2016-01-07T10:00:00+05:30
 Section: post
 tags: ["Linux"]
 categories: ["Linux"]
