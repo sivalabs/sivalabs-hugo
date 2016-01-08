@@ -7,10 +7,7 @@
 
 		<section id="blog" class="container page-container">
 			<div class="row">
-	        	<aside class="col-sm-3 col-sm-push-9">
-	                {{ partial "sidebar.html" . }}    	
-	            </aside>        
-	            <div class="col-sm-9 col-sm-pull-3">
+	            <div class="col-sm-9 col-md-9">
 	            	<div>
                 		<h4><a href="{{ $baseUrl }}">Home</a> <i class="fa fa-angle-double-right"></i> <span>{{ .Title }}</span></h4>
                 	</div>
@@ -78,16 +75,14 @@
 				</ul>
 				
 	            </div>
+	            <aside class="col-sm-3 col-md-3">
+	                {{ partial "sidebar.html" . }}    	
+	            </aside> 
             </div>
             
 
     </section><!--/#blog-->
     	
-    
-    
-     
-     
-
 {{ partial "footer.html" . }}
 </body>
 </html>
