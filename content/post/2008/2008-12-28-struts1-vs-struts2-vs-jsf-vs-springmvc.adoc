@@ -1,16 +1,15 @@
 ---
-author: siva
-comments: true
+Title: Struts1 Vs Struts2 Vs JSF Vs SpringMVC
+Description: "Struts1 Vs Struts2 Vs JSF Vs SpringMVC"
+Url: struts1-vs-struts2-vs-jsf-vs-springmvc
 date: 2008-12-28 04:21:00+00:00
-layout: post
-slug: struts1-vs-struts2-vs-jsf-vs-springmvc
-title: Struts1 Vs Struts2 Vs JSF Vs SpringMVC
-wordpress_id: 310
-categories:
-- Miscellaneous
-tags:
-- Miscellaneous
+Section: post
+tags: ["Misc"]
+categories: ["Misc"]
+draft: false
 ---
+
+include::data/ascii-settings.txt[]
 
 Hi,
 

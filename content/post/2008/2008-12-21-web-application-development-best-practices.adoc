@@ -1,0 +1,19 @@
+---
+Title: Web Application Development Best Practices
+Description: "Web Application Development Best Practices"
+Url: web-application-development-best-practices
+date: 2008-12-21 13:22:00+00:00
+Section: post
+tags: ["Best Practices"]
+categories: ["Best Practices"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+
+. Follow consistency in naming the project artifacts like Java class names, JSP names etc.
+. Maintain the standard way of handling exceptions in different layers.
+. Have a single access point for Configuration Constants.
+. Take care about page navigation. Use forwarding and redirecting carefully.
+. Always try to pull out the repeated code blocks and make them separate methods.
