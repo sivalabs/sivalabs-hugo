@@ -1,16 +1,16 @@
 ---
-author: siva
-comments: true
+Title: Struts1.x Interview Questions
+Description: "Struts1.x Interview Questions"
+Url: struts1x-interview-questions
 date: 2009-05-06 06:01:00+00:00
-layout: post
-slug: struts1x-interview-questions
-title: Struts1.x Interview Questions
-wordpress_id: 301
-categories:
-- Interviews
-tags:
-- Interviews
+Section: post
+tags: ["Interviews"]
+categories: ["Interviews"]
+menu: ["Interviews"]
+draft: false
 ---
+
+include::data/ascii-settings.txt[]
 
 1. What is Struts Framework?  
   

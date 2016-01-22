@@ -1,0 +1,33 @@
+---
+Title: How to kill a process running on a port
+Description: "How to kill a process running on a port"
+Url: how-to-kill-process-running-on-port
+date: 2015-11-02T19:20:04-07:00
+Section: post
+tags: ["Misc"]
+categories: ["Misc"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+Hi All,  + 
+Many of the Java developers frequently facing some problems with ports.  
+
+Ex: If JBoss server has started and closed accidentally without properly shutdown process , 
+several processes will remain running on some ports which will causes Port Already binded kind of exceptions.  
+
+
+In that kind of situations, we can forcefully kill a process running on a port as follows:  
+
+**Get the PID of that process**
+
+d:/>netstat -ao  
+  
+**kill the process**  
+
+d:/>taskkill /F /PID p_id
+
+
+
+

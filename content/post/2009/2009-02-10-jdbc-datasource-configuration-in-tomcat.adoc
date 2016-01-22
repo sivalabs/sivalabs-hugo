@@ -1,0 +1,42 @@
+---
+Title: JDBC DataSource Configuration in Tomcat
+Description: "JDBC DataSource Configuration in Tomcat"
+Url: jdbc-datasource-configuration-in-tomcat
+date: 2009-02-10 15:03:00+00:00
+Section: post
+tags: ["Tomcat"]
+categories: ["Tomcat"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+Put a file named *context.xml* in *META-INF* folder which contains:  
+
+
+[source,xml]
+---- 
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<Context>  
+	<Resource      
+		name="MySQLDS"     
+		type="javax.sql.DataSource"   
+		driverClassName="com.mysql.jdbc.Driver"   
+		password="root"    
+		maxIdle="2"   
+		maxWait="5000"    
+		username="root"    
+		url="jdbc:mysql://localhost:3306/test"     
+		maxActive="10"
+	/>  
+</Context>  
+----
+  
+=== Getting the DataSource:  
+
+[source,java]
+----  
+Context context = new InitialContext();  
+DataSource MYSQL_DATASOURCE = (DataSource) context.lookup("java:comp/env/MySQLDS");
+----

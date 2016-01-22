@@ -1,16 +1,15 @@
 ---
-author: siva
-comments: true
-date: 2009-05-06 06:04:00+00:00
-layout: post
-slug: jms-interview-questions
-title: JMS Interview Questions
-wordpress_id: 299
-categories:
-- Interviews
-tags:
-- Interviews
+Title: JMS Interview Questions
+Description: "JMS Interview Questions"
+Url: jms-interview-questions
+date: 2009-05-06 05:59:00+00:00
+Section: post
+tags: ["Interviews"]
+categories: ["Interviews"]
+menu: ["Interviews"]
+draft: false
 ---
+
 
 1. What is JMS?  
   

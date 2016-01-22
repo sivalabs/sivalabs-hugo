@@ -1,0 +1,23 @@
+---
+Title: Servlets and JSP Interview Questions
+Description: "Servlets and JSP Interview Questions"
+Url: servlets-and-jsp-interview-questions
+date: 2009-05-06 05:59:00+00:00
+Section: post
+tags: ["Interviews"]
+categories: ["Interviews"]
+menu: ["Interviews"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+1. What is a Servlet?  
+  
+2. Explain about Servlet life cycle?  
+  
+3. What do you mean by Idempotent request?  
+  
+4. What is the difference between a GET and POST request?  
+  
+5. What is the difference between request.forward() and response.sendRedirect() methods?

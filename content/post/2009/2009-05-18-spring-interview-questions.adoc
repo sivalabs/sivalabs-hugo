@@ -1,0 +1,38 @@
+---
+Title: Spring Interview Questions
+Description: "Spring Interview Questions"
+Url: spring-interview-questions
+date: 2009-05-18 05:03:00+00:00
+Section: post
+tags: ["Spring"]
+categories: ["Spring"]
+menu: ["Spring"]
+draft: false
+---
+
+include::data/ascii-settings.txt[]
+
+[qanda]  
+What is Spring Framework?::
+  Spring is a light weight IOC/DI container which provides enterprise services using AOP. 
+  Unlike other J2EE frameworks Struts, JSF, Hibernate etc whose features are limited to a particular layer, 
+  Spring is an Application Framework providing services in all the Web, Service, DAO layers.  
+  Spring framework provides services for all the layers:  
+  a.  Spring framework includes a web application framework (SpringMVC) for developing web applications following 
+  MVC design pattern.  
+  b.  Spring framework come up with a DAO module which is a wrapper for JDBC and drastically minimizes 
+  		the number of lines of code for implementing database operations. And also Spring has support for integrating 
+  		almost all the popular ORM frameworks like Hibernate, IBatis, JPA.  
+		Spring also provides support for Declarative and Programmatic Transaction Management.  
+  c.  Spring provides various services in the Service layer using AOP like Transaction Management, Logging, 
+  		Exception Handling etc.
+
+ 
+What is Inversion Of Control or Dependency Injection?:: 
+  TODO;
+What are BeanFactory and an ApplicationContext?::
+  TODO;
+What are the key benefits of using Spring?::  
+  TODO;
+How do you integrate Struts and Spring?::
+  TODO;

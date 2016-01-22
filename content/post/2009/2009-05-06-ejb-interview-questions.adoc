@@ -1,16 +1,15 @@
 ---
-author: siva
-comments: true
-date: 2009-05-06 06:02:00+00:00
-layout: post
-slug: ejb-interview-questions
-title: EJB Interview Questions
-wordpress_id: 300
-categories:
-- Interviews
-tags:
-- Interviews
+Title: EJB Interview Questions
+Description: "EJB Interview Questions"
+Url: ejb-interview-questions
+date: 2009-05-06 05:59:00+00:00
+Section: post
+tags: ["Interviews"]
+categories: ["Interviews"]
+menu: ["Interviews"]
+draft: false
 ---
+
 
 1. What is EJB?  
   
