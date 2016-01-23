@@ -1,5 +1,6 @@
 body {
 	padding-top: 70px;
+	background-color: #F8F8F8;
 }
 
 body>.navbar {
@@ -252,8 +253,8 @@ ul.tag-cloud li {
 }
 
 .authorpic {
-	width: 200px;
-	height: 260px;
+	width: 155px;
+	height: 190px;
 }
 
 .authorpic-thumbnail {
