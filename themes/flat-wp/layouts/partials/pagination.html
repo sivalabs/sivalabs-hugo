@@ -1,0 +1,23 @@
+
+{{ $baseurl := .Site.BaseURL }}
+{{ $pag := .Paginator }}
+
+{{ if gt $pag.TotalPages 1 }}
+<nav class="navigation pagination" role="navigation">
+	<h2 class="screen-reader-text">Posts navigation</h2>
+	<div class="nav-links">
+		{{ if $pag.HasPrev }}
+    	<a class="prev page-numbers" href="{{ $baseurl }}{{ $pag.First.URL }}">
+    		<i class="fa fa-chevron-left"></i> Newer Posts
+    	</a> 
+		{{ end }}
+		
+		{{ if $pag.HasNext }}
+		<a class="next page-numbers" href="{{ $baseurl }}{{ $pag.Last.URL }}">
+			Older Posts <i class="fa fa-chevron-right"></i>
+		</a>
+    	{{ end }}
+   	</div>
+</nav>
+
+{{ end }}

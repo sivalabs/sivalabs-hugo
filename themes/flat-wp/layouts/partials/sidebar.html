@@ -1,0 +1,28 @@
+<!-- SIDEBAR -->
+{{ $baseURL := .Site.BaseURL }}
+<div class="sidebar-offcanvas">
+	<div id="main-sidebar" class="widget-area" role="complementary">
+		
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+			<h3 class='widget-title'>Recent Posts</h3>
+			<ul>
+				{{ range first 5 (where .Site.Pages.ByDate.Reverse "Section" "post") }}
+				<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{ end }}
+				
+			</ul>
+		</aside>
+		
+		<aside id="categories" class="widget widget_categories">
+			<h3 class='widget-title'>Categories</h3>
+			<ul>
+				{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+				<li class="cat-item cat-item-35">
+					<a href="/categories/{{ $name | urlize }}">{{ $name | title }}</a>
+				</li>
+				{{ end }}				
+			</ul>
+		</aside>
+		
+	</div>
+</div>

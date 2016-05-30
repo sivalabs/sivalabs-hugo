@@ -1,0 +1,9 @@
+<footer class="site-info">
+	Siva Prasad Reddy &copy; 2016
+</footer>
+
+
+{{ with .Site.Params.googleanalyticsid }}
+  {{ partial "google-analytics.html" . }}
+{{ end }}
+ 
