@@ -7,6 +7,7 @@ languageCode = "en-us"
 title = "SivaLabs"
 canonifyurls = true
 uglyurls = false
+
 #theme = "sivalabs"
 theme = "flat-wp"
 #theme = "twentythirteen"
@@ -14,6 +15,9 @@ pygmentsstyle = "borland"
 disqusShortname = "sivalabs"
 paginate = 5
 
+[permalinks]
+  post = "/:year/:month/:title/"
+  
 [taxonomies]
   category = "categories"
   tag = "tags"
