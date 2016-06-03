@@ -1,0 +1,52 @@
+<article class="post type-post format-standard hentry">
+	<header class="entry-header">
+		<h2 class="entry-title">
+			<a 
+				href="{{ .Permalink }}"
+				title="{{ .Title }}"
+				rel="bookmark">{{ .Title }}</a>
+		</h2>
+		<div class="entry-meta">
+			<span class="entry-date">
+				{{ .Date.Format "Jan 2, 2006" }} By {{ .Site.Params.nickname}}
+			</span>
+		</div>
+	</header>
+	<div class="entry-content">
+		<p>{{ .Content }}</p>
+		
+		
+	</div>
+</article>
+
+<article class="post type-post status-publish format-standard hentry">
+	<p class="date-author">{{ .Date.Format "Jan 2, 2006" }} By {{ .Site.Params.nickname}}</p>	
+	<div id="post-content">			
+		<h1 id="post-title">{{ .Title }}</h1>			
+		{{ .Content }}
+				
+		<!-- <div id="post-tags" class="clearfix">
+			<a href="#">#jooq</a>
+			<a href="#">#SpringBoot</a>
+		</div> -->
+							
+	</div>		
+	<div id="post-footer" class="clearfix">			
+		{{ if or (.PrevInSection) (.NextInSection) }}
+		<div id="post-nav">
+				{{if .NextInSection}}
+		    	<a rel="prev" href="{{.NextInSection.Permalink}}" title="{{.NextInSection.Title}}">
+		    		<i class="fa fa-chevron-left"></i> Newer Post 
+		    	</a> 
+				{{ end }}
+				
+				{{if .PrevInSection}}
+				<a rel="next" href="{{.PrevInSection.Permalink}}" title="{{.PrevInSection.Title}}">
+					Older Post <i class="fa fa-chevron-right"></i>
+				</a>
+		    	{{ end }}
+		</div>
+		{{ end }}	
+	</div>	
+</article>
+

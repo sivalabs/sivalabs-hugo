@@ -1,0 +1,22 @@
+{{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+
+{{ range (where .Paginator.Pages "Section" "post") }}
+<div class="post type-post status-publish format-standard hentry">
+	<div class="teaser">
+
+		<p class="date-author">
+			{{ .Date.Format "Jan 2, 2006" }} By {{ .Site.Params.nickname}}
+		</p>
+		<h3 class="teaser-title">
+			<a href="{{ .Permalink }}" rel="bookmark">{{ .Title }}</a>
+		</h3>
+		<div class="teaser-text">
+			<p>{{ .Description }}&#8230;.
+			<p>
+				<a href="{{ .Permalink }}">Continue Reading &raquo;</a>
+			</p>
+		</div>
+	</div>
+</div>
+{{ end }}
+

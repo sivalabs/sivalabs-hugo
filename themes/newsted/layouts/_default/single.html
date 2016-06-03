@@ -1,0 +1,33 @@
+{{ $baseUrl := .Site.BaseURL }}
+
+<!DOCTYPE html>
+<html lang="en-US">
+{{ partial "head.html" . }}
+
+<body class="home blog custom-background">
+	<div id="page">
+		<div class="container">
+			<div class="row row-offcanvas row-offcanvas-left">
+				
+				<div id="secondary" class="col-lg-3">
+					{{ partial "header.html" . }}
+					
+					{{ partial "sidebar.html" . }}
+					
+				</div>
+
+				<div id="primary" class="content-area col-lg-9">
+					<div id="content" class="site-content" role="main">
+						{{ partial "single-post.html" . }}
+						{{ partial "single-post-pagination.html" . }}
+						{{ partial "disqus.html" . }}
+						
+					</div>
+					{{ partial "footer.html" . }}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

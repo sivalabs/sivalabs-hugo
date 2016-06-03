@@ -1,0 +1,19 @@
+
+{{ $baseurl := .Site.BaseURL }}
+{{ $pag := .Paginator }}
+
+{{ if gt $pag.TotalPages 1 }}
+
+<div class="pager">
+	{{ if $pag.HasPrev }}
+		<a class='page-numbers' href='{{ $baseurl }}{{ $pag.First.URL }}'>Newer Posts</a> 
+	{{ end }}
+		
+	{{ if $pag.HasNext }}	
+		<a
+		class='page-numbers' href='{{ $baseurl }}{{ $pag.Last.URL }}'>Older Posts</a>
+	{{ end }}
+</div>
+
+{{ end }}
+

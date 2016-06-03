@@ -1,0 +1,11 @@
+name = "newsted"
+license = "MIT"
+description = "An elegant open source and mobile first theme"
+homepage = "http://localhost:1313/"
+tags = ["blog", "company"]
+features = ["blog" ]
+
+[author]
+    name = "siva"
+    homepage = "http://sivalabs.in"
+

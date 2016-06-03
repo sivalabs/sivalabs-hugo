@@ -9,8 +9,8 @@ canonifyurls = true
 uglyurls = false
 
 #theme = "sivalabs"
-theme = "flat-wp"
-#theme = "twentythirteen"
+#theme = "flat-wp"
+theme = "newsted"
 pygmentsstyle = "borland"
 disqusShortname = "sivalabs"
 paginate = 5
