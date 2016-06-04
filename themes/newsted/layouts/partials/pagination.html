@@ -6,13 +6,18 @@
 
 <div class="pager">
 	{{ if $pag.HasPrev }}
-		<a class='page-numbers' href='{{ $baseurl }}{{ $pag.First.URL }}'>Newer Posts</a> 
+		<a class="pull-left page-numbers" href='{{ $baseurl }}{{ $pag.Prev.URL }}'>
+			<i class="fa fa-chevron-left" aria-hidden="true"></i> Newer Posts
+		</a> 
 	{{ end }}
 		
 	{{ if $pag.HasNext }}	
-		<a
-		class='page-numbers' href='{{ $baseurl }}{{ $pag.Last.URL }}'>Older Posts</a>
+		<a class="pull-right page-numbers" href='{{ $baseurl }}{{ $pag.Next.URL }}'>
+			Older Posts <i class="fa fa-chevron-right" aria-hidden="true"></i>
+		</a>
 	{{ end }}
+		
+	
 </div>
 
 {{ end }}
