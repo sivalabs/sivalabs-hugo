@@ -2,7 +2,7 @@ contentdir = "content"
 layoutdir = "layouts"
 publishdir = "public"
 builddrafts = false
-baseURL = "http://sivalabs.github.io/"
+baseURL = "https://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
 canonifyurls = true
@@ -22,31 +22,11 @@ paginate = 5
   # Shown in the menu.
     
   [[menu.main]]
-    name = "Java"
-    pre = "<i class='fa fa-coffee fa-fw'></i>"
-    weight = 1
-    identifier = "java"
-    url = "/categories/java"  
-  [[menu.main]]
-    name = "Spring"
-    pre = "<i class='fa fa-envira'></i>"
+    name = "MyBooks"
+    pre = "<i class='fa fa-book fa-fw'></i>"
     weight = 2
-    identifier = "spring"
-    url = "/categories/spring"
-  [[menu.main]]
-    name = "Spring MVC"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 1
-    identifier = "springmvc"
-    parent = "spring"
-    url = "/categories/springmvc"
-  [[menu.main]]
-    name = "Spring Boot"
-    pre = "<i class='fa fa-list fa-fw'></i>"
-    weight = 0
-    identifier = "springboot"
-    parent = "spring"
-    url = "/categories/springboot"
+    url = "/mybooks/"
+  
   
   [[menu.main]]
     name = "Contact"

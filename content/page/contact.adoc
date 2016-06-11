@@ -13,7 +13,7 @@ draft: false
 
 === K. Siva Prasad Reddy
 
-image::/images/Siva-1.jpg[Siva, 180, 220] 
+image::/static/images/Siva-1.jpg[Siva, 180, 220] 
 
 Hi,
 I am a Software developer working on Java platform since 2005.

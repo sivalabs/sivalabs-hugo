@@ -11,7 +11,7 @@ draft: false
 :pygments-linenums-mode: inline
 :pygments-css: style
 
-:imagesdir: /images
+:imagesdir: /static/images
 
 ==== I am the author of the following books.
 {nbsp}
