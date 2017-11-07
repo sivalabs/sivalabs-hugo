@@ -1,0 +1,43 @@
+<header id="masthead" class="site-header" role="banner">
+    <nav class="navbar navbar-default " role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="site-navigation-inner col-sm-12">
+                    <div class="navbar-header">
+                        <button type="button" class="btn navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        <div id="logo">
+                            <h1 class="site-name">
+                                <a class="navbar-brand" href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">SivaLabs</a>
+                            </h1>
+                        </div><!-- end of #logo -->
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul id="menu-home" class="nav navbar-nav">
+
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{{ "/tags/java" | relLangURL }}">Java</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                                <a href="{{ "/tags/spring" | relLangURL }}">Spring </a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{{ "/tags/javaee" | relLangURL }}">Java EE</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{{ "/page/videos" | relLangURL }}">Videos</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{{ "/page/mybooks" | relLangURL }}">My Books</a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                                    href="{{ "/page/contact" | relLangURL }}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- .site-navigation -->
+</header><!-- #masthead -->

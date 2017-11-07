@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ block "title" . }}
+        {{ .Site.Title }}
+        {{ end }}</title>
+    {{ partial "head.html" . }}
+</head>
+
+<body class="home blog">
+<div id="page" class="hfeed site">
+    {{ partial "header.html" . }}
+
+    <div id="content" class="site-content">
+
+        <div class="top-section">
+        </div>
+
+        <div class="container main-content-area">
+            <div class="row side-pull-left">
+                <div class="main-content-inner col-sm-12 col-md-8">
+
+                    <div id="primary" class="content-area">
+                        {{ block "main" . }}
+
+                        {{ end }}
+                    </div>
+
+                </div>
+                <div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+                    {{ partial "sidebar.html" . }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-area">
+        {{ partial "footer.html" . }}
+    </div>
+</div>
+
+</body>
+
+</html>

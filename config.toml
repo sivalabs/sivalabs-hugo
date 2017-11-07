@@ -1,55 +1,6 @@
-contentdir = "content"
-layoutdir = "layouts"
-publishdir = "public"
-builddrafts = false
 baseURL = "https://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
-canonifyurls = true
-uglyurls = true
-
-#theme = "sivalabs"
-#theme = "flat-wp"
-theme = "newsted"
-pygmentsstyle = "borland"
+theme = "colorlib"
 disqusShortname = "sivalabs"
-paginate = 5
-
-[permalinks]
-  post = "/:year/:month/:title.html"
-
-[menu]
-  # Shown in the menu.
-    
-  [[menu.main]]
-    name = "MyBooks"
-    pre = "<i class='fa fa-book fa-fw'></i>"
-    weight = 2
-    url = "/mybooks/"
-  
-  
-  [[menu.main]]
-    name = "Contact"
-    pre = "<i class='fa fa-phone fa-fw'></i>"
-    weight = 3
-    url = "/contact/"
-      
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-
-[params]
-  description = "My Experiments on Technology"
-  author = "K. Siva Prasad Reddy"
-  nickname = "Siva"
-  # Sidebar social links, these must be full URLs.
-  github = "http://github.com/sivalabs"
-  twitter = "http://www.twitter.com/sivalabs"
-  facebook = "https://facebook.com/sivaprasadreddy"
-  #bitbucket = "http://bitbucket.com/sivalabs"
-  #linkedin = "http://www.linkedin.com/in/sivaprasadreddy"
-  #googleplus = "https://plus.google.com/+sivaprasadreddy"
-  googleanalyticsid = "UA-71296890-1"
-
-[author]
-  name = "Siva"
+paginate=2
