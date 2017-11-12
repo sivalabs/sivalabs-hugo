@@ -88,70 +88,70 @@ This will generate the maven project with following **pom.xml**.
 
 {{< highlight xml >}}
 
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-  http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-	&lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;
-	&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-	&lt;packaging&gt;jar&lt;/packaging&gt;
-	&lt;name&gt;spring-cloud-config-server&lt;/name&gt;
+	<groupId>com.sivalabs</groupId>
+	<artifactId>spring-cloud-config-server</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>spring-cloud-config-server</name>
 
-	&lt;parent&gt;
-		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-		&lt;version&gt;1.5.6.RELEASE&lt;/version&gt;
-		&lt;relativePath/&gt;
-	&lt;/parent&gt;
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath/>
+	</parent>
 
-	&lt;properties&gt;
-		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-		&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
-		&lt;java.version&gt;1.8&lt;/java.version&gt;
-		&lt;spring-cloud.version&gt;Dalston.SR2&lt;/spring-cloud.version&gt;
-	&lt;/properties&gt;
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Dalston.SR2</spring-cloud.version>
+	</properties>
 
-	&lt;dependencies&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-cloud-config-server&lt;/artifactId&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-			&lt;scope&gt;test&lt;/scope&gt;
-		&lt;/dependency&gt;
-	&lt;/dependencies&gt;
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-server</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-	&lt;dependencyManagement&gt;
-		&lt;dependencies&gt;
-			&lt;dependency&gt;
-				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
-				&lt;version&gt;${spring-cloud.version}&lt;/version&gt;
-				&lt;type&gt;pom&lt;/type&gt;
-				&lt;scope&gt;import&lt;/scope&gt;
-			&lt;/dependency&gt;
-		&lt;/dependencies&gt;
-	&lt;/dependencyManagement&gt;
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-	&lt;build&gt;
-		&lt;plugins&gt;
-			&lt;plugin&gt;
-				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-			&lt;/plugin&gt;
-		&lt;/plugins&gt;
-	&lt;/build&gt;
-&lt;/project&gt;
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
 {{< / highlight >}}
 
 To make our SpringBoot application as a SpringCloud Config Server, we just need to add **@EnableConfigServer** annotation to the main entry point class and configure **spring.cloud.config.server.git.uri** property pointing to the git repository.
@@ -345,76 +345,76 @@ Let us see how we can create a SpringBoot application and use configuration prop
 Create a SpringBoot application **catalog-service** with **Config Client,** **Web** and **Actuator** starters.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-  http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-	&lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-	&lt;artifactId&gt;catalog-service&lt;/artifactId&gt;
-	&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;
-	&lt;packaging&gt;jar&lt;/packaging&gt;
+	<groupId>com.sivalabs</groupId>
+	<artifactId>catalog-service</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-	&lt;name&gt;spring-cloud-config-client&lt;/name&gt;
+	<name>spring-cloud-config-client</name>
 
-	&lt;parent&gt;
-		&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-		&lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-		&lt;version&gt;1.5.6.RELEASE&lt;/version&gt;
-		&lt;relativePath/&gt;
-	&lt;/parent&gt;
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.6.RELEASE</version>
+		<relativePath/>
+	</parent>
 
-	&lt;properties&gt;
-		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-		&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
-		&lt;java.version&gt;1.8&lt;/java.version&gt;
-		&lt;spring-cloud.version&gt;Dalston.SR2&lt;/spring-cloud.version&gt;
-	&lt;/properties&gt;
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Dalston.SR2</spring-cloud.version>
+	</properties>
 
-	&lt;dependencies&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-cloud-starter-config&lt;/artifactId&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-		&lt;/dependency&gt;
-		&lt;dependency&gt;
-			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-			&lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-			&lt;scope&gt;test&lt;/scope&gt;
-		&lt;/dependency&gt;
-	&lt;/dependencies&gt;
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-	&lt;dependencyManagement&gt;
-		&lt;dependencies&gt;
-			&lt;dependency&gt;
-				&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
-				&lt;version&gt;${spring-cloud.version}&lt;/version&gt;
-				&lt;type&gt;pom&lt;/type&gt;
-				&lt;scope&gt;import&lt;/scope&gt;
-			&lt;/dependency&gt;
-		&lt;/dependencies&gt;
-	&lt;/dependencyManagement&gt;
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-	&lt;build&gt;
-		&lt;plugins&gt;
-			&lt;plugin&gt;
-				&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-				&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-			&lt;/plugin&gt;
-		&lt;/plugins&gt;
-	&lt;/build&gt;
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
-&lt;/project&gt;
+</project>
 {{< / highlight >}}
 
 Usually in SpringBoot application we configure properties in **_application.properties_**. But while using Spring Cloud Config Server we use **_bootstrap.properties_** or **_bootstrap.yml_** file to configure the URL of Config Server and Spring Cloud Config Client module will take care of starting the application by fetching the application properties from Config Server.
