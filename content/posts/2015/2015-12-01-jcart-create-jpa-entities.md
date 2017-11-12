@@ -1,0 +1,262 @@
+---
+title: 'JCart: Create JPA Entities'
+author: Siva
+type: post
+date: 2015-12-01T04:26:41+00:00
+url: /2015/12/jcart-create-jpa-entities/
+post_views_count:
+  - 18
+categories:
+  - Java
+tags:
+  - jcart
+  - SpringBoot
+
+---
+We are going to create the JPA Entities for the database tables we designed.
+
+<pre class="brush: java">@Entity
+@Table(name="users")
+public class User
+{
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(nullable=false)
+	@NotEmpty()
+	private String name;
+	@Column(nullable=false, unique=true)
+	@NotEmpty
+	@Email(message="{errors.invalid_email}")
+	private String email;
+	@Column(nullable=false)
+	@NotEmpty
+	@Size(min=4)
+	private String password;
+	private String passwordResetToken;
+	
+	@ManyToMany(cascade=CascadeType.MERGE)
+	@JoinTable(
+	      name="user_role",
+	      joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
+	      inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
+	private List&lt;Role&gt; roles;
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="roles")
+public class Role
+{
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(nullable=false, unique=true)
+	@NotEmpty
+	private String name;
+	@Column(length=1024)
+	private String description;
+	
+	@ManyToMany(mappedBy="roles")
+	private List&lt;User&gt; users;
+
+	@ManyToMany
+	  @JoinTable(
+	      name="role_permission",
+	      joinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")},
+	      inverseJoinColumns={@JoinColumn(name="PERM_ID", referencedColumnName="ID")})
+	  private List&lt;Permission&gt; permissions;
+
+	 //setters & getters 
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="permissions")
+public class Permission
+{
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(nullable=false, unique=true)
+	private String name;
+	@Column(length=1024)
+	private String description;
+	@ManyToMany(mappedBy="permissions")
+	private List&lt;Role&gt; roles;
+	
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="addresses")
+public class Address implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	private String addressLine1;
+	private String addressLine2;
+	private String city;
+	private String state;
+	private String zipCode;
+	private String country;
+	
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="categories")
+public class Category
+{
+	@Id @GeneratedValue(strategy=GenerationType.AUTO)
+	private Integer id;
+	@Column(nullable=false, unique=true)
+	@NotEmpty
+	private String name;
+	@Column(length=1024)
+	private String description;
+	@Column(name="disp_order")
+	private Integer displayOrder;
+	private boolean disabled;
+	@OneToMany(mappedBy="category")
+	private Set&lt;Product&gt; products;
+
+	//setters & getters	
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="products")
+public class Product implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private Integer id;
+	@Column(nullable=false, unique=true)
+	private String sku;
+	@Column(nullable=false)
+	private String name;
+	private String description;
+	@Column(nullable=false)
+	private BigDecimal price = new BigDecimal("0.0");
+	private String imageUrl;
+	private boolean disabled;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="created_on")
+	private Date createdOn = new Date();
+	
+	@ManyToOne
+	@JoinColumn(name="cat_id")
+	private Category category;
+	
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="customers")
+public class Customer implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	@Column(name="firstname", nullable=false)
+	@NotEmpty
+	private String firstName;
+	@Column(name="lastname")
+	private String lastName;
+	@NotEmpty
+	@Email
+	@Column(name="email", nullable=false, unique=true)
+	private String email;
+	@NotEmpty
+	@Column(name="password", nullable=false)
+	private String password;
+	private String phone;
+
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="orders")
+public class Order implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	@Column(nullable=false, unique=true)
+	private String orderNumber;
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="order")
+	private Set&lt;OrderItem&gt; items;
+	@ManyToOne(cascade=CascadeType.MERGE)
+	@JoinColumn(name="cust_id")
+	private Customer customer;
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="delivery_addr_id")
+	private Address deliveryAddress;
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="billing_addr_id")
+	private Address billingAddress;
+	@OneToOne(cascade=CascadeType.PERSIST)
+	@JoinColumn(name="payment_id")
+	private Payment payment;
+	@Enumerated(EnumType.STRING)
+	private OrderStatus status;
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="created_on")
+	private Date createdOn;
+	
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="order_items")
+public class OrderItem implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	@ManyToOne
+	@JoinColumn(name="product_id")
+	private Product product;
+	private BigDecimal price;
+	private int quantity;
+	@ManyToOne
+	@JoinColumn(name="order_id")
+	private Order order;
+	
+	//setters & getters
+}
+</pre>
+
+<pre class="brush: java">public enum OrderStatus
+{
+	NEW, IN_PROCESS, COMPLETED, FAILED
+}
+</pre>
+
+<pre class="brush: java">@Entity
+@Table(name="payments")
+public class Payment implements Serializable
+{
+	private static final long serialVersionUID = 1L;
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	@Column(name="cc_number")
+	private String ccNumber;
+	private String cvv;
+	private BigDecimal amount;
+	
+	//setters & getters
+}
+</pre>
+
+As we have configured **spring.jpa.hibernate.ddl-auto=update** when we run the JCartCoreApplicationTest again all the tables will be automatically created/updated.
+
+SpringBoot provides a nice and easy way to initialize the database with some seed data using **data.sql** file.
+  
+We can use **jcart-core/src/test/resources/data.sql** script <a href="https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql" target="_blank">https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql</a> to populate some sample data.

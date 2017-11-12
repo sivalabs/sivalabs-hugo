@@ -3,4 +3,17 @@ languageCode = "en-us"
 title = "SivaLabs"
 theme = "colorlib"
 disqusShortname = "sivalabs"
-paginate=2
+paginate=10
+googleAnalytics = "UA-71296890-1"
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+[params]
+  author = "Siva"
+  facebook = "https://facebook.com/sivaprasadreddy.k"
+  twitter = "https://twitter.com/sivalabs"
+  googleplus = "https://plus.google.com/u/0/+SivaPrasadReddy"
+  youtube = "http://www.youtube.com/c/SivaPrasadReddy%20"
+  github = "https://github.com/sivaprasadreddy"
+  linkedin = "https://in.linkedin.com/in/siva-prasad-reddy-k-3a909172"
+
