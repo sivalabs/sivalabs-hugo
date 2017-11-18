@@ -16,8 +16,8 @@ In Iteration-5 we will be primarily working on Cart related functionality. As pa
 
 In this Iteration we will implement the following usecases:
 
-  * <a href="http://sivalabs.in/jcart-shoppingcart-add-item-to-cart/" target="_blank">Add To Cart in HomePage/CategoryPage/ProductPage</a>
-  * <a href="http://sivalabs.in/jcart-view-cart/" target="_blank">Cart Page</a> 
+  * [Add To Cart in HomePage/CategoryPage/ProductPage]({{< relref "2015-12-31-jcart-shoppingcart-add-item-to-cart.md" >}}) 
+  * [Cart Page]({{< relref "2015-12-31-jcart-view-cart.md" >}})  
       * View Cart Items
       * Updates Quantity
       * Remove Items

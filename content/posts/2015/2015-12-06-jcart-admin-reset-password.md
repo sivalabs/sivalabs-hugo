@@ -15,12 +15,14 @@ tags:
 ---
 Once the Admin User clicked on Password Reset Link that we sent via Email, we will validate the Token and if is valid then we will show a form to enter New Password, otherwise shows an error. 
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 public class UserAuthController extends JCartAdminBaseController
 {
 	...
 	@RequestMapping(value="/resetPwd", method=RequestMethod.GET)
-	public String resetPwd(HttpServletRequest request, Model model, RedirectAttributes redirectAttributes)
+	public String resetPwd(HttpServletRequest request, 
+	                       Model model, 
+	                       RedirectAttributes redirectAttributes)
 	{
 		String email = request.getParameter("email");
 		String token = request.getParameter("token");
@@ -31,46 +33,48 @@ public class UserAuthController extends JCartAdminBaseController
 			model.addAttribute("token", token);			
 			return "public/resetPwd";	
 		} else {
-			redirectAttributes.addFlashAttribute("msg", getMessage(ERROR_INVALID_PASSWORD_RESET_REQUEST));
+			redirectAttributes.addFlashAttribute("msg", 
+			    getMessage(ERROR_INVALID_PASSWORD_RESET_REQUEST));
 			return "redirect:/login";
 		}		
 	}
 	....
 }
-</pre>
+{{</ highlight >}}
 
 Create reset password template **jcart-admin/src/main/resources/templates/public/resetPwd.html**
 
-<pre class="brush: xml">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight java >}}<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
-      layout:decorator="layout/guestLayout"&gt;
-  &lt;head&gt;
-    &lt;title&gt;Reset Password&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  	&lt;div layout:fragment="content"&gt;    
-        &lt;form action="resetPwd" th:action="@{/resetPwd}" method="post"&gt;
-           &lt;input type="hidden" name="email" th:value="${email}"/&gt;
-           &lt;input type="hidden" name="token" th:value="${token}"/&gt;           
+      layout:decorator="layout/guestLayout">
+  <head>
+    <title>Reset Password</title>
+  </head>
+  <body>
+  	<div layout:fragment="content">    
+        <form action="resetPwd" th:action="@{/resetPwd}" method="post">
+           <input type="hidden" name="email" th:value="${email}"/>
+           <input type="hidden" name="token" th:value="${token}"/>           
           
-           &lt;input type="password" class="form-control" name="password" placeholder="New Password"/&gt;            
-           &lt;input type="password" class="form-control" name="confPassword" placeholder="Confirm Password"/&gt;           
-           &lt;button type="submit" class="btn btn-primary btn-block btn-flat" th:text="#{label.submit}"&gt;Submit&lt;/button&gt;                      
-        &lt;/form&gt;                   
-	&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+           <input type="password" class="form-control" name="password" placeholder="New Password"/>            
+           <input type="password" class="form-control" name="confPassword" placeholder="Confirm Password"/>           
+           <button type="submit" class="btn btn-primary btn-block btn-flat" th:text="#{label.submit}">Submit</button>                      
+        </form>                   
+	</div>
+  </body>
+</html>
+{{</ highlight >}}
 
 Implement resetPwd handler method as follows:
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 public class UserAuthController extends JCartAdminBaseController
 {
 	....
 	@RequestMapping(value="/resetPwd", method=RequestMethod.POST)
-	public String handleResetPwd(HttpServletRequest request, RedirectAttributes redirectAttributes)
+	public String handleResetPwd(HttpServletRequest request, 
+	                             RedirectAttributes redirectAttributes)
 	{
 		try
 		{
@@ -88,14 +92,16 @@ public class UserAuthController extends JCartAdminBaseController
 			String encodedPwd = passwordEncoder.encode(password);
 			securityService.updatePassword(email, token, encodedPwd);
 			
-			redirectAttributes.addFlashAttribute("msg", getMessage(INFO_PASSWORD_UPDATED_SUCCESS));
+			redirectAttributes.addFlashAttribute("msg", 
+			    getMessage(INFO_PASSWORD_UPDATED_SUCCESS));
 		} catch (JCartException e)
 		{
 			logger.error(e);
-			redirectAttributes.addFlashAttribute("msg", getMessage(ERROR_INVALID_PASSWORD_RESET_REQUEST));
+			redirectAttributes.addFlashAttribute("msg", 
+			    getMessage(ERROR_INVALID_PASSWORD_RESET_REQUEST));
 		}
 		return "redirect:/login";
 	}
 	...
 }
-</pre>
+{{</ highlight >}}

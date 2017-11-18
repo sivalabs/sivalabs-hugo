@@ -16,10 +16,10 @@ In Iteration#6 we have implemented features in ShoppingCart application to enabl
 
 As part of Iteration#7 we will implement the following usecases:
 
-  * <a href="http://sivalabs.in/jcart-manage-orders/" target="_blank">Manage Orders</a> 
+  * [Manage Orders]({{< relref "2015-12-31-jcart-manage-orders.md" >}}) 
       * List all Orders
       * View Order details
       * Update Order status
-  * <a href="http://sivalabs.in/jcart-manage-customers/" target="_blank">Manage Customers</a> 
+  * [Manage Customers]({{< relref "2015-12-31-jcart-manage-customers.md" >}}) 
       * List all customers
       * View customer details

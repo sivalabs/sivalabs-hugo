@@ -16,7 +16,8 @@ In this post we will setup **SonarQube** and **Jenkins** to perform code quality
 
 &nbsp;
 
-<img class="alignnone size-medium wp-image-624 aligncenter" src="https://i2.wp.com/sivalabs.in/wp-content/uploads/2015/12/jenkins_logo.png?resize=300%2C96" alt="jenkins_logo" srcset="https://i2.wp.com/sivalabs.in/wp-content/uploads/2015/12/jenkins_logo.png?resize=300%2C96 300w, https://i2.wp.com/sivalabs.in/wp-content/uploads/2015/12/jenkins_logo.png?w=398 398w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" /><img class="alignnone size-full wp-image-625 aligncenter" src="https://i0.wp.com/sivalabs.in/wp-content/uploads/2015/12/sonar.png?resize=150%2C36" alt="sonar" data-recalc-dims="1" />
+<img class="alignnone size-medium aligncenter" src="/images/jenkins_logo.png" alt="jenkins_logo" width="250" height="200" />
+<img class="alignnone size-full aligncenter" src="/images/sonar.png" alt="sonar"  />
 
 ### Install and configure SonarQube
 
@@ -42,40 +43,41 @@ sonar.jdbc.password=admin
 
 Let us configure sonarqube maven plugin in **jcart/pom.xml**
 
-<pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight html >}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-	http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-	&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-	&lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-	&lt;artifactId&gt;jcart&lt;/artifactId&gt;
-	&lt;version&gt;1.0&lt;/version&gt;
-	&lt;packaging&gt;pom&lt;/packaging&gt;
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sivalabs</groupId>
+	<artifactId>jcart</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
 	
-	&lt;properties&gt;
-		&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-		&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
-		&lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;		
-		&lt;sonar.jdbc.url&gt;jdbc:mysql://localhost:3306/sonar&lt;/sonar.jdbc.url&gt;
-      		&lt;sonar.jdbc.username&gt;root&lt;/sonar.jdbc.username&gt;
-      		&lt;sonar.jdbc.password&gt;admin&lt;/sonar.jdbc.password&gt;
-	&lt;/properties&gt;
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>		
+		<sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar</sonar.jdbc.url>
+      		<sonar.jdbc.username>root</sonar.jdbc.username>
+      		<sonar.jdbc.password>admin</sonar.jdbc.password>
+	</properties>
 	
 	...
 	...
 	
-	&lt;build&gt;
-		&lt;plugins&gt;
-			&lt;plugin&gt;
-		       &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-		       &lt;artifactId&gt;sonar-maven-plugin&lt;/artifactId&gt;
-		       &lt;version&gt;2.7&lt;/version&gt;
-		     &lt;/plugin&gt;
-		&lt;/plugins&gt;
-	&lt;/build&gt;
+	<build>
+		<plugins>
+			<plugin>
+		       <groupId>org.codehaus.mojo</groupId>
+		       <artifactId>sonar-maven-plugin</artifactId>
+		       <version>2.7</version>
+		     </plugin>
+		</plugins>
+	</build>
 	
-&lt;/project&gt;
-</pre>
+</project>
+{{</ highlight >}}
 
 Now you can run maven goal **mvn sonar:sonar** which performs all the code quality checks and insert metrics into database.
   

@@ -15,28 +15,29 @@ tags:
 ---
 We will provide a link to Forgot Password in Login page and create **jcart-admin/src/main/resources/templates/public/forgotPwd.html** template as follows:
 
-<pre class="brush: xml">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
-      layout:decorator="layout/guestLayout"&gt;
-  &lt;head&gt;
-    &lt;title&gt;Forgot Password&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body &gt;
-  	&lt;div layout:fragment="content"&gt;
+      layout:decorator="layout/guestLayout">
+  <head>
+    <title>Forgot Password</title>
+  </head>
+  <body >
+  	<div layout:fragment="content">
     
-        &lt;form action="forgotPwd"  th:action="@{/forgotPwd}" method="post"&gt;
-          &lt;input type="email" class="form-control" name="email" placeholder="Email"/&gt;           
-          &lt;button type="submit" class="btn btn-primary btn-block btn-flat" th:text="#{label.submit}"&gt;Submit&lt;/button&gt;
-        &lt;/form&gt;      
-	&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+        <form action="forgotPwd"  th:action="@{/forgotPwd}" method="post">
+          <input type="email" class="form-control" name="email" placeholder="Email"/>           
+          <button type="submit" class="btn btn-primary btn-block btn-flat" th:text="#{label.submit}">Submit</button>
+        </form>      
+	</div>
+  </body>
+</html>
+{{</ highlight >}}
 
 When Admin user enters the email address and submit we will generate a token, store it in our DB and generates a Reset Password Link and send it to their email. When user click on the link we will validate the token and if it is valid we will ask user to enter New Password.
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 public class UserAuthController extends JCartAdminBaseController
 {
 	...
@@ -63,11 +64,11 @@ public class UserAuthController extends JCartAdminBaseController
 	...
 	protected void sendForgorPasswordEmail(String email, String resetPwdURL)
 	{
-		String htmlContent = "Please click below link to reset your password: &lt;br/&gt;"+resetPwdURL;
+		String htmlContent = "Please click below link to reset your password: <br/>"+resetPwdURL;
 		emailService.sendEmail(email, getMessage(LABEL_PASSWORD_RESET_EMAIL_SUBJECT), htmlContent);
 	}	
 }
-</pre>
+{{</ highlight >}}
 
 ### Sending Emails using Thymeleaf Templates
 
@@ -77,7 +78,7 @@ When we added thymeleaf-starter SpringBoot already registers **ServletContextTem
   
 In order to register emailTemplateResolver let us configure the **ClassLoaderTemplateResolver** bean in **jcart-admin/src/main/java/com/sivalabs/jcart/admin/config/WebConfig.java**
 
-<pre class="brush: java">@Bean 
+{{< highlight java >}}@Bean 
 public ClassLoaderTemplateResolver emailTemplateResolver(){ 
 	ClassLoaderTemplateResolver emailTemplateResolver = new ClassLoaderTemplateResolver(); 
 	emailTemplateResolver.setPrefix("email-templates/"); 
@@ -88,35 +89,37 @@ public ClassLoaderTemplateResolver emailTemplateResolver(){
 	
 	return emailTemplateResolver; 
 }
-</pre>
+{{</ highlight >}}
 
 Create forgot password thymeleaf template **jcart-admin/src/main/resources/email-templates/forgot-password-email.html**
 
-<pre class="brush: xml">&lt;!DOCTYPE html&gt;
-&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
-  &lt;head&gt;
-    &lt;title th:remove="all"&gt;Template for HTML email&lt;/title&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p&gt;
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:remove="all">Template for HTML email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p>
       Hello,
-    &lt;/p&gt;
-    &lt;p&gt;
-       Please click the below link to reset your password.&lt;br/&gt;
-       &lt;a th:href="${resetPwdURL}"&gt;Reset Password&lt;/a&gt;       
-    &lt;/p&gt;
-    &lt;p&gt;
-      Regards, &lt;br /&gt;
-      &lt;em&gt;The QuilCart Team&lt;/em&gt;
-    &lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+    </p>
+    <p>
+       Please click the below link to reset your password.<br/>
+       <a th:href="${resetPwdURL}">Reset Password</a>       
+    </p>
+    <p>
+      Regards, <br />
+      <em>The QuilCart Team</em>
+    </p>
+  </body>
+</html>
+{{</ highlight >}}
 
 Update the logic to use Email template as follows:
 
-<pre class="brush: java">@Autowired protected TemplateEngine templateEngine;	
+{{< highlight java >}}
+@Autowired protected TemplateEngine templateEngine;	
 
 protected void sendForgorPasswordEmail(String email, String resetPwdURL)
 {
@@ -133,6 +136,6 @@ protected void sendForgorPasswordEmail(String email, String resetPwdURL)
 		logger.error(e);
 	}
 }
-</pre>
+{{</ highlight >}}
 
 For more information on sending emails using Thymeleaf templates see <a href="http://www.thymeleaf.org/doc/articles/springmail.html" target="_blank">http://www.thymeleaf.org/doc/articles/springmail.html</a>

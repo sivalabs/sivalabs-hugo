@@ -24,8 +24,9 @@ For our JCart application development we will be using the following Softwares/T
   7. <a href="http://www.sonarqube.org/" target="_blank">SonarQube </a>
   8. <a href="https://httpd.apache.org/" target="_blank">Apache</a>/<a href="https://www.nginx.com/" target="_blank">Nginx </a>WebServer
 
-&nbsp;
 
 I am not going to explain how to install JDK or MySQL because there are plenty of articles you can find on internet.
 
-If you are using Ubuntu based Linux Operating System then you can refer my article <a href="http://sivalabs.in/my-development-environment-setup-on-linux/" target="_blank">My Development Environment Setup on Linux</a> to setup Java development tool chain.
+If you are using Ubuntu based Linux Operating System then you can refer my article 
+[My Development Environment Setup on Linux]({{< relref "2015-10-13-my-development-environment-setup-on-linux.md" >}})
+to setup Java development tool chain.

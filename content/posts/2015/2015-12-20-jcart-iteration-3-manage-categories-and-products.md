@@ -20,32 +20,33 @@ Managing Categories and Products also looks similar to Manage Roles and Users. B
 
 ### Create Spring Data JPA Repositories for Category and Product
 
-<pre class="brush: java">public interface CategoryRepository extends JpaRepository&lt;Category, Integer&gt; {
+{{< highlight java >}}
+public interface CategoryRepository extends JpaRepository<Category, Integer> {
 	Category getByName(String name);
 }
 
-public interface ProductRepository extends JpaRepository&lt;Product, Integer&gt; {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 	Product findByName(String name);
 	Product findBySku(String sku);
 	@Query("select p from Product p where p.name like ?1 or p.sku like ?1 or p.description like ?1")
-	List&lt;Product&gt; search(String query);
+	List<Product> search(String query);
 }
-</pre>
+{{</ highlight >}}
 
 ### Create CatalogService which contains all the catalog related service methods.
 
-<pre class="brush: java">@Service
+{{< highlight java >}}@Service
 @Transactional
 public class CatalogService {
 	@Autowired CategoryRepository categoryRepository;
 	@Autowired ProductRepository productRepository;
 	
-	public List&lt;Category&gt; getAllCategories() {
+	public List<Category> getAllCategories() {
 		
 		return categoryRepository.findAll();
 	}
 	
-	public List&lt;Product&gt; getAllProducts() {
+	public List<Product> getAllProducts() {
 		
 		return productRepository.findAll();
 	}
@@ -105,15 +106,16 @@ public class CatalogService {
 		return productRepository.save(persistedProduct);
 	}
 
-	public List&lt;Product&gt; searchProducts(String query) {
+	public List<Product> searchProducts(String query) {
 		return productRepository.search("%"+query+"%");
 	}
 }
-</pre>
+{{</ highlight >}}
 
 ### Let us create CategoryController to handle list all categories, create/update categories actions as follows:
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}
+@Controller
 @Secured(SecurityUtil.MANAGE_CATEGORIES)
 public class CategoryController extends JCartAdminBaseController
 {
@@ -132,7 +134,7 @@ public class CategoryController extends JCartAdminBaseController
 	
 	@RequestMapping(value="/categories", method=RequestMethod.GET)
 	public String listCategories(Model model) {
-		List&lt;Category&gt; list = catalogService.getAllCategories();
+		List<Category> list = catalogService.getAllCategories();
 		model.addAttribute("categories",list);
 		return viewPrefix+"categories";
 	}
@@ -174,178 +176,181 @@ public class CategoryController extends JCartAdminBaseController
 	}
 
 }
-</pre>
+{{</ highlight >}}
 
 ### Next create the thymeleaf views for category management as follows:
 
 **jcart-admin/src/main/resources/templates/categories/categories.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-      &lt;head&gt;
-        &lt;title&gt;Categories&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+      <head>
+        <title>Categories</title>
+    </head>
+    <body>
         
-    	&lt;div layout:fragment="content"&gt;
-	        &lt;div class="row"&gt;
-            &lt;div class="col-md-12"&gt;
-              &lt;div class="box"&gt;
-                &lt;div class="box-header"&gt;
-                  &lt;h3 class="box-title"&gt;List of Categories&lt;/h3&gt;
-                  &lt;div class="box-tools"&gt;
-                    &lt;div class="input-group" style="width: 150px;"&gt;
-                    	&lt;a class="btn btn-sm btn-default" th:href="@{/categories/new}"&gt;
-								&lt;i class="fa fa-plus-circle"&gt;&lt;/i&gt; New Category&lt;/a&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="box-body table-responsive no-padding"&gt;
-                  &lt;table class="table table-hover"&gt;
-                    &lt;tr&gt;
-                      &lt;th style="width: 10px"&gt;#&lt;/th&gt;
-                      &lt;th&gt;Name&lt;/th&gt;
-                      &lt;th&gt;Description&lt;/th&gt;
-                      &lt;th&gt;Edit&lt;/th&gt;
-                    &lt;/tr&gt;
-                    &lt;tr th:each="cat,iterStat : ${categories}"&gt;
-                      &lt;td th:text="${iterStat.count}"&gt;1&lt;/td&gt;
-                      &lt;td th:text="${cat.name}"&gt;Category Name&lt;/td&gt;
-                      &lt;td th:text="${cat.description}"&gt;Category Description&lt;/td&gt;
-                      &lt;td&gt;&lt;a th:href="@{/categories/{id}(id=${cat.id})}" class="btn btn-sm btn-default"&gt;
-							&lt;i class="fa fa-edit"&gt;&lt;/i&gt; Edit&lt;/a&gt;&lt;/td&gt;
-                    &lt;/tr&gt;
+    	<div layout:fragment="content">
+	        <div class="row">
+            <div class="col-md-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">List of Categories</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                    	<a class="btn btn-sm btn-default" th:href="@{/categories/new}">
+								<i class="fa fa-plus-circle"></i> New Category</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th style="width: 10px">#</th>
+                      <th>Name</th>
+                      <th>Description</th>
+                      <th>Edit</th>
+                    </tr>
+                    <tr th:each="cat,iterStat : ${categories}">
+                      <td th:text="${iterStat.count}">1</td>
+                      <td th:text="${cat.name}">Category Name</td>
+                      <td th:text="${cat.description}">Category Description</td>
+                      <td><a th:href="@{/categories/{id}(id=${cat.id})}" class="btn btn-sm btn-default">
+							<i class="fa fa-edit"></i> Edit</a></td>
+                    </tr>
                     
-                  &lt;/table&gt;
-                &lt;/div&gt;
+                  </table>
+                </div>
                 
-              &lt;/div&gt;
-              &lt;/div&gt;
-              &lt;/div&gt;              
-    	&lt;/div&gt;    	
-    &lt;/body&gt;    
-&lt;/html&gt;
-</pre>
+              </div>
+              </div>
+              </div>              
+    	</div>    	
+    </body>    
+</html>
+{{</ highlight >}}
 
 **jcart-admin/src/main/resources/templates/categories/create_category.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-      &lt;head&gt;
-        &lt;title&gt;Categories - New&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+      <head>
+        <title>Categories - New</title>
+    </head>
+    <body>
         
-    	&lt;div layout:fragment="content"&gt;
+    	<div layout:fragment="content">
 	        
-              &lt;div class="box box-warning"&gt;
-                &lt;div class="box-header with-border"&gt;
-                  &lt;h3 class="box-title"&gt;Create New Category&lt;/h3&gt;
-                &lt;/div&gt;
-                &lt;div class="box-body"&gt;
-                  &lt;form role="form" th:action="@{/categories}" th:object="${category}" method="post"&gt;
-                  	&lt;p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
-							th:class="text-red"&gt;Incorrect data&lt;/p&gt;
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Create New Category</h3>
+                </div>
+                <div class="box-body">
+                  <form role="form" th:action="@{/categories}" th:object="${category}" method="post">
+                  	<p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
+							th:class="text-red">Incorrect data</p>
                     
-                    &lt;div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'"&gt;
-                      &lt;label&gt;Name&lt;/label&gt;
-                      &lt;input type="text" class="form-control" name="name" th:field="*{name}" 
-							placeholder="Enter Category Name"/&gt;
-                      &lt;p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" 
-							th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-                    &lt;/div&gt;
+                    <div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'">
+                      <label>Name</label>
+                      <input type="text" class="form-control" name="name" th:field="*{name}" 
+							placeholder="Enter Category Name"/>
+                      <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" 
+							th:class="text-red">Incorrect data</p>
+                    </div>
                     
-                    &lt;div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'"&gt;
-                      &lt;label&gt;Description&lt;/label&gt;
-                      &lt;textarea class="form-control" rows="3" name="description" 
-							th:field="*{description}" placeholder="Enter Category Description"&gt;&lt;/textarea&gt;
-                      &lt;p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
-							th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-                    &lt;/div&gt;
+                    <div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'">
+                      <label>Description</label>
+                      <textarea class="form-control" rows="3" name="description" 
+							th:field="*{description}" placeholder="Enter Category Description"></textarea>
+                      <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
+							th:class="text-red">Incorrect data</p>
+                    </div>
 					
-					&lt;div class="form-group" th:classappend="${#fields.hasErrors('displayOrder')}? 'has-error'"&gt;
-                      &lt;label&gt;Display Order&lt;/label&gt;
-                      &lt;input type="number" class="form-control" name="displayOrder" 
-								th:field="*{displayOrder}" placeholder="Enter display order number"/&gt;
-                      &lt;p th:if="${#fields.hasErrors('displayOrder')}" th:errors="*{displayOrder}" 
-							th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-                    &lt;/div&gt;
+					<div class="form-group" th:classappend="${#fields.hasErrors('displayOrder')}? 'has-error'">
+                      <label>Display Order</label>
+                      <input type="number" class="form-control" name="displayOrder" 
+								th:field="*{displayOrder}" placeholder="Enter display order number"/>
+                      <p th:if="${#fields.hasErrors('displayOrder')}" th:errors="*{displayOrder}" 
+							th:class="text-red">Incorrect data</p>
+                    </div>
 					    				
-					&lt;div class="box-footer"&gt;
-	                    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
-	                &lt;/div&gt;
-                  &lt;/form&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-    	&lt;/div&gt;
+					<div class="box-footer">
+	                    <button type="submit" class="btn btn-primary">Submit</button>
+	                </div>
+                  </form>
+                </div>
+              </div>
+    	</div>
     	
-    &lt;/body&gt;
+    </body>
     
-&lt;/html&gt;
-</pre>
+</html>
+{{</ highlight >}}
 
 **jcart-admin/src/main/resources/templates/categories/edit_category.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-      &lt;head&gt;
-        &lt;title&gt;Categories - Edit&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
+      <head>
+        <title>Categories - Edit</title>
+    </head>
+    <body>
     	        
-    	&lt;div layout:fragment="content"&gt;
+    	<div layout:fragment="content">
 	        
-              &lt;div class="box box-warning"&gt;
-                &lt;div class="box-header with-border"&gt;
-                  &lt;h3 class="box-title"&gt;Edit Category&lt;/h3&gt;
-                &lt;/div&gt;
-                &lt;div class="box-body"&gt;
-                  &lt;form role="form" th:action="@{/categories/{id}(id=${category.id})}" 
-						th:object="${category}" method="post"&gt;
-                  &lt;p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
-						th:class="text-red"&gt;Incorrect data&lt;/p&gt;
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Edit Category</h3>
+                </div>
+                <div class="box-body">
+                  <form role="form" th:action="@{/categories/{id}(id=${category.id})}" 
+						th:object="${category}" method="post">
+                  <p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
+						th:class="text-red">Incorrect data</p>
                     
-                    &lt;div class="form-group"&gt;
-                      &lt;label&gt;Name&lt;/label&gt;
-                      &lt;input type="text" class="form-control" name="name" 
-						th:field="*{name}" readonly="readonly"/&gt;
-                    &lt;/div&gt;
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" class="form-control" name="name" 
+						th:field="*{name}" readonly="readonly"/>
+                    </div>
                     
-                    &lt;div class="form-group"&gt;
-                      &lt;label&gt;Description&lt;/label&gt;
-                      &lt;textarea class="form-control" rows="3" name="description" 
-						th:field="*{description}" placeholder="Enter Category Description"&gt;&lt;/textarea&gt;
-                    &lt;/div&gt;
+                    <div class="form-group">
+                      <label>Description</label>
+                      <textarea class="form-control" rows="3" name="description" 
+						th:field="*{description}" placeholder="Enter Category Description"></textarea>
+                    </div>
 					
-					&lt;div class="form-group"&gt;
-                      &lt;label&gt;Display Order&lt;/label&gt;
-                      &lt;input type="number" class="form-control" name="displayOrder" 
-							th:field="*{displayOrder}" placeholder="Enter display order number"/&gt;
-                    &lt;/div&gt;
+					<div class="form-group">
+                      <label>Display Order</label>
+                      <input type="number" class="form-control" name="displayOrder" 
+							th:field="*{displayOrder}" placeholder="Enter display order number"/>
+                    </div>
     				
-					&lt;div class="box-footer"&gt;
-	                    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
-	                &lt;/div&gt;
-                  &lt;/form&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-    	&lt;/div&gt;
+					<div class="box-footer">
+	                    <button type="submit" class="btn btn-primary">Submit</button>
+	                </div>
+                  </form>
+                </div>
+              </div>
+    	</div>
     	
-    &lt;/body&gt;
+    </body>
     
-&lt;/html&gt;
-</pre>
+</html>
+{{</ highlight >}}
 
 Now you can run the application and test Category related functionality be performing adding new categories or editing existing categories.
 
@@ -357,7 +362,8 @@ So we will create a ProductForm class to hold the uploaded image **(org.springfr
 
 Create **ProductForm** class as follows:
 
-<pre class="brush: java">package com.sivalabs.jcart.admin.web.models;
+{{< highlight java >}}
+package com.sivalabs.jcart.admin.web.models;
 
 import java.math.BigDecimal;
 import javax.validation.constraints.DecimalMin;
@@ -413,22 +419,24 @@ public class ProductForm
 		return p;
 	}
 }
-</pre>
+{{</ highlight >}}
 
 We will use apache commons-io library to store/read the files from disk, so add the following maven dependency in jcart-admin/pom.xml
 
-<pre class="brush: html">&lt;dependency&gt;
-	&lt;groupId&gt;commons-io&lt;/groupId&gt;
-	&lt;artifactId&gt;commons-io&lt;/artifactId&gt;
-	&lt;version&gt;2.3&lt;/version&gt;
-&lt;/dependency&gt;
-</pre>
+{{< highlight html >}}
+<dependency>
+	<groupId>commons-io</groupId>
+	<artifactId>commons-io</artifactId>
+	<version>2.3</version>
+</dependency>
+{{</ highlight >}}
 
 SpringBoot (SpringMVC) supports Servlet 3 javax.servlet.http.Part API for uploading files. for more details see Handling Multipart File Uploads <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration" target="_blank">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration</a>
 
 ### Implement the ProductController to handle product related actions.
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}
+@Controller
 @Secured(SecurityUtil.MANAGE_PRODUCTS)
 public class ProductController extends JCartAdminBaseController
 {
@@ -445,7 +453,7 @@ public class ProductController extends JCartAdminBaseController
 	}
 	
 	@ModelAttribute("categoriesList")
-	public List&lt;Category&gt; categoriesList()
+	public List<Category> categoriesList()
 	{
 		return catalogService.getAllCategories();
 	}
@@ -528,240 +536,243 @@ public class ProductController extends JCartAdminBaseController
 		}
 	}
 }
-</pre>
+{{</ highlight >}}
 
 The left over things are preparing thymeleaf views for product management screens.
 
 **jcart-admin/src/main/resources/templates/products/products.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-	layout:decorator="layout/mainLayout"&gt;
-&lt;head&gt;
-&lt;title&gt;Products&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+	layout:decorator="layout/mainLayout">
+<head>
+<title>Products</title>
+</head>
+<body>
 
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="row"&gt;
-			&lt;div class="col-md-12"&gt;
-				&lt;div class="box"&gt;
-					&lt;div class="box-header"&gt;
-						&lt;h3 class="box-title"&gt;List of Products&lt;/h3&gt;
-						&lt;div class="box-tools"&gt;
-							&lt;div class="input-group" style="width: 150px;"&gt;
-								&lt;a class="btn btn-sm btn-default" th:href="@{/products/new}"&gt;&lt;i
-									class="fa fa-plus-circle"&gt;&lt;/i&gt; New Product&lt;/a&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;div class="box-body table-responsive no-padding"&gt;
-						&lt;table class="table table-hover"&gt;
-							&lt;tr&gt;
-								&lt;th style="width: 10px"&gt;#&lt;/th&gt;
-								&lt;th&gt;Name&lt;/th&gt;
-								&lt;th&gt;Description&lt;/th&gt;
-								&lt;th&gt;Edit&lt;/th&gt;
-							&lt;/tr&gt;
-							&lt;tr th:each="product,iterStat : ${products}"&gt;
-								&lt;td th:text="${iterStat.count}"&gt;1&lt;/td&gt;
-								&lt;td th:text="${product.name}"&gt;Product Name&lt;/td&gt;
-								&lt;td th:text="${product.description}"&gt;Product Description&lt;/td&gt;
-								&lt;td&gt;&lt;a th:href="@{/products/{id}(id=${product.id})}"
-									class="btn btn-sm btn-default"&gt;&lt;i class="fa fa-edit"&gt;&lt;/i&gt;Edit&lt;/a&gt;
-								&lt;/td&gt;
-							&lt;/tr&gt;
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">List of Products</h3>
+						<div class="box-tools">
+							<div class="input-group" style="width: 150px;">
+								<a class="btn btn-sm btn-default" th:href="@{/products/new}"><i
+									class="fa fa-plus-circle"></i> New Product</a>
+							</div>
+						</div>
+					</div>
+					<div class="box-body table-responsive no-padding">
+						<table class="table table-hover">
+							<tr>
+								<th style="width: 10px">#</th>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Edit</th>
+							</tr>
+							<tr th:each="product,iterStat : ${products}">
+								<td th:text="${iterStat.count}">1</td>
+								<td th:text="${product.name}">Product Name</td>
+								<td th:text="${product.description}">Product Description</td>
+								<td><a th:href="@{/products/{id}(id=${product.id})}"
+									class="btn btn-sm btn-default"><i class="fa fa-edit"></i>Edit</a>
+								</td>
+							</tr>
 
-						&lt;/table&gt;
-					&lt;/div&gt;
+						</table>
+					</div>
 
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
+				</div>
+			</div>
+		</div>
 
-	&lt;/div&gt;
+	</div>
 
-&lt;/body&gt;
+</body>
 
-&lt;/html&gt;
-</pre>
+</html>
+{{</ highlight >}}
 
 **jcart-admin/src/main/resources/templates/products/create_product.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;      
-&lt;head&gt;
-	&lt;title&gt;Products - New&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;	
-	&lt;div layout:fragment="content"&gt;
+      layout:decorator="layout/mainLayout">      
+<head>
+	<title>Products - New</title>
+</head>
+<body>	
+	<div layout:fragment="content">
 		
-		  &lt;div class="box box-warning"&gt;
-			&lt;div class="box-header with-border"&gt;
-			  &lt;h3 class="box-title"&gt;Create New Product&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;div class="box-body"&gt;
-			  &lt;form role="form" th:action="@{/products}" th:object="${product}" 
-					method="post" enctype="multipart/form-data"&gt;
-				&lt;p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
+		  <div class="box box-warning">
+			<div class="box-header with-border">
+			  <h3 class="box-title">Create New Product</h3>
+			</div>
+			<div class="box-body">
+			  <form role="form" th:action="@{/products}" th:object="${product}" 
+					method="post" enctype="multipart/form-data">
+				<p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
+					th:class="text-red">Incorrect data</p>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'"&gt;
-				  &lt;label&gt;Name&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="name" th:field="*{name}" 
-					placeholder="Enter Product Name"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('name')}? 'has-error'">
+				  <label>Name</label>
+				  <input type="text" class="form-control" name="name" th:field="*{name}" 
+					placeholder="Enter Product Name"/>
+				  <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" 
+					th:class="text-red">Incorrect data</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('sku')}? 'has-error'"&gt;
-				  &lt;label&gt;SKU&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="sku" 
-						th:field="*{sku}" placeholder="Enter Product SKU"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('sku')}" th:errors="*{sku}" 
-					 th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('sku')}? 'has-error'">
+				  <label>SKU</label>
+				  <input type="text" class="form-control" name="sku" 
+						th:field="*{sku}" placeholder="Enter Product SKU"/>
+				  <p th:if="${#fields.hasErrors('sku')}" th:errors="*{sku}" 
+					 th:class="text-red">Incorrect data</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('price')}? 'has-error'"&gt;
-				  &lt;label&gt;Price&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="price" 
-					 th:field="*{price}" placeholder="Enter Product Price"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('price')}? 'has-error'">
+				  <label>Price</label>
+				  <input type="text" class="form-control" name="price" 
+					 th:field="*{price}" placeholder="Enter Product Price"/>
+				  <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" 
+					th:class="text-red">Incorrect data</p>
+				</div>
 				
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'"&gt;
-				  &lt;label&gt;Description&lt;/label&gt;
-				  &lt;textarea class="form-control" rows="3" name="description" 
-					th:field="*{description}" placeholder="Enter Role Description"&gt;&lt;/textarea&gt;
-				  &lt;p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
-						th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'">
+				  <label>Description</label>
+				  <textarea class="form-control" rows="3" name="description" 
+					th:field="*{description}" placeholder="Enter Role Description"></textarea>
+				  <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
+						th:class="text-red">Incorrect data</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('image')}? 'has-error'"&gt;
-				  &lt;label for="image"&gt;Image&lt;/label&gt;
-				  &lt;input type="file" class="form-control" name="image" th:field="*{image}"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('image')}" th:errors="*{image}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				  &lt;p class="help-block"&gt;Select JPG Image&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('image')}? 'has-error'">
+				  <label for="image">Image</label>
+				  <input type="file" class="form-control" name="image" th:field="*{image}"/>
+				  <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}" 
+					th:class="text-red">Incorrect data</p>
+				  <p class="help-block">Select JPG Image</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('categoryId')}? 'has-error'"&gt;
-					&lt;label&gt;Category&lt;/label&gt;
-					&lt;div&gt;
-						&lt;select class="form-control" th:field="*{categoryId}"&gt;
-						  &lt;option th:each="cat : ${categoriesList}" 
+				<div class="form-group" th:classappend="${#fields.hasErrors('categoryId')}? 'has-error'">
+					<label>Category</label>
+					<div>
+						<select class="form-control" th:field="*{categoryId}">
+						  <option th:each="cat : ${categoriesList}" 
 								  th:value="${cat.id}" 
-								  th:text="${cat.name}"&gt;Category&lt;/option&gt;
-						&lt;/select&gt;
-					&lt;p th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}"
-						th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-					&lt;/div&gt;
+								  th:text="${cat.name}">Category</option>
+						</select>
+					<p th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}"
+						th:class="text-red">Incorrect data</p>
+					</div>
 					
-				&lt;/div&gt;
+				</div>
 				
-				&lt;div class="box-footer"&gt;
-					&lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
-				&lt;/div&gt;
-			  &lt;/form&gt;
-			&lt;/div&gt;
-		  &lt;/div&gt;
-	&lt;/div&gt;
+				<div class="box-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			  </form>
+			</div>
+		  </div>
+	</div>
 	
-&lt;/body&gt;
+</body>
     
-&lt;/html&gt;
-</pre>
+</html>
+{{</ highlight >}}
 
 **jcart-admin/src/main/resources/templates/products/edit_product.html**
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;      
-&lt;head&gt;
-	&lt;title&gt;Products - Edit&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+      layout:decorator="layout/mainLayout">      
+<head>
+	<title>Products - Edit</title>
+</head>
+<body>
     	        
-	&lt;div layout:fragment="content"&gt;		
-		  &lt;div class="box box-warning"&gt;
-			&lt;div class="box-header with-border"&gt;
-			  &lt;h3 class="box-title"&gt;Edit Product&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;div class="box-body"&gt;
-			  &lt;form role="form" th:action="@{/products/{id}(id=${product.id})}" 
-					th:object="${product}" method="post"  enctype="multipart/form-data"&gt;
-				&lt;p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
+	<div layout:fragment="content">		
+		  <div class="box box-warning">
+			<div class="box-header with-border">
+			  <h3 class="box-title">Edit Product</h3>
+			</div>
+			<div class="box-body">
+			  <form role="form" th:action="@{/products/{id}(id=${product.id})}" 
+					th:object="${product}" method="post"  enctype="multipart/form-data">
+				<p th:if="${#fields.hasErrors('global')}" th:errors="*{global}" 
+					th:class="text-red">Incorrect data</p>
 				
-				&lt;div class="form-group"&gt;
-				  &lt;label&gt;Name&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="name" th:field="*{name}" readonly="readonly"/&gt;
-				&lt;/div&gt;
+				<div class="form-group">
+				  <label>Name</label>
+				  <input type="text" class="form-control" name="name" th:field="*{name}" readonly="readonly"/>
+				</div>
 				
-				&lt;div class="form-group"&gt;
-				  &lt;label&gt;SKU&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="sku" th:field="*{sku}" readonly="readonly"/&gt;
-				&lt;/div&gt;
+				<div class="form-group">
+				  <label>SKU</label>
+				  <input type="text" class="form-control" name="sku" th:field="*{sku}" readonly="readonly"/>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('price')}? 'has-error'"&gt;
-				  &lt;label&gt;Price&lt;/label&gt;
-				  &lt;input type="text" class="form-control" name="price" th:field="*{price}" 
-					placeholder="Enter Product Price"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" 
-					th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('price')}? 'has-error'">
+				  <label>Price</label>
+				  <input type="text" class="form-control" name="price" th:field="*{price}" 
+					placeholder="Enter Product Price"/>
+				  <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}" 
+					th:class="text-red">Incorrect data</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'"&gt;
-				  &lt;label&gt;Description&lt;/label&gt;
-				  &lt;textarea class="form-control" rows="3" name="description" th:field="*{description}" 
-					placeholder="Enter Role Description"&gt;&lt;/textarea&gt;
-				  &lt;p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
-					 th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('description')}? 'has-error'">
+				  <label>Description</label>
+				  <textarea class="form-control" rows="3" name="description" th:field="*{description}" 
+					placeholder="Enter Role Description"></textarea>
+				  <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}" 
+					 th:class="text-red">Incorrect data</p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('image')}? 'has-error'"&gt;
-				  &lt;label for="image"&gt;Image&lt;/label&gt;
-				  &lt;input type="file" class="form-control" name="image" th:field="*{image}"/&gt;
-				  &lt;p th:if="${#fields.hasErrors('image')}" th:errors="*{image}" th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-				  &lt;p class="help-block"&gt;Select JPG Image&lt;/p&gt;
-				  &lt;p&gt;
-					&lt;img alt="" src="image.jpg" th:src="@{'/products/images/{imageUrl}.jpg'(imageUrl=${product.id})}" 
-						height="200" width="250"/&gt;
-				  &lt;/p&gt;
-				&lt;/div&gt;
+				<div class="form-group" th:classappend="${#fields.hasErrors('image')}? 'has-error'">
+				  <label for="image">Image</label>
+				  <input type="file" class="form-control" name="image" th:field="*{image}"/>
+				  <p th:if="${#fields.hasErrors('image')}" th:errors="*{image}" th:class="text-red">Incorrect data</p>
+				  <p class="help-block">Select JPG Image</p>
+				  <p>
+					<img alt="" src="image.jpg" th:src="@{'/products/images/{imageUrl}.jpg'(imageUrl=${product.id})}" 
+						height="200" width="250"/>
+				  </p>
+				</div>
 				
-				&lt;div class="form-group" th:classappend="${#fields.hasErrors('categoryId')}? 'has-error'"&gt;
-					&lt;label&gt;Category&lt;/label&gt;
-					&lt;div&gt;
-						&lt;select class="form-control" th:field="*{categoryId}"&gt;
-						  &lt;option th:each="cat : ${categoriesList}" 
+				<div class="form-group" th:classappend="${#fields.hasErrors('categoryId')}? 'has-error'">
+					<label>Category</label>
+					<div>
+						<select class="form-control" th:field="*{categoryId}">
+						  <option th:each="cat : ${categoriesList}" 
 								  th:value="${cat.id}" 
-								  th:text="${cat.name}"&gt;Category&lt;/option&gt;
-						&lt;/select&gt;
-					&lt;p th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}" 
-						th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-					&lt;/div&gt;
+								  th:text="${cat.name}">Category</option>
+						</select>
+					<p th:if="${#fields.hasErrors('categoryId')}" th:errors="*{categoryId}" 
+						th:class="text-red">Incorrect data</p>
+					</div>
 					
-				&lt;/div&gt;
+				</div>
 									
-				&lt;div class="box-footer"&gt;
-					&lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
-				&lt;/div&gt;
-			  &lt;/form&gt;
-			&lt;/div&gt;
-		  &lt;/div&gt;
-	&lt;/div&gt;
+				<div class="box-footer">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			  </form>
+			</div>
+		  </div>
+	</div>
 	
-&lt;/body&gt;    
-&lt;/html&gt;
-</pre>
+</body>    
+</html>
+{{</ highlight >}}
 
 > That&#8217;s a lot of code snippets, I know it is difficult to read that much of code on blog!!
   

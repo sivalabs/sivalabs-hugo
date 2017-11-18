@@ -21,16 +21,16 @@ As we need Emailing feature in both Admin and ShoppingCart modules, we will impl
 
 Add the following dependency to **jcart-core/pom.xml**
 
-<pre class="brush: xml">&lt;dependency&gt;
-	&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;
-&lt;/dependency&gt;
-</pre>
+{{< highlight xml >}}
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-mail</artifactId>
+</dependency>
+{{</ highlight >}}
 
 Add the following properties in _jcart-core/src/main/resources/application.properties_
 
-<pre class="brush: xml">################### JavaMail Configuration ##########################
-
+{{< highlight properties >}}
 ## If you want to use GMail ##
 spring.mail.host=smtp.gmail.com
 spring.mail.port=465
@@ -52,11 +52,11 @@ spring.mail.properties.mail.smtps.timeout=2000
 #spring.mail.properties.mail.smtp.starttls.enable=true
 
 support.email=sivalabs.blogspot@gmail.com
-</pre>
+{{</ highlight >}}
 
 Let us create **EmailService **class as follows:
 
-<pre class="brush: java">@Component
+{{< highlight java >}}@Component
 public class EmailService 
 {
 	@Autowired 
@@ -86,11 +86,12 @@ public class EmailService
 		}
 	}	
 }
-</pre>
+{{</ highlight >}}
 
 Write a simple Test to check whether it is working or not.
 
-<pre class="brush: java">@RunWith(SpringJUnit4ClassRunner.class)
+{{< highlight java >}}
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = JCartCoreApplication.class)
 public class JCartCoreApplicationTest
 {
@@ -102,4 +103,4 @@ public class JCartCoreApplicationTest
 		emailService.sendEmail("admin@gmail.com", "JCart - Test Mail", "This is a test email from JCart");
 	}	
 }
-</pre>
+{{</ highlight >}}

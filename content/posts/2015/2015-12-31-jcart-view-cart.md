@@ -16,13 +16,18 @@ In our earlier post we have implemented **Add To Cart** functionality. In this p
 
 In out **mainLayout.html** header we have ShoppingCart icon showing the cart item count as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;div class="shopping-item"&gt;
-	&lt;a href="#" th:href="@{/cart}"&gt;Cart &lt;i class="fa fa-shopping-cart"&gt;&lt;/i&gt; &lt;span id="cart-item-count" class="product-count"&gt;(0)&lt;/span&gt;&lt;/a&gt;
-&lt;/div&gt;</pre>
+{{< highlight html>}}
+<div class="shopping-item">
+	<a href="#" th:href="@{/cart}">Cart <i class="fa fa-shopping-cart"></i> 
+	    <span id="cart-item-count" class="product-count">(0)</span>
+	</a>
+</div>
+{{</ highlight >}}
 
 When customer clicks on Cart icon we will show the Cart details. Let us implement the **&#8220;/cart&#8221;** url handler method in **CartController** as follows:
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 public class CartController extends JCartSiteBaseController
 {
 	....
@@ -34,122 +39,125 @@ public class CartController extends JCartSiteBaseController
 		model.addAttribute("cart", cart);
 		return "cart";
 	}
-}</pre>
+}
+{{</ highlight >}}
 
 Now let us create thymeleaf view template **cart.html** as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-      &lt;head&gt;
-        &lt;title&gt;Cart&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    	&lt;div layout:fragment="content"&gt;
+      <head>
+        <title>Cart</title>
+    </head>
+    <body>
+    	<div layout:fragment="content">
     
-		    &lt;div class="single-product-area"&gt;
-		        &lt;div class="zigzag-bottom"&gt;&lt;/div&gt;
-		        &lt;div class="container"&gt;
-		            &lt;div class="row"&gt;
-		                &lt;div class="woocommerce-info col-md-offset-2 col-md-8" th:if="${#lists.isEmpty(cart.items)}"&gt;
-							&lt;h2&gt;Cart is Empty&lt;/h2&gt;
-						&lt;/div&gt;
-		                &lt;div class="col-md-offset-2 col-md-8" th:unless="${#lists.isEmpty(cart.items)}"&gt;
-		                    &lt;div class="product-content-right"&gt;
-		                        &lt;div class="woocommerce"&gt;
-		                            &lt;form method="post" action="#"&gt;
-		                                &lt;table cellspacing="0" class="shop_table cart"&gt;
-		                                    &lt;thead&gt;
-		                                        &lt;tr&gt;
-		                                            &lt;th class="product-remove"&gt;&nbsp;&lt;/th&gt;
-		                                            &lt;th class="product-thumbnail"&gt;&nbsp;&lt;/th&gt;
-		                                            &lt;th class="product-name"&gt;Product&lt;/th&gt;
-		                                            &lt;th class="product-price"&gt;Price&lt;/th&gt;
-		                                            &lt;th class="product-quantity"&gt;Quantity&lt;/th&gt;
-		                                            &lt;th class="product-subtotal"&gt;Total&lt;/th&gt;
-		                                        &lt;/tr&gt;
-		                                    &lt;/thead&gt;
-		                                    &lt;tbody&gt;
-		                                        &lt;tr class="cart_item" th:each="item : ${cart.items}"&gt;
-		                                            &lt;td class="product-remove"&gt;
-		                                                &lt;a title="Remove this item" class="remove" href="#" 
-		                                                	th:onclick="'javascript:removeItemFromCart( \''+${item.product.sku}+'\');'"&gt;×&lt;/a&gt; 
-		                                            &lt;/td&gt;
+		    <div class="single-product-area">
+		        <div class="zigzag-bottom"></div>
+		        <div class="container">
+		            <div class="row">
+		                <div class="woocommerce-info col-md-offset-2 col-md-8" th:if="${#lists.isEmpty(cart.items)}">
+							<h2>Cart is Empty</h2>
+						</div>
+		                <div class="col-md-offset-2 col-md-8" th:unless="${#lists.isEmpty(cart.items)}">
+		                    <div class="product-content-right">
+		                        <div class="woocommerce">
+		                            <form method="post" action="#">
+		                                <table cellspacing="0" class="shop_table cart">
+		                                    <thead>
+		                                        <tr>
+		                                            <th class="product-remove">&nbsp;</th>
+		                                            <th class="product-thumbnail">&nbsp;</th>
+		                                            <th class="product-name">Product</th>
+		                                            <th class="product-price">Price</th>
+		                                            <th class="product-quantity">Quantity</th>
+		                                            <th class="product-subtotal">Total</th>
+		                                        </tr>
+		                                    </thead>
+		                                    <tbody>
+		                                        <tr class="cart_item" th:each="item : ${cart.items}">
+		                                            <td class="product-remove">
+		                                                <a title="Remove this item" class="remove" href="#" 
+		                                                	th:onclick="'javascript:removeItemFromCart( \''+${item.product.sku}+'\');'">×</a> 
+		                                            </td>
 		
-		                                            &lt;td class="product-thumbnail"&gt;
-		                                                &lt;a href="#" th:href="@{/products/{sku}(sku=${item.product.sku})}"&gt;
-		                                                	&lt;img width="145" height="145" alt="poster_1_up" 
+		                                            <td class="product-thumbnail">
+		                                                <a href="#" th:href="@{/products/{sku}(sku=${item.product.sku})}">
+		                                                	<img width="145" height="145" alt="poster_1_up" 
 		                                                	class="shop_thumbnail" src="assets/img/products/2.jpg"
-		                                                	th:src="@{'/products/images/{id}.jpg'(id=${item.product.id})}"/&gt;
-		                                                &lt;/a&gt;
-		                                            &lt;/td&gt;
+		                                                	th:src="@{'/products/images/{id}.jpg'(id=${item.product.id})}"/>
+		                                                </a>
+		                                            </td>
 		
-		                                            &lt;td class="product-name"&gt;
-		                                                &lt;a href="#" th:href="@{/products/{sku}(sku=${item.product.sku})}"
-		                                                	th:text="${item.product.name}"&gt;Product name&lt;/a&gt; 
-		                                            &lt;/td&gt;
+		                                            <td class="product-name">
+		                                                <a href="#" th:href="@{/products/{sku}(sku=${item.product.sku})}"
+		                                                	th:text="${item.product.name}">Product name</a> 
+		                                            </td>
 		
-		                                            &lt;td class="product-price"&gt;
-		                                                &lt;span class="amount" th:text="${item.product.price}"&gt;$15.00&lt;/span&gt; 
-		                                            &lt;/td&gt;
+		                                            <td class="product-price">
+		                                                <span class="amount" th:text="${item.product.price}">$15.00</span> 
+		                                            </td>
 		
-		                                            &lt;td class="product-quantity"&gt;
-		                                                &lt;div class="quantity buttons_added"&gt;
-		                                                	&lt;input type="text" size="5" value="1" th:value="${item.quantity}" 
-		                                                			th:onchange="'javascript:updateCartItemQuantity( \''+${item.product.sku}+'\' , '+this.value+');'"/&gt;                                                   
-		                                                &lt;/div&gt;
-		                                            &lt;/td&gt;
+		                                            <td class="product-quantity">
+		                                                <div class="quantity buttons_added">
+		                                                	<input type="text" size="5" value="1" th:value="${item.quantity}" 
+		                                                			th:onchange="'javascript:updateCartItemQuantity( \''+${item.product.sku}+'\' , '+this.value+');'"/>                                                   
+		                                                </div>
+		                                            </td>
 		
-		                                            &lt;td class="product-subtotal"&gt;
-		                                                &lt;span class="amount" th:text="${item.product.price * item.quantity}"&gt;$150.00&lt;/span&gt; 
-		                                            &lt;/td&gt;
-		                                        &lt;/tr&gt;
-		                                        &lt;tr&gt;
-		                                            &lt;td class="actions" colspan="6"&gt;
-		                                                &lt;a class="add_to_cart_button" href="#" th:href="@{/checkout}"&gt;CHECKOUT&lt;/a&gt;
-		                                            &lt;/td&gt;
-		                                        &lt;/tr&gt;
-		                                    &lt;/tbody&gt;
-		                                &lt;/table&gt;
-		                            &lt;/form&gt;
+		                                            <td class="product-subtotal">
+		                                                <span class="amount" th:text="${item.product.price * item.quantity}">$150.00</span> 
+		                                            </td>
+		                                        </tr>
+		                                        <tr>
+		                                            <td class="actions" colspan="6">
+		                                                <a class="add_to_cart_button" href="#" th:href="@{/checkout}">CHECKOUT</a>
+		                                            </td>
+		                                        </tr>
+		                                    </tbody>
+		                                </table>
+		                            </form>
 		
-		                            &lt;div class="cart-collaterals"&gt;
-					                     &lt;div class="cart_totals "&gt;
-		                                &lt;h2&gt;Cart Totals&lt;/h2&gt;
+		                            <div class="cart-collaterals">
+					                     <div class="cart_totals ">
+		                                <h2>Cart Totals</h2>
 		
-		                                &lt;table cellspacing="0"&gt;
-		                                    &lt;tbody&gt;
-		                                        &lt;tr class="cart-subtotal"&gt;
-		                                            &lt;th&gt;Cart Subtotal&lt;/th&gt;
-		                                            &lt;td&gt;&lt;span class="amount" th:text="${cart.totalAmount}"&gt;$15.00&lt;/span&gt;&lt;/td&gt;
-		                                        &lt;/tr&gt;
+		                                <table cellspacing="0">
+		                                    <tbody>
+		                                        <tr class="cart-subtotal">
+		                                            <th>Cart Subtotal</th>
+		                                            <td><span class="amount" th:text="${cart.totalAmount}">$15.00</span></td>
+		                                        </tr>
 		
-		                                        &lt;tr class="shipping"&gt;
-		                                            &lt;th&gt;Shipping and Handling&lt;/th&gt;
-		                                            &lt;td&gt;Free Shipping&lt;/td&gt;
-		                                        &lt;/tr&gt;
+		                                        <tr class="shipping">
+		                                            <th>Shipping and Handling</th>
+		                                            <td>Free Shipping</td>
+		                                        </tr>
 		
-		                                        &lt;tr class="order-total"&gt;
-		                                            &lt;th&gt;Order Total&lt;/th&gt;
-		                                            &lt;td&gt;&lt;strong&gt;&lt;span class="amount" th:text="${cart.totalAmount}"&gt;$15.00&lt;/span&gt;&lt;/strong&gt; &lt;/td&gt;
-		                                        &lt;/tr&gt;
-		                                    &lt;/tbody&gt;
-		                                &lt;/table&gt;
-		                            &lt;/div&gt;
+		                                        <tr class="order-total">
+		                                            <th>Order Total</th>
+		                                            <td><strong><span class="amount" th:text="${cart.totalAmount}">$15.00</span></strong> </td>
+		                                        </tr>
+		                                    </tbody>
+		                                </table>
+		                            </div>
 		
-		                            &lt;/div&gt;
-		                        &lt;/div&gt;                        
-		                    &lt;/div&gt;                    
-		                &lt;/div&gt;
-		            &lt;/div&gt;
-		        &lt;/div&gt;
-		    &lt;/div&gt;
+		                            </div>
+		                        </div>                        
+		                    </div>                    
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 		
-		&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
+		</div>
+  </body>
+</html>
+{{</ highlight >}}
 
 Now run the application and add items to cart and click on Cart Icon which should display Cart page with all the Cart item details.
 
@@ -157,7 +165,8 @@ Observe that we have already added HTML markup and JavaScript function calls to 
 
 Let us add the following two JavaScript functions to update item count and remove items.
 
-<pre class="lang:js decode:true ">function updateCartItemQuantity(sku, quantity)
+{{< highlight javascript>}}
+function updateCartItemQuantity(sku, quantity)
 {
 	$.ajax ({ 
 		url: '/cart/items', 
@@ -184,11 +193,13 @@ function removeItemFromCart(sku)
 			location.href = '/cart' 
 		}
 	});
-}</pre>
+}
+{{</ highlight >}}
 
 Next we will implement the **CartController** handler methods as follows:
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 public class CartController extends JCartSiteBaseController
 {
 	...
@@ -196,10 +207,12 @@ public class CartController extends JCartSiteBaseController
 	
 	@RequestMapping(value="/cart/items", method=RequestMethod.PUT)
 	@ResponseBody
-	public void updateCartItem(@RequestBody LineItem item, HttpServletRequest request, HttpServletResponse response)
+	public void updateCartItem(@RequestBody LineItem item, 
+	                            HttpServletRequest request, 
+	                            HttpServletResponse response)
 	{
 		Cart cart = getOrCreateCart(request);
-		if(item.getQuantity() &lt;= 0){
+		if(item.getQuantity() <= 0){
 			String sku = item.getProduct().getSku();
 			cart.removeItem(sku);
 		} else {
@@ -209,12 +222,14 @@ public class CartController extends JCartSiteBaseController
 	
 	@RequestMapping(value="/cart/items/{sku}", method=RequestMethod.DELETE)
 	@ResponseBody
-	public void removeCartItem(@PathVariable("sku") String sku, HttpServletRequest request)
+	public void removeCartItem(@PathVariable("sku") String sku, 
+	                            HttpServletRequest request)
 	{
 		Cart cart = getOrCreateCart(request);
 		cart.removeItem(sku);
 	}
 
-}</pre>
+}
+{{</ highlight >}}
 
 Now that we have completed all the Cart related usecases. In our next post we will see how to implement Checkout functionality.

@@ -16,7 +16,8 @@ For Managing Orders we need a provision to see all the list of orders and view a
 
 Let us start with implementing the back-end order service.
 
-<pre class="lang:java decode:true ">@Service
+{{< highlight java >}}
+@Service
 @Transactional
 public class OrderService
 {
@@ -31,7 +32,7 @@ public class OrderService
 		return orderRepository.findByOrderNumber(orderNumber);
 	}
 
-	public List&lt;Order&gt; getAllOrders()
+	public List<Order> getAllOrders()
 	{
 		Sort sort = new Sort(Direction.DESC, "createdOn");
 		return orderRepository.findAll(sort);
@@ -44,11 +45,12 @@ public class OrderService
 		return savedOrder;
 	}
 }
-</pre>
+{{</ highlight>}}
 
 Now let us implement OrderController to handle the requests to display list of orders, the selected order details and updating the Order status.
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 @Secured(SecurityUtil.MANAGE_ORDERS)
 public class OrderController extends JCartAdminBaseController
 {
@@ -67,7 +69,7 @@ public class OrderController extends JCartAdminBaseController
 	
 	@RequestMapping(value="/orders", method=RequestMethod.GET)
 	public String listOrders(Model model) {
-		List&lt;Order&gt; list = orderService.getAllOrders();
+		List<Order> list = orderService.getAllOrders();
 		model.addAttribute("orders",list);
 		return viewPrefix+"orders";
 	}
@@ -103,160 +105,168 @@ public class OrderController extends JCartAdminBaseController
 			logger.error(e);
 		}
 	}
-}</pre>
+}
+{{</ highlight>}}
 
 We are using thymeleaf email template jcart-core/src/main/resources/email-templates/order-status-update-email.html for sending the Order Status Update email.
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns:th="http://www.thymeleaf.org"&gt;
-  &lt;head&gt;
-    &lt;title th:remove="all"&gt;Template for HTML email&lt;/title&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;p th:text="${'Hello '+order.customer.firstName}"&gt;
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:remove="all">Template for HTML email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p th:text="${'Hello '+order.customer.firstName}">
       Hello Customer
-    &lt;/p&gt;
-    &lt;p&gt;
-       Order Number : &lt;span th:text="${order.orderNumber}"&gt;Number&lt;/span&gt;&lt;br/&gt;
-       Status: &lt;span th:text="${order.status}"&gt;Status&lt;/span&gt;
-    &lt;/p&gt;
-    &lt;p&gt;
-      Regards, &lt;br /&gt;
-      &lt;em&gt;The QuilCart Team&lt;/em&gt;
-    &lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
+    </p>
+    <p>
+       Order Number : <span th:text="${order.orderNumber}">Number</span><br/>
+       Status: <span th:text="${order.status}">Status</span>
+    </p>
+    <p>
+      Regards, <br />
+      <em>The QuilCart Team</em>
+    </p>
+  </body>
+</html>
+{{</ highlight>}}
 
 Create the thymeleaf view template for showing list of orders orders.html as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;      
- &lt;head&gt;
-	&lt;title&gt;Orders&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;			
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="row"&gt;
-		&lt;div class="col-md-12"&gt;
-		  &lt;div class="box"&gt;
-			&lt;div class="box-header"&gt;
-			  &lt;h3 class="box-title"&gt;List of Orders&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;div class="box-body table-responsive no-padding"&gt;
-			  &lt;table class="table table-hover"&gt;
-				&lt;tr&gt;
-				  &lt;th style="width: 10px"&gt;#&lt;/th&gt;
-				  &lt;th&gt;Order Number&lt;/th&gt;
-				  &lt;th&gt;Customer Name&lt;/th&gt;
-				  &lt;th&gt;Email&lt;/th&gt;
-				  &lt;th&gt;Edit&lt;/th&gt;				  
-				&lt;/tr&gt;
-				&lt;tr th:each="order,iterStat : ${orders}"&gt;
-				  &lt;td&gt;&lt;span th:text="${iterStat.count}"&gt;1&lt;/span&gt;&lt;/td&gt;
-				  &lt;td th:text="${order.orderNumber}"&gt;Order Number&lt;/td&gt;
-				  &lt;td th:text="${order.customer.firstName}"&gt;Customer Name&lt;/td&gt;
-				  &lt;td th:text="${order.customer.email}"&gt;Customer Email&lt;/td&gt;
-				  &lt;td&gt;&lt;a th:href="@{/orders/{orderNumber}(orderNumber=${order.orderNumber})}" 
-						 class="btn btn-sm btn-default"&gt;&lt;i class="fa fa-edit"&gt;&lt;/i&gt; Edit&lt;/a&gt;&lt;/td&gt;
-				&lt;/tr&gt;                    
-			  &lt;/table&gt;
-			&lt;/div&gt;			
-		  &lt;/div&gt;
-		 &lt;/div&gt;
-	&lt;/div&gt;		  
-	&lt;/div&gt;	
-&lt;/body&gt;    
-&lt;/html&gt;</pre>
+      layout:decorator="layout/mainLayout">      
+ <head>
+	<title>Orders</title>
+</head>
+<body>			
+	<div layout:fragment="content">
+		<div class="row">
+		<div class="col-md-12">
+		  <div class="box">
+			<div class="box-header">
+			  <h3 class="box-title">List of Orders</h3>
+			</div>
+			<div class="box-body table-responsive no-padding">
+			  <table class="table table-hover">
+				<tr>
+				  <th style="width: 10px">#</th>
+				  <th>Order Number</th>
+				  <th>Customer Name</th>
+				  <th>Email</th>
+				  <th>Edit</th>				  
+				</tr>
+				<tr th:each="order,iterStat : ${orders}">
+				  <td><span th:text="${iterStat.count}">1</span></td>
+				  <td th:text="${order.orderNumber}">Order Number</td>
+				  <td th:text="${order.customer.firstName}">Customer Name</td>
+				  <td th:text="${order.customer.email}">Customer Email</td>
+				  <td><a th:href="@{/orders/{orderNumber}(orderNumber=${order.orderNumber})}" 
+						 class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Edit</a></td>
+				</tr>                    
+			  </table>
+			</div>			
+		  </div>
+		 </div>
+	</div>		  
+	</div>	
+</body>    
+</html>
+{{</ highlight>}}
 
 Create the thymeleaf view template for showing order details edit_order.html as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-	layout:decorator="layout/mainLayout"&gt;
-&lt;head&gt;
-&lt;title&gt;Orders - Edit&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="box box-warning"&gt;
-			&lt;div class="box-header with-border"&gt;
-				&lt;h3 class="box-title"&gt;Edit Order&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;!-- /.box-header --&gt;
-			&lt;div class="box-body"&gt;
-				&lt;form role="form"
+	layout:decorator="layout/mainLayout">
+<head>
+<title>Orders - Edit</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="box box-warning">
+			<div class="box-header with-border">
+				<h3 class="box-title">Edit Order</h3>
+			</div>
+			<!-- /.box-header -->
+			<div class="box-body">
+				<form role="form"
 					th:action="@{/orders/{orderNumber}(orderNumber=${order.orderNumber})}"
-					th:object="${order}" method="post"&gt;
-					&lt;p th:if="${#fields.hasErrors('global')}" th:errors="*{global}"
-						th:class="text-red"&gt;Incorrect data&lt;/p&gt;
-					&lt;div&gt;
-						&lt;div th:unless="${order}"&gt;
-							&lt;h2&gt;No order found&lt;/h2&gt;
-						&lt;/div&gt;
-						&lt;div th:if="${order}"&gt;
-							&lt;h3&gt;
-								Order Number : &lt;span th:text="${order.orderNumber}"&gt;Number&lt;/span&gt;
-							&lt;/h3&gt;
-							&lt;h3&gt;Order Item Details&lt;/h3&gt;
-							&lt;table class="table table-hover"&gt;
-								&lt;thead&gt;
-									&lt;tr&gt;
-										&lt;th&gt;Name&lt;/th&gt;
-										&lt;th&gt;Quantity&lt;/th&gt;
-										&lt;th&gt;Cost&lt;/th&gt;
-									&lt;/tr&gt;
-								&lt;/thead&gt;
-								&lt;tbody&gt;
-									&lt;tr th:each="item : ${order.items}"&gt;
-										&lt;td th:text="${item.product.name}"&gt;product.name&lt;/td&gt;
-										&lt;td th:text="${item.quantity}"&gt;&lt;/td&gt;
-										&lt;td th:text="${item.price * item.quantity}"&gt;price&lt;/td&gt;
-									&lt;/tr&gt;
-								&lt;/tbody&gt;
-								&lt;tfoot&gt;
+					th:object="${order}" method="post">
+					<p th:if="${#fields.hasErrors('global')}" th:errors="*{global}"
+						th:class="text-red">Incorrect data</p>
+					<div>
+						<div th:unless="${order}">
+							<h2>No order found</h2>
+						</div>
+						<div th:if="${order}">
+							<h3>
+								Order Number : <span th:text="${order.orderNumber}">Number</span>
+							</h3>
+							<h3>Order Item Details</h3>
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Quantity</th>
+										<th>Cost</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="item : ${order.items}">
+										<td th:text="${item.product.name}">product.name</td>
+										<td th:text="${item.quantity}"></td>
+										<td th:text="${item.price * item.quantity}">price</td>
+									</tr>
+								</tbody>
+								<tfoot>
 
-									&lt;tr class="cart-subtotal"&gt;
-										&lt;th&gt;Order Subtotal&lt;/th&gt;
-										&lt;td&gt;&lt;span class="amount" th:text="${order.totalAmount}"&gt;£15.00&lt;/span&gt;
-										&lt;/td&gt;
-									&lt;/tr&gt;
+									<tr class="cart-subtotal">
+										<th>Order Subtotal</th>
+										<td><span class="amount" th:text="${order.totalAmount}">£15.00</span>
+										</td>
+									</tr>
 
-									&lt;tr class="shipping"&gt;
-										&lt;th&gt;Shipping and Handling&lt;/th&gt;
-										&lt;td&gt;Free Shipping&lt;/td&gt;
-									&lt;/tr&gt;
+									<tr class="shipping">
+										<th>Shipping and Handling</th>
+										<td>Free Shipping</td>
+									</tr>
 
-									&lt;tr class="order-total"&gt;
-										&lt;th&gt;Order Total&lt;/th&gt;
-										&lt;td&gt;&lt;strong&gt;&lt;span class="amount"
-												th:text="${order.totalAmount}"&gt;£15.00&lt;/span&gt;&lt;/strong&gt;&lt;/td&gt;
-									&lt;/tr&gt;
+									<tr class="order-total">
+										<th>Order Total</th>
+										<td><strong><span class="amount"
+												th:text="${order.totalAmount}">£15.00</span></strong></td>
+									</tr>
 
-								&lt;/tfoot&gt;
-							&lt;/table&gt;
-							&lt;div&gt;
-								&lt;label&gt;Order Status&lt;/label&gt; &lt;select th:field="*{status}"&gt;
-									&lt;option
+								</tfoot>
+							</table>
+							<div>
+								<label>Order Status</label> <select th:field="*{status}">
+									<option
 										th:each="status: ${T(com.sivalabs.jcart.entities.OrderStatus).values()}"
-										th:value="${status}" th:text="${status}"&gt;Status&lt;/option&gt;
-								&lt;/select&gt;
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;div class="box-footer"&gt;
-						&lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
-					&lt;/div&gt;
-				&lt;/form&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+										th:value="${status}" th:text="${status}">Status</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+{{</ highlight>}}
 
-Now you can run the application and click on Order menu item in left navigation. You can see list of order and click on Edit button to view order details or edit the order status.
+Now you can run the application and click on Order menu item in left navigation. 
+You can see list of order and click on Edit button to view order details or edit the order status.

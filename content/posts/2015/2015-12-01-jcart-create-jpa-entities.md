@@ -15,7 +15,7 @@ tags:
 ---
 We are going to create the JPA Entities for the database tables we designed.
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="users")
 public class User
 {
@@ -39,12 +39,12 @@ public class User
 	      name="user_role",
 	      joinColumns={@JoinColumn(name="USER_ID", referencedColumnName="ID")},
 	      inverseJoinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")})
-	private List&lt;Role&gt; roles;
+	private List<Role> roles;
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="roles")
 public class Role
 {
@@ -57,20 +57,20 @@ public class Role
 	private String description;
 	
 	@ManyToMany(mappedBy="roles")
-	private List&lt;User&gt; users;
+	private List<User> users;
 
 	@ManyToMany
 	  @JoinTable(
 	      name="role_permission",
 	      joinColumns={@JoinColumn(name="ROLE_ID", referencedColumnName="ID")},
 	      inverseJoinColumns={@JoinColumn(name="PERM_ID", referencedColumnName="ID")})
-	  private List&lt;Permission&gt; permissions;
+	  private List<Permission> permissions;
 
 	 //setters & getters 
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="permissions")
 public class Permission
 {
@@ -81,13 +81,13 @@ public class Permission
 	@Column(length=1024)
 	private String description;
 	@ManyToMany(mappedBy="permissions")
-	private List&lt;Role&gt; roles;
+	private List<Role> roles;
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="addresses")
 public class Address implements Serializable
 {
@@ -103,9 +103,9 @@ public class Address implements Serializable
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="categories")
 public class Category
 {
@@ -120,13 +120,13 @@ public class Category
 	private Integer displayOrder;
 	private boolean disabled;
 	@OneToMany(mappedBy="category")
-	private Set&lt;Product&gt; products;
+	private Set<Product> products;
 
 	//setters & getters	
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="products")
 public class Product implements Serializable
 {
@@ -153,9 +153,9 @@ public class Product implements Serializable
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="customers")
 public class Customer implements Serializable
 {
@@ -178,9 +178,9 @@ public class Customer implements Serializable
 
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="orders")
 public class Order implements Serializable
 {
@@ -190,7 +190,7 @@ public class Order implements Serializable
 	@Column(nullable=false, unique=true)
 	private String orderNumber;
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="order")
-	private Set&lt;OrderItem&gt; items;
+	private Set<OrderItem> items;
 	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name="cust_id")
 	private Customer customer;
@@ -211,9 +211,9 @@ public class Order implements Serializable
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="order_items")
 public class OrderItem implements Serializable
 {
@@ -231,15 +231,15 @@ public class OrderItem implements Serializable
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">public enum OrderStatus
+{{< highlight java >}}public enum OrderStatus
 {
 	NEW, IN_PROCESS, COMPLETED, FAILED
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Entity
+{{< highlight java >}}@Entity
 @Table(name="payments")
 public class Payment implements Serializable
 {
@@ -253,7 +253,7 @@ public class Payment implements Serializable
 	
 	//setters & getters
 }
-</pre>
+{{</ highlight >}}
 
 As we have configured **spring.jpa.hibernate.ddl-auto=update** when we run the JCartCoreApplicationTest again all the tables will be automatically created/updated.
 

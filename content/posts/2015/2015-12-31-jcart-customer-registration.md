@@ -16,15 +16,19 @@ To facilitate new customer registration we will provide a new Registration form 
 
 Let us implement the back-end customer service operations.
 
-<pre class="lang:java decode:true ">public interface CustomerRepository extends JpaRepository&lt;Customer, Integer&gt;{
+{{< highlight java >}}
+public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	Customer findByEmail(String email);
-}</pre>
+}
+{{</ highlight >}}
 
-<pre class="lang:java decode:true ">@Service
+{{< highlight java >}}
+@Service
 @Transactional
 public class CustomerService 
 {
-	@Autowired CustomerRepository customerRepository;
+	@Autowired 
+	CustomerRepository customerRepository;
 	
 	public Customer getCustomerByEmail(String email) {
 		return customerRepository.findByEmail(email);
@@ -33,22 +37,26 @@ public class CustomerService
 	public Customer createCustomer(Customer customer) {
 		return customerRepository.save(customer);
 	}
-}</pre>
+}
+{{</ highlight >}}
 
-<pre class="lang:java decode:true ">@Component
+{{< highlight java >}}
+@Component
 public class CustomerValidator implements Validator
 {
-	@Autowired private CustomerService custmoerService;
+	@Autowired 
+	private CustomerService custmoerService;
 
 	@Override
-	public boolean supports(Class&lt;?&gt; clazz) {
+	public boolean supports(Class<?> clazz) {
 		return Customer.class.isAssignableFrom(clazz);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
 		Customer customer = (Customer) target;
-		Customer customerByEmail = custmoerService.getCustomerByEmail(customer.getEmail());
+		Customer customerByEmail = custmoerService
+		        .getCustomerByEmail(customer.getEmail());
 		if(customerByEmail != null){
 			errors.rejectValue("email", "error.exists", 
 			new Object[]{customer.getEmail()}, 
@@ -56,11 +64,13 @@ public class CustomerValidator implements Validator
 		}
 	}
 	
-}</pre>
+}
+{{</ highlight >}}
 
 Let us implement the **CustomerController** registration handler methods as follows:
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 public class CustomerController extends JCartSiteBaseController
 {	
 	@Autowired private CustomerService customerService;
@@ -81,8 +91,10 @@ public class CustomerController extends JCartSiteBaseController
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.POST)
-	protected String register(@Valid @ModelAttribute("customer") Customer customer, 
-		BindingResult result, Model model, RedirectAttributes redirectAttributes)
+	protected String register(
+	    @Valid @ModelAttribute("customer") Customer customer, 
+		BindingResult result, Model model, 
+		RedirectAttributes redirectAttributes)
 	{
 		customerValidator.validate(customer, result);
 		if(result.hasErrors()){
@@ -93,97 +105,103 @@ public class CustomerController extends JCartSiteBaseController
 		customer.setPassword(encodedPwd);
 		
 		Customer persistedCustomer = customerService.createCustomer(customer);
-		logger.debug("Created new Customer with id : {} and email : {}", persistedCustomer.getId(), persistedCustomer.getEmail());
-		redirectAttributes.addFlashAttribute("info", "Customer created successfully");
+		logger.debug("Created new Customer with id : {} and email : {}", 
+		    persistedCustomer.getId(), persistedCustomer.getEmail());
+		redirectAttributes.addFlashAttribute("info", 
+		            "Customer created successfully");
 		return "redirect:/login";
 	}
 	
-}</pre>
+}
+{{</ highlight >}}
 
 Finally let us create the **register.html** thymeleaf view as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-&lt;head&gt;
-	&lt;title&gt;Register&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="single-product-area"&gt;
-			&lt;div class="zigzag-bottom"&gt;&lt;/div&gt;
-			&lt;div class="container"&gt;
+<head>
+	<title>Register</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="single-product-area">
+			<div class="zigzag-bottom"></div>
+			<div class="container">
 				
-				&lt;div class="row"&gt;
+				<div class="row">
 					
-					&lt;div class="col-md-offset-3 col-md-6" &gt;
-						&lt;form id="login-form-wrap" th:action="@{/register}" th:object="${customer}" method="post"&gt;
+					<div class="col-md-offset-3 col-md-6" >
+						<form id="login-form-wrap" th:action="@{/register}" th:object="${customer}" method="post">
 
-							&lt;p class="form-row form-row-first"&gt;
-								&lt;label for="firstName"&gt;FirstName &lt;span class="required"&gt;*&lt;/span&gt;
-								&lt;/label&gt;
-								&lt;input type="text" th:field="*{firstName}" class="input-text"/&gt;
-								&lt;p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="text-danger"&gt;Incorrect data&lt;/p&gt;
-							&lt;/p&gt;
+							<p class="form-row form-row-first">
+								<label for="firstName">FirstName <span class="required">*</span>
+								</label>
+								<input type="text" th:field="*{firstName}" class="input-text"/>
+								<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="text-danger">Incorrect data</p>
+							</p>
 							
-							&lt;p class="form-row form-row-first"&gt;
-								&lt;label for="lastName"&gt;LastName &lt;span class="required"&gt;*&lt;/span&gt;
-								&lt;/label&gt;
-								&lt;input type="text" th:field="*{lastName}" class="input-text"/&gt;
-								&lt;p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="text-danger"&gt;Incorrect data&lt;/p&gt;
+							<p class="form-row form-row-first">
+								<label for="lastName">LastName <span class="required">*</span>
+								</label>
+								<input type="text" th:field="*{lastName}" class="input-text"/>
+								<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="text-danger">Incorrect data</p>
 								
-							&lt;/p&gt;
+							</p>
 							
-							&lt;p class="form-row form-row-first"&gt;
-								&lt;label for="email"&gt;Email &lt;span class="required"&gt;*&lt;/span&gt;
-								&lt;/label&gt;
-								&lt;input type="email" th:field="*{email}" class="input-text" placeholder="Email"/&gt;
-								&lt;p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="text-danger"&gt;Incorrect data&lt;/p&gt;
-							&lt;/p&gt;
-							&lt;p class="form-row form-row-last"&gt;
-								&lt;label for="password"&gt;Password &lt;span class="required"&gt;*&lt;/span&gt;
-								&lt;/label&gt;
-								&lt;input type="password" th:field="*{password}" class="input-text" placeholder="Password"/&gt;
-								&lt;p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="text-danger"&gt;Incorrect data&lt;/p&gt;
-							&lt;/p&gt;
+							<p class="form-row form-row-first">
+								<label for="email">Email <span class="required">*</span>
+								</label>
+								<input type="email" th:field="*{email}" class="input-text" placeholder="Email"/>
+								<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:errorclass="text-danger">Incorrect data</p>
+							</p>
+							<p class="form-row form-row-last">
+								<label for="password">Password <span class="required">*</span>
+								</label>
+								<input type="password" th:field="*{password}" class="input-text" placeholder="Password"/>
+								<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="text-danger">Incorrect data</p>
+							</p>
 							
-							&lt;p class="form-row form-row-first"&gt;
-								&lt;label for="phone"&gt;Phone &lt;span class="required"&gt;*&lt;/span&gt;
-								&lt;/label&gt;
-								&lt;input type="text" th:field="*{phone}" class="input-text"/&gt;
-								&lt;p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" th:errorclass="text-danger"&gt;Incorrect data&lt;/p&gt;
-							&lt;/p&gt;
-							&lt;div class="clear"&gt;&lt;/div&gt;
+							<p class="form-row form-row-first">
+								<label for="phone">Phone <span class="required">*</span>
+								</label>
+								<input type="text" th:field="*{phone}" class="input-text"/>
+								<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" th:errorclass="text-danger">Incorrect data</p>
+							</p>
+							<div class="clear"></div>
 
 
-							&lt;p class="form-row"&gt;
-								&lt;input type="submit" value="Login" class="button"/&gt;
-							&lt;/p&gt;
+							<p class="form-row">
+								<input type="submit" value="Login" class="button"/>
+							</p>
 							
-							&lt;p&gt;
-								&lt;div th:if="${info!=null}" class="alert alert-warning alert-dismissable" &gt;
-									&lt;p&gt;&lt;i class="icon fa fa-warning"&gt;&lt;/i&gt; &lt;span th:text="${info}"&gt;&lt;/span&gt;&lt;/p&gt;
-								&lt;/div&gt;   
-							&lt;/p&gt;
-							&lt;p class="lost_password"&gt;
-								Existing Customer? &lt;a href="#" th:href="@{/login}" th:text="#{label.login}"&gt;Login&lt;/a&gt;
-							&lt;/p&gt;
+							<p>
+								<div th:if="${info!=null}" class="alert alert-warning alert-dismissable" >
+									<p><i class="icon fa fa-warning"></i> <span th:text="${info}"></span></p>
+								</div>   
+							</p>
+							<p class="lost_password">
+								Existing Customer? <a href="#" th:href="@{/login}" th:text="#{label.login}">Login</a>
+							</p>
 							
-							&lt;div class="clear"&gt;&lt;/div&gt;
-						&lt;/form&gt;
+							<div class="clear"></div>
+						</form>
 						
-					&lt;/div&gt;
-				&lt;/div&gt;
+					</div>
+				</div>
 				
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+			</div>
+		</div>
+	</div>
 	
-&lt;/body&gt;
+</body>
     
-&lt;/html&gt;</pre>
+</html>
+{{</ highlight >}}
 
-Now new customers can click on Register link and register themselves. Once the registration is successful he can login and proceed to checkout the cart.
+Now new customers can click on Register link and register themselves. 
+Once the registration is successful he can login and proceed to checkout the cart.

@@ -1,6 +1,7 @@
 ---
 title: Java Bloggers Meet at Hyderabad Oracle Campus Celebrating Java 20 Years Anniversary
 author: Siva
+draft: true
 type: post
 date: 2015-06-16T05:52:00+00:00
 url: /2015/06/java-bloggers-meet-at-hyderabad-oracle-campus-celebrating-java-20-years-anniversary/

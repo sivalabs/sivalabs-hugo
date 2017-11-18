@@ -45,9 +45,7 @@ So, I thought of helping them by writing a series of articles explaining how the
   
 I do give trainings on Core Java, Spring and JavaEE. I hope the projects that will be developed for this series may also be helpful for my Java trainings as well.
 
-**<span style="text-decoration: underline;">I want to learn more</span>
-  
-**Teaching is the best way to learn.
+**<span style="text-decoration: underline;">I want to learn more</span>** and Teaching is the best way to learn.
 
 ### What we are going to do?
 
@@ -57,28 +55,28 @@ We will develop an e-commerce application using Java technologies. We will start
 
 ### Table of contents:
 
-  1. <a href="http://sivalabs.in/introducing-the-application-jcart/" target="_blank">Introducing the application JCart</a> 
+  1. Introducing the application JCart
       * High Level Requirements
       * Overview of System Architecture
-  2. <a href="http://sivalabs.in/jcart-requirements-analysis/" target="_blank">Requirements Analysis</a>
-  3. <a href="http://sivalabs.in/selecting-the-technology-stack-for-jcart/" target="_blank">Selecting The Technology Stack</a> 
+  2. Requirements Analysis
+  3. Selecting The Technology Stack 
       * Platform, Frameworks
       * Application Server, Database
       * IDE, Build Tool, Version Control System (VCS)
       * Continuous Integration, Code Quality Checking
-  4. <a href="http://sivalabs.in/jcart-release-planning/" target="_blank">Release Planning</a> 
+  4. Release Planning 
       * Plan Iterations & UseCases
       * Estimations & Release Schedules
-  5. <a href="http://sivalabs.in/setting-up-the-development-environment-for-jcart/" target="_blank">Setting up the Development Environment</a>
+  5. Setting up the Development Environment
   6. Building Administration/ShoppingCart WebApps 
-      * <a href="http://sivalabs.in/2015/12/jcart-iteration-1.html" target="_blank">Iteration &#8211; 1</a>
-      * Iteration &#8211; 2
-      * Iteration &#8211; 3
-      * Iteration &#8211; 4
-      * Iteration &#8211; 5
-      * Iteration &#8211; 6
-      * Iteration &#8211; 7
-      * Iteration &#8211; 8
+      * Iteration - 1
+      * Iteration - 2
+      * Iteration - 3
+      * Iteration - 4
+      * Iteration - 5
+      * Iteration - 6
+      * Iteration - 7
+      * Iteration - 8
   7. Deploying to Production 
       * Clustering and Load balancing
       * Setting up Monitoring Tools

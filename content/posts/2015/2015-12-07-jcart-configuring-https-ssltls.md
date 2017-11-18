@@ -27,12 +27,12 @@ _Just for the sake of completion I will mention the steps here._
 
 First we need to generate Self Signed SSL certificate using the following command:
 
-<pre class="brush: java">keytool -genkey -alias jcartadmintomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore jcartadminkeystore.p12 -validity 3650
-</pre>
+{{< highlight java >}}keytool -genkey -alias jcartadmintomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore jcartadminkeystore.p12 -validity 3650
+{{</ highlight >}}
 
 It will ask you a series of questions. I gave **jcartadmin** as keystore password.
 
-<pre class="brush: java">Enter keystore password:
+{{< highlight java >}}Enter keystore password:
  Re-enter new password:
  What is your first and last name?
  [Unknown]:
@@ -48,22 +48,22 @@ It will ask you a series of questions. I gave **jcartadmin** as keystore passwor
  [Unknown]:
  Is CN=Unknown, OU=Unknown, O=Unknown, L=Unknown, ST=Unknown, C=Unknown correct?
  [no]: yes
-</pre>
+{{</ highlight >}}
 
 Once the keystore **jcartadminkeystore.p12** is generated copy it to **jcart-admin/src/main/resources** directory.
 
 Now configure HTTPS in the **jcart-admin/src/main/resources/application-default.properties** as follows:
 
-<pre class="brush: java">server.port=9443
+{{< highlight java >}}server.port=9443
 server.ssl.key-store=classpath:jcartadminkeystore.p12
 server.ssl.key-store-password=jcartadmin
 server.ssl.keyStoreType=PKCS12
 server.ssl.keyAlias=jcartadmintomcat
-</pre>
+{{</ highlight >}}
 
 To redirect from HTTP to HTTPS let us configure **TomcatEmbeddedServletContainerFactory ** bean in our **WebConfig.java**
 
-<pre class="brush: java">@Configuration
+{{< highlight java >}}@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {
 
@@ -98,6 +98,6 @@ public class WebConfig extends WebMvcConfigurerAdapter
 		return connector;
 	}
 }
-</pre>
+{{</ highlight >}}
 
 Now you can start the Admin application and access **https://localhost:9443**. If you try to access **http://localhost:9090** then it should automatically redirect to **https://localhost:9443**. We can follow the same approach for generating keystore for ShoppingCart site as well.

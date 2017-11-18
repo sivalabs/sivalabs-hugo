@@ -17,25 +17,26 @@ Our JCart Administration site should only be accessible to authorized users only
 
 Let us add the following spring-security dependencies to **jcart-admin/pom.xml**.
 
-<pre class="brush: xml">&lt;dependency>
-	&lt;groupId>org.springframework.boot&lt;/groupId>
-	&lt;artifactId>spring-boot-starter-security&lt;/artifactId>
-&lt;/dependency>
-&lt;dependency>
-	&lt;groupId>org.thymeleaf.extras&lt;/groupId>
-	&lt;artifactId>thymeleaf-extras-springsecurity4&lt;/artifactId>
-&lt;/dependency>
-</pre>
+{{< highlight xml >}}
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.thymeleaf.extras</groupId>
+	<artifactId>thymeleaf-extras-springsecurity4</artifactId>
+</dependency>
+{{</ highlight >}}
 
 If we have predefined set of Roles then we can specify the URL patterns and its required Roles something like this:
 
-<pre class="brush: java">http
+{{< highlight java >}}http
 	.authorizeRequests()
 	    .antMatchers("/login","/login/form**","/register","/logout").permitAll()
 	    .antMatchers("/admin","/admin/**").hasRole("ADMIN")
 	    .anyRequest().authenticated()
 	    .and()
-</pre>
+{{</ highlight >}}
 
 But we need provision to dynamically create new roles as well, hence we can&#8217;t statically define constraints using role names.
 
@@ -45,15 +46,15 @@ SpringSecurity don&#8217;t have the support for Permissions. So we will follow s
 
 ### UserRepository to get User by Email
 
-<pre class="brush: java">public interface UserRepository extends JpaRepository&lt;User, Integer&gt;
+{{< highlight java >}}public interface UserRepository extends JpaRepository<User, Integer>
 {
 	User findByEmail(String email);
 }
-</pre>
+{{</ highlight >}}
 
 ### SecurityService &#8211; Facade to all Security Related Methods
 
-<pre class="brush: java">@Service
+{{< highlight java >}}@Service
 @Transactional
 public class SecurityService
 {
@@ -64,11 +65,11 @@ public class SecurityService
 	     return userRepository.findByEmail(email);
 	}
 }
-</pre>
+{{</ highlight >}}
 
 ### Wrapper for SpringSecurity User
 
-<pre class="brush: java">public class AuthenticatedUser extends org.springframework.security.core.userdetails.User
+{{< highlight java >}}public class AuthenticatedUser extends org.springframework.security.core.userdetails.User
 {
 
 	private static final long serialVersionUID = 1L;
@@ -85,30 +86,30 @@ public class SecurityService
 	    return user;
 	}
 	
-	private static Collection&lt;? extends GrantedAuthority&gt; getAuthorities(User user)
+	private static Collection<? extends GrantedAuthority> getAuthorities(User user)
 	{
-	Set&lt;String&gt; roleAndPermissions = new HashSet&lt;&gt;();
-	List&lt;Role&gt; roles = user.getRoles();
+	Set<String> roleAndPermissions = new HashSet<>();
+	List<Role> roles = user.getRoles();
 	
 	for (Role role : roles)
 	{
 	roleAndPermissions.add(role.getName());
-	List&lt;Permission&gt; permissions = role.getPermissions();
+	List<Permission> permissions = role.getPermissions();
 	for (Permission permission : permissions)
 	{
 	roleAndPermissions.add("ROLE_"+permission.getName());
 	}
 	}
 	String[] roleNames = new String[roleAndPermissions.size()];
-	Collection&lt;GrantedAuthority&gt; authorities = AuthorityUtils.createAuthorityList(roleAndPermissions.toArray(roleNames));
+	Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(roleAndPermissions.toArray(roleNames));
 	return authorities;
 	}
 }
-</pre>
+{{</ highlight >}}
 
 ### Custom UserDetailsService Implementation
 
-<pre class="brush: java">@Service
+{{< highlight java >}}@Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService
 {
@@ -126,11 +127,11 @@ public class CustomUserDetailsService implements UserDetailsService
 	}
 
 }
-</pre>
+{{</ highlight >}}
 
 ### SpringSecurity Configuration
 
-<pre class="brush: java">@Configuration
+{{< highlight java >}}@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -172,11 +173,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .exceptionHandling().accessDeniedPage("/403");
     }    
 }
-</pre>
+{{</ highlight >}}
 
 ### Access Denied Exception Handler
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 public class ErrorController
 {	
 	@RequestMapping("/403")
@@ -186,13 +187,13 @@ public class ErrorController
 	}
 	
 }
-</pre>
+{{</ highlight >}}
 
 ### Abstract Controller with Common Methods
 
 Let us create a base Abstract Controller to have the common methods by all controllers.
 
-<pre class="brush: java">public abstract class JCartAdminBaseController
+{{< highlight java >}}public abstract class JCartAdminBaseController
 {	
 	@Autowired protected MessageSource messageSource;
 	
@@ -227,24 +228,24 @@ Let us create a base Abstract Controller to have the common methods by all contr
 	    return getCurrentUser() != null;
 	}
 }
-</pre>
+{{</ highlight >}}
 
 Observe how we injected Authenticated User object using **@AuthenticationPrincipal** and exposed as a ModelAttribute so that we can reference it in any of our templates. Also we have another method which return the AuthenticatedUser so that we can use it in any of our Controllers to access currently logged in user object, say to set CreatedBy/UpdatedBy objects on our JPA Entities.
 
 Now our Controllers can extend the JCartAdminBaseController class as follows:
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 public class HomeController extends JCartAdminBaseController
 {
 	...
 }
-</pre>
+{{</ highlight >}}
 
 ### Registering SpringSecurityDialect with Thymeleaf
 
 In order to use SpringSecurity dialects features in Thymeleaf templates we need to register SpringSecurityDialect as an additional dialect. We can do this simply by registering a SpringSecurityDialect bean.
 
-<pre class="brush: java">@Configuration
+{{< highlight java >}}@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {   
 	...
@@ -254,7 +255,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	    return new SpringSecurityDialect();
 	}
 }
-</pre>
+{{</ highlight >}}
 
 For more info read <a href="http://www.thymeleaf.org/doc/articles/springsecurity.html" target="_blank">http://www.thymeleaf.org/doc/articles/springsecurity.html</a>
 
@@ -262,12 +263,12 @@ For more info read <a href="http://www.thymeleaf.org/doc/articles/springsecurity
 
 Now we can show the Left Nav Menu options by checking whether the logged in user has the Permission or not.
 
-<pre class="brush: xml">
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html >}}
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
-	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"&gt;
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-&lt;body&gt;
+<body>
 	<span sec:authentication="principal.user.name">User</span>
 	
 
@@ -288,19 +289,19 @@ Now we can show the Left Nav Menu options by checking whether the logged in user
   	
 </li>
 	
-   &lt;/body&gt;
-&lt;/html&gt;
-</pre>
+   </body>
+</html>
+{{</ highlight >}}
 
 In our Controllers we can check for Permissions as follows:
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 @Secured("ROLE_MANAGE_CATEGORIES")
 public class CategoryController extends JCartAdminBaseController
 {
 	...
 }
-</pre>
+{{</ highlight >}}
 
 ### Registering a Filter After SpringSecurity Filter
 
@@ -308,7 +309,7 @@ I would like to show the currently selected Left Nav Menu link as Active. For th
 
 For this I thought of registering a Filter filter after SpringSecurityFilter. But SpringSecurity Filter is registered with LOWEST_PRIORITY order automatically. So we need to get it done using the hack explained here <a href="http://stackoverflow.com/questions/25957879/filter-order-in-spring-boot" target="_blank">http://stackoverflow.com/questions/25957879/filter-order-in-spring-boot</a>
 
-<pre class="brush: java">@Configuration
+{{< highlight java >}}@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {  
 	...
@@ -333,9 +334,9 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	    return registrationBean;
 	}
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">@Component
+{{< highlight java >}}@Component
 public class PostAuthorizationFilter extends OncePerRequestFilter
 {	
 	@Override
@@ -350,7 +351,7 @@ public class PostAuthorizationFilter extends OncePerRequestFilter
 	}
 	
 }
-</pre>
+{{</ highlight >}}
 
 For complete PostAuthorizationFilter code, please check in github repository <a href="https://github.com/sivaprasadreddy/jcart" target="_blank">https://github.com/sivaprasadreddy/jcart</a>.
 

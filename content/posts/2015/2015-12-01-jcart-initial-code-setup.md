@@ -25,179 +25,183 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 
 **jcart/pom.xml**
 
-<pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight xml >}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	&lt;modelVersion>4.0.0&lt;/modelVersion>
-	&lt;groupId>com.sivalabs&lt;/groupId>
-	&lt;artifactId>jcart&lt;/artifactId>
-	&lt;version>1.0&lt;/version>
-	&lt;packaging>pom&lt;/packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sivalabs</groupId>
+	<artifactId>jcart</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
 	
-	&lt;properties>
-		&lt;project.build.sourceEncoding>UTF-8&lt;/project.build.sourceEncoding>
-		&lt;maven.compiler.source>1.8&lt;/maven.compiler.source>
-		&lt;maven.compiler.target>1.8&lt;/maven.compiler.target>	
-	&lt;/properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>	
+	</properties>
 	
-	&lt;modules>
-		&lt;module>jcart-core&lt;/module>
-		&lt;module>jcart-admin&lt;/module>
-		&lt;module>jcart-site&lt;/module>	
-	&lt;/modules>
+	<modules>
+		<module>jcart-core</module>
+		<module>jcart-admin</module>
+		<module>jcart-site</module>	
+	</modules>
 
-	&lt;dependencyManagement>
-		&lt;dependencies>
-			&lt;dependency>
-				&lt;groupId>org.springframework.boot&lt;/groupId>
-				&lt;artifactId>spring-boot-dependencies&lt;/artifactId>
-				&lt;version>1.3.0.RELEASE&lt;/version>
-				&lt;type>pom&lt;/type>
-				&lt;scope>import&lt;/scope>
-			&lt;/dependency>	
-		&lt;/dependencies>
-	&lt;/dependencyManagement>    
-&lt;/project>
-</pre>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.3.0.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>	
+		</dependencies>
+	</dependencyManagement>    
+</project>
+{{</ highlight >}}
 
 **jcart/jcart-core/pom.xml**
 
-<pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight xml >}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	&lt;modelVersion>4.0.0&lt;/modelVersion>
-	&lt;parent>
-		&lt;groupId>com.sivalabs&lt;/groupId>
-		&lt;artifactId>jcart&lt;/artifactId>
-		&lt;version>1.0&lt;/version>
-	&lt;/parent>
-	&lt;artifactId>jcart-core&lt;/artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sivalabs</groupId>
+		<artifactId>jcart</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>jcart-core</artifactId>
 
-	&lt;dependencies>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-data-jpa&lt;/artifactId>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>mysql&lt;/groupId>
-			&lt;artifactId>mysql-connector-java&lt;/artifactId>
-		&lt;/dependency>
-		&lt;dependency>
-			&lt;groupId>org.hibernate&lt;/groupId>
-			&lt;artifactId>hibernate-validator&lt;/artifactId>
-		&lt;/dependency>
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-test&lt;/artifactId>
-			&lt;scope>test&lt;/scope>
-		&lt;/dependency>
-	&lt;/dependencies>
-&lt;/project>
-</pre>
+	<dependencies>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
+{{</ highlight >}}
 
 **jcart/jcart-admin/pom.xml**
 
-<pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight xml >}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	&lt;modelVersion>4.0.0&lt;/modelVersion>
-	&lt;parent>
-		&lt;groupId>com.sivalabs&lt;/groupId>
-		&lt;artifactId>jcart&lt;/artifactId>
-		&lt;version>1.0&lt;/version>
-	&lt;/parent>
-	&lt;artifactId>jcart-admin&lt;/artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sivalabs</groupId>
+		<artifactId>jcart</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>jcart-admin</artifactId>
 
-	&lt;build>
-	&lt;plugins>
-		&lt;plugin>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-maven-plugin&lt;/artifactId>
-		&lt;/plugin>
-	&lt;/plugins>
-	&lt;/build>
+	<build>
+	<plugins>
+		<plugin>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
+	</plugins>
+	</build>
 
-	&lt;dependencies>
-		&lt;dependency>
-			&lt;groupId>com.sivalabs&lt;/groupId>
-			&lt;artifactId>jcart-core&lt;/artifactId>
-			&lt;version>${project.version}&lt;/version>
-		&lt;/dependency>
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-web&lt;/artifactId>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-thymeleaf&lt;/artifactId>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-test&lt;/artifactId>
-			&lt;scope>test&lt;/scope>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-devtools&lt;/artifactId>
-			&lt;optional>true&lt;/optional>
-		&lt;/dependency>	
-	&lt;/dependencies>
-&lt;/project>
-</pre>
+	<dependencies>
+		<dependency>
+			<groupId>com.sivalabs</groupId>
+			<artifactId>jcart-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>	
+	</dependencies>
+</project>
+{{</ highlight >}}
 
 **jcart/jcart-site/pom.xml**
 
-<pre class="brush: xml">&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight xml >}}
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	&lt;modelVersion>4.0.0&lt;/modelVersion>
-	&lt;parent>
-		&lt;groupId>com.sivalabs&lt;/groupId>
-		&lt;artifactId>jcart&lt;/artifactId>
-		&lt;version>1.0&lt;/version>
-	&lt;/parent>
-	&lt;artifactId>jcart-site&lt;/artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.sivalabs</groupId>
+		<artifactId>jcart</artifactId>
+		<version>1.0</version>
+	</parent>
+	<artifactId>jcart-site</artifactId>
 
-	&lt;build>
-		&lt;plugins>
-			&lt;plugin>
-				&lt;groupId>org.springframework.boot&lt;/groupId>
-				&lt;artifactId>spring-boot-maven-plugin&lt;/artifactId>
-			&lt;/plugin>
-		&lt;/plugins>
-	&lt;/build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 
-	&lt;dependencies>
-		&lt;dependency>
-			&lt;groupId>com.sivalabs&lt;/groupId>
-			&lt;artifactId>jcart-core&lt;/artifactId>
-			&lt;version>${project.version}&lt;/version>
-		&lt;/dependency>
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-web&lt;/artifactId>
-		&lt;/dependency>
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-thymeleaf&lt;/artifactId>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-starter-test&lt;/artifactId>
-			&lt;scope>test&lt;/scope>
-		&lt;/dependency>	
-		&lt;dependency>
-			&lt;groupId>org.springframework.boot&lt;/groupId>
-			&lt;artifactId>spring-boot-devtools&lt;/artifactId>
-			&lt;optional>true&lt;/optional>
-		&lt;/dependency>	
-	&lt;/dependencies>
-&lt;/project>
-</pre>
+	<dependencies>
+		<dependency>
+			<groupId>com.sivalabs</groupId>
+			<artifactId>jcart-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>	
+	</dependencies>
+</project>
+{{</ highlight >}}
 
 We are going to use MySQL database instead of an InMemory database like H2 or HSQL, so we will configure our datasource properties in **application.properties**. 
 
@@ -207,17 +211,19 @@ For more information on using properties files refer <a href="https://github.com
 
 **jcart-core/src/main/resources/application.properties**
 
-<pre class="brush: java">spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+{{< highlight java >}}
+spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/jcart
 spring.datasource.username=root
 spring.datasource.password=admin
 
 spring.jpa.hibernate.ddl-auto=update
-</pre>
+{{</ highlight >}}
 
 The jcart-core module will be used along with jcart-admin and jcart-site modules, not as a stand-alone module. But in order to test the jcart-core module functionality let us create main entry point class **JCartCoreApplication** in src/test/java folder.
 
-<pre class="brush: java">package com.sivalabs.jcart;
+{{< highlight java >}}
+package com.sivalabs.jcart;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -230,9 +236,10 @@ public class JCartCoreApplication
 	}
 
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">package com.sivalabs.jcart;
+{{< highlight java >}}
+package com.sivalabs.jcart;
 
 import java.sql.SQLException;
 import javax.sql.DataSource;
@@ -256,6 +263,6 @@ public class JCartCoreApplicationTest
 	assertEquals("jcart", schema);
 	}	
 }
-</pre>
+{{</ highlight >}}
 
 If this test case passed we can assume we have base setup ready.

@@ -16,17 +16,18 @@ For Managing Customers we need a provision to see all the list of customers and 
 
 Let us start with implementing the back-end Customer service.
 
-<pre class="lang:java decode:true ">public interface CustomerRepository extends JpaRepository&lt;Customer, Integer&gt;
+{{< highlight java >}}
+public interface CustomerRepository extends JpaRepository<Customer, Integer>
 {
-
 	Customer findByEmail(String email);
 
 	@Query("select o from Order o where o.customer.email=?1")
-	List&lt;Order&gt; getCustomerOrders(String email);
+	List<Order> getCustomerOrders(String email);
+}
+{{</ highlight>}}
 
-}</pre>
-
-<pre class="lang:java decode:true ">@Service
+{{< highlight java >}}
+@Service
 @Transactional
 public class CustomerService {
 	@Autowired CustomerRepository customerRepository;
@@ -39,7 +40,7 @@ public class CustomerService {
 		return customerRepository.save(customer);
 	}
 
-	public List&lt;Customer&gt; getAllCustomers() {
+	public List<Customer> getAllCustomers() {
 		return customerRepository.findAll();
 	}
 
@@ -47,14 +48,16 @@ public class CustomerService {
 		return customerRepository.findOne(id);
 	}
 
-	public List&lt;Order&gt; getCustomerOrders(String email) {
+	public List<Order> getCustomerOrders(String email) {
 		return customerRepository.getCustomerOrders(email);
 	}
-}</pre>
+}
+{{</ highlight>}}
 
 Now let us implement CustomerController to handle the requests to display list of customers and the selected customer details.
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 @Secured(SecurityUtil.MANAGE_CUSTOMERS)
 public class CustomerController extends JCartAdminBaseController
 {
@@ -71,7 +74,7 @@ public class CustomerController extends JCartAdminBaseController
 		
 	@RequestMapping(value="/customers", method=RequestMethod.GET)
 	public String listCustomers(Model model) {
-		List&lt;Customer&gt; list = customerService.getAllCustomers();
+		List<Customer> list = customerService.getAllCustomers();
 		model.addAttribute("customers",list);
 		return viewPrefix+"customers";
 	}
@@ -82,94 +85,99 @@ public class CustomerController extends JCartAdminBaseController
 		model.addAttribute("customer",customer);
 		return viewPrefix+"view_customer";
 	}		
-}</pre>
+}
+{{</ highlight>}}
 
 Create the thymeleaf view template for showing list of customers customers.html as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
 	 xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;      
-&lt;head&gt;
-	&lt;title&gt;Customers&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;    	        
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="row"&gt;
-		&lt;div class="col-md-12"&gt;
-		  &lt;div class="box"&gt;
-			&lt;div class="box-header"&gt;
-			  &lt;h3 class="box-title"&gt;List of Customers&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;div class="box-body table-responsive no-padding"&gt;
-			  &lt;table class="table table-hover"&gt;
-				&lt;tr&gt;
-				  &lt;th style="width: 10px"&gt;#&lt;/th&gt;
-				  &lt;th&gt;Customer Name&lt;/th&gt;
-				  &lt;th&gt;Email&lt;/th&gt;
-				  &lt;th&gt;View&lt;/th&gt;                      
-				&lt;/tr&gt;
-				&lt;tr th:each="customer,iterStat : ${customers}"&gt;
-				  &lt;td&gt;&lt;span th:text="${iterStat.count}"&gt;1&lt;/span&gt;&lt;/td&gt;
-				  &lt;td th:text="${customer.firstName}"&gt;Customer Name&lt;/td&gt;
-				  &lt;td th:text="${customer.email}"&gt;Customer Email&lt;/td&gt;
-				  &lt;td&gt;&lt;a th:href="@{/customers/{id}(id=${customer.id})}" 
-				  class="btn btn-sm btn-default"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; View&lt;/a&gt;&lt;/td&gt;
-				&lt;/tr&gt;                    
-			  &lt;/table&gt;
-			&lt;/div&gt;                
-		  &lt;/div&gt;
-		&lt;/div&gt;
-		&lt;/div&gt;		  
-	&lt;/div&gt;    	
-&lt;/body&gt;    
-&lt;/html&gt;</pre>
+    layout:decorator="layout/mainLayout">    
+<head>
+	<title>Customers</title>
+</head>
+<body>  	    
+	<div layout:fragment="content">
+		<div class="row">
+		<div class="col-md-12">
+		  <div class="box">
+			<div class="box-header">
+			  <h3 class="box-title">List of Customers</h3>
+			</div>
+			<div class="box-body table-responsive no-padding">
+			  <table class="table table-hover">
+				<tr>
+				  <th style="width: 10px">#</th>
+				  <th>Customer Name</th>
+				  <th>Email</th>
+				  <th>View</th>            
+				</tr>
+				<tr th:each="customer,iterStat : ${customers}">
+				  <td><span th:text="${iterStat.count}">1</span></td>
+				  <td th:text="${customer.firstName}">Customer Name</td>
+				  <td th:text="${customer.email}">Customer Email</td>
+				  <td><a th:href="@{/customers/{id}(id=${customer.id})}" 
+				  class="btn btn-sm btn-default"><i class="fa fa-search"></i> View</a></td>
+				</tr>          
+			  </table>
+			</div>        
+		  </div>
+		</div>
+		</div>		  
+	</div>  	
+</body>  
+</html>
+{{</ highlight>}}
 
 Create the thymeleaf view template for showing customer details view_customer.html as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"
+{{< highlight html >}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-	layout:decorator="layout/mainLayout"&gt;
+	layout:decorator="layout/mainLayout">
 
-&lt;head&gt;
-&lt;title&gt;Customer - View&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="box box-warning"&gt;
-			&lt;div class="box-header with-border"&gt;
-				&lt;h3 class="box-title"&gt;View Customer&lt;/h3&gt;
-			&lt;/div&gt;
-			&lt;div class="box-body"&gt;
-				&lt;form role="form" action="#" th:object="${customer}" method="post"&gt;
-					&lt;div class="form-group"&gt;
-						&lt;label&gt;FirstName&lt;/label&gt; &lt;input type="text" class="form-control"
-							th:field="*{firstName}" readonly="readonly" /&gt;
-					&lt;/div&gt;
+<head>
+<title>Customer - View</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="box box-warning">
+    <div class="box-header with-border">
+      <h3 class="box-title">View Customer</h3>
+    </div>
+    <div class="box-body">
+      <form role="form" action="#" th:object="${customer}" method="post">
+        <div class="form-group">
+          <label>FirstName</label> <input type="text" class="form-control"
+            th:field="*{firstName}" readonly="readonly" />
+        </div>
 
-					&lt;div class="form-group"&gt;
-						&lt;label&gt;LastName&lt;/label&gt; &lt;input type="text" class="form-control"
-							th:field="*{lastName}" readonly="readonly" /&gt;
-					&lt;/div&gt;
+        <div class="form-group">
+          <label>LastName</label> <input type="text" class="form-control"
+            th:field="*{lastName}" readonly="readonly" />
+        </div>
 
-					&lt;div class="form-group"&gt;
-						&lt;label&gt;Email&lt;/label&gt; &lt;input type="email" class="form-control"
-							th:field="*{email}" readonly="readonly" /&gt;
-					&lt;/div&gt;
+        <div class="form-group">
+          <label>Email</label> <input type="email" class="form-control"
+            th:field="*{email}" readonly="readonly" />
+        </div>
 
-					&lt;div class="form-group"&gt;
-						&lt;label&gt;Phone&lt;/label&gt; &lt;input type="text" class="form-control"
-							th:field="*{phone}" readonly="readonly" /&gt;
-					&lt;/div&gt;
-				&lt;/form&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+        <div class="form-group">
+          <label>Phone</label> <input type="text" class="form-control"
+            th:field="*{phone}" readonly="readonly" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+</body>
+</html>
+{{</ highlight>}}
 
 Now you can run the application and click on Customers menu item in left navigation. You can see list of customers and click on View button to view customer details.

@@ -23,7 +23,8 @@ tags:
 I wanted to explore CentOS 7 Linux, so I installed it on my Oracle VirtualBox. Installation went smoothly ,but I had a hard time to install Virtualbox Guest Additions to get full screen. I thought of sharing the steps I performed so that it may be helpful for others.
 
 After installing CentOS 7, before installing Virtualbox Guest Additions first thing we need to do is update system.  
- <span style="white-space: pre;"></span>**sudo yum update**
+ 
+`sudo yum update`
 
 When I run this command I got the error &#8220;<span style="color: red;"><b>cannot find a valid baseurl for repo</b></span>&#8220;
 
@@ -44,11 +45,12 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
 Source: <http://unix.stackexchange.com/questions/22924/how-can-i-fix-cannot-find-a-valid-baseurl-for-repo-errors-on-centos>
 
 3) Install VirtualBox Guest Additions
-
- <span style="white-space: pre;"></span>sudo yum update  
- <span style="white-space: pre;"></span>sudo yum groupinstall &#8220;Development Tools&#8221;  
- <span style="white-space: pre;"></span>sudo yum install kernel-devel  
- <span style="white-space: pre;"></span>  
+```
+sudo yum update  
+sudo yum groupinstall "Development Tools"  
+sudo yum install kernel-devel  
+```
+  
 In Oracle Virtual Box menu, Devices -> Insert Guest Additions CD Image -> Run  
  <span style="white-space: pre;"></span>  
 Source: <http://itekblog.com/centos-7-virtualbox-guest-additions-installation-centos-minimal/>

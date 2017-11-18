@@ -16,9 +16,9 @@ In this Iteration-6 we will be implementing the Customer Login/Register and plac
   
 As per of this we will implement the following usecases:
 
-  * <a href="http://sivalabs.in/jcart-customer-login/" target="_blank">Customer Login</a>
-  * <a href="http://sivalabs.in/jcart-customer-registration/" target="_blank">Customer Registration</a>
-  * <a href="http://sivalabs.in/jcart-billing-and-delivery-page/" target="_blank">Billing & Delivery Page</a> 
+  * [Customer Login]({{< relref "2015-12-31-jcart-customer-login.md" >}})
+  * [Customer Registration]({{< relref "2015-12-31-jcart-customer-registration.md" >}})
+  * [Billing & Delivery Page]({{< relref "2015-12-31-jcart-billing-and-delivery-page.md" >}}) 
       * Create Order
       * Order Confirmation Page
       * Send Order Confirmation Email

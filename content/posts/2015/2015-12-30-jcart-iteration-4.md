@@ -14,10 +14,10 @@ tags:
 ---
 In this Iteration-4 we will start building the consumer facing ShoppingCart website.
 
-  * <a href="http://sivalabs.in/jcart-initial-code-setup-for-shoppingcart/" target="_blank">Initial code setup for ShoppingCart webapp</a> 
-      * Configuring HTTPS/SSL/TLS
-  * <a href="http://sivalabs.in/jcart-shoppingcart-ui-layout-setup/" target="_blank">ShoppingCart UI Layout setup</a>
-  * <a href="http://sivalabs.in/jcart-shoppingcart-home-page/" target="_blank">Home Page</a>
-  * <a href="http://sivalabs.in/jcart-shoppingcart-category-page/" target="_blank">Category Page</a>
-  * <a href="http://sivalabs.in/jcart-shoppingcart-product-page/" target="_blank">Product Page</a>
-  * <a href="http://sivalabs.in/jcart-shoppingcart-product-search-results/" target="_blank">Product Search Results</a>
+  * [Initial code setup for ShoppingCart webapp]({{< relref "2015-12-30-jcart-initial-code-setup-for-shoppingcart.md" >}})  
+      * [Configuring HTTPS/SSL/TLS] ({{< relref "2015-12-07-jcart-configuring-https-ssltls.md" >}})
+  * [ShoppingCart UI Layout setup]({{< relref "2015-12-30-jcart-shoppingcart-ui-layout-setup.md" >}}) 
+  * [Home Page]({{< relref "2015-12-30-jcart-shoppingcart-home-page.md" >}}) 
+  * [Category Page]({{< relref "2015-12-30-jcart-shoppingcart-category-page.md" >}}) 
+  * [Product Page]({{< relref "2015-12-30-jcart-shoppingcart-product-page.md" >}}) 
+  * [Product Search Results]({{< relref "2015-12-30-jcart-shoppingcart-product-search-results.md" >}})

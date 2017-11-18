@@ -16,7 +16,8 @@ Customers can click on a product to view more details about the product either i
 
 Let us implement Controller method to show Product details as follows:
 
-<pre class="lang:java decode:true ">@Controller
+{{< highlight java >}}
+@Controller
 public class ProductController extends JCartSiteBaseController
 {	
 	@Autowired protected CatalogService catalogService;
@@ -32,9 +33,11 @@ public class ProductController extends JCartSiteBaseController
 		return "product";
 	}
 	
-}</pre>
+}
+{{</ highlight >}}
 
-<pre class="lang:java decode:true ">@Service
+{{< highlight java >}}
+@Service
 @Transactional
 public class CatalogService 
 {
@@ -47,84 +50,89 @@ public class CatalogService
 		return productRepository.findBySku(sku);
 	}
 	
-}</pre>
+}  
+{{</ highlight >}}
 
-<pre class="lang:java decode:true ">public interface ProductRepository extends JpaRepository&lt;Product, Integer&gt; {
+{{< highlight java >}}
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	Product findByName(String name);
 	Product findBySku(String sku);
-}</pre>
+}  
+{{</ highlight >}}
 
 Now we will create the **product.html** thymeleaf template as follows:
 
-<pre class="lang:xhtml decode:true ">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+{{< highlight html>}}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorator="layout/mainLayout"&gt;
+      layout:decorator="layout/mainLayout">
       
-&lt;head&gt;
-	&lt;title&gt;Product&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div layout:fragment="content"&gt;
+<head>
+	<title>Product</title>
+</head>
+<body>
+<div layout:fragment="content">
 
-&lt;div class="single-product-area"&gt;
-	&lt;div class="zigzag-bottom"&gt;&lt;/div&gt;
-	&lt;div class="container"&gt;
-		&lt;div class="row"&gt;
+<div class="single-product-area">
+	<div class="zigzag-bottom"></div>
+	<div class="container">
+		<div class="row">
 			
-			&lt;div class="col-md-offset-2 col-md-8"&gt;
-				&lt;div class="product-content-right"&gt;
-					&lt;div class="product-breadcroumb"&gt;
-						&lt;a href="" th:href="@{/}"&gt;Home&lt;/a&gt;
-						&lt;a href="" th:href="@{/categories/{name}(name=${product.category.name})}"&gt;
-						&lt;span th:text="${product.category.name}"&gt;Category Name&lt;/span&gt;&lt;/a&gt;
-						&lt;a href="" th:href="@{/products/{sku}(sku=${product.sku})}"&gt;
-						&lt;span th:text="${product.name}"&gt;ProductName&lt;/span&gt;&lt;/a&gt;
-					&lt;/div&gt;
+			<div class="col-md-offset-2 col-md-8">
+				<div class="product-content-right">
+					<div class="product-breadcroumb">
+						<a href="" th:href="@{/}">Home</a>
+						<a href="" th:href="@{/categories/{name}(name=${product.category.name})}">
+						<span th:text="${product.category.name}">Category Name</span></a>
+						<a href="" th:href="@{/products/{sku}(sku=${product.sku})}">
+						<span th:text="${product.name}">ProductName</span></a>
+					</div>
 					
-					&lt;div class="row"&gt;
-						&lt;div class="col-sm-6"&gt;
-							&lt;div class="product-images"&gt;
-								&lt;div class="product-main-img"&gt;
-									&lt;img src="assets/img/product-2.jpg" alt="" 
-									th:src="@{'/products/images/{id}.jpg'(id=${product.id})}"/&gt;
-								&lt;/div&gt;
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="product-images">
+								<div class="product-main-img">
+									<img src="assets/img/product-2.jpg" alt="" 
+									th:src="@{'/products/images/{id}.jpg'(id=${product.id})}"/>
+								</div>
 																	
-							&lt;/div&gt;
-						&lt;/div&gt;
+							</div>
+						</div>
 						
-						&lt;div class="col-sm-6"&gt;
-							&lt;div class="product-inner"&gt;
-								&lt;h2 class="product-name" th:text="${product.name}"&gt;ProductName&lt;/h2&gt;
-								&lt;div class="product-inner-price"&gt;
-									&lt;ins th:text="${product.price}"&gt;$9.00&lt;/ins&gt;
-								&lt;/div&gt;    
+						<div class="col-sm-6">
+							<div class="product-inner">
+								<h2 class="product-name" th:text="${product.name}">ProductName</h2>
+								<div class="product-inner-price">
+									<ins th:text="${product.price}">$9.00</ins>
+								</div>    
 								
-								&lt;div&gt;
-									&lt;button class="add_to_cart_button" type="submit" 
-											th:onclick="'javascript:addItemToCart(\'' + ${product.sku} + '\');'"&gt;Add to cart&lt;/button&gt;
-								&lt;/div&gt;   
+								<div>
+									<button class="add_to_cart_button" type="submit" 
+											th:onclick="'javascript:addItemToCart(\'' + ${product.sku} + '\');'">Add to cart</button>
+								</div>   
 								
-								&lt;div class="product-inner-category"&gt;
-									&lt;h2&gt;Product Description&lt;/h2&gt;  
-									&lt;p th:text="${product.description}"&gt;
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;br/&gt;
-									&lt;/p&gt;
-								&lt;/div&gt; 
+								<div class="product-inner-category">
+									<h2>Product Description</h2>  
+									<p th:text="${product.description}">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br/>
+									</p>
+								</div> 
 								
-							&lt;/div&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
+							</div>
+						</div>
+					</div>
 					
-				&lt;/div&gt;                    
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+				</div>                    
+			</div>
+		</div>
+	</div>
+</div>
 
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+</div>
+</body>
+</html>  
+{{</ highlight >}}
 
 Now we can see the product details when clicked on Product from Home Page or Category Page.

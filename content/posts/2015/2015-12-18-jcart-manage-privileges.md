@@ -20,15 +20,15 @@ We already have Permission JPA entity created and some sample data is already in
 
 First let us create a Spring Data JPA repository for Permission entity.
 
-<pre class="brush: java">public interface PermissionRepository extends JpaRepository&lt;Permission, Integer&gt;
+{{< highlight java >}}public interface PermissionRepository extends JpaRepository<Permission, Integer>
 {
 
 }
-</pre>
+{{</ highlight >}}
 
 In SecurityService implement a method to return all the permissions.
 
-<pre class="brush: java">@Service
+{{< highlight java >}}@Service
 @Transactional
 public class SecurityService
 {
@@ -36,12 +36,12 @@ public class SecurityService
 	@Autowired PermissionRepository permissionRepository;
 	...
 	...
-	public List&lt;Permission&gt; getAllPermissions() {
+	public List<Permission> getAllPermissions() {
 		return permissionRepository.findAll();
 	}
 
 }
-</pre>
+{{</ highlight >}}
 
 Create a SpringMVC controller to handle all Permission related actions (in our case we only need list all permissions).
   
@@ -49,7 +49,7 @@ This action should be available to only users who have &#8220;ROLE\_MANAGE\_PERM
 
 Instead of using Strings let us create constants for Permissions as follows:
 
-<pre class="brush: java">public class SecurityUtil
+{{< highlight java >}}public class SecurityUtil
 {
 	
 	public static final String MANAGE_CATEGORIES = "ROLE_MANAGE_CATEGORIES";
@@ -63,11 +63,11 @@ Instead of using Strings let us create constants for Permissions as follows:
 	public static final String MANAGE_SETTINGS = "ROLE_MANAGE_SETTINGS";
 	
 }
-</pre>
+{{</ highlight >}}
 
 > Observe that each permission is prefixed with &#8220;ROLE_&#8221; which is expected by Spring Security.
 
-<pre class="brush: java">@Controller
+{{< highlight java >}}@Controller
 @Secured(SecurityUtil.MANAGE_PERMISSIONS)
 public class PermissionController extends JCartAdminBaseController
 {
@@ -83,56 +83,56 @@ public class PermissionController extends JCartAdminBaseController
 	
 	@RequestMapping(value="/permissions", method=RequestMethod.GET)
 	public String listPermissions(Model model) {
-		List&lt;Permission&gt; list = securityService.getAllPermissions();
+		List<Permission> list = securityService.getAllPermissions();
 		model.addAttribute("permissions",list);
 		return viewPrefix+"permissions";
 	}
 }
-</pre>
+{{</ highlight >}}
 
 Now we left with one final step for this usecase, preparing thymeleaf view jcart-admin/src/main/resources/templates/permissions/permissions.html.
 
-<pre class="brush: html">&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml"
+  {{< highlight html >}}<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-	layout:decorator="layout/mainLayout"&gt;
+	layout:decorator="layout/mainLayout">
 
-&lt;head&gt;
-&lt;title&gt;Permissions&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<head>
+<title>Permissions</title>
+</head>
+<body>
 
-	&lt;div layout:fragment="content"&gt;
-		&lt;div class="row"&gt;
-			&lt;div class="col-md-12"&gt;
-				&lt;div class="box"&gt;
-					&lt;div class="box-header"&gt;
-						&lt;h3 class="box-title"&gt;List of Permissions&lt;/h3&gt;
-					&lt;/div&gt;
-					&lt;div class="box-body table-responsive no-padding"&gt;
-						&lt;table class="table table-hover"&gt;
-							&lt;tr&gt;
-								&lt;th style="width: 10px"&gt;#&lt;/th&gt;
-								&lt;th&gt;Name&lt;/th&gt;
-								&lt;th&gt;Description&lt;/th&gt;
-							&lt;/tr&gt;
-							&lt;tr th:each="perm,iterStat : ${permissions}"&gt;
-								&lt;td th:text="${iterStat.count}"&gt;1&lt;/td&gt;
-								&lt;td th:text="${perm.name}"&gt;Permission Name&lt;/td&gt;
-								&lt;td th:text="${perm.description}"&gt;Permission Description&lt;/td&gt;
-							&lt;/tr&gt;
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">List of Permissions</h3>
+					</div>
+					<div class="box-body table-responsive no-padding">
+						<table class="table table-hover">
+							<tr>
+								<th style="width: 10px">#</th>
+								<th>Name</th>
+								<th>Description</th>
+							</tr>
+							<tr th:each="perm,iterStat : ${permissions}">
+								<td th:text="${iterStat.count}">1</td>
+								<td th:text="${perm.name}">Permission Name</td>
+								<td th:text="${perm.description}">Permission Description</td>
+							</tr>
 
-						&lt;/table&gt;
-					&lt;/div&gt;
-				&lt;/div&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+</body>
+</html>
+{{</ highlight >}}
 
 That&#8217;s it. Now run JCartAdminApplication.java and login and go click on Permissions menu in Left side navigation and you should be able to see list of all permissions.
 
