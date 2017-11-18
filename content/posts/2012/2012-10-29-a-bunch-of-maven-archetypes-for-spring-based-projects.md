@@ -28,7 +28,7 @@ However sometimes those predefined archetypes structure may not suite well for o
 Also in Eclipse the default java compiler level is 1.5 and configuring it to 1.6&nbsp;every time&nbsp;is frustrating.  
 So I thought of creating some custom archetypes for the most common combination of technologies/frameworks that I frequently use.
 
-Yes, I am aware of **AppFuse **which provides lot more maven archetypes. But the structure I follow is a bit different, so I thought of creating archetypes which suites my needs/style 🙂
+Yes, I am aware of **AppFuse** which provides lot more maven archetypes. But the structure I follow is a bit different, so I thought of creating archetypes which suites my needs/style 🙂
 
 Most of my projects are Spring based applications, so I have created the following templates so far:
 

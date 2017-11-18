@@ -40,10 +40,3 @@ Then in the browser the URL remains as http://localhost:8080/App/CreateCustomerS
 Now if the user press F5 the container will start processing the status.jsp only. It won&#8217;t invoke CreateCustomerServlet.**
 
 So if you are doing any data modifications like insertion/updation/deletion always use response.sendRedirect().
-
-If you are using Struts-1.x you can use <forward name="statusPage" path="/jsp/status.jsp" redirect="true">  
-If you are using SpringMVC you can use new ModelAndView(&#8220;redirect:status&#8221;).</forward>  
-<forward name="statusPage" path="/jsp/status.jsp" redirect="true">  
-</forward>  
-<forward name="statusPage" path="/jsp/status.jsp" redirect="true">For further information on this visit <http://en.wikipedia.org/wiki/Post/Redirect/Get>  
-</forward>

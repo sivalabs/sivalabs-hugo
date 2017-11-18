@@ -28,12 +28,14 @@ Before discussing what are good and bad sides of MicroServices approach, first l
 
 Now lets discuss on various aspects of MicroServices architecture.
 
-<span style="font-size: large;"><b>The dream of every software architect/developer:</b></span>  
+## The dream of every software architect/developer  
 First of all the idea of MicroServices is not new at all. From the very beginning our elders suggest to write classes focusing on one Single Responsibility and write methods to do one particular thing and do it well. Also we were encouraged to build separate modules which can perform some functionally related tasks. Then we bundle all these separate modules together and build an application delegating the appropriate tasks to respective modules. This is what we try to do for many year. 
 
 But the idea of MicroServices took this approach to next level where you can deploy each module as an individual deployable unit and each service can communicate with any other Service based on some agreed protocol (preferably REST, another trendy cool thing :-)).
 
-<span style="font-size: large;"><b>So what are the advantages of this MicroServices architectures?</b></span> There are plenty.
+### So what are the advantages of this MicroServices architectures?
+ 
+There are plenty.
 
   * You will have many small services with manageable codebases which is easy to read and understand.
   * You can confidently refactor or rewrite entire service because there won&#8217;t be any impact on other services.
@@ -42,21 +44,22 @@ But the idea of MicroServices took this approach to next level where you can dep
   * If you are a service provider company you can sell each service separately possibly making better money compared to selling whole monolithic product.
   * And most important factor is, the term MicroService is cool 🙂
 
-<span style="font-size: large;"><b><br />What is the other side of MicroServices architecture?</b></span>
+## What is the other side of MicroServices architecture?
 
 As with any approach, MicroServices also has some down sides and associated cost.
 
-> &nbsp;&#8220;Great power comes with great responsibility&#8221;. -Uncle Ben
+> Great power comes with great responsibility. -Uncle Ben
 
 Let us see what are the challenges to implement a system using MicroServices architecture.
 
 **The idea of MicroServices is very simple but very complex to implement in reality.**  
-In a monolithic system, the communication between various subsystems are mostly direct object communication. But in MicroServices based system, in order to communicate with other services you may use REST services which means additional HTTP call overhead and its inherent issues like network latency, possible communication failures etc. So we need to consider various aspects while implementing inter-service communication logic such as retry, fail-over and service down scenarios etc.  
-**  
-How good is your DevOps infrastructure?**  
+In a monolithic system, the communication between various subsystems are mostly direct object communication. But in MicroServices based system, in order to communicate with other services you may use REST services which means additional HTTP call overhead and its inherent issues like network latency, possible communication failures etc. So we need to consider various aspects while implementing inter-service communication logic such as retry, fail-over and service down scenarios etc.
+
+**How good is your DevOps infrastructure?**  
 In order to go with MicroServices architecture, organization should have a good DevOps team to properly maintain the dozens of MicroService applications.  
 Do your organization has DevOps culture? Or your organization has the problem of blame game between Devs and Ops? If your organization doesn&#8217;t have a good DevOps culture and software/hardware resources then MicroServices architecture will be much more difficult to adopt.  
-**<span style="font-size: large;"><br />Are we fixing the actual problem at all?</span>**  
+
+## Are we fixing the actual problem at all?  
 Now many people are saying MicroServices architecture is better than Monolithic architecture. <span style="color: red;"><b>But is Monolithic architecture is the actual reason why many projects are failing? Will MicroServices architecture save the projects from failing? I guess NO.</b></span>
 
 Think, what were the reasons for your previously failed projects. Are those projects failed because of technology issues or people issues?  

@@ -30,7 +30,7 @@ Here is how the interviews went on.
 **Me:** You have used Spring in your latest project. What are the advantages of using Spring?  
 **Interviewee:** We can configure beans in XML and it will take care of instantiating and give it to us.
 
-**Me: **If Spring is for only creating objects why is it required at all, I can directly instantiate the dependencies using &#8220;new&#8221;. Why should I configure the class names in XML and get the object from Spring?
+**Me:** If Spring is for only creating objects why is it required at all, I can directly instantiate the dependencies using &#8220;new&#8221;. Why should I configure the class names in XML and get the object from Spring?
 
 **Interviewee:** If tomorrow we want to create another implementation of our interface we can create new implementation and update the XML configuration to use new impl. We don&#8217;t need to change Java class and compile them.  
 **Me:** But you are writing a new Java class, so obviously you need to compile the project.  
@@ -48,7 +48,7 @@ Interview with another guy:
 **Me:** Ok. Can you explain something about RESTful architecture?  
 **Interviewee:** We can develop RESTful application by using @RequestMapping(value=&#8221;/url&#8221;, method=&#8221;POST&#8221;). And also we can use PUT, DELETE methods.  
 **Me:** That OK, but what is the concept of RESTful architecture?  
-**Interviewee: **That&#8217;s what I am explaining. If you use @RequestMapping(value=&#8221;/url&#8221;, method=&#8221;POST&#8221;) you can develop RESTful application.
+**Interviewee:** That&#8217;s what I am explaining. If you use @RequestMapping(value=&#8221;/url&#8221;, method=&#8221;POST&#8221;) you can develop RESTful application.
 
 **Me:** Ok, How good are you in Hibernate?  
 **Interviewee:** I am using Hibernate for the last 2 years. I am very good in using Hibernate.  

@@ -37,8 +37,74 @@ Let us take a simple example. I would like to implement Fund Transfer usecase an
 
 Assume we have the following implementation for the above usecase:
 
-<div class="gist-oembed" data-gist="sivaprasadreddy/8167981.json">
-</div>
+{{< highlight java>}}
+public class UglyMoneyTransferService 
+{
+	public void transferFunds(Account source, 
+	                          Account target, 
+	                          BigDecimal amount, 
+	                          boolean allowDuplicateTxn) 
+	                     throws IllegalArgumentException, RuntimeException 
+	{	
+	Connection conn = null;
+	try {
+		conn = DBUtils.getConnection();
+		PreparedStatement pstmt = 
+		    conn.prepareStatement("Select * from accounts where acno = ?");
+		pstmt.setString(1, source.getAcno());
+		ResultSet rs = pstmt.executeQuery();
+		Account sourceAccount = null;
+		if(rs.next()) {
+			sourceAccount = new Account();
+			//populate account properties from ResultSet
+		}
+		if(sourceAccount == null){
+			throw new IllegalArgumentException("Invalid Source ACNO");
+		}
+		Account targetAccount = null;
+		pstmt.setString(1, target.getAcno());
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			targetAccount = new Account();
+			//populate account properties from ResultSet
+		}
+		if(targetAccount == null){
+			throw new IllegalArgumentException("Invalid Target ACNO");
+		}
+		if(!sourceAccount.isOverdraftAllowed()) {
+			if((sourceAccount.getBalance() - amount) < 0) {
+				throw new RuntimeException("Insufficient Balance");
+			}
+		}
+		else {
+			if(((sourceAccount.getBalance()+sourceAccount.getOverdraftLimit()) - amount) < 0) {
+				throw new RuntimeException("Insufficient Balance, Exceeding Overdraft Limit");
+			}
+		}
+		AccountTransaction lastTxn = .. ; //JDBC code to obtain last transaction of sourceAccount
+		if(lastTxn != null) {
+			if(lastTxn.getTargetAcno().equals(targetAccount.getAcno()) && lastTxn.getAmount() == amount && !allowDuplicateTxn) {
+			throw new RuntimeException("Duplicate transaction exception");//ask for confirmation and proceed
+			}
+		}
+		sourceAccount.debit(amount);
+		targetAccount.credit(amount);
+		TransactionService.saveTransaction(source, target,  amount);
+	}
+	catch(Exception e){
+		logger.error("",e);
+	}
+	finally {
+		try { 
+			conn.close(); 
+		} 
+		catch(Exception e){ 
+			//Not everything is in your control..sometimes we have to believe in GOD/JamesGosling and proceed
+		}
+	}
+}	
+}
+{{</ highlight >}}
 
 The above code is readable..right??&#8230;because:
   
@@ -54,11 +120,11 @@ and most important, it is working as expected.
 
 _**So is it readable and clean code?? In my opinion absolutely not. There are many issues in the above code from readability perspective.**_
   
-_**1. Mixing DB interaction code with business logic**_
+**1. Mixing DB interaction code with business logic**
   
-_**2. Throwing IllegalArgumentException, RuntimeException etc from business methods instead of Business specific exceptions**_
+**2. Throwing IllegalArgumentException, RuntimeException etc from business methods instead of Business specific exceptions**
   
-_**3. Most importantly, the code is mixed with different levels of abstractions.**_
+**3. Most importantly, the code is mixed with different levels of abstractions.**
 
 Let me explain what I mean by different levels of abstractions.
 
@@ -70,15 +136,69 @@ But in the above code everything is mixed together.
 
 _While reading the code you start looking at JDBC code and your brain is working in Technical mode and after getting Account object from ResultSet you are checking for null and throwing Exception if it is null which is Business requirement. So immediately you need to switch your mind to Business mode and think &#8220;OK, if the account is invalid we want to abort the operation immediately&#8221;._
   
-_
-  
-__Though you managed to switch between Technical and Business modes, what about making an enhancement to one perticular subtask like &#8220;Fund transfer is considred duplicate only if it matches with the last transaction that happened with in an hour only&#8221;. To make that enhancement you have to go through the entire method because you haven&#8217;t modularised your sub-tasks and there is no separation of concerns._
+_Though you managed to switch between Technical and Business modes, what about making an enhancement to one particular subtask like &#8220;Fund transfer is considred duplicate only if it matches with the last transaction that happened with in an hour only&#8221;. To make that enhancement you have to go through the entire method because you haven&#8217;t modularised your sub-tasks and there is no separation of concerns._
 
 Lets rewrite the above method as follows:
 
-<div class="gist-oembed" data-gist="sivaprasadreddy/8167990.json">
-</div>
+{{< highlight java >}}
+class FundTransferTxn
+{
+	private Account sourceAccount; 
+	private Account targetAccount;
+	private BigDecimal amount;
+	private boolean allowDuplicateTxn;
+	//setters & getters
+}
 
+public class CleanMoneyTransferService 
+{
+	public void transferFunds(FundTransferTxn txn) {
+		Account sourceAccount = validateAndGetAccount(txn.getSourceAccount().getAcno());
+		Account targetAccount = validateAndGetAccount(txn.getTargetAccount().getAcno());
+		checkForOverdraft(sourceAccount, txn.getAmount());
+		checkForDuplicateTransaction(txn);
+		makeTransfer(sourceAccount, targetAccount, txn.getAmount());
+	}
+	
+	private Account validateAndGetAccount(String acno){
+		Account account = AccountDAO.getAccount(acno);
+		if(account == null){
+			throw new InvalidAccountException("Invalid ACNO :"+acno);
+		}
+		return account;
+	}
+	
+	private void checkForOverdraft(Account account, BigDecimal amount){
+		if(!account.isOverdraftAllowed()){
+			if((account.getBalance() - amount) < 0)	{
+				throw new InsufficientBalanceException("Insufficient Balance");
+			}
+		}
+		else{
+			if(((account.getBalance()+account.getOverdraftLimit()) - amount) < 0){
+				throw new ExceedingOverdraftLimitException("Insufficient Balance, Exceeding Overdraft Limit");
+			}
+		}
+	}
+	
+	private void checkForDuplicateTransaction(FundTransferTxn txn){
+		AccountTransaction lastTxn = TransactionDAO.getLastTransaction(txn.getSourceAccount().getAcno());
+		if(lastTxn != null)	{
+			if(lastTxn.getTargetAcno().equals(txn.getTargetAccount().getAcno()) 
+					&& lastTxn.getAmount() == txn.getAmount() 
+					&& !txn.isAllowDuplicateTxn())	{
+				throw new DuplicateTransactionException("Duplicate transaction exception");
+			}
+		}
+	}
+	
+	private void makeTransfer(Account source, Account target, BigDecimal amount){
+		sourceAccount.debit(amount);
+		targetAccount.credit(amount);
+		TransactionService.saveTransaction(source, target,  amount);
+	}	
+}
+{{</ highlight >}}
 The above improved method do exactly what the initial verson is doing but now it looks lot better than earlier version.
 
   * We have divided the entire task into sub-tasks and implemented each sub-task in a separate method.
@@ -88,11 +208,9 @@ The above improved method do exactly what the initial verson is doing but now it
 
 _At the first level we have highest level of abstraction in transferFunds(FundTransferTxn txn) method. By looking at this method we can understand what we are doing as part of Fund Transfer operation without worrying much about implementation or technical details._
   
-_
   
 __At the second level we have business logic implementation methods checkForOverdraft, checkForDuplicateTransaction etc which performs business logic, again without worrying much about technical details._
-  
-_
+
   
 __At the lowest level we have technical implementation details in AccountDAO and TransactionDAO which contains DB interaction logic._
 

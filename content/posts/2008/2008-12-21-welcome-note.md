@@ -21,4 +21,4 @@ tags:
 
 ---
 Hi All,  
-Welcome guys. This is a blog where in you can find tutorials on various Java and J2EE technologies and can have discussions regarding technical problems and application development related issues.
+Welcome folks. This is a blog where in you can find tutorials on various Java and JavaEE technologies and can have discussions regarding technical problems and application development related issues.

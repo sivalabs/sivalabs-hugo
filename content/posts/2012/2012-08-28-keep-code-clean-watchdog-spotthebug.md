@@ -22,7 +22,7 @@ tags:
   - JavaEE
 
 ---
-Before going to discuss &#8220;**WatchDog & SpotTheBug Approach**&#8220;, let me give a brief context on what is the needs for this.
+Before going to discuss **WatchDog & SpotTheBug Approach**, let me give a brief context on what is the needs for this.
 
 Three months back I was asked to write core infrastructure code for our new application which uses all the latest and greatest technologies.  
 I have written the infrastructure code and implemented 2 usecases to demonstrate which logic should go into which layer and the code looks good(atleast to me :-)).&nbsp;Then I moved on to my main project and I was hearing that the project that i designed(from Now&nbsp;on-wards&nbsp;I will refer this as ProjectA) is going well.
@@ -74,8 +74,8 @@ With this process, every team member in our team used to tripple check the code 
 I think this is best possible way to keep the code clean. By now you may have clue on what I mean by &#8220;WatchDog&#8221;. Yes, I called the GUY as WatchDog.&nbsp;First of all, sorry for calling such an important role as Dog but it better describe what that guy will do. It will bark as soon as it saw some bad code.
 
 **Need for WatchDog:**  
-**  
-**As I mentioned above, everyone in the team might be busy with their high-priority tasks. They might not be able to spend time on cleaning the code.&nbsp;Also from the Business perspective Adding new customer-requested features might be high-priority than cleaning the code.&nbsp;Sometime even though Business know that in long run there is a chance that entire application becomes un-maintainable if they don&#8217;t cleanup the mess they will have to satisfy their customer first with some quick new features and will opt for short-term benefits.
+
+As I mentioned above, everyone in the team might be busy with their high-priority tasks. They might not be able to spend time on cleaning the code.&nbsp;Also from the Business perspective Adding new customer-requested features might be high-priority than cleaning the code.&nbsp;Sometime even though Business know that in long run there is a chance that entire application becomes un-maintainable if they don&#8217;t cleanup the mess they will have to satisfy their customer first with some quick new features and will opt for short-term benefits.
 
 We have plenty of Quality Checking tools like PMD, FindBugs, Sonar. But does these tools suggest to create an Address class instead of repeating all address properties for different type of addresses as i mentioned above.&nbsp;Does these tools suggest you to use same xml marshalling library across the project. As far as I know, they won&#8217;t.
 
@@ -104,8 +104,3 @@ With WatchDog and SpotTheBug programs in place, if the team can identify the bad
 
 **_By using this WatchDog & SpotTheBug approach combined with proper usage of Code Quality Checking Tools(FindBugs, PMD, Sonar) we can make sure the code is clean to the maximum extent._**
 
- <span style="white-space: pre;"></span>  
- <span style="white-space: pre;"></span>
-
-<div>
-</div>

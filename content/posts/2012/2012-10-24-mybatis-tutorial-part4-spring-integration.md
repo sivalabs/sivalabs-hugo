@@ -21,15 +21,15 @@ tags:
   - Spring
 
 ---
-[**MyBatis Tutorial: Part1 &#8211; CRUD Operations**][1]
+[**MyBatis Tutorial: Part1 &#8211; CRUD Operations**]({{< relref "2012-10-21-mybatis-tutorial-part1-crud-operations.md" >}}) 
   
-[**MyBatis Tutorial: Part-2: CRUD operations Using Annotations**][2]
+[**MyBatis Tutorial: Part-2: CRUD operations Using Annotations**]({{< relref "2012-10-21-mybatis-tutorial-part-2-crud-operations-using-annotations.md" >}}) 
   
-[**MyBatis Tutorial: Part 3 &#8211; Mapping Relationships**][3]
+[**MyBatis Tutorial: Part 3 &#8211; Mapping Relationships**]({{< relref "2012-10-21-mybatis-tutorial-part-3-mapping-relationships.md" >}}) 
   
-[**MyBatis Tutorial : Part4 &#8211; Spring Integration**][4]
+[**MyBatis Tutorial : Part4 &#8211; Spring Integration**]({{< relref "2012-10-24-mybatis-tutorial-part4-spring-integration.md" >}}) 
 
-MyBatis-Spring is a subproject of MyBatis and provides Spring integration support which drastically simplifies the MyBatis usage. For those who are familiar with Spring&#8217;s way of Dependency Injection process, using MyBatis-Spring is a very simple.
+MyBatis-Spring is a sub-project of MyBatis and provides Spring integration support which drastically simplifies the MyBatis usage. For those who are familiar with Spring&#8217;s way of Dependency Injection process, using MyBatis-Spring is a very simple.
 
 First let us see the process of using MyBatis without Spring.
 
@@ -47,45 +47,46 @@ Now let us see how we can configure MyBatis+Spring integration stuff.
 
 **Step#1:** Configure MyBatis-Spring dependencies in pom.xml
 
-<pre class="brush: xml">&lt;dependency&gt;
-   &lt;groupId&gt;junit&lt;/groupId&gt;
-   &lt;artifactId&gt;junit&lt;/artifactId&gt;
-   &lt;version&gt;4.10&lt;/version&gt;
-   &lt;scope&gt;test&lt;/scope&gt;
-  &lt;/dependency&gt;
-  
-  &lt;dependency&gt;
-      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-      &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
-      &lt;version&gt;3.1.1&lt;/version&gt;
-  &lt;/dependency&gt;
-  &lt;dependency&gt;
-      &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
-      &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
-      &lt;version&gt;1.1.1&lt;/version&gt;
-  &lt;/dependency&gt;
-  &lt;dependency&gt;
-   &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-   &lt;artifactId&gt;spring-context-support&lt;/artifactId&gt;
-   &lt;version&gt;3.1.1.RELEASE&lt;/version&gt;
-  &lt;/dependency&gt;
-  &lt;dependency&gt;
-   &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-   &lt;artifactId&gt;spring-test&lt;/artifactId&gt;
-   &lt;version&gt;3.1.1.RELEASE&lt;/version&gt;
-   &lt;scope&gt;test&lt;/scope&gt;
-  &lt;/dependency&gt;
-  &lt;dependency&gt;
-             &lt;groupId&gt;mysql&lt;/groupId&gt;
-             &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-             &lt;version&gt;5.1.21&lt;/version&gt;
-             &lt;scope&gt;runtime&lt;/scope&gt;
-         &lt;/dependency&gt;
-  &lt;dependency&gt;
-   &lt;groupId&gt;cglib&lt;/groupId&gt;
-   &lt;artifactId&gt;cglib-nodep&lt;/artifactId&gt;
-   &lt;version&gt;2.2.2&lt;/version&gt;
-  &lt;/dependency&gt;</pre>
+{{< highlight xml >}}
+<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.10</version>
+  <scope>test</scope>
+</dependency>
+<dependency>
+  <groupId>org.mybatis</groupId>
+  <artifactId>mybatis</artifactId>
+  <version>3.1.1</version>
+</dependency>
+<dependency>
+  <groupId>org.mybatis</groupId>
+  <artifactId>mybatis-spring</artifactId>
+  <version>1.1.1</version>
+</dependency>
+<dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-context-support</artifactId>
+   <version>3.1.1.RELEASE</version>
+</dependency>
+<dependency>
+   <groupId>org.springframework</groupId>
+   <artifactId>spring-test</artifactId>
+   <version>3.1.1.RELEASE</version>
+   <scope>test</scope>
+</dependency>
+<dependency>
+ <groupId>mysql</groupId>
+ <artifactId>mysql-connector-java</artifactId>
+ <version>5.1.21</version>
+ <scope>runtime</scope>
+</dependency>
+<dependency>
+   <groupId>cglib</groupId>
+   <artifactId>cglib-nodep</artifactId>
+   <version>2.2.2</version>
+</dependency>
+{{</ highlight >}}
 
 **Step#2:** You don&#8217;t need to configure Database properties in mybatis-config.xml.
 
@@ -95,42 +96,53 @@ Instead of SqlSessionFactoryBuilder, MyBatis-Spring uses org.mybatis.spring.SqlS
 
 We can pass dataSource, Mapper XML files locations, typeAliases etc to SqlSessionFactoryBean.
 
-<pre class="brush: xml">&lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"&gt;
-  &lt;property name="driverClassName" value="${jdbc.driverClassName}"/&gt;
-  &lt;property name="url" value="${jdbc.url}"/&gt;
-  &lt;property name="username" value="${jdbc.username}"/&gt;
-  &lt;property name="password" value="${jdbc.password}"/&gt;
- &lt;/bean&gt;
+{{< highlight xml >}}
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+  <property name="driverClassName" value="${jdbc.driverClassName}"/>
+  <property name="url" value="${jdbc.url}"/>
+  <property name="username" value="${jdbc.username}"/>
+  <property name="password" value="${jdbc.password}"/>
+</bean>
  
- &lt;bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"&gt;
-    &lt;property name="dataSource" ref="dataSource" /&gt;
-    &lt;property name="typeAliasesPackage" value="com.sivalabs.mybatisdemo.domain"/&gt;
-    &lt;property name="mapperLocations" value="classpath*:com/sivalabs/mybatisdemo/mappers/**/*.xml" /&gt;
- &lt;/bean&gt;</pre>
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="typeAliasesPackage" 
+              value="com.sivalabs.mybatisdemo.domain"/>
+    <property name="mapperLocations" 
+              value="classpath*:com/sivalabs/mybatisdemo/mappers/**/*.xml" />
+</bean>
+{{</ highlight >}}
 
 **Step#3:** Configure SqlSessionTemplate which provides ThreadSafe SqlSession object.
 
-<pre class="brush: xml">&lt;bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"&gt;
-   &lt;constructor-arg index="0" ref="sqlSessionFactory" /&gt;
- &lt;/bean&gt;</pre>
+{{< highlight xml >}}
+<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+   <constructor-arg index="0" ref="sqlSessionFactory" />
+</bean>
+{{</ highlight >}}
 
 **Step#4:** To be able to inject Mappers directly we should register org.mybatis.spring.mapper.MapperScannerConfigurer and configure the package name where to find Mapper Interfaces.
 
-<pre class="brush: xml">&lt;bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"&gt;
-   &lt;property name="basePackage" value="com.sivalabs.mybatisdemo.mappers" /&gt;
- &lt;/bean&gt;</pre>
+{{< highlight xml >}}
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+   <property name="basePackage" value="com.sivalabs.mybatisdemo.mappers"/>
+</bean>
+{{</ highlight >}}
 
 **Step#5:** Configure TransactionManager to support Annotation based Transaction support.
 
-<pre class="brush: xml">&lt;tx:annotation-driven transaction-manager="transactionManager"/&gt;
+{{< highlight xml >}}
+<tx:annotation-driven transaction-manager="transactionManager"/>
  
- &lt;bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"&gt;
-    &lt;property name="dataSource" ref="dataSource" /&gt;
- &lt;/bean&gt;</pre>
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource" />
+</bean>
+{{</ highlight >}}
 
 **Step#6:** Update the Service classes and register them in Spring container.
 
-<pre class="brush: java">package com.sivalabs.mybatisdemo.service;
+{{< highlight java >}}
+package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
 import org.apache.ibatis.session.SqlSession;
@@ -145,25 +157,25 @@ import com.sivalabs.mybatisdemo.mappers.UserMapper;
 @Transactional
 public class UserService
 {
- @Autowired
- private SqlSession sqlSession; //This is to demonstrate injecting SqlSession object
+    @Autowired
+    private SqlSession sqlSession; //This is to demonstrate injecting SqlSession object
  
- public void insertUser(User user) 
- {
-  UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-  userMapper.insertUser(user);
- }
+    public void insertUser(User user) 
+    {
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        userMapper.insertUser(user);
+    }
 
- public User getUserById(Integer userId) 
- {
-  UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-  return userMapper.getUserById(userId);
- }
- 
+    public User getUserById(Integer userId) 
+    {
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+        return userMapper.getUserById(userId);
+    }
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">package com.sivalabs.mybatisdemo.service;
+{{< highlight java >}}
+package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -176,36 +188,42 @@ import com.sivalabs.mybatisdemo.mappers.BlogMapper;
 @Transactional
 public class BlogService
 {
- @Autowired
- private BlogMapper blogMapper; // This is to demonstratee how to inject Mappers directly
+    // This is to demonstrate how to inject Mappers directly
+    @Autowired
+    private BlogMapper blogMapper; 
  
- public void insertBlog(Blog blog) {
-  blogMapper.insertBlog(blog);
- }
+    public void insertBlog(Blog blog) {
+        blogMapper.insertBlog(blog);
+    }
  
- public Blog getBlogById(Integer blogId) {
-  return blogMapper.getBlogById(blogId);
- }
+    public Blog getBlogById(Integer blogId) {
+        return blogMapper.getBlogById(blogId);
+    }
  
- public List&lt;Blog&gt; getAllBlogs() {
-  return blogMapper.getAllBlogs();
- }
-}</pre>
+    public List<Blog> getAllBlogs() {
+        return blogMapper.getAllBlogs();
+    }
+}
+{{</ highlight >}}
 
 **<span style="color: red;">Note:</span>** When we can directly inject Mappers then why do we need to inject SqlSession objects? Because SqlSession object contains more fine grained method which comes handy at times.
 
 For Example: If we want to get count of how many records got updated by an Update query we can use SqlSession as follows:
 
-<pre class="brush: java">int updatedRowCount = sqlSession.update("com.sivalabs.mybatisdemo.mappers.UserMapper.updateUser", user);
-</pre>
 
-<span style="text-decoration: line-through;">So far I didn&#8217;t find a way to get the row update count without using SqlSession object.</span>
+`int updatedRowCount = sqlSession.update("com.sivalabs.mybatisdemo.mappers.UserMapper.updateUser", user);`
+
+
+<span style="text-decoration: line-through;">
+So far I didn&#8217;t find a way to get the row update count without using SqlSession object.
+</span>
 
 **PS: You can have your interface insert/update/delete methods returning int, then MyBatis returns the number of records updated as an integer.**
 
 **Step#7** Write JUnit Tests to test UserService and BlogService.
 
-<pre class="brush: java">package com.sivalabs.mybatisdemo;
+{{< highlight java >}}
+package com.sivalabs.mybatisdemo;
 
 import java.util.List;
 
@@ -223,35 +241,35 @@ import com.sivalabs.mybatisdemo.service.UserService;
 @ContextConfiguration(locations="classpath:applicationContext.xml")
 public class SpringUserServiceTest 
 {
- @Autowired
- private UserService userService;
+    @Autowired
+    private UserService userService;
  
     @Test
- public void testGetUserById() 
- {
-  User user = userService.getUserById(1);
-  Assert.assertNotNull(user);
-  System.out.println(user);
-  System.out.println(user.getBlog());
- }
+    public void testGetUserById() 
+    {
+      User user = userService.getUserById(1);
+      Assert.assertNotNull(user);
+      System.out.println(user);
+      System.out.println(user.getBlog());
+    }
         
     @Test
     public void testUpdateUser() 
     {
-     long timestamp = System.currentTimeMillis();
-  User user = userService.getUserById(2);
-  user.setFirstName("TestFirstName"+timestamp);
-     user.setLastName("TestLastName"+timestamp);
-     userService.updateUser(user);
-  User updatedUser = userService.getUserById(2);
-  Assert.assertEquals(user.getFirstName(), updatedUser.getFirstName());
-  Assert.assertEquals(user.getLastName(), updatedUser.getLastName());
- }
-    
+        long timestamp = System.currentTimeMillis();
+        User user = userService.getUserById(2);
+        user.setFirstName("TestFirstName"+timestamp);
+        user.setLastName("TestLastName"+timestamp);
+        userService.updateUser(user);
+        User updatedUser = userService.getUserById(2);
+        Assert.assertEquals(user.getFirstName(), updatedUser.getFirstName());
+        Assert.assertEquals(user.getLastName(), updatedUser.getLastName());
+    }
 }
-</pre>
+{{</ highlight >}}
 
-<pre class="brush: java">package com.sivalabs.mybatisdemo;
+{{< highlight java >}}
+package com.sivalabs.mybatisdemo;
 
 import java.util.Date;
 import java.util.List;
@@ -267,44 +285,37 @@ import com.sivalabs.mybatisdemo.domain.Blog;
 import com.sivalabs.mybatisdemo.domain.Post;
 import com.sivalabs.mybatisdemo.service.BlogService;
 
-
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:applicationContext.xml")
 public class SpringBlogServiceTest 
 {
- @Autowired
- private BlogService blogService;
+    @Autowired
+    private BlogService blogService;
  
- @Test
- public void testGetBlogById() 
- {
-  Blog blog = blogService.getBlogById(1);
-  Assert.assertNotNull(blog);
-  System.out.println(blog);
-  List&lt;Post&gt; posts = blog.getPosts();
-  for (Post post : posts) {
-   System.out.println(post);
-  }
- }
+    @Test
+    public void testGetBlogById() 
+    {
+        Blog blog = blogService.getBlogById(1);
+        Assert.assertNotNull(blog);
+        System.out.println(blog);
+        List<Post> posts = blog.getPosts();
+        for (Post post : posts) {
+            System.out.println(post);
+        }
+    }
     
     @Test
     public void testInsertBlog() 
     {
-     Blog blog = new Blog();
-     blog.setBlogName("test_blog_"+System.currentTimeMillis());
-     blog.setCreatedOn(new Date());
-     
-     blogService.insertBlog(blog);
-     Assert.assertTrue(blog.getBlogId() != 0);
-     Blog createdBlog = blogService.getBlogById(blog.getBlogId());
-     Assert.assertNotNull(createdBlog);
-     Assert.assertEquals(blog.getBlogName(), createdBlog.getBlogName());
+         Blog blog = new Blog();
+         blog.setBlogName("test_blog_"+System.currentTimeMillis());
+         blog.setCreatedOn(new Date());
+         
+         blogService.insertBlog(blog);
+         Assert.assertTrue(blog.getBlogId() != 0);
+         Blog createdBlog = blogService.getBlogById(blog.getBlogId());
+         Assert.assertNotNull(createdBlog);
+         Assert.assertEquals(blog.getBlogName(), createdBlog.getBlogName());
     }
-    
 }
-</pre>
-
- [1]: http://www.sivalabs.in/2012/10/mybatis-tutorial-part1-crud-operations.html
- [2]: http://www.sivalabs.in/2012/10/mybatis-tutorial-part-2-crud-operations.html
- [3]: http://www.sivalabs.in/2012/10/mybatis-tutorial-part-3-mapping.html
- [4]: http://www.sivalabs.in/2012/10/mybatis-tutorial-part4-spring.html
+{{</ highlight >}}
