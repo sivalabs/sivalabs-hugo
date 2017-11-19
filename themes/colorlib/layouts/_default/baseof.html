@@ -27,5 +27,17 @@
         {{ partial "footer.html" . }}
     </div>
 </div>
+
+<script type='text/javascript' src="{{"assets/js/vendor/jquery-1.12.4.min.js" | relURL }}"></script>
+<script type='text/javascript' src="{{"assets/js/vendor/modernizr.min.js" | relURL }}"></script>
+<script type='text/javascript' src="{{"assets/js/vendor/bootstrap.min.js" | relURL }}"></script>
+<script type='text/javascript' src="{{"assets/js/functions.min.js" | relURL }}"></script>
+{{ if (not (eq .Site.GoogleAnalytics "")) }}
+<div class="analytics">
+    {{ template "_internal/google_analytics_async.html" . }}
+</div>
+{{ end }}
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/a244435ef0378fac204b5a2d4/5f76189934783143aeb496d1e.js");</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"a244435ef0378fac204b5a2d4","lid":"bdded8d3db"}) })</script>
 </body>
 </html>

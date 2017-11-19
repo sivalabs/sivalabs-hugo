@@ -1,59 +1,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ .Site.Title }} - {{ .Title }}</title>
-
-    <link rel='stylesheet' id='sparkling-bootstrap-css'
-          href="{{"assets/css/bootstrap.min.css" | relURL }}" type='text/css'
-          media='all'/>
-
-    <link rel='stylesheet' id='sparkling-icons-css'
-          href="{{"assets/css/font-awesome.min.css" | relURL }}"
-          type='text/css' media='all'/>
-
-    <link rel='stylesheet' id='sparkling-fonts-css'
-          href='//fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C400%2C600%2C700%7CRoboto+Slab%3A400%2C300%2C700&#038;ver=4.8.3'
-          type='text/css' media='all'/>
-
-    <link rel='stylesheet' id='sparkling-style-css'
-          href="{{"assets/css/style.css" | relURL }}" type='text/css' media='all'/>
-
-    <link rel='stylesheet' id='socicon-css'
-          href="{{"assets/js/vendor/social-icons-widget-by-wpzoom/assets/css/socicon.css" | relURL }}"
-          type='text/css' media='all'/>
-
-    <link rel="stylesheet" href="{{"assets/css/social-logos/social-logos.css" | relURL }}"
-            type="text/css" media="all">
-
-    <link rel="stylesheet" href="{{"assets/css/jetpack.css" | relURL }}"
-            type="text/css" media="all">
-
-    <script type='text/javascript' src="{{"assets/js/vendor/jquery-1.12.4.js" | relURL }}"></script>
-
-    <script type='text/javascript'
-            src="{{"assets/js/vendor/modernizr.min.js" | relURL }}"></script>
-
-    <script type='text/javascript'
-            src="{{"assets/js/vendor/bootstrap.min.js" | relURL }}"></script>
-
-    <script type='text/javascript'
-            src="{{"assets/js/functions.min.js" | relURL }}"></script>
-
+    <link rel='stylesheet' href="{{"assets/css/bootstrap.min.css" | relURL }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{"assets/css/font-awesome.min.css" | relURL }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C400%2C600%2C700%7CRoboto+Slab%3A400%2C300%2C700&#038;ver=4.8.3'  type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{"assets/css/style.css" | relURL }}" type='text/css' media='all'/>
+    <link rel='stylesheet' href="{{"assets/js/vendor/social-icons-widget-by-wpzoom/assets/css/socicon.css" | relURL }}" type='text/css' media='all'/>
+    <link rel="stylesheet" href="{{"assets/css/social-logos/social-logos.css" | relURL }}" type="text/css" media="all">
+    <link rel="stylesheet" href="{{"assets/css/jetpack.css" | relURL }}" type="text/css" media="all">
     <link rel="shortcut icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
-
     {{ if .RSSLink }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
-
-    {{ if (not (eq .Site.GoogleAnalytics "")) }}
-    <div class="analytics">
-        {{ template "_internal/google_analytics_async.html" . }}
-    </div>
-    {{ end }}
-
-
-    <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/a244435ef0378fac204b5a2d4/5f76189934783143aeb496d1e.js");</script>
-    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"a244435ef0378fac204b5a2d4","lid":"bdded8d3db"}) })</script>
 </head>
