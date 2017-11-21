@@ -2,18 +2,25 @@ baseURL = "https://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
 theme = "colorlib"
-disqusShortname = "sivalabs"
 paginate=10
+
+disqusShortname = "sivalabs"
 googleAnalytics = "UA-71296890-1"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
+
 [params]
   author = "Siva"
-  facebook = "https://facebook.com/sivaprasadreddy.k"
-  twitter = "https://twitter.com/sivalabs"
-  googleplus = "https://plus.google.com/u/0/+SivaPrasadReddy"
-  youtube = "http://www.youtube.com/c/SivaPrasadReddy%20"
-  github = "https://github.com/sivaprasadreddy"
-  linkedin = "https://in.linkedin.com/in/siva-prasad-reddy-k-3a909172"
+  facebook = "sivaprasadreddy.k"
+  twitter = "sivalabs"
+  googleplus = "+SivaPrasadReddy"
+  youtube = "SivaPrasadReddy%20"
+  github = "sivaprasadreddy"
+  linkedin = "siva-prasad-reddy-k-3a909172"
 
+
+[params.meta]
+  keywords = "Java Spring SpringBoot JavaEE Hibernate MicroServices Docker"
+  description = "My Experience with Technologies"
