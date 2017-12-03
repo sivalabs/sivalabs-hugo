@@ -1,4 +1,78 @@
 
+<div class="container footer-inner">
+    <div class="row">
+
+        <div class="footer-widget-area">
+
+
+            <div class="col-sm-4 footer-widget" role="complementary">
+                <div id="sparkling_popular_posts-3" class="widget sparkling-popular-posts">
+                    <h3 class="widgettitle">Recent Posts</h3>
+                    <!-- popular posts -->
+                    <div class="popular-posts-wrapper">
+
+                        <ul>
+                            {{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 10) }}
+                            {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+                            <li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                            {{- end }}
+                        </ul>
+
+                    </div> <!-- end posts wrapper -->
+
+                </div>
+            </div><!-- .widget-area .first -->
+
+            <div class="col-sm-4 footer-widget" role="complementary">
+                <div id="sparkling-cats-3" class="widget sparkling-cats">
+                    <h3 class="widgettitle">Categories</h3>
+
+                    <div class="cats-widget">
+                        <ul>
+                            {{- if isset .Site.Taxonomies "categories" }}
+                            {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+                            {{- range $name, $items := .Site.Taxonomies.categories }}
+                            <li class="cat-item"><a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title }}</a></li>
+                            {{- end }}
+
+                            {{- end }}
+                            {{- end }}
+                        </ul>
+
+                    </div><!-- end widget content -->
+
+                </div>
+            </div><!-- .widget-area .second -->
+
+            <div class="col-sm-4 footer-widget" role="complementary">
+                <div id="text-2" class="widget widget_text">
+                    <div class="textwidget">
+                        <p>
+                        <h3 class="widgettitle">Tag Cloud</h3>
+                        </p>
+                        <div class="tagcloud">
+                            {{- if isset .Site.Taxonomies "tags" }}
+                            {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+
+                            <div class="widget__content">
+                                {{- range $name, $items := .Site.Taxonomies.tags }}
+                                <a class="tag-cloud-link widget__link widget__link--taglist" style="background-color: #989898"
+                                   href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name }}">{{ $name }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
+                                {{- end }}
+                            </div>
+
+                            {{- end }}
+                            {{- end }}
+
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .widget-area .third -->
+
+        </div>
+    </div>
+</div>
+
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info container">
         <div class="row">

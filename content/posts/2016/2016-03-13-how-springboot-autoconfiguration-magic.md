@@ -10,7 +10,7 @@ categories:
   - Spring
 tags:
   - SpringBoot
-
+popular: true
 ---
 In my previous post [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}}) we have looked at how to create a SpringBoot application. But you may or may not understand what is going on behind the scenes. You may want to understand the magic behind the SpringBoot’s AutoConfiguration.
 

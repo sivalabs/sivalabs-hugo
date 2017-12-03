@@ -15,7 +15,7 @@ tags:
   - jcart
   - Spring
   - SpringBoot
-
+popular: true
 ---
 We can find plenty of information on any technical topic, be it Java, .NET, Python or any frameworks like Spring, Hibernate, CDI, JSF etc. You can find hundreds of well written blogs on many of these topics. For example, you can find lot of tutorials on how to use SpringBoot or how to use various mappings in JPA/Hibernate or how to do form validations in JSF etc. Also, there are plenty of books published by well established publishers on most of the technologies.
 

@@ -19,7 +19,7 @@ categories:
 tags:
   - Best Practices
   - Java
-
+popular: true
 ---
 We spend more time on reading code than writing. So if the code is more readable then obviously it will increase the developer productivity.
 

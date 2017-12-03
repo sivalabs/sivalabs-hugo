@@ -23,7 +23,7 @@ I am happy to announce that my new book <a href="https://leanpub.com/springboot-
 &nbsp;
 
 <div class="separator" style="clear: both; text-align: center;">
-  <a href="https://leanpub.com/springboot-learn-by-example"><img class="alignnone size-medium wp-image-956" src="/images/title_page.png" alt="springboot_learn_by_example" width="250" height="200" /></a>
+  <a href="https://leanpub.com/springboot-learn-by-example"><img class="alignnone size-medium wp-image-956" src="/images/sblbe.png" alt="springboot_learn_by_example" width="250" height="200" /></a>
 </div>
 
 <span style="color: purple; font-size: large;"><b>What is SpringBoot?</b></span>

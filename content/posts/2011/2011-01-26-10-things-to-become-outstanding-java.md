@@ -20,7 +20,7 @@ categories:
 tags:
   - Best Practices
   - Java
-
+popular: true
 ---
 If you are a java developer and passionate about technology, you can follow the below things which makes you an outstanding Java developer.
 
