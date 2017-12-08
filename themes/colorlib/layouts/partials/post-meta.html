@@ -26,7 +26,7 @@
     {{ if isset .Params "tags" }}
     {{ $tagsLen := len .Params.tags }}
     {{ if gt $tagsLen 0 }}
-    <span class="tagcloud" style="display: inline">
+    <span class="tagcloud post-tags">
         <i class="fa fa-tags"></i>
         {{ range $k, $v := .Params.tags }}
         <a class="tag-cloud-link widget__link widget__link--taglist" href="{{ (print "tags/" (. | urlize | lower) "/") | relURL }}">{{ . }}</a>

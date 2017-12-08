@@ -1,15 +1,15 @@
 ---
-title: Java EE7
+title: Java EE Training
 author: Siva
 type: page
 date: 2015-05-31T13:08:14+00:00
-
+draft: true
 ---
-Please reach me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
+Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
 
-[<img class="size-medium wp-image-616 aligncenter" src="https://i0.wp.com/sivalabs.in/wp-content/uploads/2015/05/javaee.png?resize=300%2C128" alt="javaee" srcset="https://i0.wp.com/sivalabs.in/wp-content/uploads/2015/05/javaee.png?resize=300%2C128 300w, https://i0.wp.com/sivalabs.in/wp-content/uploads/2015/05/javaee.png?w=647 647w" sizes="(max-width: 300px) 100vw, 300px" data-recalc-dims="1" />][1]
+<img class="size-medium aligncenter" src="/images/javaee.png" alt="javaee" />
 
-### Java EE7 Training Course Topics:
+### Java EE Training Course Topics:
 
   1. **Overview of JavaEE** 
       * Introduction to JavaEE Platform
@@ -258,6 +258,4 @@ Please reach me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmai
   </li>
 </ol>
 
-Please reach me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
-
- [1]: https://i2.wp.com/sivalabs.in/wp-content/uploads/2015/06/java-ee2.jpg
+Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.

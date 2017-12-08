@@ -1731,3 +1731,7 @@ button[type=submit],
     transform: translateX(-50%);
     width: auto;
 }
+
+.post-tags {
+  display: inline;
+}

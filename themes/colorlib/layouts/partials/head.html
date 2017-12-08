@@ -1,7 +1,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Site.Title }} - {{ .Title }}</title>
+    <meta name="title" property="title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Title }}{{ if eq $isHomePage false }} - {{ .Title }}{{ end }}{{ if eq $isHomePage true }} - {{ .Site.Params.Subtitle}}{{ end }}">
+    <meta name="description" property="description" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Params.description }}{{ if eq $isHomePage false }} - {{ .Description }}{{ end }}" >
+    <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Title }}{{ if eq $isHomePage false }} - {{ .Title }}{{ end }} {{ if eq $isHomePage true }} - {{ .Site.Params.Subtitle}}{{ end }}</title>
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/schema.html" . }}

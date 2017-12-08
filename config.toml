@@ -6,6 +6,7 @@ paginate=10
 
 disqusShortname = "sivalabs"
 googleAnalytics = "UA-71296890-1"
+enableRobotsTXT = true
 
 [taxonomies]
   category = "categories"
@@ -13,14 +14,11 @@ googleAnalytics = "UA-71296890-1"
 
 [params]
   author = "Siva"
+  subtitle = "My Experiments with Technology"
+  description = "Java, Spring, SpringBoot, SpringCloud, JPA, Hibernate, DevOps, MicroServices, Docker tutorials"
   facebook = "sivaprasadreddy.k"
   twitter = "sivalabs"
   googleplus = "+SivaPrasadReddy"
   youtube = "SivaPrasadReddy%20"
   github = "sivaprasadreddy"
   linkedin = "siva-prasad-reddy-k-3a909172"
-
-
-[params.meta]
-  keywords = "Java Spring SpringBoot JavaEE Hibernate MicroServices Docker"
-  description = "My Experience with Technologies"
