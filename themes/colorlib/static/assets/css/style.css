@@ -41,12 +41,12 @@ sparkling is based on Underscores http://underscores.me/, (C) 2012-2015 Automatt
 /* =Global
 ----------------------------------------------- */
 body {
-  color: #6B6B6B;
+  color: #555;
   background-color: #F2F2F2;
   word-wrap: break-word;
-  font-family: 'Open Sans', sans-serif;
+
   line-height: 1.7;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a {
@@ -598,7 +598,7 @@ object {
   color: #636467;
 }
 #secondary .widget a {
-  color: #C1C0C0;
+  color: #555;
 }
 #secondary .widget a:hover {
   color: #DA4453;
@@ -683,7 +683,7 @@ object {
   margin-bottom: 4px;
   line-height: 100%;
   display: inline-block;
-  color: #FFF !important;
+  color: #555 !important;
   background-color: #DADADA;
   border-radius: 3px;
   -webkit-border-radius: 3px;
