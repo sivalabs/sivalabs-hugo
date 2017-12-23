@@ -1,5 +1,5 @@
 public
 
 .idea
-.iml
+*.iml
 node_modules
