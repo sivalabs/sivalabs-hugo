@@ -1,4 +1,11 @@
 <head>
+    {{ if (not (eq .Site.GoogleAnalytics "")) }}
+    {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
+    <div class="analytics">
+        {{ template "_internal/google_analytics_async.html" . }}
+    </div>
+    {{ end }}
+    {{ end }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" property="title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Title }}{{ if eq $isHomePage false }} - {{ .Title }}{{ end }}{{ if eq $isHomePage true }} - {{ .Site.Params.Subtitle}}{{ end }}">
