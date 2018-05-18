@@ -332,9 +332,9 @@ In our AppConfig.java configuration class we have done the following:
   * Marked it as as a Spring Configuration class using **@Configuration** annotation.
   * Enabled Annotation based transaction management using **@EnableTransactionManagement**
   * Configured **@EnableJpaRepositories** to indicate where to look for Spring Data JPA repositories
-  * Configured PropertyPlaceHolder bean using **@PropertySource** annotation and **PropertySourcesPlaceholderConfigurer **bean definition which loads properties from **application.properties** file.
+  * Configured PropertyPlaceHolder bean using **@PropertySource** annotation and **PropertySourcesPlaceholderConfigurer** bean definition which loads properties from **application.properties** file.
   * Defined beans for **DataSource**, JPA **EntityManagerFactory**, **JpaTransactionManager**.
-  * Configured **DataSourceInitializer **bean to initialize the database by executing **data.sql** script on application start up.
+  * Configured **DataSourceInitializer** bean to initialize the database by executing **data.sql** script on application start up.
 
 we need to configure property placeholder values in **application.properties** in src/main/resources as follows:
 
