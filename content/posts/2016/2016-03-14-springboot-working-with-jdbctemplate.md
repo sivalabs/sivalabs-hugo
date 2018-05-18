@@ -95,14 +95,14 @@ public class UserRepository
     private JdbcTemplate jdbcTemplate;
 
     @Transactional(readOnly=true)
-    public List&lt;User&gt; findAll() {
+    public List<User> findAll() {
         return jdbcTemplate.query("select * from users", new UserRowMapper());
     }
 }
 {{< / highlight >}}
 
 {{< highlight java >}}
-class UserRowMapper implements RowMapper&lt;User&gt;
+class UserRowMapper implements RowMapper<User>
 {
     @Override
     public User mapRow(ResultSet rs, int rowNum) throws SQLException 
@@ -128,10 +128,10 @@ By using SpringBoot we can take advantage of auto configuration feature and elim
 **Create a SpringBoot maven based project and add spring-boot-starter-jdbc module.**
 
 {{< highlight xml >}}
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
 {{< / highlight >}}
 
 By adding **spring-boot-starter-jdbc** module, we get the following auto configuration:
@@ -158,10 +158,10 @@ If there are any errors in executing the scripts then application will fail to s
 Let us add **H2** database driver to our **pom.xml**.
         
 {{< highlight xml >}}
-&lt;dependency&gt;
-    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
-    &lt;artifactId&gt;h2&lt;/artifactId&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+</dependency>
 {{< / highlight >}}
         
 Create **schema.sql** in **src/main/resources** as follows:
@@ -194,7 +194,7 @@ public class UserRepository
     private JdbcTemplate jdbcTemplate;
 
     @Transactional(readOnly=true)
-    public List&lt;User&gt; findAll() {
+    public List<User> findAll() {
         return jdbcTemplate.query("select * from users", 
                 new UserRowMapper());
     }
@@ -227,7 +227,7 @@ public class UserRepository
     }
 }
 
-class UserRowMapper implements RowMapper&lt;User&gt;
+class UserRowMapper implements RowMapper<User>
 {
     @Override
     public User mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -265,7 +265,7 @@ public class SpringbootJdbcDemoApplicationTests
 
     @Test
     public void findAllUsers() {
-        List&lt;User&gt; users = userRepository.findAll();
+        List<User> users = userRepository.findAll();
         assertNotNull(users);
         assertTrue(!users.isEmpty());
     }
@@ -324,21 +324,21 @@ SpringBoot checks the availability of the following classes and uses the first o
 For example, If you want to use **HikariDataSource** then you can exclude **tomcat-jdbc** and add **HikariCP** dependency as follows:
 
 {{< highlight xml >}}
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
-    &lt;exclusions&gt;
-        &lt;exclusion&gt;
-        &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt;
-        &lt;artifactId&gt;tomcat-jdbc&lt;/artifactId&gt;
-        &lt;/exclusion&gt;
-    &lt;/exclusions&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+    <exclusions>
+        <exclusion>
+        <groupId>org.apache.tomcat</groupId>
+        <artifactId>tomcat-jdbc</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
 
-&lt;dependency&gt;
-    &lt;groupId&gt;com.zaxxer&lt;/groupId&gt;
-    &lt;artifactId&gt;HikariCP&lt;/artifactId&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>com.zaxxer</groupId>
+    <artifactId>HikariCP</artifactId>
+</dependency>
 {{< / highlight >}}
         
 With this dependency configuration SpringBoot will use **HikariCP** to configure **DataSource** bean.

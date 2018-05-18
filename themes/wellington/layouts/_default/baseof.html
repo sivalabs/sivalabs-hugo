@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+{{ partial "head.html" . }}
+<body class="home blog logged-in admin-bar no-customize-support post-layout-one-column">
+    <div id="header-top" class="header-bar-wrap"></div>
+    <div id="page" class="hfeed site">
+        <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        {{ partial "header.html" . }}
+        <div id="content" class="site-content container clearfix">
+            <section id="primary" class="content-archive content-area">
+                {{ block "main" . }} {{ end }}
+            </section>
+
+            <section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+                {{ partial "sidebar.html" . }}
+            </section>
+        </div>
+        <div id="footer" class="footer-wrap">
+            {{ partial "footer.html" . }}
+
+        </div>
+    </div>
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/a244435ef0378fac204b5a2d4/5f76189934783143aeb496d1e.js");</script>
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"a244435ef0378fac204b5a2d4","lid":"bdded8d3db"}) })</script>
+</body>
+</html>

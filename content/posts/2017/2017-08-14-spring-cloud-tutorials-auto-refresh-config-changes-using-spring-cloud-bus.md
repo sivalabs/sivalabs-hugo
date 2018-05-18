@@ -33,10 +33,10 @@ In previous post we have created **catalog-service** as a SpringBoot application
 Let us add **Cloud Bus AMQP** starter to **catalog-service/pom.xml**.
 
 {{< highlight xml >}}
-&lt;dependency&gt;
-	&lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-	&lt;artifactId&gt;spring-cloud-starter-bus-amqp&lt;/artifactId&gt;
-&lt;/dependency&gt;
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+</dependency>
 {{< / highlight >}}
 
 We are going to use RabbitMQ as message broker to broadcast config changes. We can install RabbitMQ on our local machine or run in a docker container. I am going to run rabbitmq in docker container using the following **docker-compose.yml** configuration.

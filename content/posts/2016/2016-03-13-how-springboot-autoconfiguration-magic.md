@@ -72,13 +72,13 @@ Suppose we have **UserDAO** interface and **JdbcUserDAO**, **MongoUserDAO** impl
 
 {{< highlight java >}}public interface UserDAO
 {
-    List&lt;String&gt; getAllUserNames();
+    List<String> getAllUserNames();
 }
 
 public class JdbcUserDAO implements UserDAO
 {
     @Override
-    public List&lt;String&gt; getAllUserNames()
+    public List<String> getAllUserNames()
     {
         System.out.println("**** Getting usernames from RDBMS *****");
         return Arrays.asList("Siva","Prasad","Reddy");
@@ -88,7 +88,7 @@ public class JdbcUserDAO implements UserDAO
 public class MongoUserDAO implements UserDAO
 {
     @Override
-    public List&lt;String&gt; getAllUserNames()
+    public List<String> getAllUserNames()
     {
         System.out.println("**** Getting usernames from MongoDB *****");
         return Arrays.asList("Bond","James","Bond");
@@ -243,7 +243,7 @@ public class DatabaseTypeCondition implements Condition
     public boolean matches(ConditionContext conditionContext,
     AnnotatedTypeMetadata metadata)
     {
-        Map&lt;String, Object&gt; attributes = metadata.getAnnotationAttributes(DatabaseType.class.getName());
+        Map<String, Object> attributes = metadata.getAnnotationAttributes(DatabaseType.class.getName());
         String type = (String) attributes.get("value");
         String enabledDBType = System.getProperty("dbType","MYSQL");
         return (enabledDBType != null && type != null && enabledDBType.equalsIgnoreCase(type));

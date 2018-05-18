@@ -35,57 +35,57 @@ In this article we will see how to use **spring-boot-starter-jooq** using step b
 Create a SpringBoot maven based project and configure **spring-boot-starter-jooq** dependency.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;springboot-jooq-demo&lt;/artifactId&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>springboot-jooq-demo</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-    &lt;parent&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-        &lt;version&gt;1.3.3.RELEASE&lt;/version&gt;
-    &lt;/parent&gt;
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.3.RELEASE</version>
+    </parent>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;java.version&gt;1.8&lt;/java.version&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
-    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-            &lt;scope&gt;test&lt;/scope&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-jooq&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
-            &lt;artifactId&gt;h2&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;mysql&lt;/groupId&gt;
-            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
-&lt;/project&gt;
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
+</project>
 {{< / highlight >}}
 
 We are going to use **H2** in-memory database first, later we will see how to use MySQL.
@@ -150,98 +150,98 @@ values(3, 2, 'User1', 'user1@gmail.com', 'This is comment 1 on post 2', '2016-01
 We will use Maven profiles to configure the **jooq-codegen-maven** configuration properties based on database type.
 
 {{< highlight xml >}}
-&lt;profiles&gt;
-    &lt;profile&gt;
-        &lt;id&gt;h2&lt;/id&gt;
-        &lt;build&gt;
-            &lt;plugins&gt;
-                &lt;plugin&gt;
-                    &lt;groupId&gt;org.jooq&lt;/groupId&gt;
-                    &lt;artifactId&gt;jooq-codegen-maven&lt;/artifactId&gt;
-                    &lt;executions&gt;
-                        &lt;execution&gt;
-                            &lt;goals&gt;
-                                &lt;goal&gt;generate&lt;/goal&gt;
-                            &lt;/goals&gt;
-                        &lt;/execution&gt;
-                    &lt;/executions&gt;
-                    &lt;dependencies&gt;
-                        &lt;dependency&gt;
-                            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
-                            &lt;artifactId&gt;h2&lt;/artifactId&gt;
-                            &lt;version&gt;${h2.version}&lt;/version&gt;
-                        &lt;/dependency&gt;
-                    &lt;/dependencies&gt;
-                    &lt;configuration&gt;
-                        &lt;jdbc&gt;
-                            &lt;driver&gt;org.h2.Driver&lt;/driver&gt;
-                            &lt;url&gt;jdbc:h2:~/springbootjooq&lt;/url&gt;
-                        &lt;/jdbc&gt;
-                        &lt;generator&gt;
-                            &lt;name&gt;org.jooq.util.DefaultGenerator&lt;/name&gt;
-                            &lt;database&gt;
-                                &lt;name&gt;org.jooq.util.h2.H2Database&lt;/name&gt;
-                                &lt;includes&gt;.*&lt;/includes&gt;
-                                &lt;excludes /&gt;
-                                &lt;inputSchema&gt;PUBLIC&lt;/inputSchema&gt;
-                            &lt;/database&gt;
-                            &lt;target&gt;
-                                &lt;packageName&gt;com.sivalabs.demo.jooq.domain&lt;/packageName&gt;
-                                &lt;directory&gt;gensrc/main/java&lt;/directory&gt;
-                            &lt;/target&gt;
-                        &lt;/generator&gt;
-                    &lt;/configuration&gt;
-                &lt;/plugin&gt;
-            &lt;/plugins&gt;
-        &lt;/build&gt;
-    &lt;/profile&gt;
-    &lt;profile&gt;
-        &lt;id&gt;mysql&lt;/id&gt;
-        &lt;build&gt;
-            &lt;plugins&gt;
-                &lt;plugin&gt;
-                    &lt;groupId&gt;org.jooq&lt;/groupId&gt;
-                    &lt;artifactId&gt;jooq-codegen-maven&lt;/artifactId&gt;
-                    &lt;executions&gt;
-                        &lt;execution&gt;
-                            &lt;goals&gt;
-                                &lt;goal&gt;generate&lt;/goal&gt;
-                            &lt;/goals&gt;
-                        &lt;/execution&gt;
-                    &lt;/executions&gt;
-                    &lt;dependencies&gt;
-                        &lt;dependency&gt;
-                            &lt;groupId&gt;mysql&lt;/groupId&gt;
-                            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-                            &lt;version&gt;${mysql.version}&lt;/version&gt;
-                        &lt;/dependency&gt;
-                    &lt;/dependencies&gt;
-                    &lt;configuration&gt;
-                        &lt;jdbc&gt;
-                            &lt;driver&gt;com.mysql.jdbc.Driver&lt;/driver&gt;
-                            &lt;url&gt;jdbc:mysql://localhost:3306/test&lt;/url&gt;
-                            &lt;user&gt;root&lt;/user&gt;
-                            &lt;password&gt;admin&lt;/password&gt;
-                        &lt;/jdbc&gt;
-                        &lt;generator&gt;
-                            &lt;name&gt;org.jooq.util.DefaultGenerator&lt;/name&gt;
-                            &lt;database&gt;
-                                &lt;name&gt;org.jooq.util.mysql.MySQLDatabase&lt;/name&gt;
-                                &lt;includes&gt;.*&lt;/includes&gt;
-                                &lt;excludes /&gt;
-                                &lt;inputSchema&gt;test&lt;/inputSchema&gt;
-                            &lt;/database&gt;
-                            &lt;target&gt;
-                                &lt;packageName&gt;com.sivalabs.demo.jooq.domain&lt;/packageName&gt;
-                                &lt;directory&gt;gensrc/main/java&lt;/directory&gt;
-                            &lt;/target&gt;
-                        &lt;/generator&gt;
-                    &lt;/configuration&gt;
-                &lt;/plugin&gt;
-            &lt;/plugins&gt;
-        &lt;/build&gt;
-    &lt;/profile&gt;
-&lt;/profiles&gt;
+<profiles>
+    <profile>
+        <id>h2</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-codegen-maven</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <jdbc>
+                            <driver>org.h2.Driver</driver>
+                            <url>jdbc:h2:~/springbootjooq</url>
+                        </jdbc>
+                        <generator>
+                            <name>org.jooq.util.DefaultGenerator</name>
+                            <database>
+                                <name>org.jooq.util.h2.H2Database</name>
+                                <includes>.*</includes>
+                                <excludes />
+                                <inputSchema>PUBLIC</inputSchema>
+                            </database>
+                            <target>
+                                <packageName>com.sivalabs.demo.jooq.domain</packageName>
+                                <directory>gensrc/main/java</directory>
+                            </target>
+                        </generator>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+    <profile>
+        <id>mysql</id>
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.jooq</groupId>
+                    <artifactId>jooq-codegen-maven</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <configuration>
+                        <jdbc>
+                            <driver>com.mysql.jdbc.Driver</driver>
+                            <url>jdbc:mysql://localhost:3306/test</url>
+                            <user>root</user>
+                            <password>admin</password>
+                        </jdbc>
+                        <generator>
+                            <name>org.jooq.util.DefaultGenerator</name>
+                            <database>
+                                <name>org.jooq.util.mysql.MySQLDatabase</name>
+                                <includes>.*</includes>
+                                <excludes />
+                                <inputSchema>test</inputSchema>
+                            </database>
+                            <target>
+                                <packageName>com.sivalabs.demo.jooq.domain</packageName>
+                                <directory>gensrc/main/java</directory>
+                            </target>
+                        </generator>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
+</profiles>
 {{< / highlight >}}
 
 We have configured two profile (**h2** and **mysql**) with appropriate JDBC configuration parameters.
@@ -258,23 +258,23 @@ We can run the maven build activating **h2** or **mysql** profile as follows:
 We will configure the **build-helper-maven-plugin** plugin such that maven will add the JOOQ generated code resides in **gensrc/main/java** directory as source folder.
 
 {{< highlight xml >}}
-&lt;plugin&gt;
-    &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-    &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;
-    &lt;executions&gt;
-        &lt;execution&gt;
-            &lt;phase&gt;generate-sources&lt;/phase&gt;
-            &lt;goals&gt;
-                &lt;goal&gt;add-source&lt;/goal&gt;
-            &lt;/goals&gt;
-            &lt;configuration&gt;
-                &lt;sources&gt;
-                    &lt;source&gt;gensrc/main/java&lt;/source&gt;
-                &lt;/sources&gt;
-            &lt;/configuration&gt;
-        &lt;/execution&gt;
-    &lt;/executions&gt;
-&lt;/plugin&gt;
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>build-helper-maven-plugin</artifactId>
+    <executions>
+        <execution>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>add-source</goal>
+            </goals>
+            <configuration>
+                <sources>
+                    <source>gensrc/main/java</source>
+                </sources>
+            </configuration>
+        </execution>
+    </executions>
+</plugin>
 {{< / highlight >}}
 
 ### Step 5: Create domain objects.
@@ -288,7 +288,7 @@ public class Post
     private String title;
     private String content;
     private Timestamp createdOn;
-    private List&lt;Comment&gt; comments = new ArrayList&lt;&gt;();
+    private List<Comment> comments = new ArrayList<>();
     //setters & getters
 
 }
@@ -350,9 +350,9 @@ public class BlogService
         return post;
     }
     
-    public List&lt;Post&gt; getAllPosts(){        
-        List&lt;Post&gt; posts = new ArrayList&lt;&gt;();       
-        Result&lt;Record&gt; result = dsl.select().from(POSTS).fetch();
+    public List<Post> getAllPosts(){        
+        List<Post> posts = new ArrayList<>();       
+        Result<Record> result = dsl.select().from(POSTS).fetch();
         for (Record r : result) {
             posts.add(getPostEntity(r));
         }
@@ -368,7 +368,7 @@ public class BlogService
         {
             Post post = getPostEntity(record);
             
-            Result&lt;Record&gt; commentRecords = dsl.select().
+            Result<Record> commentRecords = dsl.select().
                                         from(COMMENTS)
                                         .where(COMMENTS.POST_ID.eq(postId))
                                         .fetch();
@@ -448,7 +448,7 @@ public class SpringbootJooqDemoApplicationTests
     
     @Test
     public void findAllPosts()  {
-        List&lt;Post&gt; posts = blogService.getAllPosts();
+        List<Post> posts = blogService.getAllPosts();
         assertNotNull(posts);
         assertTrue(!posts.isEmpty());
         for (Post post : posts)
@@ -462,7 +462,7 @@ public class SpringbootJooqDemoApplicationTests
         Post post = blogService.getPost(1);
         assertNotNull(post);
         System.out.println(post);
-        List&lt;Comment&gt; comments = post.getComments();
+        List<Comment> comments = post.getComments();
         System.out.println(comments);
         
     }
@@ -486,7 +486,7 @@ public class SpringbootJooqDemoApplicationTests
                                 new Timestamp(System.currentTimeMillis()));
         Comment savedComment = blogService.createComment(comment);
         Post post = blogService.getPost(postId);
-        List&lt;Comment&gt; comments = post.getComments();
+        List<Comment> comments = post.getComments();
         assertNotNull(comments);
         for (Comment comm : comments)
         {

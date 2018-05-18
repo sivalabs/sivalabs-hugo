@@ -34,7 +34,7 @@ We can use Spring AOP **@Around** advice to create a proxy for those objects who
 Before jumping on to implementing these Spring Advice and Aspect, first let us write a simple utility to execute a **&#8220;Task&#8221;** which automatically retry for N times ignoring the given set of Exceptions.
 
 {{< highlight java >}}
-public interface Task&lt;T&gt; {
+public interface Task<T> {
 	T execute();
 }
 {{< / highlight >}}
@@ -51,18 +51,18 @@ public class TaskExecutionUtil
 	private static Logger logger = LoggerFactory.getLogger(TaskExecutionUtil.class);
 
 	@SafeVarargs
-	public static &lt;T&gt; T execute(Task&lt;T&gt; task, 
+	public static <T> T execute(Task<T> task, 
 								int noOfRetryAttempts, 
 								long sleepInterval, 
-								Class&lt;? extends Throwable&gt;... ignoreExceptions) 
+								Class<? extends Throwable>... ignoreExceptions) 
 	{
 		
-		if (noOfRetryAttempts &lt; 1) {
+		if (noOfRetryAttempts < 1) {
 			noOfRetryAttempts = 1;
 		}
-		Set&lt;Class&lt;? extends Throwable&gt;&gt; ignoreExceptionsSet = new HashSet&lt;Class&lt;? extends Throwable&gt;&gt;();
-		if (ignoreExceptions != null && ignoreExceptions.length &gt; 0) {
-			for (Class&lt;? extends Throwable&gt; ignoreException : ignoreExceptions) {
+		Set<Class<? extends Throwable>> ignoreExceptionsSet = new HashSet<Class<? extends Throwable>>();
+		if (ignoreExceptions != null && ignoreExceptions.length > 0) {
+			for (Class<? extends Throwable> ignoreException : ignoreExceptions) {
 				ignoreExceptionsSet.add(ignoreException);
 			}
 		}
@@ -71,7 +71,7 @@ public class TaskExecutionUtil
 		logger.debug("ignoreExceptionsSet = "+ignoreExceptionsSet);
 		
 		T result = null;
-		for (int retryCount = 1; retryCount &lt;= noOfRetryAttempts; retryCount++) {
+		for (int retryCount = 1; retryCount <= noOfRetryAttempts; retryCount++) {
 			logger.debug("Executing the task. Attemp#"+retryCount);
 			try {
 				result = task.execute();
@@ -79,7 +79,7 @@ public class TaskExecutionUtil
 			} catch (RuntimeException t) {
 				Throwable e = t.getCause();
 				logger.error(" Caught Exception class"+e.getClass());
-				for (Class&lt;? extends Throwable&gt; ignoreExceptionClazz : ignoreExceptionsSet) {
+				for (Class<? extends Throwable> ignoreExceptionClazz : ignoreExceptionsSet) {
 					logger.error(" Comparing with Ignorable Exception : "+ignoreExceptionClazz.getName());
 					
 					if (!ignoreExceptionClazz.isAssignableFrom(e.getClass())) {
@@ -90,7 +90,7 @@ public class TaskExecutionUtil
 					}
 				}
 				logger.error("Failed at Retry attempt :" + retryCount + " of : " + noOfRetryAttempts);
-				if (retryCount &gt;= noOfRetryAttempts) {
+				if (retryCount >= noOfRetryAttempts) {
 					logger.error("Maximum retrial attempts exceeded.");
 					logger.error("Throwing exception to the caller");
 					throw t;
@@ -125,7 +125,7 @@ public  @interface Retry {
 	
 	public long sleepInterval() default 1000L; //milliseconds
 	
-	Class&lt;? extends Throwable&gt;[] ignoreExceptions() default { RuntimeException.class };
+	Class<? extends Throwable>[] ignoreExceptions() default { RuntimeException.class };
 	
 }
 {{< / highlight >}}
@@ -169,9 +169,9 @@ public class MethodRetryHandlerAspect {
 		Retry retry = method.getDeclaredAnnotation(Retry.class);
 		int retryAttempts = retry.retryAttempts();
 		long sleepInterval = retry.sleepInterval();
-		Class&lt;? extends Throwable&gt;[] ignoreExceptions = retry.ignoreExceptions();
+		Class<? extends Throwable>[] ignoreExceptions = retry.ignoreExceptions();
 		
-		Task&lt;Object&gt; task = new Task&lt;Object&gt;() {
+		Task<Object> task = new Task<Object>() {
 			@Override
 			public Object execute() {
 				try {

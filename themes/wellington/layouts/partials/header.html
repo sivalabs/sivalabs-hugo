@@ -1,0 +1,47 @@
+<header id="masthead" class="site-header clearfix" role="banner">
+    <div class="header-main container clearfix">
+        <div id="logo" class="site-branding clearfix">
+            <h1 class="site-title">
+                <a href="{{ "" | relLangURL }}" title="{{ .Site.Title }}" rel="home">{{ .Site.Title }}</a>
+            </h1>
+            <p class="site-description">My Experiments on Technology</p>
+        </div>
+        <div class="header-widgets clearfix">
+        </div>
+    </div>
+    <div id="main-navigation-wrap" class="primary-navigation-wrap">
+        <nav id="main-navigation" class="primary-navigation navigation container clearfix" role="navigation">
+            <ul id="menu-home" class="main-navigation-menu">
+                <li id="menu-item-1145" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1145">
+                    <a href="{{ "" | relLangURL }}">Home</a>
+                </li>
+                <li id="menu-item-1421" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1421">
+                    <a href="{{ "/categories/java" | relLangURL }}">Java</a>
+                </li>
+                <li id="menu-item-1423" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-1423">
+                    <a href="{{ "/categories/spring" | relLangURL }}">Spring</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-1424" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1424">
+                            <a href="{{ "/categories/springboot" | relLangURL }}">Spring Boot</a>
+                        </li>
+                        <li id="menu-item-1425" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1425">
+                            <a href="{{ "/categories/springcloud" | relLangURL }}">Spring Cloud</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="menu-item-1422" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1422">
+                    <a href="{{ "/categories/microservices" | relLangURL }}">MicroServices</a>
+                </li>
+                <li id="menu-item-1151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1151">
+                    <a href="{{ "/videos" | relLangURL }}">Videos</a>
+                </li>
+                <li id="menu-item-1161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1161">
+                    <a href="{{ "/mybooks" | relLangURL }}">My Books</a>
+                </li>
+                <li id="menu-item-1146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1146">
+                    <a href="{{ "/contact" | relLangURL }}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

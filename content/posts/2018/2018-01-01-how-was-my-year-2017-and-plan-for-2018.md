@@ -1,7 +1,7 @@
 ---
 title: How was my year 2017 and my plans for 2018
 author: Siva
-images: ["https://sivalabs.in/images/2018-year.jpg"]
+images: ["/images/2018-year.jpg"]
 type: post
 date: 2018-01-01T07:59:17+05:30
 url: /2018/01/how-was-my-year-2017-and-plan-for-2018/

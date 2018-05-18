@@ -1,0 +1,97 @@
+
+{{ partial "social-links.html" . }}
+
+
+<aside id="recent-posts-2" class="widget widget_recent_entries clearfix">
+    <div class="widget-header">
+        <h3 class="widget-title">Recent Posts</h3>
+    </div>
+    <ul>
+        {{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 5) }}
+        {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+        <li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
+    </ul>
+
+</aside>
+
+<aside id="top-posts-2" class="widget widget_top-posts clearfix">
+    <div class="widget-header"><h3 class="widget-title">Top Posts &amp; Pages</h3></div>
+    <ul>
+
+        <li>
+            <a href="{{ "2016/03/why-springboot/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            Why SpringBoot?</a>
+        </li>
+
+        <li>
+            <a href="{{ "2016/03/how-springboot-autoconfiguration-magic/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            How SpringBoot AutoConfiguration magic works?</a>
+        </li>
+
+        <li>
+            <a href="{{ "2015/11/developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            Developing a simple e-commerce application from scratch to production using SpringBoot</a>
+        </li>
+
+        <li>
+            <a href="{{ "2013/12/clean-code-dont-mix-different-levels-of-abstractions/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            Clean Code: Don’t mix different levels of abstractions</a>
+        </li>
+
+        <li>
+            <a href="{{ "2015/06/a-developers-perspective-on-spring-vs-javaee/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            A Developers Perspective on Spring vs JavaEE</a>
+        </li>
+
+        <li>
+            <a href="{{ "2015/07/my-life-as-software-developer-in-india/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            My Life as a Software Developer in India</a>
+        </li>
+
+        <li>
+            <a href="{{ "2011/01/10-things-to-become-outstanding-java/" | relLangURL }}"
+            class="bump-view" data-bump-view="tp">
+            10 things to become an outstanding Java developer</a>
+        </li>
+</ul>
+</aside>
+
+<aside id="categories-2" class="widget widget_categories clearfix">
+    <div class="widget-header"><h3 class="widget-title">Categories</h3></div>
+    <ul>
+        {{- if isset .Site.Taxonomies "categories" }}
+        {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
+        {{- range $name, $items := .Site.Taxonomies.categories }}
+        <li class="cat-item"><a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title }}</a></li>
+        {{- end }}
+
+        {{- end }}
+        {{- end }}
+    </ul>
+</aside>
+
+
+<aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix">
+    <div class="widget-header"><h3 class="widget-title">Tags</h3></div>
+    <div class="tagcloud">
+        {{- if isset .Site.Taxonomies "tags" }}
+        {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+
+        <div class="widget__content">
+            {{- range $name, $items := .Site.Taxonomies.tags }}
+            <a class="tag-cloud-link widget__link widget__link--taglist"
+               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name }}">{{ $name }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
+            {{- end }}
+        </div>
+
+        {{- end }}
+        {{- end }}
+    </div>
+</aside>

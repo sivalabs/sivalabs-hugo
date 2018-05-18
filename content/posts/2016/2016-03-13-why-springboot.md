@@ -55,20 +55,20 @@ Let us take a quick look at how each of those configuration styles looks like.
 ### XML based configuration
 
 {{< highlight xml >}}
-&lt;bean id="userService" class="com.sivalabs.myapp.service.UserService"&gt;
-    &lt;property name="userDao" ref="userDao"/&gt;
-&lt;/bean&gt;
+<bean id="userService" class="com.sivalabs.myapp.service.UserService">
+    <property name="userDao" ref="userDao"/>
+</bean>
 
-&lt;bean id="userDao" class="com.sivalabs.myapp.dao.JdbcUserDao"&gt;
-    &lt;property name="dataSource" ref="dataSource"/&gt;
-&lt;/bean&gt;
+<bean id="userDao" class="com.sivalabs.myapp.dao.JdbcUserDao">
+    <property name="dataSource" ref="dataSource"/>
+</bean>
 
-&lt;bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt;
-    &lt;property name="driverClassName" value="com.mysql.jdbc.Driver"/&gt;
-    &lt;property name="url" value="jdbc:mysql://localhost:3306/test"/&gt;
-    &lt;property name="username" value="root"/&gt;
-    &lt;property name="password" value="secret"/&gt;
-&lt;/bean&gt;
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+    <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+    <property name="username" value="root"/>
+    <property name="password" value="secret"/>
+</bean>
 {{</ highlight >}}
 
 ### Annotation based configuration
@@ -158,89 +158,89 @@ Before getting to know what is SpringBoot and what kind of features it provides,
 First thing we need to do is configure all the dependencies required in our **pom.xml**.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;springmvc-jpa-demo&lt;/artifactId&gt;
-    &lt;packaging&gt;war&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;name&gt;springmvc-jpa-demo&lt;/name&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>springmvc-jpa-demo</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>springmvc-jpa-demo</name>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
-        &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;      
-        &lt;failOnMissingWebXml&gt;false&lt;/failOnMissingWebXml&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>      
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
 
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
-            &lt;version&gt;4.2.4.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-data-jpa&lt;/artifactId&gt;
-            &lt;version&gt;1.9.2.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-            &lt;artifactId&gt;jcl-over-slf4j&lt;/artifactId&gt;
-            &lt;version&gt;1.7.13&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-            &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
-            &lt;version&gt;1.7.13&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-            &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
-            &lt;version&gt;1.7.13&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;log4j&lt;/groupId&gt;
-            &lt;artifactId&gt;log4j&lt;/artifactId&gt;
-            &lt;version&gt;1.2.17&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.h2database&lt;/groupId&gt;
-            &lt;artifactId&gt;h2&lt;/artifactId&gt;
-            &lt;version&gt;1.4.190&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
-            &lt;artifactId&gt;commons-dbcp&lt;/artifactId&gt;
-            &lt;version&gt;1.4&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;mysql&lt;/groupId&gt;
-            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-            &lt;version&gt;5.1.38&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
-            &lt;artifactId&gt;hibernate-entitymanager&lt;/artifactId&gt;
-            &lt;version&gt;4.3.11.Final&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
-            &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
-            &lt;version&gt;3.1.0&lt;/version&gt;
-            &lt;scope&gt;provided&lt;/scope&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;
-            &lt;artifactId&gt;thymeleaf-spring4&lt;/artifactId&gt;
-            &lt;version&gt;2.1.4.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
-&lt;/project&gt;
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.9.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.13</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.190</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.3.11.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+            <version>2.1.4.RELEASE</version>
+        </dependency>
+    </dependencies>
+</project>
 {{< / highlight >}}
 
 We have configured all our Maven jar dependencies to include Spring MVC, Spring Data JPA, JPA/Hibernate, Thymeleaf and Log4j.
@@ -453,15 +453,15 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 {
 
     @Override
-    protected Class&lt;?&gt;[] getRootConfigClasses()
+    protected Class<?>[] getRootConfigClasses()
     {
-        return new Class&lt;?&gt;[] { AppConfig.class};
+        return new Class<?>[] { AppConfig.class};
     }
 
     @Override
-    protected Class&lt;?&gt;[] getServletConfigClasses()
+    protected Class<?>[] getServletConfigClasses()
     {
-        return new Class&lt;?&gt;[] { WebMvcConfig.class };
+        return new Class<?>[] { WebMvcConfig.class };
     }
 
     @Override
@@ -499,7 +499,7 @@ public class User
 }
 {{< / highlight >}}
 
-{{< highlight java >}}public interface UserRepository extends JpaRepository&lt;User, Integer&gt;
+{{< highlight java >}}public interface UserRepository extends JpaRepository<User, Integer>
 {
 }
 {{< / highlight >}}
@@ -525,30 +525,30 @@ public class HomeController
 **Step 7: Create a thymeleaf view /WEB-INF/views/index.html to render list of Users.**
 
 {{< highlight xml >}}
-&lt;!DOCTYPE html&gt;
-&lt;html xmlns="http://www.w3.org/1999/xhtml" 
-      xmlns:th="http://www.thymeleaf.org"&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8"/&gt;
-&lt;title&gt;Home&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;table&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th&gt;Id&lt;/th&gt;
-                &lt;th&gt;Name&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-            &lt;tr th:each="user : ${users}"&gt;
-                &lt;td th:text="${user.id}"&gt;Id&lt;/td&gt;
-                &lt;td th:text="${user.name}"&gt;Name&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Home</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">Id</td>
+                <td th:text="${user.name}">Name</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
 {{< / highlight >}}
 
 We are all set now to run the application. But before that we need to download and configure the server like **Tomcat** or **Jetty** or **Wildfly** etc in your IDE.
@@ -603,57 +603,57 @@ So let us implement the same application that we built earlier but this time usi
 
 Create a Maven project and configure the dependencies as follows:
 
-{{< highlight xml >}}&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+{{< highlight xml >}}<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;hello-springboot&lt;/artifactId&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;name&gt;hello-springboot&lt;/name&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>hello-springboot</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>hello-springboot</name>
 
-    &lt;parent&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-        &lt;version&gt;1.3.2.RELEASE&lt;/version&gt;
-    &lt;/parent&gt;
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.2.RELEASE</version>
+    </parent>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;java.version&gt;1.8&lt;/java.version&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
     
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;mysql&lt;/groupId&gt;
-            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
-&lt;/project&gt;
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
+</project>
 {{< / highlight >}}
 
 Wow our **pom.xml** suddenly become so small!!.

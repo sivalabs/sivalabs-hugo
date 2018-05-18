@@ -1,7 +1,8 @@
 baseURL = "https://sivalabs.in/"
 languageCode = "en-us"
 title = "SivaLabs"
-theme = "colorlib"
+#theme = "colorlib"
+theme = "wellington"
 paginate=10
 
 disqusShortname = "sivalabs"

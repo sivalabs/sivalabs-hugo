@@ -24,11 +24,11 @@ You can read about the SpringBoot MyBatis Starter release announcement at <http:
 
 
 {{< highlight xml >}}
-&lt;dependency&gt;
-    &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
-    &lt;version&gt;1.0.0&lt;/version&gt;
-&lt;/dependency&gt;
+<dependency>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
+    <version>1.0.0</version>
+</dependency>
 {{< / highlight >}}
 
 We will be reusing **User.java, schema.sql and data.sql** files created in my previous article [SpringBoot : Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}})
@@ -42,7 +42,7 @@ public interface UserMapper
 {
     void insertUser(User user);
     User findUserById(Integer id);
-    List&lt;User&gt; findAllUsers();
+    List<User> findAllUsers();
 }
 {{< / highlight >}}
 
@@ -51,30 +51,30 @@ We need to create Mapper XML files to define the queries for the mapped SQL stat
 Create **UserMapper.xml** file in **src/main/resources/com/sivalabs/demo/mappers/** directory as follows:
 
 {{< highlight xml >}}
-&lt;!DOCTYPE mapper
+<!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd"&gt;
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-&lt;mapper namespace="com.sivalabs.demo.mappers.UserMapper"&gt;
+<mapper namespace="com.sivalabs.demo.mappers.UserMapper">
 
-    &lt;resultMap id="UserResultMap" type="User"&gt;
-        &lt;id column="id" property="id" /&gt;
-        &lt;result column="name" property="name" /&gt;
-        &lt;result column="email" property="email" /&gt;
-    &lt;/resultMap&gt;
+    <resultMap id="UserResultMap" type="User">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="email" property="email" />
+    </resultMap>
 
-    &lt;select id="findAllUsers" resultMap="UserResultMap"&gt;
+    <select id="findAllUsers" resultMap="UserResultMap">
         select id, name, email from users
-    &lt;/select&gt;
+    </select>
 
-    &lt;select id="findUserById" resultMap="UserResultMap"&gt;
+    <select id="findUserById" resultMap="UserResultMap">
         select id, name, email from users WHERE id=#{id}
-    &lt;/select&gt;
+    </select>
 
-    &lt;insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id"&gt;
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into users(name,email) values(#{name},#{email})
-    &lt;/insert&gt;
-&lt;/mapper&gt;
+    </insert>
+</mapper>
 {{< / highlight >}}
 
 Few things to observe here are:
@@ -99,7 +99,7 @@ public interface UserMapper
     User findUserById(Integer id);
 
     @Select("select id, name, email from users")
-    List&lt;User&gt; findAllUsers();
+    List<User> findAllUsers();
 
 }
 {{< / highlight >}}
@@ -150,7 +150,7 @@ public class SpringbootMyBatisDemoApplicationTests
 
     @Test
     public void findAllUsers() {
-        List&lt;User&gt; users = userMapper.findAllUsers();
+        List<User> users = userMapper.findAllUsers();
         assertNotNull(users);
         assertTrue(!users.isEmpty());
     }

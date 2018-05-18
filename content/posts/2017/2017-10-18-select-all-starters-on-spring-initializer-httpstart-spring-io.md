@@ -27,7 +27,7 @@ So, when a new spring boot version is released I usually do the following:
   * Open Developer Tools/Console and run the following script:
 
 {{< highlight javascript >}}var inputs = document.getElementsByTagName('input');
-for (var i = 0; i &lt; inputs.length; i++)
+for (var i = 0; i < inputs.length; i++)
 {
     if (inputs[i].type == 'checkbox' && !inputs[i].disabled) {
        inputs[i].checked = true;

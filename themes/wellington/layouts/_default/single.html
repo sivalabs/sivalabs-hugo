@@ -1,0 +1,17 @@
+
+{{ define "main" }}
+<main id="main" class="site-main" role="main">
+<article class="post type-post status-publish format-standard hentry">
+    <div class="post-inner-content">
+        {{ partial "post-meta.html" . }}
+        <div class="entry-content">
+            {{ .Content }}
+        </div>
+        {{ partial "social-share.html" . }}
+    </div>
+</article>
+
+{{ partial "comments.html" . }}
+{{ partial "post_nav.html" . }}
+</main>
+{{ end }}

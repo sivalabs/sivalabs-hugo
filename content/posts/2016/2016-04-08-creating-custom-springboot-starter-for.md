@@ -30,50 +30,50 @@ To accomplish this, we are going to create:
 First we are going to create a parent pom type module to define dependency versions and sub-modules.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-twitter4j&lt;/artifactId&gt;
-    &lt;packaging&gt;pom&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;name&gt;spring-boot-starter-twitter4j&lt;/name&gt;
+    <groupId>com.sivalabs</groupId>
+    <artifactId>spring-boot-starter-twitter4j</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>spring-boot-starter-twitter4j</name>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;twitter4j.version&gt;4.0.3&lt;/twitter4j.version&gt;
-        &lt;spring-boot.version&gt;1.3.2.RELEASE&lt;/spring-boot.version&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <twitter4j.version>4.0.3</twitter4j.version>
+        <spring-boot.version>1.3.2.RELEASE</spring-boot.version>
+    </properties>
 
-    &lt;modules&gt;
-        &lt;module&gt;twitter4j-spring-boot-autoconfigure&lt;/module&gt;
-        &lt;module&gt;twitter4j-spring-boot-starter&lt;/module&gt;
-        &lt;module&gt;twitter4j-spring-boot-sample&lt;/module&gt;
-    &lt;/modules&gt;
+    <modules>
+        <module>twitter4j-spring-boot-autoconfigure</module>
+        <module>twitter4j-spring-boot-starter</module>
+        <module>twitter4j-spring-boot-sample</module>
+    </modules>
 
-    &lt;dependencyManagement&gt;
-        &lt;dependencies&gt;
-            &lt;dependency&gt;
-                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-                &lt;artifactId&gt;spring-boot-dependencies&lt;/artifactId&gt;
-                &lt;version&gt;${spring-boot.version}&lt;/version&gt;
-                &lt;type&gt;pom&lt;/type&gt;
-                &lt;scope&gt;import&lt;/scope&gt;
-            &lt;/dependency&gt;
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-            &lt;dependency&gt;
-                &lt;groupId&gt;org.twitter4j&lt;/groupId&gt;
-                &lt;artifactId&gt;twitter4j-core&lt;/artifactId&gt;
-                &lt;version&gt;${twitter4j.version}&lt;/version&gt;
-            &lt;/dependency&gt;
-        &lt;/dependencies&gt;
-    &lt;/dependencyManagement&gt;
+            <dependency>
+                <groupId>org.twitter4j</groupId>
+                <artifactId>twitter4j-core</artifactId>
+                <version>${twitter4j.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-&lt;/project&gt;
+</project>
 {{< / highlight >}}
 
 In this **pom.xml** we are defining the SpringBoot and Twitter4j versions in <dependencymanagement> section so that we don’t need to specify versions all over the places.&nbsp;</dependencymanagement>
@@ -86,53 +86,53 @@ Create a child module with name **twitter4j-spring-boot-autoconfigure** in our p
 Add the maven dependencies such as spring-boot, **spring-boot-autoconfigure**, **twitter4j-core** and **junit** as follows:
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0" 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-               http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;twitter4j-spring-boot-autoconfigure&lt;/artifactId&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+               http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>twitter4j-spring-boot-autoconfigure</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-    &lt;parent&gt;
-        &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-twitter4j&lt;/artifactId&gt;
-        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;/parent&gt;
+    <parent>
+        <groupId>com.sivalabs</groupId>
+        <artifactId>spring-boot-starter-twitter4j</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-autoconfigure&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;
-            &lt;optional&gt;true&lt;/optional&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;junit&lt;/groupId&gt;
-            &lt;artifactId&gt;junit&lt;/artifactId&gt;
-            &lt;scope&gt;test&lt;/scope&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.twitter4j&lt;/groupId&gt;
-            &lt;artifactId&gt;twitter4j-core&lt;/artifactId&gt;
-            &lt;optional&gt;true&lt;/optional&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
-&lt;/project&gt;
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>
 {{< / highlight >}}
 
 
@@ -312,47 +312,47 @@ Now we need to configure our custom <b>Twitter4jAutoConfiguration </b>in <b>src/
 Create a child module with name twitter4j-spring-boot-starter in our parent maven module spring-boot-starter-twitter4j.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;twitter4j-spring-boot-starter&lt;/artifactId&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>twitter4j-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-    &lt;parent&gt;
-        &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-twitter4j&lt;/artifactId&gt;
-        &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-    &lt;/parent&gt;
+    <parent>
+        <groupId>com.sivalabs</groupId>
+        <artifactId>spring-boot-starter-twitter4j</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 
-    &lt;dependencies&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter&lt;/artifactId&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-            &lt;artifactId&gt;twitter4j-spring-boot-autoconfigure&lt;/artifactId&gt;
-            &lt;version&gt;${project.version}&lt;/version&gt;
-        &lt;/dependency&gt;
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sivalabs</groupId>
+            <artifactId>twitter4j-spring-boot-autoconfigure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.twitter4j&lt;/groupId&gt;
-            &lt;artifactId&gt;twitter4j-core&lt;/artifactId&gt;
-        &lt;/dependency&gt;
+        <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-core</artifactId>
+        </dependency>
 
-    &lt;/dependencies&gt;
+    </dependencies>
 
-&lt;/project&gt;
+</project>
 {{< / highlight >}}
                     
 Note that in this maven module we are actually pulling in <b>twitter4j-core</b> dependency.
@@ -371,52 +371,52 @@ Let us create a sample using our brand new starter <b>twitter4j-spring-boot-star
 Let us create a simple SpringBoot application and add our <b>twitter4j-spring-boot-starter</b> dependency.
 
 {{< highlight xml >}}
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                        http://maven.apache.org/maven-v4_0_0.xsd"&gt;
-    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-    &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-    &lt;artifactId&gt;twitter4j-spring-boot-sample&lt;/artifactId&gt;
-    &lt;packaging&gt;jar&lt;/packaging&gt;
-    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+                        http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sivalabs</groupId>
+    <artifactId>twitter4j-spring-boot-sample</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
 
-    &lt;parent&gt;
-        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
-        &lt;version&gt;1.3.2.RELEASE&lt;/version&gt;
-    &lt;/parent&gt;
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.2.RELEASE</version>
+    </parent>
 
-    &lt;properties&gt;
-        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-        &lt;java.version&gt;1.8&lt;/java.version&gt;
-    &lt;/properties&gt;
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
 
-    &lt;build&gt;
-        &lt;plugins&gt;
-            &lt;plugin&gt;
-                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
-            &lt;/plugin&gt;
-        &lt;/plugins&gt;
-    &lt;/build&gt;
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-    &lt;dependencies&gt;
+    <dependencies>
 
-        &lt;dependency&gt;
-            &lt;groupId&gt;com.sivalabs&lt;/groupId&gt;
-            &lt;artifactId&gt;twitter4j-spring-boot-starter&lt;/artifactId&gt;
-            &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
-        &lt;/dependency&gt;
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
-            &lt;scope&gt;test&lt;/scope&gt;
-        &lt;/dependency&gt;
-    &lt;/dependencies&gt;
+        <dependency>
+            <groupId>com.sivalabs</groupId>
+            <artifactId>twitter4j-spring-boot-starter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-&lt;/project&gt;
+</project>
 {{< / highlight >}}
                         
 Create the entry-point class <b>SpringbootTwitter4jDemoApplication </b>as follows:
@@ -460,10 +460,10 @@ public class TweetService {
     @Autowired
     private Twitter twitter;
 
-    public List&lt;String&gt; getLatestTweets(){
-        List&lt;String&gt; tweets = new ArrayList&lt;&gt;();
+    public List<String> getLatestTweets(){
+        List<String> tweets = new ArrayList<>();
         try {
-            ResponseList&lt;Status&gt; homeTimeline = twitter.getHomeTimeline();
+            ResponseList<Status> homeTimeline = twitter.getHomeTimeline();
             for (Status status : homeTimeline) {
                 tweets.add(status.getText());
             }
@@ -503,7 +503,7 @@ public class SpringbootTwitter4jDemoApplicationTest  {
 
     @Test
     public void testGetTweets() throws TwitterException {
-        List&lt;String&gt; tweets = tweetService.getLatestTweets();
+        List<String> tweets = tweetService.getLatestTweets();
         for (String tweet : tweets) {
             System.err.println(tweet);
         }
