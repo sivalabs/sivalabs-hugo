@@ -17,7 +17,7 @@ In this article we are going to learn how we can use **Travis CI** for Continuou
 of a **SpringBoot** application. We will learn how to run maven build goals, perform test coverage validation using JaCoCo plugin, 
 Code Quality checks using **SonarCloud**, build Docker image and push it to **DockerHub** and finally deploy it to **Heroku**.
 
-> The source code for this article is at https://github.com/sivaprasadreddy/freelancer-kit
+> The source code for this article is at https://github.com/sivaprasadreddy/jblogger
 
 Last week I was talking to my friend about how easy it became to build a Java application and deploy it using SpringBoot. During the discussion one point came out about how much it cost to build a Java application and deploy it somewhere (cloud). So, I thought of exploring more about the free services that we can use to automate all the project development activities with minimal or no cost at all.
 
@@ -92,8 +92,8 @@ Add the Maven JaCoCo plugin to pom.xml with options like what is the desired cod
     <version>0.7.9</version>
     <configuration>
         <excludes>
-            <exclude>in/sivalabs/freelancerkit/entities/*</exclude>
-            <exclude>in/sivalabs/freelancerkit/*Application</exclude>
+            <exclude>com/sivalabs/jblogger/entities/*</exclude>
+            <exclude>com/sivalabs/jblogger/*Application</exclude>
         </excludes>
     </configuration>
     <executions>
@@ -267,7 +267,7 @@ Create **Dockerfile** in project root folder for our SpringBoot application as f
 {{< highlight Dockerfile>}}
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
-ADD target/freelancer-kit-0.0.1-SNAPSHOT.jar app.jar
+ADD target/jblogger-0.0.1-SNAPSHOT.jar app.jar
 RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n"
 EXPOSE 8080 8787
@@ -303,7 +303,7 @@ Now we can add our docker commands to build image and publish to dockerhub in **
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
-- export IMAGE_NAME=sivaprasadreddy/freelancerkit
+- export IMAGE_NAME=sivaprasadreddy/jblogger
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
@@ -320,7 +320,7 @@ We are going to deploy our SpringBoot application on Heroku using Travis https:/
 Now create **Procfile** in root folder of the project as follows:
 
 {{< highlight shell >}}
-web java -Dserver.port=$PORT -Dspring.profiles.active=heroku $JAVA_OPTS -jar target/freelancer-kit-0.0.1-SNAPSHOT-exec.jar
+web java -Dserver.port=$PORT -Dspring.profiles.active=heroku $JAVA_OPTS -jar target/jblogger-0.0.1-SNAPSHOT-exec.jar
 {{</ highlight >}}
 
 First we need to get the Heroku API Key and add it as encrypted secret.
@@ -333,7 +333,7 @@ We can deploy to Heroku from Travis by adding **deploy** section as follows:
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
-  app: freelancerkit
+  app: jblogger
 {{</ highlight >}}
 
 Now the complete .travis.yml file will look like follows:
@@ -367,7 +367,7 @@ script:
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
-- export IMAGE_NAME=sivaprasadreddy/freelancer-kit
+- export IMAGE_NAME=sivaprasadreddy/jblogger
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
@@ -375,7 +375,7 @@ after_success:
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
-  app: freelancer-kit
+  app: jblogger
 {{</ highlight >}}
 
 Once the build is successful and deployed on Heroku you should be able to access the application at `https://<app>.herokuapp.com/`.
