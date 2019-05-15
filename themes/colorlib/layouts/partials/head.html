@@ -25,8 +25,10 @@
     <link rel="stylesheet" href="{{"assets/css/social-logos/social-logos.css" | relURL }}" type="text/css" media="all">
     <link rel="stylesheet" href="{{"assets/css/jetpack.css" | relURL }}" type="text/css" media="all">
     <link rel="shortcut icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
-    {{ if .RSSLink }}
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
+
 </head>
