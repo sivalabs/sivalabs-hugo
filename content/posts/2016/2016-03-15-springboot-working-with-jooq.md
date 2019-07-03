@@ -15,7 +15,7 @@ tags:
 ---
 In my previous article [SpringBoot : Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}}) we have learned how to use SpringBoot MyBatis Starter to quickly get up and running with Spring and MyBatis. In this article we are going to learn about how to use SpringBoot JOOQ Starter.
 
-JOOQ (Java Object Oriented Querying) is a persistence framework which embraces SQL.
+JOOQ (JOOQ Object Oriented Querying) is a persistence framework which embraces SQL.
 
 JOOQ provides the following features:
 
