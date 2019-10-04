@@ -55,29 +55,29 @@ We will develop an e-commerce application using Java technologies. We will start
 
 ### Table of contents:
 
-  1. Introducing the application JCart
+  1. [Introducing the application JCart]({{< relref "2015-11-21-introducing-the-application-jcart.md" >}})
       * High Level Requirements
       * Overview of System Architecture
-  2. Requirements Analysis
-  3. Selecting The Technology Stack 
+  2. [Requirements Analysis]({{< relref "2015-11-21-jcart-requirements-analysis.md" >}})
+  3. [Selecting The Technology Stack]({{< relref "2015-11-22-selecting-the-technology-stack-for-jcart.md" >}})
       * Platform, Frameworks
       * Application Server, Database
       * IDE, Build Tool, Version Control System (VCS)
       * Continuous Integration, Code Quality Checking
-  4. Release Planning 
+  4. [Release Planning]({{< relref "2015-11-24-jcart-release-planning.md" >}})
       * Plan Iterations & UseCases
       * Estimations & Release Schedules
-  5. Setting up the Development Environment
-  6. Building Administration/ShoppingCart WebApps 
-      * Iteration - 1
-      * Iteration - 2
-      * Iteration - 3
-      * Iteration - 4
-      * Iteration - 5
-      * Iteration - 6
-      * Iteration - 7
-      * Iteration - 8
-  7. Deploying to Production 
+  5. [Setting up the Development Environment]({{< relref "2015-11-24-setting-up-the-development-environment-for-jcart.md" >}})
+  6. Building Administration/ShoppingCart WebApps
+      * [Iteration - 1]({{< relref "2015-12-01-jcart-iteration-1.md" >}})
+      * [Iteration - 2]({{< relref "2015-12-18-jcart-iteration-2.md" >}})
+      * [Iteration - 3]({{< relref "2015-12-20-jcart-iteration-3-manage-categories-and-products.md" >}})
+      * [Iteration - 4]({{< relref "2015-12-30-jcart-iteration-4.md" >}})
+      * [Iteration - 5]({{< relref "2015-12-31-jcart-iteration-5.md" >}})
+      * [Iteration - 6]({{< relref "2015-12-31-jcart-iteration-6.md" >}})
+      * [Iteration - 7]({{< relref "2015-12-31-jcart-iteration-7.md" >}})
+      * [Iteration - 8]({{< relref "2015-12-31-jcart-iteration-8.md" >}})
+  7. Deploying to Production
       * Clustering and Load balancing
       * Setting up Monitoring Tools
 

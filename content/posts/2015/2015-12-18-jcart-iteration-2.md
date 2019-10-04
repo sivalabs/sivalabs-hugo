@@ -19,12 +19,12 @@ Though majority of the infrastructure setup is in place now, we will implement R
 As part of Iteration-2, we will be implementing the following UseCases:
 
   * Security 
-      * Manage Privileges – List all privileges
-      * Manage Roles 
+      * [Manage Privileges – List all privileges]({{< relref "2015-12-18-jcart-manage-privileges.md" >}})
+      * [Manage Roles]({{< relref "2015-12-19-jcart-manage-roles.md" >}})
           * List all Roles
           * Create new Role
           * Add/Remove Permission to/from Role
-      * Manage Users 
+      * [Manage Users]({{< relref "2015-12-19-jcart-manage-users.md" >}})
           * List all Users
           * Create new User
           * Add/Remove Roles to/from User

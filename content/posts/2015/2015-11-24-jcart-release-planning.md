@@ -19,7 +19,7 @@ we have listed out all the requirements that we need to implement for JCart appl
 
 After listing out all the implementation tasks and based on the task dependencies, we came up with the following Iteration plan.
 
-**Iteration#1:**
+### [Iteration - 1]({{< relref "2015-12-01-jcart-iteration-1.md" >}})
 
   * Initial code setup for Admin webapp
   * Domain Modelling and Database Designing
@@ -32,7 +32,7 @@ After listing out all the implementation tasks and based on the task dependencie
   * Configuring HTTPS/SSL/TLS
   * Setting up Jenkins/SonarQube
 
-**Iteration#2:**
+### [Iteration - 2]({{< relref "2015-12-18-jcart-iteration-2.md" >}})
 
   * Security 
       * Manage Privileges &#8211; List all privileges
@@ -45,7 +45,7 @@ After listing out all the implementation tasks and based on the task dependencie
           * Create new User
           * Add/Remove Roles to/from User
 
-**Iteration#3:**
+### [Iteration - 3]({{< relref "2015-12-20-jcart-iteration-3-manage-categories-and-products.md" >}})
 
   * Site Settings &#8211; Locale & Currency
   * Manage Categories 
@@ -55,7 +55,7 @@ After listing out all the implementation tasks and based on the task dependencie
       * Create new Product
       * Update Product
 
-**Iteration#4:**
+### [Iteration - 4]({{< relref "2015-12-30-jcart-iteration-4.md" >}})
 
   * Initial code setup for ShoppingCart webapp
   * ShoppingCart UI Layout setup
@@ -65,7 +65,7 @@ After listing out all the implementation tasks and based on the task dependencie
   * Product Page
   * Product Search Results
 
-**Iteration#5:**
+### [Iteration - 5]({{< relref "2015-12-31-jcart-iteration-5.md" >}})
 
   * Add To Cart in HomePage/CategoryPage/ProductPage
   * Cart Page 
@@ -73,7 +73,7 @@ After listing out all the implementation tasks and based on the task dependencie
       * Updates Quantity
       * Remove Items
 
-**Iteration#6:**
+### [Iteration - 6]({{< relref "2015-12-31-jcart-iteration-6.md" >}})
 
   * Mock PaymentService
   * Billing & Delivery Page
@@ -82,7 +82,7 @@ After listing out all the implementation tasks and based on the task dependencie
   * Order Confirmation Page
   * Send Order Confirmation Email
 
-**Iteration#7:**
+### [Iteration - 7]({{< relref "2015-12-31-jcart-iteration-7.md" >}})
 
   * Manage Orders 
       * List all Orders
@@ -93,7 +93,7 @@ After listing out all the implementation tasks and based on the task dependencie
       * Search customers
       * View customer details
 
-**Iteration#8**
+### [Iteration - 8]({{< relref "2015-12-31-jcart-iteration-8.md" >}})
 
   * Customer MyAccount Page 
       * Profile

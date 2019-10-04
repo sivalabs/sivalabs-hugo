@@ -1,7 +1,6 @@
 baseURL = "https://sivalabs.github.io/"
 languageCode = "en-us"
 title = "SivaLabs"
-#theme = "colorlib"
 theme = "wellington"
 paginate=10
 
