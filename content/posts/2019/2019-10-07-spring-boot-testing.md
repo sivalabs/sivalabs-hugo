@@ -38,7 +38,7 @@ If we follow typical 3-tier layered architecture we might have JPA entity **User
 First of all, create a SpringBoot application with the following dependencies:
 
 #### pom.xml
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -115,12 +115,12 @@ First of all, create a SpringBoot application with the following dependencies:
 		</dependency>
 	</dependencies>
 </project>
-{{</ highlight >}}
+```
 
 By default **spring-boot-starter-test** comes with **JUnit 4** as testing framework. 
 We can **exclude JUnit4** and **add JUnit 5** dependencies as follows:
 
-{{< highlight xml >}}
+```xml
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -144,12 +144,12 @@ We can **exclude JUnit4** and **add JUnit 5** dependencies as follows:
         <scope>test</scope>
     </dependency>
 </dependencies>
-{{</ highlight >}}
+```
 
 Let us create JPA entity, repository, service and controller for User as follows:
 
 #### User.java
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.entities;
 
 import lombok.*;
@@ -180,10 +180,10 @@ public class User implements Serializable
 	private String name;
 
 }
-{{</ highlight >}}
+```
 
 #### UserRepository.java
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -198,10 +198,10 @@ public interface UserRepository extends JpaRepository<User, Long>
 
     Optional<User> findByEmail(String email);
 }
-{{</ highlight >}}
+```
 
 #### UserService.java
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.services;
 
 import com.sivalabs.myservice.exception.UserRegistrationException;
@@ -256,10 +256,10 @@ public class UserService
 	}
 	
 }
-{{</ highlight >}}
+```
 
 #### UserController.java
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.web.controllers;
 
 import com.sivalabs.myservice.entities.User;
@@ -321,7 +321,7 @@ public class UserController {
 				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 }
-{{</ highlight >}}
+```
 
 Nothing too fancy here, typical CRUD operations in SpringBoot application.
 
@@ -331,7 +331,7 @@ Exceptions so that it will automatically convert the application errors into JSO
 
 Just adding the following dependency is enough to start using Zalando Problem Web, and of course you can customize it if you want to.
 
-{{< highlight xml >}}
+```xml
 <problem-spring-web.version>0.25.0</problem-spring-web.version>
 ...
 ...
@@ -341,7 +341,7 @@ Just adding the following dependency is enough to start using Zalando Problem We
     <version>${problem-spring-web.version}</version>
     <type>pom</type>
 </dependency>
-{{</ highlight >}}
+```
 
 Now let us see how we can write Unit Tests and Integration Tests for this functionality.
 
@@ -351,7 +351,7 @@ Let us start writing unit tests for **UserService**.
 
 We are going to create a mock **UserRepository** using **Mockito.mock()** and create UserService instance using the mock UserRepository instance.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.services;
 
 import com.sivalabs.myservice.entities.User;
@@ -404,7 +404,7 @@ class UserServiceTest {
         verify(userRepository, never()).save(any(User.class));
     }
 }
-{{</ highlight >}}
+```
 
 I have created **UserRepository** mock object and **UserService** instance in **@BeforeEach** method so that every test has a clean setup.
 Here we are not using any Spring or SpringBoot testing features such as **@SpringBootTest** because we don't have to for testing the behaviour of UserService.
@@ -416,17 +416,17 @@ you can use **mockito-junit-jupiter** as follows:
 
 Add **mockito-junit-jupiter** dependency
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.mockito</groupId>
     <artifactId>mockito-junit-jupiter</artifactId>
     <scope>test</scope>
 </dependency>
-{{</ highlight >}}
+```
 
 Use **@Mock** and **@InjectMocks** to create and inject mock objects as follows:
 
-{{< highlight java >}}
+```java
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -444,7 +444,7 @@ class UserServiceAnnotatedTest {
     ...
     ...
 }
-{{</ highlight >}}
+```
 
 ### Now, shall we write tests for UserRepository? hmmmm...
 
@@ -472,7 +472,7 @@ Also, **@WebMvcTest** based tests runs faster as it will load only the specified
 While loading the Controller using **@WebMvcTest** SpringBoot won't automatically load Zalando Problem Web AutoConfiguration.
 So, we need to configure **ControllerAdvice** as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.common;
 
 import org.springframework.context.annotation.Profile;
@@ -484,13 +484,13 @@ import org.zalando.problem.spring.web.advice.ProblemHandling;
 public final class ExceptionHandling implements ProblemHandling {
 
 }
-{{</ highlight >}}
+```
 
 Now we can write tests for **UserController** by injecting a Mock **UserService** bean and invoke API endpoints using **MockMvc**.
 
 As SpringBoot is creating the **UserController** instance we are creating mock **UserService** bean using Spring's **@MockBean** as opposed to plain Mockito's **@Mock**.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.web.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -669,7 +669,7 @@ class UserControllerTest {
     }
 
 }
-{{</ highlight >}}
+```
 
 Now we have good amount of unit tests testing various components of our application.
 But still there is a lot of chance for things to go wrong, may be we might have some property configuration issues, 
@@ -686,7 +686,7 @@ As I mentioned earlier we want to test using postgres database instead of in-mem
 
 Add the following dependencies.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.testcontainers</groupId>
     <artifactId>postgresql</artifactId>
@@ -699,7 +699,7 @@ Add the following dependencies.
     <version>1.11.3</version>
     <scope>test</scope>
 </dependency>
-{{</ highlight >}}
+```
 
 We can use TestContainers support for JUnit 5 as mentioned here https://www.testcontainers.org/test_framework_integration/junit_5/.
 However, starting and stopping docker containers for every test or every test class might cause tests running slowly.
@@ -707,7 +707,7 @@ So, we are going to use Singleton Containers approach mentioned at https://www.t
 
 Let us create a base class **AbstractIntegrationTest** so that all our integration tests can extend without repeating the common configuration.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.common;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -760,7 +760,7 @@ public abstract class AbstractIntegrationTest {
     }
 
 }
-{{</ highlight >}}
+```
 
 We have used **@AutoConfigureMockMvc** to auto-configure **MockMvc**, 
 and **@SpringBootTest(webEnvironment = RANDOM_PORT)** to start the server on a random available port.
@@ -770,7 +770,7 @@ to configure the dynamic database connection properties.
 
 Now we can implement Integration Test for **UserController** as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.web.controllers;
 
 import com.sivalabs.myservice.common.AbstractIntegrationTest;
@@ -890,7 +890,7 @@ class UserControllerIT extends AbstractIntegrationTest {
     }
 
 }
-{{</ highlight >}}
+```
 
 The **UserControllerIT** tests looks very similar to **UserControllerTest** with the difference being how we load the ApplicationContext.
 While using **@SpringBootTest** SpringBoot will actually start the application by loading the entire application 
@@ -902,7 +902,7 @@ We can use **@AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replac
 
 Let us create **PostgreSQLContainerInitializer** so that any repository tests can use this to configure dynamic postgres database properties.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.common;
 
 import lombok.extern.slf4j.Slf4j;
@@ -934,11 +934,11 @@ public class PostgreSQLContainerInitializer
     }
 
 }
-{{</ highlight >}}
+```
 
 Now we can create **UserRepositoryTest** as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.repositories;
 
 import com.sivalabs.myservice.common.PostgreSQLContainerInitializer;
@@ -975,7 +975,7 @@ class UserRepositoryTest {
         assertThat(userOptional).isNotEmpty();
     }
 }
-{{</ highlight >}}
+```
 
 Well, I guess we learned something about how to write unit tests and integration tests using various SpringBoot features.
 
@@ -991,11 +991,11 @@ Also, we want to timeout the call after 2 seconds and if we don't get response b
 We can implement this using **Hystrix** as follows:
 
 #### application.properties
-{{< highlight java >}}
+```java
 githuub.api.base-url=https://api.github.com
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.config;
 
 import lombok.Data;
@@ -1009,11 +1009,11 @@ public class ApplicationProperties {
     @Value("${githuub.api.base-url}")
     private String githubBaseUrl;
 }
-{{</ highlight >}}
+```
 
 Register **RestTemplate** bean and enable Hystrix CircuitBreaker using **@EnableCircuitBreaker**.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice;
 
 import org.springframework.boot.SpringApplication;
@@ -1035,11 +1035,11 @@ public class Application
 		return new RestTemplate();
 	}
 }
-{{</ highlight >}}
+```
 
 Create **GithubUser** class which holds response from GitHub API.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -1056,11 +1056,11 @@ public class GithubUser {
     private int followers;
     private int following;
 }
-{{</ highlight >}}
+```
 
 Create **GithubService** which talks to GitHub REST API using **RestTemplate** as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.services;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -1102,11 +1102,11 @@ public class GithubService {
         return user;
     }
 }
-{{</ highlight >}}
+```
 
 Let us create a **GithubController** with an endpoint to return the users GitHub profile.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.web.controllers;
 
 import com.sivalabs.myservice.model.GithubUser;
@@ -1133,7 +1133,7 @@ public class GithubController {
         return githubService.getGithubUserProfile(username);
     }
 }
-{{</ highlight >}}
+```
 
 We can use **MockServer** to simulate the dependent microservice responses so that we can verify our application behaviour in various scenarios.
 
@@ -1141,7 +1141,7 @@ We can use [TestContainers support to spin up MockServer](https://www.testcontai
 
 Add the following dependencies:
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.testcontainers</groupId>
     <artifactId>mockserver</artifactId>
@@ -1154,11 +1154,11 @@ Add the following dependencies:
     <version>5.5.1</version>
     <scope>test</scope>
 </dependency>
-{{</ highlight >}}
+```
 
 In **AbstractIntegrationTest** add **MockServerContainer** configuration as follows:
 
-{{< highlight java >}}
+```java
 import org.mockserver.client.MockServerClient;
 import org.testcontainers.containers.MockServerContainer;
 
@@ -1197,12 +1197,12 @@ public abstract class AbstractIntegrationTest {
     }
 
 }
-{{</ highlight >}}
+```
 
 Note that we are stating **MockServerContainer** and injecting the endpoint URL with **"githuub.api.base-url="+mockServerContainer.getEndpoint()**.
 Also, we have created **MockServerClient** which we are going to use for setting up expected responses.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.myservice.web.controllers;
 
 import com.sivalabs.myservice.common.AbstractIntegrationTest;
@@ -1265,7 +1265,7 @@ class GithubControllerIT extends AbstractIntegrationTest {
         );
     }
 }
-{{</ highlight >}}
+```
 
 Note that we are setting up expected JSON response for **\<githuub.api.base-url\>/users/.\*** URL pattern on **mockServerClient**.
 So, when we make a call to **http://localhost:8080/api/github/users/{username}** GithubController will in-turn call GithubService which makes a call to 
@@ -1273,7 +1273,7 @@ So, when we make a call to **http://localhost:8080/api/github/users/{username}**
 
 We can also simulate the failures and timeout scenarios as follows:
 
-{{< highlight java >}}
+```java
 @Test
 void shouldGetDefaultUserProfileWhenFetchingFromGithubFails() throws Exception {
     mockGetUserFromGithubFailure();
@@ -1309,7 +1309,7 @@ private void mockGetUserFromGithubFailure() {
         request().withMethod("GET").withPath("/users/.*"))
         .respond(response().withStatusCode(404));
 }
-{{</ highlight >}}
+```
 
 In **shouldGetDefaultUserProfileWhenFetchingFromGithubFails()** test we are setting up the mockServer to respond 
 with **404 error** to verify **Hystrix fallback** method is working or not.

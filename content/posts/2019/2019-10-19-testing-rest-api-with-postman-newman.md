@@ -29,9 +29,9 @@ As I am already using Postman to test my REST APIs, I thought of exploring if I 
 So, I wanted to share few Postman tips I learned.
 
 > I am using Postman to test my REST API implemented using **SpringBoot** and secured with **Spring Security JWT based authentication**.
-You can find the source code of this article at https://github.com/sivaprasadreddy/todo-api-spring-boot. 
+You can find the source code of this article at https://github.com/sivaprasadreddy/todo-list/todo-api-spring-boot. 
 >
-> The Postman collection files are at https://github.com/sivaprasadreddy/todo-api-spring-boot/tree/master/etc
+> The Postman collection files are at https://github.com/sivaprasadreddy/todo-list/tree/master/config/postman
 
 While searching for is there a way to run postman collection programmatically 
 I come across [Newman](https://learning.getpostman.com/docs/postman/collection_runs/command_line_integration_with_newman/) 

@@ -8,7 +8,7 @@ disqusShortname = "sivalabs"
 googleAnalytics = "UA-71296890-1"
 enableRobotsTXT = true
 preserveTaxonomyNames = true
-
+pygmentsCodeFences = true
 [taxonomies]
   category = "categories"
   tag = "tags"
