@@ -521,6 +521,6 @@ spring.jooq.sql-dialect=MYSQL
   </p>
 </blockquote>
 
-You can find the source code of this article at my Github repository <https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/springboot-jooq-demo>
+You can find the source code of this article at my Github repository <https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo>
 
 For more info on **JOOQ** you can look at <http://www.jooq.org/learn/>
