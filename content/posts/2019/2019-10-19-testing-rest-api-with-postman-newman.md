@@ -29,7 +29,7 @@ As I am already using Postman to test my REST APIs, I thought of exploring if I 
 So, I wanted to share a few Postman tips I learned.
 
 > I am using Postman to test my REST API implemented using **SpringBoot** and secured with **Spring Security JWT based authentication**.
-You can find the source code of this article at https://github.com/sivaprasadreddy/todo-list/todo-api-spring-boot. 
+You can find the source code of this article at https://github.com/sivaprasadreddy/todo-list/tree/master/todo-api-spring-boot. 
 >
 > The Postman collection files are at https://github.com/sivaprasadreddy/todo-list/tree/master/config/postman
 
