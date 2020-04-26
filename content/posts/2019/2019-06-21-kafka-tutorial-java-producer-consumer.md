@@ -29,21 +29,21 @@ You can download Kafka distribution from https://kafka.apache.org/downloads and 
 
 [Kafka uses ZooKeeper](https://www.cloudkarafka.com/blog/2018-07-04-cloudkarafka_what_is_zookeeper.html) for Controller election, Configuration Of Topics, Membership of the cluster etc and is bundled with Kafka distribution. So, first we need to start ZooKeeper as follows:
 
-{{< highlight bash >}}
+```bash
 kafka_2.12-2.2.0> bin/zookeeper-server-start.sh config/zookeeper.properties
-{{</ highlight >}}
+```
 
 Once the ZooKeeper started successfully, start Kafka server as follows:
 
-{{< highlight bash >}}
+```bash
 kafka_2.12-2.2.0> bin/kafka-server-start.sh config/server.properties
-{{</ highlight >}}
+```
 
 Instead of installing Kafka as described above, if you prefer using Docker to spin up Kafka server you can use the following docker-compose configuration. You can also find various docker-compose configurations at https://github.com/confluentinc/cp-docker-images/tree/5.2.2-post/examples.
 
 **docker-compose.yml**
 
-{{< highlight yaml >}}
+```yml
 version: '3.1'
 services:
   zookeeper:
@@ -78,7 +78,7 @@ services:
       CONFLUENT_METRICS_REPORTER_TOPIC_REPLICAS: 1
       CONFLUENT_METRICS_ENABLE: 'true'
       CONFLUENT_SUPPORT_CUSTOMER_ID: 'anonymous'
-{{</ highlight >}}
+```
 
 You can start the Zookeeper and Kafka docker containers using **docker-compose up**.
 
@@ -87,18 +87,18 @@ You can start the Zookeeper and Kafka docker containers using **docker-compose u
 With the Kafka setup in place, let us create a Maven/Gradle project and add the following dependency.
 
 **Maven:**
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.apache.kafka</groupId>
     <artifactId>kafka-clients</artifactId>
     <version>2.2.0</version>
 </dependency>
-{{</ highlight >}}
+```
 
 **Gradle:**
-{{< highlight xml >}}
+```xml
 compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
-{{</ highlight >}}
+```
 
 ### Kafka Topic Producer
  A message to a Kafka topic typically contains a key, value and optionally a set of headers.
@@ -106,7 +106,7 @@ compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
 
  Let us create **MessageProducer** class as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.kafkasample;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -154,7 +154,7 @@ public class MessageProducer {
         }
     }
 }
-{{</ highlight >}}
+```
 
 We have created an instance of Properties to populate producer configuration properties like bootstrap servers, key and value serializer types. We are planning to send **Long/String** key/value pair so we used **LongSerializer** and **StringSerializer** respectively. Then we created **KafkaProducer** instance using **producerProperties**. A message to be sent to a topic is represented as an instance of **ProducerRecord**. Finally we send the message using **KafkaProducer.send()** method.
 
@@ -163,7 +163,7 @@ We have configured **ProducerConfig.ACKS_CONFIG** to **all** so that the message
 ### Kafka Topic Consumer
 Let us create a Consumer to read from Kafka **topic-1** as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.kafkasample;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -217,7 +217,7 @@ public class MessageConsumer {
         }
     }
 }
-{{</ highlight >}}
+```
 
 Similar to Producer, we have created a Properties instance with consumer configuration properties. We have created a **KafkaConsumer** and subscribed to a single topic **test-topic**.
 

@@ -73,24 +73,24 @@ Create a SpringBoot application using the latest version (it is 2.0.0.RC1 as of 
 By default Session starter will add **org.springframework.session:spring-session-core** dependency, 
 let us change it to **spring-session-jdbc** as we are going to use JDBC backend.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.session</groupId>
     <artifactId>spring-session-jdbc</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 ### Step 2: Configure Spring Session properties
 We can configure type of Spring Session backend data-store using **spring.session.store-type** property in application.properties.
 
-{{< highlight properties >}}
+```properties
 spring.session.store-type=jdbc
-{{</ highlight >}}
+```
 
 As we are using the H2 In-Memory database, Spring Session creates the following tables required to store session data automatically 
 from the script **spring-session-jdbc-2.0.1.RELEASE.jar!/org/springframework/session/jdbc/schema-h2.sql**.
 
-{{< highlight sql >}}
+```sql
 CREATE TABLE SPRING_SESSION (
   PRIMARY_ID CHAR(36) NOT NULL,
   SESSION_ID CHAR(36) NOT NULL,
@@ -115,27 +115,27 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 );
  
 CREATE INDEX SPRING_SESSION_ATTRIBUTES_IX1 ON SPRING_SESSION_ATTRIBUTES (SESSION_PRIMARY_ID);
-{{</ highlight >}}
+```
 
 But if we are going to use other RDBMS like MySQL we can configure as follows:
 
 Add MySQL maven dependency.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Configure datasource properties for MySQL:
 
-{{< highlight properties >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/demo
 spring.datasource.username=root
 spring.datasource.password=admin
-{{</ highlight >}}
+```
 
 With this property, Spring Session will try to create tables using the script 
 **classpath:org/springframework/session/jdbc/schema-@@platform@@.sql**, so in our case, it will use **schema-mysql.sql**.
@@ -143,7 +143,7 @@ With this property, Spring Session will try to create tables using the script
 ### Step 3: Add data to HttpSession
 Now create a simple form in src/main/resources/templates/index.html.
 
-{{< highlight xml >}}
+```xml
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -166,11 +166,11 @@ Now create a simple form in src/main/resources/templates/index.html.
     </div>
 </body>
 </html>
-{{</ highlight >}}
+```
 
 Let us implement a Controller to add messages to HttpSession and display them.
 
-{{< highlight java >}}
+```java
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -207,7 +207,7 @@ public class MessagesController
         return "redirect:/";
     }
 }
-{{</ highlight >}}
+```
 
 Now you can start the application and add some messages to HttpSession and you can see the rows in 
 **SPRING_SESSION, SPRING_SESSION_ATTRIBUTES** tables. 
@@ -217,19 +217,19 @@ By default, Spring Session converts the objects that we are trying to add to Htt
 Spring Session seamlessly integrates with Spring Security because of SpringBoot’s auto-configuration.
 Let us add Spring Security to our application.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Add a default user credentials in application.properties as follows:
 
-{{< highlight properties >}}
+```properties
 spring.security.user.name=admin
 spring.security.user.password=secret
-{{</ highlight >}}
+```
 
 Now if you try to access http://localhost:8080/ you will be redirected to auto-generated Login page.
 Once you login and see the data in **SPRING_SESSION** table you can see that login username is stored in **PRINCIPAL_NAME** column.
@@ -245,7 +245,7 @@ The **HttpSessionWrapper** uses **SessionRepository** to persist session informa
 
 The SessionRepository interface has various methods to manage sessions.
 
-{{< highlight java >}}
+```java
 public interface SessionRepository<S extends Session> 
 {
   S createSession();
@@ -256,7 +256,7 @@ public interface SessionRepository<S extends Session>
  
   void deleteById(String id);
 }
-{{</ highlight >}}
+```
 
 This SessionRepository interface is implemented by various classes based on the type of backend we are using. 
 In our case, we are using **JdbcOperationsSessionRepository** provided by **spring-session-jdbc**.

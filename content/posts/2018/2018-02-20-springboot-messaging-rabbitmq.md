@@ -20,7 +20,7 @@ Dead Letter Queues (DLQ).
 First, install RabbitMQ server on your local machine as documented here https://www.rabbitmq.com/download.html or 
 run as a Docker image with the following **docker-compose.yml**.
 
-{{< highlight yml >}}
+```yml
 version: '3'
 services:
  
@@ -30,7 +30,7 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
-{{</ highlight >}}
+```
 
 Now you can start the RabbitMQ using docker-compose up and launch Administration UI at http://localhost:15672/.
 
@@ -47,7 +47,7 @@ Now, let us create a SpringBoot application from http://start.spring.io/ selecti
 
 **pom.xml**
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -88,12 +88,12 @@ Now, let us create a SpringBoot application from http://start.spring.io/ selecti
     </dependencies>
      
 </project>
-{{</ highlight >}}
+```
 
 Let us start with RabbitMQ configuration. Create RabbitConfig configuration class and define **Queue, Exchange, 
 and Binding** beans as follows:
 
-{{< highlight java >}}
+```java
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -124,7 +124,7 @@ public class RabbitConfig
         return BindingBuilder.bind(ordersQueue).to(ordersExchange).with(QUEUE_ORDERS);
     }
 }
-{{</ highlight >}}
+```
 
 Here we are declaring a Queue with name **orders-queue** and an Exchange with name **orders-exchange**.
 We also defined the binding between **orders-queue** and **orders-exchange** so that any message sent to **orders-exchange** 
@@ -132,19 +132,19 @@ with **routing-key** as **orders-queue** will be sent to **orders-queue**.
 
 We can configure the RabbitMQ server details in **application.properties** as follows:
 
-{{< highlight properties >}}
+```properties
 spring.rabbitmq.host=localhost
 spring.rabbitmq.port=5672
 spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
-{{</ highlight >}}
+```
 
 Let us create a Spring bean **OrderMessageSender** to send a message to **orders-exchange**.
 
 Spring Boot auto-configures the infrastructure beans required to send/receive messages to/from RabbitMQ broker. 
 We can simply autowire **RabbitTemplate** and send a message by invoking **rabbitTemplate.convertAndSend("routingKey", Object)** method.
 
-{{< highlight java >}}
+```java
 public class Order implements Serializable {
     private String orderNumber;
     private String productId;
@@ -152,9 +152,9 @@ public class Order implements Serializable {
  
     //setters & getters
 }    
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -172,7 +172,7 @@ public class OrderMessageSender {
         this.rabbitTemplate.convertAndSend(RabbitConfig.QUEUE_ORDERS, order);
     }
 }
-{{</ highlight >}}
+```
 
 By default Spring Boot uses **org.springframework.amqp.support.converter.SimpleMessageConverter** and serialize the object into **byte[]**.
 
@@ -193,7 +193,7 @@ Now, let create a Listener to the orders-queue using **@RabbitListener**.
 
 Create a Spring bean **OrderMessageListener** as follows:
 
-{{< highlight java >}}
+```java
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -209,7 +209,7 @@ public class OrderMessageListener {
         logger.info("Order Received: "+order);
     }
 }
-{{</ highlight >}}
+```
 
 That’s it!! By simply adding **@RabbitListener** and defining which queue to listen to we can create a Listener.
 
@@ -225,7 +225,7 @@ In order to change this behavior, we need to customize the Spring Boot RabbitMQ 
 ### To send message as JSON
 One quick way to send a message as JSON payload is using **ObjectMapper** we can convert the **Order** object into JSON and send it.
 
-{{< highlight java >}}
+```java
 @Autowired
 private ObjectMapper objectMapper;
  
@@ -241,14 +241,14 @@ public void sendOrder(Order order) {
         e.printStackTrace();
     }
 }
-{{</ highlight >}}
+```
 
 But converting objects into JSON like this is a kind of boilerplate. Instead, we can follow the below approach.
 
 We can configure **org.springframework.amqp.support.converter.Jackson2JsonMessageConverter** bean to be used by **RabbitTemplate** so that 
 the message will be serialized as JSON instead of byte[].
 
-{{< highlight java >}}
+```java
 @Configuration
 public class RabbitConfig 
 {
@@ -267,14 +267,14 @@ public class RabbitConfig
         return new Jackson2JsonMessageConverter();
     }
 }
-{{</ highlight >}}
+```
 
 Now when you send a message it will be converted into JSON and send it to Queue.
 
 ### To receive message as JSON
 In order to treat the message payload as JSON we should customize the RabbitMQ configuration by implementing **RabbitListenerConfigurer**.
 
-{{< highlight java >}}
+```java
 @Configuration
 public class RabbitConfig implements RabbitListenerConfigurer {
     ...
@@ -296,7 +296,7 @@ public class RabbitConfig implements RabbitListenerConfigurer {
         return new MappingJackson2MessageConverter();
     }
 }
-{{</ highlight >}}
+```
 
 ## Handling Errors and Invalid Messages using DeadLetterQueues(DLQ)
 We may want to send invalid messages to a separate queue so that we can inspect and reprocess them later. 
@@ -304,7 +304,7 @@ We can use DLQ concept to automatically do it instead of we manually write the c
 
 We can declare the **dead-letter-exchange**, **dead-letter-routing-key** for a Queue while defining the Queue bean as follows:
 
-{{< highlight java >}}
+```java
 @Configuration
 public class RabbitConfig implements RabbitListenerConfigurer {
  
@@ -330,7 +330,7 @@ public class RabbitConfig implements RabbitListenerConfigurer {
     ...
     ...
 }
-{{</ highlight >}}
+```
 
 Now try to send an invalid JSON message to **orders-queue**, it will be sent to **dead-orders-queue**.
 

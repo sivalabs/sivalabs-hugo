@@ -16,7 +16,7 @@ In our main template we have a Search box to search for products. In this post w
 
 Let us implement the search handler method in **ProductController** as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class ProductController extends JCartSiteBaseController
 {	
@@ -35,11 +35,11 @@ public class ProductController extends JCartSiteBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Create the Search Results view **products.html** as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -87,6 +87,6 @@ Create the Search Results view **products.html** as follows:
 	
 </body>    
 </html>
-{{</ highlight >}}
+```
 
 Now try to search by any product name or sku or description and you should be able to see the matching product results.

@@ -12,11 +12,11 @@ generate a SpringBoot microservice, Spring Cloud Config Server or Service Regist
 
 ### How to use?
 
-{{< highlight bash >}}
+```bash
 $ npm install -g yo
 $ npm install -g generator-springboot
 $ yo springboot
-{{</ highlight >}}
+```
 
 For more information on features see https://github.com/sivaprasadreddy/generator-springboot
 

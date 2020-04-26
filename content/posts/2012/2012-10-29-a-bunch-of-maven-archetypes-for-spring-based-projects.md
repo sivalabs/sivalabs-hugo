@@ -63,5 +63,6 @@ These are the archetypes so far I have completed and uploaded them onto my GitHu
 
 **I have mentioned how to install them in your local repository in README file.**
 
-_<span style="color: blue;">I am planning for writing some more template archetypes including SpringRESTFul Services, Spring-ApacheCXF App, Spring Integration, Spring-JavaEE6 etc.</span>_  
-_<span style="color: blue;">Stay tuned 🙂</span>_
+I am planning for writing some more template archetypes including SpringRESTFul Services, Spring-ApacheCXF App, Spring Integration, Spring-JavaEE6 etc.  
+
+Stay tuned 🙂<

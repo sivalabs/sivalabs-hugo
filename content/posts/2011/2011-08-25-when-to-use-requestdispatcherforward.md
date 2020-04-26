@@ -37,6 +37,6 @@ Then in the browser the URL remains as http://localhost:8080/App/CreateCustomerS
 **Now if the user press Refresh(F5) button on the browser the web container starts executing the request from CreateCustomerServlet. Again it will insert another duplicate row in database and show the status page.**
 
 **But in CreateCustomerServlet, if you use response.sendRedirect(&#8220;status.jsp&#8221;) to show status page the browser URL will be changed to http://localhost:8080/App/status.jsp.  
-Now if the user press F5 the container will start processing the status.jsp only. It won&#8217;t invoke CreateCustomerServlet.**
+Now if the user press F5 the container will start processing the status.jsp only. It won't invoke CreateCustomerServlet.**
 
 So if you are doing any data modifications like insertion/updation/deletion always use response.sendRedirect().

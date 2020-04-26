@@ -16,13 +16,13 @@ To facilitate new customer registration we will provide a new Registration form 
 
 Let us implement the back-end customer service operations.
 
-{{< highlight java >}}
+```java
 public interface CustomerRepository extends JpaRepository<Customer, Integer>{
 	Customer findByEmail(String email);
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class CustomerService 
@@ -38,9 +38,9 @@ public class CustomerService
 		return customerRepository.save(customer);
 	}
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Component
 public class CustomerValidator implements Validator
 {
@@ -65,11 +65,11 @@ public class CustomerValidator implements Validator
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Let us implement the **CustomerController** registration handler methods as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class CustomerController extends JCartSiteBaseController
 {	
@@ -113,11 +113,11 @@ public class CustomerController extends JCartSiteBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Finally let us create the **register.html** thymeleaf view as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -201,7 +201,7 @@ Finally let us create the **register.html** thymeleaf view as follows:
 </body>
     
 </html>
-{{</ highlight >}}
+```
 
 Now new customers can click on Register link and register themselves. 
 Once the registration is successful he can login and proceed to checkout the cart.

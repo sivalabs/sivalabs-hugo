@@ -29,7 +29,7 @@ tags:
   
 [**MyBatis Tutorial : Part4 &#8211; Spring Integration**]({{< relref "2012-10-24-mybatis-tutorial-part4-spring-integration.md" >}}) 
 
-MyBatis-Spring is a sub-project of MyBatis and provides Spring integration support which drastically simplifies the MyBatis usage. For those who are familiar with Spring&#8217;s way of Dependency Injection process, using MyBatis-Spring is a very simple.
+MyBatis-Spring is a sub-project of MyBatis and provides Spring integration support which drastically simplifies the MyBatis usage. For those who are familiar with Spring's way of Dependency Injection process, using MyBatis-Spring is a very simple.
 
 First let us see the process of using MyBatis without Spring.
 
@@ -41,13 +41,13 @@ First let us see the process of using MyBatis without Spring.
 
 4. Commit or rollback the transaction using SqlSession object.
 
-With MyBatis-Spring, most of the above steps can be configured in Spring ApplicationContext and SqlSession or Mapper instances can be injected into Spring Beans. Then we can use Spring&#8217;s TransactionManagement features without writing transaction commit/rollback code all over the code.
+With MyBatis-Spring, most of the above steps can be configured in Spring ApplicationContext and SqlSession or Mapper instances can be injected into Spring Beans. Then we can use Spring's TransactionManagement features without writing transaction commit/rollback code all over the code.
 
 Now let us see how we can configure MyBatis+Spring integration stuff.
 
 **Step#1:** Configure MyBatis-Spring dependencies in pom.xml
 
-{{< highlight xml >}}
+```xml
 <dependency>
   <groupId>junit</groupId>
   <artifactId>junit</artifactId>
@@ -86,9 +86,9 @@ Now let us see how we can configure MyBatis+Spring integration stuff.
    <artifactId>cglib-nodep</artifactId>
    <version>2.2.2</version>
 </dependency>
-{{</ highlight >}}
+```
 
-**Step#2:** You don&#8217;t need to configure Database properties in mybatis-config.xml.
+**Step#2:** You don't need to configure Database properties in mybatis-config.xml.
 
 We can configure DataSource in Spring Container and use it to build MyBatis SqlSessionFactory.
 
@@ -96,7 +96,7 @@ Instead of SqlSessionFactoryBuilder, MyBatis-Spring uses org.mybatis.spring.SqlS
 
 We can pass dataSource, Mapper XML files locations, typeAliases etc to SqlSessionFactoryBean.
 
-{{< highlight xml >}}
+```xml
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
   <property name="driverClassName" value="${jdbc.driverClassName}"/>
   <property name="url" value="${jdbc.url}"/>
@@ -111,37 +111,37 @@ We can pass dataSource, Mapper XML files locations, typeAliases etc to SqlSessio
     <property name="mapperLocations" 
               value="classpath*:com/sivalabs/mybatisdemo/mappers/**/*.xml" />
 </bean>
-{{</ highlight >}}
+```
 
 **Step#3:** Configure SqlSessionTemplate which provides ThreadSafe SqlSession object.
 
-{{< highlight xml >}}
+```xml
 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
    <constructor-arg index="0" ref="sqlSessionFactory" />
 </bean>
-{{</ highlight >}}
+```
 
 **Step#4:** To be able to inject Mappers directly we should register org.mybatis.spring.mapper.MapperScannerConfigurer and configure the package name where to find Mapper Interfaces.
 
-{{< highlight xml >}}
+```xml
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
    <property name="basePackage" value="com.sivalabs.mybatisdemo.mappers"/>
 </bean>
-{{</ highlight >}}
+```
 
 **Step#5:** Configure TransactionManager to support Annotation based Transaction support.
 
-{{< highlight xml >}}
+```xml
 <tx:annotation-driven transaction-manager="transactionManager"/>
  
 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
     <property name="dataSource" ref="dataSource" />
 </bean>
-{{</ highlight >}}
+```
 
 **Step#6:** Update the Service classes and register them in Spring container.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
@@ -172,9 +172,9 @@ public class UserService
         return userMapper.getUserById(userId);
     }
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
@@ -204,25 +204,22 @@ public class BlogService
         return blogMapper.getAllBlogs();
     }
 }
-{{</ highlight >}}
+```
 
-**<span style="color: red;">Note:</span>** When we can directly inject Mappers then why do we need to inject SqlSession objects? Because SqlSession object contains more fine grained method which comes handy at times.
+**Note:** When we can directly inject Mappers then why do we need to inject SqlSession objects? Because SqlSession object contains more fine grained method which comes handy at times.
 
 For Example: If we want to get count of how many records got updated by an Update query we can use SqlSession as follows:
 
 
 `int updatedRowCount = sqlSession.update("com.sivalabs.mybatisdemo.mappers.UserMapper.updateUser", user);`
 
-
-<span style="text-decoration: line-through;">
-So far I didn&#8217;t find a way to get the row update count without using SqlSession object.
-</span>
+~~So far I didn't find a way to get the row update count without using SqlSession object.~~
 
 **PS: You can have your interface insert/update/delete methods returning int, then MyBatis returns the number of records updated as an integer.**
 
 **Step#7** Write JUnit Tests to test UserService and BlogService.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo;
 
 import java.util.List;
@@ -266,9 +263,9 @@ public class SpringUserServiceTest
         Assert.assertEquals(user.getLastName(), updatedUser.getLastName());
     }
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo;
 
 import java.util.Date;
@@ -318,4 +315,4 @@ public class SpringBlogServiceTest
          Assert.assertEquals(blog.getBlogName(), createdBlog.getBlogName());
     }
 }
-{{</ highlight >}}
+```

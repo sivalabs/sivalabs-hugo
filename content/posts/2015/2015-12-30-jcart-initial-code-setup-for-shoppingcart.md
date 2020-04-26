@@ -21,7 +21,7 @@ Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our Sho
 
 **jcart-site/pom.xml**
 
-{{< highlight xml >}}
+```xml
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -83,7 +83,7 @@ Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our Sho
 		</dependency>
 	</dependencies>
 </project>
-{{</ highlight >}}
+```
 
 For our JCart - Admin application we have used **AdminLTE** (<a href="https://almsaeedstudio.com/preview" target="_blank">https://almsaeedstudio.com/preview</a>) theme which is based on Bootstrap with nice coloring scheme. It looks good for Administration kind of applications but not so good for a public facing e-commerce application, IMHO.
 
@@ -99,18 +99,18 @@ post we will generate the keystore file and copy it to **jcart-site/src/main/res
 
 Configure the SSL related configuration properties in **jcart-site/src/main/resources/application-default.properties**
 
-{{< highlight properties >}}
+```properties
 server.port=8443
 server.ssl.key-store=classpath:jcartsitekeystore.p12
 server.ssl.key-store-password=jcartsite
 server.ssl.keyStoreType=PKCS12
 server.ssl.keyAlias=jcartsitetomcat
-{{</ highlight  >}}
+```
 ### WebMVC Configuration
 
 We will create **com.sivalabs.jcart.site.config.WebConfig.java** for configuring SpringMVC components like ViewControllers, Interceptors, TemplateResolvers, SpringSecurityDialect and EmbeddedTomcatConnector as follows:
 
-{{< highlight java >}}
+```java
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {
@@ -188,19 +188,19 @@ public class WebConfig extends WebMvcConfigurerAdapter
 		return connector;
 	}
 }
-{{</ highlight >}}
+```
 
 Note that for ShoppingCart application we will be running embedded tomcat server on **https://host:8443** and call to **http://host:8080** port will be redirected to **https://host:8443**.
 
 ### Configuring SpringSecurity
 
-As it is a public facing e-commerce site customers can browse through catalog products and add products to cart without requiring to login. But in order to checkout we will redirect the customer to login if he/she is not already loggedin. Also there are some URL that we would like to protect like customer&#8217;s **MyAccount** page, **Order History** page etc.
+As it is a public facing e-commerce site customers can browse through catalog products and add products to cart without requiring to login. But in order to checkout we will redirect the customer to login if he/she is not already loggedin. Also there are some URL that we would like to protect like customer's **MyAccount** page, **Order History** page etc.
 
 So, for ShoppingCart application, Customer would become the user.
 
 **Create SpringSecurity User Wrapper AuthenticatedUser**
 
-{{< highlight java >}}
+```java
 package com.sivalabs.jcart.admin.security;
 
 import java.util.Collection;
@@ -229,19 +229,19 @@ public class AuthenticatedUser extends org.springframework.security.core.userdet
 		return authorities;
 	}
 } 
-{{</ highlight >}}
+```
 
 **Create Spring Data JPA Repository for Customer Entity jcart-core/src/main/java/com/sivalabs/jcart/customers/CustomerRepository.java as follows:**
 
-{{< highlight java >}}
+```java
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	Customer findByEmail(String email);
 }
-{{</ highlight >}}
+```
 
 **Create jcart-core/src/main/java/com/sivalabs/jcart/customers/CustomerService.java to implement all Customer related operations.**
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class CustomerService 
@@ -253,11 +253,13 @@ public class CustomerService
 		return customerRepository.findByEmail(email);
 	}
 	
-}{{</ highlight >}}
+}
+```
 
-**Create com.sivalabs.jcart.admin.security.CustomUserDetailsService.java which implements SpringSecurity&#8217;s UserDetailsService.**
+**Create com.sivalabs.jcart.admin.security.CustomUserDetailsService.java which implements SpringSecurity's UserDetailsService.**
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService
 {
@@ -274,11 +276,12 @@ public class CustomUserDetailsService implements UserDetailsService
 	}
 
 }
-{{</ highlight >}}
+```
 
 **Create com.sivalabs.jcart.site.security.WebSecurityConfig.java to configure SpringSecurity configuration.**
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -320,11 +323,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         	.passwordEncoder(passwordEncoder());
     }
 }
-{{</ highlight >}}
+```
 
 Finally, let us create a simple **HomeController** to handle /home request and render **home.html** view.
 
-{{< highlight java >}}
+```java
 @Controller
 public class HomeController
 {		
@@ -334,9 +337,9 @@ public class HomeController
 		return "home";
 	}	
 }
-{{</ highlight >}}
+```
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org">
@@ -352,7 +355,7 @@ public class HomeController
    <h3>Welcome to QuilCart</h3>	    
 </body>
 </html>
-{{</ highlight >}}
+```
 
 Now run the application and point your browser to **http://localhost:8080**. It should automatically redirect you to **https://localhost:8443/home** and show home.html view.
 

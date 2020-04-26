@@ -18,7 +18,7 @@ But to checkout the cart the customer should login into the system. So if the cu
 
 Let us create login form thymeleaf view jcart-site/src/main/resources/templates/login.html as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -85,7 +85,7 @@ Let us create login form thymeleaf view jcart-site/src/main/resources/templates/
 </body>
     
 </html>
-{{</ highlight >}}
+```
 
 We are using SpringSecurity for Customer Authentication and we have already configured SpringSecurity in 
 our previous post [JCart : Initial code setup for ShoppingCart]({{< relref "2015-12-30-jcart-initial-code-setup-for-shoppingcart.md" >}}) 

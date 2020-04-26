@@ -14,28 +14,26 @@ tags:
 ---
 **MyBatis** is a SQL Mapping framework with support for custom SQL, stored procedures and advanced mappings.
 
-<blockquote class="tr_bq">
-    <span style="color: red;"><br />SpringBoot doesn’t provide official support for MyBatis integration, but MyBatis community built a SpringBoot starter for MyBatis.&nbsp;</span>
-</blockquote>
+> SpringBoot doesn’t provide official support for MyBatis integration, but MyBatis community built a SpringBoot starter for MyBatis.
 
 You can read about the SpringBoot MyBatis Starter release announcement at <http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html> and you can explore the source code on GitHub <https://github.com/mybatis/mybatis-spring-boot>.
 
 ### Create a SpringBoot Maven project and add the following MyBatis Starter dependency.
 
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.mybatis.spring.boot</groupId>
     <artifactId>mybatis-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 </dependency>
-{{< / highlight >}}
+```
 
 We will be reusing **User.java, schema.sql and data.sql** files created in my previous article [SpringBoot : Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}})
 
 Create MyBatis SQL Mapper interface **UserMapper.java** with few database operations as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.demo.domain;
 
 public interface UserMapper
@@ -44,13 +42,13 @@ public interface UserMapper
     User findUserById(Integer id);
     List<User> findAllUsers();
 }
-{{< / highlight >}}
+```
 
 We need to create Mapper XML files to define the queries for the mapped SQL statements for the corresponding Mapper interface methods.
 
 Create **UserMapper.xml** file in **src/main/resources/com/sivalabs/demo/mappers/** directory as follows:
 
-{{< highlight xml >}}
+```xml
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -75,7 +73,7 @@ Create **UserMapper.xml** file in **src/main/resources/com/sivalabs/demo/mappers
         insert into users(name,email) values(#{name},#{email})
     </insert>
 </mapper>
-{{< / highlight >}}
+```
 
 Few things to observe here are:
 
@@ -87,7 +85,7 @@ MyBatis also provides annotation based query configurations without requiring Ma
   
 We can create **UserMapper.java** interface and configure the mapped SQLs using annotations as follows:
 
-{{< highlight java >}}
+```java
 public interface UserMapper
 {
     @Insert("insert into users(name,email) values(#{name},#{email})")
@@ -102,29 +100,29 @@ public interface UserMapper
     List<User> findAllUsers();
 
 }
-{{< / highlight >}}
+```
 
 SpringBoot MyBatis starter provides the following MyBatis configuration parameters which we can use to customize MyBatis settings.
 
-{{< highlight java >}}
+```java
 mybatis.config = mybatis config file name
 mybatis.mapperLocations = mappers file locations
 mybatis.typeAliasesPackage = domain object's package
 mybatis.typeHandlersPackage = handler's package
 mybatis.check-config-location = check the mybatis configuration exists
 mybatis.executorType = mode of execution. Default is SIMPLE
-{{< / highlight >}}
+```
 
 Configure the **typeAliasesPackage** and **mapperLocations** in **application.properties**.
 
-{{< highlight java >}}
+```java
 mybatis.typeAliasesPackage=com.sivalabs.demo.domain
 mybatis.mapperLocations=classpath*:**/mappers/*.xml
-{{< / highlight >}}
+```
 
 Create the entry point class **SpringbootMyBatisDemoApplication.java**.
 
-{{< highlight java >}}
+```java
 @SpringBootApplication
 @MapperScan("com.sivalabs.demo.mappers")
 public class SpringbootMyBatisDemoApplication
@@ -134,13 +132,13 @@ public class SpringbootMyBatisDemoApplication
         SpringApplication.run(SpringbootMyBatisDemoApplication.class, args);
     }
 }
-{{< / highlight >}}
+```
 
 Observe that we have used **@MapperScan(&#8220;com.sivalabs.demo.mappers&#8221;)** annotation to specify where to look for Mapper interfaces.
 
 Now create a JUnit test class and test our UserMapper methods.
 
-{{< highlight java >}}
+```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(SpringbootMyBatisDemoApplication.class)
 public class SpringbootMyBatisDemoApplicationTests
@@ -170,7 +168,7 @@ public class SpringbootMyBatisDemoApplicationTests
         assertEquals("siva@gmail.com", newUser.getEmail());
     }
 }
-{{< / highlight >}}
+```
 
 You can find the source code of the article at my GitHub repo&nbsp;<https://github.com/sivaprasadreddy/springboot-tutorials>
 

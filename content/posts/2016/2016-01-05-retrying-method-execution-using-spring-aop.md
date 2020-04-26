@@ -16,7 +16,7 @@ One of my blog follower sends an email asking me to show an example of **&#8220;
 
 So I would like to show how I have used Spring AOP for one of my project to handle a real problem.
 
-**We won&#8217;t face some kind of problems in development phases and only come to know during Load Testing or in production environments only.**
+**We won't face some kind of problems in development phases and only come to know during Load Testing or in production environments only.**
   
 **For example:**
 
@@ -33,13 +33,13 @@ We can use Spring AOP **@Around** advice to create a proxy for those objects who
 
 Before jumping on to implementing these Spring Advice and Aspect, first let us write a simple utility to execute a **&#8220;Task&#8221;** which automatically retry for N times ignoring the given set of Exceptions.
 
-{{< highlight java >}}
+```java
 public interface Task<T> {
 	T execute();
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 import java.util.HashSet;
 import java.util.Set;
 import org.slf4j.Logger;
@@ -105,13 +105,14 @@ public class TaskExecutionUtil
 		return result;
 	}
 
-}{{< / highlight >}}
+}
+```
 
 I hope this method is self explanatory. It is taking a **Task** and retries **noOfRetryAttempts** times in case method **task.execute()** throws any Exception and **ignoreExceptions** indicates what type of exceptions to be ignored while retrying.
 
 Now let us create a Retry annotation as follows:
 
-{{< highlight java >}}
+```java
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -128,13 +129,13 @@ public  @interface Retry {
 	Class<? extends Throwable>[] ignoreExceptions() default { RuntimeException.class };
 	
 }
-{{< / highlight >}}
+```
 
 We will use this **@Retry** annotation to demarcate which methods needs to be retried.
 
 Now let us implement the Aspect which applies to the method with **@Retry** annotation.
 
-{{< highlight java >}}
+```java
 import java.lang.reflect.Method;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -183,13 +184,14 @@ public class MethodRetryHandlerAspect {
 		};
 		return TaskExecutionUtil.execute(task, retryAttempts, sleepInterval, ignoreExceptions);
 	}
-}{{< / highlight >}}
+}
+```
 
-That&#8217;s it. We just need some test cases to actually test it.
+That's it. We just need some test cases to actually test it.
 
 First create **AppConfig.java** configuration class as follows:
 
-{{< highlight java >}}
+```java
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -199,11 +201,12 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy
 public class AppConfig {
 
-}{{< / highlight >}}
+}
+```
 
 And couple of dummy Service beans.
 
-{{< highlight java >}}
+```java
 import org.springframework.stereotype.Service;
 
 @Service
@@ -225,9 +228,9 @@ public class ServiceA {
 		System.err.println("----method2 end----");		
 	}
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 import java.io.IOException;
 import org.springframework.stereotype.Service;
 
@@ -247,11 +250,11 @@ public class ServiceB {
 		System.err.println("----method4----");
 	}
 }
-{{< / highlight >}}
+```
 
 Finally write a simple Junit test to invoke these methods.
 
-{{< highlight java >}}
+```java
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -289,19 +292,19 @@ public class RetryTest
 		svcB.method4();
 	}
 }
-{{< / highlight >}}
+```
 
 Yeah, I know I could have written these test methods a bit better, but I hope you got the idea.
 
 Run the JUnit tests and observe the log statement to verify whether the method retry is happening in case of Exception or not.
 
-**Case#1:** When invoking ServiceA.method1() is invoked MethodRetryHandlerAspect won&#8217;t be applied at all.
+**Case#1:** When invoking ServiceA.method1() is invoked MethodRetryHandlerAspect won't be applied at all.
 
 **Case#2:** When invoking ServiceA.method2() is invoked, we are maintaining a counter and throwing NullPointerException for 2 times. But we have marked that method to ignore NullPointerExceptions. So it will continue to retry for 5 times. But 3rd time method will be executed normally and exits the method normally.
 
 **Case#3:** When invoking ServiceB.method3() is invoked, we are throwing ArrayIndexOutOfBoundsException but that method is marked to ignore only IOException only.
   
-So this method execution won&#8217;t be retried and throws the Exception immediately.
+So this method execution won't be retried and throws the Exception immediately.
 
 **Case#4:** When invoking ServiceB.method4() is invoked, everything is fine so it should exit in the first attempt itself normally.
 

@@ -45,16 +45,16 @@ We would like to have some **timeouts** and implement some **fallback mechanism*
 
 Add **Hystrix** starter to catalog-service.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 To enable Circuit Breaker add **@EnableCircuitBreaker** annotation on catalog-service entry-point class.
 
-{{< highlight java >}}
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -76,14 +76,14 @@ public class CatalogServiceApplication {
         SpringApplication.run(CatalogServiceApplication.class, args);
     }
 }
-{{</ highlight >}}
+```
 
 Now we can use **@HystrixCommand** annotation on any method we want to apply timeout and fallback method.
 
 Let us create **InventoryServiceClient.java** which will invoke inventory-service REST endpoint and 
 apply **@HystrixCommand** with a fallback implementation.
 
-{{< highlight java >}}
+```java
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.sivalabs.catalogservice.web.models.ProductInventoryResponse;
 import lombok.extern.slf4j.Slf4j;
@@ -129,9 +129,9 @@ public class InventoryServiceClient {
         return Optional.ofNullable(response);
     }
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 import lombok.Data;
  
 @Data
@@ -139,7 +139,7 @@ public class ProductInventoryResponse {
     private String productCode;
     private int availableQuantity;
 }
-{{</ highlight >}}
+```
 
 We have annotated the method from where we are making a REST call with **@HystrixCommand(fallbackMethod = “getDefaultProductInventoryByCode”)** 
 so that if it doesn’t receive the response within the certain time limit the call gets timed out and invoke the configured fallback method. 
@@ -149,7 +149,7 @@ this behavior depends on what business wants.
 
 We can customize the **@HystrixCommand** default behavior by configuring properties using **@HystrixProperty** annotations.
 
-{{< highlight java >}}
+```java
 @HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode",
     commandProperties = {
        @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "3000"),
@@ -160,29 +160,29 @@ public Optional<ProductInventoryResponse> getProductInventoryByCode(String produ
 {
     ....
 }
-{{</ highlight >}}
+```
 
 Instead of configuring these parameter values in the code we can configure them in **bootstrap.properties/yml** files as follows.
 
-{{< highlight properties >}}
+```properties
 hystrix.command.getProductInventoryByCode.execution.isolation.thread.timeoutInMilliseconds=2000
 hystrix.command.getProductInventoryByCode.circuitBreaker.errorThresholdPercentage=60
-{{</ highlight >}}
+```
 
 Note that we are using the method name as the **commandKey** which is the default behavior. We can customize the **commandKey** name as follows:
 
-{{< highlight java >}}
+```java
 @HystrixCommand(commandKey = "inventory-by-productcode", fallbackMethod = "getDefaultProductInventoryByCode")
 public Optional<ProductInventoryResponse> getProductInventoryByCode(String productCode)
 {
     ...
 }
-{{</ highlight >}}
+```
 
-{{< highlight properties >}}
+```properties
 hystrix.command.inventory-by-productcode.execution.isolation.thread.timeoutInMilliseconds=2000
 hystrix.command.inventory-by-productcode.circuitBreaker.errorThresholdPercentage=60
-{{</ highlight >}}
+```
 
 You can find all the configuration options available here https://github.com/Netflix/Hystrix/wiki/Configuration.
 
@@ -193,7 +193,7 @@ available within **@HystrixCommand** methods.
 
 One option to make the ThreadLocal variables available is using **execution.isolation.strategy=SEMAPHORE**.
 
-{{< highlight java >}}
+```java
 @HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode",
     commandProperties = {
         @HystrixProperty(name="execution.isolation.strategy", value="SEMAPHORE")
@@ -203,7 +203,7 @@ public Optional<ProductInventoryResponse> getProductInventoryByCode(String produ
 {
     ...
 }
-{{</ highlight >}}
+```
 
 If you set the property **execution.isolation.strategy** to **SEMAPHORE** then Hystrix will use semaphores instead of threads to limit 
 the number of concurrent parent threads that invoke the command. 
@@ -213,7 +213,7 @@ Another option to make ThreadLocal variables available within Hystrix command me
 
 Suppose you want to propagate some **CorrelationId** set as a ThreadLocal variable.
 
-{{< highlight java >}}
+```java
 public class MyThreadLocalsHolder {
     private static final ThreadLocal<String> CORRELATION_ID = new ThreadLocal();
  
@@ -225,11 +225,11 @@ public class MyThreadLocalsHolder {
         return CORRELATION_ID.get();
     }
 }
-{{</ highlight >}}
+```
 
 Let us implement our own **HystrixConcurrencyStrategy**.
 
-{{< highlight java >}}
+```java
 @Component
 @Slf4j
 public class ContextCopyHystrixConcurrencyStrategy extends HystrixConcurrencyStrategy {
@@ -264,13 +264,13 @@ public class ContextCopyHystrixConcurrencyStrategy extends HystrixConcurrencyStr
         }
     }
 }
-{{</ highlight >}}
+```
 
 Now you can set the **CorrelationId** before calling Hystrix command and access CorrelationId within Hystrix command.
 
 **ProductService.java**
 
-{{< highlight java >}}
+```java
 public Optional<Product> findProductByCode(String code) 
 {
     ....
@@ -283,18 +283,18 @@ public Optional<Product> findProductByCode(String code)
     ....
      
 }
-{{</ highlight >}}
+```
 
 **InventoryServiceClient.java**
 
-{{< highlight java >}}
+```java
 @HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode")
 public Optional<ProductInventoryResponse> getProductInventoryByCode(String productCode)
 {
     ...
     log.info("CorrelationID: "+ MyThreadLocalsHolder.getCorrelationId());
 }
-{{</ highlight >}}
+```
 
 This is just one example of how to propagate the data to the Hystrix command. 
 Similarly we can pass any data available in current HTTP Request, let’s say by using Spring components like **RequestContextHolder** etc.
@@ -308,12 +308,12 @@ Actuator endpoint http://localhost:8181/actuator/hystrix.stream, assuming catalo
 Spring Cloud also provides a nice dashboard to monitor the status of Hystrix commands.
 Create a Spring Boot application with **Hystrix Dashboard** starter and annotate the main entry-point class with **@EnableHystrixDashboard**.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Let us say we are running Hystrix Dashboard on 8788 port, then go to http://localhost:8788/hystrix to view the dashboard.
 

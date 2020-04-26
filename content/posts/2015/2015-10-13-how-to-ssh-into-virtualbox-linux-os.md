@@ -24,7 +24,7 @@ In this post I will explain how I am using my Linux OS installed on VirtualBox t
   
 `sudo apt-get install openssh-server`
 
-On some Linux distros (ex: Fedora) the openssh server won&#8217;t start automatically.
+On some Linux distros (ex: Fedora) the openssh server won't start automatically.
 
 You can enable it to start automatically using the following command:
 

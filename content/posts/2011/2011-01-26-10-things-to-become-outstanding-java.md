@@ -26,11 +26,11 @@ If you are a java developer and passionate about technology, you can follow the 
 
 #### 1. Have strong foundation and understanding on OO Principles
   
-For a java developer having strong understanding on Object Oriented Programming is a must. Without having a strong foundation on OOPS, one can&#8217;t realize the beauty of an Object Oriented Programming language like Java. If you don&#8217;t have good idea on what OOPS is, eventhough you are using OOP language you may be still coding in procedural way.Just studying OO principles definitions won&#8217;t help much. we should know how to apply those OO principles in designing a solution in OO way. So one should have a strong knowledge on Object modeling, Inheritance, Polymorphism, Design Patterns.
+For a java developer having strong understanding on Object Oriented Programming is a must. Without having a strong foundation on OOPS, one can't realize the beauty of an Object Oriented Programming language like Java. If you don't have good idea on what OOPS is, eventhough you are using OOP language you may be still coding in procedural way.Just studying OO principles definitions won't help much. we should know how to apply those OO principles in designing a solution in OO way. So one should have a strong knowledge on Object modeling, Inheritance, Polymorphism, Design Patterns.
 
 #### 2. Master the core APIs
   
-It doesn&#8217;t matter how strong you are in terms of theoretical knowledge if you don&#8217;t know the language constructs and core APIs. In case of Java, one should have very strong hands on experience on core APIs like java.lang.*, I/O, Exceptions, Collections, Generics, Threads, JDBC etc. When it comes to Web application development, no matter which framework you are using having strong knowledge on Servlets, JSPs is a must.
+It doesn't matter how strong you are in terms of theoretical knowledge if you don't know the language constructs and core APIs. In case of Java, one should have very strong hands on experience on core APIs like java.lang.*, I/O, Exceptions, Collections, Generics, Threads, JDBC etc. When it comes to Web application development, no matter which framework you are using having strong knowledge on Servlets, JSPs is a must.
 
 #### 3. Keep coding
   
@@ -38,7 +38,7 @@ Things look simpler when talking about them theoretically. We can give a solutio
 
 #### 4. Subscribe to forums
   
-We are not alone. There are lots of people working on the same technologies that we are working on. When doing a simple proof of concept on a framework may not give you real challenges. But when you start using it on real projects you will face weird issues and you won&#8217;t find any solution in their official documentation. When started working on a new technology the best and first thing to do is subscribing to that technology forums. Whatever the issue you are facing someone else in this world might have already faced it earlier and might have found the solution. And it would be really really great if you can answer the questions asked by other forum users.
+We are not alone. There are lots of people working on the same technologies that we are working on. When doing a simple proof of concept on a framework may not give you real challenges. But when you start using it on real projects you will face weird issues and you won't find any solution in their official documentation. When started working on a new technology the best and first thing to do is subscribing to that technology forums. Whatever the issue you are facing someone else in this world might have already faced it earlier and might have found the solution. And it would be really really great if you can answer the questions asked by other forum users.
 
 #### 5. Follow blogs and respond
   
@@ -54,7 +54,7 @@ In the open source software development technology trends keep on changing. By t
 
 #### 8. Keep repeatedly using code snippets/utilities handy
   
-Overtime you may need to write/copy-paste same piece of code/configuration again and again. Keeping those kind of configuration snippets like log4.properties, jdbc configuration etc and utilities like StringUtils, ReflectionUtils, DBUtils will be more helpful. I know it itself don&#8217;t make you outstanding developer. But just imagine some co-developer came and ask you to help in fetching the list of values of a property from a collection of objects and then you just used your ReflectionUtil and gave the solution in few minutes. That will make you outstanding.
+Overtime you may need to write/copy-paste same piece of code/configuration again and again. Keeping those kind of configuration snippets like log4.properties, jdbc configuration etc and utilities like StringUtils, ReflectionUtils, DBUtils will be more helpful. I know it itself don't make you outstanding developer. But just imagine some co-developer came and ask you to help in fetching the list of values of a property from a collection of objects and then you just used your ReflectionUtil and gave the solution in few minutes. That will make you outstanding.
 
 #### 9. Know different development methodologies
   

@@ -22,7 +22,7 @@ Once the customer is logged in our system he can click on MyAccount link at the 
 
 First let us write the Controller handler method in our CustomerController to show myAccount details.
 
-{{< highlight java >}}
+```java
 @Controller
 public class CustomerController extends JCartSiteBaseController
 {  
@@ -41,11 +41,11 @@ public class CustomerController extends JCartSiteBaseController
     return "myAccount";
   }
 }
-{{< / highlight >}}
+```
 
 Now create the myAccount.html view to render customer details and customer order history.
 
-{{< highlight xml >}}
+```xml
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="http://www.thymeleaf.org"
@@ -128,7 +128,7 @@ Now create the myAccount.html view to render customer details and customer order
 </body>
 </html>
 
-{{</ highlight >}}
+```
 
 Now you can login as customer and click on MyAccount and see the profile. 
 When you click on Orders tab you can see the list of orders that customer is placed. 

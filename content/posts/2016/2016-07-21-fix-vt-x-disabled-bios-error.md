@@ -12,24 +12,24 @@ tags:
   - Android
 
 ---
-If you face the <span style="color: #ff0000;"><strong>&#8220;vt-x is disabled in the bios&#8221;</strong></span> error while trying to run Android emulator, here is the solution that worked for me.
+If you face the **vt-x is disabled in the bios** error while trying to run Android emulator, here is the solution that worked for me.
 
 #### Step 1: Enable Virtualization Technology in BIOS
 
 Go to BIOS Setup and enable &#8220;Virtualization Technology&#8221; option.
 
-<span style="color: #993366;"><strong>On my Lenovo laptop this option was already enabled, but still getting this error. I have disabled it and re-enabled it, then it is working.</strong></span>
+**On my Lenovo laptop this option was already enabled, but still getting this error. I have disabled it and re-enabled it, then it is working.**
 
 #### Step 2: Install HAXM Installer from Android SDK Manager
 
-Start the Android SDK Manager, select **<span style="color: #993366;">Extras -> Intel x86 Emulator Accelerator (HAXM Installer)</span>** and install it.
+Start the Android SDK Manager, select **Extras -> Intel x86 Emulator Accelerator (HAXM Installer)** and install it.
 
-<img class="alignnone size-medium" src="/images/HAXM.png" alt="HAXM"  />
+![HAXM](/images/HAXM.png)
 
-#### Step 3: Install Intel&#8217;s HAXM
+#### Step 3: Install Intel's HAXM
 
-Install Intel&#8217;s HAXM by running the following installer.
+Install Intel's HAXM by running the following installer.
 
-<span style="color: #993366;">%SDK_LOCATION%\extras\intel\Hardware_Accelerated_Execution_Manager\intelhaxm-android.exe</span>
+**%SDK_LOCATION%\extras\intel\Hardware_Accelerated_Execution_Manager\intelhaxm-android.exe**
 
-That&#8217;s it. Now restart the system and hopefully you should be able to run the Android Emulator.
+That's it. Now restart the system and hopefully you should be able to run the Android Emulator.

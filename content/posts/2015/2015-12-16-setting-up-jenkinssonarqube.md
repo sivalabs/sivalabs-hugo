@@ -43,7 +43,7 @@ sonar.jdbc.password=admin
 
 Let us configure sonarqube maven plugin in **jcart/pom.xml**
 
-{{< highlight html >}}
+```html
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -77,7 +77,7 @@ Let us configure sonarqube maven plugin in **jcart/pom.xml**
 	</build>
 	
 </project>
-{{</ highlight >}}
+```
 
 Now you can run maven goal **mvn sonar:sonar** which performs all the code quality checks and insert metrics into database.
   
@@ -135,7 +135,7 @@ Go to GitHub repository **Settings** tab, click on **Webhooks & services** -> **
   
 Then fill in the Jenkins hook url with your jenkins url like this: **http://your\_jenkins\_url/github-webhook/**
 
-<span style="color: #ff0000;">But giving jenkins url like http://localhost:8080/github-webhook/ won&#8217;t work (obviously!!) as it tries to resolve &#8220;localhost&#8221; from Github server.</span>
+<span style="color: #ff0000;">But giving jenkins url like http://localhost:8080/github-webhook/ won't work (obviously!!) as it tries to resolve &#8220;localhost&#8221; from Github server.</span>
 
 See <a href="http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top" target="_blank">http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top</a> for more details.
 
@@ -143,4 +143,4 @@ To simulate the behaviour of automatically triggering the build when code is pus
 
 > You can run Jenkins on OpenShift to fully automate the build process so that you can give OpneShift Jenkins URL in Github webhooks which GitHub can resolve.
 
-Now that we have completed **Iteration-1**. Let&#8217;s get ready for **Iteration-2** 🙂
+Now that we have completed **Iteration-1**. Let's get ready for **Iteration-2** 🙂

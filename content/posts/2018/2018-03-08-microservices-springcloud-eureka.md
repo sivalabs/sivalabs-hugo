@@ -54,16 +54,16 @@ Spring Cloud makes it very easy to create a Service Registry and discovering oth
 # Spring Cloud Netflix Eureka based Service Registry
 Let us create a Service Registry using Netflix Eureka which is nothing but a SpringBoot application with **Eureka Server** starter.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 We need to add **@EnableEurekaServer** annotation to make our SpringBoot application a Eureka Server based Service Registry.
 
-{{< highlight java >}}
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
@@ -76,20 +76,20 @@ public class ServiceRegistryApplication {
         SpringApplication.run(ServiceRegistryApplication.class, args);
     }
 }
-{{</ highlight >}}
+```
 
 By default, each Eureka Server is also a Eureka client and needs at least one service URL to locate a peer. As we are going to have a single Eureka Server node (Standalone Mode), we are going to disable this client-side behavior by configuring the following properties in application.properties file.
 
 **application.properties**
 
-{{< highlight properties >}}
+```properties
 spring.application.name=service-registry
 server.port=8761
 eureka.instance.hostname=localhost
 eureka.instance.client.registerWithEureka=false
 eureka.instance.client.fetchRegistry=false
 eureka.instance.client.serviceUrl.defaultZone=http://${eureka.instance.hostname}:${server.port}/eureka/
-{{</ highlight >}}
+```
 
 Netflix Eureka Service provides UI where we can see all the details about registered services.
 
@@ -103,18 +103,18 @@ In [Part 2 : MicroServices : Configuration Management with Spring Cloud Config a
 
 Add the **Eureka Discovery** starter to **catalog-service** which will add the following dependency.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 With **spring-cloud-starter-netflix-eureka-client** on classpath, we just need to configure **eureka.client.service-url.defaultZone** property in **application.properties** to automatically register with the Eureka Server.
 
-{{< highlight properties >}}
+```properties
 eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
-{{</ highlight >}}
+```
 
 When a service is registered with Eureka Server it keeps sending heartbeats for certain interval. If Eureka server didn’t receive heartbeat from any service instance it will assume service instance is down and take it out from the pool.
 
@@ -124,9 +124,9 @@ You can also notice the status as **UP(1)** which means the services are up and 
 
 Let us start another instance of catalog-service on a different port using the following command.
 
-{{< highlight shell >}}
+```shell
 java -jar -Dserver.port=9797 target/catalog-service-0.0.1-SNAPSHOT-exec.jar
-{{</ highlight >}}
+```
 
 Now if you go to http://localhost:8761 you will notice that 2 instances of catalog-service got registered and you can see their hostname: port details as well.
 
@@ -135,18 +135,18 @@ In the previous section, we have learned how to register a service as Eureka cli
 
 Now we will create another microservice **inventory-service** which exposes a REST endpoint **http://localhost:8282/api/invenory/{productCode}** which will give the currently available quantity as a response.
 
-{{< highlight js >}}
+```js
 {
     productCode: "P001",
     availableQuantity: 250
 }
-{{</ highlight >}}
+```
 
 Create **inventory-service** SpringBoot application with **Web, JPA, H2/MySQL, Actuator, Config Client and Eureka Discovery** starters.
 
 Create a REST Controller to return Inventory details for a given product code.
 
-{{< highlight java >}}
+```java
 @RestController
 @Slf4j
 public class InventoryController {
@@ -168,25 +168,25 @@ public class InventoryController {
         }
     }
 }
-{{</ highlight >}}
+```
 
 > Please look at the GitHub Repository for the InventoryItem, InventoryItemRepository etc code.
 
 Register **inventory-service** with Eureka server by configuring Eureka serviceUrl in **src/main/resources/bootstrap.properties**.
 
-{{< highlight properties >}}
+```properties
 spring.application.name=inventory-service
 server.port=8282
 eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
-{{</ highlight >}}
+```
 
 Now build inventory-service and start 2 instances of it by running following commands.
 
-{{< highlight shell >}}
+```shell
 java -jar -Dserver.port=9898 target/inventory-service-0.0.1-SNAPSHOT-exec.jar
  
 java -jar -Dserver.port=9999 target/inventory-service-0.0.1-SNAPSHOT-exec.jar
-{{</ highlight >}}
+```
 
 Now you can visit Eureka Dashboard http://localhost:8761/ and see 2 instances of inventory-service registered.
 
@@ -197,7 +197,7 @@ We can register **RestTemplate** as a Spring bean with **@LoadBalanced** annotat
 The RestTemplate with **@LoadBalanced** annotation will internally use **Ribbon LoadBalancer** to resolve the **ServiceID** 
 and invoke REST endpoint using one of the available servers.
 
-{{< highlight java >}}
+```java
 @SpringBootApplication
 public class CatalogServiceApplication {
  
@@ -211,11 +211,11 @@ public class CatalogServiceApplication {
         SpringApplication.run(CatalogServiceApplication.class, args);
     }
 }
-{{</ highlight >}}
+```
 
 Now we can use RestTemplate to invoke inventory-service endpoint at **http://inventory-service/api/inventory/{productCode}**.
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 @Slf4j
@@ -249,15 +249,15 @@ public class ProductService {
         return productOptional;
     }
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Data
 public class ProductInventoryResponse {
     private String productCode;
     private int availableQuantity;
 }
-{{</ highlight >}}
+```
 
 Note that we have used http://inventory-service/api/inventory/{code} instead of http://localhost:9898/api/inventory/{code} or http://localhost:9999/api/inventory/{code} directly.
 

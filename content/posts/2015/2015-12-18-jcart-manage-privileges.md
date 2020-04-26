@@ -14,21 +14,23 @@ tags:
 ---
 This is the simplest usecase of entire JCart admin application :-). We need to show list of permissions configured in our system.
   
-In our system each permission is more like access to a particular screen. For example, If a user has MANAGE_CATEGORIES permission then only he can access &#8220;Categories&#8221; screen. So these set of permission are something like implemented features set, hence we don&#8217;t need any provision to add/update/delete permissions dynamically.
+In our system each permission is more like access to a particular screen. For example, If a user has MANAGE_CATEGORIES permission then only he can access &#8220;Categories&#8221; screen. So these set of permission are something like implemented features set, hence we don't need any provision to add/update/delete permissions dynamically.
 
 We already have Permission JPA entity created and some sample data is already inserted using data.sql script.
 
 First let us create a Spring Data JPA repository for Permission entity.
 
-{{< highlight java >}}public interface PermissionRepository extends JpaRepository<Permission, Integer>
+```java
+public interface PermissionRepository extends JpaRepository<Permission, Integer>
 {
 
 }
-{{</ highlight >}}
+```
 
 In SecurityService implement a method to return all the permissions.
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class SecurityService
 {
@@ -41,7 +43,7 @@ public class SecurityService
 	}
 
 }
-{{</ highlight >}}
+```
 
 Create a SpringMVC controller to handle all Permission related actions (in our case we only need list all permissions).
   
@@ -49,7 +51,8 @@ This action should be available to only users who have &#8220;ROLE\_MANAGE\_PERM
 
 Instead of using Strings let us create constants for Permissions as follows:
 
-{{< highlight java >}}public class SecurityUtil
+```java
+public class SecurityUtil
 {
 	
 	public static final String MANAGE_CATEGORIES = "ROLE_MANAGE_CATEGORIES";
@@ -63,11 +66,12 @@ Instead of using Strings let us create constants for Permissions as follows:
 	public static final String MANAGE_SETTINGS = "ROLE_MANAGE_SETTINGS";
 	
 }
-{{</ highlight >}}
+```
 
 > Observe that each permission is prefixed with &#8220;ROLE_&#8221; which is expected by Spring Security.
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 @Secured(SecurityUtil.MANAGE_PERMISSIONS)
 public class PermissionController extends JCartAdminBaseController
 {
@@ -88,11 +92,12 @@ public class PermissionController extends JCartAdminBaseController
 		return viewPrefix+"permissions";
 	}
 }
-{{</ highlight >}}
+```
 
 Now we left with one final step for this usecase, preparing thymeleaf view jcart-admin/src/main/resources/templates/permissions/permissions.html.
 
-  {{< highlight html >}}<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -132,9 +137,9 @@ Now we left with one final step for this usecase, preparing thymeleaf view jcart
 	
 </body>
 </html>
-{{</ highlight >}}
+```
 
-That&#8217;s it. Now run JCartAdminApplication.java and login and go click on Permissions menu in Left side navigation and you should be able to see list of all permissions.
+That's it. Now run JCartAdminApplication.java and login and go click on Permissions menu in Left side navigation and you should be able to see list of all permissions.
 
 Next we will start implementing Role management which is little bit more interesting.
 

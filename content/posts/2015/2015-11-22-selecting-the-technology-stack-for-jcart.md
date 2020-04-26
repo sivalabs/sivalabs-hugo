@@ -39,7 +39,7 @@ In Java land, JavaEE and Spring are the most popular tech stacks for building ap
 **Spring provides:**
 
   * Request-Response oriented SpringMVC web framework
-  * Spring doesn&#8217;t provide any Component Oriented MVC framework. But we can integrate Spring with JSF or Vaadin which are Component Oriented Web MVC Frameworks
+  * Spring doesn't provide any Component Oriented MVC framework. But we can integrate Spring with JSF or Vaadin which are Component Oriented Web MVC Frameworks
   * SpringSecurity provides RBAC security
   * Spring Data projects provides a very nice abstraction over various Data Access Technologies
   * Spring provides support for Emailing and Quartz Scheduler integrations as well.
@@ -72,6 +72,6 @@ So, we are going to use Spring and some of its portfolio projects like Spring Se
 
 ### What about MicroServices, Docker and Cloud stuff?
 
-As I said earlier, we are choosing the technologies based on our project needs. We are not **Netflix**, we are not **LinkedIn** and we are not building the NextAwesomeTechProductOnEarch. Our project needs are simple, our team size is small and we are not going to deploy our application on 128 containers on Cloud, so we are not going to use any fancy container technologies like **Docker**/**Kubertness**. If at all we got scalability problems where we may need to deploy our application on hundreds of servers, that&#8217;s a good to have problem.
+As I said earlier, we are choosing the technologies based on our project needs. We are not **Netflix**, we are not **LinkedIn** and we are not building the NextAwesomeTechProductOnEarch. Our project needs are simple, our team size is small and we are not going to deploy our application on 128 containers on Cloud, so we are not going to use any fancy container technologies like **Docker**/**Kubertness**. If at all we got scalability problems where we may need to deploy our application on hundreds of servers, that's a good to have problem.
 
 > **Remember:** Adding new software/framework/library to a project is easy..Removing is lot harder than you thing. So be careful while adding another software/framework/library.

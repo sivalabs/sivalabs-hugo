@@ -7,9 +7,7 @@ date: 2015-05-31T13:07:25+00:00
 ---
 This Spring Boot training aims at Java developers who want to learn Spring and SpringBoot starting from scratch.
 
-<img class="size-full aligncenter" src="/images/spring-boot-cover_0.png" alt="SpringBoot" />
-
-Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
+Please email me at sivaprasadreddy.k@gmail.com for further details.
 
 ### Spring Boot Course Topics:
 
@@ -100,4 +98,4 @@ Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmai
     * Testing with Mockito
     
 
-Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
+Please email me at sivaprasadreddy.k@gmail.com for further details.

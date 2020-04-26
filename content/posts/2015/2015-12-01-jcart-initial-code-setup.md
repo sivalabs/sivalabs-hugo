@@ -25,7 +25,7 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 
 **jcart/pom.xml**
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -60,11 +60,11 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 		</dependencies>
 	</dependencyManagement>    
 </project>
-{{</ highlight >}}
+```
 
 **jcart/jcart-core/pom.xml**
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -97,11 +97,11 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 		</dependency>
 	</dependencies>
 </project>
-{{</ highlight >}}
+```
 
 **jcart/jcart-admin/pom.xml**
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -149,11 +149,11 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 		</dependency>	
 	</dependencies>
 </project>
-{{</ highlight >}}
+```
 
 **jcart/jcart-site/pom.xml**
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -201,7 +201,7 @@ All these modules use SpringBoot, but as of now STS/IntellijIdea are not providi
 		</dependency>	
 	</dependencies>
 </project>
-{{</ highlight >}}
+```
 
 We are going to use MySQL database instead of an InMemory database like H2 or HSQL, so we will configure our datasource properties in **application.properties**. 
 
@@ -211,18 +211,18 @@ For more information on using properties files refer <a href="https://github.com
 
 **jcart-core/src/main/resources/application.properties**
 
-{{< highlight java >}}
+```java
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/jcart
 spring.datasource.username=root
 spring.datasource.password=admin
 
 spring.jpa.hibernate.ddl-auto=update
-{{</ highlight >}}
+```
 
 The jcart-core module will be used along with jcart-admin and jcart-site modules, not as a stand-alone module. But in order to test the jcart-core module functionality let us create main entry point class **JCartCoreApplication** in src/test/java folder.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.jcart;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -236,9 +236,9 @@ public class JCartCoreApplication
 	}
 
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.jcart;
 
 import java.sql.SQLException;
@@ -263,6 +263,6 @@ public class JCartCoreApplicationTest
 	assertEquals("jcart", schema);
 	}	
 }
-{{</ highlight >}}
+```
 
 If this test case passed we can assume we have base setup ready.

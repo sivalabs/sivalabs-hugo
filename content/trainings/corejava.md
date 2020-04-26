@@ -7,9 +7,7 @@ date: 2015-05-31T13:07:25+00:00
 ---
 This Core Java training aims at the beginners who want to learn Java programming starting from scratch.
 
-<img class="size-full aligncenter" src="/images/java.jpg" alt="java" />
-
-Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
+Please email me at sivaprasadreddy.k@gmail.com for further details.
 
 ### Core Java Course Topics:
 
@@ -64,8 +62,4 @@ Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmai
       * JSTL
       * Custom Tags
 
-Please email me at <span style="color: #993366;"><strong>sivaprasadreddy.k@gmail.com</strong></span> for further details.
-
-&nbsp;
-
- [1]: https://i2.wp.com/sivalabs.in/wp-content/uploads/2015/06/java1.jpg
+Please email me at sivaprasadreddy.k@gmail.com for further details.

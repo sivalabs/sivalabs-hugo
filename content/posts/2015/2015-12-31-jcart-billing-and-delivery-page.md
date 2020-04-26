@@ -16,7 +16,7 @@ Once the customer reviewed his cart items details and clicks on Checkout we shou
 
 Let us create a **OrderDTO.java** as follows:
 
-{{< highlight java >}}
+```java
 public class OrderDTO implements Serializable
 {
 	private static final long serialVersionUID = 1L;
@@ -66,11 +66,11 @@ public class OrderDTO implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
 Create **CheckoutController** to display the Billing & Delivery page as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class CheckoutController extends JCartSiteBaseController
 {
@@ -91,11 +91,11 @@ public class CheckoutController extends JCartSiteBaseController
 		return "checkout";
 	}
 }
-{{</ highlight >}}
+```
 
 Finally create the **checkout.html** view as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -368,18 +368,18 @@ Finally create the **checkout.html** view as follows:
 </div>
 </body>
 </html>
-{{</ highlight >}}
+```
 
 Next we need to implement the back-end services for Order related operations.
 
-{{< highlight java >}}
+```java
 public interface OrderRepository extends JpaRepository<Order, Integer>
 {
 	Order findByOrderNumber(String orderNumber);
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class OrderService
@@ -399,9 +399,9 @@ public class OrderService
 	}
 
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Controller
 public class OrderController extends JCartSiteBaseController
 {
@@ -499,11 +499,11 @@ public class OrderController extends JCartSiteBaseController
 	}
 
 }
-{{</ highlight >}}
+```
 
 Create the template **orderconfirmation.html** for showing order confirmation as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
@@ -570,7 +570,7 @@ Create the template **orderconfirmation.html** for showing order confirmation as
 	</div>
 </body>
 </html>
-{{</ highlight >}}
+```
 
 Now you can add items to cart, view cart item details, and checkout by providing delivery and billing info and finally place order. Once the order is successfully placed it will display the order confirmation page.
 

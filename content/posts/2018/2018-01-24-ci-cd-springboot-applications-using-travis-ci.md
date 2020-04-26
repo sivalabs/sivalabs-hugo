@@ -54,10 +54,10 @@ As we are creating the Maven based java project create .travis.yml file with fol
 
 **.travis.yml**
 
-{{< highlight yml >}}
+```yml
 language: java
 jdk: oraclejdk8
-{{</ highlight >}}
+```
 
 This minimal configuration is sufficient for Travis-CI to recognize our Maven based Java project and build it. 
 If there is a build.gradle file in our project root folder Travis will treat it as Gradle project, or if there is pom.xml it will treat it as Maven project.  If both build.gradle and pom.xml are there then Gradle build script will take priority.
@@ -85,7 +85,7 @@ Now you can see that build is running and tests are executed and an email notifi
 
 Add the Maven JaCoCo plugin to pom.xml with options like what is the desired code coverage percentage, packages/classes to ignore etc.
 
-{{< highlight xml >}}
+```xml
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
@@ -146,7 +146,7 @@ Add the Maven JaCoCo plugin to pom.xml with options like what is the desired cod
         </execution>
     </executions>
 </plugin>
-{{</ highlight >}}
+```
 
 ## Step 5: Run Unit and Integration Tests
 
@@ -157,7 +157,7 @@ We will follow the convention by naming **Unit tests** as **\*Test.java/\*Tests.
 
 Add **maven-failsafe-plugin** as mentioned below:
 
-{{< highlight xml >}}
+```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-failsafe-plugin</artifactId>
@@ -176,12 +176,12 @@ Add **maven-failsafe-plugin** as mentioned below:
         </execution>
     </executions>
 </plugin>
-{{</ highlight >}}
+```
 
 While configuring the maven-failsafe-plugin for SpringBoot project I hit this issue https://github.com/spring-projects/spring-boot/issues/6254 .
 To fix this issue I have added the **classifier** configuration to spring-boot-maven-plugin as follows:
 
-{{< highlight xml >}}
+```xml
 <plugin>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-maven-plugin</artifactId>
@@ -189,19 +189,19 @@ To fix this issue I have added the **classifier** configuration to spring-boot-m
         <classifier>exec</classifier>
     </configuration>
 </plugin>
-{{</ highlight >}}
+```
 
 Now we are going to use **script** block to specify our custom maven goal to run instead of default goal.
 
 **.travis.yml**
 
-{{< highlight yml >}}
+```yml
 language: java
 jdk: oraclejdk8
  
 script:
 - ./mvnw clean install -B
-{{</ highlight >}}
+```
 
 ## Step 6: SonarQube code quality checks using SonarCloud
 
@@ -224,11 +224,11 @@ This will generate output like
 
 We can add all the secrets as global environment variables as follows:
 
-{{< highlight yml >}}
+```yml
 env:
   global:
   - secure: "....encrypted data....."
-{{</ highlight >}}
+```
 
 Now let us encrypt SonarCloud Token as follows:
 
@@ -236,7 +236,7 @@ Now let us encrypt SonarCloud Token as follows:
 
 Finally, let us add SonarCloud support as an AddOn (https://docs.travis-ci.com/user/sonarcloud/) as follows:
 
-{{< highlight yml >}}
+```yml
 language: java
 jdk: oraclejdk8
  
@@ -253,7 +253,7 @@ addons:
 script:
 - ./mvnw clean install -B
 - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
-{{</ highlight >}}
+```
 
 Note that we used **$SONAR_TOKEN** to refer to encrypted token variable and added one more command to run in **script** block to run **sonar:sonar** goal.
 
@@ -264,7 +264,7 @@ For more information read https://docs.travis-ci.com/user/docker/
 
 Create **Dockerfile** in project root folder for our SpringBoot application as follows:
 
-{{< highlight Dockerfile>}}
+```Dockerfile
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
 ADD target/jblogger-0.0.1-SNAPSHOT.jar app.jar
@@ -272,16 +272,16 @@ RUN sh -c 'touch /app.jar'
 ENV JAVA_OPTS="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8787,suspend=n"
 EXPOSE 8080 8787
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=docker -jar /app.jar" ]
-{{</ highlight >}}
+```
 
 To use Docker add the following settings to **.travis.yml**:
 
-{{< highlight yml >}}
+```yml
 sudo: required
  
 services:
   - docker
-{{</ highlight >}}
+```
 
 Now we can run Docker commands in our build.
 
@@ -290,16 +290,16 @@ We can leverage **after_success** section to perform this action.
 
 We need to login into DockerHub before pushing the image, we are going to configure DockerHub credentials by encrypting them.
 
-{{< highlight shell>}}
+```shell
 travis encrypt DOCKER_USER=”dockerhub-username”
 travis encrypt DOCKER_PASS=”dockerhub-password”
-{{</ highlight >}}
+```
 
 Add these 2 secrets to **env.global** section of .travis.yml.
 
 Now we can add our docker commands to build image and publish to dockerhub in **after_success** section as follows:
 
-{{< highlight yml >}}
+```yml
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
 - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
@@ -308,7 +308,7 @@ after_success:
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
 - docker push $IMAGE_NAME
 
-{{</ highlight >}}
+```
 
 ## Step 8: Deploy to Heroku
 
@@ -319,9 +319,9 @@ We are going to deploy our SpringBoot application on Heroku using Travis https:/
 
 Now create **Procfile** in root folder of the project as follows:
 
-{{< highlight shell >}}
+```shell
 web java -Dserver.port=$PORT -Dspring.profiles.active=heroku $JAVA_OPTS -jar target/jblogger-0.0.1-SNAPSHOT-exec.jar
-{{</ highlight >}}
+```
 
 First we need to get the Heroku API Key and add it as encrypted secret.
 
@@ -329,16 +329,16 @@ First we need to get the Heroku API Key and add it as encrypted secret.
 
 We can deploy to Heroku from Travis by adding **deploy** section as follows:
 
-{{< highlight yml >}}
+```yml
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
   app: jblogger
-{{</ highlight >}}
+```
 
 Now the complete .travis.yml file will look like follows:
 
-{{< highlight yml >}}
+```yml
 sudo: required
 language: java
 jdk: oraclejdk8
@@ -376,7 +376,7 @@ deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
   app: jblogger
-{{</ highlight >}}
+```
 
 Once the build is successful and deployed on Heroku you should be able to access the application at `https://<app>.herokuapp.com/`.
 

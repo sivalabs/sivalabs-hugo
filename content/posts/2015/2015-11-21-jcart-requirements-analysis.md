@@ -83,6 +83,6 @@ If an order is cancelled then refund should be triggered and a cancellation emai
   
 **<span style="color: #003366;">Locale & Currency:</span> **We should be able to use different locale and currencies for our e-commerce system. So the implementation should consider the I18N and dynamic currency change using live currency converter or using some conversion ratio.
 
-By looking at the above mentioned features you might be thinking these are all very basic features of any e-commerce system and lot of features like Promotions/Offers Management, Fulfilment Systems, Inventory management etc are not being considered. YES, you are right. We are not considering many aspects of a typical e-commerce system because WE DON&#8217;T NEED THEM FOR OUR APPLICATION.
+By looking at the above mentioned features you might be thinking these are all very basic features of any e-commerce system and lot of features like Promotions/Offers Management, Fulfilment Systems, Inventory management etc are not being considered. YES, you are right. We are not considering many aspects of a typical e-commerce system because WE DON'T NEED THEM FOR OUR APPLICATION.
 
 As I mentioned in the project requirement, we are enabling customers to place orders through online and the items will be delivered manually by the person who makes those quilling toys and the administrator will mark that order as fulfilled. If our application become famous and we are being flooded with orders then we can think of automating these manual tasks as well. As simple as that :-).

@@ -20,7 +20,7 @@ Managing Categories and Products also looks similar to Manage Roles and Users. B
 
 ### Create Spring Data JPA Repositories for Category and Product
 
-{{< highlight java >}}
+```java
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
 	Category getByName(String name);
 }
@@ -31,11 +31,12 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	@Query("select p from Product p where p.name like ?1 or p.sku like ?1 or p.description like ?1")
 	List<Product> search(String query);
 }
-{{</ highlight >}}
+```
 
 ### Create CatalogService which contains all the catalog related service methods.
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class CatalogService {
 	@Autowired CategoryRepository categoryRepository;
@@ -110,11 +111,11 @@ public class CatalogService {
 		return productRepository.search("%"+query+"%");
 	}
 }
-{{</ highlight >}}
+```
 
 ### Let us create CategoryController to handle list all categories, create/update categories actions as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 @Secured(SecurityUtil.MANAGE_CATEGORIES)
 public class CategoryController extends JCartAdminBaseController
@@ -176,13 +177,13 @@ public class CategoryController extends JCartAdminBaseController
 	}
 
 }
-{{</ highlight >}}
+```
 
 ### Next create the thymeleaf views for category management as follows:
 
 **jcart-admin/src/main/resources/templates/categories/categories.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -232,11 +233,11 @@ public class CategoryController extends JCartAdminBaseController
     	</div>    	
     </body>    
 </html>
-{{</ highlight >}}
+```
 
 **jcart-admin/src/main/resources/templates/categories/create_category.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -293,11 +294,11 @@ public class CategoryController extends JCartAdminBaseController
     </body>
     
 </html>
-{{</ highlight >}}
+```
 
 **jcart-admin/src/main/resources/templates/categories/edit_category.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -350,7 +351,7 @@ public class CategoryController extends JCartAdminBaseController
     </body>
     
 </html>
-{{</ highlight >}}
+```
 
 Now you can run the application and test Category related functionality be performing adding new categories or editing existing categories.
 
@@ -362,7 +363,7 @@ So we will create a ProductForm class to hold the uploaded image **(org.springfr
 
 Create **ProductForm** class as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.jcart.admin.web.models;
 
 import java.math.BigDecimal;
@@ -419,23 +420,23 @@ public class ProductForm
 		return p;
 	}
 }
-{{</ highlight >}}
+```
 
 We will use apache commons-io library to store/read the files from disk, so add the following maven dependency in jcart-admin/pom.xml
 
-{{< highlight html >}}
+```html
 <dependency>
 	<groupId>commons-io</groupId>
 	<artifactId>commons-io</artifactId>
 	<version>2.3</version>
 </dependency>
-{{</ highlight >}}
+```
 
 SpringBoot (SpringMVC) supports Servlet 3 javax.servlet.http.Part API for uploading files. for more details see Handling Multipart File Uploads <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration" target="_blank">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration</a>
 
 ### Implement the ProductController to handle product related actions.
 
-{{< highlight java >}}
+```java
 @Controller
 @Secured(SecurityUtil.MANAGE_PRODUCTS)
 public class ProductController extends JCartAdminBaseController
@@ -536,13 +537,13 @@ public class ProductController extends JCartAdminBaseController
 		}
 	}
 }
-{{</ highlight >}}
+```
 
 The left over things are preparing thymeleaf views for product management screens.
 
 **jcart-admin/src/main/resources/templates/products/products.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
@@ -595,11 +596,11 @@ The left over things are preparing thymeleaf views for product management screen
 </body>
 
 </html>
-{{</ highlight >}}
+```
 
 **jcart-admin/src/main/resources/templates/products/create_product.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -686,11 +687,11 @@ The left over things are preparing thymeleaf views for product management screen
 </body>
     
 </html>
-{{</ highlight >}}
+```
 
 **jcart-admin/src/main/resources/templates/products/edit_product.html**
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -772,9 +773,9 @@ The left over things are preparing thymeleaf views for product management screen
 	
 </body>    
 </html>
-{{</ highlight >}}
+```
 
-> That&#8217;s a lot of code snippets, I know it is difficult to read that much of code on blog!!
+> That's a lot of code snippets, I know it is difficult to read that much of code on blog!!
   
 > I would encourage you to checkout the code from github repo into your IDE.
 

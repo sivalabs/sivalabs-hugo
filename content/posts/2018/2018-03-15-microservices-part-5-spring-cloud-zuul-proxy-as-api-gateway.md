@@ -58,7 +58,7 @@ Let us create a front-end UI module **shoppingcart-ui** as a SpringBoot applicat
 Create a SpringBoot project with **Web, Config Client, Eureka Discovery, Zuul** starters and annotate the main entry-point class with 
 **@EnableZuulProxy**.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web</artifactId>
@@ -75,11 +75,11 @@ Create a SpringBoot project with **Web, Config Client, Eureka Discovery, Zuul** 
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 **ShoppingcartUiApplication.java**
 
-{{< highlight java >}}
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -91,7 +91,7 @@ public class ShoppingcartUiApplication {
         SpringApplication.run(ShoppingcartUiApplication.class, args);
     }
 }
-{{</ highlight >}}
+```
 
 As we are using Eureka Discovery also, requests from the proxy with the URL patterns **/service-id/\*\*** will be routed to the service 
 registered in Eureka Server with service id **service-id**.
@@ -103,40 +103,40 @@ To make it happen we need to register “shoppingcart-ui” with Eureka Service 
 
 **bootstrap.properties**
 
-{{< highlight properties >}}
+```properties
 spring.application.name=shoppingcart-ui
 server.port=8080
 eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
-{{</ highlight >}}
+```
 
 With this configuration now we can fetch product information from catalog-service using jQuery as follows:
 
-{{< highlight js >}}
+```js
 $.ajax({
     url: '/catalog-service/products'
 })
 .done(function(data) {
     this.products = data;
 }.bind(this));
-{{</ highlight >}}
+```
 
 Here from our UI application, we are making a call to http://localhost:8080/catalog-service/products. Assuming catalog-service is registered with ServiceID “catalog-service” and running on port 8181, this request will be forwarded to http://host:8181/products. But UI is completely unaware of where is the actual catalog-service running, its hostname port number etc.
 
 We can also use a common prefix for URLs, like **/api**, for which we want Zuul to proxy by setting **zuul.prefix** property.
 
-{{< highlight shell >}}
+```shell
 zuul.prefix=/api
-{{</ highlight >}}
+```
 
 Now from UI we can make a request to fetch products at http://localhost:8080/api/catalog-service/products. 
 By default, Zuul will strip the prefix and forward the request.
 
 You can also customize the path mappings of a service as follows:
 
-{{< highlight properties >}}
+```properties
 zuul.routes.catalogservice.path=/catalog/**
 zuul.routes.catalogservice.serviceId=catalog-service
-{{</ highlight >}}
+```
 
 With this configuration, you can use URL http://localhost:8080/api/catalog/products which will be forwarded to the service 
 with serviceId catalog-service.
@@ -144,7 +144,7 @@ with serviceId catalog-service.
 By default, all the services registered with Eureka Server will be exposed. You can use **zuul.ignored-services** property 
 to disable this behavior and expose only the explicitly configured services.
 
-{{< highlight properties >}}
+```properties
 zuul.ignored-services=*
  
 zuul.routes.catalogservice.path=/catalog/**
@@ -152,7 +152,7 @@ zuul.routes.catalogservice.serviceId=catalog-service
  
 zuul.routes.orderservice.path=/orders/**
 zuul.routes.orderservice.serviceId=order-service
-{{</ highlight >}}
+```
 
 With this configuration only **catalog-service, order-service** is exposed through Zuul proxy but not **inventory-service**.
 
@@ -162,7 +162,7 @@ As Zuul act as a proxy to all our microservices, we can use Zuul service to impl
 Typically in microservices, we will use OAuth service for authentication and authorization. 
 Once the client is authenticated OAuth service will generate a token which should be included in the requests making to other microservices so that client need not be authenticated for every service separately. We can use Zuul filter to implement features like this.
 
-{{< highlight java >}}
+```java
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -200,16 +200,16 @@ public class AuthHeaderFilter extends ZuulFilter {
         return null;
     }
 }
-{{</ highlight >}}
+```
 
 We are adding **AUTH_HEADER** as a request header using **RequestContext.addZuulRequestHeader()** which will be 
 forwarded to downstream services. We need to register it as a Spring bean.
 
-{{< highlight java >}}
+```java
 @Bean
 AuthHeaderFilter authHeaderFilter() {
     return new AuthHeaderFilter();
 }
-{{</ highlight >}}
+```
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series

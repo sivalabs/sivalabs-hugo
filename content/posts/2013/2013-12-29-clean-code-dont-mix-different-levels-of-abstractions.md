@@ -25,7 +25,7 @@ We spend more time on reading code than writing. So if the code is more readable
 
 Many people associate readability of code with coding conventions like following standard naming conventions, closing file, DB resources etc etc. When it comes to code reviews most of the people focus on these trivial things only, like checking for naming convention violations, properly releasing resources in finally block or not.
 
-Do we need &#8220;Senior Resources&#8221; in team (I hate to call a human being as a Resource) to do these things?Tools like Findbugs, PMD, Checkstyle, Sonar can do that for you. I agree that following a standard naming convention by all the team members is a good thing. But that doesn&#8217;t increase the readability of code.
+Do we need &#8220;Senior Resources&#8221; in team (I hate to call a human being as a Resource) to do these things?Tools like Findbugs, PMD, Checkstyle, Sonar can do that for you. I agree that following a standard naming convention by all the team members is a good thing. But that doesn't increase the readability of code.
 
 Let us take a simple example. I would like to implement Fund Transfer usecase and following are the rules to implement:
 
@@ -37,7 +37,7 @@ Let us take a simple example. I would like to implement Fund Transfer usecase an
 
 Assume we have the following implementation for the above usecase:
 
-{{< highlight java>}}
+```java
 public class UglyMoneyTransferService 
 {
 	public void transferFunds(Account source, 
@@ -104,7 +104,7 @@ public class UglyMoneyTransferService
 	}
 }	
 }
-{{</ highlight >}}
+```
 
 The above code is readable..right??&#8230;because:
   
@@ -136,11 +136,11 @@ But in the above code everything is mixed together.
 
 _While reading the code you start looking at JDBC code and your brain is working in Technical mode and after getting Account object from ResultSet you are checking for null and throwing Exception if it is null which is Business requirement. So immediately you need to switch your mind to Business mode and think &#8220;OK, if the account is invalid we want to abort the operation immediately&#8221;._
   
-_Though you managed to switch between Technical and Business modes, what about making an enhancement to one particular subtask like &#8220;Fund transfer is considred duplicate only if it matches with the last transaction that happened with in an hour only&#8221;. To make that enhancement you have to go through the entire method because you haven&#8217;t modularised your sub-tasks and there is no separation of concerns._
+_Though you managed to switch between Technical and Business modes, what about making an enhancement to one particular subtask like &#8220;Fund transfer is considred duplicate only if it matches with the last transaction that happened with in an hour only&#8221;. To make that enhancement you have to go through the entire method because you haven't modularised your sub-tasks and there is no separation of concerns._
 
 Lets rewrite the above method as follows:
 
-{{< highlight java >}}
+```java
 class FundTransferTxn
 {
 	private Account sourceAccount; 
@@ -198,7 +198,7 @@ public class CleanMoneyTransferService
 		TransactionService.saveTransaction(source, target,  amount);
 	}	
 }
-{{</ highlight >}}
+```
 The above improved method do exactly what the initial verson is doing but now it looks lot better than earlier version.
 
   * We have divided the entire task into sub-tasks and implemented each sub-task in a separate method.

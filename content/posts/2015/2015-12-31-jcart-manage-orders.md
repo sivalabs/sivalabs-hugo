@@ -16,7 +16,7 @@ For Managing Orders we need a provision to see all the list of orders and view a
 
 Let us start with implementing the back-end order service.
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class OrderService
@@ -45,11 +45,11 @@ public class OrderService
 		return savedOrder;
 	}
 }
-{{</ highlight>}}
+```
 
 Now let us implement OrderController to handle the requests to display list of orders, the selected order details and updating the Order status.
 
-{{< highlight java >}}
+```java
 @Controller
 @Secured(SecurityUtil.MANAGE_ORDERS)
 public class OrderController extends JCartAdminBaseController
@@ -106,11 +106,11 @@ public class OrderController extends JCartAdminBaseController
 		}
 	}
 }
-{{</ highlight>}}
+```
 
 We are using thymeleaf email template jcart-core/src/main/resources/email-templates/order-status-update-email.html for sending the Order Status Update email.
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -131,11 +131,11 @@ We are using thymeleaf email template jcart-core/src/main/resources/email-templa
     </p>
   </body>
 </html>
-{{</ highlight>}}
+```
 
 Create the thymeleaf view template for showing list of orders orders.html as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -177,11 +177,11 @@ Create the thymeleaf view template for showing list of orders orders.html as fol
 	</div>	
 </body>    
 </html>
-{{</ highlight>}}
+```
 
 Create the thymeleaf view template for showing order details edit_order.html as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
@@ -266,7 +266,7 @@ Create the thymeleaf view template for showing order details edit_order.html as 
 	</div>
 </body>
 </html>
-{{</ highlight>}}
+```
 
 Now you can run the application and click on Order menu item in left navigation. 
 You can see list of order and click on Edit button to view order details or edit the order status.

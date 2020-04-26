@@ -34,7 +34,7 @@ In this article we will see how to use **spring-boot-starter-jooq** using step b
 
 Create a SpringBoot maven based project and configure **spring-boot-starter-jooq** dependency.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -86,7 +86,7 @@ Create a SpringBoot maven based project and configure **spring-boot-starter-jooq
         </dependency>
     </dependencies>
 </project>
-{{< / highlight >}}
+```
 
 We are going to use **H2** in-memory database first, later we will see how to use MySQL.
 
@@ -96,7 +96,7 @@ We are going to create a simple database with 2 tables.
   
 **src/main/resources/schema.sql**
 
-{{< highlight sql >}}
+```sql
 DROP TABLE IF EXISTS POSTS;
 
 CREATE TABLE POSTS (
@@ -119,13 +119,13 @@ CREATE TABLE COMMENTS (
   PRIMARY KEY (ID),
   FOREIGN KEY (POST_ID) REFERENCES POSTS(ID)
 );
-{{< / highlight >}}
+```
 
 We will populate some sample data using **data.sql** script.
 
 **src/main/resources/data.sql** 
 
-{{< highlight sql >}}
+```sql
 insert into posts(id, title, content, created_on) 
 values(1, 'Post 1', 'This is post 1', '2016-01-03');
 
@@ -143,13 +143,13 @@ values(2, 1, 'User2', 'user2@gmail.com', 'This is comment 2 on post 1', '2016-01
 
 insert into comments(id, post_id, name, email, content, created_on) 
 values(3, 2, 'User1', 'user1@gmail.com', 'This is comment 1 on post 2', '2016-01-07');
-{{< / highlight >}}
+```
 
 ### Step 3: Configure JOOQ Maven Codegen Plugin to generate database artifacts
 
 We will use Maven profiles to configure the **jooq-codegen-maven** configuration properties based on database type.
 
-{{< highlight xml >}}
+```xml
 <profiles>
     <profile>
         <id>h2</id>
@@ -242,7 +242,7 @@ We will use Maven profiles to configure the **jooq-codegen-maven** configuration
         </build>
     </profile>
 </profiles>
-{{< / highlight >}}
+```
 
 We have configured two profile (**h2** and **mysql**) with appropriate JDBC configuration parameters.
 
@@ -257,7 +257,7 @@ We can run the maven build activating **h2** or **mysql** profile as follows:
 
 We will configure the **build-helper-maven-plugin** plugin such that maven will add the JOOQ generated code resides in **gensrc/main/java** directory as source folder.
 
-{{< highlight xml >}}
+```xml
 <plugin>
     <groupId>org.codehaus.mojo</groupId>
     <artifactId>build-helper-maven-plugin</artifactId>
@@ -275,13 +275,13 @@ We will configure the **build-helper-maven-plugin** plugin such that maven will 
         </execution>
     </executions>
 </plugin>
-{{< / highlight >}}
+```
 
 ### Step 5: Create domain objects.
 
 We can use these domain object to pass data across the layer and JOOQ generated database artifacts to talk to database.
 
-{{< highlight java >}}
+```java
 public class Post
 {
     private Integer id;
@@ -292,9 +292,9 @@ public class Post
     //setters & getters
 
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 public class Comment
 {
     private Integer id;
@@ -305,11 +305,11 @@ public class Comment
     private Timestamp createdOn;
     //setters & getters
 }
-{{< / highlight >}}
+```
 
 ### Step 6: Implement the data persistence methods using JOOQ as follows
 
-{{< highlight java >}}
+```java
 package com.sivalabs.demo;
 
 import static com.sivalabs.demo.jooq.domain.tables.Posts.POSTS;
@@ -420,14 +420,14 @@ public class BlogService
         return new Comment(id, postId, name, email, content, createdOn);
     }
 }
-{{< / highlight >}}
+```
 
 Observe that we are auto-wiring **DSLContext** instance into our Spring Bean and using it to build the TypeSafe queries.
 
 ### Step 7: Create Entry point class and JUnit test
 
 
-{{< highlight java >}}
+```java
 @SpringBootApplication
 public class SpringbootJooqDemoApplication
 {
@@ -435,9 +435,9 @@ public class SpringbootJooqDemoApplication
         SpringApplication.run(SpringbootJooqDemoApplication.class, args);
     }
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(SpringbootJooqDemoApplication.class)
 public class SpringbootJooqDemoApplicationTests
@@ -500,26 +500,22 @@ public class SpringbootJooqDemoApplicationTests
     }
     
 }
-{{< / highlight >}}
+```
 
 Assuming you have generated code using **H2** profile, we can run the JUnit test with out any further configuration.
 
 But if you have generated code using **mysql** profile then you will have to configure the following properties in **application.properties**.
 
-{{< highlight properties >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
 spring.datasource.password=admin
 
 spring.jooq.sql-dialect=MYSQL
-{{< / highlight >}}
+```
 
-<blockquote class="tr_bq">
-  <p>
-    <span style="color: red;">Note that we should use correct <b>SqlDialect</b> for the database otherwise you may get SQL syntax errors at runtime.&nbsp;</span>
-  </p>
-</blockquote>
+> Note that we should use correct <b>SqlDialect</b> for the database otherwise you may get SQL syntax errors at runtime.
 
 You can find the source code of this article at my Github repository <https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo>
 

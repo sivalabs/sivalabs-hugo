@@ -21,16 +21,16 @@ As we need Emailing feature in both Admin and ShoppingCart modules, we will impl
 
 Add the following dependency to **jcart-core/pom.xml**
 
-{{< highlight xml >}}
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-mail</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Add the following properties in _jcart-core/src/main/resources/application.properties_
 
-{{< highlight properties >}}
+```properties
 ## If you want to use GMail ##
 spring.mail.host=smtp.gmail.com
 spring.mail.port=465
@@ -52,11 +52,12 @@ spring.mail.properties.mail.smtps.timeout=2000
 #spring.mail.properties.mail.smtp.starttls.enable=true
 
 support.email=sivalabs.blogspot@gmail.com
-{{</ highlight >}}
+```
 
 Let us create **EmailService **class as follows:
 
-{{< highlight java >}}@Component
+```java
+@Component
 public class EmailService 
 {
 	@Autowired 
@@ -86,11 +87,11 @@ public class EmailService
 		}
 	}	
 }
-{{</ highlight >}}
+```
 
 Write a simple Test to check whether it is working or not.
 
-{{< highlight java >}}
+```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = JCartCoreApplication.class)
 public class JCartCoreApplicationTest
@@ -103,4 +104,4 @@ public class JCartCoreApplicationTest
 		emailService.sendEmail("admin@gmail.com", "JCart - Test Mail", "This is a test email from JCart");
 	}	
 }
-{{</ highlight >}}
+```

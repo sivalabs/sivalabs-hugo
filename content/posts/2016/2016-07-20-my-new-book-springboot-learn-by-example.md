@@ -14,19 +14,11 @@ tags:
   - SpringBoot
 
 ---
-I am happy to announce that my new book <a href="https://leanpub.com/springboot-learn-by-example/" target="_blank"><b>SpringBoot : Learn By Example</b></a>  got published today on **Leanpub**.
+I am happy to announce that my new book [SpringBoot : Learn By Example](https://leanpub.com/springboot-learn-by-example/)  got published today on **Leanpub**.
 
-<div style="text-align: center;">
-  <b><span style="color: purple; font-size: large;"><a href="https://leanpub.com/springboot-learn-by-example/" target="_blank">SpringBoot : Learn By Example</a></span></b>
-</div>
+{{< figure src="/images/sblbe.png" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
-&nbsp;
-
-<div class="separator" style="clear: both; text-align: center;">
-  <a href="https://leanpub.com/springboot-learn-by-example"><img class="alignnone size-medium wp-image-956" src="/images/sblbe.png" alt="springboot_learn_by_example" width="250" height="200" /></a>
-</div>
-
-<span style="color: purple; font-size: large;"><b>What is SpringBoot?</b></span>
+### What is SpringBoot?
 
 Spring is one of the most popular Java frameworks out there to build web and enterprise application.
   
@@ -36,11 +28,11 @@ SpringBoot is an opinionated approach to configure Spring based applications. Sp
 
 I strongly believe that **the best way to learn or teach is by using examples.** This book is filled with plenty of examples explaining the concepts  in step by step manner.
 
-<span style="color: purple; font-size: large;"><b>Who this book is for?</b></span>
+### Who this book is for?
 
 If you are looking for a fast paced guide to learn how to build Spring based applications using SpringBoot this book is for you!!.
 
-If you are a Spring developer but haven&#8217;t get your hands on SpringBoot and you feel like I know the drill, just tell me how to do it in SpringBoot way..this books is what you are looking for!!!
+If you are a Spring developer but haven't get your hands on SpringBoot and you feel like I know the drill, just tell me how to do it in SpringBoot way..this books is what you are looking for!!!
 
 If you are just starting to use SpringBoot and it is working great but it all looks magical and you want to understand how SpringBoot works behind the scenes..this book will definitely be helpful to you!!
 
@@ -52,7 +44,7 @@ This book explains how normally we build Spring application without SpringBoot a
 
 SpringBoot does so many things behind the scenes to automatically configure the application. This book explains how SpringBoot AutoConfiguration works behind the scenes in very detailed manner and show how we can create our own AutoConfiguration as well.
 
-<span style="color: purple; font-size: large;"><b>What this book covers?</b></span>
+### What this book covers?
 
 The **SpringBoot : Learn By Example** book covers the concepts that we commonly use in our Spring applications.
 
@@ -74,7 +66,7 @@ The **SpringBoot : Learn By Example** book covers the concepts that we commonly 
 
 To get complete list of topics covered in this book please see the below **Table of Contents**.
   
-**<span style="color: purple; font-size: large;">Table of Contents:</span>**
+**Table of Contents:**
 
 **1. Introduction to SpringBoot**
 
@@ -169,7 +161,7 @@ To get complete list of topics covered in this book please see the below **Table
   * Testing Secured Controller/Service Methods
   * Testing with Mockito
 
-<span style="color: purple; font-size: large;"><b>Thank You Manuel Jordan</b></span>
+**ThankYou Manuel Jordan**
 
 I would like to thank **Manuel Jordan** (**@dr_pompeii**) for reviewing the book and providing feedback which helped me a lot to improve the quality of the book content.
 

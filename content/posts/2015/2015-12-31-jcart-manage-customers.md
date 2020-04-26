@@ -16,7 +16,7 @@ For Managing Customers we need a provision to see all the list of customers and 
 
 Let us start with implementing the back-end Customer service.
 
-{{< highlight java >}}
+```java
 public interface CustomerRepository extends JpaRepository<Customer, Integer>
 {
 	Customer findByEmail(String email);
@@ -24,9 +24,9 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer>
 	@Query("select o from Order o where o.customer.email=?1")
 	List<Order> getCustomerOrders(String email);
 }
-{{</ highlight>}}
+```
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class CustomerService {
@@ -52,11 +52,11 @@ public class CustomerService {
 		return customerRepository.getCustomerOrders(email);
 	}
 }
-{{</ highlight>}}
+```
 
 Now let us implement CustomerController to handle the requests to display list of customers and the selected customer details.
 
-{{< highlight java >}}
+```java
 @Controller
 @Secured(SecurityUtil.MANAGE_CUSTOMERS)
 public class CustomerController extends JCartAdminBaseController
@@ -86,11 +86,11 @@ public class CustomerController extends JCartAdminBaseController
 		return viewPrefix+"view_customer";
 	}		
 }
-{{</ highlight>}}
+```
 
 Create the thymeleaf view template for showing list of customers customers.html as follows:
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	 xmlns:th="http://www.thymeleaf.org"
@@ -130,11 +130,11 @@ Create the thymeleaf view template for showing list of customers customers.html 
 	</div>  	
 </body>  
 </html>
-{{</ highlight>}}
+```
 
 Create the thymeleaf view template for showing customer details view_customer.html as follows:
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
@@ -178,6 +178,6 @@ Create the thymeleaf view template for showing customer details view_customer.ht
 
 </body>
 </html>
-{{</ highlight>}}
+```
 
 Now you can run the application and click on Customers menu item in left navigation. You can see list of customers and click on View button to view customer details.

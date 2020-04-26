@@ -26,9 +26,9 @@ After installing CentOS 7, before installing Virtualbox Guest Additions first th
  
 `sudo yum update`
 
-When I run this command I got the error &#8220;<span style="color: red;"><b>cannot find a valid baseurl for repo</b></span>&#8220;
+When I run this command I got the error &#8220;**cannot find a valid baseurl for repo**&#8220;
 
-After googling for sometime I figured that **the network card is <span style="color: red;">not </span>enabled by default** and I need to enable the baseUrl in some configuration file.
+After googling for sometime I figured that **the network card is not enabled by default** and I need to enable the baseUrl in some configuration file.
 
 1) Edit **_/etc/sysconfig/network-scripts/ifcfg-eth0_** file and change **ONBOOT=no** to **ONBOOT=yes**  
 Instead of **eth0** you may have a different file name. To know the right one, run the command &#8220;**ifconfig -a**&#8220;
@@ -52,5 +52,5 @@ sudo yum install kernel-devel
 ```
   
 In Oracle Virtual Box menu, Devices -> Insert Guest Additions CD Image -> Run  
- <span style="white-space: pre;"></span>  
+ 
 Source: <http://itekblog.com/centos-7-virtualbox-guest-additions-installation-centos-minimal/>

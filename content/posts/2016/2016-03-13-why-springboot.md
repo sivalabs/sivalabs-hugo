@@ -20,7 +20,7 @@ Spring team created SpringBoot to address the complexity of configuration.
 
 But before diving into SpringBoot, we will take a quick look at Spring framework and see what kind of problems SpringBoot is trying to address.
 
-**In this article we will cover: **
+**In this article we will cover:**
 
   * Overview of Spring framework
   * A web application using Spring MVC and JPA(Hibernate)
@@ -30,7 +30,7 @@ But before diving into SpringBoot, we will take a quick look at Spring framework
   
 If you are a Java developer then there is a high chance that you might have heard about Spring framework and probably have used it in your projects. Spring framework was created primarily as a Dependency Injection container but it is much more than that.
 
-**Spring is very popular because of several reasons: **
+**Spring is very popular because of several reasons:**
 
   * Spring’s dependency injection approach encourages writing testable code
   * Easy to use but powerful database transaction management capabilities
@@ -54,7 +54,7 @@ Let us take a quick look at how each of those configuration styles looks like.
 
 ### XML based configuration
 
-{{< highlight xml >}}
+```xml
 <bean id="userService" class="com.sivalabs.myapp.service.UserService">
     <property name="userDao" ref="userDao"/>
 </bean>
@@ -69,12 +69,13 @@ Let us take a quick look at how each of those configuration styles looks like.
     <property name="username" value="root"/>
     <property name="password" value="secret"/>
 </bean>
-{{</ highlight >}}
+```
 
 ### Annotation based configuration
 
 
-{{< highlight java >}}@Service
+```java
+@Service
 public class UserService
 {
     private UserDao userDao;
@@ -86,9 +87,10 @@ public class UserService
     ...
     ...
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}@Repository
+```java
+@Repository
 public class JdbcUserDao
 {
     private DataSource dataSource;
@@ -100,13 +102,12 @@ public class JdbcUserDao
     ...
     ...
 }
-{{< / highlight >}}
-
+```
 
 ### JavaConfig based configuration
 
-
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 public class AppConfig
 {
     @Bean
@@ -129,22 +130,17 @@ public class AppConfig
         return dataSource;
     }
 }
-{{< / highlight >}}
+```
 
 Wow… Spring provides many approaches for doing the same thing and we can even mix the approaches as well like you can use both JavaConfig and Annotation based configuration styles in the same application.
 
-
-<blockquote class="tr_bq">
-  <p>
-    That is a lot of flexibility and it is one way good and one way bad. People<br /> new to Spring framework may gets confused about which approach to follow. As of now the Spring team is suggesting to follow JavaConfig based approach as it gives more flexibility.
-  </p>
-</blockquote>
+> That is a lot of flexibility and it is one way good and one way bad. People new to Spring framework may gets confused about which approach to follow. As of now the Spring team is suggesting to follow JavaConfig based approach as it gives more flexibility.
 
 But there is no one-size fits all kind of solution. One has to choose the approach based on their own application needs.
 
 OK, now that you had a glimpse of how various styles of Spring bean configurations looks like.
 
-<span style="color: #993366;"><strong>You can find the source code of this article on GitHub at <a href="https://github.com/sivaprasadreddy/springboot-tutorials">https://github.com/sivaprasadreddy/springboot-tutorials</a></strong></span>
+**You can find the source code of this article on GitHub at <a href="https://github.com/sivaprasadreddy/springboot-tutorials">https://github.com/sivaprasadreddy/springboot-tutorials</a>**
 
 Let us take a quick look at the configuration of a typical SpringMVC + JPA/Hibernate web application configuration looks like.
 
@@ -152,12 +148,11 @@ Let us take a quick look at the configuration of a typical SpringMVC + JPA/Hiber
 
 Before getting to know what is SpringBoot and what kind of features it provides, let us take a look at how a typical Spring web application configuration looks like, what are the pain points and then we will discuss about how SpringBoot addresses those problems.
 
-
-**Step 1: Configure Maven Dependencies **
+**Step 1: Configure Maven Dependencies**
 
 First thing we need to do is configure all the dependencies required in our **pom.xml**.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -241,13 +236,13 @@ First thing we need to do is configure all the dependencies required in our **po
         </dependency>
     </dependencies>
 </project>
-{{< / highlight >}}
+```
 
 We have configured all our Maven jar dependencies to include Spring MVC, Spring Data JPA, JPA/Hibernate, Thymeleaf and Log4j.
 
 **Step 2: Configure Service/DAO layer beans using JavaConfig.**
 
-{{< highlight java >}}
+```java
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages="com.sivalabs.demo")
@@ -324,7 +319,7 @@ public class AppConfig
         return dataSourceInitializer;
     }   
 }
-{{< / highlight >}}
+```
 
 
 In our AppConfig.java configuration class we have done the following:
@@ -339,7 +334,7 @@ In our AppConfig.java configuration class we have done the following:
 we need to configure property placeholder values in **application.properties** in src/main/resources as follows:
 
 
-{{< highlight java >}}
+```properties
 jdbc.driverClassName=com.mysql.jdbc.Driver
 jdbc.url=jdbc:mysql://localhost:3306/test
 jdbc.username=root
@@ -348,21 +343,20 @@ init-db=true
 hibernate.dialect=org.hibernate.dialect.MySQLDialect
 hibernate.show_sql=true
 hibernate.hbm2ddl.auto=update
-{{< / highlight >}}
-
+```
 
 we can create a simple sql script **data.sql** to populate sample data into **USER** table.
 
-{{< highlight sql >}}
+```sql
 delete from user;
 insert into user(id, name) values(1,'Siva');
 insert into user(id, name) values(2,'Prasad');
 insert into user(id, name) values(3,'Reddy');
-{{< / highlight >}}
+```
 
 We can create **log4j.properties** file with basic configuration as follows:
 
-{{< highlight java >}}
+```properties
 log4j.rootCategory=INFO, stdout
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
@@ -370,14 +364,13 @@ log4j.appender.stdout.layout.ConversionPattern=%5p %t %c{2}:%L - %m%n
 
 log4j.category.org.springframework=INFO
 log4j.category.com.sivalabs=DEBUG
-{{< / highlight >}}
+```
 
-
-**Step 3: Configure Spring MVC web layer beans **
+**Step 3: Configure Spring MVC web layer beans**
 
 We will have to configure Thymeleaf **ViewResolver**, static **ResourceHandlers**, **MessageSource** for i18n etc.
 
-{{< highlight java >}}
+```java
 @Configuration
 @ComponentScan(basePackages = { "com.sivalabs.demo"}) 
 @EnableWebMvc
@@ -430,7 +423,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter
         return messageSource;
     }
 }
-{{< / highlight >}}
+```
 
 In our **WebMvcConfig.java** configuration class we have done the following:
 
@@ -442,13 +435,13 @@ In our **WebMvcConfig.java** configuration class we have done the following:
 
 For now we do not have any messages to be configured, so create an empty **messages.properties** file in **src/main/resources** folder.
 
-**Step 4: Register Spring MVC FrontController servlet DispatcherServlet. **
+**Step 4: Register Spring MVC FrontController servlet DispatcherServlet.**
 
 Prior to Servlet 3.x specification we have to register Servlets/Filters in **web.xml**. Since Servlet 3.x specification we can register Servlets/Filters programatically using **ServletContainerInitializer**.
 
 Spring MVC provides a convenient class **AbstractAnnotationConfigDispatcherServletInitializer** to register **DispatcherServlet**.
 
-{{< highlight java >}}
+```java
 public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
 {
 
@@ -475,7 +468,7 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
        return new Filter[]{ new OpenEntityManagerInViewFilter() };
     }
 }
-{{< / highlight >}}
+```
 
 In our **SpringWebAppInitializer.java** configuration class we have done the following:
 
@@ -488,7 +481,8 @@ In our **SpringWebAppInitializer.java** configuration class we have done the fol
 
 Create a JPA entity **User.java** and a Spring Data JPA repository for User entity.
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 public class User
 {
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -497,18 +491,20 @@ public class User
 
     //setters and getters
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}public interface UserRepository extends JpaRepository<User, Integer>
+```java
+public interface UserRepository extends JpaRepository<User, Integer>
 {
 }
-{{< / highlight >}}
+```
 
 **Step 6: Create a SpringMVC Controller**
 
-Create a SpringMVC controller to handle URL **“/”** and render list of users.
+Create a SpringMVC controller to handle URL **"/"** and render list of users.
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 public class HomeController
 {
     @Autowired UserRepository userRepo;
@@ -520,11 +516,11 @@ public class HomeController
         return "index";
     }
 }
-{{< / highlight >}}
+```
 
 **Step 7: Create a thymeleaf view /WEB-INF/views/index.html to render list of Users.**
 
-{{< highlight xml >}}
+```xml
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
       xmlns:th="http://www.thymeleaf.org">
@@ -549,11 +545,13 @@ public class HomeController
     </table>
 </body>
 </html>
-{{< / highlight >}}
+```
 
-We are all set now to run the application. But before that we need to download and configure the server like **Tomcat** or **Jetty** or **Wildfly** etc in your IDE.
+We are all set now to run the application. But before that we need to download and configure the server like 
+**Tomcat** or **Jetty** or **Wildfly** etc in your IDE.
 
-You can download Tomcat 8 and configure in your favourite IDE,run the application and point your browser to **http://localhost:8080/springmvcjpa-demo**. You should see the list of users details in a table.
+You can download Tomcat 8 and configure in your favourite IDE,run the application and point your browser to 
+**http://localhost:8080/springmvcjpa-demo**. You should see the list of users details in a table.
 
 Yay…We did it.
 
@@ -561,34 +559,27 @@ Yay…We did it.
 Let us be honest and fair. All this configuration is not just for this one use-case. 
 This configuration is basis for rest of the application also.**
 
-  
 **But again, this is too much of work to do if you want to quickly get up and running. 
 Another problem with it is, assume you want to develop another SpringMVC application with similar technical stack?**
-  
-  
-**Well, you copy-paste the configuration and tweak it. Right? But remember one thing: if you have to do the same thing again and again, 
+
+**Well, you copy-paste the configuration and tweak it. Right? But remember one thing: if you have to do the same thing again and again,
 you should find an automated way to do it.**
 
 Apart from writing the same configuration again and again, do you see any other problems here?
 
-**Well, let me list our what are the problems I am seeing here. **
+**Well, let me list our what are the problems I am seeing here.**
 
   * You need to hunt for all the **compatible libraries** for the specific Spring version and configure them.
   * 95% of the times we configure the **DataSource**, **EntitymanagerFactory**, **TransactionManager** etc beans in the same way. Wouldn’t it be great if Spring can do it for me automatically.
   * Similarly we configure SpringMVC beans like **ViewResolver**, **MessageSource** etc in the same way most of the times.
 
-<blockquote class="tr_bq">
-  <p>
-    If Spring can automatically do it for me that would be awesome!!!.
-  </p>
-</blockquote>
+> If Spring can automatically do it for me that would be awesome!!!.
 
-Imagine, what if Spring is capable of configuring beans automatically? What if you can customize the automatic configuration using simple customizable properties?
-
-For example, instead of mapping DispatcherServlet url-pattern to “/” you want to map it to “/app/”. Instead of putting thymeleaf views in “/WEB-INF/views” folder you may want to place them in “/WEB-INF/templates/” folder.
-
+Imagine, what if Spring is capable of configuring beans automatically? 
+What if you can customize the automatic configuration using simple customizable properties?
+For example, instead of mapping DispatcherServlet url-pattern to “/” you want to map it to “/app/”. 
+Instead of putting thymeleaf views in “/WEB-INF/views” folder you may want to place them in “/WEB-INF/templates/” folder.
 So basically you want Spring to do things automatically but provide the flexibility to override the default configuration in a simpler way?
-
 Well, you are about to enter into the world of SpringBoot where your dreams come true!!!
 
 ## A quick taste of SpringBoot
@@ -599,11 +590,12 @@ Instead of explaining in theory I prefer to explain by example.
 
 So let us implement the same application that we built earlier but this time using SpringBoot.
 
-**Step 1: Create a Maven based SpringBoot Project **
+**Step 1: Create a Maven based SpringBoot Project**
 
 Create a Maven project and configure the dependencies as follows:
 
-{{< highlight xml >}}<?xml version="1.0" encoding="UTF-8"?>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -625,8 +617,6 @@ Create a Maven project and configure the dependencies as follows:
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
     </properties>
-
-    
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -654,13 +644,13 @@ Create a Maven project and configure the dependencies as follows:
         </dependency>
     </dependencies>
 </project>
-{{< / highlight >}}
+```
 
 Wow our **pom.xml** suddenly become so small!!.
 
 **Step 2: Configure datasource/JPA properties in application.properties in src/main/resources as follows.**
 
-{{< highlight java >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
@@ -668,7 +658,7 @@ spring.datasource.password=admin
 spring.datasource.initialize=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-{{< / highlight >}}
+```
 
 you can copy the same **data.sql** file into **src/main/resources** folder.
 
@@ -684,7 +674,7 @@ Copy **/WEB-INF/views/index.html** that we created in **springmvc-jpa-demo** app
 
 Create a Java class **Application.java** with main method as follows:
 
-{{< highlight java >}}
+```java
 @SpringBootApplication
 public class Application
 {
@@ -693,7 +683,7 @@ public class Application
         SpringApplication.run(Application.class, args);
     }
 }
-{{< / highlight >}}
+```
 
 Now run **Application.java** as a Java Application and point your browser to **http://localhost:8080/**.
 
@@ -703,14 +693,14 @@ Ok ok, I hear you are shouting “What is going on???”.
 
 Let me explain what just happened.
 
-**1. Easy dependency Management **
+**1. Easy dependency Management**
 
   * First thing to observe is we are using some dependencies named like **spring-boot-starter-***.
   
     Remember I said “95% of the times I use same configuration”. So when you add **springboot-starter-web** dependency by default it will pull all the commonly used libraries while developing Spring MVC applications such as **spring-webmvc, jackson-json, validation-api** and **tomcat**.
   * We have added **spring-boot-starter-data-jpa** dependency. This pulls all the **spring-data-jpa** dependencies and also adds **Hibernate** libraries because majority of the applications use Hibernate as JPA implementation.
 
-**2. Auto Configuration **
+**2. Auto Configuration**
 
   * Not only the **spring-boot-starter-web** adds all these libraries but also configures the commonly registered beans like **DispatcherServlet, ResourceHandlers, MessageSource** etc beans with sensible defaults.
   * We also added **spring-boot-starter-thymeleaf** which not only adds the thymeleaf library dependencies but also configures **ThymeleafViewResolver** beans as well automatically.

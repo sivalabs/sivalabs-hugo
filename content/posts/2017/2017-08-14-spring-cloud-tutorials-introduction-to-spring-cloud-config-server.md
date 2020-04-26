@@ -42,41 +42,41 @@ Let us create configuration files **catalogservice.properties** and **orderservi
 
 **config-repo/catalogservice.properties**
 
-{{< highlight properties >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/catalog
 spring.datasource.username=root
 spring.datasource.password=admin
-{{< / highlight >}}
+```
 
 **config-repo/orderservice.properties**
 
-{{< highlight properties >}}
+```properties
 spring.rabbitmq.host=localhost
 spring.rabbitmq.port=5672
 spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
-{{< / highlight >}}
+```
 
 We can also create profile specific configuration files such as **catalogservice-dev.properties**, **catalogservice-prod.properties**, **orderservice-dev.properties**, **orderservice-prod.properties**.
 
 **config-repo/catalogservice-prod.properties**
 
-{{< highlight properties >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://appsrv1:3306/catalog
 spring.datasource.username=appuser46
 spring.datasource.password=T(iV&#)X84@1!
-{{< / highlight >}}
+```
 
 **config-repo/orderservice-prod.properties**
 
-{{< highlight properties >}}
+```properties
 spring.rabbitmq.host=srv245.ind.com
 spring.rabbitmq.port=5672
 spring.rabbitmq.username=admin23
 spring.rabbitmq.password=uY7&%we@1!
-{{< / highlight >}}
+```
 
 Now commit all the configuration properties files in **config-repo** git repository.
 
@@ -86,7 +86,7 @@ Let us create a SpringBoot application **spring-cloud-config-server** from <http
 
 This will generate the maven project with following **pom.xml**.
 
-{{< highlight xml >}}
+```xml
 
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -152,11 +152,11 @@ This will generate the maven project with following **pom.xml**.
 		</plugins>
 	</build>
 </project>
-{{< / highlight >}}
+```
 
 To make our SpringBoot application as a SpringCloud Config Server, we just need to add **@EnableConfigServer** annotation to the main entry point class and configure **spring.cloud.config.server.git.uri** property pointing to the git repository.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.configserver;
 
 import org.springframework.boot.SpringApplication;
@@ -171,33 +171,33 @@ public class ConfigServerApplication {
 		SpringApplication.run(ConfigServerApplication.class, args);
 	}
 }
-{{< / highlight >}}
+```
 
 **spring-cloud-config-server/src/main/resources/application.properties**
 
-{{< highlight properties >}}
+```properties
 server.port=8888
 spring.cloud.config.server.git.uri=https://github.com/sivaprasadreddy/config-repo.git
 management.security.enabled=false
-{{< / highlight >}}
+```
 
 In addition to configuring git repo uri, we configured **server.port** to 8888 and **disabled actuator security**. Now you can start the application which will start on port 8888.
 
 Spring Cloud Config Server exposes the following REST endpoints to get application specific configuration properties:
 
-{{< highlight properties >}}
+```properties
 /{application}/{profile}[/{label}]
 /{application}-{profile}.yml
 /{label}/{application}-{profile}.yml
 /{application}-{profile}.properties
 /{label}/{application}-{profile}.properties
-{{< / highlight >}}
+```
 
 Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to &#8220;master&#8221;).
 
 Now if you access the URL http://localhost:8888/catalogservice/default then you will get the following response with catalogservice **default** configuration details:
 
-{{< highlight json >}}
+```json
 {
     "name": "catalogservice",
     "profiles": [
@@ -218,11 +218,11 @@ Now if you access the URL http://localhost:8888/catalogservice/default then you 
         }
     ]
 }
-{{< / highlight >}}
+```
 
 If you access the URL http://localhost:8888/catalogservice/prod then you will get the following response with catalogservice **prod** configuration details.
 
-{{< highlight json >}}
+```json
 {
     "name": "catalogservice",
     "profiles": [
@@ -252,20 +252,20 @@ If you access the URL http://localhost:8888/catalogservice/prod then you will ge
         }
     ]
 }
-{{< / highlight >}}
+```
 
 In addition to the application specific configuration files like **catalogservice.properties**, **orderservice.properties**, you can create **application.properties** file to contain common configuration properties for all applications. As you might have guessed you can have profile specific files like **application-dev.properties, application-prod.properties**.
 
 Suppose you have **application.properties** file in **config-repo** with the following properties:
 
-{{< highlight properties >}}
+```properties
 message=helloworld
 jdbc.datasource.url=jdbc:mysql://localhost:3306/defapp
-{{< / highlight >}}
+```
 
 Now if you access http://localhost:8888/catalogservice/prod then you will get the following response:
 
-{{< highlight json >}}
+```json
 {
     "name": "catalogservice",
     "profiles": [
@@ -302,11 +302,11 @@ Now if you access http://localhost:8888/catalogservice/prod then you will get th
         }
     ]
 }
-{{< / highlight >}}
+```
 
 Similarly you can access http://localhost:8888/orderservice/default to get the orderservice configuration details.
 
-{{< highlight json >}}
+```json
 {
     "name": "orderservice",
     "profiles": [
@@ -334,7 +334,7 @@ Similarly you can access http://localhost:8888/orderservice/default to get the o
         }
     ]
 }
-{{< / highlight >}}
+```
 
 Now that we have seen how to create configuration server using Spring Cloud Config Server and how to fetch the application specific configuration properties using REST API.
 
@@ -344,7 +344,7 @@ Let us see how we can create a SpringBoot application and use configuration prop
 
 Create a SpringBoot application **catalog-service** with **Config Client,** **Web** and **Actuator** starters.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -415,18 +415,18 @@ Create a SpringBoot application **catalog-service** with **Config Client,** **We
 	</build>
 
 </project>
-{{< / highlight >}}
+```
 
 Usually in SpringBoot application we configure properties in **_application.properties_**. But while using Spring Cloud Config Server we use **_bootstrap.properties_** or **_bootstrap.yml_** file to configure the URL of Config Server and Spring Cloud Config Client module will take care of starting the application by fetching the application properties from Config Server.
 
 Configure the following properties in **src/main/resources/bootstrap.properties**:
 
-{{< highlight properties >}}
+```properties
 server.port=8181
 spring.application.name=catalogservice
 spring.cloud.config.uri=http://localhost:8888
 management.security.enabled=false
-{{< / highlight >}}
+```
 
 We have configured the url of configuration server using **spring.cloud.config.uri** property. Also we have specified the application name using **spring.application.name** property.
 
@@ -434,7 +434,7 @@ We have configured the url of configuration server using **spring.cloud.config.u
 
 Now run the following catalog-service main entry point class:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.catalogservice;
 
 import org.springframework.boot.SpringApplication;
@@ -447,11 +447,11 @@ public class CatalogServiceApplication {
 		SpringApplication.run(CatalogServiceApplication.class, args);
 	}
 }
-{{< / highlight >}}
+```
 
 We can access the actuator endpoint http://localhost:8181/env to see all the configuration properties.
 
-{{< highlight json >}}
+```json
 {
     "profiles": [],
     "server.ports": {
@@ -490,7 +490,7 @@ We can access the actuator endpoint http://localhost:8181/env to see all the con
     },
     "defaultProperties": {}
 }
-{{< / highlight >}}
+```
 
 You can see that catalog-service application fetches the catalogservice properties from Config Server during bootstrap time. You can bind these properties using **@Value** or **@EnableConfigurationProperties** just the way you bind if they are defined within the application itself.
 
@@ -513,12 +513,12 @@ In order to reload the configuration properties we need to do the following:
   * Mark Spring beans that you want to reload on config changes with @RefreshScope
   * Issue http://localhost:8181/refresh request using **POST** method
 
-To test the reloading behaviour let&#8217;s add a property **name=Siva** in **config-repo/catalogservice.properties** and commit it.
+To test the reloading behaviour let's add a property **name=Siva** in **config-repo/catalogservice.properties** and commit it.
 
 Create a simple RestController to display **name** value as follows:
 
 
-{{< highlight java >}}
+```java
 
 @RestController
 @RefreshScope
@@ -533,7 +533,7 @@ class HomeController
 		return name;
 	}
 }
-{{< / highlight >}}
+```
 
 Now access http://localhost:8181/name which which will display **Siva**. Now change the property value to **name=Prasad** in **config-repo/catalogservice.properties** and commit it.
 

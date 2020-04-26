@@ -14,20 +14,20 @@ tags:
 ---
 In our HomePage/CategoryPage/ProductPage we have a button **Add To Cart** as follows:
 
-{{< highlight html>}}
+```html
 <a class="add_to_cart_button" data-quantity="1" 
     data-product_sku="" data-product_id="70" 
 	rel="nofollow" href="#"
 	th:onclick="'javascript:addItemToCart(\'' + ${product.sku} + '\');'">
 	    Add to cart
 </a>
-{{</ highlight >}}
+```
 
 When customer clicks on **Add To Cart** button it will trigger **addItemToCart(sku)** JavaScript function passing the product SKU value.
 
 Now create **jcart-site/src/main/resources/static/assets/js/app.js** and implement **addItemToCart(sku)** function as follows:
 
-{{< highlight javascript>}}
+```javascript
 function addItemToCart(sku)
 {
 	$.ajax ({ 
@@ -41,20 +41,20 @@ function addItemToCart(sku)
 		}
 	}); 
 }
-{{</ highlight >}}
+```
 
-This function triggers an Ajax call to **url &#8216;/cart/items&#8217;** using jQuery and if it is successful we are calling another JavaScript function **updateCartItemCount()**.
+This function triggers an Ajax call to **url &#8216;/cart/items'** using jQuery and if it is successful we are calling another JavaScript function **updateCartItemCount()**.
 
 The **updateCartItemCount()** function updates the current Cart Items count in the page header section.
 
-{{< highlight html>}}
+```html
 <div class="shopping-item">
 	<a href="#" th:href="@{/cart}">Cart <i class="fa fa-shopping-cart"></i> 
 	<span id="cart-item-count" class="product-count">(0)</span></a>
 </div>
-{{</ highlight >}}
+```
 
-{{< highlight javascript>}}
+```javascript
 function updateCartItemCount()
 {
 	$.ajax ({ 
@@ -67,13 +67,13 @@ function updateCartItemCount()
 		}
 	});
 }
-{{</ highlight >}}
+```
 
-The **updateCartItemCount()** function triggers an Ajax call to **url: &#8216;/cart/items/count&#8217;** to get the current Cart Item count. Once the response is received we are setting the count value.
+The **updateCartItemCount()** function triggers an Ajax call to **url: &#8216;/cart/items/count'** to get the current Cart Item count. Once the response is received we are setting the count value.
 
 We need to display the current Cart Item Count on all pages, so let us invoke **updateCartItemCount()** function in **app.js** for all the page load as follows:
 
-{{< highlight javascript>}}
+```javascript
 jQuery(document).ready(function($){
 	updateCartItemCount();
 });
@@ -87,13 +87,13 @@ function updateCartItemCount()
 {
 	...
 }
-{{</ highlight >}}
+```
 
 Now let us implement the back-end functionality to handle Cart related operations.
 
 First let us create the model objects to hold **Cart** and **LineItem** data.
 
-{{< highlight java >}}
+```java
 public class Cart
 {
 	private List<LineItem> items;
@@ -175,9 +175,9 @@ public class Cart
 	//setters & getters
 	
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 public class LineItem
 {
 	private Product product;
@@ -199,11 +199,11 @@ public class LineItem
 	}
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
 We may need to get the current Cart object in one or more Controllers. So let us create a method **getOrCreateCart(HttpServletRequest)** in **JCartSiteBaseController** so that it will be available in all controllers.
 
-{{< highlight java >}}
+```java
 public abstract class JCartSiteBaseController
 {
 	....
@@ -220,11 +220,11 @@ public abstract class JCartSiteBaseController
 		return cart;
 	}
 }
-{{</ highlight >}}
+```
 
 Now let us implement the **CartController** as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class CartController extends JCartSiteBaseController
 {
@@ -260,7 +260,7 @@ public class CartController extends JCartSiteBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Now run the application and click on **Add To Cart** in **HomePage**/**CategoryPage**/**ProductPage**, 
 the product should be added to **Cart** and the **Cart Item Count** in header should be updated accordingly.

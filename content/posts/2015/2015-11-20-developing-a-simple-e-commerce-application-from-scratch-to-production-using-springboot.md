@@ -25,27 +25,27 @@ We can find articles on these topics in bits and pieces but not in an organized 
 
 ### Why I am writing these article series?
 
-**<span style="text-decoration: underline;">To help junior developers:</span>**
+**To help junior developers:**
   
 Every week I receive at least couple of emails from software developers with 1 to 3 years of experiencing for a suggestion.
 
 Those emails goes like this:
 
-> I joined in XYZ company as a fresher and I have been there for the last 2+ years. They put me in a maintenance project where I mostly work on defect fixes and I never really worked on anything from scratch. Now I am not at all confident about my technical skills as I have not implemented anything on my own apart from fixing defects here and there. Here we don&#8217;t see any new projects in near future. So I want to move to a different company, but I am having a very hard time in clearing the interviews.
+> I joined in XYZ company as a fresher and I have been there for the last 2+ years. They put me in a maintenance project where I mostly work on defect fixes and I never really worked on anything from scratch. Now I am not at all confident about my technical skills as I have not implemented anything on my own apart from fixing defects here and there. Here we don't see any new projects in near future. So I want to move to a different company, but I am having a very hard time in clearing the interviews.
 > 
 > So, could you please advise me how to learn Java the way people use it in real projects, not basic HelloWorld kind of samples? Could you suggest any books, blogs? Should I learn Spring, Hibernate to get a Job?
 
-I feel very sad to see the people in this kind of situation because I know how painful it is. But also simply blaming the company for not giving an opportunity to build something from scratch won&#8217;t help. Teaching you latest and greatest technologies may not be your organizations top priority.
+I feel very sad to see the people in this kind of situation because I know how painful it is. But also simply blaming the company for not giving an opportunity to build something from scratch won't help. Teaching you latest and greatest technologies may not be your organizations top priority.
 
 Some people told they even joined some training institutes to learn Java while working as Java developers!!. But again they are disappointed because they got basic HelloWorld kind of training only, not the way projects are developed in organizations.
 
 So, I thought of helping them by writing a series of articles explaining how the project development from scratch looks like.
 
-<span style="text-decoration: underline;"><strong>Material for my trainings</strong></span>
+**Material for my trainings**
   
 I do give trainings on Core Java, Spring and JavaEE. I hope the projects that will be developed for this series may also be helpful for my Java trainings as well.
 
-**<span style="text-decoration: underline;">I want to learn more</span>** and Teaching is the best way to learn.
+**I want to learn more** and Teaching is the best way to learn.
 
 ### What we are going to do?
 

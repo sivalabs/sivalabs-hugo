@@ -18,7 +18,7 @@ We already have **HomeController.category()** method to handle the URL **/catego
   
 So let us create **category.html** thymeleaf template as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -69,6 +69,6 @@ So let us create **category.html** thymeleaf template as follows:
     </body>
     
 </html>
-{{</ highlight >}}
+```
 
 Now when you click on Category Name you should be able to see all the products in that category.

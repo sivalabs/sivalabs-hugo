@@ -36,7 +36,7 @@ There will be Users and each User may have a Blog and each Blog can contain zero
 
 The Database structure of the three tables are as follows:
 
-{{< highlight sql >}}
+```sql
 CREATE TABLE user (
   user_id int(10) unsigned NOT NULL auto_increment,
   email_id varchar(45) NOT NULL,
@@ -68,11 +68,11 @@ CREATE TABLE post (
   CONSTRAINT FK_post_blog FOREIGN KEY (blog_id) REFERENCES blog (blog_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-{{</ highlight >}}
+```
 
 Here I am going to explain how to fetch and map *-has-One and One-To-Many result mappings.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.domain;
 
 public class User 
@@ -86,9 +86,9 @@ public class User
      //setters and getters
 }
 
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.domain;
 
 import java.util.ArrayList;
@@ -103,9 +103,9 @@ public class Blog
      private List<Post> posts = new ArrayList<Post>();
      //setters and getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.domain;
 
 import java.util.Date;
@@ -118,24 +118,24 @@ public class Post
      private Date createdOn;
      //setters and getters
 }
-{{</ highlight >}}
+```
 
 In mybatis-config.xml, configure type aliases for beans.
 
-{{< highlight xml >}}
+```xml
 <typeAliases>
   <typeAlias type="com.sivalabs.mybatisdemo.domain.User" alias="User"/>
   <typeAlias type="com.sivalabs.mybatisdemo.domain.Blog" alias="Blog"/>
   <typeAlias type="com.sivalabs.mybatisdemo.domain.Post" alias="Post"/>  
 </typeAliases>
-{{</ highlight >}}
+```
 
   
 ### ***-has-One Result Mapping
 
 In UserMapper.xml, configure sql queries and result maps as follows:
 
-{{< highlight xml >}}
+```xml
 <mapper namespace="com.sivalabs.mybatisdemo.mappers.UserMapper">
 
  <resultMap type="User" id="UserResult">
@@ -169,11 +169,11 @@ In UserMapper.xml, configure sql queries and result maps as follows:
  </select>
   
 </mapper>
-{{</ highlight >}}
+```
 
 In JUnit Test, write a method to test the association loading.
 
-{{< highlight java >}}
+```java
 public void getUserById() 
 {
      SqlSession sqlSession = MyBatisUtil.getSqlSessionFactory().openSession();
@@ -187,13 +187,13 @@ public void getUserById()
       sqlSession.close();
      }
 }
-{{</ highlight >}}
+```
 
 ### One-To-Many Results Mapping
 
 In BlogMapper.xml configure Blog to Posts relationship as follows:
 
-{{< highlight xml >}}
+```xml
 <mapper namespace="com.sivalabs.mybatisdemo.mappers.BlogMapper">
 
  <resultMap type="Blog" id="BlogResult">
@@ -229,11 +229,11 @@ In BlogMapper.xml configure Blog to Posts relationship as follows:
  </select>
   
 </mapper>
-{{</ highlight >}}
+```
 
 In JUnit Test, write a test method to test blog-to-posts relationship mapping.
 
-{{< highlight java >}}
+```java
 public void getBlogById() 
 {
      SqlSession sqlSession = MyBatisUtil.getSqlSessionFactory().openSession();
@@ -252,5 +252,5 @@ public void getBlogById()
         sqlSession.close();
      }
 }
-{{</ highlight >}}
+```
 

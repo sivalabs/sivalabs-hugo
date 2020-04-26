@@ -31,7 +31,7 @@ Note: I don't want to dump all the HTML content along with CSS styles on this po
 
 Create the guest layout thymeleaf template jcart-admin/src/main/resources/templates/layout/guestLayout.html as follows:
 
-{{< highlight html >}}
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -63,7 +63,7 @@ Create the guest layout thymeleaf template jcart-admin/src/main/resources/templa
 </div>
   </body>
 </html>
-{{</ highlight >}}
+```
 
 This is guest layout skeleton page. Observe the place holder ```<div layout:fragment="content"> ... </div>``` for the content to be dynamically included at runtime.
 
@@ -71,7 +71,7 @@ This is guest layout skeleton page. Observe the place holder ```<div layout:frag
 
 Create login view page **jcart-admin/src/main/resources/templates/public/login.html**
 
-{{< highlight html >}}
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
       layout:decorator="layout/guestLayout">
@@ -90,7 +90,7 @@ Create login view page **jcart-admin/src/main/resources/templates/public/login.h
 </div>
    </body>
 </html>
-{{</ highlight >}}
+```
 
 ### Things to observe here:
 
@@ -99,7 +99,7 @@ Create login view page **jcart-admin/src/main/resources/templates/public/login.h
   * We are using th:text=&#8221;#{some\_message\_key}&#8221; to provide all the labels dynamically from ResourceBundles jcart-admin/src/main/resources/messages.properties so that we can provide I18N feature easily.
   * We are using ${param.someKey} to access HttpServletRequest parameters.
   * We are using ${someKey} to access HttpServletRequest attributes.
-  * We are using th:action=&#8221;@{/login}&#8221; and th:href=&#8221;@{/forgotPwd}&#8221; for URLs so that we don&#8217;t have to worry about Context Relative URL problems.
+  * We are using th:action=&#8221;@{/login}&#8221; and th:href=&#8221;@{/forgotPwd}&#8221; for URLs so that we don't have to worry about Context Relative URL problems.
 For more information on using Thymeleaf Layouts refer <a href="http://www.thymeleaf.org/doc/articles/layouts.html" target="_blank">http://www.thymeleaf.org/doc/articles/layouts.html</a>
 
 ## Using ResourceBundles for Internationalization (I18N)
@@ -108,7 +108,7 @@ Create the default ResourceBundle **jcart-admin/src/main/resources/messages.prop
   
 For now we are supporting only English Locale.
 
-{{< highlight properties >}}
+```properties
 label.jcart_admin=JCart Admin
 label.email=Email
 label.password=Password
@@ -117,11 +117,11 @@ label.submit=Submit
 label.forgot_password=I forgot my password
 info.logout_success=You have been logged out
 error.login_failed=Invalid Email and Password
-{{</ highlight >}}
+```
 
 Now create **JCartAdminApplication.java** which is starting point for our Administration application. 
 
-{{< highlight java >}}
+```java
 package com.sivalabs.jcart;
 
 import org.springframework.boot.SpringApplication;
@@ -135,13 +135,13 @@ public class JCartAdminApplication
 	SpringApplication.run(JCartAdminApplication.class, args);
 	}
 }
-{{</ highlight >}}
+```
 
 ## WebMVC Configuration
 
 Create a Spring WebMVC Configuration class to configure things like ViewControllers, Interceptors etc.
 
-{{< highlight java >}}
+```java
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {   
@@ -155,7 +155,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Now we can run JCartAdminApplication as a Java Application and point your browser to <a href="http://localhost:8080/login" target="_blank">http://localhost:8080/login</a>
 
@@ -163,7 +163,7 @@ Now we can run JCartAdminApplication as a Java Application and point your browse
 
 Create the main layout thymeleaf template **jcart-admin/src/main/resources/templates/layout/mainLayout.html** as follows:
 
-{{< highlight html >}}
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org">
   <head>
@@ -322,11 +322,11 @@ Create the main layout thymeleaf template **jcart-admin/src/main/resources/templ
 
    </body>
 </html>
-{{</ highlight >}}
+```
 
 Create Home page thymeleaf view **jcart-admin/src/main/resources/templates/home.html** as follows:
 
-{{< highlight html >}}
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
       layout:decorator="layout/mainLayout">
@@ -363,11 +363,11 @@ Create Home page thymeleaf view **jcart-admin/src/main/resources/templates/home.
 </div>
    </body>
 </html>
-{{</ highlight >}}
+```
 
 Create a simple controller to display Home page.
 
-{{< highlight java >}}@Controller
+```java@Controller
 public class HomeController 
 {	
 	@RequestMapping("/home")
@@ -376,7 +376,7 @@ public class HomeController
 	return "home";
 	}
 }
-{{</ highlight >}}
+```
 
 Now you can run JCartAdminApplication as a Java Application and point your browser to <a href="http://localhost:8080/home" target="_blank">http://localhost:8080/home</a>.
 
@@ -386,7 +386,7 @@ If you observe the JPA entities, we are using Hibernate Validation annotations f
   
 If you want to use **messages.properties** for both I18N and Hibernate Validation error messages you can register the Validator Bean as follows:
 
-{{< highlight java >}}
+```java
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {  
@@ -404,6 +404,6 @@ public class WebConfig extends WebMvcConfigurerAdapter
     }
 	
 }
-{{</ highlight >}}
+```
 
 Now we have the layout templates ready and basic MVC configuration is in place. Next we will look into how to configure Spring Security.

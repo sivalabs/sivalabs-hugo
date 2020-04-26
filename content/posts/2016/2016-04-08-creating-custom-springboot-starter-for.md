@@ -29,7 +29,7 @@ To accomplish this, we are going to create:
 
 First we are going to create a parent pom type module to define dependency versions and sub-modules.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -74,7 +74,7 @@ First we are going to create a parent pom type module to define dependency versi
     </dependencyManagement>
 
 </project>
-{{< / highlight >}}
+```
 
 In this **pom.xml** we are defining the SpringBoot and Twitter4j versions in <dependencymanagement> section so that we don’t need to specify versions all over the places.&nbsp;</dependencymanagement>
   
@@ -85,7 +85,7 @@ Create a child module with name **twitter4j-spring-boot-autoconfigure** in our p
 
 Add the maven dependencies such as spring-boot, **spring-boot-autoconfigure**, **twitter4j-core** and **junit** as follows:
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -133,7 +133,7 @@ Add the maven dependencies such as spring-boot, **spring-boot-autoconfigure**, *
         </dependency>
     </dependencies>
 </project>
-{{< / highlight >}}
+```
 
 
 Note that we have specified **twitter4j-core** as **optional** dependency because **twitter4j-core** should be added to the project only when **twitter4j-spring-boot-starter** is added to the project.
@@ -143,7 +143,7 @@ Note that we have specified **twitter4j-core** as **optional** dependency becaus
 
 Create <b>Twitter4jProperties.java </b>to hold the Twitter4J OAuth config parameters.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.spring.boot.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -208,19 +208,19 @@ public class Twitter4jProperties {
         }
     }
 }
-{{< / highlight >}}
+```
   
   
 With this configuration object we can configure the twitter4j properties in <b>application.properties</b> as follows:
     
       
-{{< highlight java >}}t
-witter4j.debug=true
+```java
+twitter4j.debug=true
 twitter4j.oauth.consumer-key=your-consumer-key-here
 twitter4j.oauth.consumer-secret=your-consumer-secret-here
 twitter4j.oauth.access-token=your-access-token-here
 twitter4j.oauth.access-token-secret=your-access-token-secret-here
-{{< / highlight >}}
+```
 
 ##  Create Twitter4jAutoConfiguration to auto-configure Twitter4J 
   
@@ -234,7 +234,7 @@ What is that criteria?
 
 So, the <b>Twitter4jAutoConfiguration</b> goes like this.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.spring.boot.autoconfigure;
 
 import org.apache.commons.logging.Log;
@@ -292,7 +292,7 @@ public class Twitter4jAutoConfiguration {
     }
 
 }
-{{< / highlight >}}
+```
             
             
 We have used <b>@ConditionalOnClass({ TwitterFactory.class, Twitter.class })</b> to specify that this auto configuration should take place only when <b>TwitterFactory.class, Twitter.class </b>classes are present.
@@ -311,7 +311,7 @@ Now we need to configure our custom <b>Twitter4jAutoConfiguration </b>in <b>src/
 
 Create a child module with name twitter4j-spring-boot-starter in our parent maven module spring-boot-starter-twitter4j.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -353,7 +353,7 @@ Create a child module with name twitter4j-spring-boot-starter in our parent mave
     </dependencies>
 
 </project>
-{{< / highlight >}}
+```
                     
 Note that in this maven module we are actually pulling in <b>twitter4j-core</b> dependency.
 
@@ -370,7 +370,7 @@ Let us create a sample using our brand new starter <b>twitter4j-spring-boot-star
 
 Let us create a simple SpringBoot application and add our <b>twitter4j-spring-boot-starter</b> dependency.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -417,11 +417,11 @@ Let us create a simple SpringBoot application and add our <b>twitter4j-spring-bo
     </dependencies>
 
 </project>
-{{< / highlight >}}
+```
                         
 Create the entry-point class <b>SpringbootTwitter4jDemoApplication </b>as follows:
   
-{{< highlight java >}}
+```java
 package com.sivalabs.demo;
 
 import org.springframework.boot.SpringApplication;
@@ -434,13 +434,13 @@ public class SpringbootTwitter4jDemoApplication {
         SpringApplication.run(SpringbootTwitter4jDemoApplication.class, args);
     }
 }
-{{< / highlight >}}
+```
                             
                            
 Create <b>TweetService </b>as follows:
 
 
-{{< highlight java >}}
+```java
 package com.sivalabs.demo;
 
 import java.util.ArrayList;
@@ -473,14 +473,14 @@ public class TweetService {
         return tweets;
     }
 }
-{{< / highlight >}}
+```
                                 
                                
 Now create a Test to verify our Twitter4j AutoConfigutation.
 
-<span style="color: red;">Before that make sure you have set your twitter4j oauth configuration parameter to your actual values. You can get them from <b>https://apps.twitter.com/</b></span>
+**Before that make sure you have set your twitter4j oauth configuration parameter to your actual values. You can get them from <b>https://apps.twitter.com/**
 
-{{< highlight java >}}
+```java
 package com.sivalabs.demo;
 
 import java.util.List;
@@ -510,7 +510,7 @@ public class SpringbootTwitter4jDemoApplicationTest  {
     }
 
 }
-{{< / highlight >}}
+```
   
 Now you should be able to see the latest tweets on your console output.&nbsp;
 

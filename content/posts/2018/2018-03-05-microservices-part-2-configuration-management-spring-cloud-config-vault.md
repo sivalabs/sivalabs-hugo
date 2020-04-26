@@ -76,7 +76,7 @@ We are going to use Docker and run MySQL as a Docker container.
 
 **docker-compose.yml**
 
-{{< highlight yml >}}
+```yml
 version: '3'
 services:
   mysqldb:
@@ -87,11 +87,11 @@ services:
      environment:
        MYSQL_ROOT_PASSWORD: admin
        MYSQL_DATABASE: catalog
-{{</ highlight >}}
+```
        
 Configure datasource properties in **application.properties** as follows:
 
-{{< highlight properties >}}
+```properties
 server.port=8181
 logging.level.com.sivalabs=debug
  
@@ -106,11 +106,11 @@ spring.jpa.show-sql=true
  
 //expose all the Actuator endpoints
 management.endpoints.web.exposure.include=*
-{{</ highlight >}}
+```
 
 Create JPA entity **Product.java** as follows:
 
-{{< highlight java >}}
+```java
 import lombok.Data;
 import javax.persistence.*;
  
@@ -127,11 +127,11 @@ public class Product {
     private String description;
     private double price;
 }
-{{</ highlight >}}
+```
 
 Create Spring Data JPA repository **ProductRepository.java** as follows:
 
-{{< highlight java >}}
+```java
 import com.sivalabs.catalogservice.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
@@ -139,12 +139,12 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Optional<Product> findByCode(String code);
 }
-{{</ highlight >}}
+```
 
 Create **ProductService** which just delegate to **ProductRepository** for now. 
 We can directly inject Repository into our web layer components (Controllers) but going forward there could be business logic which I don’t like to put in either Controller or in Repository.
 
-{{< highlight java >}}
+```java
 import com.sivalabs.catalogservice.entities.Product;
 import com.sivalabs.catalogservice.repositories.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -173,11 +173,11 @@ public class ProductService {
         return productRepository.findByCode(code);
     }
 }
-{{</ highlight >}}
+```
 
 Finally, create our REST controller **ProductController.java**
 
-{{< highlight java >}}
+```java
 import com.sivalabs.catalogservice.entities.Product;
 import com.sivalabs.catalogservice.exceptions.ProductNotFoundException;
 import com.sivalabs.catalogservice.services.ProductService;
@@ -213,11 +213,11 @@ public class ProductController {
                 .orElseThrow(() -> new ProductNotFoundException("Product with code ["+code+"] doesn't exist"));
     }
 }
-{{</ highlight >}}
+```
 
 Create **ProductNotFoundException** extending **RuntimeException** and annotate with **@ResponseStatus(HttpStatus.NOT_FOUND)**.
 
-{{< highlight java >}}
+```java
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
  
@@ -238,14 +238,14 @@ public class ProductNotFoundException extends RuntimeException {
         super(cause);
     }
 }
-{{</ highlight >}}
+```
 
 
 Let’s insert some sample products into our database.
 
 src/main/resources/data.sql
 
-{{< highlight sql >}}
+```sql
 DELETE FROM products;
  
 insert into products(id, code, name, description, price) VALUES
@@ -253,7 +253,7 @@ insert into products(id, code, name, description, price) VALUES
 (2, 'P002', 'Product 2', 'Product 2 description', 32),
 (3, 'P003', 'Product 3', 'Product 3 description', 50)
 ;
-{{</ highlight >}}
+```
 
 Okay, now we can start our SpringBoot application and hit http://localhost:8181/api/products. You should be able to see the JSON response with products info.
 
@@ -263,7 +263,7 @@ we are going to create Spring Cloud Config Server using Git backend. Spring Clou
 
 Configure the location of git repository where we are going to store all our configuration files in the **application.properties** file.
 
-{{< highlight properties >}}
+```properties
 spring.config.name=configserver
 server.port=8888
  
@@ -271,11 +271,11 @@ spring.cloud.config.server.git.uri=https://github.com/sivaprasadreddy/microservi
 spring.cloud.config.server.git.clone-on-start=true
  
 management.endpoints.web.exposure.include=*
-{{</ highlight >}}
+```
 
 Now annotate the entry point class with **@EnableConfigServer**.
 
-{{< highlight java >}}
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
@@ -288,7 +288,7 @@ public class ConfigServerApplication {
     SpringApplication.run(ConfigServerApplication.class, args);
   }
 }
-{{</ highlight >}}
+```
 
 
 That’s it. This is all you need to do to create Spring Cloud Config Server and you just need to add application-specific config files in the git repository.
@@ -299,12 +299,12 @@ That’s it. This is all you need to do to create Spring Cloud Config Server and
 
 Our catalog-service will become a client for Config Server. So, let us add **Config Client** starter to **catalog-service** which will add the following dependency.
 
-{{< highlight xml >}}
+```xml
 <dependency>
    <groupId>org.springframework.cloud</groupId>
    <artifactId>spring-cloud-starter-config</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Make sure you also add the **spring-cloud-dependencies** BOM and in `<properties>` section.
 
@@ -312,12 +312,12 @@ While using Spring Cloud Config Server the properties loading process happens at
 
 So, let’s rename **application.properties** to **bootstrap.properties** and update it to have the following properties.
 
-{{< highlight properties >}}
+```properties
 spring.application.name=catalog-service
 server.port=8181
 management.endpoints.web.exposure.include=*
 spring.cloud.config.uri=http://localhost:8888
-{{</ highlight >}}
+```
 
 
 Here, we have configured the location of our Config Server and gave the name as **catalog-service** to our application using **spring.application.name**.
@@ -326,7 +326,7 @@ Now we need to add all the properties of our **catalog-service** in **catalog-se
 
 **microservices-config-repo/catalog-service.properties**
 
-{{< highlight properties >}}
+```properties
 logging.level.com.sivalabs=debug
  
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
@@ -337,7 +337,7 @@ spring.datasource.password=admin
 spring.datasource.initialization-mode=always
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-{{</ highlight >}}
+```
 
 
 You can also add separate config files for different files like **catalog-service-qa.properties, catalog-service-prod.properties** etc.
@@ -370,12 +370,12 @@ Let us create a JSON file with MySQL database credentials and write to Vault.
 
 **catalog-service-credentials.json**
 
-{{< highlight json >}}
+```json
 { 
     "spring.datasource.username": "root", 
     "spring.datasource.password": "admin"
 }
-{{</ highlight >}}
+```
 
 **$ vault write secret/catalog-service @catalog-service-credentials.json**
 
@@ -387,29 +387,29 @@ Now that Vault is configured and initialized with secrets. Let us refactor **cat
 
 Add Vault Configuration starter to **catalog-service** which will add the following dependency.
 
-{{< highlight xml >}}
+```xml
 <dependency>
  <groupId>org.springframework.cloud</groupId>
  <artifactId>spring-cloud-starter-vault-config</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Remove the following credentials from **microservices-config-repo/catalog-service.properties** and commit it.
 
-{{< highlight properties >}}
+```properties
 spring.datasource.username=root
 spring.datasource.password=admin
-{{</ highlight >}}
+```
 
 Add Vault configuration properties in **bootstrap.properties**.
 
-{{< highlight properties >}}
+```properties
 spring.cloud.vault.host=localhost
 spring.cloud.vault.port=8200
 spring.cloud.vault.scheme=http
 spring.cloud.vault.authentication=token
 spring.cloud.vault.token=934f9eae-31ff-a8ef-e1ca-4bea9e07aa09
-{{</ highlight >}}
+```
 
 We have configured the Vault properties, using token-based authentication and configured the Root Taken that is printed in the console log 
 when you started the vault server.

@@ -65,25 +65,25 @@ First, get familiarize with some terminology of Span, Trace, Annotations here ht
 
 Let us add **Sleuth** starter to both **inventory-service** and **catalog-service**.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-sleuth</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Once you add **Sleuth** starter and start the services you can observe in logs something like this.
 
-{{< highlight shell >}}
+```shell
 2018-03-20 10:19:15.512  INFO [inventory-service,,,] 53685 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver ...
 2018-03-20 10:24:15.507  INFO [inventory-service,,,] 53685 --- [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver ...
-{{</ highlight >}}
+```
 
 Now hit any inventory-service REST endpoint, say http://localhost:8282/api/inventory. Then you can observe **TraceID, SpanID** in the logs.
 
-{{< highlight shell >}}
+```shell
 2018-03-20 10:15:38.466  INFO [inventory-service,683f8e4370413032,d8abe400c68a9a6b,false] 53685 --- [oryController-3] ... 
-{{</ highlight >}}
+```
 
 Sleuth includes the pattern **[appname,traceId,spanId,exportable]** in logs from the MDC.
 
@@ -91,15 +91,15 @@ Now invoke the catalog-service endpoint http://localhost:8181/api/products endpo
 
 In catalog-service logs you can find log statements something like:
 
-{{< highlight shell >}}
+```shell
 2018-03-20 10:54:29.625  INFO [catalog-service,0335da07260d3d6f,0335da07260d3d6f,false] 53617 --- [io-8181-exec-10] ...
-{{</ highlight >}}
+```
 
 And, check logs in inventory-service, you can find log statements something like:
 
-{{< highlight shell >}}
+```shell
 2018-03-20 10:54:29.662  INFO [inventory-service,0335da07260d3d6f,1af68249ac3a6902,false] 53685 --- [oryController-6] ...
-{{</ highlight >}}
+```
 
 Observe that TraceID **0335da07260d3d6f** is same in both catalog-service and inventory-service for the same REST API call. This way we can easily correlate the logs across services.
 
@@ -111,10 +111,10 @@ We learned how to use Sleuth to add tracing information in logs. In addition to 
 ## Zipkin Server using an executable jar
 The quick and easiest way to start a Zipkin server is using zipkin executable jar provided by Zipkin team.
 
-{{< highlight shell >}}
+```shell
 curl -sSL https://zipkin.io/quickstart.sh | bash -s
 java -jar zipkin.jar
-{{</ highlight >}}
+```
 
 This will start Zipkin server on port 9411 and you can access the Zipkin UI Dashboard at http://localhost:9411/zipkin/.
 
@@ -123,7 +123,7 @@ As we are going to package our applications as docker images and run them in Doc
 
 We can create a Zipkin server backed by in-memory datastore using the following **docker-compose-mem.yml** file.
 
-{{< highlight yml >}}
+```yml
 version: '2'
  
 services:
@@ -144,7 +144,7 @@ services:
     ports:
       # Port used for the Zipkin UI and HTTP Api
       - 9411:9411
-{{</ highlight >}}
+```
 
 You can also use docker image backed by MySQL datastore by using https://github.com/openzipkin/docker-zipkin/blob/master/docker-compose.yml.
 
@@ -156,7 +156,7 @@ We can start Zipkin server as a spring boot application or run in a docker conta
 
 > As of now, Zipkin doesn’t support Spring Boot 2. So we can create a SpringBoot application zipkin-server using 1.5.10.RELEASE version and add the zipkin-server, zipkin-autoconfigure-ui dependencies.
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -233,11 +233,11 @@ We can start Zipkin server as a spring boot application or run in a docker conta
         </repository>
     </repositories>
 </project>
-{{</ highlight >}}
+```
 
 Add **@EnableZipkinServer** annotation to main entry-point class.
 
-{{< highlight java >}}
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import zipkin.server.EnableZipkinServer;
@@ -250,14 +250,14 @@ public class ZipkinServerApplication {
         SpringApplication.run(ZipkinServerApplication.class, args);
     }
 }
-{{</ highlight >}}
+```
 
 Set port and application name in **application.properties**.
 
-{{< highlight properties >}}
+```properties
 spring.application.name=zipkin-server
 server.port=9411
-{{</ highlight >}}
+```
 
 Now you can start the Zipkin Server by running **ZipkinServerApplication**.
 
@@ -268,28 +268,28 @@ We observed that the tracing information is printed in logs but not exported. We
 
 Add **Zipkin Client** starter to both inventory-service and catalog-service.
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.cloud</groupId>
     <artifactId>spring-cloud-starter-zipkin</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 Configure Zipkin server URL in **bootstrap.properties** of both inventory-service and catalog-service.
 
-{{< highlight properties >}}
+```properties
 spring.zipkin.base-url=http://localhost:9411/
 spring.sleuth.sampler.probability=1
-{{</ highlight >}}
+```
 
 > NOTE: By default spring.sleuth.sampler.probability=0.1 which means only 10% of tracing information will be exported to Zipkin. Make it to your desired percentage.
 
 Now restart both inventory-service and catalog-service and invoke http://localhost:8181/api/products endpoint. 
 You can observe that **true** is printed in logs meaning it is exported.
 
-{{< highlight shell >}}
+```shell
 2018-03-20 11:41:02.241  INFO [catalog-service,7d0d44fe314d7758,7d0d44fe314d7758,true] 53617 --- [nio-8181-exec-5] c.s.c.services.ProductService
-{{</ highlight >}}
+```
 
 Now go to Zipkin UI Dashboard, you can see the service names populated in the first dropdown. Select the service you want to check or select all and then click on Find Traces button.
 

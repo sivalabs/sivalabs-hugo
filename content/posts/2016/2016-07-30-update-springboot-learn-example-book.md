@@ -26,7 +26,7 @@ In some of our applications we need to work with multiple databases. For example
 
 The section **Working with Multiple Databases** explains how to configure multiple databases while using JPA in a SpringBoot application.
 
-As SpringBoot can&#8217;t auto-configure components such as **TransactionManager**s, **EntityManagerFactoryBean**s, **DataSourceInitializer**s for multiple databases automatically, this section will show how to turn-off auto-configuration mechanism for a specific **AutoConfiguration** class and provide the required configuration explicitly.
+As SpringBoot can't auto-configure components such as **TransactionManager**s, **EntityManagerFactoryBean**s, **DataSourceInitializer**s for multiple databases automatically, this section will show how to turn-off auto-configuration mechanism for a specific **AutoConfiguration** class and provide the required configuration explicitly.
 
 ## Added new chapter : Chapter 16: Deploying SpringBoot Applications.
 

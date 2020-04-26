@@ -32,7 +32,7 @@ In this post I will explain how to perform CRUD operations using MyBatis Annotat
 
 Step#1: Create a table BLOG and a java domain Object Blog.
 
-{{< highlight sql >}}
+```sql
 CREATE TABLE  blog 
 (
       blog_id int(10) unsigned NOT NULL auto_increment,
@@ -40,9 +40,9 @@ CREATE TABLE  blog
       created_on datetime NOT NULL,
       PRIMARY KEY  (blog_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-{{</ highlight  >}}
+```
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.domain;
 
 import java.util.Date;
@@ -61,11 +61,11 @@ public class Blog
         + ", createdOn=" + createdOn + "]";
      }
 }
-{{</ highlight >}}
+```
 
 Step#2: Create UserMapper.java interface with SQL queries in Annotations.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.mappers;
 
 import java.util.List;
@@ -107,11 +107,11 @@ public interface BlogMapper
     public void deleteBlog(Integer blogId);
 }
 
-{{</ highlight >}}
+```
 
 Step#3: Configure BlogMapper in mybatis-config.xml
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -135,11 +135,11 @@ Step#3: Configure BlogMapper in mybatis-config.xml
       <mapper class="com.sivalabs.mybatisdemo.mappers.BlogMapper"/>
   </mappers>
 </configuration>
-{{</ highlight >}}
+```
 
 Step#4: Create BlogService.java
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
@@ -217,11 +217,11 @@ public class BlogService
      }
 
 }
-{{</ highlight >}}
+```
 
 Step#5: Create JUnit Test for BlogService methods
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo;
 
 import java.util.Date;
@@ -304,4 +304,4 @@ public class BlogServiceTest
         Assert.assertNull(deletedBlog);
     }
 }
-{{</ highlight >}}
+```

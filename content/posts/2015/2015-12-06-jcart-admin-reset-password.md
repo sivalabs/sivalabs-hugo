@@ -15,7 +15,8 @@ tags:
 ---
 Once the Admin User clicked on Password Reset Link that we sent via Email, we will validate the Token and if is valid then we will show a form to enter New Password, otherwise shows an error. 
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 public class UserAuthController extends JCartAdminBaseController
 {
 	...
@@ -40,11 +41,12 @@ public class UserAuthController extends JCartAdminBaseController
 	}
 	....
 }
-{{</ highlight >}}
+```
 
 Create reset password template **jcart-admin/src/main/resources/templates/public/resetPwd.html**
 
-{{< highlight java >}}<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
       layout:decorator="layout/guestLayout">
@@ -64,11 +66,12 @@ Create reset password template **jcart-admin/src/main/resources/templates/public
 	</div>
   </body>
 </html>
-{{</ highlight >}}
+```
 
 Implement resetPwd handler method as follows:
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 public class UserAuthController extends JCartAdminBaseController
 {
 	....
@@ -104,4 +107,4 @@ public class UserAuthController extends JCartAdminBaseController
 	}
 	...
 }
-{{</ highlight >}}
+```

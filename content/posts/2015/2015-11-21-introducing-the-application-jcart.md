@@ -19,7 +19,7 @@ As I promised in my article 
 
 One of my friend makes quilling toys and she sell them by advertising on Facebook or through word of mouth. Now she is getting more and more customers and she wants to expand her business by going online. So, she asked me to help in setting up a simple e-commerce website. After having some conversations on whether to leverage any existing e-commerce platforms or building a new application, we decided to build a new one with the features we just needed for our need.
 
-> **ATTENTION:** There are so many well established open source e-commerce platforms such as BroadleafCommerce, OpenCart, Drupal Commerce etc. But these systems provide so many features that you may probably don&#8217;t need and hence looks a bit overwhelming. But think twice before building your own. Don&#8217;t Repeat Yourself.
+> **ATTENTION:** There are so many well established open source e-commerce platforms such as BroadleafCommerce, OpenCart, Drupal Commerce etc. But these systems provide so many features that you may probably don't need and hence looks a bit overwhelming. But think twice before building your own. Don't Repeat Yourself.
 
 For those of you who are not familiar with what Quilling Art is, have a loot at the following pictures.
 These toys are made of some kind of colour paper and other stuff.

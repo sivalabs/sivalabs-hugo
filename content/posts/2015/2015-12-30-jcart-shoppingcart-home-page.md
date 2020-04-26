@@ -16,7 +16,7 @@ In our Home page we will show all the categories along with few of the products 
   
 Let us update **HomeController** with two methods to show all the categories and the selected category products.
 
-{{< highlight java >}}
+```java
 @Controller
 public class HomeController extends JCartSiteBaseController
 {	
@@ -59,11 +59,11 @@ public class HomeController extends JCartSiteBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Now let us update the home page template **home.html** to render category details.
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -111,9 +111,9 @@ Now let us update the home page template **home.html** to render category detail
     </body>
     
 </html>
-{{</ highlight >}}
+```
 
-In the above **home.html** template we are using some of the URLs for which we haven&#8217;t implemented the handlers.
+In the above **home.html** template we are using some of the URLs for which we haven't implemented the handlers.
 
 For example,
   
@@ -127,7 +127,7 @@ Let us implement the handler for displaying product image.
 
 Create **ProductController.java** as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class ProductController extends JCartSiteBaseController
 {	
@@ -152,7 +152,7 @@ public class ProductController extends JCartSiteBaseController
 		}
 	}
 }
-{{</ highlight >}}
+```
 
 Copy the sample product images from **jcart-site/src/main/resources/static/assets/img/products** folder into the path **WebUtils.IMAGES_DIR(D:/jcart/products/**).
 

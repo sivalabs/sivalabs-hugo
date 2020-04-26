@@ -16,17 +16,17 @@ In our earlier post we have implemented **Add To Cart** functionality. In this p
 
 In out **mainLayout.html** header we have ShoppingCart icon showing the cart item count as follows:
 
-{{< highlight html>}}
+```html
 <div class="shopping-item">
 	<a href="#" th:href="@{/cart}">Cart <i class="fa fa-shopping-cart"></i> 
 	    <span id="cart-item-count" class="product-count">(0)</span>
 	</a>
 </div>
-{{</ highlight >}}
+```
 
 When customer clicks on Cart icon we will show the Cart details. Let us implement the **&#8220;/cart&#8221;** url handler method in **CartController** as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class CartController extends JCartSiteBaseController
 {
@@ -40,11 +40,11 @@ public class CartController extends JCartSiteBaseController
 		return "cart";
 	}
 }
-{{</ highlight >}}
+```
 
 Now let us create thymeleaf view template **cart.html** as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -157,7 +157,7 @@ Now let us create thymeleaf view template **cart.html** as follows:
 		</div>
   </body>
 </html>
-{{</ highlight >}}
+```
 
 Now run the application and add items to cart and click on Cart Icon which should display Cart page with all the Cart item details.
 
@@ -165,7 +165,7 @@ Observe that we have already added HTML markup and JavaScript function calls to 
 
 Let us add the following two JavaScript functions to update item count and remove items.
 
-{{< highlight javascript>}}
+```javascript
 function updateCartItemQuantity(sku, quantity)
 {
 	$.ajax ({ 
@@ -194,11 +194,11 @@ function removeItemFromCart(sku)
 		}
 	});
 }
-{{</ highlight >}}
+```
 
 Next we will implement the **CartController** handler methods as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class CartController extends JCartSiteBaseController
 {
@@ -230,6 +230,6 @@ public class CartController extends JCartSiteBaseController
 	}
 
 }
-{{</ highlight >}}
+```
 
 Now that we have completed all the Cart related usecases. In our next post we will see how to implement Checkout functionality.

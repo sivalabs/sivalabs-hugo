@@ -16,7 +16,7 @@ Customers can click on a product to view more details about the product either i
 
 Let us implement Controller method to show Product details as follows:
 
-{{< highlight java >}}
+```java
 @Controller
 public class ProductController extends JCartSiteBaseController
 {	
@@ -34,9 +34,9 @@ public class ProductController extends JCartSiteBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class CatalogService 
@@ -51,19 +51,19 @@ public class CatalogService
 	}
 	
 }  
-{{</ highlight >}}
+```
 
-{{< highlight java >}}
+```java
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 
 	Product findByName(String name);
 	Product findBySku(String sku);
 }  
-{{</ highlight >}}
+```
 
 Now we will create the **product.html** thymeleaf template as follows:
 
-{{< highlight html>}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -133,6 +133,6 @@ Now we will create the **product.html** thymeleaf template as follows:
 </div>
 </body>
 </html>  
-{{</ highlight >}}
+```
 
 Now we can see the product details when clicked on Product from Home Page or Category Page.

@@ -15,7 +15,8 @@ tags:
 ---
 We are going to create the JPA Entities for the database tables we designed.
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="users")
 public class User
 {
@@ -42,9 +43,10 @@ public class User
 	private List<Role> roles;
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="roles")
 public class Role
 {
@@ -68,9 +70,10 @@ public class Role
 
 	 //setters & getters 
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="permissions")
 public class Permission
 {
@@ -85,9 +88,10 @@ public class Permission
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="addresses")
 public class Address implements Serializable
 {
@@ -103,9 +107,10 @@ public class Address implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="categories")
 public class Category
 {
@@ -124,9 +129,10 @@ public class Category
 
 	//setters & getters	
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="products")
 public class Product implements Serializable
 {
@@ -153,9 +159,10 @@ public class Product implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="customers")
 public class Customer implements Serializable
 {
@@ -178,9 +185,10 @@ public class Customer implements Serializable
 
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="orders")
 public class Order implements Serializable
 {
@@ -211,9 +219,10 @@ public class Order implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="order_items")
 public class OrderItem implements Serializable
 {
@@ -231,15 +240,17 @@ public class OrderItem implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}public enum OrderStatus
+```java
+public enum OrderStatus
 {
 	NEW, IN_PROCESS, COMPLETED, FAILED
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Entity
+```java
+@Entity
 @Table(name="payments")
 public class Payment implements Serializable
 {
@@ -253,7 +264,7 @@ public class Payment implements Serializable
 	
 	//setters & getters
 }
-{{</ highlight >}}
+```
 
 As we have configured **spring.jpa.hibernate.ddl-auto=update** when we run the JCartCoreApplicationTest again all the tables will be automatically created/updated.
 

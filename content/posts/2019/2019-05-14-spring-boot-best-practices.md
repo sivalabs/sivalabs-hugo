@@ -48,7 +48,7 @@ For example, if we are not planning to use JMX feature we can turn it off using 
 We can autowire the dependencies using **constructor-injection** or **setter-injection** or **@Autowired** on property itself.
 Personally I think Constructor injection is the better option. So, I try to always define the dependencies as **final** variables so that it will force to initialize in constructor.
 
-{{< highlight java >}}
+```java
 @Service
 @Transactional
 public class CustomerService {
@@ -59,7 +59,7 @@ public class CustomerService {
         this.customerRepository = customerRepository;
     }
 }
-{{</ highlight >}}
+```
 
 This way it will be easier to instantiate **CustomerService** with necessary dependencies for testing if required.
 

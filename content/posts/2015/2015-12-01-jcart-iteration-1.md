@@ -12,7 +12,7 @@ tags:
   - jcart
 
 ---
-Now that we have completed the most difficult part (writing Introduction to technical article series is much harder than you think!!), so let&#8217;s start the fun part. **Coding**!!!
+Now that we have completed the most difficult part (writing Introduction to technical article series is much harder than you think!!), so let's start the fun part. **Coding**!!!
 
 > **Note:** It is going to be a fast paced tutorial. Obviously we can't cover every little bit of all the technologies used in our application. So I would suggest to explore more on individual technologies like Spring, Thymeleaf on your own.
 

@@ -17,7 +17,7 @@ Our JCart Administration site should only be accessible to authorized users only
 
 Let us add the following spring-security dependencies to **jcart-admin/pom.xml**.
 
-{{< highlight xml >}}
+```xml
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-security</artifactId>
@@ -26,35 +26,38 @@ Let us add the following spring-security dependencies to **jcart-admin/pom.xml**
 	<groupId>org.thymeleaf.extras</groupId>
 	<artifactId>thymeleaf-extras-springsecurity4</artifactId>
 </dependency>
-{{</ highlight >}}
+```
 
 If we have predefined set of Roles then we can specify the URL patterns and its required Roles something like this:
 
-{{< highlight java >}}http
+```java
+http
 	.authorizeRequests()
 	    .antMatchers("/login","/login/form**","/register","/logout").permitAll()
 	    .antMatchers("/admin","/admin/**").hasRole("ADMIN")
 	    .anyRequest().authenticated()
 	    .and()
-{{</ highlight >}}
+```
 
-But we need provision to dynamically create new roles as well, hence we can&#8217;t statically define constraints using role names.
+But we need provision to dynamically create new roles as well, hence we can't statically define constraints using role names.
 
 But in our JCart application, we have fixed list of permissions and then grouped them as Roles. So we can configure SpringSecurity to use Method Level Security by checking the permissions. 
 
-SpringSecurity don&#8217;t have the support for Permissions. So we will follow suggestion given here <a href="http://springinpractice.com/2010/10/27/quick-tip-spring-security-role-based-authorization-and-permissions" target="_blank">http://springinpractice.com/2010/10/27/quick-tip-spring-security-role-based-authorization-and-permissions</a> where we consider the Permissions as Roles.
+SpringSecurity don't have the support for Permissions. So we will follow suggestion given here <a href="http://springinpractice.com/2010/10/27/quick-tip-spring-security-role-based-authorization-and-permissions" target="_blank">http://springinpractice.com/2010/10/27/quick-tip-spring-security-role-based-authorization-and-permissions</a> where we consider the Permissions as Roles.
 
 ### UserRepository to get User by Email
 
-{{< highlight java >}}public interface UserRepository extends JpaRepository<User, Integer>
+```java
+public interface UserRepository extends JpaRepository<User, Integer>
 {
 	User findByEmail(String email);
 }
-{{</ highlight >}}
+```
 
 ### SecurityService &#8211; Facade to all Security Related Methods
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class SecurityService
 {
@@ -65,11 +68,12 @@ public class SecurityService
 	     return userRepository.findByEmail(email);
 	}
 }
-{{</ highlight >}}
+```
 
 ### Wrapper for SpringSecurity User
 
-{{< highlight java >}}public class AuthenticatedUser extends org.springframework.security.core.userdetails.User
+```java
+public class AuthenticatedUser extends org.springframework.security.core.userdetails.User
 {
 
 	private static final long serialVersionUID = 1L;
@@ -105,11 +109,12 @@ public class SecurityService
 	return authorities;
 	}
 }
-{{</ highlight >}}
+```
 
 ### Custom UserDetailsService Implementation
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService
 {
@@ -127,11 +132,12 @@ public class CustomUserDetailsService implements UserDetailsService
 	}
 
 }
-{{</ highlight >}}
+```
 
 ### SpringSecurity Configuration
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -173,11 +179,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .exceptionHandling().accessDeniedPage("/403");
     }    
 }
-{{</ highlight >}}
+```
 
 ### Access Denied Exception Handler
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 public class ErrorController
 {	
 	@RequestMapping("/403")
@@ -187,13 +194,14 @@ public class ErrorController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 ### Abstract Controller with Common Methods
 
 Let us create a base Abstract Controller to have the common methods by all controllers.
 
-{{< highlight java >}}public abstract class JCartAdminBaseController
+```java
+public abstract class JCartAdminBaseController
 {	
 	@Autowired protected MessageSource messageSource;
 	
@@ -228,24 +236,26 @@ Let us create a base Abstract Controller to have the common methods by all contr
 	    return getCurrentUser() != null;
 	}
 }
-{{</ highlight >}}
+```
 
 Observe how we injected Authenticated User object using **@AuthenticationPrincipal** and exposed as a ModelAttribute so that we can reference it in any of our templates. Also we have another method which return the AuthenticatedUser so that we can use it in any of our Controllers to access currently logged in user object, say to set CreatedBy/UpdatedBy objects on our JPA Entities.
 
 Now our Controllers can extend the JCartAdminBaseController class as follows:
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 public class HomeController extends JCartAdminBaseController
 {
 	...
 }
-{{</ highlight >}}
+```
 
 ### Registering SpringSecurityDialect with Thymeleaf
 
 In order to use SpringSecurity dialects features in Thymeleaf templates we need to register SpringSecurityDialect as an additional dialect. We can do this simply by registering a SpringSecurityDialect bean.
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {   
 	...
@@ -255,7 +265,7 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	    return new SpringSecurityDialect();
 	}
 }
-{{</ highlight >}}
+```
 
 For more info read <a href="http://www.thymeleaf.org/doc/articles/springsecurity.html" target="_blank">http://www.thymeleaf.org/doc/articles/springsecurity.html</a>
 
@@ -263,7 +273,7 @@ For more info read <a href="http://www.thymeleaf.org/doc/articles/springsecurity
 
 Now we can show the Left Nav Menu options by checking whether the logged in user has the Permission or not.
 
-{{< highlight html >}}
+```html
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
@@ -291,17 +301,18 @@ Now we can show the Left Nav Menu options by checking whether the logged in user
 	
    </body>
 </html>
-{{</ highlight >}}
+```
 
 In our Controllers we can check for Permissions as follows:
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 @Secured("ROLE_MANAGE_CATEGORIES")
 public class CategoryController extends JCartAdminBaseController
 {
 	...
 }
-{{</ highlight >}}
+```
 
 ### Registering a Filter After SpringSecurity Filter
 
@@ -309,7 +320,8 @@ I would like to show the currently selected Left Nav Menu link as Active. For th
 
 For this I thought of registering a Filter filter after SpringSecurityFilter. But SpringSecurity Filter is registered with LOWEST_PRIORITY order automatically. So we need to get it done using the hack explained here <a href="http://stackoverflow.com/questions/25957879/filter-order-in-spring-boot" target="_blank">http://stackoverflow.com/questions/25957879/filter-order-in-spring-boot</a>
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {  
 	...
@@ -334,9 +346,10 @@ public class WebConfig extends WebMvcConfigurerAdapter
 	    return registrationBean;
 	}
 }
-{{</ highlight >}}
+```
 
-{{< highlight java >}}@Component
+```java
+@Component
 public class PostAuthorizationFilter extends OncePerRequestFilter
 {	
 	@Override
@@ -351,7 +364,7 @@ public class PostAuthorizationFilter extends OncePerRequestFilter
 	}
 	
 }
-{{</ highlight >}}
+```
 
 For complete PostAuthorizationFilter code, please check in github repository <a href="https://github.com/sivaprasadreddy/jcart" target="_blank">https://github.com/sivaprasadreddy/jcart</a>.
 

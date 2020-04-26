@@ -33,7 +33,7 @@ MyBatis is an SQL Mapper tool which greatly simplifies the database programing w
 
 **Step1:** Create a Maven project and configure MyBatis dependencies.
 
-{{< highlight xml >}}
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -87,11 +87,11 @@ MyBatis is an SQL Mapper tool which greatly simplifies the database programing w
   </dependency>
  </dependencies>
 </project>
-{{</ highlight >}}
+```
 
 **Step#2:** Create the table USER and a Java domain Object User as follows:
 
-{{< highlight sql >}}
+```sql
 CREATE TABLE  user (
   user_id int(10) unsigned NOT NULL auto_increment,
   email_id varchar(45) NOT NULL,
@@ -101,10 +101,10 @@ CREATE TABLE  user (
   PRIMARY KEY  (user_id),
   UNIQUE KEY Index_2_email_uniq (email_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-{{</ highlight >}}
+```
 
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.domain;
 public class User 
 {
@@ -123,22 +123,22 @@ public class User
     }
     
 }
-{{</ highlight >}}
+```
 
 **Step#3:** Create MyBatis configuration files.
 
 **a) Create jdbc.properties file in src/main/resources folder**
 
-{{< highlight properties >}}
+```properties
 jdbc.driverClassName=com.mysql.jdbc.Driver
 jdbc.url=jdbc:mysql://localhost:3306/mybatis-demo
 jdbc.username=root
 jdbc.password=admin
-{{</ highlight >}}
+```
 
 **b) Create mybatis-config.xml file in src/main/resources folder**
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
   <!DOCTYPE configuration
     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -166,11 +166,11 @@ jdbc.password=admin
         <mapper resource="com/sivalabs/mybatisdemo/mappers/UserMapper.xml"/>
     </mappers>
   </configuration>
-{{</ highlight >}}
+```
 
 **Step#4:** Create an interface UserMapper.java in src/main/java folder in com.sivalabs.mybatisdemo.mappers package.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.mappers;
 
 import java.util.List;
@@ -191,11 +191,11 @@ public interface UserMapper
 
 }
 
-{{</ highlight >}}
+```
 
 **Step#5:** Create UserMapper.xml file in src/main/resources folder in com.sivalabs.mybatisdemo.mappers package.
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
@@ -248,11 +248,11 @@ public interface UserMapper
   </delete>
   
 </mapper>
-{{</ highlight >}}
+```
 
 **Step#6:** Create MyBatisUtil.java to instantiate SqlSessionFactory.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.service;
 
 import java.io.IOException;
@@ -284,11 +284,11 @@ public class MyBatisUtil
         return factory;
     }
 }
-{{</ highlight >}}
+```
 
 **Step#7:** Create UserService.java in src/main/java folder.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo.service;
 
 import java.util.List;
@@ -368,11 +368,11 @@ public class UserService
 	}
 
 }
-{{</ highlight >}}
+```
 
 **Step#8:** Create a JUnit Test class to test UserService methods.
 
-{{< highlight java >}}
+```java
 package com.sivalabs.mybatisdemo;
 
 import java.util.List;
@@ -461,4 +461,4 @@ public class UserServiceTest
 		Assert.assertNull(deletedUser);
 	}
 }
-{{</ highlight >}}
+```

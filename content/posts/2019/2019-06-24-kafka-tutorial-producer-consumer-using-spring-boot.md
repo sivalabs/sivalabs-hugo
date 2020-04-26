@@ -21,7 +21,7 @@ First let us look at how to use Spring for Kafka without SpringBoot magic so tha
 
 Create a maven based project and configure the dependencies as follows:
 
-{{< highlight xml >}}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -78,11 +78,11 @@ Create a maven based project and configure the dependencies as follows:
 
     </dependencies>
 </project>
-{{</ highlight >}}
+```
 
 Next, let us configure the beans for Producer and Consumer using Spring's JavaConfig class as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.sample;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -151,14 +151,14 @@ public class KafkaConfig {
     }
 
 }
-{{</ highlight >}}
+```
 
 We have configured the **producerConfigs, ProducerFactory, KafkaTemplate** beans for Producer and **consumerConfigs, ConsumerFactory, ConcurrentKafkaListenerContainerFactory** beans for Consumer.
 
 Now, we can send message to Kafka topic using **KafkaTemplate** using **kafkaTemplate.send(topicName, key, value)**.
 
 
-{{< highlight java >}}
+```java
 package com.sivalabs.sample;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -175,11 +175,11 @@ public class MessageSender {
         kafkaTemplate.send(KafkaConfig.TOPIC, key, value);
     }
 }
-{{</ highlight >}}
+```
 
 We can implement a Kafka topic listener using **@KafkaListener** annotation as follows:
 
-{{< highlight java >}}
+```java
 package com.sivalabs.sample;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
@@ -198,7 +198,7 @@ public class MessageListener {
         LOGGER.info("Message: "+cr.key()+"="+cr.value());
     }
 }
-{{</ highlight >}}
+```
 
 Well, this is how we can configure Kafka Producer and Consumer using Spring JavaConfiguration without using SpringBoot.
 As you might have guessed, with SpringBoot auto-configuration the same application can be implemented with much less code.
@@ -207,7 +207,7 @@ As you might have guessed, with SpringBoot auto-configuration the same applicati
 
 Let us create a SpringBoot application with Kafka starter. 
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.kafka</groupId>
     <artifactId>spring-kafka</artifactId>
@@ -217,12 +217,12 @@ Let us create a SpringBoot application with Kafka starter.
     <artifactId>spring-kafka-test</artifactId>
     <scope>test</scope>
 </dependency>
-{{</ highlight >}}
+```
 
 SpringBoot provides **org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration** which auto-configures **ProducerFactory, KafkaTemplate,ConsumerFactory, ConcurrentKafkaListenerContainerFactory** etc beans automatically. We just need to configure the following necessary properties in **application.properties** as follows:
 
 
-{{< highlight properties >}}
+```properties
 spring.kafka.bootstrap-servers=localhost:9092
 
 spring.kafka.consumer.group-id=demo-group
@@ -232,7 +232,7 @@ spring.kafka.consumer.value-deserializer=org.apache.kafka.common.serialization.S
 
 spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
 spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
-{{</ highlight >}}
+```
 
 That's it. Now we can send messages to a topic using **KafkaTemplate** and implement listeners using **@KafkaListener** as explained in earlier section.
 

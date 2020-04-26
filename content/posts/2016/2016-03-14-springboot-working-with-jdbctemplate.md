@@ -18,7 +18,7 @@ using annotation based approach.
 First let’s take a quick look at how we generally use Spring’s **JdbcTemplate** (**without SpringBoot**) by registering **DataSource**, 
 **TransactionManager** and **JdbcTemplate** beans and optionally we can register **DataSourceInitializer** bean to initialize our database.
 
-{{< highlight java >}}
+```java
 @Configuration
 @ComponentScan
 @EnableTransactionManagement
@@ -72,11 +72,11 @@ public class AppConfig
         return dataSourceInitializer;
     }
 }
-{{< / highlight >}}
+```
 
 With this configuration in place, we can inject **JdbcTemplate** into Data Access components to interact with databases.
 
-{{< highlight java >}}
+```java
 public class User
 {
     private Integer id;
@@ -85,9 +85,9 @@ public class User
 
     // setters & getters
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 @Repository
 public class UserRepository
 {
@@ -99,9 +99,9 @@ public class UserRepository
         return jdbcTemplate.query("select * from users", new UserRowMapper());
     }
 }
-{{< / highlight >}}
+```
 
-{{< highlight java >}}
+```java
 class UserRowMapper implements RowMapper<User>
 {
     @Override
@@ -115,7 +115,7 @@ class UserRowMapper implements RowMapper<User>
         return user;
     }
 }
-{{< / highlight >}}
+```
 
 You might have observed that most of the times we use this similar kind of configuration in our applications.
 
@@ -127,12 +127,12 @@ By using SpringBoot we can take advantage of auto configuration feature and elim
 
 **Create a SpringBoot maven based project and add spring-boot-starter-jdbc module.**
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
 </dependency>
-{{< / highlight >}}
+```
 
 By adding **spring-boot-starter-jdbc** module, we get the following auto configuration:
 
@@ -153,20 +153,20 @@ You can customize the default names of the scripts using the following propertie
         
 SpringBoot uses **spring.datasource.initialize** property value, which is **true** by default, to determine whether to initialize database or not. If you want to turn off the database initialization you can set **spring.datasource.initialize=false**
 
-If there are any errors in executing the scripts then application will fail to start. If you want to continue then you can set **spring.datasource.continueOnError=true**.</li> </ul> 
+If there are any errors in executing the scripts then application will fail to start. If you want to continue then you can set **spring.datasource.continueOnError=true**.
 
 Let us add **H2** database driver to our **pom.xml**.
         
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
 </dependency>
-{{< / highlight >}}
+```
         
 Create **schema.sql** in **src/main/resources** as follows:
         
-{{< highlight sql >}}
+```sql
 CREATE TABLE users
 (
     id int(11) NOT NULL AUTO_INCREMENT,
@@ -174,19 +174,19 @@ CREATE TABLE users
     email varchar(100) DEFAULT NULL,
     PRIMARY KEY (id)
 );
-{{< / highlight >}}
+```
         
 Create **data.sql** in **src/main/resources** as follows:
 
-{{< highlight sql >}}
+```sql
 insert into users(id, name, email) values(1,'Siva','siva@gmail.com');
 insert into users(id, name, email) values(2,'Prasad','prasad@gmail.com');
 insert into users(id, name, email) values(3,'Reddy','reddy@gmail.com');
-{{< / highlight >}}
+```
         
 Now you can inject **JdbcTemplate** into **UserRepository** as follows:
 
-{{< highlight java >}}
+```java
 @Repository
 public class UserRepository
 {
@@ -238,11 +238,11 @@ class UserRowMapper implements RowMapper<User>
         return user;
     }
 }
-{{< / highlight >}}
+```
         
 Create the entry point **SpringbootJdbcDemoApplication.java**.
 
-{{< highlight java >}}
+```java
 @SpringBootApplication
 public class SpringbootJdbcDemoApplication
 {
@@ -251,11 +251,11 @@ public class SpringbootJdbcDemoApplication
         SpringApplication.run(SpringbootJdbcDemoApplication.class, args);
     }
 }
-{{< / highlight >}}
+```
         
 Let us create a JUnit Test class to test our UserRepository methods.
 
-{{< highlight java >}}
+```java
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(SpringbootJdbcDemoApplication.class)
 public class SpringbootJdbcDemoApplicationTests
@@ -286,14 +286,12 @@ public class SpringbootJdbcDemoApplicationTests
         assertEquals("john@gmail.com", newUser.getEmail());
     }
 }
-{{< / highlight >}}
+```
         
 
-<blockquote class="tr_bq">
-    <span style="color: red;">By default SpringBoot features such as external properties, logging etc are available in 
+> By default SpringBoot features such as external properties, logging etc are available in 
     the ApplicationContext only if you use <b>SpringApplication</b>. So, SpringBoot provides <b>@SpringApplicationConfiguration</b> annotation 
-    to configure the ApplicationContext for tests which uses <b>SpringApplication </b>behind the scenes</span>.
-</blockquote>
+    to configure the ApplicationContext for tests which uses <b>SpringApplication </b>behind the scenes.
 
 We have learned how to get started quickly with Embedded database. 
 
@@ -301,12 +299,12 @@ We have learned how to get started quickly with Embedded database.
 
 We can configure the database properties in application.properties file so that SpringBoot will use those jdbc parameters to configure DataSource bean.
 
-{{< highlight properties >}}
+```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
 spring.datasource.password=admin
-{{< / highlight >}}
+```
         
 For any reason if you want to have more control and configure **DataSource** bean by yourself then you can configure DataSource bean in a Configuration class. If you register DataSource bean then SpringBoot will not configure DataSource automatically using AutoConfiguration.
 
@@ -323,7 +321,7 @@ SpringBoot checks the availability of the following classes and uses the first o
 
 For example, If you want to use **HikariDataSource** then you can exclude **tomcat-jdbc** and add **HikariCP** dependency as follows:
 
-{{< highlight xml >}}
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -339,7 +337,7 @@ For example, If you want to use **HikariDataSource** then you can exclude **tomc
     <groupId>com.zaxxer</groupId>
     <artifactId>HikariCP</artifactId>
 </dependency>
-{{< / highlight >}}
+```
         
 With this dependency configuration SpringBoot will use **HikariCP** to configure **DataSource** bean.
 

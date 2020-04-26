@@ -7,20 +7,13 @@ url: /videos/
 tags: ["videos"]
 categories: ["videos"]
 ---
-## <a href="https://www.youtube.com/channel/UCaD610N2vvYzBuhxwCOdxqw" target="_blank">My YouTube Channel </a>
+## [My YouTube Channel](https://www.youtube.com/channel/UCaD610N2vvYzBuhxwCOdxqw)
 
 ## Part 1 : Introduction To SpringBoot
 
-<div align="center">
-    <iframe width="620" height="315"
-        src="https://www.youtube.com/embed/TDOH-VHfejI">
-    </iframe>
-</div>
+{{< youtube TDOH-VHfejI >}}
 
 ## Part-2 : Using SpringBoot with Tomcat Jetty Undertow servers
 
-<div align="center">
-    <iframe width="620" height="315"
-        src="https://www.youtube.com/embed/C0Vm1w5EnW4">
-    </iframe>
-</div>
+{{< youtube C0Vm1w5EnW4 >}}
+

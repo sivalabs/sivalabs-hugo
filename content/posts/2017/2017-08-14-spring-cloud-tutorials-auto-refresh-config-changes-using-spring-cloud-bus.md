@@ -32,16 +32,16 @@ In previous post we have created **catalog-service** as a SpringBoot application
   
 Let us add **Cloud Bus AMQP** starter to **catalog-service/pom.xml**.
 
-{{< highlight xml >}}
+```xml
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 </dependency>
-{{< / highlight >}}
+```
 
 We are going to use RabbitMQ as message broker to broadcast config changes. We can install RabbitMQ on our local machine or run in a docker container. I am going to run rabbitmq in docker container using the following **docker-compose.yml** configuration.
 
-{{< highlight yaml >}}
+```yml
 version: '2'
 
 services:
@@ -54,7 +54,7 @@ services:
       ports:
         - "5672:5672"
         - "15672:15672"
-{{< / highlight >}}
+```
 
 Now run **docker-compose up** to start rabbitmq container.
 
@@ -62,12 +62,12 @@ Next we need to configure the RabbitMQ server details in catalog-service propert
 
 **config-repo/catalogservice.properties**
 
-{{< highlight properties >}}
+```properties
 spring.rabbitmq.host=localhost
 spring.rabbitmq.port=5672
 spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
-{{< / highlight >}}
+```
 
 Now we can run **catalog-service** and to reload the configuration changes we can trigger POST &#8211; **http://localhost:8181/bus/refresh** instead of **http://localhost:8181/refresh**.
 

@@ -24,7 +24,7 @@ Download the ustore theme zip file from <a href="https://www.freshdesignweb.com/
 
 Create Site layout thymeleaf template **jcart-site/src/main/resources/templates/layout/mainLayout.html** as follows:
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -143,11 +143,11 @@ Create Site layout thymeleaf template **jcart-site/src/main/resources/templates/
     
     </body>
 </html>
-{{</ highlight >}}
+```
 
 Now update our **home.html** template to use the layout as follows:
 
-{{< highlight html >}}
+```html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" 
 	  xmlns:th="http://www.thymeleaf.org"
@@ -165,6 +165,6 @@ Now update our **home.html** template to use the layout as follows:
     </body>
     
 </html>
-{{</ highlight >}}
+```
 
 Now run the application and point your browser to **https://localhost:8443/home** and you should be able to see the home page with all the layout content as well.

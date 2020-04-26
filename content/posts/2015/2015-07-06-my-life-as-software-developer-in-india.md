@@ -123,31 +123,30 @@ I also watched his "**Scala in 2018**" talk <https://www.youtube.com/watch?v=DBu
 I also love the talks by **Uncle Bob** <https://blog.8thlight.com/uncle-bob/archive.html>, **Martin Fowler** <http://martinfowler.com/>, **David Heinemeier Hansson (DHH)**. We can learn lot of things from their decades of experience.  
  
 I follow the talks and blogs of the awesome Java community leaders like  
- <span style="white-space: pre;"></span>**Antonio Goncalves** @agoncal&nbsp;<http://antoniogoncalves.org/>  
- <span style="white-space: pre;"></span>**Adam Bien&nbsp;**@AdamBien&nbsp;<http://www.adam-bien.com/roller/abien/>  
- <span style="white-space: pre;"></span>**Reza Rahman** @reza_rahman <https://blogs.oracle.com/reza/>  
- <span style="white-space: pre;"></span>**Arun Gupta** @arungupta&nbsp;<http://blog.arungupta.me/>  
- <span style="white-space: pre;"></span>**Josh Long** @starbuxman  
- <span style="white-space: pre;"></span>**Phil Webb** @phillip_webb  
- <span style="white-space: pre;"></span>**Cagatay Civici** @cagataycivici <http://www.primefaces.org/>  
- <span style="white-space: pre;"></span>**Oliver Gierke** @olivergierke <http://olivergierke.de/>  
- <span style="white-space: pre;"></span>**David Blevins** @dblevins <http://www.tomitribe.com/blog/>  
- <span style="white-space: pre;"></span>and many more.  
- <span style="white-space: pre;"></span>  
+* **Antonio Goncalves** @agoncal&nbsp;<http://antoniogoncalves.org/>  
+* **Adam Bien&nbsp;**@AdamBien&nbsp;<http://www.adam-bien.com/roller/abien/>  
+* **Reza Rahman** @reza_rahman <https://blogs.oracle.com/reza/>  
+* **Arun Gupta** @arungupta&nbsp;<http://blog.arungupta.me/>  
+* **Josh Long** @starbuxman  
+* **Phil Webb** @phillip_webb  
+* **Cagatay Civici** @cagataycivici <http://www.primefaces.org/>  
+* **Oliver Gierke** @olivergierke <http://olivergierke.de/>  
+* **David Blevins** @dblevins <http://www.tomitribe.com/blog/>  
+* and many more.  
+
 I don't miss even a single blog post or tweet from the rock star bloggers like  
- <span style="white-space: pre;"></span>**Baeldung** @baeldung <http://www.baeldung.com/>  
- <span style="white-space: pre;"></span>**Petri Kainulainen** @petrikainulaine <http://www.petrikainulainen.net/>  
- <span style="white-space: pre;"></span>**Vlad Mihalcea** @vlad_mihalcea <http://vladmihalcea.com/>  
- <span style="white-space: pre;"></span>**Abhishek Gupta** @abhi_tweeter <https://abhirockzz.wordpress.com/>  
- <span style="white-space: pre;"></span>**Manuel Jordan** @dr_pompeii <http://manueljordanelera.blogspot.in/2014/06/manuel-jordan.html>  
- <span style="white-space: pre;"></span>**Lukas Eder** @lukaseder [http://blog.jooq.org][1]  
- <span style="white-space: pre;"></span>**Trisha Gee** @trisha_gee [http://trishagee.github.io][2]  
- <span style="white-space: pre;"></span>**Thorben Janssen** @thjanssen123 &nbsp;[http://www.thoughts-on-java.org][3]  
- <span style="white-space: pre;"></span>**Nicolas Frankel** @nicolas_frankel [http://blog.frankel.ch][4]  
- <span style="white-space: pre;"></span>and many more.
+* **Baeldung** @baeldung <http://www.baeldung.com/>  
+* **Petri Kainulainen** @petrikainulaine <http://www.petrikainulainen.net/>  
+* **Vlad Mihalcea** @vlad_mihalcea <http://vladmihalcea.com/>  
+* **Abhishek Gupta** @abhi_tweeter <https://abhirockzz.wordpress.com/>  
+* **Manuel Jordan** @dr_pompeii <http://manueljordanelera.blogspot.in/2014/06/manuel-jordan.html>  
+* **Lukas Eder** @lukaseder [http://blog.jooq.org][1]  
+* **Trisha Gee** @trisha_gee [http://trishagee.github.io][2]  
+* **Thorben Janssen** @thjanssen123 &nbsp;[http://www.thoughts-on-java.org][3]  
+* **Nicolas Frankel** @nicolas_frankel [http://blog.frankel.ch][4]  
+* and many more.
 
 I love this whole awesome Java community!!  
- <span style="white-space: pre;"></span>
 
 ## Looking towards better future
 
@@ -156,9 +155,7 @@ In recent years things are getting changed. Now Indian IT industry is not comple
 Developer should become more professional and have guts to say "**NO**" when they asked to code which they can't implement with good quality.
 
 Anyway, over the years I learned Software Development is not all about technology. The key part is understanding the business domain and communicating with the other people.  
-  <span style="white-space: pre;"></span>  
 Hoping things will get better 🙂  
- <span style="white-space: pre;"></span>
 
  [1]: http://blog.jooq.org/
  [2]: http://trishagee.github.io/

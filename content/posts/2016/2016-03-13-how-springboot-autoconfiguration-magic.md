@@ -26,7 +26,7 @@ You can externalize the database connection parameters into properties files and
 
 To address this problem Spring 3.1 introduced the concept of **Profiles**. You can register multiple beans of the same type and associate them to one or more profiles. When you run the application you can activate the desired profiles and beans associated with the activated profiles only will be registered.
 
-{{< highlight java >}}
+```java
 @Configuration
 public class AppConfig
 {
@@ -42,7 +42,7 @@ public class AppConfig
         ...
     }
 }
-{{< / highlight >}}
+```
 
 Then you can specify the active profile using System Property **-Dspring.profiles.active=DEV**
 
@@ -70,7 +70,8 @@ If the application is started using **java -jar myapp.jar -DdbType=MySQL** then 
 
 Suppose we have **UserDAO** interface and **JdbcUserDAO**, **MongoUserDAO** implementations as follows:
 
-{{< highlight java >}}public interface UserDAO
+```java
+public interface UserDAO
 {
     List<String> getAllUserNames();
 }
@@ -94,11 +95,11 @@ public class MongoUserDAO implements UserDAO
         return Arrays.asList("Bond","James","Bond");
     }
 }
-{{< / highlight >}}
+```
 
 We can implement the Condition **MySQLDatabaseTypeCondition** to check whether the System Property **dbType** is **&#8220;MYSQL&#8221;** as follows:
 
-{{< highlight java >}}
+```java
 public class MySQLDatabaseTypeCondition implements Condition
 {
     @Override
@@ -108,11 +109,11 @@ public class MySQLDatabaseTypeCondition implements Condition
         return (enabledDBType != null && enabledDBType.equalsIgnoreCase("MYSQL"));
     }
 }
-{{< / highlight >}}
+```
 
 We can implement the Condition **MongoDBDatabaseTypeCondition** to check whether the System Property **dbType** is &#8220;**MONGODB**&#8221; as follows:
 
-{{< highlight java >}}
+```java
 public class MongoDBDatabaseTypeCondition implements Condition
 {
     @Override
@@ -122,11 +123,11 @@ public class MongoDBDatabaseTypeCondition implements Condition
         return (enabledDBType != null && enabledDBType.equalsIgnoreCase("MONGODB"));
     }
 }
-{{< / highlight >}}
+```
 
 Now we can configure both **JdbcUserDAO** and **MongoUserDAO** beans conditionally using **@Conditional** as follows:
 
-{{< highlight java >}}
+```java
 @Configuration
 public class AppConfig
 {
@@ -142,7 +143,7 @@ public class AppConfig
         return new MongoUserDAO();
     }
 }
-{{< / highlight >}}
+```
 
 If we run the application like **java -jar myapp.jar -DdbType=MYSQL** then only **JdbcUserDAO** bean will be registered.
   
@@ -154,7 +155,7 @@ Suppose we want to register **MongoUserDAO** bean only when **MongoDB** java dri
 
 To accomplish that we can create Conditions to check the presence or absence of MongoDB driver class **&#8220;com.mongodb.Server&#8221;** as follows:
 
-{{< highlight java >}}
+```java
 public class MongoDriverPresentsCondition implements Condition
 {
     @Override
@@ -182,7 +183,7 @@ public class MongoDriverNotPresentsCondition implements Condition
         }
     }
 }
-{{< / highlight >}}
+```
 
 We just have seen how to register beans conditionally based on presence/absence of a class in classpath.
 
@@ -190,7 +191,7 @@ What if we want to register **MongoUserDAO** bean only if no other Spring bean o
 
 We can create a Condition to check if there is any existing bean of a certain type as follows:
 
-{{< highlight java >}}
+```java
 public class UserDAOBeanNotPresentsCondition implements Condition
 {
     @Override
@@ -200,13 +201,13 @@ public class UserDAOBeanNotPresentsCondition implements Condition
         return (userDAO == null);
     }
 }
-{{< / highlight >}}
+```
 
 What if we want to register **MongoUserDAO** bean only if property **app.dbType=MONGO** is set in properties placeholder configuration file?
 
 We can implement that Condition as follows:
 
-{{< highlight java >}}
+```java
 public class MongoDbTypePropertyCondition implements Condition
 {
     @Override
@@ -218,13 +219,13 @@ public class MongoDbTypePropertyCondition implements Condition
         return "MONGO".equalsIgnoreCase(dbType);
     }
 }
-{{< / highlight >}}
+```
 
 We have just seen how to implement various types of Conditions.
 
 But there is even more elegant way to implement Conditions using Annotations. Instead of creating a Condition implementation for both MYSQL and MongoDB, we can create aDatabaseType annotation as follows:
 
-{{< highlight java >}}
+```java
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Conditional(DatabaseTypeCondition.class)
@@ -232,11 +233,11 @@ public @interface DatabaseType
 {
     String value();
 }
-{{< / highlight >}}
+```
 
 Then we can implement **DatabaseTypeCondition** to use the **DatabaseType** value to determine whether to enable or disable bean registration as follows:
 
-{{< highlight java >}}
+```java
 public class DatabaseTypeCondition implements Condition
 {
     @Override
@@ -249,11 +250,12 @@ public class DatabaseTypeCondition implements Condition
         return (enabledDBType != null && type != null && enabledDBType.equalsIgnoreCase(type));
     }
 }
-{{< / highlight >}}
+```
 
 Now we can use the **@DatabaseType** annotation on our bean definitions as follows:
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 @ComponentScan
 public class AppConfig
 {
@@ -268,7 +270,7 @@ public class AppConfig
         return new MongoUserDAO();
     }
 }
-{{< / highlight >}}
+```
 
 Here we are getting the metadata from **DatabaseType** annotation and checking against the System Property **dbType** value to determine whether to enable or disable the bean registration.
 
@@ -290,14 +292,15 @@ The key to the SpringBoot’s auto-configuration magic is **@EnableAutoConfigura
 Typically we annotate our Application entry point class with either **@SpringBootApplication** or 
 if we want to customize the defaults we can use the following annotations:
 
-{{< highlight java >}}@Configuration
+```java
+@Configuration
 @EnableAutoConfiguration
 @ComponentScan
 public class Application
 {
 
 }
-{{< / highlight >}}
+```
 
 The **@EnableAutoConfiguration** annotation enables the auto-configuration of Spring **ApplicationContext** by scanning the classpath components and registers the beans that are matching various Conditions.&nbsp;
 
@@ -307,7 +310,7 @@ Typically **AutoConfiguration** classes are annotated with **@Configuration** to
 
 For example consider **org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration** class.
 
-{{< highlight java >}}
+```java
 @Configuration
 @ConditionalOnClass({ DataSource.class, EmbeddedDatabaseType.class })
 @EnableConfigurationProperties(DataSourceProperties.class)
@@ -369,7 +372,7 @@ public class DataSourceAutoConfiguration
     ...
     ...
 }
-{{< / highlight >}}
+```
 
 Here **DataSourceAutoConfiguration** is annotated with **@ConditionalOnClass({ DataSource.class,EmbeddedDatabaseType.class })** 
 which means that Auto Configuration of beans within **DataSourceAutoConfiguration** will be considered only if **DataSource.class** 
@@ -378,7 +381,7 @@ and **EmbeddedDatabaseType.class** classes are available on classpath.
 The class is also annotated with **@EnableConfigurationProperties(DataSourceProperties.class)** which enables binding the properties 
 in **application.properties** to the properties of **DataSourceProperties** class automatically.
 
-{{< highlight java >}}
+```java
 @ConfigurationProperties(prefix = DataSourceProperties.PREFIX)
 public class DataSourceProperties implements BeanClassLoaderAware, EnvironmentAware, InitializingBean {
 
@@ -392,16 +395,16 @@ public class DataSourceProperties implements BeanClassLoaderAware, EnvironmentAw
     ...
     //setters and getters
 }
-{{< / highlight >}}
+```
 
 With this configuration all the properties that starts with **spring.datasource.*** will be automatically binds to **DataSourceProperties** object.
 
-{{< highlight java >}}
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
 spring.datasource.password=secret
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
-{{< / highlight >}}
+```
 
 You can also see some inner classes and bean definition methods that are annotated with SpringBoot’s Conditional annotations 
 such as **@ConditionalOnMissingBean, @ConditionalOnClass and @ConditionalOnProperty** etc.

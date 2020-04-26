@@ -24,15 +24,17 @@ We already have **Role** JPA entity created and some sample data is already inse
 
 First let us create a Spring Data JPA repository for Role entity.
 
-{{< highlight java >}}public interface RoleRepository extends JpaRepository<Role, Integer>
+```java
+public interface RoleRepository extends JpaRepository<Role, Integer>
 {
 	Role findByName(String name);
 }
-{{</ highlight >}}
+```
 
 In **SecurityService** implement a method to return all the permissions.
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class SecurityService
 {
@@ -47,13 +49,14 @@ public class SecurityService
 	}
 
 }
-{{</ highlight >}}
+```
 
 Create a SpringMVC controller to handle all Role related actions.
   
 This action should be available to only users who have &#8220;**ROLE\_MANAGE\_ROLES**&#8220;, so let us add @Secured annotation to **RoleController**.
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 @Secured(SecurityUtil.MANAGE_ROLES)
 public class RoleController extends JCartAdminBaseController
 {
@@ -73,11 +76,12 @@ public class RoleController extends JCartAdminBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Create thymeleaf view **jcart-admin/src/main/resources/templates/roles/roles.html**.
 
-  {{< highlight html >}}<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -133,7 +137,7 @@ Create thymeleaf view **jcart-admin/src/main/resources/templates/roles/roles.htm
 	
 </body>
 </html>
-{{</ highlight >}}
+```
 
 Observe that though we have not yet implemented functionality for adding new Role or view/edit Role we have added &#8220;New Role&#8221; button and links to view/edit Role info which we are going to implement next.
 
@@ -149,7 +153,8 @@ Also we want to validate the New Role form to check for any missing mandatory de
 
 First let us implement **RoleValidator** **jcart-admin/src/main/java/com/sivalabs/jcart/admin/web/validators/RoleValidator.java** as follows:
 
-{{< highlight java >}}package com.sivalabs.jcart.admin.web.validators;
+```java
+package com.sivalabs.jcart.admin.web.validators;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -186,7 +191,7 @@ public class RoleValidator implements Validator
 		}
 	}	
 }
-{{</ highlight >}}
+```
 
 One thing to notice here is we already have **BeanValidation** annotation **@NotEmpty** on **&#8220;name&#8221;** property which SpringMVC automatically checks for. But we also need to check whether the new is already in use or not by talking to database.
 
@@ -194,14 +199,16 @@ Also observe that we are using message keys from ResourceBundle **messages.prope
 
 Add the following properties to **messages.properties**
 
-{{< highlight java >}}error.required={0} is required
+```properties
+error.required={0} is required
 error.invalid={0} is invalid
 error.exists={0} already exists
-{{</ highlight >}}
+```
 
 Now we need to implement **getRoleByName()** and **createRole()** methods in our **SecurityService**.
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class SecurityService
 {
@@ -232,13 +239,14 @@ public class SecurityService
 	}
 	
 }
-{{</ highlight >}}
+```
 
 I hope these 2 methods are self explanatory.
 
 Now let us implement the request handler methods in **RoleController** as follows:
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 @Secured(SecurityUtil.MANAGE_ROLES)
 public class RoleController extends JCartAdminBaseController
 {
@@ -276,7 +284,7 @@ public class RoleController extends JCartAdminBaseController
 	}
 
 }
-{{</ highlight >}}
+```
 
 We need to add List for both create Role and update Role forms as well. So added as a separate method with **@ModelAttribute** instead of adding List to Model in 2 places.
 
@@ -284,7 +292,8 @@ We need to add List for both create Role and update Role forms as well. So added
 
 Let us create the CreateRole thymeleaf view **jcart-admin/src/main/resources/templates/roles/create_role.html** as follows:
 
-  {{< highlight html >}}<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       layout:decorator="layout/mainLayout">
@@ -338,19 +347,20 @@ Let us create the CreateRole thymeleaf view **jcart-admin/src/main/resources/tem
 	
 </body>    
 </html>
-{{</ highlight >}}
+```
 
 ### Few things to observe:
 
-  * We are applying css error class if a field has error using th:classappend=&#8221;${#fields.hasErrors(&#8216;name&#8217;)}? &#8216;has-error'&#8221;
-  * Showing error if a field has error using <p th:if=&#8221;${#fields.hasErrors(&#8216;name&#8217;)}&#8221; th:errors=&#8221;*{name}&#8221; th:class=&#8221;text-red&#8221;>Incorrect data</p>
+  * We are applying css error class if a field has error using th:classappend=&#8221;${#fields.hasErrors(&#8216;name')}? &#8216;has-error'&#8221;
+  * Showing error if a field has error using <p th:if=&#8221;${#fields.hasErrors(&#8216;name')}&#8221; th:errors=&#8221;*{name}&#8221; th:class=&#8221;text-red&#8221;>Incorrect data</p>
   * We are iterating through List<Permission> showing them as checkboxes and binding the selected checkboxes (Permission Ids) to &#8220;id&#8221; property of List<Permission> permissions property in Role as follows:
 
-  {{< highlight html >}}<p th:each="permission,rowStat : ${permissionsList}">
+```html
+<p th:each="permission,rowStat : ${permissionsList}">
 	<input type="checkbox" th:field="*{permissions[__${rowStat.index}__].id}" th:value="${permission.id}" />
 	<label th:text="${permission.name}">Permission</label>
 </p>
-{{</ highlight >}}
+```
 
 Now you can run the application and see the New Role creation working.
 
@@ -362,7 +372,8 @@ When user clicks on Edit button in List Roles screen we will take the user to Ed
 
 Let us implement the SecurityService methods **getRoleById()** and **updateRole()** as follows:
 
-{{< highlight java >}}@Service
+```java
+@Service
 @Transactional
 public class SecurityService
 {
@@ -391,11 +402,12 @@ public class SecurityService
 		return roleRepository.findOne(id);
 	} 
 }
-{{</ highlight >}}
+```
 
 Implement the EditRole and Update Role handler methods as follows:
 
-{{< highlight java >}}@Controller
+```java
+@Controller
 @Secured(SecurityUtil.MANAGE_ROLES)
 public class RoleController extends JCartAdminBaseController
 {
@@ -436,13 +448,14 @@ public class RoleController extends JCartAdminBaseController
 	}
 	
 }
-{{</ highlight >}}
+```
 
 Note that we are iterating through allPermissions and preparing another list to match indexes. Looks weird to me..but&#8230;!!!.
 
 Create the edit Role thymeleaf view **jcart-admin/src/main/resources/templates/roles/edit_role.html** as follows:
 
-  {{< highlight html >}}<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
 	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
       layout:decorator="layout/mainLayout">
@@ -493,6 +506,6 @@ Create the edit Role thymeleaf view **jcart-admin/src/main/resources/templates/r
 	
 </body>    
 </html>
-{{</ highlight >}}
+```
 
 Now we have completed all the actions related to Role management.

@@ -91,14 +91,14 @@ We can install various softwares like **Groovy**, **Grails**, **Gradle** etc you
 
 <img class="size-full aligncenter" src="/images/sdkman.png" alt="sdkman" />
 
-{{< highlight bash >}}
+```bash
 curl -s http://get.sdkman.io | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 sdk install groovy
 sdk install grails
 sdk install gradle
-{{</ highlight  >}}
+```
 
 **Install MySQL server**
   
@@ -120,11 +120,11 @@ Installing NodeJS become a little bit complicated because it is going through so
   
 You can install latest NodeJS using following commands:
 
-{{< highlight bash >}}
+```bash
 sudo apt-get install curl
 curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
 sudo apt-get install nodejs
-{{</ highlight  >}}
+```
 
 For further details refer https://github.com/nodejs/node-v0.x-archive/wiki/Installing-Node.js-via-package-manager
 
@@ -138,13 +138,13 @@ Install yeoman `sudo npm install -g yo bower grunt-cli gulp`
   
 **Install various generators**
 
-{{< highlight bash >}}  
+```bash  
 sudo npm install -g generator-webapp
 sudo npm install -g generator-angular
 sudo npm install -g generator-jhipster
 sudo npm install -g generator-meanjs
 sudo npm install -g cordova ionic
-{{</ highlight  >}}
+```
 
 **Installing Ruby and RubyOnRails**
   
@@ -156,7 +156,7 @@ You can find the very detailed instructions on how to install Ruby/RubyOnRails a
 
 Just for the sake of quick reference I am repeating the steps here:
 
-{{< highlight bash >}}
+```bash
 sudo apt-get update
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev`
 
@@ -181,7 +181,7 @@ gem install bundler`
 
 gem install rails -v 4.2.4
 
-{{</ highlight  >}}
+```
 
 **Installing Jekyll**
   

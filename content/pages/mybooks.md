@@ -10,13 +10,15 @@ tags: ["books"]
 ---
 
 ## Beginning Spring Boot 2
-<img src="/images/ApressSpringBootBook.jpg" alt="Beginning Spring Boot 2" class="alignnone size-medium"  width="250" height="200"/><br />
+
+{{< figure src="/images/ApressSpringBootBook.jpg" alt="Beginning Spring Boot 2" 
+    class="alignnone size-medium"  width="250" height="200" >}}
 
 ## SpringBoot : Learn By Example
-<img src="/images/sblbe.png" alt="SpringBoot : Learn By Example"  width="250" height="200"/><br />
+{{< figure src="/images/sblbe.png" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
 ## PrimeFaces Beginners Guide
-<img src="/images/0698OS.jpg"  width="250" height="200" /><br />
+{{< figure src="/images/0698OS.jpg"  width="250" height="200" >}}
 
 ## Java Persistence with MyBatis3
-<img src="/images/6801OScov.jpg"  width="250" height="200" /><br />
+{{< figure src="/images/6801OScov.jpg"  width="250" height="200" >}}

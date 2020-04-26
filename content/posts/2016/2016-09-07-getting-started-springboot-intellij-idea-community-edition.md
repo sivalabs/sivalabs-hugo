@@ -14,7 +14,7 @@ tags:
   - SpringBoot
 
 ---
-We can use **Intellij IDEA Community Edition** for working with **SpringBoot** applications as we don&#8217;t need support for configuring servers like Tomcat, Wildlfy etc and can simply run the applications by running **main()** method.
+We can use **Intellij IDEA Community Edition** for working with **SpringBoot** applications as we don't need support for configuring servers like Tomcat, Wildlfy etc and can simply run the applications by running **main()** method.
 
 However, there is no provision in Intellij IDEA Community Edition to create SpringBoot application directly, the way it supports in Ultimate Edition.
 
@@ -40,7 +40,7 @@ In the **New Project** Dialog, you can see **User-defined** section and when you
   
 Select the **SpringBootBasic** template we created earlier and provide the **project name** and click **Finish**.
 
-Well, we won&#8217;t get any fancy Spring support features like Ultimate Edition provides, but it will help us to get started quickly without requiring us to manually create Maven/Gradle project, configure <parent> etc etc.
+Well, we won't get any fancy Spring support features like Ultimate Edition provides, but it will help us to get started quickly without requiring us to manually create Maven/Gradle project, configure <parent> etc etc.
   
 Of course, it is not specific to SpringBoot only, we can create templates for any of our favorite tech stacks.
 
