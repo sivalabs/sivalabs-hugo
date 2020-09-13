@@ -7,8 +7,7 @@ date: 2019-06-24T07:59:17+05:30
 url: /2019/06/kafka-tutorial-producer-consumer-using-spring-boot/
 categories:
   - Kafka
-tags:
-  - Kafka, SpringBoot, Spring
+tags: [Kafka, SpringBoot, Spring]
 ---
 In the previous post [Kafka Tutorial - Java Producer and Consumer]({{< relref "2019-06-21-kafka-tutorial-java-producer-consumer.md" >}}) we have learned how to implement a Producer and Consumer for a Kafka topic using plain Java Client API.
 

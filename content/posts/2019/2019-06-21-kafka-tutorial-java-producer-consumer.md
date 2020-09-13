@@ -7,8 +7,7 @@ date: 2019-06-21T07:59:17+05:30
 url: /2019/06/kafka-tutorial-java-producer-consumer/
 categories:
   - Kafka
-tags:
-  - Kafka
+tags: [Kafka]
 ---
 
 [Kafka](https://kafka.apache.org/), depending on how you use it, can be seen as a Message Broker, Event Store or a Streaming Platform etc. Kafka became a preferred technology for many of the modern applications because of various reasons like:

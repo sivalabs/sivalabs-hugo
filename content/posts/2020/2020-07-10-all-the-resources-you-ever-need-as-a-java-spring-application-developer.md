@@ -8,8 +8,7 @@ date: 2020-07-10T04:59:17+05:30
 url: /2020/07/all-the-resources-you-ever-need-as-a-java-spring-application-developer/
 categories:
   - Java
-tags:
-  - Spring, SpringBoot, Java
+tags: [Spring, SpringBoot, Java]
 ---
 
 Spring
