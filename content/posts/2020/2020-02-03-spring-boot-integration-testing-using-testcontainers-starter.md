@@ -7,8 +7,7 @@ date: 2020-02-03T04:59:17+05:30
 url: /2020/02/spring-boot-integration-testing-using-testcontainers-starter/
 categories:
   - SpringBoot
-tags:
-  - SpringBoot, Testcontainers
+tags: [SpringBoot, Testcontainers]
 ---
 
 One of the many reasons for huge popularity of Spring and SpringBoot is 

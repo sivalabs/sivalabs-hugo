@@ -7,8 +7,7 @@ date: 2020-07-02T04:59:17+05:30
 url: /2020/07/golang-from-a-java-developer-perspective/
 categories:
   - GoLang
-tags:
-  - GoLang, Java
+tags: [GoLang, Java]
 ---
 
 Gone are the days we can call ourselves as Java developer, .NET developer, Python developer etc.

@@ -7,8 +7,7 @@ date: 2019-10-20T07:59:17+05:30
 url: /2019/10/testing-rest-apis-with-postman-newman/
 categories:
   - Testing
-tags:
-  - Postman, Newman, REST
+tags: [Postman, Newman, REST]
 ---
 
 [**Postman**](https://www.getpostman.com/) is the most popular tool for testing REST APIs.

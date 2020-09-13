@@ -7,8 +7,7 @@ date: 2019-10-07T07:59:17+05:30
 url: /2019/10/spring-boot-testing/
 categories:
   - SpringBoot
-tags:
-  - Spring, SpringBoot, Testing
+tags: [Spring, SpringBoot, Testing]
 ---
 
 **SpringBoot** is the most popular tech stack for building Java based REST APIs.

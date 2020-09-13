@@ -7,8 +7,7 @@ date: 2020-04-06T04:59:17+05:30
 url: /2020/04/what-i-learned-2020-week-14/
 categories:
   - Java
-tags:
-  - Java, Blogging
+tags: [Java, Blogging]
 ---
 
 It's been tough time for everyone due to the Corona virus situation. 

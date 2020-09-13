@@ -7,8 +7,7 @@ date: 2020-01-29T04:59:17+05:30
 url: /2020/01/creating-yeoman-based-springboot-generator/
 categories:
   - SpringBoot
-tags:
-  - SpringBoot, Yeoman
+tags: [SpringBoot, Yeoman]
 ---
 
 I have been working with Spring and [SpringBoot](https://spring.io/projects/spring-boot) for many years and 

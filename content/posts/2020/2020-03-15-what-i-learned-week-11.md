@@ -7,8 +7,7 @@ date: 2020-03-15T04:59:17+05:30
 url: /2020/03/what-i-learned-2020-week-11/
 categories:
   - Java
-tags:
-  - Java, Blogging
+tags: [Java, Blogging]
 ---
 
 I come across many blog posts from various sources like [Twitter](https://twitter.com/sivalabs), 

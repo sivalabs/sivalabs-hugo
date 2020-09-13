@@ -8,8 +8,7 @@ date: 2020-08-06T04:59:17+05:30
 url: /2020/08/the-lost-art-of-simple-application-development/
 categories:
   - Architecture
-tags:
-  - Thoughts, Architecture, Simplicity
+tags: [Thoughts, Architecture, Simplicity]
 ---
 
 I am a software developer working in India. Many IT companies in India (at least the companies I worked for) 

@@ -7,8 +7,7 @@ date: 2019-05-14T07:59:17+05:30
 url: /2019/05/spring-boot-best-practices/
 categories:
   - SpringBoot
-tags:
-  - Spring, SpringBoot, BestPractices
+tags: [Spring, SpringBoot, BestPractices]
 ---
 
 I have been working with [SpringBoot](https://spring.io/projects/spring-boot) for many years and over the time I worked with many SpringBoot based codebases.
