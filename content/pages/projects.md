@@ -20,52 +20,16 @@ $ yo springboot
 
 For more information on features see https://github.com/sivaprasadreddy/generator-springboot
 
-## [2. TodoList](https://github.com/sivaprasadreddy/todo-list)
+## [2. LocalStack SpringBoot Starter](https://github.com/sivalabs/localstack-spring-boot-starter)
 
-A simple TodoList application written in **Java** using **SpringBoot** and **ReactJS** frontend.
-This is a playground application to try out new features, reference to blog articles.
+Localstack-spring-boot-starter is a SpringBoot starter for LocalStack auto-configuration. 
+This starter will spin up the Localstack docker container using Testcontainers and auto-configure beans 
+such as AmazonS3, AmazonSQSAsync, etc.
 
-### Tech Stack
+For more information see https://github.com/sivalabs/localstack-spring-boot-starter
 
-* Java 8
-* SpringBoot, WebFlux
-* MongoDB
-* ReactJS, Redux, React Router
-* Maven, JUnit5, Gatling
-* Jenkins, TravisCI
-* Docker, docker-compose
-* Grafana, Prometheus, ELK
+## [3. SpringBoot JWT Security Starter](https://github.com/sivalabs/spring-boot-jwt-security-starter)
 
-For more information see https://github.com/sivaprasadreddy/todo-list
+This is a SpringBoot starter to provide JWT token based security auto-configuration.
 
-## [3. BookMarker](https://github.com/sivaprasadreddy/bookmarker)
-
-BookMarker is a bookmarking application created using Kotlin, SpringBoot, VueJS.
-
-### Tech Stack
-
-* Kotlin
-* SpringBoot
-* VueJS
-* Maven, JUnit5, Gatling
-* Jenkins, TravisCI
-* Docker, docker-compose
-* Grafana, Prometheus, ELK
-
-For more information see https://github.com/sivaprasadreddy/bookmarker
-
-## [4. shoppingcart](https://github.com/sivaprasadreddy/shoppingcart)
-
-springcart is a shopping cart application developed using microservices architecture 
-with SpringBoot and SpringCloud.
-
-### Tech Stack
-
-* Java
-* SpringBoot, SpringCloud
-* Maven, JUnit5, Gatling
-* Jenkins, TravisCI
-* Docker, docker-compose
-* Grafana, Prometheus, ELK
-
-For more information see https://github.com/sivaprasadreddy/shoppingcart
+For more information see https://github.com/sivalabs/spring-boot-jwt-security-starter

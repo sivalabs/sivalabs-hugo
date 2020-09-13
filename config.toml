@@ -14,6 +14,19 @@ pygmentsCodeFences = true
   category = "categories"
   tag = "tags"
 
+[related]
+  includeNewer = true
+  threshold = 0
+  toLower = true
+
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+
+  [[related.indices]]
+    name = "date"
+    weight = 10
+
 [params]
   author = "Siva"
   subtitle = "My Experiments with Technology"

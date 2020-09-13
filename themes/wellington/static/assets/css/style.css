@@ -286,9 +286,9 @@ input,
 select,
 textarea {
 	color: #303030;
-	font-size: 17px;
+	font-size: 20px;
 	font-size: 1.0625rem;
-	font-family: 'Gudea', Tahoma, Arial;
+	/*font-family: 'Gudea', Tahoma, Arial;*/
 	line-height: 1.75;
 }
 
@@ -806,7 +806,7 @@ textarea {
 	text-decoration: none;
 	font-size: 17px;
 	font-size: 1.0625rem;
-	font-family: 'Gudea', Tahoma, Arial;
+	/*font-family: 'Gudea', Tahoma, Arial;*/
 }
 
 .main-navigation-menu > .menu-item-has-children > a:after {
@@ -1222,8 +1222,8 @@ textarea {
 }
 
 .entry-content {
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 20px;
+	font-size: 1.2rem;
 }
 
 .entry-content p:first-child {
@@ -1573,8 +1573,8 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 }
 
 .post-wrapper .type-post .entry-content {
-	font-size: 17px;
-	font-size: 1.0625rem;
+	font-size: 20px;
+	font-size: 1.2rem;
 }
 
 /* One Column Layout */
@@ -1763,12 +1763,16 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 --------------------------------------------------------------*/
 .footer-wrap {
 	background: #303030;
+	height: 90px;
+	text-align: center;
 }
 
 .site-footer .site-info {
 	float: left;
-	padding: 3em;
+	padding: 2em;
 	color: #fff;
+	height: 80px;
+	width: 100%;
 }
 
 .site-footer a:link,

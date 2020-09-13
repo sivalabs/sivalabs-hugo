@@ -4,13 +4,13 @@
 	<div class="nav-links">
 		{{- if .Paginator.HasPrev }}
 		<a class="prev page-numbers" href="{{ .Paginator.Prev.URL }}">
-			<i class="fa fa-chevron-left"></i> Newer posts
+			<i class="fa fa-chevron-left"></i> Newer Posts
 		</a>
 		{{- end }}
 		<!--<span class="page-numbers dots">{{ .Paginator.PageNumber }}/{{ .Paginator.TotalPages }}</span>-->
 		{{- if .Paginator.HasNext }}
 		<a class="next page-numbers" href="{{ .Paginator.Next.URL }}">
-			Older posts <i class="fa fa-chevron-right"></i>
+			Older Posts <i class="fa fa-chevron-right"></i>
 		</a>
 		{{- end }}
 	</div>
