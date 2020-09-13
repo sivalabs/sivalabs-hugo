@@ -1273,6 +1273,54 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 	margin-bottom: 0;
 }
 
+.search-form {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	width: 100%
+}
+
+.search-form .screen-reader-text {
+	display: none
+}
+
+.search-form .search-field {
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0;
+	padding: .5em 1.5em .5em .7em;
+	min-width: 300px;
+	width: 100%;
+	-webkit-appearance: none
+}
+
+.search-form .search-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: .65em .75em 0 .2em;
+	border: none;
+	cursor: pointer
+}
+
+.search-form .search-submit .genericon-search {
+	display: inline-block;
+	padding: .05em 0 .55em .45em;
+	color: #fff;
+	content: '\f400';
+	vertical-align: middle;
+	text-decoration: inherit;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
+	font-family: 'Genericons';
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
 /* Breadcrumbs */
 .breadcrumbs {
 	box-sizing: border-box;
