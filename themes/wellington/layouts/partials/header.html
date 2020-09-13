@@ -7,6 +7,17 @@
             <p class="site-description">My Experiments on Technology</p>
         </div>
         <div class="header-widgets clearfix">
+            <aside id="search-2" class="header-widget widget_search">
+                <form role="search" method="get" class="search-form" onsubmit="return searchSite(event)"
+                      >
+                    <label> <span class="screen-reader-text">Search for:</span>
+                        <input type="search" class="search-field" placeholder="Search for" value="" name="query" id="query" title="Search for:">
+                    </label>
+                    <button type="submit" class="search-submit"> <span class="genericon-search"></span>
+                        <span class="screen-reader-text">Search</span>
+                    </button>
+                </form>
+            </aside>
         </div>
     </div>
     <div id="main-navigation-wrap" class="primary-navigation-wrap">
