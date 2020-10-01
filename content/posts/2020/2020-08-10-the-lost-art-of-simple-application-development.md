@@ -1,7 +1,7 @@
 ---
 title: The lost art of "Simple Application Development"
 author: Siva
-images: ["/images/checklist.webp"]
+images: ["/preview-images/checklist.webp"]
 type: post
 draft: true
 date: 2020-08-06T04:59:17+05:30

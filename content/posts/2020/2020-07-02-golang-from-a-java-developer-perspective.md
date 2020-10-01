@@ -1,7 +1,7 @@
 ---
 title: GoLang from a Java developer perspective
 author: Siva
-images: ["/images/golang.webp"]
+images: ["/preview-images/golang.webp"]
 type: post
 date: 2020-07-02T04:59:17+05:30
 url: /2020/07/golang-from-a-java-developer-perspective/

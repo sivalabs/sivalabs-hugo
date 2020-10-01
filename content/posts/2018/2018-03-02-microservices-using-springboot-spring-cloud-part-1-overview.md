@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices using Spring Boot & Spring Cloud – Part 1 : Overview'
 author: Siva
-images: ["/images/e-learning.webp"]
+images: ["/preview-images/e-learning.webp"]
 type: post
 date: 2018-03-02T07:59:17+05:30
 url: /2018/03/microservices-using-springboot-spring-cloud-part-1-overview/

@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 2 : Configuration Management with Spring Cloud Config and Vault'
 author: Siva
-images: ["/images/configuration.webp"]
+images: ["/preview-images/configuration.webp"]
 type: post
 date: 2018-03-05T07:59:17+05:30
 url: /2018/03/microservices-part-2-configuration-management-spring-cloud-config-vault/

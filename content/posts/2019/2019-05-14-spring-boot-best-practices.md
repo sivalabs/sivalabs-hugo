@@ -1,7 +1,7 @@
 ---
 title: SpringBoot Best Practices
 author: Siva
-images: ["/images/spring-boot-1.webp"]
+images: ["/preview-images/spring-boot-1.webp"]
 type: post
 date: 2019-05-14T07:59:17+05:30
 url: /2019/05/spring-boot-best-practices/

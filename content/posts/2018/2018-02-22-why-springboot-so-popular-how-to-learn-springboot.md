@@ -1,7 +1,7 @@
 ---
 title: Why SpringBoot is so popular and how to learn SpringBoot effectively?
 author: Siva
-images: ["/images/learn.webp"]
+images: ["/preview-images/learn.webp"]
 type: post
 date: 2018-02-22T07:59:17+05:30
 url: /2018/02/why-springboot-so-popular-how-to-learn-springboot/

@@ -1,7 +1,7 @@
 ---
 title: SpringBoot Messaging with RabbitMQ
 author: Siva
-images: ["/images/RabbitMQ.webp"]
+images: ["/preview-images/RabbitMQ.webp"]
 type: post
 date: 2018-02-20T07:59:17+05:30
 url: /2018/02/springboot-messaging-rabbitmq/

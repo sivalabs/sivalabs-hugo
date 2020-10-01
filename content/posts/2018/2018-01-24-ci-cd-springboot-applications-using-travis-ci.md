@@ -1,7 +1,7 @@
 ---
 title: CI/CD for SpringBoot applications using Travis-CI
 author: Siva
-images: ["/images/TravisCI-Mascot-1.webp"]
+images: ["/preview-images/TravisCI-Mascot-1.webp"]
 type: post
 date: 2018-01-24T07:59:17+05:30
 url: /2018/01/ci-cd-springboot-applications-using-travis-ci/

@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 6 : Distributed Tracing with Spring Cloud Sleuth and Zipkin'
 author: Siva
-images: ["/images/robot-looking-for-files.webp"]
+images: ["/preview-images/robot-looking-for-files.webp"]
 type: post
 date: 2018-03-20T07:59:17+05:30
 url: /2018/03/microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/

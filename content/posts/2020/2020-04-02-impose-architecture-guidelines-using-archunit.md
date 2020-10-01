@@ -1,7 +1,7 @@
 ---
 title: Imposing Code Structure Guidelines using ArchUnit
 author: Siva
-images: ["/images/ArchUnit-Logo.webp"]
+images: ["/preview-images/ArchUnit-Logo.webp"]
 type: post
 date: 2020-04-02T04:59:17+05:30
 url: /2020/04/impose-architecture-guidelines-using-archunit/

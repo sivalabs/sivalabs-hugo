@@ -23,8 +23,8 @@ function convertPreviewImages(){
         plugins: [
             imageminWebp({
                 resize: {
-                    width: 510,
-                    height: 267
+                    width: 600,
+                    height: 340
                 }
             })
         ]
