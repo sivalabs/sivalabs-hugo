@@ -24,7 +24,7 @@ Go to BIOS Setup and enable &#8220;Virtualization Technology&#8221; option.
 
 Start the Android SDK Manager, select **Extras -> Intel x86 Emulator Accelerator (HAXM Installer)** and install it.
 
-![HAXM](/images/HAXM.png)
+![HAXM](/images/HAXM.webp)
 
 #### Step 3: Install Intel's HAXM
 

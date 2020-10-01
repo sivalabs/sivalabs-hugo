@@ -1,7 +1,7 @@
 ---
 title: Why SpringBoot is so popular and how to learn SpringBoot effectively?
 author: Siva
-images: ["/images/learn.jpg"]
+images: ["/images/learn.webp"]
 type: post
 date: 2018-02-22T07:59:17+05:30
 url: /2018/02/why-springboot-so-popular-how-to-learn-springboot/
@@ -45,7 +45,7 @@ Modern application needs have changed and are continuously changing so rapidly. 
 Spring at its core is just a Dependency Injection (DI) container. But the power of Spring comes from its rich set of portfolio projects. You want to use NoSQL databases, you want a robust Security framework, you want to integrate with Social platforms, you want to work with Big Data frameworks, you want to use Streaming platforms like Kafka…you are all covered.
 
 
-![Spring Ecosystem](/images/spring-ecosystem.png "Spring Ecosystem")
+![Spring Ecosystem](/images/spring-ecosystem.webp "Spring Ecosystem")
 
 ## 5. Spring Developer Community
 This is the best part of Spring framework. You can find a million blogs with fantastic blog posts on Spring framework. You can almost find a solution to every problem on StackOverflow. You can reach out to Spring Developer team via Twitter easily.

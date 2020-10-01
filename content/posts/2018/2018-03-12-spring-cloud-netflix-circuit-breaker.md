@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 4 : Spring Cloud Circuit Breaker using Netflix Hystrix'
 author: Siva
-images: ["/images/hystrix-dashboard.png"]
+images: ["/images/hystrix-dashboard.webp"]
 type: post
 date: 2018-03-12T07:59:17+05:30
 url: /2018/03/spring-cloud-netflix-circuit-breaker/
@@ -317,14 +317,14 @@ Create a Spring Boot application with **Hystrix Dashboard** starter and annotate
 
 Let us say we are running Hystrix Dashboard on 8788 port, then go to http://localhost:8788/hystrix to view the dashboard.
 
-![Hystrix Dashboard](/images/hystrix-dashboard.png "Hystrix Dashboard")
+![Hystrix Dashboard](/images/hystrix-dashboard.webp "Hystrix Dashboard")
 
 Now in Hystrix Dashboard home page enter **http://localhost:8181/actuator/hystrix.stream** as stream URL and give Catalog Service as Title and click on Monitor Stream button.
 
 Now invoke the catalog-service REST endpoint which internally invokes inventory-service REST endpoint and you can see the Circuit status along with how many calls succeed and how many failures occurred etc.
 
 
-![Netflix Hystrix Circuit Breaker](/images/catalog-service-hystrix.png "Netflix Hystrix Circuit Breaker")
+![Netflix Hystrix Circuit Breaker](/images/catalog-service-hystrix.webp "Netflix Hystrix Circuit Breaker")
 
 Instead of having a separate dashboard for every service we can use Turbine to provide a unified view of all services in a single dashboard. 
 For more details see http://cloud.spring.io/spring-cloud-static/Finchley.M7/single/spring-cloud.html#_turbine.

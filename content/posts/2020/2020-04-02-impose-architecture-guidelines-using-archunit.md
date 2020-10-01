@@ -1,7 +1,7 @@
 ---
 title: Imposing Code Structure Guidelines using ArchUnit
 author: Siva
-images: ["/images/ArchUnit-Logo.png"]
+images: ["/images/ArchUnit-Logo.webp"]
 type: post
 date: 2020-04-02T04:59:17+05:30
 url: /2020/04/impose-architecture-guidelines-using-archunit/
@@ -25,7 +25,7 @@ For example, typically I would like to follow the guidelines mentioned below for
 
 Like this there could be many guidelines we want to follow. The good news is we can impose these guidelines as verifiable JUnit tests using [ArchUnit](https://www.archunit.org/).
 
-![ArchUnit](/images/ArchUnit-Logo.png "ArchUnit")
+![ArchUnit](/images/ArchUnit-Logo.webp "ArchUnit")
 
 Here is the [ArchUnit UserGuide](https://www.archunit.org/userguide/html/000_Index.html)
 

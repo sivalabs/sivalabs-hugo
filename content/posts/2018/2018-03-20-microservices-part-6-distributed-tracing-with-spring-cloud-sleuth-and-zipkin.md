@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 6 : Distributed Tracing with Spring Cloud Sleuth and Zipkin'
 author: Siva
-images: ["/images/robot-looking-for-files.jpg"]
+images: ["/images/robot-looking-for-files.webp"]
 type: post
 date: 2018-03-20T07:59:17+05:30
 url: /2018/03/microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
@@ -293,15 +293,15 @@ You can observe that **true** is printed in logs meaning it is exported.
 
 Now go to Zipkin UI Dashboard, you can see the service names populated in the first dropdown. Select the service you want to check or select all and then click on Find Traces button.
 
-![Zipkin](/images/zipkin-traces.png "Zipkin")
+![Zipkin](/images/zipkin-traces.webp "Zipkin")
 
 Click on any trace you can see the call chain and latency details for each span.
 
-![Zipkin Traces](/images/zipkin-trace-details.png "Zipkin Traces")
+![Zipkin Traces](/images/zipkin-trace-details.webp "Zipkin Traces")
 
 You can also click on Dependencies link in the top nav bar to see the service dependencies.
 
-![Zipkin Dependencies](/images/zipkin-deps.png "Zipkin Dependencies")
+![Zipkin Dependencies](/images/zipkin-deps.webp "Zipkin Dependencies")
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series
 

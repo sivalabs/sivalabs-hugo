@@ -1,7 +1,7 @@
 ---
 title: Kafka Tutorial - Producer and Consumer using SpringBoot
 author: Siva
-images: ["/images/springboot-kafka.png"]
+images: ["/images/springboot-kafka.webp"]
 type: post
 date: 2019-06-24T07:59:17+05:30
 url: /2019/06/kafka-tutorial-producer-consumer-using-spring-boot/

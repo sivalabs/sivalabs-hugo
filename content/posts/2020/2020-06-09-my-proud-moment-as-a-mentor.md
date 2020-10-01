@@ -1,7 +1,7 @@
 ---
 title: My proud moment as a mentor
 author: Siva
-images: ["/images/strong-women.jpg"]
+images: ["/images/strong-women.webp"]
 type: post
 date: 2020-06-08T04:59:17+05:30
 url: /2020/06/my-proud-moment-as-a-mentor/
@@ -33,7 +33,7 @@ I started teaching her Core Java, HTML, JS, CSS. She was able to pick up these f
 Then I started teaching her Maven, Git, jQuery, NPM etc and parallelly giving a 30,000 feat overview on Java frameworks like
 Servlets, Tomcat, Hibernate, Spring. She got overwhelmed by the number of technologies, tools required to build a web application.
 
-![Overwhelming](/images/overcoming.png "Overwhelming")
+![Overwhelming](/images/overcoming.webp "Overwhelming")
 
 That is the time I realized that I didn't get overwhelmed by the number of technologies because I learned all those things over the years.
 But, nowadays if somebody wants to get into software development it's really hard due to the number of tools and technologies to be familiar with.

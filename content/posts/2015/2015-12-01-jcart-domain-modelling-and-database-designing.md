@@ -30,7 +30,7 @@ So, let us start listing down all the domain entities in our JCart application d
 
 Let us create the database tables as follows:
 
-<img class="aligncenter size-full" src="/images/jcart-db.png" alt="jcart-db"  />
+{{< figure src="/images/jcart-db.webp" >}}
 
 
 Though we identified **Cart** as a domain entity, we are not creating the table for holding the Cart details. We are going to take the simple approach of storing the active cart details in **HttpSession** only. But in real applications it is strongly recommended to store them in some persistent storage like database.

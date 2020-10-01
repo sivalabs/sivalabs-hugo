@@ -1,7 +1,7 @@
 ---
 title: SpringBoot Messaging with RabbitMQ
 author: Siva
-images: ["/images/RabbitMQ.png"]
+images: ["/images/RabbitMQ.webp"]
 type: post
 date: 2018-02-20T07:59:17+05:30
 url: /2018/02/springboot-messaging-rabbitmq/
@@ -184,7 +184,7 @@ You can click on **Exchanges/Queues** tabs to see **orders-exchange** and **orde
 You can also check the bindings for **orders-exchange** which looks like following:
 
 
-![RabbitMQ Exchange Bindings](/images/RabbitMQ-exchange.png "RabbitMQ Exchange Bindings")
+![RabbitMQ Exchange Bindings](/images/RabbitMQ-exchange.webp "RabbitMQ Exchange Bindings")
 
 Now go to Queues tab and click on orders-queue. Scroll down to **Get Messages** section and by clicking on **Get Message(s)** button 
 you can view the contents of the message.

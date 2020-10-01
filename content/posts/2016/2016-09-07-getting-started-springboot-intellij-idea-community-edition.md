@@ -28,13 +28,13 @@ If you wish you can add any other starters that you commonly use, configure prop
 
 Now click on menu **Tools** -> **Save Project as Template**. Enter **Name** and **Description** for the template.
 
-<img class="size-medium aligncenter" src="/images/SBTemplate.png" alt="SBTemplate" data-recalc-dims="1" />
+{{< figure src="/images/SBTemplate.webp" >}}
 
 Once the template is created we can use that template while creating new projects.
 
 Select **File** -> **New** -> **Project**.
 
-<img class="aligncenter size-full" src="/images/NewProjDlg.png" alt="NewProjDlg" sizes="(max-width: 648px) 100vw, 648px" data-recalc-dims="1" />
+{{< figure src="/images/NewProjDlg.webp" >}}
 
 In the **New Project** Dialog, you can see **User-defined** section and when you click on **User-defined** you can see all the project templates we created.
   

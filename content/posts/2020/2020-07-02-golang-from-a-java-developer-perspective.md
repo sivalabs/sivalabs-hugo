@@ -1,7 +1,7 @@
 ---
 title: GoLang from a Java developer perspective
 author: Siva
-images: ["/images/golang.png"]
+images: ["/images/golang.webp"]
 type: post
 date: 2020-07-02T04:59:17+05:30
 url: /2020/07/golang-from-a-java-developer-perspective/
@@ -66,7 +66,7 @@ if val, ok := mymap["foo"]; ok {
 }
 ```
 
-{{< figure src="/images/why-cat.jpg" alt="But, Why?"  width="350" height="300" >}}
+{{< figure src="/images/why-cat.webp" alt="But, Why?"  width="350" height="300" >}}
 
 ### Error handling
 
@@ -197,7 +197,7 @@ In Go most of the standard library functions return a value and error and while 
 
 Kidnap a software developer and put a gun to his/her head and tell them to format a date object to print **year-month-day** in only one try.
 
-{{< figure src="/images/go-date-format.jpg" alt="Go Date Formatting" >}}
+{{< figure src="/images/go-date-format.webp" alt="Go Date Formatting" >}}
 
 I believe most of the developers will bet their life to **dateObject.format("yyyy-mm-dd")**. This notation is so common in many programming languages. But in Go, we need format date object (time.Time) using **dateObject.Format("2006-01-02")**.
 

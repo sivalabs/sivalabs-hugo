@@ -15,7 +15,7 @@ tags:
 ---
 I would like to let you know that I have updated/added the following sections to my [SpringBoot : Learn By Example][1] book.
 
-<img class="size-medium aligncenter" src="/images/sblbe.png" alt="springboot_learn_by_example" width="250" height="200" />
+{{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
 ## Additions to existing chapters:
 

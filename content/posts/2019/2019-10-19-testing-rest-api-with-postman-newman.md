@@ -1,7 +1,7 @@
 ---
 title: Testing REST APIs using Postman and Newman
 author: Siva
-images: ["/images/postman.png"]
+images: ["/images/postman.webp"]
 type: post
 date: 2019-10-20T07:59:17+05:30
 url: /2019/10/testing-rest-apis-with-postman-newman/
@@ -114,7 +114,7 @@ If you hit Send button you can see the response as follows:
 }
 ```
 
-![Postman Collection](/images/postman-collection.png "Postman Collection")
+![Postman Collection](/images/postman-collection.webp "Postman Collection")
 
 We want to capture this **access_token** and pass it in the subsequent request. 
 In order to do this, we need to run the requests in an environment so that we can set some variables in one request and reference them in further requests.
@@ -138,7 +138,7 @@ We are verifying whether the request is successful or not and setting the **Todo
 
 Now if you trigger the login request and see **todo-local-env**, you can find **TodoApiAccessToken** variable with the **access_token** value.
 
-![Postman Environment Variables](/images/postman-env-vars.png "Postman Environment Variables")
+![Postman Environment Variables](/images/postman-env-vars.webp "Postman Environment Variables")
 
 Now, create another request named **create-todo** with URL http://localhost:8080/api/todos and POST method with following JSON payload:
 
