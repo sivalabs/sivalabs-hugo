@@ -1,7 +1,7 @@
 ---
 title: What I Learned in Week-11, 2020
 author: Siva
-images: ["/images/man-reading.webp"]
+images: ["/preview-images/man-reading.webp"]
 type: post
 date: 2020-03-15T04:59:17+05:30
 url: /2020/03/what-i-learned-2020-week-11/

@@ -1,7 +1,7 @@
 ---
 title: Creating Yeoman based SpringBoot Generator
 author: Siva
-images: ["/images/yeoman-logo.webp"]
+images: ["/preview-images/yeoman-logo.webp"]
 type: post
 date: 2020-01-29T04:59:17+05:30
 url: /2020/01/creating-yeoman-based-springboot-generator/

@@ -1,7 +1,7 @@
 ---
 title: My proud moment as a mentor
 author: Siva
-images: ["/images/strong-women.webp"]
+images: ["/preview-images/strong-women.webp"]
 type: post
 date: 2020-06-08T04:59:17+05:30
 url: /2020/06/my-proud-moment-as-a-mentor/

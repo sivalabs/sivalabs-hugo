@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 4 : Spring Cloud Circuit Breaker using Netflix Hystrix'
 author: Siva
-images: ["/images/hystrix-dashboard.webp"]
+images: ["/preview-images/hystrix-dashboard.webp"]
 type: post
 date: 2018-03-12T07:59:17+05:30
 url: /2018/03/spring-cloud-netflix-circuit-breaker/

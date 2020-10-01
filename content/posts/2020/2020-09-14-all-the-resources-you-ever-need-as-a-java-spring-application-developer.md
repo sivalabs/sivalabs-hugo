@@ -1,7 +1,7 @@
 ---
 title: All the resources you ever need as a Java & Spring application developer
 author: Siva
-images: ["/images/blogs.webp"]
+images: ["/preview-images/blogs.webp"]
 type: post
 draft: false
 date: 2020-09-14T04:59:17+05:30

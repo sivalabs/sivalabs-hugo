@@ -1,7 +1,7 @@
 ---
 title: Session Management using Spring Session with JDBC DataStore
 author: Siva
-images: ["/images/SpringSession.webp"]
+images: ["/preview-images/SpringSession.webp"]
 type: post
 date: 2018-02-07T07:59:17+05:30
 url: /2018/02/session-management-using-spring-session-jdbc-datastore/

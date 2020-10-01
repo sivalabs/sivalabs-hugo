@@ -1,7 +1,1 @@
-
-function searchSite(e) {
-    e.preventDefault();
-    var q = document.getElementById("query");
-    window.location = "https://www.google.com/search?q="+encodeURIComponent(q.value)+"+site%3Asivalabs.in"
-    return false;
-}
+function searchSite(e){e.preventDefault();var t=document.getElementById("query");return window.location="https://www.google.com/search?q="+encodeURIComponent(t.value)+"+site%3Asivalabs.in",!1}
