@@ -1,7 +1,7 @@
 ---
 title: 'MicroServices - Part 3 : Spring Cloud Service Registry and Discovery'
 author: Siva
-images: ["/images/EurekaDashboard.png"]
+images: ["/images/EurekaDashboard.webp"]
 type: post
 date: 2018-03-08T07:59:17+05:30
 url: /2018/03/microservices-springcloud-eureka/
@@ -95,7 +95,7 @@ Netflix Eureka Service provides UI where we can see all the details about regist
 
 Now run **ServiceRegistryApplication** and access http://localhost:8761 which will display the UI similar to below screenshot.
 
-![Eureka Dashboard](/images/EurekaDashboard.png "Eureka Dashboard")
+![Eureka Dashboard](/images/EurekaDashboard.webp "Eureka Dashboard")
 
 # Registering microservices as Eureka Clients
 In [Part 2 : MicroServices : Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})

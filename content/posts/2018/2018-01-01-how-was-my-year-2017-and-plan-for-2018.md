@@ -1,7 +1,7 @@
 ---
 title: How was my year 2017 and my plans for 2018
 author: Siva
-images: ["/images/2018-year.jpg"]
+images: ["/images/2018-year.webp"]
 type: post
 date: 2018-01-01T07:59:17+05:30
 url: /2018/01/how-was-my-year-2017-and-plan-for-2018/
@@ -12,7 +12,7 @@ tags:
 ---
 ## Happy new year to you :-)
 
-<img class="aligncenter size-full" src="/images/2018-year.jpg" sizes="(max-width: 648px) 100vw, 648px" data-recalc-dims="1" />
+![Happy new year](/images/2018-year.webp "Happy new year")
 
 I don't really believe in new year resolutions or making big 5 year plans!! 
 But I do realize that by making a list of things that I want to do keeps me focus on those things and minimize the distractions.

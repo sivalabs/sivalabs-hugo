@@ -14,7 +14,7 @@ When it comes to overall performance of a software system database persistence l
 The tricky part with JPA/Hibernate is it is very easy to get started but very very hard to master. 
 This is where **Vlad Mihalcea**&#8216;s **High-Performance Java Persistence** book helps you a lot.
 
-[<img class="size-medium aligncenter" width="250" height="200" src="/images/VladBook.jpg" alt="High-Performance Java Persistence" />][1]
+![High-Performance Java Persistence](/images/VladBook.webp "High-Performance Java Persistence")
 
 The High-Performance Java Persistence book is not just another Hibernate book saying 
 you put this annotation here and call that method there and you are done.
@@ -39,5 +39,3 @@ sufficient details on how to perform complex queries, work with stored procedure
 To put it in one sentence: 
 
 > **High-Performance Java Persistence** book is one single book you need to know everything about Java Persistence Layer.
-
- [1]: https://www.amazon.com/High-Performance-Java-Persistence-Vlad-Mihalcea/dp/973022823X

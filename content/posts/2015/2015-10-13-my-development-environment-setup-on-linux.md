@@ -26,8 +26,6 @@ The very first thing I do after installing Linux is updating the system and in c
 ```sudo apt-get install virtualbox-guest-dkms virtualbox-guest-x11```
 
 **Setting up Java Development Environment**
-  
-<img class="size-full wp-image-558 aligncenter" src="/images/java.jpg?resize=120%2C90" alt="java" />
 
 Some Linux distros come with OpenJDK by default. You may want to remove OpenJDK first and install Oracle JDK.
 
@@ -56,11 +54,6 @@ Now run `source ~/.bash_profile` or `source /etc/profile`
 After installing JDK you may want to download your favorite IDE from the following locations:
 
 
-<img class="alignnone size-full" src="/images/netbeans0.png" alt="netbeans0" /> 
-<img class="alignnone size-full" src="/images/intellijidea.png" alt="intellijidea" /> 
-<img class="alignnone size-full" src="/images/STS.png" alt="STS" />
-<img class="alignnone size-full" src="/images/eclipse-800x188.png" alt="eclipse-800x188" />
-
 <a href="http://www.eclipse.org/downloads/" target="_blank">http://www.eclipse.org/downloads/</a>
   
 <a href="https://spring.io/tools/sts/all" target="_blank">https://spring.io/tools/sts/all</a>
@@ -74,9 +67,6 @@ After installing JDK you may want to download your favorite IDE from the followi
 Most of the times I work with either **Tomcat** or **JBoss/Wildfly** servers. 
 You can download them from the following locations:
 
-<img class="alignnone size-medium " src="/images/Wildfly_logo.png" alt="Wildfly_logo" />
-<img class="alignnone size-full" src="/images/Tomcat-logo.png" alt="Tomcat-logo" />
-
 <a href="https://tomcat.apache.org/download-80.cgi" target="_blank">https://tomcat.apache.org/download-80.cgi</a>
   
 <a href="http://wildfly.org/downloads/" target="_blank">http://wildfly.org/downloads/</a>
@@ -88,8 +78,6 @@ To install build tools like **Ant** or **Maven**
 `> sudo apt-get install maven`
 
 We can install various softwares like **Groovy**, **Grails**, **Gradle** etc you can use **SDKMan** (<a href="http://sdkman.io/" target="_blank">http://sdkman.io/</a>) which was previously known as **GVM**.
-
-<img class="size-full aligncenter" src="/images/sdkman.png" alt="sdkman" />
 
 ```bash
 curl -s http://get.sdkman.io | bash
@@ -104,8 +92,6 @@ sdk install gradle
   
 You can install MySQL server and MySQL Workbench from Ubuntu Software Center.
 
-<img class="size-full aligncenter" src="/images/mysql.jpg" alt="mysql" />
-
 But if you prefer commandline installation
 
 `> sudo apt-get install mysql-server`
@@ -115,9 +101,7 @@ But if you prefer commandline installation
 **Installing NodeJS**
   
 Installing NodeJS become a little bit complicated because it is going through some changes(nodejs, nodejs-legacy, io.js etc).
-
-<img class="size-medium aligncenter" src="/images/nodejs-dark1.jpg" />
-  
+ 
 You can install latest NodeJS using following commands:
 
 ```bash
@@ -131,8 +115,6 @@ For further details refer https://github.com/nodejs/node-v0.x-archive/wiki/Insta
 **Install yeoman and generators**
   
 Yeoman (<a href="http://yeoman.io/" target="_blank">http://yeoman.io/</a>) makes it easy to develop front-end applications by automating various tasks using bower, grunt or gulp.
-
-<img class="size-full aligncenter" src="/images/yeoman-logo.png" alt="yeoman-logo" />
 
 Install yeoman `sudo npm install -g yo bower grunt-cli gulp`
   
@@ -149,8 +131,6 @@ sudo npm install -g cordova ionic
 **Installing Ruby and RubyOnRails**
   
 You may be using **Ruby** or tools that depends on Ruby like **OpenShift** commandline tools, **Jekyll** etc.
-
-<img class="size-full aligncenter" src="/images/ruby-on-rails.jpg?resize=149%2C149" alt="ruby-on-rails" />
 
 You can find the very detailed instructions on how to install Ruby/RubyOnRails at <a href="https://gorails.com/setup/ubuntu/15.04" target="_blank">https://gorails.com/setup/ubuntu/15.04</a>
 
@@ -186,8 +166,6 @@ gem install rails -v 4.2.4
 **Installing Jekyll**
   
 Jekyll (<a href="https://jekyllrb.com" target="_blank">https://jekyllrb.com</a>) is a static site generator which you can use to generate your site and host it on github.
-
-<img class="size-medium aligncenter" src="/images/jekyll.jpg" alt="jekyll" />
 
 `> gem install jekyll`
 

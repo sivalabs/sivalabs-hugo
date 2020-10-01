@@ -17,8 +17,6 @@ While learning some of the Linux commands we may want to use SSH commands to log
   
 In this post I will explain how I am using my Linux OS installed on VirtualBox to SSH from Windows OS.
 
-<img class="alignnone size-medium" src="/images/virtualbox.jpg" alt="virtualbox"  />
-<img class="alignnone" src="/images/prompt.jpg" alt="prompt" />
 
 ### 1. Install **openssh-server** on Linux OS in VirtualBox
   

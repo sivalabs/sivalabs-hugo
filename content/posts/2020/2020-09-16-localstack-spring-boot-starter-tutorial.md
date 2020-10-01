@@ -1,7 +1,7 @@
 ---
 title: LocalStack SpringBoot Starter Tutorial
 author: Siva
-images: ["/images/localstack.png"]
+images: ["/images/localstack.webp"]
 type: post
 draft: false
 date: 2020-09-16T04:59:17+05:30

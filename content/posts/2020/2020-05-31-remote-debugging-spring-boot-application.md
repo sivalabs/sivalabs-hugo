@@ -1,7 +1,7 @@
 ---
 title: Remote debugging SpringBoot application
 author: Siva
-images: ["/images/remote-1.jpg"]
+images: ["/images/remote-1.webp"]
 type: post
 date: 2020-05-31T04:59:17+05:30
 url: /2020/05/remote-debugging-spring-boot-application/
@@ -30,7 +30,7 @@ $ java $JAVA_OPTS -jar myapp.jar
 Now from Intellij IDEA you can remote debug the application by creating remote debug configuration by 
 `Run -> Edit Configurations... -> Add New Configuration (Command + N) -> Enter Host and Port values`
 
-![RemoteDebuggingIntellijIdea](/images/java-remote-debug.png "RemoteDebuggingIntellijIdea")
+![RemoteDebuggingIntellijIdea](/images/java-remote-debug.webp "RemoteDebuggingIntellijIdea")
 
 After creating debug configuration click on Debug, and you should see the following message:
 

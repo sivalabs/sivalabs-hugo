@@ -1,7 +1,7 @@
 ---
 title: Session Management using Spring Session with JDBC DataStore
 author: Siva
-images: ["/images/SpringSession.png"]
+images: ["/images/SpringSession.webp"]
 type: post
 date: 2018-02-07T07:59:17+05:30
 url: /2018/02/session-management-using-spring-session-jdbc-datastore/
@@ -29,7 +29,7 @@ Let us briefly look at these approaches.
 ## 1. Single Node Server
 If your application is not a critical service to your business, there won’t be too many users concurrently and some downtime is accepted then we can have Single Node Server deployment as shown below:
 
-![Single Node Sessions](/images/SingleNode-Sessions.jpg "Single Node Sessions")
+![Single Node Sessions](/images/SingleNode-Sessions.webp "Single Node Sessions")
 
 In this model, for each browser client, a session object is created on the server (HttpSession in case of Java) and SESSION_ID will be set as a cookie on the browser to identify the session object. But this Single Server Node deployment is not acceptable for most of the applications because if the server goes down the service will be down altogether.
 
@@ -37,14 +37,14 @@ In this model, for each browser client, a session object is created on the serve
 
 In order to make our application highly available and cater more number of users, we can have multiple server nodes behind a load balancer. In the Sticky Sessions approach, we configure our load balancer to route all the requests from the same client to the same node.
 
-![Multi-Node Server with Sticky Sessions](/images/MultiNode-StickySessions.jpg "Multi-Node Server with Sticky Sessions")
+![Multi-Node Server with Sticky Sessions](/images/MultiNode-StickySessions.webp "Multi-Node Server with Sticky Sessions")
 
 In this model, the user session will be created on any one of the server node and all the further requests from that client will be sent to that same node. But the problem with this approach is if a server node goes down then all the user sessions on that server is gone.
 
 ## 3. Multi-Node Server with Session Replication
 In this model, the user session data will be replicated on all the server nodes so that any request can be routed to any server node. Even if one node goes down the client request can be served by another node.
 
-![Multi-Node Server with SessionReplication](/images/MultiNode-SessionReplication.jpg "Multi-Node Server with SessionReplication")
+![Multi-Node Server with SessionReplication](/images/MultiNode-SessionReplication.webp "Multi-Node Server with SessionReplication")
 
 But the Session Replication requires better hardware support and involves some server specific configuration.
 
@@ -52,7 +52,7 @@ But the Session Replication requires better hardware support and involves some s
 
 In this model, the user session data will not be held in server’s memory, instead, it will be persisted into a data store and associate it with SESSION_ID.
 
-![Multi-Node Server with Spring Session](/images/MultiNode-SpringSession.jpg "Multi-Node Server with Spring Session")
+![Multi-Node Server with Spring Session](/images/MultiNode-SpringSession.webp "Multi-Node Server with Spring Session")
 
 This solution will be server independent but we may need to write custom code to transparently store the session data in a Persistent datastore whenever a user adds some information to his/her session.
 This is where Spring Session comes into the picture.

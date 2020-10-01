@@ -14,10 +14,8 @@ tags:
 ---
 In this post we will setup **SonarQube** and **Jenkins** to perform code quality check and continuous integration.
 
-&nbsp;
-
-<img class="alignnone size-medium aligncenter" src="/images/jenkins_logo.png" alt="jenkins_logo" width="250" height="200" />
-<img class="alignnone size-full aligncenter" src="/images/sonar.png" alt="sonar"  />
+{{< figure src="/images/jenkins_logo.webp" >}}
+{{< figure src="/images/sonar.webp" >}}
 
 ### Install and configure SonarQube
 

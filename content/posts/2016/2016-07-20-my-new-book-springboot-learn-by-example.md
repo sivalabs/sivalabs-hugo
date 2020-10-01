@@ -16,7 +16,7 @@ tags:
 ---
 I am happy to announce that my new book [SpringBoot : Learn By Example](https://leanpub.com/springboot-learn-by-example/)  got published today on **Leanpub**.
 
-{{< figure src="/images/sblbe.png" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
+{{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
 ### What is SpringBoot?
 

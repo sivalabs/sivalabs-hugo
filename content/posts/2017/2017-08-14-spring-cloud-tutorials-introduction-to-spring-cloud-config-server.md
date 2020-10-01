@@ -29,7 +29,7 @@ We can use **Spring Cloud Config Server** ([http://cloud.spring.io/spring-cloud
 
 Spring Cloud Config Server is nothing but a SpringBoot application with a configured configuration properties source. The configuration source can be a **git** repository, **svn** repository or Consul service (<https://www.consul.io/>).
 
-<img class="aligncenter size-full" src="/images/config.png" sizes="(max-width: 648px) 100vw, 648px" data-recalc-dims="1" />
+{{< figure src="/images/config.webp" >}}
 
 In this post we are going to use a git repository as configuration properties source.
 
@@ -500,7 +500,7 @@ Now that we know there are many ways to provide configuration properties in many
 
 The following diagrams shows the precedence of configuration properties from various properties locations.
 
-<img class="aligncenter size-full" src="/images/precedence.png" sizes="(max-width: 648px) 100vw, 648px" data-recalc-dims="1" />
+{{< figure src="/images/precedence.webp" >}}
 
 #### Refresh properties at runtime
 

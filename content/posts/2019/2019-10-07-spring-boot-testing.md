@@ -1,7 +1,7 @@
 ---
 title: Testing SpringBoot Applications
 author: Siva
-images: ["/images/spring-boot-1.png"]
+images: ["/images/spring-boot-1.webp"]
 type: post
 date: 2019-10-07T07:59:17+05:30
 url: /2019/10/spring-boot-testing/
