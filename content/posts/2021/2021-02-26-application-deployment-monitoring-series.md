@@ -4,8 +4,8 @@ author: Siva
 images: ["/preview-images/space-center.webp"]
 type: post
 draft: false
-date: 2021-01-28T04:59:17+05:30
-url: /2021/01/springboot-application-deployment-monitoring-series/
+date: 2021-02-26T04:59:17+05:30
+url: /2021/02/springboot-application-deployment-monitoring-series/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps]
 ---

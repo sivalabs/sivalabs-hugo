@@ -3,9 +3,9 @@ title: Application deployment and monitoring series - Part 1 - Build Services
 author: Siva
 images: ["/preview-images/space-center.webp"]
 type: post
-draft: false
-date: 2021-02-01T04:59:17+05:30
-url: /2021/02/application-deployment-monitoring-part-1/
+draft: true
+date: 2021-03-01T04:59:17+05:30
+url: /2021/03/application-deployment-monitoring-part-1/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps]
 ---
