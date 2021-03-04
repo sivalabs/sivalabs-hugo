@@ -1,16 +1,16 @@
 ---
-title: Application deployment and monitoring series - Part 1 - Build Services
+title: SpringBoot application deployment and monitoring series - Part 1 - Build Services
 author: Siva
-images: ["/preview-images/space-center.webp"]
+images: ["/preview-images/bookmark-services.webp"]
 type: post
 draft: true
-date: 2021-03-01T04:59:17+05:30
-url: /2021/03/application-deployment-monitoring-part-1/
+date: 2021-03-04T04:59:17+05:30
+url: /2021/03/springboot-application-deployment-monitoring-part-1/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps]
 ---
 
-This is the first part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-01-28-application-deployment-monitoring-series.md" >}}).
+This is the first part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
 We will be using the following tools throughout the process, so please install them based on your operating system.
 
 ### Prerequisites
@@ -24,7 +24,7 @@ We will be using the following tools throughout the process, so please install t
 I will be using MacOS, Intellij Idea and shell scripting. 
 You can use your favorite IDE, but try to use *nix like environment (Linux or MacOS) to be able to run those shell scripts.
 
-Let's define our goals for Iteration-1.
+Let's define our goals for **Iteration-1**.
 
 * Implement **bookmark-service**, **vote-service** and **bookmarks-ui** applications
 * **Setup Jenkins** build server
