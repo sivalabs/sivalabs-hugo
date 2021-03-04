@@ -3,7 +3,7 @@ title: SpringBoot application deployment and monitoring series - Part 1 - Build 
 author: Siva
 images: ["/preview-images/bookmark-services.webp"]
 type: post
-draft: true
+draft: false
 date: 2021-03-04T04:59:17+05:30
 url: /2021/03/springboot-application-deployment-monitoring-part-1/
 categories: [SpringBoot]
