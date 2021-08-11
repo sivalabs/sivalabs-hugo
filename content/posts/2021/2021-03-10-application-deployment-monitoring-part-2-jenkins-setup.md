@@ -531,4 +531,4 @@ setup pipelines instead of manually configuring each repository statically.
 I hope we learned few good practices about using Jenkins pipelines such as using Shared Libraries, Jod DSL.
 We have automated the pipeline setup for all **vote-service, bookmark-service and bookmarks-ui** services. 
 
-In next article we are going to focus on deploying the services on VMs.
+In next article we are going to focus on running the services using docker-compose.

@@ -28,8 +28,10 @@ Let's define our goals for **Iteration-1**.
 
 * Implement **bookmark-service**, **vote-service** and **bookmarks-ui** applications
 * **Setup Jenkins** build server
-* Create 3 **VMs using Virtualbox and Vagrant**
-* Deploy services on VMs and run them as fatjars
+* ~~Create 3 **VMs using Virtualbox and Vagrant**~~
+* ~~Deploy services on VMs and run them as fatjars~~
+* Build docker images
+* Configure and run all services using docker-compose
 
 ## Implement services
 As our bookmarks application is a simple application, and our main focus is on deployment automation,

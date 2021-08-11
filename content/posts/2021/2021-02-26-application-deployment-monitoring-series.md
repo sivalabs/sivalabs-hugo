@@ -40,12 +40,13 @@ automate the process of deployment and monitoring all by yourself.
 So, here is what I wanted to do:
 
 * Create Build Pipelines using **Jenkins**
-* Deploy SpringBoot applications on VMs and **run as fatjars** on **Vagrant** box(using **Ansible**??) 
-* Deploy SpringBoot applications on VMs and **run as Systemd services** on Vagrant box(using Ansible??)
+* ~~Deploy SpringBoot applications on VMs and **run as fatjars** on **Vagrant** box(using **Ansible**??)~~ 
+* ~~Deploy SpringBoot applications on VMs and **run as Systemd services** on Vagrant box(using Ansible??)~~
+* Run applications locally using docker-compose
+* Implement monitoring using **Prometheus** and **Grafana**
+* Implement **centralized logging** using **ELK/EFK** or **Loki**
 * Deploy SpringBoot applications on **Kubernetes(Minikube)**
 * Deploy SpringBoot applications on **AWS ECS** using **Terraform/Pulumi/AWS CDK**
-* Implement monitoring using **Prometheus** and **Grafana**
-* Implement **centralized logging** using **ELK/EFK** or **Loki**.
 
 ## Important things to keep in mind
 * The **application business logic is intentionally kept very low** because the focus is mainly on deployment automation and monitoring.
