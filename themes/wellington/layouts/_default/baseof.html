@@ -33,12 +33,9 @@
     {{ end }}
     {{ if (not (eq .Site.GoogleAnalytics "")) }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-    <div class="analytics">
-        {{ template "_internal/google_analytics_async.html" . }}
-    </div>
+    {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
     {{ end }}
-    <script data-ad-client="ca-pub-6679930559924163" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body class="home blog logged-in admin-bar no-customize-support post-layout-one-column">
     <div id="header-top" class="header-bar-wrap"></div>
