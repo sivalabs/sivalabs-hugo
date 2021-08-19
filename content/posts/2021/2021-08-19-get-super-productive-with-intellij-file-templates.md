@@ -1,7 +1,7 @@
 ---
 title: Get Super Productive with Intellij File Templates
 author: Siva
-images: ["/preview-images/career-lessons.webp"]
+images: ["/preview-images/intellij-idea-logo.webp"]
 type: post
 draft: false
 date: 2021-08-19T04:59:17+05:30
