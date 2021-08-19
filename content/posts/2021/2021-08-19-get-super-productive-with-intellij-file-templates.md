@@ -308,8 +308,10 @@ There are few things that I would like Intellij IDEA to improve upon **File and 
 
 ## How about a bonus tip?
 
-You can refactoring **@RequestMapping(method=GET, value="...")** into **@GetMapping("...")** as follows:
+You can refactor **@RequestMapping(method=GET, value="...")** into **@GetMapping("...")** as follows:
 
 {{< tweet 1377637211651203082 >}}
+
+{{< figure src="/images/structural-search.webp" height="450" width="720" >}}
 
 Happy coding :-)
