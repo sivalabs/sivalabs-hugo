@@ -305,4 +305,11 @@ There are few things that I would like Intellij IDEA to improve upon **File and 
 1. Ability to generate Multiple files without requiring Parent should generate a class or interface restriction. Because of this restriction we had to create that Dummy class.
 2. Ability to show or hide the child templates in New Class Dialog. Also, child template names are being shown as **Generate Boilerplate for Entity.java.child.0**, **Generate Boilerplate for Entity.java.child.1** etc. If there is a way to give an alias for the child templates it would be nice.
 
+
+## How about a bonus tip?
+
+You can refactoring **@RequestMapping(method=GET, value="...")** into **@GetMapping("...")** as follows:
+
+{{< tweet 1377637211651203082 >}}
+
 Happy coding :-)
