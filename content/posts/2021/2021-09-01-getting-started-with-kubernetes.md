@@ -11,9 +11,9 @@ tags: [Kubernetes, DevOps, Java, SpringBoot]
 ---
 
 [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) has revolutionized how we build and run the applications. 
-In recent years containerization becomes new normal and many organizations start using Kubernetes as Container Orchestration Platform.
+In recent years containerization becomes new normal, and many organizations start using Kubernetes as Container Orchestration Platform.
 
-I was curious about Kubernetes and [played with it a bit 3 years ago](https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/spring-boot-k8s-demo) but I thought let's wait and see is it going to be a real thing or just another over hyped technology. Now I see Kubernetes everywhere, especially where microservice architecture being used for their systems. So, I finally decided to learn it properly and share my learnings along the way.
+I was curious about Kubernetes and [played with it a bit 3 years ago](https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/spring-boot-k8s-demo) but I thought let's wait and see is it going to be a real thing or just another over hyped technology. Now I see Kubernetes everywhere, especially where microservice architecture is used for their systems. So, I finally decided to learn it properly and share my learning along the way.
 
 In this article we will learn:
 
@@ -28,7 +28,7 @@ In this article we will learn:
 ## 1. Creating a docker image from a SpringBoot application
 We are going to build a simple SpringBoot application which we are going to use for this tutorial.
 Go to [Spring Initializr](https://start.spring.io/) and select **Web, Actuator and Lombok** starters and generate the application.
-You can click [Here](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.4&packaging=jar&jvmVersion=11&groupId=com.sivalabs&artifactId=k8s-boot-demo&name=k8s-boot-demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.sivalabs.k8sbootdemo&dependencies=lombok,web,actuator) to generate the application with desired starters already seleted.
+You can click [Here](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.4&packaging=jar&jvmVersion=11&groupId=com.sivalabs&artifactId=k8s-boot-demo&name=k8s-boot-demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.sivalabs.k8sbootdemo&dependencies=lombok,web,actuator) to generate the application with desired starters already selected.
 
 Our SpringBoot application is going to be a very simple one as our goal here is to learn Kubernetes, not exploring SpringBoot's super powers.
 
@@ -176,7 +176,7 @@ That's enough of theory, let's get our hands on Kubernetes.
 
 ## 3. Local kubernetes setup using Minikube
 
-There are few options to run a Kubernetes Cluster locally such as [Minikube](https://minikube.sigs.k8s.io/docs/start/), [Kind](https://kind.sigs.k8s.io/), [K3s](https://k3s.io/) etc. I felt **Minikube** is the most easiest way to get up and running compared to others.
+There are few options to run a Kubernetes Cluster locally such as [Minikube](https://minikube.sigs.k8s.io/docs/start/), [Kind](https://kind.sigs.k8s.io/), [K3s](https://k3s.io/) etc. I felt **Minikube** is the easiest way to get up and running compared to others.
 
 ### Install Minikube
 Let's install Minikube which can be used to create a single node kubernetes cluster locally.
@@ -430,10 +430,12 @@ We can access the service using minikube IP on nodePort 30090.
 $ minikube ip
 192.168.99.103
 $ curl 192.168.99.103:30090/api/info
-$ while true; echo "\n"; do curl 192.168.99.103:30090/api/info; sleep 1;  done;
+$ while true; do curl 192.168.99.103:30090/api/info; sleep 1; echo "";  done;
 ```
 
 You can see requests are serving from different pods by checking the **hostName** in the response.
+
+{{< figure src="/images/k8s-p1-5.webp"  >}}
 
 ## Tips
 * Use Kubectl autocomplete https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-autocomplete
