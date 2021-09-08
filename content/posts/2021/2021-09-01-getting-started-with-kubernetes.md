@@ -505,4 +505,4 @@ status: {}
 We have covered some basics of getting started with Kubernetes and learn how to use **Pods, Deployments and Services**.
 But we just scratched the surface, there are plenty of things to know. Though we are able to call our API using Service NodePort, in a multi-node cluster environment we might want to use **Ingress** mapping a domain name to a services deployed on multiple nodes.
 
-In the next part we will see how to use **ConfigMaps, Secrets and Persistent Volumes**.
+In the next part we will see how to release a new version of the application using **Deployment Rolling Updates**.
