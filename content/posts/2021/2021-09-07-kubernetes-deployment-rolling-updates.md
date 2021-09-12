@@ -1,7 +1,7 @@
 ---
 title: Kubernetes - Releasing a new version of the application using Deployment Rolling Updates
 author: Siva
-images: ["/preview-images/Kubernetes_New.webp"]
+images: ["/preview-images/Kubernetes_RollUpdates.webp"]
 type: post
 draft: false
 date: 2021-09-07T04:59:17+05:30
@@ -324,6 +324,9 @@ spec:
           path: /actuator/health/liveness
       startupProbe:
         initialDelaySeconds: 5
+        httpGet:
+          port: 8080
+          path: /actuator/health/liveness
 ```
 
 We have learned how to deploy a new version using **RollingUpdate** strategy. What if there is an issue with new version and we want to rollback to previous version?

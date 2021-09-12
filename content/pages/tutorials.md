@@ -8,6 +8,11 @@ categories: ["Java"]
 tags: ["Java"]
 ---
 
+### Kubernetes
+* [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
+* [Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
+* [Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
+
 ### Microservices
 * [Part 1 : MicroServices : Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})
 * [Part 2 : MicroServices : Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})
@@ -53,6 +58,7 @@ tags: ["Java"]
 
 ### Thoughts & Opinions
 
+* [Few Things I learned in the HardWay in 15 years of my career]({{< relref "2021-08-11-few-things-i-learned-the-hardway-in-15-years-of-my-career.md" >}})
 * [My Life as a Software Developer in India]({{< relref "2015-07-06-my-life-as-software-developer-in-india.md" >}})
 * [A Developers Perspective on Spring vs JavaEE]({{< relref "2015-06-15-a-developers-perspective-on-spring-vs-javaee.md" >}})
 * [Can MicroServices Architecture Solve All Your Problems?]({{< relref "2014-11-30-can-microservices-architecture-solve-all-your-problems.md" >}})
