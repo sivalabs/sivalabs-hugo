@@ -15,6 +15,11 @@ In recent years containerization becomes new normal, and many organizations star
 
 I was curious about Kubernetes and [played with it a bit 3 years ago](https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/spring-boot-k8s-demo) but I thought let's wait and see is it going to be a real thing or just another over hyped technology. Now I see Kubernetes everywhere, especially where microservice architecture is used for their systems. So, I finally decided to learn it properly and share my learning along the way.
 
+* [1. Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
+* [2. Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
+* [3. Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
+* [4. Kubernetes - Exposing Services to outside of Cluster using Ingress]({{< relref "2021-09-22-kubernetes-ingress.md" >}})
+
 In this article we will learn:
 
 * Creating a docker image from a SpringBoot application

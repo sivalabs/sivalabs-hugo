@@ -12,6 +12,11 @@ tags: [Kubernetes, DevOps, Java, SpringBoot]
 
 In the previous article [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}}) we have learned how to deploy a SpringBoot application on Kubernetes(Minikube) using **Deployment** and **Service** primitives. We also looked at how to access our application using **NodePort** on Minikube IP address.
 
+* [1. Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
+* [2. Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
+* [3. Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
+* [4. Kubernetes - Exposing Services to outside of Cluster using Ingress]({{< relref "2021-09-22-kubernetes-ingress.md" >}})
+
 In this article, we are going to learn:
 * How to release a new version of application using **Deployment Rolling Updates**?
 * How to use **Readiness** and **Liveness** probes to route traffic to only fully initialized containers?
