@@ -1,6 +1,14 @@
 
 {{ partial "social-links.html" . }}
 
+<aside id="author" class="widget widget_recent_entries clearfix">
+    <div class="widget-header">
+        <h3 class="widget-title">{{ .Params.author | default .Site.Params.author}}</h3>
+    </div>
+    <div>
+        <img src="/raw-images/Siva_Min.jpg"/>
+    </div>
+</aside>
 
 <aside id="recent-posts-2" class="widget widget_recent_entries clearfix">
     <div class="widget-header">

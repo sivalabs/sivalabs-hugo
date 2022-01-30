@@ -30,13 +30,13 @@ pygmentsCodeFences = true
 [params]
   author = "Siva"
   subtitle = "My Experiments with Technology"
-  description = "Java, Spring, SpringBoot, SpringCloud, JPA, Hibernate, DevOps, MicroServices, Docker tutorials"
+  description = "Java, Spring, SpringBoot, SpringCloud, JPA, Hibernate, DevOps, MicroServices, Docker, Kubernetes, AWS tutorials"
   facebook = ""
   twitter = "sivalabs"
   googleplus = ""
-  youtube = "SivaPrasadReddy%20"
+  youtube = "SivaLabs"
   github = "sivaprasadreddy"
-  linkedin = "siva-prasad-reddy-katamreddy-3a909172"
+  linkedin = "siva-prasad-reddy-katamreddy"
 
 [social]
   twitter = "sivalabs"
