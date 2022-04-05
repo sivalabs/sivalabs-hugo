@@ -31,17 +31,17 @@ Who want to become a "Fullstack Developer"?
 
 Couple of days ago I came across this interesting tweet:
 
-{{< tweet user="sivalabs" id="1332565384906629120" >}}
+{{< tweet 1332565384906629120 >}}
 
 To which I replied:
 
-{{< tweet user="sivalabs" id="1332611594686058496" >}}
+{{< tweet 1332611594686058496 >}}
 
 Ohhhh... that's a big list of buzzwords, isn't it!!!
 
 There is more...
 
-{{< tweet user="sivalabs" id="1332624250230898688" >}}
+{{< tweet 1332624250230898688 >}}
 
 As always I see mixed responses on Twitter. Many people can correlate their experience with me as it is a pretty standard tech stack for a typical Java/SpringBoot application.
 Some people misunderstood it as if "I am an Intern, and I am saying I know all these technologies" or "I am saying an Intern should know all these technologies".
