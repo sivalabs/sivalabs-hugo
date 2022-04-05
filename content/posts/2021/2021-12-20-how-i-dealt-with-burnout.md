@@ -15,7 +15,7 @@ The interesting thing is it is not because of my official work pressure.
 Currently, I am working with a cool client, we are delivering the features on time and the team is friendly...I have nothing to complain about my official work.
 So I thought (and tweeted) it might be because of the things I do in addition to my regular job.
 
-{{< tweet 1455547804114296834 >}}
+{{< tweet user="sivalabs" id="1455547804114296834" >}}
 
 Apart from my regular job, I do teaching, blogging and also always learn something new every day.
 As I was feeling stressed regularly I realised something is going wrong, and I decided to take a step back and fix this before it gets worse.
@@ -60,7 +60,7 @@ Then setup **CI/CD infrastructure** using **Kubernetes**, **Jenkins**/**Github A
 But the problem is to run all these things I need better hardware. I have one MacBook Pro with 16GB RAM, another Mac with 8GB RAM and one Lenovo Laptop with 8GB RAM. 
 I thought of buying a beefy laptop to do all these stuff.
 
-{{< tweet 1451184999525339142 >}}
+{{< tweet user="sivalabs" id="1451184999525339142" >}}
 
 Sounds like a good plan and I am ready for the adventure.
 
