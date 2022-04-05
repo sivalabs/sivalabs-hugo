@@ -1,7 +1,7 @@
 ---
 title: My attempt to understand why people perceive Java as complex
 author: Siva
-images: ["/preview-images/dev-thinking.webp"]
+images: ["/preview-images/group-discussion.webp"]
 type: post
 draft: false
 date: 2022-04-04T04:59:17+05:30
