@@ -5,7 +5,9 @@ images: ["/preview-images/jenkins-setup.webp"]
 type: post
 draft: false
 date: 2021-03-10T04:59:17+05:30
-url: /2021/03/springboot-application-deployment-monitoring-part-2-jenkins-setup/
+url: /springboot-application-deployment-monitoring-part-2-jenkins-setup/
+aliases:
+- /2021/03/springboot-application-deployment-monitoring-part-2-jenkins-setup/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps, Jenkins, Vagrant]
 ---

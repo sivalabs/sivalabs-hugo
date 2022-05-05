@@ -5,7 +5,9 @@ images: ["/preview-images/career-lessons.webp"]
 type: post
 draft: false
 date: 2021-08-11T04:59:17+05:30
-url: /2021/08/few-things-i-learned-the-hardway-in-15-years-of-my-career/
+url: /few-things-i-learned-the-hardway-in-15-years-of-my-career/
+aliases:
+- /2021/08/few-things-i-learned-the-hardway-in-15-years-of-my-career/
 categories: [Career]
 tags: [Career]
 ---

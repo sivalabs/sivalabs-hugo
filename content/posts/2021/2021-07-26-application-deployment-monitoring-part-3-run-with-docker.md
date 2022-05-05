@@ -5,7 +5,9 @@ images: ["/preview-images/jenkins-setup.webp"]
 type: post
 draft: true
 date: 2021-07-25T04:59:17+05:30
-url: /2021/07/springboot-application-deployment-monitoring-part-3-run-with-docker/
+url: /springboot-application-deployment-monitoring-part-3-run-with-docker/
+aliases:
+- /2021/07/springboot-application-deployment-monitoring-part-3-run-with-docker/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps, Jenkins, Docker, DockerCompose]
 ---

@@ -5,7 +5,9 @@ images: ["/preview-images/dev-thinking.webp"]
 type: post
 draft: false
 date: 2021-12-28T04:59:17+05:30
-url: /2021/12/code-simplicity-by-abstraction-vs-verbosity/
+url: /code-simplicity-by-abstraction-vs-verbosity/
+aliases:
+  - /2021/12/code-simplicity-by-abstraction-vs-verbosity/
 categories: [Go]
 tags: [Go, Java, Thoughts]
 ---
