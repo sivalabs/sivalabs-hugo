@@ -5,7 +5,9 @@ images: ["/preview-images/intellij-idea-logo.webp"]
 type: post
 draft: false
 date: 2021-08-19T04:59:17+05:30
-url: /2021/08/get-super-productive-with-intellij-file-templates/
+url: /get-super-productive-with-intellij-file-templates/
+aliases:
+- /2021/08/get-super-productive-with-intellij-file-templates/
 categories: [IDE]
 tags: [Java, SpringBoot, IDE, Intellij, Productivity]
 ---
@@ -310,7 +312,7 @@ There are few things that I would like Intellij IDEA to improve upon **File and 
 
 You can refactor **@RequestMapping(method=GET, value="...")** into **@GetMapping("...")** as follows:
 
-{{< tweet 1377637211651203082 >}}
+{{< tweet user="sivalabs" id="1377637211651203082" >}}
 
 {{< figure src="/images/structural-search.webp" height="450" width="720" >}}
 

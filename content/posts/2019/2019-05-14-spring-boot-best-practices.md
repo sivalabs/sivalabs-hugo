@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/spring-boot-1.webp"]
 type: post
 date: 2019-05-14T07:59:17+05:30
-url: /2019/05/spring-boot-best-practices/
+url: /spring-boot-best-practices/
+aliases: /2019/05/spring-boot-best-practices/
 categories:
   - SpringBoot
 tags: [Spring, SpringBoot, BestPractices]

@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/robot-looking-for-files.webp"]
 type: post
 date: 2018-03-20T07:59:17+05:30
-url: /2018/03/microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
+url: /microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
+aliases: /2018/03/microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
 categories:
   - microservices
   - springboot

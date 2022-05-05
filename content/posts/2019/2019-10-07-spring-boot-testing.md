@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/spring-boot-1.webp"]
 type: post
 date: 2019-10-07T07:59:17+05:30
-url: /2019/10/spring-boot-testing/
+url: /spring-boot-testing/
+aliases: /2019/10/spring-boot-testing/
 categories:
   - SpringBoot
 tags: [Spring, SpringBoot, Testing]

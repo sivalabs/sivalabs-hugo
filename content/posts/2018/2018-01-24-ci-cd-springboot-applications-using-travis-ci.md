@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/TravisCI-Mascot-1.webp"]
 type: post
 date: 2018-01-24T07:59:17+05:30
-url: /2018/01/ci-cd-springboot-applications-using-travis-ci/
+url: /ci-cd-springboot-applications-using-travis-ci/
+aliases: /2018/01/ci-cd-springboot-applications-using-travis-ci/
 categories:
   - travis-ci
   - springboot

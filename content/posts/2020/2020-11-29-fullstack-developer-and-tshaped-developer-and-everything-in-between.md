@@ -5,7 +5,9 @@ images: ["/preview-images/team.webp"]
 type: post
 draft: true
 date: 2020-11-29T04:59:17+05:30
-url: /2020/11/fullstack-developer-and-tshaped-developer-and-everything-in-between/
+url: /fullstack-developer-and-tshaped-developer-and-everything-in-between/
+aliases:
+- /2020/11/fullstack-developer-and-tshaped-developer-and-everything-in-between/
 categories:
   - Thoughts
 tags: [Thoughts]
@@ -31,17 +33,17 @@ Who want to become a "Fullstack Developer"?
 
 Couple of days ago I came across this interesting tweet:
 
-{{< tweet 1332565384906629120 >}}
+{{< tweet user="sivalabs" id="1332565384906629120" >}}
 
 To which I replied:
 
-{{< tweet 1332611594686058496 >}}
+{{< tweet user="sivalabs" id="1332611594686058496" >}}
 
 Ohhhh... that's a big list of buzzwords, isn't it!!!
 
 There is more...
 
-{{< tweet 1332624250230898688 >}}
+{{< tweet user="sivalabs" id="1332624250230898688" >}}
 
 As always I see mixed responses on Twitter. Many people can correlate their experience with me as it is a pretty standard tech stack for a typical Java/SpringBoot application.
 Some people misunderstood it as if "I am an Intern, and I am saying I know all these technologies" or "I am saying an Intern should know all these technologies".

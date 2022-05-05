@@ -5,7 +5,9 @@ images: ["/preview-images/surprised.webp"]
 type: post
 draft: false
 date: 2020-12-04T04:59:17+05:30
-url: /2020/12/quirks-of-spring-testconfiguration/
+url: /quirks-of-spring-testconfiguration/
+aliases:
+- /2020/12/quirks-of-spring-testconfiguration/
 categories: [SpringBoot]
 tags: [SpringBoot]
 ---

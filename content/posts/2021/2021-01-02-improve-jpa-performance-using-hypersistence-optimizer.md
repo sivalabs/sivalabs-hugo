@@ -5,7 +5,9 @@ images: ["/preview-images/hypersistence-optimizer.webp"]
 type: post
 draft: false
 date: 2021-01-02T04:59:17+05:30
-url: /2021/01/improve-jpa-performance-using-hypersistence-optimizer/
+url: /improve-jpa-performance-using-hypersistence-optimizer/
+aliases:
+- /2021/01/improve-jpa-performance-using-hypersistence-optimizer/
 categories: [Java]
 tags: [JPA, Hibernate]
 ---
@@ -23,7 +25,7 @@ Some people try to learn JPA/Hibernate a little more to optimize their code and 
 
 After using ORM frameworks like JPA/Hibernate and SQL oriented persistence frameworks like [MyBatis](https://mybatis.org/mybatis-3/) over a decade this is how I felt about JPA/Hibernate.
 
-{{< tweet 1337038528723578880 >}}
+{{< tweet user="sivalabs" id="1337038528723578880" >}}
 
 Compared to JPA/Hibernate, the SQL oriented frameworks like [MyBatis](https://mybatis.org/mybatis-3/), [JOOQ](https://www.jooq.org/) may need more coding effort.
 However, we have full control over what queries we want to execute, easy to understand what is going on and less time in debugging.
@@ -188,7 +190,7 @@ Then one of Vlad's blog post is linked to show you how to resolve that issue. Ri
 
 After using Hypersistence Optimizer for a couple of weeks this is how I feel about working with JPA and Hypersistence Optimizer.
 
-{{< tweet 1337374516511559681 >}}
+{{< tweet user="sivalabs" id="1337374516511559681" >}}
 
 ## Summary
 

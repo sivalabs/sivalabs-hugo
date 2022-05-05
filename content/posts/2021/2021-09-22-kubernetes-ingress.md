@@ -5,7 +5,9 @@ images: ["/preview-images/Kubernetes_Ingress.webp"]
 type: post
 draft: false
 date: 2021-09-22T04:59:17+05:30
-url: /2021/09/kubernetes-ingress/
+url: /kubernetes-ingress/
+aliases:
+- /2021/09/kubernetes-ingress/
 categories: [Kubernetes]
 tags: [Kubernetes, DevOps, Java, SpringBoot]
 ---

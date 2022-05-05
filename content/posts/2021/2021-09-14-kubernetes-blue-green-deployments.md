@@ -5,7 +5,9 @@ images: ["/preview-images/Kubernetes_BG_Deployments.webp"]
 type: post
 draft: false
 date: 2021-09-14T04:59:17+05:30
-url: /2021/09/kubernetes-blue-green-deployments/
+url: /kubernetes-blue-green-deployments/
+aliases:
+- /2021/09/kubernetes-blue-green-deployments/
 categories: [Kubernetes]
 tags: [Kubernetes, DevOps, Java, SpringBoot]
 ---

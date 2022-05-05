@@ -5,7 +5,9 @@ images: ["/preview-images/TSBAM.webp"]
 type: post
 draft: false
 date: 2020-10-15T04:59:17+05:30
-url: /2020/10/philip-testing-spring-boot-applications-masterclass-course-review/
+url: /philip-testing-spring-boot-applications-masterclass-course-review/
+aliases:
+- /2020/10/philip-testing-spring-boot-applications-masterclass-course-review/
 categories:
   - Java
 tags: [Spring, SpringBoot]

@@ -5,7 +5,8 @@ images: ["/preview-images/group-discussion.webp"]
 type: post
 draft: false
 date: 2022-04-04T04:59:17+05:30
-url: /2022/04/my-attempt-to-understand-why-people-perceive-java-as-complex/
+url: /my-attempt-to-understand-why-people-perceive-java-as-complex/
+aliases: /2022/04/my-attempt-to-understand-why-people-perceive-java-as-complex/
 categories: [Java]
 tags: [Java, Thoughts]
 ---
@@ -31,7 +32,7 @@ It would be good to hear from the people so that we can make better decisions wh
 
 So I asked this on Twitter:
 
-{{< tweet 1509905489911762950 >}}
+{{< tweet user="sivalabs" id="1509905489911762950" >}}
 
 I got plenty of replies from newbies, experts and some industry legends as well.
 

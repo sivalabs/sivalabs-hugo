@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/learn.webp"]
 type: post
 date: 2018-02-22T07:59:17+05:30
-url: /2018/02/why-springboot-so-popular-how-to-learn-springboot/
+url: /why-springboot-so-popular-how-to-learn-springboot/
+aliases: /2018/02/why-springboot-so-popular-how-to-learn-springboot/
 categories:
   - springboot
 tags:

@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/remote-1.webp"]
 type: post
 date: 2020-05-31T04:59:17+05:30
-url: /2020/05/remote-debugging-spring-boot-application/
+url: /remote-debugging-spring-boot-application/
+aliases: /2020/05/remote-debugging-spring-boot-application/
 categories:
   - Java
 tags: [Java, SpringBoot]
