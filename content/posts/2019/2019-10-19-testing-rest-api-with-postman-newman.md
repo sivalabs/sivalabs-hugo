@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/postman.webp"]
 type: post
 date: 2019-10-20T07:59:17+05:30
-url: /2019/10/testing-rest-apis-with-postman-newman/
+url: /testing-rest-apis-with-postman-newman/
+aliases: /2019/10/testing-rest-apis-with-postman-newman/
 categories:
   - Testing
 tags: [Postman, Newman, REST]

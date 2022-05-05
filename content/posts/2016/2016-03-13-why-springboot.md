@@ -3,9 +3,8 @@ title: Why SpringBoot?
 author: Siva
 type: post
 date: 2016-03-13T07:02:10+00:00
-url: /2016/03/why-springboot/
-post_views_count:
-  - 69
+url: /why-springboot/
+aliases: /2016/03/why-springboot/
 categories:
   - Spring
 tags:

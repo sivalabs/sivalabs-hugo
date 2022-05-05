@@ -5,7 +5,9 @@ images: ["/preview-images/team.webp"]
 type: post
 draft: true
 date: 2020-11-29T04:59:17+05:30
-url: /2020/11/fullstack-developer-and-tshaped-developer-and-everything-in-between/
+url: /fullstack-developer-and-tshaped-developer-and-everything-in-between/
+aliases:
+- /2020/11/fullstack-developer-and-tshaped-developer-and-everything-in-between/
 categories:
   - Thoughts
 tags: [Thoughts]

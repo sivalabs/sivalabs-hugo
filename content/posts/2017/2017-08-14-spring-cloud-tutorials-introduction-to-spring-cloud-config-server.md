@@ -3,7 +3,8 @@ title: Spring Cloud Tutorials – Introduction to Spring Cloud Config Server
 author: Siva
 type: post
 date: 2017-08-14T03:35:07+00:00
-url: /2017/08/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/
+url: /spring-cloud-tutorials-introduction-to-spring-cloud-config-server/
+aliases: /2017/08/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/
 categories:
   - Java
   - Spring

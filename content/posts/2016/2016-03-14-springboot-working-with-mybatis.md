@@ -3,9 +3,8 @@ title: 'SpringBoot : Working with MyBatis'
 author: Siva
 type: post
 date: 2016-03-14T07:10:42+00:00
-url: /2016/03/springboot-working-with-mybatis/
-post_views_count:
-  - 81
+url: /springboot-working-with-mybatis/
+aliases: /2016/03/springboot-working-with-mybatis/
 categories:
   - Spring
 tags:

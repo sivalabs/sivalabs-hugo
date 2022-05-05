@@ -6,8 +6,7 @@ type: post
 draft: false
 date: 2022-04-04T04:59:17+05:30
 url: /my-attempt-to-understand-why-people-perceive-java-as-complex/
-aliases:
-  - /2022/04/my-attempt-to-understand-why-people-perceive-java-as-complex/
+aliases: /2022/04/my-attempt-to-understand-why-people-perceive-java-as-complex/
 categories: [Java]
 tags: [Java, Thoughts]
 ---

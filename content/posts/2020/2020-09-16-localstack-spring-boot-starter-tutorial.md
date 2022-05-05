@@ -5,7 +5,9 @@ images: ["/preview-images/localstack.webp"]
 type: post
 draft: false
 date: 2020-09-16T04:59:17+05:30
-url: /2020/09/localstack-spring-boot-starter-tutorial/
+url: /localstack-spring-boot-starter-tutorial/
+aliases:
+- /2020/09/localstack-spring-boot-starter-tutorial/
 categories:
   - Java
 tags: [Spring, SpringBoot, Localstack]

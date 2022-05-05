@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/testcontainers.webp"]
 type: post
 date: 2020-02-03T04:59:17+05:30
-url: /2020/02/spring-boot-integration-testing-using-testcontainers-starter/
+url: /spring-boot-integration-testing-using-testcontainers-starter/
+aliases: /2020/02/spring-boot-integration-testing-using-testcontainers-starter/
 categories:
   - SpringBoot
 tags: [SpringBoot, Testcontainers]

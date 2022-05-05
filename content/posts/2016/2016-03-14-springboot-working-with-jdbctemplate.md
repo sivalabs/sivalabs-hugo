@@ -3,9 +3,8 @@ title: 'SpringBoot : Working with JdbcTemplate'
 author: Siva
 type: post
 date: 2016-03-14T07:08:22+00:00
-url: /2016/03/springboot-working-with-jdbctemplate/
-post_views_count:
-  - 469
+url: /springboot-working-with-jdbctemplate/
+aliases: /2016/03/springboot-working-with-jdbctemplate/
 categories:
   - Spring
 tags:

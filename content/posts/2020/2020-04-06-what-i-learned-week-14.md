@@ -4,7 +4,8 @@ author: Siva
 images: ["/preview-images/WIL-3.webp"]
 type: post
 date: 2020-04-06T04:59:17+05:30
-url: /2020/04/what-i-learned-2020-week-14/
+url: /what-i-learned-2020-week-14/
+aliases: /2020/04/what-i-learned-2020-week-14/
 categories:
   - Java
 tags: [Java, Blogging]

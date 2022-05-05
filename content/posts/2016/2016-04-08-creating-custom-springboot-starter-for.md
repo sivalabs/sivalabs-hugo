@@ -3,9 +3,8 @@ title: Creating Custom SpringBoot Starter for Twitter4j
 author: Siva
 type: post
 date: 2016-04-08T06:57:23+00:00
-url: /2016/04/creating-custom-springboot-starter-for/
-post_views_count:
-  - 20
+url: /creating-custom-springboot-starter-for/
+aliases: /2016/04/creating-custom-springboot-starter-for/
 categories:
   - Spring
 tags:

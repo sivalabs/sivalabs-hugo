@@ -3,9 +3,8 @@ title: 'SpringBoot : Working with JOOQ'
 author: Siva
 type: post
 date: 2016-03-15T07:13:21+00:00
-url: /2016/03/springboot-working-with-jooq/
-post_views_count:
-  - 39
+url: /springboot-working-with-jooq/
+aliases: /2016/03/springboot-working-with-jooq/
 categories:
   - Spring
 tags:

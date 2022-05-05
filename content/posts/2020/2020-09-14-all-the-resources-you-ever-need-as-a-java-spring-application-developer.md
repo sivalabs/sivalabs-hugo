@@ -5,7 +5,9 @@ images: ["/preview-images/blogs.webp"]
 type: post
 draft: false
 date: 2020-09-14T04:59:17+05:30
-url: /2020/09/all-the-resources-you-ever-need-as-a-java-spring-application-developer/
+url: /all-the-resources-you-ever-need-as-a-java-spring-application-developer/
+aliases:
+- /2020/09/all-the-resources-you-ever-need-as-a-java-spring-application-developer/
 categories:
   - Java
 tags: [Spring, SpringBoot, Java]

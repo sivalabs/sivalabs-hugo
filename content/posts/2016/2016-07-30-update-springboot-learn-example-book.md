@@ -3,9 +3,8 @@ title: 'Update on SpringBoot : Learn By Example book'
 author: Siva
 type: post
 date: 2016-07-30T02:53:50+00:00
-url: /2016/07/update-springboot-learn-example-book/
-post_views_count:
-  - 17
+url: /update-springboot-learn-example-book/
+aliases: /2016/07/update-springboot-learn-example-book/
 categories:
   - Books
   - Spring
