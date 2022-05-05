@@ -33,7 +33,7 @@ It would be good to hear from the people so that we can make better decisions wh
 
 So I asked this on Twitter:
 
-{{< tweet 1509905489911762950 >}}
+{{< tweet user="sivalabs" id="1509905489911762950" >}}
 
 I got plenty of replies from newbies, experts and some industry legends as well.
 
