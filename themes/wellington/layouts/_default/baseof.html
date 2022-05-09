@@ -33,7 +33,7 @@
     {{ end }}
     {{ if (not (eq .Site.GoogleAnalytics "")) }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ end }}
     {{ end }}
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6679930559924163"

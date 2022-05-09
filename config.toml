@@ -5,7 +5,7 @@ theme = "wellington"
 paginate=10
 
 disqusShortname = "sivalabs"
-googleAnalytics = "UA-71296890-1"
+googleAnalytics = "G-N5019E5MWE"
 enableRobotsTXT = true
 enableEmoji = true
 preserveTaxonomyNames = true
