@@ -49,6 +49,7 @@ and his [YouTube Channel](https://www.youtube.com/user/danvegadotorg)
 * This blog https://www.petrikainulainen.net/blog/ was my go to reference by [Petri Kainulainen](https://twitter.com/petrikainulaine).
 I guess he is busy with other interesting things in life lately :-).
 * [Telusko YouTube Channel](https://www.youtube.com/channel/UC59K-uG2A5ogwIrHw4bmlEg)
+* [Java Brains YouTube Channel](https://www.youtube.com/channel/UCYt1sfh5464XaDBH0oH_o7Q)
 * [IntelliJ IDEA YouTube Channel](https://www.youtube.com/channel/UC4ogdcPcIAOOMJktgBMhQnQ)
 * https://blog.frankel.ch/
 * https://www.callicoder.com/
