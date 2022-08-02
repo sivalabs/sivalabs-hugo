@@ -9,11 +9,12 @@ categories: ["videos"]
 ---
 ## [My YouTube Channel](https://www.youtube.com/channel/UCaD610N2vvYzBuhxwCOdxqw)
 
-## Part 1 : Introduction To SpringBoot
+## SpringBoot Tips Series
 
-{{< youtube TDOH-VHfejI >}}
+{{< youtubepl id="PLuNxlOYbv61jFFX2ARQKnBgkMF6DvEEic" >}}
 
-## Part-2 : Using SpringBoot with Tomcat Jetty Undertow servers
 
-{{< youtube C0Vm1w5EnW4 >}}
+## SpringBoot + Kubernetes Tutorial Series
+
+{{< youtubepl id="PLuNxlOYbv61h66_QlcjCEkVAj6RdeplJJ" >}}
 
