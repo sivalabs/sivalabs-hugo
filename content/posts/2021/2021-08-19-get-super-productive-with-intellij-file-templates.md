@@ -173,10 +173,10 @@ Create a Parent Template and give name as **Generate Boilerplate For Entity** an
 
 #set( $CamelCaseName = "$NAME.substring(0,1).toLowerCase()$NAME.substring(1)" )
 
-class Dummy{}
+class Dummy$NAME{}
 ```
 
-> It seems there is a limitation that Parent template should generate a class, otherwise it is failing. So generating a Dummy class.
+> It seems there is a limitation that Parent template should generate a class, otherwise it is failing. So generating a Dummy$NAME class.
 
 We are setting template variable **$CamelCaseName** which is a camelCased value of entity.
 
