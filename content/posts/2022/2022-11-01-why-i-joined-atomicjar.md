@@ -1,5 +1,5 @@
 ---
-title: "Why I am excited to join AtomicJar"
+title: Why I am excited to join AtomicJar
 author: Siva
 images: ["/images/AtomicJar.webp"]
 type: post
