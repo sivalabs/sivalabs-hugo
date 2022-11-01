@@ -4,7 +4,7 @@ author: Siva
 images: ["/raw-images/cnsia-book-cover.jpeg"]
 type: post
 draft: false
-date: 2022-08-27T04:59:17+05:30
+date: 2022-10-27T04:59:17+05:30
 url: /cloud-native-spring-in-action-book-review/
 categories: [Books]
 tags: [SpringBoot, Cloud, Books]
