@@ -200,6 +200,8 @@ public class BookmarkController {
 
 Here we are binding the JSON request payload to Bookmark record and also returning the Bookmark record as response payload which Jackson will convert to JSON.
 
+> You can find a sample project demonstrating the Java records usage with SpringBoot 3 at https://github.com/sivaprasadreddy/spring-boot-jpa-crud-demo
+
 # Conclusion
 Java records are very useful to model the immutable data carrier objects with very concise syntax.
 However, Records are not silver bullet solution for every scenario. There could be cases where a regular class is better suited than Records.
