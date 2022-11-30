@@ -1,7 +1,7 @@
 ---
 title: Using Java Records with Spring Boot 3
 author: Siva
-images: ["/images/java-records-with-sb3.webp"]
+images: ["/preview-images/java-records-with-sb3.webp"]
 type: post
 draft: false
 date: 2022-11-26T04:59:17+05:30
