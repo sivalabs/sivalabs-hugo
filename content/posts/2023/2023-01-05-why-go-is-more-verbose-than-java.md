@@ -169,6 +169,10 @@ My comparison was only about "verbosity". When it comes to other aspects I like 
 > I was [building an application](https://github.com/orgs/sivalabs-bookstore/repositories) with around 7 services using SpringBoot and when I try to run them in Docker I couldn't because of memory/CPU consumption is too high.
 > I replaced some services with Go implementation, and they run smoothly with very less memory consumption.
 
+I am not saying Go is more verbose than Java based on my gut feeling or my bias towards Java.
+I am simply showing code samples to convey why I feel Go is more verbose than Java.
+If you think its incorrect assumption and show some code samples then I am glad to learn and improve my understanding.
+
 # Conclusion
 So, it all comes down to tradeoffs. No language is perfect in every aspect, and we have to choose the tech stack which ticks most checkboxes for our specific needs.
 Just parroting "Language X is dead or Language Y is verbose" just because you read these memes/jokes on internet doesn't bring any value.
