@@ -3,7 +3,7 @@ title: Sharing Thoughts and Knowledge via Twitter vs Blogging
 author: Siva
 images: ["/preview-images/discussions.webp"]
 type: post
-draft: true
+draft: false
 date: 2023-07-03T04:59:17+05:30
 url: /sharing-thoughts-and-knowledge-via-twitter-vs-blogging
 categories: [Software]
