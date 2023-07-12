@@ -3,9 +3,7 @@ title: 'JCart Iteration-3 : Manage Categories and Products'
 author: Siva
 type: post
 date: 2015-12-20T05:58:44+00:00
-url: /2015/12/jcart-iteration-3-manage-categories-and-products/
-post_views_count:
-  - 6
+url: /jcart-iteration-3-manage-categories-and-products/
 categories:
   - Java
 tags:

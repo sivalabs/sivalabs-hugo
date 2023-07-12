@@ -3,9 +3,7 @@ title: 'JCart : Billing and Delivery Page'
 author: Siva
 type: post
 date: 2015-12-31T07:40:14+00:00
-url: /2015/12/jcart-billing-and-delivery-page/
-post_views_count:
-  - 3
+url: /jcart-billing-and-delivery-page/
 categories:
   - Java
 tags:

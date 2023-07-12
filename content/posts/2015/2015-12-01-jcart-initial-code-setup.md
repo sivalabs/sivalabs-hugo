@@ -3,9 +3,7 @@ title: 'JCart: Initial Code SetUp'
 author: Siva
 type: post
 date: 2015-12-01T04:14:09+00:00
-url: /2015/12/jcart-initial-code-setup/
-post_views_count:
-  - 32
+url: /jcart-initial-code-setup/
 categories:
   - Java
 tags:

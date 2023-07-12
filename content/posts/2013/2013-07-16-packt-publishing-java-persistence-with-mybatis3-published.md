@@ -3,17 +3,7 @@ title: Packt Publishing “Java Persistence With MyBatis3” published
 author: Siva
 type: post
 date: 2013-07-16T10:01:00+00:00
-url: /2013/07/packt-publishing-java-persistence-with-mybatis3-published/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2013/07/packt-publishing-java-persistence-with.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/7113412573298417201
-post_views_count:
-  - 3
+url: /packt-publishing-java-persistence-with-mybatis3-published/
 categories:
   - Books
 tags:

@@ -3,9 +3,7 @@ title: 'JCart: Configuring Spring Security'
 author: Siva
 type: post
 date: 2015-12-01T05:27:15+00:00
-url: /2015/12/jcart-configuring-spring-security/
-post_views_count:
-  - 18
+url: /jcart-configuring-spring-security/
 categories:
   - Java
 tags:

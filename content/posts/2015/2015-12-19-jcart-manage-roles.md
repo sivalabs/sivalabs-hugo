@@ -3,16 +3,14 @@ title: 'JCart: Manage Roles'
 author: Siva
 type: post
 date: 2015-12-19T03:16:38+00:00
-url: /2015/12/jcart-manage-roles/
-post_views_count:
-  - 6
+url: /jcart-manage-roles/
 categories:
   - Java
 tags:
   - jcart
 
 ---
-In our previous post **Manage Privileges – List all privileges** we have implemented the functionality to show list of permissions. In this post we will implement Role management such as listing all Roles, creating new Role, editing Role permissions etc.
+In our previous post **Manage Privileges – List all privileges** we have implemented the functionality to show list of permissions. In this post we will implement Role management such as listing all Roles, creating new Role, editing Role permissions etc.
 
 Basically a Role is nothing a but group of Permissions assigned so that giving access to a set of action to user will become easy by assigning Roles.
 
@@ -151,7 +149,7 @@ While showing New Role form we should also show list of permission that we would
 
 Also we want to validate the New Role form to check for any missing mandatory details.
 
-First let us implement **RoleValidator** **jcart-admin/src/main/java/com/sivalabs/jcart/admin/web/validators/RoleValidator.java** as follows:
+First let us implement **RoleValidator** **jcart-admin/src/main/java/com/sivalabs/jcart/admin/web/validators/RoleValidator.java** as follows:
 
 ```java
 package com.sivalabs.jcart.admin.web.validators;

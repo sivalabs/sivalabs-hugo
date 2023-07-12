@@ -3,9 +3,7 @@ title: 'JCart: Admin UI Layout SetUp'
 author: Siva
 type: post
 date: 2015-12-01T04:38:56+00:00
-url: /2015/12/jcart-admin-ui-layout-setup/
-post_views_count:
-  - 30
+url: /jcart-admin-ui-layout-setup/
 categories:
   - Java
 tags:

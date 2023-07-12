@@ -3,9 +3,7 @@ title: Setting up the Development Environment for JCart
 author: Siva
 type: post
 date: 2015-11-24T04:34:03+00:00
-url: /2015/11/setting-up-the-development-environment-for-jcart/
-post_views_count:
-  - 13
+url: /setting-up-the-development-environment-for-jcart/
 categories:
   - Java
 tags:
@@ -15,13 +13,13 @@ tags:
 ---
 For our JCart application development we will be using the following Softwares/Tools.
 
-  1.  <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">JDK 8</a>
-  2. <a href="https://spring.io/tools/sts/all" target="_blank">SpringSource Tool Suite (STS) </a>
+  1.  <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">JDK 8</a>
+  2. <a href="https://spring.io/tools/sts/all" target="_blank">SpringSource Tool Suite (STS) </a>
   3. <a href="https://www.mysql.com/downloads/" target="_blank">MySQL</a>
-  4. <a href="https://git-scm.com/download/win" target="_blank">Git </a>
-  5. <a href="https://maven.apache.org/download.cgi" target="_blank">Maven </a>
-  6. <a href="https://jenkins-ci.org/" target="_blank">Jenkins </a>
-  7. <a href="http://www.sonarqube.org/" target="_blank">SonarQube </a>
+  4. <a href="https://git-scm.com/download/win" target="_blank">Git </a>
+  5. <a href="https://maven.apache.org/download.cgi" target="_blank">Maven </a>
+  6. <a href="https://jenkins-ci.org/" target="_blank">Jenkins </a>
+  7. <a href="http://www.sonarqube.org/" target="_blank">SonarQube </a>
   8. <a href="https://httpd.apache.org/" target="_blank">Apache</a>/<a href="https://www.nginx.com/" target="_blank">Nginx </a>WebServer
 
 

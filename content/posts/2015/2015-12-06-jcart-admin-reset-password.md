@@ -3,9 +3,7 @@ title: 'JCart: Admin Reset Password'
 author: Siva
 type: post
 date: 2015-12-06T10:41:22+00:00
-url: /2015/12/jcart-admin-reset-password/
-post_views_count:
-  - 11
+url: /jcart-admin-reset-password/
 categories:
   - Java
 tags:

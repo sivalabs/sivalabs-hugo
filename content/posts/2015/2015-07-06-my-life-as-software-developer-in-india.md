@@ -3,17 +3,8 @@ title: My Life as a Software Developer in India
 author: Siva
 type: post
 date: 2015-07-06T16:17:00+00:00
-url: /2015/07/my-life-as-software-developer-in-india/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2015/07/my-life-as-software-developer-in-india.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/7173545838993505470
-post_views_count:
-  - 26
+url: /my-life-as-software-developer-in-india/
+aliases: /2015/07/my-life-as-software-developer-in-india/
 categories:
   - Java
 tags:

@@ -3,17 +3,8 @@ title: 'MyBatis Tutorial : Part4 – Spring Integration'
 author: Siva
 type: post
 date: 2012-10-24T00:40:00+00:00
-url: /2012/10/mybatis-tutorial-part4-spring-integration/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2012/10/mybatis-tutorial-part4-spring.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/3608475702727237007
-post_views_count:
-  - 42
+url: /mybatis-tutorial-part4-spring-integration/
+aliases: /2012/10/mybatis-tutorial-part4-spring-integration/
 categories:
   - Java
 tags:

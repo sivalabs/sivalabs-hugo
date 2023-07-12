@@ -3,9 +3,7 @@ title: 'JCart : Customer Login'
 author: Siva
 type: post
 date: 2015-12-31T07:20:06+00:00
-url: /2015/12/jcart-customer-login/
-post_views_count:
-  - 2
+url: /jcart-customer-login/
 categories:
   - Java
 tags:
@@ -14,7 +12,7 @@ tags:
 ---
 So far we have implemented the functionality where customers can browse the categories, add products to cart, view Cart and update/remove items.
   
-But to checkout the cart the customer should login into the system. So if the customer is not yet loggedin we should redirect customer to login page. If customer is already registered with our system he can login or he should be able to register. So, we will start implementing Customer Login/Registration usecases.
+But to checkout the cart the customer should login into the system. So if the customer is not yet loggedin we should redirect customer to login page. If customer is already registered with our system he can login or he should be able to register. So, we will start implementing Customer Login/Registration usecases.
 
 Let us create login form thymeleaf view jcart-site/src/main/resources/templates/login.html as follows:
 

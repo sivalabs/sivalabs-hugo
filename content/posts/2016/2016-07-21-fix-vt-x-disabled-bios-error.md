@@ -17,7 +17,7 @@ If you face the **vt-x is disabled in the bios** error while trying to run Andro
 
 Go to BIOS Setup and enable &#8220;Virtualization Technology&#8221; option.
 
-**On my Lenovo laptop this option was already enabled, but still getting this error. I have disabled it and re-enabled it, then it is working.**
+**On my Lenovo laptop this option was already enabled, but still getting this error. I have disabled it and re-enabled it, then it is working.**
 
 #### Step 2: Install HAXM Installer from Android SDK Manager
 

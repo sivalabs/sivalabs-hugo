@@ -3,16 +3,14 @@ title: 'JCart : ShoppingCart Product Search Results'
 author: Siva
 type: post
 date: 2015-12-30T14:27:57+00:00
-url: /2015/12/jcart-shoppingcart-product-search-results/
-post_views_count:
-  - 3
+url: /jcart-shoppingcart-product-search-results/
 categories:
   - Java
 tags:
   - jcart
 
 ---
-In our main template we have a Search box to search for products. In this post we will implement the Product Search functionality. When customer search for a product we will search products based on name or SKU or description.
+In our main template we have a Search box to search for products. In this post we will implement the Product Search functionality. When customer search for a product we will search products based on name or SKU or description.
 
 Let us implement the search handler method in **ProductController** as follows:
 

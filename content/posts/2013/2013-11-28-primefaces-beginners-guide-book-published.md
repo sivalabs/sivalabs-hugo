@@ -3,17 +3,7 @@ title: PrimeFaces Beginner’s Guide book published
 author: Siva
 type: post
 date: 2013-11-28T04:02:00+00:00
-url: /2013/11/primefaces-beginners-guide-book-published/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2013/11/primefaces-beginners-guide-book.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/7536292221367708928
-post_views_count:
-  - 7
+url: /primefaces-beginners-guide-book-published/
 categories:
   - Books
 tags:

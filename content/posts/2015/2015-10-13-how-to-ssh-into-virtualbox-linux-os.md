@@ -3,9 +3,7 @@ title: How to SSH into VirtualBox Linux OS?
 author: Siva
 type: post
 date: 2015-10-13T02:05:05+00:00
-url: /2015/10/how-to-ssh-into-virtualbox-linux-os/
-post_views_count:
-  - 5
+url: /how-to-ssh-into-virtualbox-linux-os/
 categories:
   - Linux
 tags:

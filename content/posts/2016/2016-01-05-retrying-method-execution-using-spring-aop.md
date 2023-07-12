@@ -11,7 +11,7 @@ tags:
   - Spring
 
 ---
-One of my blog follower sends an email asking me to show an example of **&#8220;RealWorld Usage of Spring AOP&#8221;**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **&#8220;Real Project for Real Problems&#8221;**.
+One of my blog follower sends an email asking me to show an example of **&#8220;RealWorld Usage of Spring AOP&#8221;**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **&#8220;Real Project for Real Problems&#8221;**.
 
 So I would like to show how I have used Spring AOP for one of my project to handle a real problem.
 

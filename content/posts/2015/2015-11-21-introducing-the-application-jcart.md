@@ -3,9 +3,7 @@ title: Introducing the application JCart
 author: Siva
 type: post
 date: 2015-11-21T02:28:23+00:00
-url: /2015/11/introducing-the-application-jcart/
-post_views_count:
-  - 33
+url: /introducing-the-application-jcart/
 categories:
   - Java
   - Spring
@@ -44,8 +42,8 @@ After having a brief discussion with our client, following are the high level re
       * Customers will receive confirmation emails when order is placed or order status changed
   2. An Administration website which has the following features: 
       * Ability to manage Categories and Products
-      * Ability to create one or more users for Administration website
-      * Ability to restrict access to certain features based on roles
+      * Ability to create one or more users for Administration website
+      * Ability to restrict access to certain features based on roles
       * Ability to view customer orders and update the status
   3. A mobile (Android/iOS) application for ShoppinngCart 
       * Not an immediate requirement, but in future we may need it.

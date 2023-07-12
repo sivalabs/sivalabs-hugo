@@ -3,9 +3,7 @@ title: Developing a simple e-commerce application from scratch to production usi
 author: Siva
 type: post
 date: 2015-11-20T14:18:35+00:00
-url: /2015/11/developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/
-post_views_count:
-  - 83
+url: /developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/
 categories:
   - Java
   - Spring
@@ -31,9 +29,9 @@ Every week I receive at least couple of emails from software developers with 1 t
 
 Those emails goes like this:
 
-> I joined in XYZ company as a fresher and I have been there for the last 2+ years. They put me in a maintenance project where I mostly work on defect fixes and I never really worked on anything from scratch. Now I am not at all confident about my technical skills as I have not implemented anything on my own apart from fixing defects here and there. Here we don't see any new projects in near future. So I want to move to a different company, but I am having a very hard time in clearing the interviews.
+> I joined in XYZ company as a fresher and I have been there for the last 2+ years. They put me in a maintenance project where I mostly work on defect fixes and I never really worked on anything from scratch. Now I am not at all confident about my technical skills as I have not implemented anything on my own apart from fixing defects here and there. Here we don't see any new projects in near future. So I want to move to a different company, but I am having a very hard time in clearing the interviews.
 > 
-> So, could you please advise me how to learn Java the way people use it in real projects, not basic HelloWorld kind of samples? Could you suggest any books, blogs? Should I learn Spring, Hibernate to get a Job?
+> So, could you please advise me how to learn Java the way people use it in real projects, not basic HelloWorld kind of samples? Could you suggest any books, blogs? Should I learn Spring, Hibernate to get a Job?
 
 I feel very sad to see the people in this kind of situation because I know how painful it is. But also simply blaming the company for not giving an opportunity to build something from scratch won't help. Teaching you latest and greatest technologies may not be your organizations top priority.
 
@@ -83,7 +81,7 @@ We will develop an e-commerce application using Java technologies. We will start
 
 &nbsp;
 
-For this whole exercise we will build a ShoppingCart application &#8220;JCart&#8221; using SpringBoot, SpringMVC, Thymeleaf, JPA(Hibernate). I too have this habit of prefixing with J for everything I built with Java :-).
+For this whole exercise we will build a ShoppingCart application &#8220;JCart&#8221; using SpringBoot, SpringMVC, Thymeleaf, JPA(Hibernate). I too have this habit of prefixing with J for everything I built with Java :-).
 
 If everything goes as planned and once we finish this application, then probably I will try to implement the same application using JavaEE stack (CDI, EJB, JPA, JSF etc).
 

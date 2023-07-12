@@ -15,7 +15,7 @@ Spring is a very popular Java based framework for building web and enterprise ap
 
 Spring framework provides flexibility to configure the beans in multiple ways such as **XML**, **Annotations** and **JavaConfig**. With the number of features increased the complexity also gets increased and configuring Spring applications becomes tedious and error-prone.
 
-Spring team created SpringBoot to address the complexity of configuration.
+Spring team created SpringBoot to address the complexity of configuration.
 
 But before diving into SpringBoot, we will take a quick look at Spring framework and see what kind of problems SpringBoot is trying to address.
 
@@ -139,7 +139,7 @@ But there is no one-size fits all kind of solution. One has to choose the approa
 
 OK, now that you had a glimpse of how various styles of Spring bean configurations looks like.
 
-**You can find the source code of this article on GitHub at <a href="https://github.com/sivaprasadreddy/springboot-tutorials">https://github.com/sivaprasadreddy/springboot-tutorials</a>**
+**You can find the source code of this article on GitHub at <a href="https://github.com/sivaprasadreddy/springboot-tutorials">https://github.com/sivaprasadreddy/springboot-tutorials</a>**
 
 Let us take a quick look at the configuration of a typical SpringMVC + JPA/Hibernate web application configuration looks like.
 
@@ -330,7 +330,7 @@ In our AppConfig.java configuration class we have done the following:
   * Defined beans for **DataSource**, JPA **EntityManagerFactory**, **JpaTransactionManager**.
   * Configured **DataSourceInitializer** bean to initialize the database by executing **data.sql** script on application start up.
 
-we need to configure property placeholder values in **application.properties** in src/main/resources as follows:
+we need to configure property placeholder values in **application.properties** in src/main/resources as follows:
 
 
 ```properties
@@ -727,13 +727,13 @@ But, this looks all magical!!!
 
 I can imagine what you are thinking. You are thinking like SpringBoot looks cool and it is doing lot of things automatically for me. But still I am not fully understand how it is all really working behind the scenes. Right?
 
-I can understand. Watching magic show is fun normally, but not in Software Development. Don’t worry, we will be looking at each of those things and explain in-detail how things are happening behind the scenes in future articles. But I don’t want to overwhelm you by dumping everything on to your hear right now in this article.
+I can understand. Watching magic show is fun normally, but not in Software Development. Don’t worry, we will be looking at each of those things and explain in-detail how things are happening behind the scenes in future articles. But I don’t want to overwhelm you by dumping everything on to your hear right now in this article.
 
 ### Summary
 
 In this article we had a quick overview of various Spring configuration styles and understand the complexity of configuring Spring applications. Also, we had a quick look at SpringBoot by creating a simple web application.
 
-In next article we will deep dive into SpringBoot and understand how it works.
+In next article we will deep dive into SpringBoot and understand how it works.
 
 [How SpringBoot AutoConfiguration Works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
 

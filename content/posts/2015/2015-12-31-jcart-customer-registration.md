@@ -3,9 +3,7 @@ title: 'JCart : Customer Registration'
 author: Siva
 type: post
 date: 2015-12-31T07:24:01+00:00
-url: /2015/12/jcart-customer-registration/
-post_views_count:
-  - 3
+url: /jcart-customer-registration/
 categories:
   - Java
 tags:

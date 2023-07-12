@@ -3,9 +3,7 @@ title: Thinking of moving from Windows to Linux?
 author: Siva
 type: post
 date: 2015-10-13T02:02:30+00:00
-url: /2015/10/thinking-of-moving-from-windows-to-linux/
-post_views_count:
-  - 4
+url: /thinking-of-moving-from-windows-to-linux/
 categories:
   - Linux
 tags:
@@ -20,7 +18,7 @@ I think the main reason for the popularity of Windows operating systems is the f
 
 Few years ago I got to learn a bit about Linux in order to deploy my application on remote deployment servers and I used to get it done using few comments and I never really bothered to learn Linux. A year ago one of my friend suggested to look at Ubuntu which is a Linux OS with a nice Desktop Environment (DE). I installed Ubuntu on VirtualBox and played with it couple of days and left it because it was too slow on my VirtualBox.
 
-## Why I want to lean and use Linux as my primary desktop OS?
+## Why I want to lean and use Linux as my primary desktop OS?
 
   * These days I am spending good amount of time deploying apps on remote Linux servers, so I need to learn more about Linux.
   * I don't like Windows 8,8.1,10 OS mobile style desktop UI. I want my good old familiar Windows 7 style GUI. I came to know there are some Linux distros which looks like Windows 7.
@@ -29,14 +27,14 @@ Few years ago I got to learn a bit about Linux in order to deploy my application
 
 Once I decided to use Linux as my desktop OS, I started looking for the better Desktop Linux distros for beginners like me and I found that following are better among the hundreds of Linux distros.
 
-  * Ubuntu <a href="http://www.ubuntu.com" target="_blank">http://www.ubuntu.com</a>
-  * Linux Mint <a href="http://www.linuxmint.com" target="_blank">http://www.linuxmint.com</a>
-  * Fedora <a href="https://getfedora.org" target="_blank">https://getfedora.org</a>
-  * CentOS <a href="https://www.centos.org" target="_blank">https://www.centos.org</a>
-  * ElementaryOS <a href="http://elementary.io" target="_blank">http://elementary.io</a>
-  * PinguyOS <a href="http://pinguyos.com" target="_blank">http://pinguyos.com</a>
-  * OpenSUSE <a href="https://www.opensuse.org" target="_blank">https://www.opensuse.org</a>
-  * Zorin <a href="http://zorinos.com" target="_blank">http://zorinos.com</a>
+  * Ubuntu <a href="http://www.ubuntu.com" target="_blank">http://www.ubuntu.com</a>
+  * Linux Mint <a href="http://www.linuxmint.com" target="_blank">http://www.linuxmint.com</a>
+  * Fedora <a href="https://getfedora.org" target="_blank">https://getfedora.org</a>
+  * CentOS <a href="https://www.centos.org" target="_blank">https://www.centos.org</a>
+  * ElementaryOS <a href="http://elementary.io" target="_blank">http://elementary.io</a>
+  * PinguyOS <a href="http://pinguyos.com" target="_blank">http://pinguyos.com</a>
+  * OpenSUSE <a href="https://www.opensuse.org" target="_blank">https://www.opensuse.org</a>
+  * Zorin <a href="http://zorinos.com" target="_blank">http://zorinos.com</a>
   
     and many more...
 
@@ -54,7 +52,7 @@ I have tried **OpenSUSE**, **Zorin**, **Deepin**, **Bodhi**, **Manjaro** etc als
 
 And finally, my favorite is **Linux Mint**. Linux Mint is a Ubuntu derivative but with its own Desktop Environment called Cinnamon. Linux Mint also comes with other Desktop Environments like MATE, XFCE etc.
   
-Linux Mint Cinnamon GUI looks almost like Windows 7 and the kind of customizations it provides is awesome. I liked Linux Mint very much among all the distros I tried and finally installed it on my laptop using it as my primary OS.
+Linux Mint Cinnamon GUI looks almost like Windows 7 and the kind of customizations it provides is awesome. I liked Linux Mint very much among all the distros I tried and finally installed it on my laptop using it as my primary OS.
 
 ## **Don't I need Windows OS anymore?**
 

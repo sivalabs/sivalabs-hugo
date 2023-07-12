@@ -3,9 +3,7 @@ title: 'JCart: Create JPA Entities'
 author: Siva
 type: post
 date: 2015-12-01T04:26:41+00:00
-url: /2015/12/jcart-create-jpa-entities/
-post_views_count:
-  - 18
+url: /jcart-create-jpa-entities/
 categories:
   - Java
 tags:

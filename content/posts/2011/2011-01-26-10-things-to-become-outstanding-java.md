@@ -3,17 +3,8 @@ title: 10 things to become an outstanding Java developer
 author: Siva
 type: post
 date: 2011-01-26T07:11:00+00:00
-url: /2011/01/10-things-to-become-outstanding-java/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2011/01/10-things-to-become-outstanding-java.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/4267701019759305634
-post_views_count:
-  - 62
+url: /10-things-to-become-outstanding-java/
+aliases: /2011/01/10-things-to-become-outstanding-java/
 categories:
   - Best Practices
   - Java

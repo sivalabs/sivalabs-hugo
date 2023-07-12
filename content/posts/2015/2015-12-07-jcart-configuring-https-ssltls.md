@@ -3,9 +3,7 @@ title: 'JCart: Configuring HTTPS SSL/TLS'
 author: Siva
 type: post
 date: 2015-12-07T13:17:45+00:00
-url: /2015/12/jcart-configuring-https-ssltls/
-post_views_count:
-  - 16
+url: /jcart-configuring-https-ssltls/
 categories:
   - Java
 tags:

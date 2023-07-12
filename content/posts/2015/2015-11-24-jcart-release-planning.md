@@ -3,9 +3,7 @@ title: JCart Release Planning
 author: Siva
 type: post
 date: 2015-11-24T04:26:20+00:00
-url: /2015/11/jcart-release-planning/
-post_views_count:
-  - 11
+url: /jcart-release-planning/
 categories:
   - Java
 tags:
@@ -15,7 +13,7 @@ tags:
 ---
 In our previous article 
 [JCart Requirements Analysis]({{< relref "2015-11-21-jcart-requirements-analysis.md" >}})
-we have listed out all the requirements that we need to implement for JCart application.  Now we need to come up with an implementation and release plan. As we are following iteration model, we will plan for N iterations where in each iteration we will implement some usecases.
+we have listed out all the requirements that we need to implement for JCart application. Now we need to come up with an implementation and release plan. As we are following iteration model, we will plan for N iterations where in each iteration we will implement some usecases.
 
 After listing out all the implementation tasks and based on the task dependencies, we came up with the following Iteration plan.
 
@@ -35,7 +33,7 @@ After listing out all the implementation tasks and based on the task dependencie
 ### [Iteration - 2]({{< relref "2015-12-18-jcart-iteration-2.md" >}})
 
   * Security 
-      * Manage Privileges &#8211; List all privileges
+      * Manage Privileges &#8211; List all privileges
       * Manage Roles 
           * List all Roles
           * Create new Role
@@ -47,7 +45,7 @@ After listing out all the implementation tasks and based on the task dependencie
 
 ### [Iteration - 3]({{< relref "2015-12-20-jcart-iteration-3-manage-categories-and-products.md" >}})
 
-  * Site Settings &#8211; Locale & Currency
+  * Site Settings &#8211; Locale & Currency
   * Manage Categories 
       * Create new Category
       * Update category

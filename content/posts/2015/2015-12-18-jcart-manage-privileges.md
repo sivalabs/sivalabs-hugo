@@ -3,9 +3,7 @@ title: 'JCart: Manage Privileges'
 author: Siva
 type: post
 date: 2015-12-18T14:32:52+00:00
-url: /2015/12/jcart-manage-privileges/
-post_views_count:
-  - 6
+url: /jcart-manage-privileges/
 categories:
   - Java
 tags:

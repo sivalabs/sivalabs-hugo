@@ -3,9 +3,7 @@ title: 'JCart : ShoppingCart UI Layout Setup'
 author: Siva
 type: post
 date: 2015-12-30T14:17:41+00:00
-url: /2015/12/jcart-shoppingcart-ui-layout-setup/
-post_views_count:
-  - 8
+url: /jcart-shoppingcart-ui-layout-setup/
 categories:
   - Java
 tags:
@@ -14,7 +12,7 @@ tags:
 ---
 In this post we will setup the layout for our ShoppingCart UI using Thymeleaf templates.
 
-Download the ustore theme zip file from <a href="https://www.freshdesignweb.com/ustora/" target="_blank">https://www.freshdesignweb.com/ustora/</a>  and copy the following directories/files into **jcart-site/src/main/resources/static/assets** folder.
+Download the ustore theme zip file from <a href="https://www.freshdesignweb.com/ustora/" target="_blank">https://www.freshdesignweb.com/ustora/</a>  and copy the following directories/files into **jcart-site/src/main/resources/static/assets** folder.
 
   * css
   * fonts

@@ -3,17 +3,8 @@ title: 'MyBatis Tutorial: Part-2: CRUD operations Using Annotations'
 author: Siva
 type: post
 date: 2012-10-21T11:49:00+00:00
-url: /2012/10/mybatis-tutorial-part-2-crud-operations-using-annotations/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2012/10/mybatis-tutorial-part-2-crud-operations.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/8669330277756809065
-post_views_count:
-  - 42
+url: /mybatis-tutorial-part-2-crud-operations-using-annotations/
+aliases: /2012/10/mybatis-tutorial-part-2-crud-operations-using-annotations/
 categories:
   - Java
 tags:

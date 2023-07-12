@@ -3,9 +3,7 @@ title: 'JCart : Iteration-1'
 author: Siva
 type: post
 date: 2015-12-01T04:10:08+00:00
-url: /2015/12/jcart-iteration-1/
-post_views_count:
-  - 32
+url: /jcart-iteration-1/
 categories:
   - Java
 tags:

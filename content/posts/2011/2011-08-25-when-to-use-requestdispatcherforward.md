@@ -3,17 +3,7 @@ title: When to use RequestDispatcher.forward() and response.sendRedirect()?
 author: Siva
 type: post
 date: 2011-08-25T00:35:00+00:00
-url: /2011/08/when-to-use-requestdispatcherforward/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2011/08/when-to-use-requestdispatcherforward.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/5948191930210386428
-post_views_count:
-  - 11
+url: /when-to-use-requestdispatcherforward/
 categories:
   - JavaEE
 tags:

@@ -3,17 +3,7 @@ title: My Linux Journey Begins
 author: Siva
 type: post
 date: 2015-05-11T06:58:00+00:00
-url: /2015/05/my-linux-journey-begins/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2015/05/my-linux-journey-begins.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/2630379787368288924
-post_views_count:
-  - 5
+url: /my-linux-journey-begins/
 categories:
   - Linux
 tags:

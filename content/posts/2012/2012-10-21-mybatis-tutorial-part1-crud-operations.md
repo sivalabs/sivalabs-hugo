@@ -3,17 +3,8 @@ title: 'MyBatis Tutorial: Part1 – CRUD Operations'
 author: Siva
 type: post
 date: 2012-10-21T11:10:00+00:00
-url: /2012/10/mybatis-tutorial-part1-crud-operations/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2012/10/mybatis-tutorial-part1-crud-operations.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/3198252148295035486
-post_views_count:
-  - 80
+url: /mybatis-tutorial-part1-crud-operations/
+aliases: /2012/10/mybatis-tutorial-part1-crud-operations/
 categories:
   - Java
 tags:

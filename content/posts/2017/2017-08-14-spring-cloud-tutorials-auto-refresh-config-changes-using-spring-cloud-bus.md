@@ -82,4 +82,4 @@ Not only different applications, you may be running multiple instances of same a
 
 So, with Spring Cloud Bus AMQP it is easy to reload configuration changes for any number of applications with one single /bus/refresh request.
 
-The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial.
+The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial.

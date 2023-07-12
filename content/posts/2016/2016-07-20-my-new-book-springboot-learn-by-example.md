@@ -13,7 +13,7 @@ tags:
   - SpringBoot
 
 ---
-I am happy to announce that my new book [SpringBoot : Learn By Example](https://leanpub.com/springboot-learn-by-example/)  got published today on **Leanpub**.
+I am happy to announce that my new book [SpringBoot : Learn By Example](https://leanpub.com/springboot-learn-by-example/)  got published today on **Leanpub**.
 
 {{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
@@ -25,7 +25,7 @@ Spring supports variety of configuration approaches (XML, Annotations, JavaConfi
 
 SpringBoot is an opinionated approach to configure Spring based applications. SpringBoot automatically configures the application components based on various criteria like the jars you have on classpath, beans you have already configured, properties configured etc which makes it very easy to get up and running quickly.
 
-I strongly believe that **the best way to learn or teach is by using examples.** This book is filled with plenty of examples explaining the concepts  in step by step manner.
+I strongly believe that **the best way to learn or teach is by using examples.** This book is filled with plenty of examples explaining the concepts  in step by step manner.
 
 ### Who this book is for?
 
@@ -37,7 +37,7 @@ If you are just starting to use SpringBoot and it is working great but it all lo
 
 If you are a seasoned Spring developer with good grasp of Spring framework concepts and you just want a fast-paced guide to learn SpringBoot quickly..sure..this book is definitely for you!!
 
-I see lot of people asking **&#8220;What is the difference between SpringMVC and SpringBoot?&#8221;**, **&#8220;Should I use SpringBoot or SpringMVC for my next web application?&#8221;** etc etc. See <a href="http://stackoverflow.com/questions/29479814/spring-mvc-or-spring-boot" target="_blank">Here</a>, <a href="https://www.quora.com/What-is-the-difference-between-Spring-Boot-and-the-Spring-framework" target="_blank">Here</a> and <a href="https://www.reddit.com/r/java/comments/4mw91b/spring_mvc_vs_spring_boot/" target="_blank">Here </a>. The short answer is **SpringBoot is nothing but Spring only..but it helps you a lot to build Spring based applications quickly.** The next question would be **How?**. The best way to explain it is by creating an application **WITHOUT SpringBoot** and show how quickly you can develop the same application **WITH SpringBoot**.
+I see lot of people asking **&#8220;What is the difference between SpringMVC and SpringBoot?&#8221;**, **&#8220;Should I use SpringBoot or SpringMVC for my next web application?&#8221;** etc etc. See <a href="http://stackoverflow.com/questions/29479814/spring-mvc-or-spring-boot" target="_blank">Here</a>, <a href="https://www.quora.com/What-is-the-difference-between-Spring-Boot-and-the-Spring-framework" target="_blank">Here</a> and <a href="https://www.reddit.com/r/java/comments/4mw91b/spring_mvc_vs_spring_boot/" target="_blank">Here </a>. The short answer is **SpringBoot is nothing but Spring only..but it helps you a lot to build Spring based applications quickly.** The next question would be **How?**. The best way to explain it is by creating an application **WITHOUT SpringBoot** and show how quickly you can develop the same application **WITH SpringBoot**.
 
 This book explains how normally we build Spring application without SpringBoot and shows how we can build the same application using SpringBoot in much easier way so that you can correlate the concepts and see how SpringBoot increases developer productivity.
 
@@ -48,7 +48,7 @@ SpringBoot does so many things behind the scenes to automatically configure the 
 The **SpringBoot : Learn By Example** book covers the concepts that we commonly use in our Spring applications.
 
   * What is SpringBoot and how to get started with SpringBoot?
-  * How SpringBoot **AutoConfiguration Works behind the scenes using @Conditional**?
+  * How SpringBoot **AutoConfiguration Works behind the scenes using @Conditional**?
   * SpringBoot goodies like **Logging, ConfigurationProperties, DeveloperTools**
   * Working with Databases using **JdbcTemplate, MyBatis, JOOQ, Spring Data JPA**
   * Working with **MongoDB** NoSQL database
@@ -162,8 +162,8 @@ To get complete list of topics covered in this book please see the below **Table
 
 **ThankYou Manuel Jordan**
 
-I would like to thank **Manuel Jordan** (**@dr_pompeii**) for reviewing the book and providing feedback which helped me a lot to improve the quality of the book content.
+I would like to thank **Manuel Jordan** (**@dr_pompeii**) for reviewing the book and providing feedback which helped me a lot to improve the quality of the book content.
 
-If  you wish please do me a favour by spreading the word on **Twitter, Facebook, LinkedIn** etc.
+If  you wish please do me a favour by spreading the word on **Twitter, Facebook, LinkedIn** etc.
   
 I hope you will enjoy the book 🙂

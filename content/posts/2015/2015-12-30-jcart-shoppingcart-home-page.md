@@ -3,9 +3,7 @@ title: 'JCart : ShoppingCart Home Page'
 author: Siva
 type: post
 date: 2015-12-30T14:20:00+00:00
-url: /2015/12/jcart-shoppingcart-home-page/
-post_views_count:
-  - 13
+url: /jcart-shoppingcart-home-page/
 categories:
   - Java
 tags:

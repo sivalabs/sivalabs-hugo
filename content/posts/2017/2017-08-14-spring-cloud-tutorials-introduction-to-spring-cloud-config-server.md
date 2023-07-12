@@ -22,7 +22,7 @@ Also, in the context of large number of MicroService based applications, we want
 
 # Solution
 
-We can use **Spring Cloud Config Server** ([http://cloud.spring.io/spring-cloud-static/Dalston.SR2/#\_spring\_cloud_config][1]) to centralize all the applications configuration and use **Spring Cloud Config Client** module from the applications to consume configuration properties from Config Server. We can also update the configuration properties at runtime without requiring to restart the application.
+We can use **Spring Cloud Config Server** ([http://cloud.spring.io/spring-cloud-static/Dalston.SR2/#\_spring\_cloud_config][1]) to centralize all the applications configuration and use **Spring Cloud Config Client** module from the applications to consume configuration properties from Config Server. We can also update the configuration properties at runtime without requiring to restart the application.
 
 > Many of the Spring Cloud modules can be used in SpringBoot applications even though you are not going to deploy your application in any Cloud platforms such as AWS, Pivotal CloudFoundry etc.
 
@@ -536,15 +536,15 @@ class HomeController
 }
 ```
 
-Now access http://localhost:8181/name which which will display **Siva**. Now change the property value to **name=Prasad** in **config-repo/catalogservice.properties** and commit it.
+Now access http://localhost:8181/name which which will display **Siva**. Now change the property value to **name=Prasad** in **config-repo/catalogservice.properties** and commit it.
 
-In order to reload the config changes trigger http://localhost:8181/refresh request using **POST** method and again access http://localhost:8181/name which should display **Prasad**.
+In order to reload the config changes trigger http://localhost:8181/refresh request using **POST** method and again access http://localhost:8181/name which should display **Prasad**.
 
 But issuing **/refresh** requests manually is tedious and impractical in case of large number of applications and multiple instances of same application. We will cover how to handle this problem using **Spring Cloud Bus** in next post
   
 [Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus]({{< relref "2017-08-14-spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus.md" >}}).
 
-The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial
+The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial
 
 &nbsp;
 

@@ -3,9 +3,7 @@ title: 'JCart : Manage Orders'
 author: Siva
 type: post
 date: 2015-12-31T09:21:17+00:00
-url: /2015/12/jcart-manage-orders/
-post_views_count:
-  - 5
+url: /jcart-manage-orders/
 categories:
   - Java
 tags:

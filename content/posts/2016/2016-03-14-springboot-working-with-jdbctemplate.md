@@ -340,4 +340,4 @@ For example, If you want to use **HikariDataSource** then you can exclude **tomc
         
 With this dependency configuration SpringBoot will use **HikariCP** to configure **DataSource** bean.
 
-You can find the source code of the article at my GitHub repo <https://github.com/sivaprasadreddy/springboot-tutorials>
+You can find the source code of the article at my GitHub repo <https://github.com/sivaprasadreddy/springboot-tutorials>

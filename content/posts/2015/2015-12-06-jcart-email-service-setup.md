@@ -3,9 +3,7 @@ title: 'JCart: Email Service SetUp'
 author: Siva
 type: post
 date: 2015-12-06T10:23:36+00:00
-url: /2015/12/jcart-email-service-setup/
-post_views_count:
-  - 11
+url: /jcart-email-service-setup/
 categories:
   - Java
 tags:
@@ -13,7 +11,7 @@ tags:
   - SpringBoot
 
 ---
-We are going to implement Admin User Forgot Password functionality where we need to send the Password Reset link to User email address. So let us look at how to configure Email server and send emails.
+We are going to implement Admin User Forgot Password functionality where we need to send the Password Reset link to User email address. So let us look at how to configure Email server and send emails.
 
 Spring provides support for sending Emails using **JavaMailSender**. SpringBoot makes it even easier by providing a starter for emailing support.
 

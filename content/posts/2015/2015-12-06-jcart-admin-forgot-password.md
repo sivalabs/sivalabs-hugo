@@ -3,9 +3,7 @@ title: 'JCart: Admin Forgot Password'
 author: Siva
 type: post
 date: 2015-12-06T10:34:33+00:00
-url: /2015/12/jcart-admin-forgot-password/
-post_views_count:
-  - 10
+url: /jcart-admin-forgot-password/
 categories:
   - Java
 tags:

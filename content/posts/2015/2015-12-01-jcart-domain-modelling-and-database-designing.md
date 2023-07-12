@@ -3,9 +3,7 @@ title: 'JCart: Domain Modelling and Database Designing'
 author: Siva
 type: post
 date: 2015-12-01T04:22:19+00:00
-url: /2015/12/jcart-domain-modelling-and-database-designing/
-post_views_count:
-  - 18
+url: /jcart-domain-modelling-and-database-designing/
 categories:
   - Java
 tags:

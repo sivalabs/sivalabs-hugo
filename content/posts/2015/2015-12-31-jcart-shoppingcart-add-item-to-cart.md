@@ -3,16 +3,14 @@ title: 'JCart : ShoppingCart Add Item To Cart'
 author: Siva
 type: post
 date: 2015-12-31T05:27:23+00:00
-url: /2015/12/jcart-shoppingcart-add-item-to-cart/
-post_views_count:
-  - 2
+url: /jcart-shoppingcart-add-item-to-cart/
 categories:
   - Java
 tags:
   - jcart
 
 ---
-In our HomePage/CategoryPage/ProductPage we have a button **Add To Cart** as follows:
+In our HomePage/CategoryPage/ProductPage we have a button **Add To Cart** as follows:
 
 ```html
 <a class="add_to_cart_button" data-quantity="1" 

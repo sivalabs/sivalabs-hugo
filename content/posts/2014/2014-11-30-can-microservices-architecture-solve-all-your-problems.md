@@ -3,17 +3,7 @@ title: Can MicroServices Architecture Solve All Your Problems?
 author: Siva
 type: post
 date: 2014-11-30T01:21:00+00:00
-url: /2014/11/can-microservices-architecture-solve-all-your-problems/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2014/11/can-microservices-architecture-solve.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/8422780116419155558
-post_views_count:
-  - 8
+url: /can-microservices-architecture-solve-all-your-problems/
 categories:
   - Misc
 tags:

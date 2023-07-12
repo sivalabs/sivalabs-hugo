@@ -3,9 +3,7 @@ title: Setting up Jenkins/SonarQube
 author: Siva
 type: post
 date: 2015-12-16T14:42:29+00:00
-url: /2015/12/setting-up-jenkinssonarqube/
-post_views_count:
-  - 29
+url: /setting-up-jenkinssonarqube/
 categories:
   - Java
 tags:
@@ -79,7 +77,7 @@ Let us configure sonarqube maven plugin in **jcart/pom.xml**
 
 Now you can run maven goal **mvn sonar:sonar** which performs all the code quality checks and insert metrics into database.
   
-Now go to http://localhost:9000/ and click on jcart project. From there you can explore lot of metrics like coding issues, duplicate code etc. You can see code quality issue details and fix the problem.
+Now go to http://localhost:9000/ and click on jcart project. From there you can explore lot of metrics like coding issues, duplicate code etc. You can see code quality issue details and fix the problem.
 
 There are lot of things we can configure like tweaking the Quality Profiles to meet our project needs.
   
@@ -137,7 +135,7 @@ Then fill in the Jenkins hook url with your jenkins url like this: **http://your
 
 See <a href="http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top" target="_blank">http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top</a> for more details.
 
-To simulate the behaviour of automatically triggering the build when code is pushed to Github, access the URL <a href="http://localhost:8080/git/notifyCommit?url=https://github.com/sivaprasadreddy/jcart.git" target="_blank">http://localhost:8080/git/notifyCommit?url=https://github.com/sivaprasadreddy/jcart.git</a> from your browser. It should trigger the build process in Jenkins.
+To simulate the behaviour of automatically triggering the build when code is pushed to Github, access the URL <a href="http://localhost:8080/git/notifyCommit?url=https://github.com/sivaprasadreddy/jcart.git" target="_blank">http://localhost:8080/git/notifyCommit?url=https://github.com/sivaprasadreddy/jcart.git</a> from your browser. It should trigger the build process in Jenkins.
 
 > You can run Jenkins on OpenShift to fully automate the build process so that you can give OpneShift Jenkins URL in Github webhooks which GitHub can resolve.
 

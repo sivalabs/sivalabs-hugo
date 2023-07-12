@@ -3,9 +3,7 @@ title: 'JCart : Initial code setup for ShoppingCart'
 author: Siva
 type: post
 date: 2015-12-30T14:15:54+00:00
-url: /2015/12/jcart-initial-code-setup-for-shoppingcart/
-post_views_count:
-  - 7
+url: /jcart-initial-code-setup-for-shoppingcart/
 categories:
   - Java
 tags:
@@ -14,7 +12,7 @@ tags:
 ---
 First we will start with setting up the initial code using SpringBoot. We have already discussed in 
 [JCart: Initial Code SetUp]({{< relref "2015-12-01-jcart-initial-code-setup.md" >}}) 
-article about creating a maven module **jcart-site** which will be our ShoppingCart application. 
+article about creating a maven module **jcart-site** which will be our ShoppingCart application. 
 In that article we have shown what springboot dependencies to add as well.
 
 Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our ShoppingCart application.
@@ -85,7 +83,7 @@ Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our Sho
 </project>
 ```
 
-For our JCart - Admin application we have used **AdminLTE** (<a href="https://almsaeedstudio.com/preview" target="_blank">https://almsaeedstudio.com/preview</a>) theme which is based on Bootstrap with nice coloring scheme. It looks good for Administration kind of applications but not so good for a public facing e-commerce application, IMHO.
+For our JCart - Admin application we have used **AdminLTE** (<a href="https://almsaeedstudio.com/preview" target="_blank">https://almsaeedstudio.com/preview</a>) theme which is based on Bootstrap with nice coloring scheme. It looks good for Administration kind of applications but not so good for a public facing e-commerce application, IMHO.
 
 As I said earlier I am not a UI designer, so again I have googled for free e-commerce templates and found **Ustora HTML5 ECommerce Template** (<a href="https://www.freshdesignweb.com/ustora/" target="_blank">https://www.freshdesignweb.com/ustora/</a>)
   
@@ -194,7 +192,7 @@ Note that for ShoppingCart application we will be running embedded tomcat server
 
 ### Configuring SpringSecurity
 
-As it is a public facing e-commerce site customers can browse through catalog products and add products to cart without requiring to login. But in order to checkout we will redirect the customer to login if he/she is not already loggedin. Also there are some URL that we would like to protect like customer's **MyAccount** page, **Order History** page etc.
+As it is a public facing e-commerce site customers can browse through catalog products and add products to cart without requiring to login. But in order to checkout we will redirect the customer to login if he/she is not already loggedin. Also there are some URL that we would like to protect like customer's **MyAccount** page, **Order History** page etc.
 
 So, for ShoppingCart application, Customer would become the user.
 

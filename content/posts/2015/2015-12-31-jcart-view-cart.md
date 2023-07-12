@@ -3,9 +3,7 @@ title: 'JCart : View Cart'
 author: Siva
 type: post
 date: 2015-12-31T05:32:11+00:00
-url: /2015/12/jcart-view-cart/
-post_views_count:
-  - 3
+url: /jcart-view-cart/
 categories:
   - Java
 tags:

@@ -3,16 +3,14 @@ title: JCart Requirements Analysis
 author: Siva
 type: post
 date: 2015-11-21T11:29:54+00:00
-url: /2015/11/jcart-requirements-analysis/
-post_views_count:
-  - 15
+url: /jcart-requirements-analysis/
 categories:
   - Java
 tags:
   - E-Commerce
 
 ---
-For building our JCart e-commerce application we will develop two web applications, one for ShoppingCart and another one for Administration. Let us explore the requirements of both ShoppingCart and Administration websites in detail.
+For building our JCart e-commerce application we will develop two web applications, one for ShoppingCart and another one for Administration. Let us explore the requirements of both ShoppingCart and Administration websites in detail.
 
 ### <span style="color: #800000;">ShoppingCart Site Requirements</span>
 
@@ -46,11 +44,11 @@ For ex: **MANAGE_CATEGORIES** represents the ability to create new Categories, u
   
 For ex:
   
-**     ROLE\_SUPER\_ADMIN** &#8211; Users with this role can do anything within the system.
+**  ROLE\_SUPER\_ADMIN** &#8211; Users with this role can do anything within the system.
   
-**     ROLE_ADMIN** &#8211; Users with this role can create other users (except other SUPER_ADMIN or ADMIN), and can do Category Management, Product Management etc.
+**  ROLE_ADMIN** &#8211; Users with this role can create other users (except other SUPER_ADMIN or ADMIN), and can do Category Management, Product Management etc.
   
-**     ROLE\_CMS\_ADMIN**: Users with this role can manage Categories, Products etc.
+**  ROLE\_CMS\_ADMIN**: Users with this role can manage Categories, Products etc.
 
 <span style="color: #003366;"><strong>Category Management:</strong></span> A category represent a logical grouping of related products.
   
@@ -68,7 +66,7 @@ Product management includes
   * <span style="line-height: 1.5;">Update existing products</span>
   * Delete products
 
-**<span style="color: #003366;">Order Management:</span> **Authorised users can see the list of order, update status or cancel orders.
+**<span style="color: #003366;">Order Management:</span>**Authorised users can see the list of order, update status or cancel orders.
   
 If an order is cancelled then refund should be triggered and a cancellation email should be sent to customer.
 
@@ -81,7 +79,7 @@ If an order is cancelled then refund should be triggered and a cancellation emai
 
 <span style="color: #003366;"><strong>Site Settings: </strong></span>We need to have some site level configurations like Currency and Locale.
   
-**<span style="color: #003366;">Locale & Currency:</span> **We should be able to use different locale and currencies for our e-commerce system. So the implementation should consider the I18N and dynamic currency change using live currency converter or using some conversion ratio.
+**<span style="color: #003366;">Locale & Currency:</span>**We should be able to use different locale and currencies for our e-commerce system. So the implementation should consider the I18N and dynamic currency change using live currency converter or using some conversion ratio.
 
 By looking at the above mentioned features you might be thinking these are all very basic features of any e-commerce system and lot of features like Promotions/Offers Management, Fulfilment Systems, Inventory management etc are not being considered. YES, you are right. We are not considering many aspects of a typical e-commerce system because WE DON'T NEED THEM FOR OUR APPLICATION.
 

@@ -3,17 +3,8 @@ title: 'MyBatis Tutorial: Part 3 – Mapping Relationships'
 author: Siva
 type: post
 date: 2012-10-21T14:07:00+00:00
-url: /2012/10/mybatis-tutorial-part-3-mapping-relationships/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2012/10/mybatis-tutorial-part-3-mapping.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/1293821308785804593
-post_views_count:
-  - 99
+url: /mybatis-tutorial-part-3-mapping-relationships/
+aliases: /2012/10/mybatis-tutorial-part-3-mapping-relationships/
 categories:
   - Java
 tags:

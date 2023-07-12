@@ -3,17 +3,7 @@ title: NetBeansIDE and IntellijIDEA From The Eyes of a Long Time Eclipse User
 author: Siva
 type: post
 date: 2014-10-13T07:15:00+00:00
-url: /2014/10/netbeanside-and-intellijidea-from-eyes/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2014/10/netbeanside-and-intellijidea-from-eyes.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/2779599874526813816
-post_views_count:
-  - 3
+url: /netbeanside-and-intellijidea-from-eyes/
 categories:
   - IDE
 tags:
@@ -24,7 +14,7 @@ I have been using Eclipse IDE since 2006 and I liked it so much for various reas
 
 So over the years I have been using JavaEE based Eclipse version and once I found SpringSource Tool Suite it became my default Java IDE for everything. I like Spring framework very much and I use Spring technologies everyday, both on personal and official projects. STS provides lot of additional features for Spring related technologies like auto-completion in spring xml files, beans graph etc etc. I should mention SpringBoot support in STS specifically. You can create SpringBoot applications with lot of customization options(which modules to use, java version, maven/gradle, java/groovy etc) right from the IDE itself. As of now no other IDE has this much of good support for SpringBoot.
 
-But as everyone knows working with Eclipse isn't fun all the times. It has it's own set of problems. I get used to see the NullPointerException or  IllegalArgumentException error alerts all the times. When you press Ctrl + Space you may get auto completion suggestion or get an error alert. If you type too fast and press Ctrl+Space many times then Eclipse might disappear and shows a big alert box with very useful details. If you have many open projects in your workspace and if it contains JPA/JSF/JAX-WS/JAX-RS modules then as soon as you opened your Eclipse it may stuck in Building Workspace state forever. The only way to solve it is End Process via Task Manager.
+But as everyone knows working with Eclipse isn't fun all the times. It has it's own set of problems. I get used to see the NullPointerException or  IllegalArgumentException error alerts all the times. When you press Ctrl + Space you may get auto completion suggestion or get an error alert. If you type too fast and press Ctrl+Space many times then Eclipse might disappear and shows a big alert box with very useful details. If you have many open projects in your workspace and if it contains JPA/JSF/JAX-WS/JAX-RS modules then as soon as you opened your Eclipse it may stuck in Building Workspace state forever. The only way to solve it is End Process via Task Manager.
 
 Till this point its bearable. If you install any plugin which contain any conflicting XML libraries then the real problems start. As soon as you open pom.xml you will get to see error alerts repeatedly, you can't even close it..it keeps popping up the error alerts. If you are lucky then restarting eclipse might solve the issue or you have to try uninstalling the newly installed plugin(which never solved the problem for me) or start with a new Eclipse altogether.
 
@@ -75,7 +65,7 @@ Whenever I read about IntellijIDEA user experience, I always here 'wow', 'amazin
   * Interaction with many Version Control Systems works smoothly.
   * Support for other IDE's key bindings.
 
-**Cons: **
+**Cons: **
 
   * Well, following may not be really Cons, but from an Eclipse user perspective following are confusing and difficult to get use to it:
   * Project/Module style code organization is very different from other IDEs.

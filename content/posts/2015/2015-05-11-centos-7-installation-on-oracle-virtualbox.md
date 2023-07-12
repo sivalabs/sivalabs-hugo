@@ -3,17 +3,7 @@ title: CentOS 7 Installation on Oracle Virtualbox
 author: Siva
 type: post
 date: 2015-05-11T07:36:00+00:00
-url: /2015/05/centos-7-installation-on-oracle-virtualbox/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2015/05/centos-7-installation-on-oracle.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/309953020154386722
-post_views_count:
-  - 7
+url: /centos-7-installation-on-oracle-virtualbox/
 categories:
   - Linux
 tags:

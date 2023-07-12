@@ -3,9 +3,7 @@ title: 'JCart : Manage Customers'
 author: Siva
 type: post
 date: 2015-12-31T09:34:50+00:00
-url: /2015/12/jcart-manage-customers/
-post_views_count:
-  - 5
+url: /jcart-manage-customers/
 categories:
   - Java
 tags:

@@ -3,9 +3,7 @@ title: Selecting The Technology Stack for JCart
 author: Siva
 type: post
 date: 2015-11-22T05:17:20+00:00
-url: /2015/11/selecting-the-technology-stack-for-jcart/
-post_views_count:
-  - 17
+url: /selecting-the-technology-stack-for-jcart/
 categories:
   - Spring
 tags:
@@ -26,7 +24,7 @@ Selecting the right technology stack is very crucial and plays an important role
   * Team skills
   * Community/Commercial support
 
-For JCart project we need:
+For JCart project we need:
 
   * Request-Response oriented MVC web framework for ShoppingCart site. I prefer stateless architecture for public facing web apps.
   * Component oriented MVC web framework for Administration site. I prefer UI Component Oriented framework for internal applications like Administration web apps.
@@ -49,7 +47,7 @@ In Java land, JavaEE and Spring are the most popular tech stacks for building ap
   * As of JavaEE7 there is no Request-Response Oriented framework provided by JavaEE. But in upcoming JavaEE8 version a new MVC framework will be released as <a href="https://jcp.org/en/jsr/detail?id=371" target="_blank">JSR 371</a> . The reference implementation for MVC 1.0 is <a href="https://ozark.java.net/index.html" target="_blank">Ozark</a>. You can find more details on it at <a href="https://ozark.java.net/index.html" target="_blank">https://ozark.java.net/index.html</a>
   * Component Oriented Web MVC framework JSF
   * IMHO, Security features provided by JavaEE 7 are not sufficient for many of the applications. But the good news is in the upcoming JavaEE8, <a href="https://jcp.org/en/jsr/detail?id=375" target="_blank">JSR 375: Java EE Security API</a> will be released.
-  * JPA ORM framework which you can use with any of the popular implementations like Hibernate, EclipseLink etc. In addition to that you can use **<a href="https://deltaspike.apache.org/" target="_blank">Apache DeltaSpike</a>**  modules to make things more easier.
+  * JPA ORM framework which you can use with any of the popular implementations like Hibernate, EclipseLink etc. In addition to that you can use **<a href="https://deltaspike.apache.org/" target="_blank">Apache DeltaSpike</a>**  modules to make things more easier.
   * JavaEE also provides support for Emailing and Scheduling features.
 
 Coming to the Team skills, we are more hands-on with Spring technologies than pure JavaEE stack. We can work with both JavaEE and Spring, but we are more productive with Spring. If our team members are more hands-on with JavaEE we would have chosen JavaEE.
@@ -68,7 +66,7 @@ So, we are going to use Spring and some of its portfolio projects like Spring Se
   * **Server:** **Tomcat** as embedded server.
   * **Database:** **MySQL**. But ideally we should be able to use our application with other databases like Postgres.
   * **Tools:** **Jenkins** for CI, **SonarQube** for code quality checking.
-  * **Production:** While deploying our application in production we may want to use **Apache** or **Ngnix** as our load balancer and use monitoring tools like **Zabbix**. As I am not an expert in this area we will come back and spend some time to take a deep look at the options and pick the tools.
+  * **Production:** While deploying our application in production we may want to use **Apache** or **Ngnix** as our load balancer and use monitoring tools like **Zabbix**. As I am not an expert in this area we will come back and spend some time to take a deep look at the options and pick the tools.
 
 ### What about MicroServices, Docker and Cloud stuff?
 

@@ -3,17 +3,8 @@ title: 'Keep The Code Clean: WatchDog & SpotTheBug Approach'
 author: Siva
 type: post
 date: 2012-08-28T04:55:00+00:00
-url: /2012/08/keep-code-clean-watchdog-spotthebug/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2012/08/keep-code-clean-watchdog-spotthebug.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/6784296531990489271
-post_views_count:
-  - 1
+url: /keep-code-clean-watchdog-spotthebug/
+aliases: /2012/08/keep-code-clean-watchdog-spotthebug/
 categories:
   - Best Practices
 tags:

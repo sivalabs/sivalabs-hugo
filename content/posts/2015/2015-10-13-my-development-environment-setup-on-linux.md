@@ -3,9 +3,7 @@ title: My Development Environment Setup on Linux
 author: Siva
 type: post
 date: 2015-10-13T02:07:05+00:00
-url: /2015/10/my-development-environment-setup-on-linux/
-post_views_count:
-  - 14
+url: /my-development-environment-setup-on-linux/
 categories:
   - Linux
 tags:

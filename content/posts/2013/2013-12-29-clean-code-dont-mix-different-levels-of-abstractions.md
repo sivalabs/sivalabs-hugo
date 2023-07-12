@@ -3,17 +3,8 @@ title: 'Clean Code: Don’t mix different levels of abstractions'
 author: Siva
 type: post
 date: 2013-12-29T00:53:00+00:00
-url: /2013/12/clean-code-dont-mix-different-levels-of-abstractions/
-blogger_blog:
-  - sivalabs.blogspot.com
-blogger_author:
-  - Siva Prasad Reddy
-blogger_permalink:
-  - /2013/12/clean-code-dont-mix-different-levels-of.html
-blogger_internal:
-  - /feeds/5739837119650074728/posts/default/6995989143955664360
-post_views_count:
-  - 4
+url: /clean-code-dont-mix-different-levels-of-abstractions/
+aliases: /2013/12/clean-code-dont-mix-different-levels-of-abstractions/
 categories:
   - Best Practices
 tags:
