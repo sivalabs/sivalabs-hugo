@@ -6,8 +6,7 @@ type: post
 draft: false
 date: 2020-10-15T04:59:17+05:30
 url: /philip-testing-spring-boot-applications-masterclass-course-review/
-aliases:
-- /2020/10/philip-testing-spring-boot-applications-masterclass-course-review/
+aliases: /2020/10/philip-testing-spring-boot-applications-masterclass-course-review/
 categories:
   - Java
 tags: [Spring, SpringBoot]
@@ -26,10 +25,10 @@ Spring is 17+ years old and evolved over the years with more and more features a
 
 Most of the developers who are new to SpringBoot face the challenge of knowing what is the current recommended approach to solve a specific problem, same applies to testing.
 
-The [Testing Spring Boot Applications Masterclass Course](https://transactions.sendowl.com/stores/13745/195800) is created by [Philip Riecks](https://twitter.com/rieckpil) to specifically teach how to test SpringBoot applications.
+The [Testing Spring Boot Applications Masterclass Course](https://rieckpil.de/testing-spring-boot-applications-masterclass/) is created by [Philip Riecks](https://twitter.com/rieckpil) to specifically teach how to test SpringBoot applications.
 I got an opportunity to review the course I find it wonderful for learning how to test SpringBoot applications leveraging modern testing frameworks and libraries.
 
-[![Testing Spring Boot Applications Masterclass](/images/TSBAM.webp "Testing Spring Boot Applications Masterclass")](https://transactions.sendowl.com/stores/13745/195800)
+[![Testing Spring Boot Applications Masterclass](/images/TSBAM.webp "Testing Spring Boot Applications Masterclass")](https://rieckpil.de/testing-spring-boot-applications-masterclass/)
 
 I can recommend this wonderful course for many reasons:
 
@@ -52,5 +51,5 @@ In this fast paced software development world, we have everything except time to
 of the languages/frameworks/libraries. We can certainly take advantage of the amazing courses like this which explains 
 the concepts in an easy to understand way to learn things faster. 
 
-I would highly recommend [Testing Spring Boot Applications Masterclass Course](https://transactions.sendowl.com/stores/13745/195800) for anybody working with SpringBoot applications.
+I would highly recommend [Testing Spring Boot Applications Masterclass Course](https://rieckpil.de/testing-spring-boot-applications-masterclass/) for anybody working with SpringBoot applications.
  
