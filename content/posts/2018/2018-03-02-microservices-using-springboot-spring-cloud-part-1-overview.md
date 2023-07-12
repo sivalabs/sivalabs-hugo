@@ -86,7 +86,7 @@ Following are just a few of Spring Cloud modules that can be used to address dis
 
 These are just a few of Spring Cloud features. To explore more visit https://projects.spring.io/spring-cloud/.
 
-> You may also like to read about [Why SpringBoot is so popular and how to learn SpringBoot effectively?](http://sivalabs.in/2018/02/why-springboot-so-popular-how-to-learn-springboot/)
+> You may also like to read about [Why SpringBoot is so popular and how to learn SpringBoot effectively?](http://sivalabs.in/why-springboot-so-popular-how-to-learn-springboot/)
 
 # Our Sample application
 I strongly believe in learning by example. So, let us learn how to build MicroServices using Spring Boot and Spring Cloud with a sample application. I will deliberately keep the application business logic very simple so that we focus on understanding the SpringBoot and SpringCloud features.

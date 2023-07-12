@@ -25,7 +25,7 @@ I understand why many people like **NodeJS** and **Python** because they are kin
 For the same task in Java you might need to include external libraries whereas in Python/NodeJS the standard library itself provide most of the commonly used features in a non-verbose way.
 If you are familiar with **Kotlin** then you feel right at home while working with **C#**. 
 
-Go is an interesting language and I have shared [my opinion on Go](https://www.sivalabs.in/2020/07/golang-from-a-java-developer-perspective/) a while ago when I first worked with it.
+Go is an interesting language and I have shared [my opinion on Go](https://www.sivalabs.in/golang-from-a-java-developer-perspective/) a while ago when I first worked with it.
 
 **My first impression of Go**
 

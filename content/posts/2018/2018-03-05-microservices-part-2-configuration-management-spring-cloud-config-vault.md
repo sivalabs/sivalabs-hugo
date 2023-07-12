@@ -18,7 +18,7 @@ tags:
 
 
 
-In [MicroServices using Spring Boot & Spring Cloud – Part 1 : Overview](http://sivalabs.in/2018/03/microservices-using-springboot-spring-cloud-part-1-overview/),
+In [MicroServices using Spring Boot & Spring Cloud – Part 1 : Overview](http://sivalabs.in/microservices-using-springboot-spring-cloud-part-1-overview/),
  we took a brief look at what are micro-services and how we can use **SpringBoot** and **SpringCloud** to build micro-services.
 
 In this post, we are going to learn:
@@ -61,8 +61,8 @@ Spring Cloud also provides the integration with Vault so that we can store any s
 
 I have already written a couple of tutorials on Spring Cloud Config Server which you can refer to:
 
-* [Introduction to Spring Cloud Config Server](http://sivalabs.in/2017/08/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/)
-* [Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/2017/08/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/)
+* [Introduction to Spring Cloud Config Server](http://sivalabs.in/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/)
+* [Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/)
 
 # Create our first micro-service: catalog-service
 Let us start with our first microservice ie, catalog-service. 
@@ -422,7 +422,7 @@ Now start the Config Server and **catalog-service** and it should work just fine
 # Summary
 In this post, we learned how to use Spring Cloud Config to externalize the configuration properties and Vault to store secrets. 
 You can use Spring Cloud Bus to Auto Refresh Config Changes as described in 
-[Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/2017/08/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/).
+[Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/).
 
 You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series
 

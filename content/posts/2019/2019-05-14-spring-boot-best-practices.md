@@ -25,7 +25,7 @@ A typical SpringBoot application has a main entry-point class which is annotated
 Make sure to read and understand the section https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-structuring-your-code.
 
 * **How AutoConfiguration works?** 
-The most important aspect of SpringBoot is it's AutoConfiguration mechanism. Without properly understanding how AutoConfiguration works it all looks like magic. You can read my blog post [How SpringBoot AutoConfiguration magic works?](https://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/) to learn about how AutoConfiguration works.
+The most important aspect of SpringBoot is it's AutoConfiguration mechanism. Without properly understanding how AutoConfiguration works it all looks like magic. You can read my blog post [How SpringBoot AutoConfiguration magic works?](https://sivalabs.in/how-springboot-autoconfiguration-magic/) to learn about how AutoConfiguration works.
 
 ## 2. Leverage SpringBoot's built-in customization features
 SpringBoot auto-configures many beans based on various criteria like existence of class in classpath, absence of a property and also provides the ability to customize the configuration using properties.
@@ -102,7 +102,7 @@ In our project we may need to create several Spring Configuration classes to def
 ## 10. Avoid boilerplate code with custom SpringBoot starter
 In some organizations there will be some home-grown libraries to achieve some common functionality like security, secrets management, caching etc. We can create custom SpringBoot starter to auto-configure the library features so that we don't need to repeat the boilerplate code for every application. 
 
-You can refer my post [Creating Custom SpringBoot Starter for Twitter4j](https://sivalabs.in/2016/04/creating-custom-springboot-starter-for/) on how to create a custom SpringBoot starter.
+You can refer my post [Creating Custom SpringBoot Starter for Twitter4j](https://sivalabs.in/creating-custom-springboot-starter-for/) on how to create a custom SpringBoot starter.
 
 For more info on creating our own SpringBoot starter see https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-custom-starter
 

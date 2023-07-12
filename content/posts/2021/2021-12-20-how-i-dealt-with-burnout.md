@@ -48,7 +48,7 @@ But in this futuristic learning process there is no such a milestone to feel tha
 No matter how much I learn, the days are still ending with a feeling of **"there is more to learn"**.
 
 Couple of months ago I got really excited about Kubernetes and I learned a bit about it and some of commonly used k8s tools.
-Kubernetes, [Pods, Deployments, Services, Ingress](https://www.sivalabs.in/2021/09/getting-started-with-kubernetes/), [Minikube, K3S, KinD, Skaffold](https://github.com/sivaprasadreddy/geeksclub-microservices-spring-boot/tree/main/k8s), KNative, OpenShift, Minishift, CodeReady Containers, GitOps, [ArgoCD](https://github.com/sivaprasadreddy/geeksclub-gitops) ...and the rabbit hole goes on and on...
+Kubernetes, [Pods, Deployments, Services, Ingress](https://www.sivalabs.in/getting-started-with-kubernetes/), [Minikube, K3S, KinD, Skaffold](https://github.com/sivaprasadreddy/geeksclub-microservices-spring-boot/tree/main/k8s), KNative, OpenShift, Minishift, CodeReady Containers, GitOps, [ArgoCD](https://github.com/sivaprasadreddy/geeksclub-gitops) ...and the rabbit hole goes on and on...
 In addition to that I got curious about [Quarkus](https://github.com/sivaprasadreddy/geeksclub-microservices-quarkus), [OAuth using Keycloak](https://github.com/sivaprasadreddy/spring-boot-keycloak), Tanzu Community Edition etc. 
 
 I learned a great deal about these topics, but everyday I go to bed with a feeling of **I am not sure whether I learned enough of these and there could be more to learn**.
