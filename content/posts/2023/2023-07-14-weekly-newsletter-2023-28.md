@@ -6,11 +6,12 @@ type: post
 draft: false
 date: 2023-07-14T04:59:17+05:30
 url: /sivalabs-weekly-newsletter-2023-28
+toc: true
 categories: [Newsletter]
 tags: [Newsletter, Tech]
 ---
 
-## SivaLabs Weekly Newsletter - 2023 Week 28
+## What I Learned This Week
 
 * I have published [Tomato Architecture - A Pragmatic Approach to Software Design](https://sivalabs.in/tomato-architecture-pragmatic-approach-to-software-design/) article 
   sharing my thoughts around how to build an application without over-engineering it.
@@ -30,7 +31,7 @@ tags: [Newsletter, Tech]
 * Spring 6.1 is introducing **RestClient** as an alternative to **RestTemplate** which provides the fluent API similar to Reactive **WebClient**.
   Read this [announcement](https://spring.io/blog/2023/07/13/new-in-spring-6-1-restclient) for more info.
 
-### Tweet of the week
+## Tweet of the week
 
 {{< tweet user="helpermethod" id="1678101064258658306" >}}
 

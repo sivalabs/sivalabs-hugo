@@ -15,7 +15,7 @@ popular: true
 ---
 If you are a java developer and passionate about technology, you can follow the below things which makes you an outstanding Java developer.
 
-#### 1. Have strong foundation and understanding on OO Principles
+#### 1. Have a strong foundation and understanding on OO Principles
   
 For a java developer having strong understanding on Object Oriented Programming is a must. Without having a strong foundation on OOPS, one can't realize the beauty of an Object Oriented Programming language like Java. If you don't have good idea on what OOPS is, eventhough you are using OOP language you may be still coding in procedural way.Just studying OO principles definitions won't help much. we should know how to apply those OO principles in designing a solution in OO way. So one should have a strong knowledge on Object modeling, Inheritance, Polymorphism, Design Patterns.
 

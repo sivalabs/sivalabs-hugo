@@ -2,9 +2,11 @@
 {{ define "main" }}
 <main id="main" class="site-main" role="main">
 <article class="post type-post status-publish format-standard hentry">
+
     <div class="post-inner-content">
         {{ partial "post-meta.html" . }}
         {{ partial "social-share.html" . }}
+        {{ partial "toc.html" . }}
         <div class="entry-content">
             {{ .Content }}
         </div>
