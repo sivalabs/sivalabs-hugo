@@ -44,7 +44,7 @@
         {{- range $name, $items := .Site.Taxonomies.categories }}
         <li>
             <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}"
-                title="Click to see posts with category {{ $name }}">
+                title="{{ $name }}">
             {{ $name | upper }}
             </a>
         </li>
@@ -65,7 +65,7 @@
             {{- range $name, $items := .Site.Taxonomies.tags }}
             <a class="tag-cloud-link widget__link widget__link--taglist"
                href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}"
-               title="Click to see posts with {{$name}} tag">
+               title="{{$name}}">
                 {{ $name | lower }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}
             </a>
             {{- end }}

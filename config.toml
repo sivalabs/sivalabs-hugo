@@ -28,8 +28,8 @@ pygmentsCodeFences = true
 
 [params]
   author = "Siva"
-  subtitle = "Java, Kotlin, Spring Boot, SQL, JPA, Architecture, DDD, TDD, REST API, Microservices, DevOps, CI/CD, Docker, Kubernetes Tutorials"
-  description = "Java, Kotlin, Go, Spring, Spring Boot, Spring Cloud, SQL, JPA, Hibernate, Kafka, Software Architecture, Domain Driven Design, TDD, REST API, Microservices, DevOps, CI/CD, Docker, Kubernetes, Jenkins, AWS tutorials"
+  subtitle = "Java, Spring Boot, Architecture, Microservices, DevOps, Docker, Kubernetes Tutorials"
+  description = "Java, Spring Boot, JPA, Hibernate, Kafka, Architecture, REST API, Microservices, DevOps, CI/CD, Docker, Kubernetes Tutorials"
   facebook = ""
   twitter = "sivalabs"
   googleplus = ""

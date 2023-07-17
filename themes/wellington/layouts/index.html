@@ -7,7 +7,7 @@
             {{ range $paginator.Pages }}
             <article class="post type-post">
                 <a class="wp-post-image-link" href="{{ .Permalink }}" rel="bookmark"
-                   title="{{ .Title }}" >
+                   title="Click to view {{ .Title }} post" >
                     {{- if isset .Params "images" }}
                     {{- if not (eq (len .Params.images) 0) }}
                     <img width="626" height="660"
