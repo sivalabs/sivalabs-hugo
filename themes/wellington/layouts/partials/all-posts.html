@@ -10,7 +10,7 @@
                     {{- if not (eq (len .Params.images) 0) }}
                     <img width="626" height="660"
                          src="{{ index .Params.images 0 }}"
-                         class="wp-post-image" alt="" />
+                         class="wp-post-image"  alt="{{ .Title }}" />
                     {{ end }}
                     {{ end }}
                 </a>
@@ -18,7 +18,8 @@
 
                 <div class="entry-content clearfix">
                     <p>{{ .Summary  }}</p>
-                    <a href="{{ .Permalink }}" class="more-link">Continue reading &raquo;</a>
+                    <a href="{{ .Permalink }}" class="more-link"
+                       title="Click to read more about {{ .Title }}" >Continue reading &raquo;</a>
                 </div>
             </article>
             {{ end }}

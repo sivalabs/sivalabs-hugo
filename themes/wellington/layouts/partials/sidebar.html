@@ -42,7 +42,12 @@
         {{- if isset .Site.Taxonomies "categories" }}
         {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
         {{- range $name, $items := .Site.Taxonomies.categories }}
-        <li><a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }}</a></li>
+        <li>
+            <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}"
+                title="Click to see posts with category {{ $name }}">
+            {{ $name | upper }}
+            </a>
+        </li>
         {{- end }}
 
         {{- end }}
@@ -59,7 +64,10 @@
         <div class="widget__content">
             {{- range $name, $items := .Site.Taxonomies.tags }}
             <a class="tag-cloud-link widget__link widget__link--taglist"
-               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name }}">{{ $name | lower }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
+               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}"
+               title="Click to see posts with {{$name}} tag">
+                {{ $name | lower }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}
+            </a>
             {{- end }}
         </div>
 

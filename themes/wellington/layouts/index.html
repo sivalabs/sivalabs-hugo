@@ -6,12 +6,14 @@
 
             {{ range $paginator.Pages }}
             <article class="post type-post">
-                <a class="wp-post-image-link" href="{{ .Permalink }}" rel="bookmark">
+                <a class="wp-post-image-link" href="{{ .Permalink }}" rel="bookmark"
+                   title="{{ .Title }}" >
                     {{- if isset .Params "images" }}
                     {{- if not (eq (len .Params.images) 0) }}
                     <img width="626" height="660"
                          src="{{ index .Params.images 0 }}"
-                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" />
+                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
+                         alt="{{ .Title }}" />
                     {{ end }}
                     {{ end }}
                 </a>
@@ -19,7 +21,9 @@
 
                 <div class="entry-content clearfix">
                     <p>{{ .Summary  }}</p>
-                    <a href="{{ .Permalink }}" class="more-link">Continue reading &raquo;</a>
+                    <a href="{{ .Permalink }}"
+                       class="more-link"
+                       title="Click to read more about {{ .Title }}" >Continue reading &raquo;</a>
                 </div>
             </article>
             {{ end }}

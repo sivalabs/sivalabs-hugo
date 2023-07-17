@@ -1,21 +1,19 @@
 <header class="entry-header">
     <div class="entry-meta">
         <span class="meta-date">
-            <a href="{{ .Permalink }}" rel="bookmark">
-                <time class="entry-date published" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">
-                {{.Date.Format ( .Site.Params.dateformat | default "January 02, 2006")}}
-                </time>
-            </a>
+            <time class="entry-date published" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">
+            {{.Date.Format ( .Site.Params.dateformat | default "January 02, 2006")}}
+            </time>
         </span>
         <span class="meta-author">
             <span class="author vcard">{{ .Params.author | default .Site.Params.author}}</span>
         </span>
     </div>
-    <h1 class="entry-title">
-        <a href="{{ .Permalink }}" rel="bookmark">
+    <h2 class="entry-title">
+        <a href="{{ .Permalink }}" rel="bookmark" title="{{ .Title }}">
             {{ .Title }}
         </a>
-    </h1>
+    </h2>
     <div>
         {{ if isset .Params "tags" }}
         {{ $tagsLen := len .Params.tags }}
@@ -23,7 +21,9 @@
         <span class="tagcloud post-tags">
             <i class="fa fa-tags"></i>&nbsp;
             {{ range $k, $v := .Params.tags }}
-            <a class="tag-cloud-link widget__link widget__link--taglist" href="{{ (print "tags/" (. | urlize | lower) "/") | relURL }}">{{ . | lower }}</a>
+            <a class="tag-cloud-link widget__link widget__link--taglist"
+               href="{{ (print "tags/" (. | urlize | lower) "/") | relURL }}"
+               title="Click to see posts with {{.}} tag">{{ . | lower }}</a>
             {{ if lt $k (sub $tagsLen 1) }}&nbsp;{{ end }}
             {{ end }}
         </span>
