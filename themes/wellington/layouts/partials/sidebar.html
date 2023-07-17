@@ -43,7 +43,7 @@
         {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
         {{- range $name, $items := .Site.Taxonomies.categories }}
         <li>
-            <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}"
+            <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}/"
                 title="{{ $name }}">
             {{ $name | upper }}
             </a>
@@ -64,7 +64,7 @@
         <div class="widget__content">
             {{- range $name, $items := .Site.Taxonomies.tags }}
             <a class="tag-cloud-link widget__link widget__link--taglist"
-               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}"
+               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}/"
                title="{{$name}}">
                 {{ $name | lower }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}
             </a>
