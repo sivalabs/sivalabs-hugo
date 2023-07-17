@@ -8,8 +8,8 @@ date: 2021-01-26T04:59:17+05:30
 url: /tips-to-work-with-traditional-enterprise-organizations/
 aliases:
 - /2021/01/tips-to-work-with-traditional-enterprise-organizations/
-categories: [IT]
-tags: [IT]
+categories: [Thoughts]
+tags: [Thoughts]
 ---
 
 I worked at different types of IT organizations including small 20 people company, world's largest bank,

@@ -10,6 +10,7 @@ aliases:
 - /2021/08/few-things-i-learned-the-hardway-in-15-years-of-my-career/
 categories: [Career]
 tags: [Career]
+popular: true
 ---
 
 I started my career as a Java developer in 2006, and it is almost 15 years that I have been continuing as a software developer.

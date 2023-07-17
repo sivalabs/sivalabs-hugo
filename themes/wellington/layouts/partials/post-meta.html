@@ -23,7 +23,7 @@
         <span class="tagcloud post-tags">
             <i class="fa fa-tags"></i>&nbsp;
             {{ range $k, $v := .Params.tags }}
-            <a class="tag-cloud-link widget__link widget__link--taglist" href="{{ (print "tags/" (. | urlize | lower) "/") | relURL }}">{{ . }}</a>
+            <a class="tag-cloud-link widget__link widget__link--taglist" href="{{ (print "tags/" (. | urlize | lower) "/") | relURL }}">{{ . | lower }}</a>
             {{ if lt $k (sub $tagsLen 1) }}&nbsp;{{ end }}
             {{ end }}
         </span>

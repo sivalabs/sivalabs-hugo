@@ -10,6 +10,7 @@ aliases:
 - /2021/09/getting-started-with-kubernetes/
 categories: [Kubernetes]
 tags: [Kubernetes, DevOps, Java, SpringBoot]
+popular: true
 ---
 
 [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) has revolutionized how we build and run the applications. 

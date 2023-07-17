@@ -9,6 +9,7 @@ aliases: /2019/10/spring-boot-testing/
 categories:
   - SpringBoot
 tags: [Spring, SpringBoot, Testing]
+popular: true
 ---
 
 **SpringBoot** is the most popular tech stack for building Java based REST APIs.

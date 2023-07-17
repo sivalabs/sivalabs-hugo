@@ -9,6 +9,7 @@ aliases: /2019/05/spring-boot-best-practices/
 categories:
   - SpringBoot
 tags: [Spring, SpringBoot, BestPractices]
+popular: true
 ---
 
 I have been working with [SpringBoot](https://spring.io/projects/spring-boot) for many years and over the time I worked with many SpringBoot based codebases.

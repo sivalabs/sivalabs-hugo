@@ -8,7 +8,7 @@ aliases: /2015/07/my-life-as-software-developer-in-india/
 categories:
   - Java
 tags:
-  - IT
+  - Thoughts
 popular: true
 ---
 I am Siva, working as a Software Developer in Hyderabad, India. Working as a Software Developer is very exciting as you see new things coming in everyday. If there are no new things at least we put a new fancy name to some old concept and celebrate (#microservices) :-). But in my opinion working as a Software Developer in India is little bit different and hard too. Few things are good, and few things are bad.

@@ -6,11 +6,11 @@
         <h3 class="widget-title">{{ .Params.author | default .Site.Params.author}}</h3>
     </div>
     <div>
-        <img src="/raw-images/Siva_Min.jpg"/>
+        <img src="/raw-images/Siva_Min.jpg" alt="Siva"/>
     </div>
 </aside>
 
-<aside id="recent-posts-2" class="widget widget_recent_entries clearfix">
+<aside id="recent-posts" class="widget clearfix">
     <div class="widget-header">
         <h3 class="widget-title">Recent Posts</h3>
     </div>
@@ -23,61 +23,26 @@
 
 </aside>
 
-<aside id="top-posts-2" class="widget widget_top-posts clearfix">
-    <div class="widget-header"><h3 class="widget-title">Top Posts &amp; Pages</h3></div>
+<aside id="top-posts" class="widget clearfix">
+    <div class="widget-header"><h3 class="widget-title">Top Posts</h3></div>
     <ul>
-
+        {{ range (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+        {{- if (.Params.popular) }}
         <li>
-            <a href="{{ "why-springboot/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            Why SpringBoot?</a>
+            <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
         </li>
-
-        <li>
-            <a href="{{ "how-springboot-autoconfiguration-magic/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            How SpringBoot AutoConfiguration magic works?</a>
-        </li>
-
-        <li>
-            <a href="{{ "developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            Developing a simple e-commerce application from scratch to production using SpringBoot</a>
-        </li>
-
-        <li>
-            <a href="{{ "clean-code-dont-mix-different-levels-of-abstractions/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            Clean Code: Don’t mix different levels of abstractions</a>
-        </li>
-
-        <li>
-            <a href="{{ "a-developers-perspective-on-spring-vs-javaee/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            A Developers Perspective on Spring vs JavaEE</a>
-        </li>
-
-        <li>
-            <a href="{{ "my-life-as-software-developer-in-india/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            My Life as a Software Developer in India</a>
-        </li>
-
-        <li>
-            <a href="{{ "10-things-to-become-outstanding-java/" | relLangURL }}"
-            class="bump-view" data-bump-view="tp">
-            10 things to become an outstanding Java developer</a>
-        </li>
-</ul>
+        {{ end }}
+        {{ end }}
+    </ul>
 </aside>
 
-<aside id="categories-2" class="widget widget_categories clearfix">
+<aside id="categories" class="widget clearfix">
     <div class="widget-header"><h3 class="widget-title">Categories</h3></div>
     <ul>
         {{- if isset .Site.Taxonomies "categories" }}
         {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
         {{- range $name, $items := .Site.Taxonomies.categories }}
-        <li class="cat-item"><a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | title }}</a></li>
+        <li><a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }}</a></li>
         {{- end }}
 
         {{- end }}
@@ -85,8 +50,7 @@
     </ul>
 </aside>
 
-
-<aside id="tag_cloud-3" class="widget widget_tag_cloud clearfix">
+<aside id="tag_cloud" class="widget widget_tag_cloud clearfix">
     <div class="widget-header"><h3 class="widget-title">Tags</h3></div>
     <div class="tagcloud">
         {{- if isset .Site.Taxonomies "tags" }}
@@ -95,7 +59,7 @@
         <div class="widget__content">
             {{- range $name, $items := .Site.Taxonomies.tags }}
             <a class="tag-cloud-link widget__link widget__link--taglist"
-               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name }}">{{ $name }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
+               href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" title="{{ $name }}">{{ $name | lower }}{{ if $.Site.Params.widgets.tags_counter }} ({{ $items.Count }}){{ end }}</a>
             {{- end }}
         </div>
 

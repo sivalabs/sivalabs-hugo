@@ -5,7 +5,7 @@
             {{ $paginator := .Paginate (where .Site.RegularPages "Type" "post") }}
 
             {{ range $paginator.Pages }}
-            <article id="post-9753" class="post type-post status-publish format-standard has-post-thumbnail hentry">
+            <article class="post type-post">
                 <a class="wp-post-image-link" href="{{ .Permalink }}" rel="bookmark">
                     {{- if isset .Params "images" }}
                     {{- if not (eq (len .Params.images) 0) }}
@@ -17,7 +17,7 @@
                 </a>
                 {{ partial "post-meta.html" . }}
 
-                <div class="entry-content entry-excerpt clearfix">
+                <div class="entry-content clearfix">
                     <p>{{ .Summary  }}</p>
                     <a href="{{ .Permalink }}" class="more-link">Continue reading &raquo;</a>
                 </div>

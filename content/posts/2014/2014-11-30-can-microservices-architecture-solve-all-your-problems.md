@@ -5,10 +5,9 @@ type: post
 date: 2014-11-30T01:21:00+00:00
 url: /can-microservices-architecture-solve-all-your-problems/
 categories:
-  - Misc
+  - Thoughts
 tags:
-  - IT
-popular: true
+  - Thoughts
 ---
 IT is one field where you can find new things coming everyday. Theses days the whole developer community websites are flooded with MicroServices and Docker related stuff. Among them the idea of MicroServices is very exciting and encourages better way of building software systems. But as with any architectural style there will be pros and cons to every approach.
 

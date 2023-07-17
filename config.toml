@@ -1,4 +1,4 @@
-baseURL = "https://sivalabs.in/"
+baseURL = "https://www.sivalabs.in/"
 languageCode = "en-us"
 title = "SivaLabs"
 theme = "wellington"
@@ -8,7 +8,6 @@ disqusShortname = "sivalabs"
 googleAnalytics = "G-N5019E5MWE"
 enableRobotsTXT = true
 enableEmoji = true
-preserveTaxonomyNames = true
 pygmentsCodeFences = true
 [taxonomies]
   category = "categories"

@@ -1149,7 +1149,7 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 	padding: 0.2em 0.5em;
 	background: #ddd;
 	text-decoration: none;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-size: 13px !important;
 	font-size: 0.8125rem !important;
 }
@@ -1368,41 +1368,6 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 
 .post-layout-one-column .post-wrapper .type-post .entry-title {
 	display: inline;
-}
-
-/* Multiple Post Columns */
-.post-layout-columns .post-wrapper {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	margin-right: -3em;
-}
-
-.post-layout-columns .post-wrapper .post-column {
-	box-sizing: border-box;
-	padding-right: 3em;
-}
-
-.post-layout-columns .post-wrapper .post-column .type-post .wp-post-image {
-	margin: 0;
-}
-
-/* 2 Columns */
-.post-layout-two-columns .post-wrapper .post-column {
-	width: 50%;
-}
-
-/* 3 Columns */
-.post-layout-three-columns .content-archive {
-	float: none;
-	padding: 0;
-	width: 100%;
-}
-
-.post-layout-three-columns .post-wrapper .post-column {
-	width: 33.3333333333333%;
 }
 
 /*--------------------------------------------------------------

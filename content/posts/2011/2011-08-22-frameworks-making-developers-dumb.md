@@ -6,7 +6,7 @@ date: 2011-08-22T01:16:00+00:00
 url: /frameworks-making-developers-dumb/
 aliases: /2011/08/frameworks-making-developers-dumb/
 categories:
-  - Misc
+  - Thoughts
 tags:
   - Interviews
   - Java
