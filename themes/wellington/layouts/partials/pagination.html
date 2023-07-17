@@ -1,6 +1,6 @@
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
 <nav class="navigation pagination" role="navigation">
-	<h2 class="screen-reader-text">Posts navigation</h2>
+	<h3 class="screen-reader-text">Posts navigation</h3>
 	<div class="nav-links">
 		{{- if .Paginator.HasPrev }}
 		<a class="prev page-numbers" href="{{ .Paginator.Prev.URL }}"
