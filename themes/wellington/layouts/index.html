@@ -1,4 +1,5 @@
 {{ define "main" }}
+<section id="primary" class="content-archive content-area">
 <main id="main" class="site-main" role="main">
     <div id="post-wrapper" class="post-wrapper clearfix">
         <div class="post-column clearfix">
@@ -32,4 +33,8 @@
     </div>
     {{ partial "pagination.html" . }}
 </main>
+</section>
+<section id="secondary" class="sidebar widget-area clearfix" role="complementary">
+    {{ partial "sidebar.html" . }}
+</section>
 {{ end }}

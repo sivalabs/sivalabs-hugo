@@ -50,13 +50,7 @@
         <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
         {{ partial "header.html" . }}
         <div id="content" class="site-content container clearfix">
-            <section id="primary" class="content-archive content-area">
-                {{ block "main" . }} {{ end }}
-            </section>
-
-            <section id="secondary" class="sidebar widget-area clearfix" role="complementary">
-                {{ partial "sidebar.html" . }}
-            </section>
+            {{ block "main" . }} {{ end }}
         </div>
         <div id="footer" class="footer-wrap">
             {{ partial "footer.html" . }}
