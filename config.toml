@@ -28,7 +28,7 @@ pygmentsCodeFences = true
 
 [params]
   author = "Siva"
-  subtitle = "Java, Spring Boot, Architecture, Microservices, DevOps, Docker, Kubernetes Tutorials"
+  subtitle = "Java, Spring Boot, Microservices, DevOps, Kubernetes Tutorials"
   description = "Java, Spring Boot, JPA, Hibernate, Kafka, Architecture, REST API, Microservices, DevOps, CI/CD, Docker, Kubernetes Tutorials"
   facebook = ""
   twitter = "sivalabs"
