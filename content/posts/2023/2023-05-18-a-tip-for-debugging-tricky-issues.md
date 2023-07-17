@@ -6,7 +6,7 @@ type: post
 draft: false
 date: 2023-05-18T04:59:17+05:30
 url: /a-tip-for-debugging-tricky-software-bugs-issues/
-categories: [Software]
+categories: [Tips]
 tags: [Debugging, Tips]
 ---
 

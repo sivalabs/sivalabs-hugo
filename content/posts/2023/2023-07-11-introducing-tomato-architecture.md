@@ -8,6 +8,7 @@ date: 2023-07-11T04:59:17+05:30
 url: /tomato-architecture-pragmatic-approach-to-software-design
 categories: [Architecture]
 tags: [Architecture]
+toc: true
 ---
 
 After a couple of years into software development, I wanted to improve my skills by learning more about 
@@ -23,7 +24,7 @@ I have read various books and blog posts to learn these concepts,
 and I feel **Clean/Onion/Hexagonal/Ports&Adapters Architectures are very similar 
 with a common goal of "protecting the core domain logic" from "external dependencies"**.
 
-#### &lt;rant&gt;
+## The challenges in learning DDD, Clean/Onion/Hexagonal Architectures
 I started reading [DDD Blue book](https://www.amazon.com/exec/obidos/ASIN/0321125215/domainlanguag-20) and I couldn't go too far with too much abstract explanation.
 Then I read [DDD Red book](https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577) and it's easier read than Blue book, but still many concepts are not very clear to me.
 Then I read [Domain Driven Design Quickly](https://www.infoq.com/minibooks/domain-driven-design-quickly/) book available on InfoQ.
@@ -41,16 +42,14 @@ the whole pack of **CQRS**, **Even Driven Architecture**, **Event Sourcing**, et
 
 One fine day, I realized that many people simply parrot what they read without understanding it.
 
-> ### Litmus Test:
+> **Litmus Test:**
 > Ask them to explain something without telling "Martin Fowler / Uncle Bob/ Eric Evans said so".
-
-#### &lt;/rant&gt;
 
 ## Motivations for Tomato Architecture
 Following are some of the motivations that make me think about coming up with 
 **Pragmatic Guidelines for Software Architecture**.
 
-### 1.There is No Silver Bullet Architecture
+### There is No Silver Bullet Architecture
 Duh, tell me something we don't already know, you might say.
 
 True, we all know that, and yet we try to apply the silver bullet solutions 
@@ -63,7 +62,7 @@ But when an enterprise application is solving their own specific problem, then t
 with a hope that some day in the future, they can switch to another database/message-broker 
 is unnecessary and over-engineering in many cases.
 
-### 2.Wrong pursuit of Testability
+### Wrong pursuit of Testability
 I don't know whether it is one of core principe or a by-product, but many people say
 **Clean/Onion/Hexagonal/Ports&Adapters Architectures enables us to test our application using Unit Tests without depending on 
 external services like databases, FileSystem, Message Brokers, etc.**
@@ -80,7 +79,7 @@ without using any external services may not be a bright idea.
 Instead, I would prefer to remove those abstractions and write more integration tests 
 to ensure the correctness of the application functionality.
 
-### 3.Simplicity and Readability Wins in the Long Run
+### Simplicity and Readability Wins in the Long Run
 I hope we all will at least agree on this. Typically, enterprise software systems run for a long time(decades).
 Simple and readable code is much easier to maintain and enhance in the long run.
 

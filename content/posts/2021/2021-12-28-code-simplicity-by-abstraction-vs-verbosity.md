@@ -8,8 +8,8 @@ date: 2021-12-28T04:59:17+05:30
 url: /code-simplicity-by-abstraction-vs-verbosity/
 aliases:
   - /2021/12/code-simplicity-by-abstraction-vs-verbosity/
-categories: [Go]
-tags: [Go, Java, Thoughts]
+categories: [GoLang]
+tags: [GoLang, Java, Thoughts]
 ---
 Java is and has been the primary programming language I have used throughout my career.
 If I want to build something quick for a prototype or if I need to pick the tech stack with a tight deadline then Java is my first choice.

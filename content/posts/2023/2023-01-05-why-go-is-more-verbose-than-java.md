@@ -6,8 +6,8 @@ type: post
 draft: false
 date: 2023-01-05T04:59:17+05:30
 url: /why-go-is-more-verbose-than-java
-categories: [Tech]
-tags: [Go, Java]
+categories: [Thoughts]
+tags: [GoLang, Java]
 ---
 Few months ago I asked on Twitter "why you think Java is complex?" to understand others perspective.
 
