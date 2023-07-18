@@ -11,7 +11,7 @@ aliases:
 categories:
   - Java
 tags: [Spring, SpringBoot, Java]
-popular: true
+popular: false
 ---
 
 Nowadays software development is a challenging task as the number of programming languages, frameworks, libraries are increasing rapidly day by day.

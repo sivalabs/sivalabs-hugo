@@ -50,20 +50,39 @@
                 <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
                     <a href="{{ "/categories/kubernetes" | relLangURL }}/">Kubernetes</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category
+                            menu-item-has-children">
                     <a href="{{ "/tutorials" | relLangURL }}/">Tutorials</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/spring-boot-tutorials" | relLangURL }}/">Spring Boot Tutorials</a>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/microservices-tutorials" | relLangURL }}/">Microservices Tutorials</a>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/kubernetes-tutorials" | relLangURL }}/">Kubernetes Tutorials</a>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/mybatis-tutorials" | relLangURL }}/">MyBatis Tutorials</a>
+                        </li>
+                    </ul>
                 </li>
+
                 <li class="menu-item menu-item-type-post_type menu-item-object-page">
                     <a href="{{ "/videos" | relLangURL }}/">Videos</a>
                 </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="{{ "/mybooks" | relLangURL }}/">My Books</a>
-                </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
-                    <a href="{{ "/projects" | relLangURL }}/">My Projects</a>
-                </li>
-                <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category
+                            menu-item-has-children">
                     <a href="{{ "/about-me" | relLangURL }}/">About Me</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/mybooks" | relLangURL }}/">My Books</a>
+                        </li>
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                            <a href="{{ "/projects" | relLangURL }}/">My Projects</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>

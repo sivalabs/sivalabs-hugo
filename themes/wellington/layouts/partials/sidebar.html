@@ -10,18 +10,26 @@
     </div>
 </aside>
 
-<aside id="recent-posts" class="widget clearfix">
+<aside id="tutorials" class="widget clearfix">
     <div class="widget-header">
-        <h3 class="widget-title">Recent Posts</h3>
+        <h3 class="widget-title">Tutorials</h3>
     </div>
     <ul>
-        {{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 5) }}
-        {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
-        <li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{- end }}
+        <li class="widget__item">
+            <a class="widget__link" href="{{ "/spring-boot-tutorials" | relLangURL }}/">Spring Boot Tutorials</a>
+        </li>
+        <li class="widget__item">
+            <a class="widget__link" href="{{ "/microservices-tutorials" | relLangURL }}/">Microservices Tutorials</a>
+        </li>
+        <li class="widget__item">
+            <a class="widget__link" href="{{ "/kubernetes-tutorials" | relLangURL }}/">Kubernetes Tutorials</a>
+        </li>
+        <li class="widget__item">
+            <a class="widget__link" href="{{ "/mybatis-tutorials" | relLangURL }}/">MyBatis Tutorials</a>
+        </li>
     </ul>
-
 </aside>
+
 
 <aside id="top-posts" class="widget clearfix">
     <div class="widget-header"><h3 class="widget-title">Top Posts</h3></div>
@@ -34,6 +42,19 @@
         {{ end }}
         {{ end }}
     </ul>
+</aside>
+
+<aside id="recent-posts" class="widget clearfix">
+    <div class="widget-header">
+        <h3 class="widget-title">Recent Posts</h3>
+    </div>
+    <ul>
+        {{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 5) }}
+        {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+        <li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{- end }}
+    </ul>
+
 </aside>
 
 <aside id="categories" class="widget clearfix">
