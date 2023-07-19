@@ -85,13 +85,13 @@ Please email me at sivaprasadreddy.k@gmail.com for further details.
     * Configuring SpringSecurity
     * Custom Login form and Logout
     * Jdbc based Authentication Provider
-    * Role based View rendering using Spring Security Taglib
+    * Role-based View rendering using Spring Security Taglib
 
 12. **Exploring Actuator Endpoints**
     * Customizing Actuator Endpoints
     * Securing Actuator Endpoints
 
-13. **Testing Spring(Boot) Applications**
+13. **Testing Spring Boot Applications**
     * Testing Support in SpringBoot
     * Testing RESTful Services using RestTemplate
     * Testing Secured Controller/Service Methods
