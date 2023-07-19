@@ -124,6 +124,12 @@ The generated Spring Boot application will be downloaded.
 You can extract the zip file and import the project into your IDE.
 I will be using IntelliJ IDEA, but you can use any of your favorite IDE.
 
+{{< box info >}}
+**Spring Boot Tutorial Series GitHub Code Repository:**
+https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series
+{{< /box >}}
+
+
 ## Simple REST API using Spring Boot
 
 What we are going to build is a simple REST API with one endpoint **GET /api/hello?name={name}** which returns the JSON response
