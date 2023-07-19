@@ -237,9 +237,39 @@ public class SpringBootHelloWorldApplication {
 * **(1)** Explicitly enabling the configuration properties binding for **ApplicationProperties** class. If we have more such configuration-binding classes, we can list them all.
 * **(2)** Instead of explicitly specifying all the configuration-binding classes, we can use **@ConfigurationPropertiesScan** annotation to scan for all the classes that are annotated with **@ConfigurationProperties**.
 
-We can run the application from IDE by simply running main() method in **SpringBootHelloWorldApplication**.
+We can run the application from IDE by simply running the **main()** method in **SpringBootHelloWorldApplication**.
 
-## Test API using cURL
+## Run application using Maven and Gradle
+Spring Boot Maven and Gradle plugins provide the ability to run the application without requiring to build the artifact(jar or war).
+
+Maven:
+
+```shell
+./mvnw spring-boot:run
+```
+
+Gradle:
+
+```shell
+./gradlew bootRun
+```
+
+## Run application as a FatJar
+We can build the Spring Boot application as a fat-jar and run it using **java -jar** command.
+
+**Maven:**
+
+```shell
+$ ./mvnw clean package
+$ java -jar target/spring-boot-helloworld-0.0.1-SNAPSHOT.jar
+```
+
+**Gradle:**
+
+```shell
+$ ./gradlew clean build
+$ java -jar build/libs/spring-boot-helloworld-0.0.1-SNAPSHOT.jar
+```
 
 We can verify the API endpoint using cURL as follows:
 
@@ -251,6 +281,12 @@ $ curl http://localhost:8080/api/hello?name=Siva
 {"greeting":"Hello Siva"}
 ```
 
+{{< box info >}}
+**Spring Boot Tutorial Series**
+
+**Next:** [Spring Boot Testing Tutorial]({{< relref "2023-07-21-spring-boot-testing-tutorial.md" >}})
+{{< /box >}}
+
 ## Summary
-We have learned what is Spring Boot framework and some of it's core features.
+We have learned about Spring Boot, its ecosystem and some of its core features.
 We have created a simple REST API using Spring Boot and tested using cURL.
