@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot Testing Tutorial"
 author: Siva
-images: ["/preview-images/spring-boot-getting-started.webp"]
+images: ["/preview-images/spring-boot-testing-tutorial.webp"]
 type: post
 draft: true
 date: 2023-07-21T04:59:17+05:30
