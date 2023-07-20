@@ -1,79 +1,36 @@
-<aside id="zoom-social-icons-widget-2" class="widget zoom-social-icons-widget">
+<aside id="social-icons-widget" class="widget">
     <h3 class="widget-title">Follow Me</h3>
 
-    <ul class="zoom-social-icons-list zoom-social-icons-list--with-canvas zoom-social-icons-list--rounded zoom-social-icons-list--no-labels">
+    {{ if (not (eq .Site.Params.twitter "")) }}
+    <a class="social-link-item"
+       href="https://twitter.com/{{.Site.Params.twitter}}"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-square-twitter fa-2xl twitter"></i>
+    </a>
+    {{ end }}
 
-        {{ if (not (eq .Site.Params.github "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://github.com/{{.Site.Params.github}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-github"
-                          data-hover-rule="background-color" data-hover-color="#221e1b"
+    {{ if (not (eq .Site.Params.linkedin "")) }}
+    <a class="social-link-item"
+       href="https://www.linkedin.com/in/{{.Site.Params.linkedin}}"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin fa-2xl linkedin"></i>
+    </a>
+    {{ end }}
 
-                    ></span>
-            </a>
-        </li>
-        {{ end }}
+    {{ if (not (eq .Site.Params.github "")) }}
+    <a class="social-link-item"
+       href="https://github.com/{{.Site.Params.github}}"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github fa-2xl github"></i>
+    </a>
+    {{ end }}
 
-        {{ if (not (eq .Site.Params.twitter "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://twitter.com/{{.Site.Params.twitter}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-twitter"
-                          data-hover-rule="background-color" data-hover-color="#55acee"
-                    ></span>
-            </a>
-        </li>
-        {{ end }}
+    {{ if (not (eq .Site.Params.youtube "")) }}
+    <a class="social-link-item"
+       href="https://www.youtube.com/c/{{.Site.Params.youtube}}"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-youtube fa-2xl youtube"></i>
+    </a>
+    {{ end }}
 
-        {{ if (not (eq .Site.Params.facebook "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://facebook.com/{{.Site.Params.facebook}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-facebook"
-                          data-hover-rule="background-color" data-hover-color="#3b5998"
-                    ></span>
-            </a>
-        </li>
-        {{ end }}
-
-        {{ if (not (eq .Site.Params.googleplus "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://plus.google.com/u/0/{{.Site.Params.googleplus}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-google"
-                    ></span>
-            </a>
-        </li>
-        {{ end }}
-
-        {{ if (not (eq .Site.Params.linkedin "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://www.linkedin.com/in/{{.Site.Params.linkedin}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-linkedin"
-                          data-hover-rule="background-color" data-hover-color="#3371b7"
-                    ></span>
-            </a>
-        </li>
-
-        {{ end }}
-
-        {{ if (not (eq .Site.Params.youtube "")) }}
-        <li class="zoom-social_icons-list__item">
-            <a class="zoom-social_icons-list__link"
-               href="https://www.youtube.com/c/{{.Site.Params.youtube}}"
-               target="_blank" rel="noopener noreferrer">
-                    <span class="zoom-social_icons-list-span socicon socicon-youtube"
-                          data-hover-rule="background-color" data-hover-color="#e02a20"
-                    ></span>
-            </a>
-        </li>
-        {{ end }}
-    </ul>
 </aside>

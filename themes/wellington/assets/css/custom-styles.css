@@ -1,44 +1,20 @@
-html {
-    margin-top: 5px !important;
-}
-
-* html body {
-    margin-top: 5px !important;
-}
-
-@media screen and ( max-width: 782px ) {
-    html { margin-top: 5px !important; }
-    * html body { margin-top: 5px !important; }
-}
-
-.note {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	background-color: #F5F6CE;
-	border: 1px solid #585858;
-	padding: 15px;
-	border-radius: 5px;
-	color: #2E2E2E;
-}
-
-.social-share  .fa {
-    padding: 10px;
-    font-size: 22px;
+.social-link-item {
+    padding: 3px;
+    font-size: 20px;
     width: 50px;
     text-align: center;
     text-decoration: none;
 }
 
-.social-share .fa:hover {
-    opacity: 0.7;
+.social-link-item > .twitter {
+    color: #55ACEE;
 }
-
-.social-share .fa-linkedin {
-    background: #007bb5;
-    color: white;
+.social-link-item > .linkedin {
+    color: #007bb5;
 }
-
-.social-share .fa-twitter {
-    background: #55ACEE;
-    color: white;
+.social-link-item > .github {
+    color: #221e1b;
+}
+.social-link-item > .youtube {
+    color: #e02a20;
 }
