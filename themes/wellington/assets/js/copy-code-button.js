@@ -5,22 +5,23 @@ function addCopyButtons(clipboard) {
         button.type = 'button';
         button.innerText = 'Copy';
 
-        button.addEventListener('click', function () {
-            const codeToCopy = codeBlock.innerText
-            console.log(codeToCopy)
-            clipboard.writeText(codeToCopy).then(function () {
-                /* Chrome doesn't seem to blur automatically,
-                   leaving the button in a focused state. */
-                button.blur();
+        button.addEventListener('click', function() {
+            clipboard.writeText(codeBlock.textContent).then(
+                function() {
+                    /* Chrome doesn't seem to blur automatically, leaving the button
+                       in a focused state */
+                    button.blur();
 
-                button.innerText = 'Copied!';
-
-                setTimeout(function () {
-                    button.innerText = 'Copy';
-                }, 2000);
-            }, function (error) {
-                button.innerText = 'Error';
-            });
+                    button.innerText = 'Copied!';
+                    setTimeout(function() {
+                        button.innerText = 'Copy';
+                    }, 2000);
+                },
+                function(error) {
+                    button.innerText = 'Error';
+                    console.error(error);
+                }
+            );
         });
 
         var pre = codeBlock.parentNode;
