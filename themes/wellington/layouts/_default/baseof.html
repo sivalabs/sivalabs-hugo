@@ -50,5 +50,10 @@
             {{ partial "footer.html" . }}
         </div>
     </div>
+    {{ if (findRE "<pre" .Content 1) }}
+    {{ $jsCopy := resources.Get "js/copy-code-button.js" | resources.Minify }}
+    <script src="{{ $jsCopy.RelPermalink }}"></script>
+    {{ end }}
+
 </body>
 </html>
