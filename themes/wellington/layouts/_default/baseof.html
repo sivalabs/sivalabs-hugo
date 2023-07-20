@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
 <head>
-    <title>{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Title }}{{ if eq $isHomePage false }} - {{ .Title }}{{ end }} {{ if eq $isHomePage true }} - {{ .Site.Params.Subtitle}}{{ end }}</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" property="title" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Title }}{{ if eq $isHomePage false }} - {{ .Title }}{{ end }}{{ if eq $isHomePage true }} - {{ .Site.Params.Subtitle}}{{ end }}">
-    <meta name="description" property="description" content="{{ $isHomePage := eq .Title .Site.Title }}{{ .Site.Params.description }}{{ if eq $isHomePage false }} - {{ .Description }}{{ end }}" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,23 +15,14 @@
     {{ end -}}
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/schema.html" . }}
-    <!--
-    <link rel='stylesheet' href="{{"assets/css/style.min.css" | relURL }}" type='text/css' media='all'/>
-    <link rel='stylesheet' href="{{"assets/css/genericons.min.css" | relURL }}" type='text/css' media='all'/>
-    <link rel='stylesheet' href="{{"assets/css/font-awesome.min.css" | relURL }}" type='text/css' media='all'/>
-    <link rel='stylesheet' href="{{"assets/css/socicon.min.css" | relURL }}" type='text/css' media='all'/>
-    <link rel='stylesheet' href="{{"assets/css/jetpack.min.css" | relURL }}" type='text/css' media='all'/>
-    <link rel='stylesheet' href="{{"assets/css/custom-styles.min.css" | relURL }}" type='text/css' media='all'/>
-    -->
-    <link rel='stylesheet' href="{{"assets/css/styles-bundle.min.css" | relURL }}" type='text/css' media='all'/>
 
-    <!--
-    <script type='text/javascript' src="{{"assets/js/jquery-1.12.4.min.js" | relURL }}"></script>
-    <script type='text/javascript' src="{{"assets/js/html5shiv.min.js" | relURL }}"></script>
-    <script type='text/javascript' src="{{"assets/js/navigation.min.js" | relURL }}"></script>
-    <script type='text/javascript' src="{{"assets/js/search.js" | relURL }}"></script>
-    -->
-    <script type='text/javascript' src="{{"assets/js/bundle.min.js" | relURL }}"></script>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media='all'/>
+
+    {{ $CSS := resources.Match "css/**.css" | resources.Concat "main.css"  | resources.Minify }}
+    <link rel='stylesheet' href="{{ $CSS.RelPermalink }}" type='text/css' media='all'/>
+
+    {{- $JS := slice (resources.Get "js/jquery-1.12.4.min.js") (resources.Get "js/html5shiv.min.js") (resources.Get "js/navigation.min.js") (resources.Get "js/search.min.js") | resources.Concat "main.js" | resources.Minify }}
+    <script type='text/javascript' src="{{ $JS.RelPermalink }}"></script>
 
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon" />
 

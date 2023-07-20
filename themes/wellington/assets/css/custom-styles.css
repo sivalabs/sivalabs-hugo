@@ -1,0 +1,20 @@
+.social-link-item {
+    padding: 3px;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.social-link-item > .twitter {
+    color: #55ACEE;
+}
+.social-link-item > .linkedin {
+    color: #007bb5;
+}
+.social-link-item > .github {
+    color: #221e1b;
+}
+.social-link-item > .youtube {
+    color: #e02a20;
+}
