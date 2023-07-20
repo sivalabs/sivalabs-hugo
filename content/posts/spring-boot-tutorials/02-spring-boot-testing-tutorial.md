@@ -4,14 +4,14 @@ author: Siva
 images: ["/preview-images/spring-boot-testing-tutorial.webp"]
 type: post
 draft: true
-date: 2023-07-21T04:59:17+05:30
+date: 2023-08-03
 url: /spring-boot-testing-tutorial
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, Tutorials]
 ---
 
-In the previous [Getting Started with Spring Boot]({{< relref "2023-07-18-getting-started-with-spring-boot.md" >}}) tutorial,
+In the previous [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}}) tutorial,
 we have learned how to create a Spring Boot application and built a simple REST API.
 
 In this tutorial, you will learn how to write **unit**, **slice** and **integration tests** for your Spring Boot application.
@@ -230,9 +230,9 @@ Gradle:
 {{< box info >}}
 **Spring Boot Tutorial Series**
 
-**Previous:** [Getting Started with Spring Boot]({{< relref "2023-07-18-getting-started-with-spring-boot.md" >}})
+**Previous:** [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}})
 
-**Next:** [Spring Boot Testing Tutorial]({{< relref "2023-07-21-spring-boot-testing-tutorial.md" >}})
+**Next:** [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}})
 {{< /box >}}
 
 ## Summary

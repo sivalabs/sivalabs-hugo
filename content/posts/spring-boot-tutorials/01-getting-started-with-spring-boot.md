@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-getting-started.webp"]
 type: post
 draft: true
-date: 2023-07-18T04:59:17+05:30
+date: 2023-08-01
 url: /getting-started-with-spring-boot
 toc: true
 categories: ["SpringBoot"]
@@ -290,7 +290,7 @@ $ curl http://localhost:8080/api/hello?name=Siva
 {{< box info >}}
 **Spring Boot Tutorial Series**
 
-**Next:** [Spring Boot Testing Tutorial]({{< relref "2023-07-21-spring-boot-testing-tutorial.md" >}})
+**Next:** [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}})
 {{< /box >}}
 
 ## Summary
