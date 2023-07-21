@@ -105,6 +105,10 @@ Spring Boot applications can be created either using [Spring Initializr](https:/
 [Spring Tool Suite](https://spring.io/tools) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/)
 or [NetBeans IDE](https://netbeans.apache.org/) with [Spring Boot Plugin](https://github.com/AlexFalappa/nb-springboot).
 
+{{< box tip >}}
+You may be interested in [Better Alternatives To Generate Spring Boot Applications](https://www.youtube.com/watch?v=2E8r-HVLZGY)
+{{< /box >}}
+
 We are going to use [Spring Initializr](https://start.spring.io/) and provide the following project metadata.
 
 * **Project**: Maven Project
@@ -129,10 +133,6 @@ I will be using IntelliJ IDEA, but you can use any of your favorite IDE.
 **Spring Boot Tutorial Series GitHub Code Repository:**
 https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series
 {{< /box >}}
-
-You may be interested in **Better Alternatives To Generate Spring Boot Applications**
-
-{{< youtube 2E8r-HVLZGY >}}
 
 ## Simple REST API using Spring Boot
 
