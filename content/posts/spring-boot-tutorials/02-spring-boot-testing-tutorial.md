@@ -4,11 +4,12 @@ author: Siva
 images: ["/preview-images/spring-boot-testing-tutorial.webp"]
 type: post
 draft: true
-date: 2023-08-03
+date: 2023-07-24T06:00:00+05:30
 url: /spring-boot-testing-tutorial
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, Tutorials]
+description: In this tutorial, you will learn how to write unit, slice and integration tests for a Spring Boot application.
 ---
 
 In the previous [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}}) tutorial,
@@ -32,7 +33,7 @@ adds the most commonly used testing libraries such as **SpringTest**, **JUnit5**
 ## Types of Tests
 
 **Unit Tests:** These are the tests to verify the behaviour of a single unit, and ideally
-they shouldn't depend on frameworks like Spring or Hibernate etc.
+they shouldn't depend on frameworks like Spring or Hibernate, etc.
 
 **Slice Tests:** These are the tests to verify a slice of the application such as Web layer or
 Persistence layer etc. Spring Boot provides support for testing slices of the application
@@ -104,11 +105,12 @@ class GreetingServiceTest {
 * **(5)** We are asserting the expected output with actual output using **JUnit 5** based assertions.
 * **(6)** We are asserting the expected output with actual output using **Assertj** based assertions.
 
-
 {{< box tip >}}
 **TIP:**
 
 While JUnit5 assertions such as **Assertions.assertEquals()** does the job, **Assertj** assertions are fluent, and you get various convenient assertion methods depending on the type of the object.
+
+To learn more about using AssertJ, you can watch [Why using Assertj assertions much better?](https://www.youtube.com/watch?v=Ri_fiEr3wMg) video. 
 {{< /box >}}
 
 ## Testing application slices using Spring's Test Slice annotations
@@ -204,12 +206,13 @@ class SpringBootHelloWorldApplicationTests {
 * **(1)** We are using **@SpringBootTest** to load the entire application and also specified **webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT** to start the application on a random available port so that there won't be any port conflicts with any running applications. This is especially very useful while running tests on build servers like Jenkins where multiple application builds run in parallel.
 * **(2)** While using **@SpringBootTest** the **MockMvc** bean won't be autoconfigured, so we are using **@AutoConfigureMockMvc** to configure the **MockMvc** bean.
 
-{{< box info >}}
+{{< box tip >}}
 **NOTE:**
 
 We have just scratched the surface of testing a Spring Boot application.
 We will explore more testing techniques in upcoming posts as we go on.
 
+You can also watch my [Java Testing Made Easy: Learn to write Unit, Integration, E2E & Performance Tests](https://www.youtube.com/watch?v=FGoLvCc6BeI&list=PLuNxlOYbv61jtHHFHBOc9N7Dg5jn013ix) video series.
 {{< /box >}}
 
 ## Run tests
