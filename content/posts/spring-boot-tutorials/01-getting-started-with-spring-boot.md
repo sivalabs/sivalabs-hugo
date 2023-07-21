@@ -9,6 +9,7 @@ url: /getting-started-with-spring-boot
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, Tutorials]
+description: In this Spring Boot tutorial, you will learn what are the key features of Spring Boot, how create a Spring Boot application and build a REST API.
 ---
 
 ## Introducing Spring Boot
@@ -98,7 +99,7 @@ And, there are many more interesting projects. See https://spring.io/projects fo
 
 Let's build a simple REST API application using Spring Boot and explore some of its features.
 
-## Getting Started with Spring Boot
+## Creating a Spring Boot Application
 
 Spring Boot applications can be created either using [Spring Initializr](https://start.spring.io/) or
 [Spring Tool Suite](https://spring.io/tools) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/)
@@ -108,7 +109,7 @@ We are going to use [Spring Initializr](https://start.spring.io/) and provide th
 
 * **Project**: Maven Project
 * **Language**: Java
-* **Spring Boot**: 3.1.1
+* **Spring Boot**: 3.1.2
 * **Project Metadata**:
   * **Group**: com.sivalabs
   * **Artifact**: spring-boot-helloworld
