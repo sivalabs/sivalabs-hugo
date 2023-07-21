@@ -3,8 +3,8 @@ title: "Getting Started with Spring Boot"
 author: Siva
 images: ["/preview-images/spring-boot-getting-started.webp"]
 type: post
-draft: true
-date: 2023-08-01
+draft: false
+date: 2023-07-21
 url: /getting-started-with-spring-boot
 toc: true
 categories: ["SpringBoot"]
@@ -129,6 +129,9 @@ I will be using IntelliJ IDEA, but you can use any of your favorite IDE.
 https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series
 {{< /box >}}
 
+You may be interested in **Better Alternatives To Generate Spring Boot Applications**
+
+{{< youtube 2E8r-HVLZGY >}}
 
 ## Simple REST API using Spring Boot
 
@@ -290,7 +293,7 @@ $ curl http://localhost:8080/api/hello?name=Siva
 {{< box info >}}
 **Spring Boot Tutorial Series**
 
-**Next:** [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}})
+**Next:** Spring Boot Testing Tutorial(Coming soon)
 {{< /box >}}
 
 ## Summary
