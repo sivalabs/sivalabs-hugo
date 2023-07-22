@@ -1037,7 +1037,7 @@ textarea {
 .entry-meta {
 	margin: 0.5em 0 0;
 	padding: 0;
-	color: #999;
+	/*color: #999;*/
 	font-size: 14px;
 	font-size: 0.875rem;
 }
@@ -1107,18 +1107,6 @@ textarea {
 .entry-categories .meta-categories a:active {
 	background: #ddd;
 	color: #303030;
-}
-
-/* Hide post meta if they are deactivated in settings */
-body.date-hidden .entry-meta .meta-date,
-body.author-hidden .entry-meta .meta-author {
-	 position: absolute;
-	 clip: rect(1px, 1px, 1px, 1px);
-}
-
-body.author-hidden .entry-meta .meta-date:after,
-body.date-hidden.author-hidden .content-area .entry-meta {
-	display: none;
 }
 
 /* Entry Tags & Tagcloud Widget */
@@ -1228,17 +1216,6 @@ body.date-hidden.author-hidden .content-area .entry-meta {
 /* Archives and Search Heading */
 .page-header {
 	margin: 0 0 2em;
-}
-
-.archive-title {
-	margin: 0;
-	padding: 0;
-	color: #303030;
-	-ms-word-wrap: break-word;
-	word-wrap: break-word;
-	font-size: 20px;
-	font-size: 1.25rem;
-	font-family: 'Magra', Tahoma, Arial;
 }
 
 .search-form {
@@ -1396,15 +1373,6 @@ object {
 	.pagination,
 	.comments-area {
 		margin-bottom: 2em;
-	}
-
-	/* Multiple Post Columns */
-	.post-layout-columns .post-wrapper {
-		margin-right: -2em;
-	}
-
-	.post-layout-columns .post-wrapper .post-column {
-		padding-right: 2em;
 	}
 }
 
@@ -1827,7 +1795,7 @@ object {
 	@media {
 		.content-area,
 		.sidebar,
-		.post-layout-columns .post-wrapper .post-column {
+		.post-wrapper .post-column {
 			margin-right: -1px;
 		}
 	}
@@ -1838,7 +1806,7 @@ object {
 	@media {
 		.content-area,
 		.sidebar,
-		.post-layout-columns .post-wrapper .post-column {
+		.post-wrapper .post-column {
 			margin-right: -1px;
 		}
 	}
