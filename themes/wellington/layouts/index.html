@@ -11,7 +11,7 @@
                    title="Click to view {{ .Title }} post" >
                     {{- if isset .Params "images" }}
                     {{- if not (eq (len .Params.images) 0) }}
-                    <img width="626" height="660"
+                    <img width="600" height="340"
                          src="{{ index .Params.images 0 }}"
                          class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                          alt="{{ .Title }}" />

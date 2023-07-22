@@ -8,7 +8,7 @@
                 <a href="{{ .Permalink }}" rel="bookmark">
                     {{- if isset .Params "images" }}
                     {{- if not (eq (len .Params.images) 0) }}
-                    <img width="626" height="660"
+                    <img width="600" height="340"
                          src="{{ index .Params.images 0 }}"
                          class="wp-post-image"  alt="{{ .Title }}" />
                     {{ end }}
