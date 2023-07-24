@@ -49,6 +49,9 @@ https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series
 {{< /box >}}
 
 ## Unit Testing with JUnit 5 and Mockito
+We are going to write tests for the REST API we have implemented in the 
+previous [Getting Started with Spring Boot](https://www.sivalabs.in/getting-started-with-spring-boot/#simple-rest-api-using-spring-boot) tutorial.
+
 Let's start with writing Unit Tests for **GreetingService**.
 We will use JUnit 5 and Mockito for writing unit tests.
 
