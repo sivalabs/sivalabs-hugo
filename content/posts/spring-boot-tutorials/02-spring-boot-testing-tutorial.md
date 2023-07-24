@@ -3,7 +3,7 @@ title: "Spring Boot Testing Tutorial"
 author: Siva
 images: ["/preview-images/spring-boot-testing-tutorial.webp"]
 type: post
-draft: true
+draft: false
 date: 2023-07-24T06:00:00+05:30
 url: /spring-boot-testing-tutorial
 toc: true
