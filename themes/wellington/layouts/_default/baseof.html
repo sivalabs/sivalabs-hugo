@@ -28,9 +28,6 @@
     {{ $CSS := resources.Match "css/**.css" | resources.Concat "main.css"  | resources.Minify }}
     <link rel='stylesheet' href="{{ $CSS.RelPermalink }}" type='text/css' media='all'/>
 
-    {{- $JS := slice (resources.Get "js/jquery-1.12.4.min.js") (resources.Get "js/html5shiv.min.js") (resources.Get "js/navigation.min.js") (resources.Get "js/search.min.js") | resources.Concat "main.js" | resources.Minify }}
-    <script type='text/javascript' src="{{ $JS.RelPermalink }}"></script>
-
     <link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon" />
 
     {{ with .OutputFormats.Get "RSS" }}
@@ -47,6 +44,9 @@
             crossorigin="anonymous"></script>
 </head>
 <body class="home blog post-layout-one-column">
+    <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <div id="header-top" class="header-bar-wrap"></div>
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -58,6 +58,9 @@
             {{ partial "footer.html" . }}
         </div>
     </div>
+    {{- $JS := slice (resources.Get "js/jquery-1.12.4.min.js") (resources.Get "js/html5shiv.min.js") (resources.Get "js/navigation.min.js") (resources.Get "js/custom.min.js") | resources.Concat "main.js" | resources.Minify }}
+    <script type='text/javascript' src="{{ $JS.RelPermalink }}"></script>
+
 <!--    {{ if (findRE "<pre" .Content 1) }}-->
 <!--    {{ $jsCopy := resources.Get "js/copy-code-button.js" | resources.Minify }}-->
 <!--    <script src="{{ $jsCopy.RelPermalink }}"></script>-->
