@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2016-09-07T09:53:35+00:00
 url: /getting-started-springboot-intellij-idea-community-edition/
-aliases: /2016/09/getting-started-springboot-intellij-idea-community-edition/
 categories:
   - IDE
   - Spring

@@ -5,7 +5,6 @@ images: ["/preview-images/testcontainers.webp"]
 type: post
 date: 2020-02-03T04:59:17+05:30
 url: /spring-boot-integration-testing-using-testcontainers-starter/
-aliases: /2020/02/spring-boot-integration-testing-using-testcontainers-starter/
 categories:
   - SpringBoot
 tags: [SpringBoot, Testcontainers]
@@ -16,7 +15,7 @@ it's great support for [Testing](https://docs.spring.io/spring-boot/docs/current
 We can write unit tests using [Mockito](https://site.mockito.org/) without requiring any Spring features. 
 And, we can write Integration Tests using Spring testing support by creating Spring ApplicationContext. 
 
-> Read [Guide to Testing SpringBoot Applications](https://sivalabs.in/2019/10/spring-boot-testing/)
+> Read [Guide to Testing SpringBoot Applications](https://sivalabs.in/spring-boot-testing/)
     
 While running integration tests we might need to interact with external services like relational databases, NoSQL datastores, Kafka etc. 
 We can spin up those external services as Docker containers and run tests against them.

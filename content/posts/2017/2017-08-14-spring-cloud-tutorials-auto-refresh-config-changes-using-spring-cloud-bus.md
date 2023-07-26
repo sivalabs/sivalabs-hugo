@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2017-08-14T12:30:43+00:00
 url: /spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
-aliases: /2017/08/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
 categories:
   - Java
   - Spring

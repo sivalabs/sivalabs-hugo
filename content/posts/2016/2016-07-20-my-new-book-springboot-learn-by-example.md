@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2016-07-20T06:05:31+00:00
 url: /my-new-book-springboot-learn-by-example/
-aliases: /2016/07/my-new-book-springboot-learn-by-example/
 categories:
   - Books
   - Spring

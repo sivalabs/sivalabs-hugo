@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2013-12-29T00:53:00+00:00
 url: /clean-code-dont-mix-different-levels-of-abstractions/
-aliases: /2013/12/clean-code-dont-mix-different-levels-of-abstractions/
 categories:
   - Best Practices
 tags:

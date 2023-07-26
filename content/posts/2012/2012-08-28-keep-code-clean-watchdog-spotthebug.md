@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2012-08-28T04:55:00+00:00
 url: /keep-code-clean-watchdog-spotthebug/
-aliases: /2012/08/keep-code-clean-watchdog-spotthebug/
 categories:
   - Best Practices
 tags:

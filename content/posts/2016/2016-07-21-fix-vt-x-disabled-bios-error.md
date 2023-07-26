@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2016-07-21T01:54:29+00:00
 url: /fix-vt-x-disabled-bios-error/
-aliases: /2016/07/fix-vt-x-disabled-bios-error/
 categories:
   - Tips
 tags:

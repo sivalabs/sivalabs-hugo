@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2020-11-13T04:59:17+05:30
 url: /my-thoughts-on-cleancode-simplicity-automation-empathy/
-aliases:
-- /2020/11/my-thoughts-on-cleancode-simplicity-automation-empathy/
 categories:
   - Thoughts
 tags: [Thoughts]

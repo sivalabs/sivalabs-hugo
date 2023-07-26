@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2020-09-16T04:59:17+05:30
 url: /localstack-spring-boot-starter-tutorial/
-aliases:
-- /2020/09/localstack-spring-boot-starter-tutorial/
 categories:
   - Java
 tags: [Spring, SpringBoot, Localstack]

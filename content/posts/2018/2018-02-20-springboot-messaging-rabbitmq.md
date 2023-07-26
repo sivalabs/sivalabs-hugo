@@ -5,7 +5,6 @@ images: ["/preview-images/RabbitMQ.webp"]
 type: post
 date: 2018-02-20T07:59:17+05:30
 url: /springboot-messaging-rabbitmq/
-aliases: /2018/02/springboot-messaging-rabbitmq/
 categories:
   - springboot
 tags:

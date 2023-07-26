@@ -5,7 +5,6 @@ images: ["/preview-images/hystrix-dashboard.webp"]
 type: post
 date: 2018-03-12T07:59:17+05:30
 url: /spring-cloud-netflix-circuit-breaker/
-aliases: /2018/03/spring-cloud-netflix-circuit-breaker/
 categories:
   - microservices
   - springboot

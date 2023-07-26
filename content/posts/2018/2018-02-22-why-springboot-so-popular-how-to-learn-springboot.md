@@ -5,7 +5,6 @@ images: ["/preview-images/learn.webp"]
 type: post
 date: 2018-02-22T07:59:17+05:30
 url: /why-springboot-so-popular-how-to-learn-springboot/
-aliases: /2018/02/why-springboot-so-popular-how-to-learn-springboot/
 categories:
   - springboot
 tags:
@@ -89,7 +88,7 @@ Get familiar with Spring DI concepts, Scopes, Annotations, Life Cycle callbacks,
 ### 3. Learn how SpringBoot AutoConfiguration works
 The power of SpringBoot came from its AutoConfiguration mechanism and it is not magic. Learn Spring’s @Conditional feature and explore some SpringBoot’s AutoConfiguration classes like DataSourceAutoConfiguration, JpaAutoConfiguration etc, you can easily understand how SpringBoot is automatically creating beans based on some criteria.
 
-> You can read my blog post on How SpringBoot AutoConfiguration magic works? here https://sivalabs.in/2016/03/how-springboot-autoconfiguration-magic/
+> You can read my blog post on How SpringBoot AutoConfiguration magic works? here https://sivalabs.in/how-springboot-autoconfiguration-magic/
 
 ### 4. Follow the community and read blogs
 This is the best part of Spring framework, huge community and there are thousands of blogs writing about Spring. 

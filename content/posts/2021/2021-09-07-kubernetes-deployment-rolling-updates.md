@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-09-07T04:59:17+05:30
 url: /kubernetes-deployment-rolling-updates/
-aliases:
-- /2021/09/kubernetes-deployment-rolling-updates/
 categories: [Kubernetes]
 tags: [Kubernetes, DevOps, Java, SpringBoot]
 ---

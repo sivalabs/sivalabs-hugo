@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2017-10-18T02:50:23+00:00
 url: /select-all-starters-on-spring-initializer-httpstart-spring-io/
-aliases: /2017/10/select-all-starters-on-spring-initializer-httpstart-spring-io/
 categories:
   - Spring
   - Tips

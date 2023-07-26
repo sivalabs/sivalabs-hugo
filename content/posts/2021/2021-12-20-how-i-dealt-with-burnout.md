@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-12-20T04:59:17+05:30
 url: /how-i-dealt-with-burnout/
-aliases:
-  - /2021/12/how-i-dealt-with-burnout/
 categories: [Career]
 tags: [Career, Tips, Productivity]
 ---

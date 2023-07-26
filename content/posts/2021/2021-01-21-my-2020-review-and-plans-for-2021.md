@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-01-21T04:59:17+05:30
 url: /my-2020-review-and-plans-for-2021/
-aliases:
-- /2021/01/my-2020-review-and-plans-for-2021/
 categories: [Career]
 tags: [Career]
 ---

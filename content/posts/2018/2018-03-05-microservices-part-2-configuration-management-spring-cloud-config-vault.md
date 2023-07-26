@@ -5,7 +5,6 @@ images: ["/preview-images/configuration.webp"]
 type: post
 date: 2018-03-05T07:59:17+05:30
 url: /microservices-part-2-configuration-management-spring-cloud-config-vault/
-aliases: /2018/03/microservices-part-2-configuration-management-spring-cloud-config-vault/
 categories:
   - microservices
   - springboot

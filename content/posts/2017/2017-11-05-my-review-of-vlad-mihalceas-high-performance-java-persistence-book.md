@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2017-11-05T04:59:17+00:00
 url: /my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
-aliases: /2017/11/my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
 categories:
   - Books
 tags:

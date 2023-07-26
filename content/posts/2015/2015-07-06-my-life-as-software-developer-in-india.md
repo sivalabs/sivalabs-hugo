@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2015-07-06T16:17:00+00:00
 url: /my-life-as-software-developer-in-india/
-aliases: /2015/07/my-life-as-software-developer-in-india/
 categories:
   - Java
 tags:

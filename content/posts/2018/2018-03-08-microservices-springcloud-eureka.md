@@ -5,7 +5,6 @@ images: ["/preview-images/EurekaDashboard.webp"]
 type: post
 date: 2018-03-08T07:59:17+05:30
 url: /microservices-springcloud-eureka/
-aliases: /2018/03/microservices-springcloud-eureka/
 categories:
   - microservices
   - springboot

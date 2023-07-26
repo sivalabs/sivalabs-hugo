@@ -5,7 +5,6 @@ images: ["/preview-images/SpringSession.webp"]
 type: post
 date: 2018-02-07T07:59:17+05:30
 url: /session-management-using-spring-session-jdbc-datastore/
-aliases: /2018/02/session-management-using-spring-session-jdbc-datastore/
 categories:
   - springboot
 tags:

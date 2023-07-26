@@ -5,7 +5,6 @@ images: ["/preview-images/golang.webp"]
 type: post
 date: 2020-07-02T04:59:17+05:30
 url: /golang-from-a-java-developer-perspective/
-aliases: /2020/07/golang-from-a-java-developer-perspective/
 categories:
   - GoLang
 tags: [GoLang, Java]

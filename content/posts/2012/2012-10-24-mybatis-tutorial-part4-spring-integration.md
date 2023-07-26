@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2012-10-24T00:40:00+00:00
 url: /mybatis-tutorial-part4-spring-integration/
-aliases: /2012/10/mybatis-tutorial-part4-spring-integration/
 categories:
   - Java
 tags:

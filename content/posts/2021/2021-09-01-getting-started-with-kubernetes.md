@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-09-01T04:59:17+05:30
 url: /getting-started-with-kubernetes/
-aliases:
-- /2021/09/getting-started-with-kubernetes/
 categories: [Kubernetes]
 tags: [Kubernetes, DevOps, Java, SpringBoot]
 popular: false

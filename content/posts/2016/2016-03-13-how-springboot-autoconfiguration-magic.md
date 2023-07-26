@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2016-03-13T07:04:56+00:00
 url: /how-springboot-autoconfiguration-magic/
-aliases: /2016/03/how-springboot-autoconfiguration-magic/
 categories:
   - Spring
 tags:

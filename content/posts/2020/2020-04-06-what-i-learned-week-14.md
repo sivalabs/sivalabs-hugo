@@ -5,7 +5,6 @@ images: ["/preview-images/WIL-3.webp"]
 type: post
 date: 2020-04-06T04:59:17+05:30
 url: /what-i-learned-2020-week-14/
-aliases: /2020/04/what-i-learned-2020-week-14/
 categories:
   - Java
 tags: [Java, Blogging]
@@ -19,7 +18,7 @@ Now I am using that time for various other activities including learning some ne
 
 ### So, here is what I learned in the last week:
 
-* I have published a new article on [How to Imposing Code Structure Guidelines using ArchUnit](https://sivalabs.in/2020/04/impose-architecture-guidelines-using-archunit/)
+* I have published a new article on [How to Imposing Code Structure Guidelines using ArchUnit](https://sivalabs.in/impose-architecture-guidelines-using-archunit/)
 
 * I use **Spring Security JWT based authentication** for most of my personal projects. 
 Instead of copy-pasting the same code again and again I created a [SpringBoot JWT Security Starter](https://github.com/sivalabs/spring-boot-jwt-security-starter)

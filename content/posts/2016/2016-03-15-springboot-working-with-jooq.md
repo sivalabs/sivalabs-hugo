@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2016-03-15T07:13:21+00:00
 url: /springboot-working-with-jooq/
-aliases: /2016/03/springboot-working-with-jooq/
 categories:
   - Spring
 tags:

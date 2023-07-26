@@ -6,7 +6,6 @@ type: post
 draft: true
 date: 2020-08-06T04:59:17+05:30
 url: /the-lost-art-of-simple-application-development/
-aliases: /2020/08/the-lost-art-of-simple-application-development/
 categories:
   - Architecture
 tags: [Thoughts, Architecture, Simplicity]

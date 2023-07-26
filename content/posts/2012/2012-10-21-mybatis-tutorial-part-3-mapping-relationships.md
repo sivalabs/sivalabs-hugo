@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2012-10-21T14:07:00+00:00
 url: /mybatis-tutorial-part-3-mapping-relationships/
-aliases: /2012/10/mybatis-tutorial-part-3-mapping-relationships/
 categories:
   - Java
 tags:

@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-08-19T04:59:17+05:30
 url: /get-super-productive-with-intellij-file-templates/
-aliases:
-- /2021/08/get-super-productive-with-intellij-file-templates/
 categories: [IDE]
 tags: [Java, SpringBoot, IDE, Intellij, Productivity]
 ---

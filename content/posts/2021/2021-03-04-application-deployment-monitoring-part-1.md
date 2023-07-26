@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-03-04T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-part-1/
-aliases:
-- /2021/03/springboot-application-deployment-monitoring-part-1/
 categories: [SpringBoot]
 tags: [SpringBoot, DevOps]
 ---

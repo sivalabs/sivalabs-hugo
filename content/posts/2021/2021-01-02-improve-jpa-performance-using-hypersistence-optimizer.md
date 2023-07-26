@@ -6,8 +6,6 @@ type: post
 draft: false
 date: 2021-01-02T04:59:17+05:30
 url: /improve-jpa-performance-using-hypersistence-optimizer/
-aliases:
-- /2021/01/improve-jpa-performance-using-hypersistence-optimizer/
 categories: [Java]
 tags: [JPA, Hibernate]
 ---

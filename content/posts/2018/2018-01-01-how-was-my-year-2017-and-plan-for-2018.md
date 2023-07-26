@@ -5,7 +5,6 @@ images: ["/preview-images/2018-year.webp"]
 type: post
 date: 2018-01-01T07:59:17+05:30
 url: /how-was-my-year-2017-and-plan-for-2018/
-aliases: /2018/01/how-was-my-year-2017-and-plan-for-2018/
 categories:
   - Blog
 tags:

@@ -5,7 +5,6 @@ images: ["/preview-images/springboot-kafka.webp"]
 type: post
 date: 2019-06-24T07:59:17+05:30
 url: /kafka-tutorial-producer-consumer-using-spring-boot/
-aliases: /2019/06/kafka-tutorial-producer-consumer-using-spring-boot/
 categories:
   - Kafka
 tags: [Kafka, SpringBoot, Spring]

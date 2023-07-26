@@ -4,7 +4,6 @@ author: Siva
 type: post
 date: 2012-10-21T11:10:00+00:00
 url: /mybatis-tutorial-part1-crud-operations/
-aliases: /2012/10/mybatis-tutorial-part1-crud-operations/
 categories:
   - Java
 tags:

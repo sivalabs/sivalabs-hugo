@@ -5,7 +5,6 @@ images: ["/preview-images/kafka.webp"]
 type: post
 date: 2019-06-21T07:59:17+05:30
 url: /kafka-tutorial-java-producer-consumer/
-aliases: /2019/06/kafka-tutorial-java-producer-consumer/
 categories:
   - Kafka
 tags: [Kafka]
