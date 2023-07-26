@@ -238,7 +238,7 @@ Gradle:
 
 **Previous:** [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}})
 
-**Next:** **Spring Boot Application Configuration Tutorial** (Coming Soon)
+**Next:** [Spring Boot Application Configuration Tutorial]({{< relref "03-spring-boot-application-configuration-tutorial.md" >}})
 {{< /box >}}
 
 ## Summary

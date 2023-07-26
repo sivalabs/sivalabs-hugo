@@ -3,7 +3,7 @@ title: "Spring Boot Application Configuration Tutorial"
 author: Siva
 images: ["/preview-images/spring-boot-configuration-tutorial.webp"]
 type: post
-draft: true
+draft: false
 date: 2023-07-26T06:00:00+05:30
 url: /spring-boot-application-configuration-tutorial
 toc: true
@@ -439,7 +439,7 @@ In addition to the approaches described above, Spring Boot supports more advance
 * [AWS Secrets Manager and Parameter Store](https://docs.awspring.io/spring-cloud-aws/docs/3.0.1/reference/html/index.html#spring-cloud-aws-secrets-manager)
 * [Kubernetes ConfigMaps and Secrets](https://spring.io/projects/spring-cloud-kubernetes)
 
-These configuration options will be explained in separate tutorials in future.
+These configuration options will be explained in separate tutorials in the future.
 
 {{< box info >}}
 **Spring Boot Tutorial Series**
