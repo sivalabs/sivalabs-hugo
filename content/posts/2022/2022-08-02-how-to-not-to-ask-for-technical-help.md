@@ -7,7 +7,7 @@ draft: false
 date: 2022-08-02T04:59:17+05:30
 url: /how-to-not-to-ask-for-technical-help/
 categories: [Tips]
-tags: [Tech, Learning, Tips]
+tags: [Tech, Tips]
 ---
 
 We, software developers, have a great advantage when it comes to getting help from others.

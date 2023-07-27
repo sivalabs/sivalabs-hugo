@@ -7,7 +7,7 @@ draft: true
 date: 2021-07-25T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-part-3-run-with-docker/
 categories: [SpringBoot]
-tags: [SpringBoot, DevOps, Jenkins, Docker, DockerCompose]
+tags: [SpringBoot, DevOps, Jenkins, Docker, docker-compose]
 ---
 
 This is the 3rd part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).

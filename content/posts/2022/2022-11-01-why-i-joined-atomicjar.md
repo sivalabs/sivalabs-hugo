@@ -7,7 +7,7 @@ draft: true
 date: 2022-11-01T04:59:17+05:30
 url: /why-i-joined-atomicjar/
 categories: [Career]
-tags: [Testcontainers, AtomicJar, Career]
+tags: [career]
 ---
 
 After working as a Developer/TechLead/Architect for around 16 years, I am joining [AtomicJar](https://www.atomicjar.com/) as a **Developer Advocate**.

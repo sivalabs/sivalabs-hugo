@@ -7,7 +7,7 @@ draft: false
 date: 2022-05-10T04:59:17+05:30
 url: /announcing-my-springboot-tips-video-series/
 categories: [SpringBoot]
-tags: [Java, SpringBoot, Tutorial, YouTube]
+tags: [Java, SpringBoot, Tutorials, YouTube]
 ---
 
 ### TLDR;

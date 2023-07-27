@@ -5,9 +5,9 @@ type: post
 date: 2013-12-29T00:53:00+00:00
 url: /clean-code-dont-mix-different-levels-of-abstractions/
 categories:
-  - Best Practices
+  - Best-Practices
 tags:
-  - Best Practices
+  - best-practices
   - Java
 popular: true
 ---

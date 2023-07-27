@@ -6,9 +6,9 @@ type: post
 date: 2018-01-01T07:59:17+05:30
 url: /how-was-my-year-2017-and-plan-for-2018/
 categories:
-  - Blog
+  - Blogging
 tags:
-  - Blog
+  - blogging
 ---
 ## Happy new year to you :-)
 

@@ -7,7 +7,7 @@ date: 2019-05-14T07:59:17+05:30
 url: /spring-boot-best-practices/
 categories:
   - SpringBoot
-tags: [Spring, SpringBoot, BestPractices]
+tags: [SpringBoot, best-practices]
 popular: true
 ---
 

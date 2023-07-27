@@ -8,7 +8,7 @@ categories:
   - JavaEE
   - Spring
 tags:
-  - JavaEE
+  - Java-EE
   - Spring
 ---
 In Java community Spring vs JavaEE is a never ending debate. In such debates people form two groups consisting of evangelists, architects and hard core fans of one platform and debate endlessly. Those who participate in the debates may be architects who are responsible for platform selection. But what would developers think about this Spring vs JavaEE debate?

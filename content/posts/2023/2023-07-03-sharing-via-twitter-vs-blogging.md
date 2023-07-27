@@ -7,7 +7,7 @@ draft: false
 date: 2023-07-03T04:59:17+05:30
 url: /sharing-thoughts-and-knowledge-via-twitter-vs-blogging
 categories: [Thoughts]
-tags: [Thoughts, Social]
+tags: [thoughts, social-media]
 ---
 
 SocialMedia is a double-edged sword. We can put it to good use or become addicted to it and suffer.

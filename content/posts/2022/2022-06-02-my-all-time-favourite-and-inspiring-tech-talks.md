@@ -7,7 +7,7 @@ draft: false
 date: 2022-06-02T04:59:17+05:30
 url: /my-all-time-favourite-20-inspiring-tech-talks/
 categories: [Videos]
-tags: [Videos, Talks]
+tags: [videos]
 ---
 We, software developers, aspire to become better by learning new tools and techniques.
 In addition to that, I find listening to the experts and learning from their experiences is a great way to upskill ourselves.

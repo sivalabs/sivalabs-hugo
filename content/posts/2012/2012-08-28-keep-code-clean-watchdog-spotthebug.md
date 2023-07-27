@@ -5,11 +5,11 @@ type: post
 date: 2012-08-28T04:55:00+00:00
 url: /keep-code-clean-watchdog-spotthebug/
 categories:
-  - Best Practices
+  - Best-Practices
 tags:
-  - Best Practices
-  - Java
-  - JavaEE
+  - best-practices
+  - java
+  - java-ee
 
 ---
 Before going to discuss **WatchDog & SpotTheBug Approach**, let me give a brief context on what is the needs for this.

@@ -7,7 +7,7 @@ date: 2020-06-08T04:59:17+05:30
 url: /my-proud-moment-as-a-mentor/
 categories:
   - Career
-tags: [Career, IT]
+tags: [Career]
 ---
 
 As software developers, most of us implicitly assume gaining strong technical skills might make us successful.

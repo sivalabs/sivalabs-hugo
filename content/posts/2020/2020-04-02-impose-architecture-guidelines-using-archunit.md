@@ -7,7 +7,7 @@ date: 2020-04-02T04:59:17+05:30
 url: /impose-architecture-guidelines-using-archunit/
 categories:
   - Java
-tags: [Java, BestPractices]
+tags: [java, best-practices]
 ---
 While building the software we all agree, as a team, to follow a set of guidelines which are typically considered as best practices.
 But during the development, developers might violate those guidelines unknowingly or ignorance.

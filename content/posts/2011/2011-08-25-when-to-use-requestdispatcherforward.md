@@ -7,8 +7,7 @@ url: /when-to-use-requestdispatcherforward/
 categories:
   - JavaEE
 tags:
-  - Servlets JSP
-  - Tips
+  - java-ee
 
 ---
 Many people know about how RequestDispatcher.forward() and response.sendRedirect() works.

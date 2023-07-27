@@ -7,7 +7,7 @@ draft: false
 date: 2023-02-06T04:59:17+05:30
 url: /announcing-my-springboot-missing-guide-video-series/
 categories: [SpringBoot]
-tags: [Java, SpringBoot, Tutorial, YouTube]
+tags: [Java, SpringBoot, Tutorials, YouTube]
 ---
 
 ### TLDR;

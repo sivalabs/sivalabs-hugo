@@ -7,7 +7,7 @@ draft: false
 date: 2022-11-07T04:59:17+05:30
 url: /rethinking-about-my-social-media-usage/
 categories: [Thoughts]
-tags: [Thoughts, SocialMedia, Twitter]
+tags: [thoughts, social-media]
 ---
 Social media is a double-edged sword. Depending on how you use it can be really be helpful or become a source of pressure and frustration.
 I don't use Facebook and Instagram much, but I use [Twitter](https://twitter.com/sivalabs) and recently started using [LinkedIn](https://www.linkedin.com/in/siva-prasad-reddy-katamreddy/) too.

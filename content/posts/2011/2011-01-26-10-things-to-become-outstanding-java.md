@@ -5,10 +5,10 @@ type: post
 date: 2011-01-26T07:11:00+00:00
 url: /10-things-to-become-outstanding-java/
 categories:
-  - Best Practices
+  - Best-Practices
   - Java
 tags:
-  - Best Practices
+  - best-practices
   - Java
 popular: true
 ---

@@ -6,8 +6,8 @@ type: post
 date: 2018-01-24T07:59:17+05:30
 url: /ci-cd-springboot-applications-using-travis-ci/
 categories:
-  - travis-ci
-  - springboot
+  - DevOps
+  - SpringBoot
 tags:
   - travis-ci
   - springboot
