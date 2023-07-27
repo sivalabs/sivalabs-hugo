@@ -442,11 +442,9 @@ In addition to the approaches described above, Spring Boot supports more advance
 These configuration options will be explained in separate tutorials in the future.
 
 {{< box info >}}
-**Spring Boot Tutorial Series**
+**Spring Boot Tutorials**
 
-**Previous:** [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}})
-
-**Next:** **Spring Boot Logging Tutorial** (Coming Soon)
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page.
 {{< /box >}}
 
 ## Summary

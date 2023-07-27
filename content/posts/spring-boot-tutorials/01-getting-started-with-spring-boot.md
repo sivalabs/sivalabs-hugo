@@ -292,9 +292,9 @@ $ curl http://localhost:8080/api/hello?name=Siva
 ```
 
 {{< box info >}}
-**Spring Boot Tutorial Series**
+**Spring Boot Tutorials**
 
-**Next:** [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}})
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page.
 {{< /box >}}
 
 ## Summary

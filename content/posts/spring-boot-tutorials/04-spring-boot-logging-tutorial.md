@@ -3,7 +3,7 @@ title: "Spring Boot Logging Tutorial"
 author: Siva
 images: ["/preview-images/spring-boot-logging-tutorial.webp"]
 type: post
-draft: true
+draft: false
 date: 2023-07-28T06:00:00+05:30
 url: /spring-boot-logging-tutorial
 toc: true
@@ -14,6 +14,13 @@ description: In this tutorial, you will learn how to implement logging in your S
 Logging is a common and important requirement for running applications in production.
 Spring Boot provides great support for application logging out of the box and offers various customization options.
 In this tutorial, you will learn how to implement logging in your Spring Boot application using **Logback** and **Log4j2**. 
+
+{{< box info >}}
+**Getting Started with Spring Boot**
+
+If you are new to Spring Boot, refer [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}}) tutorial 
+to learn how to create a Spring Boot project.
+{{< /box >}}
 
 ## Spring Boot Default Logging Support
 When you create a Spring Boot application with any starter added, they have a dependency on 
@@ -173,6 +180,20 @@ and include **spring-boot-starter-log4j2** in **pom.xml** as follows.
 </dependency>
 ```
 
+In case you are using **Gradle**, you can configure to use **log4j2** instead of **logback** as follows:
+
+```groovy
+configurations.all {
+	exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-log4j2')
+    ...
+    ...
+}
+```
+
 Spring Boot by default includes **log4j2.xml** configuration file in **org/springframework/boot/logging/log4j2/log4j2.xml**.
 But if you want to provide a customized configuration, then you can create **src/main/resources/log4j2-spring.xml** as follows:
 
@@ -211,5 +232,6 @@ You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/
 {{< /box >}}
 
 ## Summary
-We have learned about Spring Boot default logging support using Slf4J and Logback and how to customize it.
+Spring Boot makes it easy to implement logging by providing the default configuration with customization options.
+In this tutorial, we have learned about Spring Boot default logging support using Slf4J and Logback and how to customize it.
 Then we have explored how to use Log4j2 instead of default Logback implementation.

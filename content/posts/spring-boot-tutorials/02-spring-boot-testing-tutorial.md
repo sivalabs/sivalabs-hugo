@@ -234,11 +234,9 @@ Gradle:
 ```
 
 {{< box info >}}
-**Spring Boot Tutorial Series**
+**Spring Boot Tutorials**
 
-**Previous:** [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}})
-
-**Next:** [Spring Boot Application Configuration Tutorial]({{< relref "03-spring-boot-application-configuration-tutorial.md" >}})
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page.
 {{< /box >}}
 
 ## Summary
