@@ -103,8 +103,8 @@ spring.datasource.password=secret123
 When you run your application with a specific profile, then first properties from default profile will be loaded 
 and then profile-specific properties will override them.
 
-Instead of creating separate properties file for different profiles, you can put all profile properties in **application.properties** file 
-by using `"#---"` or `"!---"` separator as follows: 
+Instead of creating separate properties file for different profiles, you can put all profile properties in 
+**application.properties** file and separate profile-specific configuration by using `"#---"` or `"!---"` separator as follows: 
 
 **application.properties**
 
