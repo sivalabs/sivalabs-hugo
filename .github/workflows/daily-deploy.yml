@@ -2,7 +2,7 @@ name: netlify-daily-build
 
 on:
   schedule:
-    - cron: "1 4 * * *"
+    - cron: "15 3 * * *"
 
 jobs:
   build:
