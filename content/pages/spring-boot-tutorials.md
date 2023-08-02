@@ -15,6 +15,7 @@ tags: ["SpringBoot"]
 * [Spring Boot Application Configuration Tutorial]({{< relref "03-spring-boot-application-configuration-tutorial.md" >}})
 * [Spring Boot Logging Tutorial]({{< relref "04-spring-boot-logging-tutorial.md" >}})
 * [Spring Boot Profiles Tutorial]({{< relref "05-spring-boot-profiles-tutorial.md" >}})
+* [Spring Boot JdbcTemplate Tutorial]({{< relref "06-spring-boot-jdbctemplate-tutorial.md" >}})
 * [Why SpringBoot is so popular and how to learn SpringBoot effectively?]({{< relref "2018-02-22-why-springboot-so-popular-how-to-learn-springboot.md" >}})
 * [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}})
 * [How SpringBoot AutoConfiguration magic works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
