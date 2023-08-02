@@ -12,11 +12,11 @@ tags: [SpringBoot, Tutorials]
 description: In this tutorial, you will learn how to handle database transactions while using SQL databases.
 ---
 
-Spring provides high-level abstraction on top of **JDBC** with 
+Spring provides a high-level abstraction on top of **JDBC** with 
 [JdbcTemplate]({{< relref "06-spring-boot-jdbctemplate-tutorial.md" >}}) 
 to make it easier to perform database operations. 
-Spring also provides high-level abstraction on top of **JPA** 
-with **Spring Data JPA** to make it easy to implement CRUD operations, sorting and pagination, etc.
+Spring also provides a high-level abstraction on top of **JPA** 
+with **Spring Data JPA** to make it easy to implement CRUD operations, sorting, pagination, etc.
 
 Whether you use **JdbcTemplate** or **JPA/Hibernate** or **Spring Data JPA**, you need to take care of 
 handling database transactions.
@@ -25,10 +25,10 @@ A database transaction is a single unit of work, which either completes fully or
 and leaves the database in a consistent state. While implementing database transactions you need to take 
 **ACID (Atomicity, Consistency, Isolation, Durability)** properties into consideration.
 
-Let's understand how we can handle database transactions in our Spring Boot based applications.
+Let's understand how we can handle database transactions in our Spring Boot applications.
 
 ## Transaction Handling using JDBC
-First let's take a quick look at how we usually handle database transactions in plain JDBC.
+First, let's take a quick look at how we usually handle database transactions in plain JDBC.
 
 ```java
 class UserService {
@@ -53,8 +53,8 @@ class UserService {
 In the above code snippet:
 
 * **(1)** We obtained a database connection from DataSource connection pool
-* **(2)** By default, every database operation will be running in it's own transaction automatically.
-  In order to take the control of defining our transaction scope, we set AutoCommit to false.
+* **(2)** By default, every database operation will be running in its own transaction automatically.
+  To take control of defining our transaction scope, we set AutoCommit to false.
 * **(3)** Then we performed the necessary database operations.
 * **(4)** If everything works fine then we are committing the transaction.
 * **(5)** If any exception occurred then we rollback the transaction. 
@@ -75,8 +75,8 @@ is considered to be a **"transactional boundary"**.
 
 We can add Spring's **@Transactional** annotation on a Service layer method to define the transaction scope.
 All the database operations in that method will be running in a single transaction.
-If the method executed successfully then the transaction will be committed.
-If any **RuntimeException** occur during the method execution then the transaction will be rolled back.
+If the method is executed successfully then the transaction will be committed.
+If any **RuntimeException** occurs during the method execution then the transaction will be rolled back.
 
 ```java
 @Service
@@ -91,10 +91,10 @@ class UserService {
 }
 ```
 
-You can add **@Transactional** annotation on a method-level to make that particular method transactional, 
-or at class-level to make all the public methods in that class as transactional.
+You can add **@Transactional** annotation on a method level to make that particular method transactional, 
+or at class level to make all the public methods in that class as transactional.
 
-When you add **@Transactional** annotation on class-level or on any method, **Spring creates a Proxy** for that class 
+When you add **@Transactional** annotation on a class or on any of its methods, **Spring creates a Proxy** for that class 
 and apply the transaction handling logic using Spring AOP behind the scenes. 
 
 {{< figure src="/images/spring-txn-proxy.webp" width="60%" height="40%" >}}
@@ -127,8 +127,8 @@ class DuplicateUserException extends Exception {}
 
 In the above code snippet, we specified propagation level to be **REQUIRES_NEW** instead of the default **REQUIRED**.
 The **REQUIRES_NEW** propagation level, suspends the current transaction if one exists, 
-starts a new transaction, execute the database operations, commit the transaction 
-and then resume the previously suspended transaction.
+starts a new transaction, executes the database operations, commits the transaction 
+and, then resumes the previously suspended transaction.
 
 Also, we specified to rollback the transaction if **DuplicateUserException** occurs even though it is a **Checked Exception**.
 And, we specified not to rollback the transaction if **IllegalArgumentException** occurs even though it is a **RuntimeException**.
@@ -136,7 +136,7 @@ And, we specified not to rollback the transaction if **IllegalArgumentException*
 {{< youtube jviq49ukATo >}}
 
 ## Spring's programmatic transaction handling using TransactionTemplate
-Spring also provides programmatic approach to handle database transactions using **TransactionTemplate** as follows:
+Spring also provides a programmatic approach to handle database transactions using **TransactionTemplate** as follows:
 
 ```java
 @Service
@@ -160,7 +160,7 @@ class UserService {
 You can use **TransactionTemplate** if you want to have more control over transaction management.
 
 ## A common mistake while using @Transactional annotation
-We need to understand how proxies work in order to avoid mis-configuring the transaction handling logic.
+We need to understand how proxies work to avoid mis-configuring the transaction handling logic.
 
 Let's take an example scenario where a Controller calls a transactional method which in turn calls 
 other transactional method.
@@ -215,19 +215,19 @@ class AccountService {
 }
 ```
 In the above example scenario, from the **UserController** we are calling **UserService.register(..)** method
-which is annotated with **@Transactional**. As there is no new transaction is in progress, a new transaction will be created.
-Then user details will be saved into database within the current transaction.
+which is annotated with **@Transactional**. As there is no new transaction in progress, a new transaction will be created.
+The user details will be saved into the database within the current transaction.
 After that we are calling **AccountService.create(account)** which is annotated with **@Transactional(propagation = Propagation.REQUIRES_NEW)**.
-Now the current transaction which is in-progress will be temporarily suspended and a new transaction will be started.
+Now the current transaction which is in progress will be temporarily suspended and a new transaction will be started.
 The account creation will be executed in that new transaction and if no exception occurred that transaction will be committed immediately.
 Then the previous transaction will be resumed and saves the user preferences. 
 
-If a **RuntimeException** occur while saving preferences then only user record insertion will be rolled back, 
+If a **RuntimeException** occurs while saving preferences then only user record insertion will be rolled back, 
 but not account creation as account creation happened in a separate transaction which is already committed successfully.
 
 **This will work as expected.**
 
-But, imagine account creation method is also in **UserService** as follows:
+But, imagine the account creation method is also in **UserService** as follows:
 
 ```java
 @Controller
@@ -269,7 +269,7 @@ class UserService {
 We may assume the account creation logic will be executed in a new transaction 
 because we have configured **REQUIRES_NEW** propagation level. **But this does NOT work.**
 
-When you added **@Transactional** annotation on **UserService**, a proxy is created and that proxy is injected into the **UserController**.
+When you added **@Transactional** annotation on **UserService**, a proxy is created, and that proxy is injected into the **UserController**.
 When **userService.register(..)** method is called from **UserController**, you are calling the **register()** method on the proxy.
 The proxy will apply the transaction handling logic according to the **@Transactional** semantics and then 
 delegates the execution of actual logic to the actual **UserService** instance.
