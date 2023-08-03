@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-database-transaction-management-tutorial.webp"]
 type: post
 draft: false
-date: 2023-08-05T06:00:00+05:30
+date: 2023-08-03T06:00:00+05:30
 url: /spring-boot-database-transaction-management-tutorial
 toc: true
 categories: ["SpringBoot"]
