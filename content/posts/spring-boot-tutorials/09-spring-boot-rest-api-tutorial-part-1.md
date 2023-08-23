@@ -40,7 +40,7 @@ Create the JPA entity **Bookmark** as follows:
 package com.sivalabs.bookmarks.domain;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 @Entity
 @Table(name = "bookmarks")
@@ -52,10 +52,10 @@ class Bookmark {
     private String title;
     @Column(nullable = false)
     private String url;
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private Instant createdAt;
+    @Column(name = "updated_at", insertable = false)
+    private Instant updatedAt;
 
     //constructors, setters & getters
 }
@@ -275,13 +275,13 @@ Create **BookmarkDTO** as a record as follows:
 ```java
 package com.sivalabs.bookmarks.domain;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 public record BookmarkDTO(
         Long id,
         String title,
         String url,
-        LocalDateTime createdAt) {}
+        Instant createdAt) {}
 ```
 
 Now, let's add a method to **BookmarkRepository** to fetch bookmarks with pagination and using DTO projection as follows:
@@ -480,7 +480,8 @@ class BookmarkControllerTests {
 Now you can run the test and see Testcontainers spinning up a PostgreSQL database and Spring Boot automatically configured 
 to use that database while running the test.
 
-We will explore how to implement **Create and Update Bookmark API endpoints** in the upcoming **Part-2** in this series.
+We will explore how to implement **Create and Update Bookmark API endpoints** in the upcoming
+[Spring Boot REST API Best Practices - Part 2]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}}) in this series.
 
 {{< box info >}}
 **Spring Boot Tutorials**
