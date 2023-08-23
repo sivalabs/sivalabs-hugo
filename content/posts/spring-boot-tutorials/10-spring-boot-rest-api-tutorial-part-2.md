@@ -9,7 +9,7 @@ url: /spring-boot-rest-api-best-practices-part-2
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, Tutorials]
-description: In this tutorial, you will learn how to use create a Spring Boot REST API and best practices to implement Create and Update API endpoints.
+description: In this tutorial, you will learn how to create a Spring Boot REST API and use best practices to implement Create and Update API endpoints.
 ---
 
 In this **Spring Boot REST API Best Practices - Part-2**, I will explain some of the best practices we should follow 
@@ -145,17 +145,33 @@ public class BookmarkService {
 }
 ```
 
-**BookmarkController.java**
+To create BookmarkDTO instance from Bookmark entity we will create a static method as follows:
 
+```java
+package com.sivalabs.bookmarks.domain;
+
+import java.time.Instant;
+
+public record BookmarkDTO(
+        Long id,
+        String title,
+        String url,
+        Instant createdAt
+) {
+    static BookmarkDTO from(Bookmark bookmark) {
+        return new BookmarkDTO(bookmark.getId(),
+                bookmark.getTitle(),
+                bookmark.getUrl(),
+                bookmark.getCreatedAt()
+        );
+    }
+}
+```
+
+**BookmarkController.java**
 
 ```java
 package com.sivalabs.bookmarks.api.controllers;
-
-import com.sivalabs.bookmarks.domain.BookmarkService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookmarks")

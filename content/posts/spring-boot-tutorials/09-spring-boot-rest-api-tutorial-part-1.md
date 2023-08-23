@@ -9,7 +9,7 @@ url: /spring-boot-rest-api-best-practices-part-1
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, Tutorials]
-description: In this tutorial, you will learn how to use create a Spring Boot REST API and best practices to implement CRUD API endpoints.
+description: In this tutorial, you will learn how to create a Spring Boot REST API and use best practices to implement CRUD API endpoints.
 ---
 
 In this **Spring Boot REST API Best Practices Series**, I will explain some of the best practices we should follow while implementing REST APIs.
