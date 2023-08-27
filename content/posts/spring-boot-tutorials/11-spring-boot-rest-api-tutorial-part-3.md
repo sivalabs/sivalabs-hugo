@@ -16,6 +16,8 @@ In this **Spring Boot REST API Best Practices - Part-3**, we will see how to imp
 
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}})
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
+* [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}}) (This article)
+* [Spring Boot REST API Best Practices - Part 4 : Exception Handling in REST APIs]({{< relref "12-spring-boot-rest-api-tutorial-part-4.md" >}})
 
 You can find the sample code for this tutorial in this
 [GitHub](https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series/tree/main/spring-boot-rest-api-tutorial) repository.

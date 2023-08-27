@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-rest-api-part-4.webp"]
 type: post
 draft: false
-date: 2023-08-28T06:00:00+05:30
+date: 2023-08-27T06:00:00+05:30
 url: /spring-boot-rest-api-best-practices-part-4
 toc: true
 categories: ["SpringBoot"]
@@ -18,6 +18,7 @@ In this **Part-4**, we will explore how to implement exception handling for our 
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}})
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
 * [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}})
+* [Spring Boot REST API Best Practices - Part 4 : Exception Handling in REST APIs]({{< relref "12-spring-boot-rest-api-tutorial-part-4.md" >}}) (This article)
 
 You can find the sample code for this tutorial in this
 [GitHub](https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series/tree/main/spring-boot-rest-api-tutorial) repository.
