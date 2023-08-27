@@ -147,18 +147,26 @@ public class GlobalExceptionHandler {
 ```
 
 By using **ControllerAdvice** approach, we don't have to duplicate the same **@ExceptionHandler** logic in multiple Controllers.
-Note that if you have an **@ExceptionHandler** handling the same Exception in both Controller and **GlobalExceptionHandler** then
+
+{{< box tip >}}
+**IMPORTANT** 
+
+If you have an **@ExceptionHandler** handling the same Exception in both Controller and **GlobalExceptionHandler** then
 Controller level **@ExceptionHandler** method takes priority.
+{{< /box >}}
 
 ### Spring Boot Error Responses using Problem Details for HTTP APIs
 Spring Framework 6 implemented the Problem Details for HTTP APIs specification, ([RFC 7807](https://www.rfc-editor.org/rfc/rfc7807.html)).
 
 {{< box info >}}
-**Spring Boot 3 : Error Responses using Problem Details for HTTP APIs**
+**Spring Boot 3: Error Responses using Problem Details for HTTP APIs**
 
 You can read the [Spring Boot 3 : Error Responses using Problem Details for HTTP APIs](https://www.sivalabs.in/spring-boot-3-error-reporting-using-problem-details/)
 post to learn how to use ProblemDetails API for handling Exceptions.
 {{< /box >}}
+
+We can enable RFC 7807 responses either by adding the property **spring.mvc.problemdetails.enabled=true** 
+or create a global exception handler using **@ControllerAdvice** by extending **ResponseEntityExceptionHandler**.
 
 To quickly demonstrate, here is how you can use **ProblemDetails** API to return error responses in **RFC 7807** format.
 
@@ -265,7 +273,7 @@ You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/
 {{< /box >}}
 
 ## Summary
-In this fourth part of **Spring Boot REST API Best Practices** series, we have learned how to implement exception handling using different approaches.
+In this final part of **Spring Boot REST API Best Practices** series, we have explored how to implement exception handling using different approaches.
 
-I hope you this series is helpful in understanding how to implement Spring Boot REST APIs following best practices.
+I hope this series is helpful in understanding how to implement Spring Boot REST APIs following some best practices.
 
