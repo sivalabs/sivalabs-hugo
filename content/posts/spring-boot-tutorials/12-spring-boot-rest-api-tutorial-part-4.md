@@ -13,7 +13,7 @@ description: In this tutorial, you will learn how to implement exception handlin
 ---
 
 In this **Spring Boot REST API Best Practices** series, we have learned how to implement CRUD operations so far.
-In this **Part-4**, we will explore how to implement exception handling for our APIs.
+In this **Part-4**, we will explore how to **implement exception handling** for our APIs.
 
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}})
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
@@ -23,6 +23,34 @@ In this **Part-4**, we will explore how to implement exception handling for our 
 You can find the sample code for this tutorial in this
 [GitHub](https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series/tree/main/spring-boot-rest-api-tutorial) repository.
 
+As mentioned in the Part-3, if a request handling method in a controller throws an Exception, 
+then Spring Boot will handle it and return the response using its default Exception Handling mechanism.
+
+If all you care about is returning a proper HTTP Status code when an Exception is thrown, you can simply use 
+**@ResponseStatus** annotation to specify which HTTP Status code should be used instead of default **INTERNAL_SERVER_ERROR - 500**.
+
+```java
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class BookmarkNotFoundException extends RuntimeException {
+    
+}
+
+// --------------------------------------
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+public class InvalidBookmarkUrlException extends RuntimeException {
+
+}
+```
+
+But most likely, you would like to return a customized error response body with an appropriate HTTP Status Code as the response.
+So, let's see what are the different approaches to handle the exceptions to handling Exceptions and returning error responses.
 
 ## Different approaches to handling exceptions
 We can handle exceptions in different ways, and depending on your use-case, you can choose one of the approaches that fit best for you.
@@ -120,6 +148,15 @@ class BookmarkController {
 }
 ```
 
+In this approach, you don't have to duplicate the exception handling logic in multiple handler methods in the controller.
+If **BookmarkTitleNotAllowedException** or **DuplicateBookmarkException** is thrown from **create(...)** or **update(...)** methods, 
+they will be handled by the respective **@ExceptionHandler** methods. 
+
+You can also handle multiple types of Exceptions in the same ExceptionHandler method using
+**@ExceptionHandler({DuplicateBookmarkException.class, BookmarkTitleNotAllowedException.class})**.
+In this case, the ExceptionHandler method should use the common base Exception class of 
+**DuplicateBookmarkException** and **BookmarkTitleNotAllowedException** as a method parameter.
+
 ## GlobalExceptionHandler using @RestControllerAdvice
 In the previous section, we have seen how to use **@ExceptionHandler** at the Controller level.
 What if the same type of exceptions may occur in different Controllers, and we want to handle those Exceptions in the same way?
@@ -200,6 +237,11 @@ Now when an unhandled **BookmarkNotFoundException** is thrown, the following res
   "timestamp": "2023-08-30T05:21:59.828411Z"
 }
 ```
+
+By extending **ResponseEntityExceptionHandler**, you can leverage the Spring's default Exception handling for various common exceptions 
+such as **MethodArgumentNotValidException**, **BindException**, **MissingServletRequestParameterException**, etc.
+If you want to customize the exception handling for any of those Exceptions,
+then you can override those respective methods and implement your own logic.
 
 ### Using Error Handling Spring Boot Starter
 We can use [Error Handling Spring Boot Starter](https://github.com/wimdeblauwe/error-handling-spring-boot-starter) 
