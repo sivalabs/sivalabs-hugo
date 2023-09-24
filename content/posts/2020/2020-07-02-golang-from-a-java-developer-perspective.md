@@ -209,7 +209,7 @@ As of now Go doesn't have support for **Generics** or **Streams**. Lack of suppo
 
 I really wish I get paid by number of lines of code while working on Go projects :-)
 
-{{< figure src="/images/money-tears.gif"  width="350" height="300" >}}
+{{< figure src="/raw-images/money-tears.gif"  width="350" height="300" >}}
 
 ## 3. Retrospection and Realization
 
