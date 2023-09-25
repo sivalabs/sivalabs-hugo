@@ -1,5 +1,5 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 2 : OAuth 2.0 Authorization Code Flow"
+title: "Spring Security OAuth 2 Tutorial - 2 : Authorization Code Flow"
 author: Siva
 images: ["/preview-images/spring-security-oauth2-part2.webp"]
 type: post
@@ -123,7 +123,7 @@ http://localhost:9191/realms/sivalabs/protocol/openid-connect/auth?
 
 * Then you will be redirected to Keycloak's Login page. 
 * Login with the user credentials **siva/siva1234**.
-* Then you will be redirected the **Redirect URL** page which has **code** as a query parameter.
+* Then you will be redirected the **Redirect URI** which has **code** as a query parameter.
 
 ```shell
 http://localhost:8080/callback?
