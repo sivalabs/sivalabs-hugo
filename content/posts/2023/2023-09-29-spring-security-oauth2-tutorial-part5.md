@@ -11,7 +11,7 @@ categories: ["SpringBoot"]
 tags: [SpringBoot, SpringSecurity, OAuth2]
 description: In this tutorial, you will learn how OAuth 2.0 Implicit Flow and Resource Owner Password Credentials Flow works.
 ---
-In the [Part 4: OAuth 2.0 Authorization Code Flow with PKCE]({{< relref "2023-09-26-spring-security-oauth2-tutorial-part4.md" >}}), 
+In the [Part 4: OAuth 2.0 Authorization Code Flow with PKCE]({{< relref "2023-09-27-spring-security-oauth2-tutorial-part4.md" >}}), 
 we learned how to acquire **access_token** using **Authorization Code Flow with PKCE**. 
 In this article, we will explore how to use **Implicit Flow** and **Resource Owner Password Credentials Flow**.
 
