@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-security-oauth2-part7.webp"]
 type: post
 draft: false
-date: 2023-10-04T06:00:00+05:30
+date: 2023-09-28T09:00:00+05:30
 url: /spring-security-oauth2-tutorial-securing-springmvc-client-application
 toc: true
 categories: ["SpringBoot"]
@@ -55,7 +55,9 @@ Now you can access the Keycloak admin console at http://localhost:9191/ and logi
 ## Create Keycloak Realm, Client and Users
 In the previous articles, we have learned how to create a realm, client and users.
 Please follow the steps mentioned in https://www.sivalabs.in/spring-security-oauth2-tutorial-introduction/#create-new-realm 
-to create a new realm, client and user.
+to create a new realm, client and user with one change for **Valid redirect URIs**.
+
+Set **Valid redirect URIs** value to **http://localhost:8080/login/oauth2/code/messages-webapp** instead of **http://localhost:8080/callback**.
 
 Now you should have the following details:
 
@@ -76,7 +78,7 @@ Now you should have the following details:
 Did you observe the **Valid redirect URIs** value? It is different from what we have configured (http://localhost:8080/callback) in the previous articles.
 Spring Security implemented authentication filter to handle the OAuth 2.0 Authorization Code Grant flow.
 
-The default value of the **redirect-uri** is **{baseUrl}/login/oauth2/code/{registrationId}**.
+In Spring Security OAuth 2.0 implementation, the default value of **redirect-uri** is **{baseUrl}/login/oauth2/code/{registrationId}**.
 We are going to use **messages-webapp** as the **registrationId** for our client application.
 So, in Keycloak we need to configure the **Valid redirect URIs** as **http://localhost:8080/login/oauth2/code/messages-webapp**.
 {{< /box >}}
@@ -91,14 +93,8 @@ Having an extra **"/"** at the end or not having **"/"** at the end may result i
 
 ## Create messages-webapp
 You can generate **messages-webapp** using **Spring Initializr** by clicking on this [link](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.1.4&packaging=jar&jvmVersion=17&groupId=com.sivalabs&artifactId=messages-webapp&name=messages-webapp&packageName=com.sivalabs.messages&dependencies=web,validation,oauth2-client,security,thymeleaf).
-Once the application is generated, import it into your IDE and add the following dependency in **pom.xml**.
-
-```xml
-<dependency>
-    <groupId>nz.net.ultraq.thymeleaf</groupId>
-    <artifactId>thymeleaf-layout-dialect</artifactId>
-</dependency>
-```
+We have selected the starters **Web**, **Validation**, **OAuth2 Client**, **Security** and **Thymeleaf**.
+Once the application is generated, open it in your favourite IDE.
 
 ### Configure OAuth 2.0 Client Registration Properties
 An OAuth 2.0 Client application can use multiple Authentication Providers such as **Google**, **Facebook**, **GitHub**, **Okta**, **Keycloak**, etc.

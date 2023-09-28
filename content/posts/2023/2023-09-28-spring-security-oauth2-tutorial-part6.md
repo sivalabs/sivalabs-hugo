@@ -4,14 +4,14 @@ author: Siva
 images: ["/preview-images/spring-security-oauth2-part6.webp"]
 type: post
 draft: false
-date: 2023-10-02T06:00:00+05:30
+date: 2023-09-28T06:00:00+05:30
 url: /spring-security-oauth2-tutorial-microservices-project-setup
 toc: true
 categories: ["SpringBoot"]
 tags: [SpringBoot, SpringSecurity, OAuth2]
 description: In this tutorial, we will explore the sample microservices project for the Spring Security OAuth 2 Tutorial series.
 ---
-We have learned about various OAuth 2.0 / OpenID Connect flows using web browser, cURL and Postman so far.
+In the previous articles, we have learned about various OAuth 2.0 / OpenID Connect flows using web browser, cURL and Postman.
 Now it's time to put what we have learned into practice. What better way to do that than to build a sample project?
 
 While implementing OAuth 2.0 / OpenID Connect based security using a Security framework like [Spring Security](https://spring.io/projects/spring-security),
@@ -24,54 +24,59 @@ Spring Security OAuth 2 Tutorial series.
 ## Sample Spring Boot Microservices Project
 We are going to build a sample microservices project that has the following components:
 
-* **Authorization Server** - This is the OAuth 2.0 Authorization Server that will issue access tokens to the clients. We will use **Keycloak** as the **Authorization Server**.
-* **messages-webapp** - A Spring MVC based **Client** application that the end user will be using. This application will be protected by the Authorization Server.
-* **messages-service** - A Spring Boot REST API (**Resource Server**) that manages the user data (messages) and will be used by the messages-webapp application. This application will be protected by the Authorization Server.
-* **archival-service** - A Spring Boot application that handles archival of the messages at regular intervals using a scheduled job and also exposes API to trigger the archival process via API calls by **ADMIN**. This will be both a **Resource Server and a Client**. This application will be protected by the Authorization Server.
+* **Authorization Server** - This is the OAuth 2.0 Authorization Server that will issue access tokens to the clients. 
+    We will use **Keycloak** as the **Authorization Server**.
+* **messages-webapp** - A Spring MVC based **Client** application that the end user will be using.
+* **messages-service** - A Spring Boot REST API (**Resource Server**) that manages the user data (messages) 
+    and will be used by the messages-webapp application.
+* **archival-service** - A Spring Boot application that handles archival of the messages at regular intervals 
+    using a scheduled job. It also exposes an API endpoint to trigger the archival process. 
+    This service will play the roles of both a **Resource Server** and a **Client**.
 
 {{< figure src="/images/oauth2-microservices.webp" alt="OAuth2 Microservices" >}}
 
 Let's get into what functionality each of these components provides.
 
-### messages-webapp
+## messages-webapp (Client)
 This is a Spring Boot web application that uses Spring MVC and Thymeleaf to render the UI.
 This application will be protected by the Authorization Server (Keycloak) and will be using the **Authorization Code Flow** 
 to authenticate the user and obtain the access token.
 
 * Anyone (unauthorized users also) can view the list of messages.
-* An authenticated user can post a new message.
-* An authenticated user with ADMIN role can trigger the message archival process.
+* Any authenticated user can post a new message.
+* Any authenticated user with **ADMIN** role can trigger the message archival process.
 
-### messages-service
-This is a Spring Boot REST API that manages the user data (messages) and will be used by the messages-webapp application.
+## messages-service (Resource Server)
+This is a Spring Boot REST API that manages the user data (messages) and will be used by the **messages-webapp** application.
 This is a Resource Server and exposes the following API endpoints:
 
 * **GET /api/messages** - Returns the list of messages. Publicly accessible, no authentication required.
-* **POST /api/messages** - Creates a new message. Any authenticated user can call this API. 
-* **POST /api/messages/archive** - Archives the messages older than N days. Only authenticated users with **ADMIN** role can call this API.
+* **POST /api/messages** - Creates a new message. Any authenticated user can call this API endpoint. 
+* **POST /api/messages/archive** - Archives the messages older than N days. Only authenticated users with either **ADMIN** or **ADMIN_JOB** roles can call this API endpoint.
 
-### archival-service
-This is a Spring Boot service that handles archival of the messages at regular intervals using a scheduled job 
-and also exposes API to trigger the archival process only by **ADMIN** users.
+## archival-service (Resource Server and Client)
+This is a Spring Boot service that handles archival of the messages at regular intervals using a scheduled job. 
+This service exposes an API endpoint to trigger the archival process only by **ADMIN** users.
 This application will be protected by the Authorization Server (Keycloak) and will be using the **Client Credentials Flow** 
 to obtain the access token to invoke **POST /api/messages/archive** API endpoint of **messages-service**.
 
 This service exposes the following API endpoint:
 
-* **POST /api/messages/archive** - Internally delegates the archival process to **messages-service**. Only authenticated users with ADMIN role can call this API.
+* **POST /api/messages/archive** - Internally delegates the archival process to **messages-service**. Only authenticated users with **ADMIN** role can call this API.
 
 {{< box info >}}
-**NOTE:**
+**Why not messages-webapp directly call messages-service POST /api/messages/archive endpoint?:**
 
-If you are wondering why we need a separate service to handle archival, it is because we want to decouple the archival process from the messages-service.
-And also, I would like to demonstrate a scenario where a service acts as both a Resource Server and a Client.
+The reason is, I would like to demonstrate a scenario where a service acts as both a **Resource Server and a Client**.
+The archival-service is a **Resource Server** exposing the **POST /api/messages/archive** API endpoint and also a **Client** for the **messages-service**.
 {{< /box >}}
 
 ## Keycloak Setup
 In the previous articles, we have learned how to setup Keycloak and create a realm, client and users.
-We will be using the same Keycloak setup for this tutorial series as well.
+We will be using the similar Keycloak setup for the service configurations.
 
-However, for any reason, if the keycloak docker container is deleted, then we need to again create the realm, client and users manually.
+### Exporting and Importing Keycloak Realm Configuration
+If, for any reason, the keycloak docker container is deleted, then we need to again create the realm, client and users manually.
 We can use Keycloak's **export** and **import** feature to export the realm configuration and import it back when needed.
 
 Once the keycloak instance is up and running, we can create the realm, clients and users and then use the following steps to export the realm configuration.
@@ -118,4 +123,4 @@ Don't worry if anything is not clear at this point, we will be exploring the sam
 
 ## Conclusion
 In this article, we have explored the sample microservices project that we will be working on for this Spring Security OAuth 2 Tutorial series.
-In the next article, we will explore setting up Keycloak, creating the **messages-webapp** application and securing it in detail.
+In the next article, we will work on setting up Keycloak, creating the **messages-webapp** application and securing it in detail.
