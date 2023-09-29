@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-security-oauth2-part9.webp"]
 type: post
 draft: false
-date: 2023-10-02T06:00:00+05:30
+date: 2023-10-06T06:00:00+05:30
 url: /spring-security-oauth2-tutorial-integrating-client-and-resource-server
 toc: true
 categories: ["SpringBoot"]
