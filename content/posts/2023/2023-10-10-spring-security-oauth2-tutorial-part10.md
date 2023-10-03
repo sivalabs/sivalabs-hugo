@@ -221,9 +221,9 @@ First, we need to enable scheduling by adding **@EnableScheduling** annotation t
 Then we can create a scheduled job to archive the messages by adding **@Scheduled** annotation to a method as follows:
 
 ```java
-package com.sivalabs.archivalservice.jobs;
+package com.sivalabs.archival.jobs;
 
-import com.sivalabs.archivalservice.domain.MessageServiceClient;
+import com.sivalabs.archival.domain.MessageServiceClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -286,9 +286,9 @@ The last thing we want to implement is the **POST /api/messages/archive** API en
 Create **MessageArchivalController** class with the following content:
 
 ```java
-package com.sivalabs.archivalservice.api;
+package com.sivalabs.archival.api;
 
-import com.sivalabs.archivalservice.domain.MessageServiceClient;
+import com.sivalabs.archival.domain.MessageServiceClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -316,7 +316,7 @@ But, we need to protect this API endpoint to be accessible only by users having 
 Update **SecurityConfig** class as follows:
 
 ```java
-package com.sivalabs.archivalservice.config;
+package com.sivalabs.archival.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

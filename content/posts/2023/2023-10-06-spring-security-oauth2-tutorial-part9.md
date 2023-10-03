@@ -383,7 +383,7 @@ public class HomeController {
     // other code omitted for brevity
   
     @PostMapping("/messages")
-    String createProduct(Message message) {
+    String createMessage(Message message) {
         Map<String, Object> loginUserDetails = SecurityHelper.getLoginUserDetails();
         message.setCreatedBy(loginUserDetails.get("username").toString());
         messageServiceClient.createMessage(message);
