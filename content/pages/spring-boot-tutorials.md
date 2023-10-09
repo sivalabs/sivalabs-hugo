@@ -2,6 +2,7 @@
 title: Spring Boot Tutorials
 author: Siva
 type: page
+images: ["/preview-images/sivalabs-springboot-tutorials.webp"]
 date: 2023-07-18T02:32:39+00:00
 url: /spring-boot-tutorials/
 categories: ["SpringBoot"]
