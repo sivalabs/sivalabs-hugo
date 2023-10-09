@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-security-oauth2-part10.webp"]
 type: post
 draft: false
-date: 2023-10-10T06:00:00+05:30
+date: 2023-10-09T06:00:00+05:30
 url: /spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
 toc: true
 categories: ["SpringBoot"]

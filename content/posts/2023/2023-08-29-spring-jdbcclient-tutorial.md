@@ -169,7 +169,7 @@ public void delete(Long id) {
 
 ## Test Repository using Testcontainers
 We should always make sure that the database is in a known state so that we can write predictable assertions.
-So, let's create **src/test/resources/test_data.sql** file with the following content:
+So, let's create **src/test/resources/test-data.sql** file with the following content:
 
 ```sql
 TRUNCATE TABLE bookmarks;
