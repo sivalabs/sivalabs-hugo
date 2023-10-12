@@ -26,23 +26,17 @@ https://github.com/sivaprasadreddy/spring-boot-jooq-demo
 In this tutorial, we will see how to perform basic CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) operations on **USERS** table using jOOQ.
 
 ## Implementing findAllUsers()
-First, let us start with fetching all the user's details from the USERS table.
-Assume we are only interested in the **id**, **name**, **email** and **password** columns of the USERS table.
+First, let us start with fetching all the users from the **USERS** table.
+Assume we are only interested in the **id**, **name**, **email** and **password** columns of the **USERS** table.
+We will deal with fetching relations like **UserPreferences**, **Bookmarks** later.
 
-Let's create **User** and **UserPreferences** records as follows:
+Let's create **User** record as follows:
 
 ```java
 package com.sivalabs.bookmarks.models;
 
 public record User(Long id, String name, String email, String password) { }
 ```
-
-```java
-package com.sivalabs.bookmarks.models;
-
-public record UserPreferences(Long id, Long userId, String theme, String language) { }
-```
-
 
 Let's implement **findAllUsers()** method in **UserRepository** class as follows:
 
@@ -68,42 +62,108 @@ class UserRepository {
     }
 
     public List<User> findAllUsers() {
-        return dsl.select(USERS.ID, USERS.NAME, USERS.EMAIL,
-                        inline(null, SQLDataType.VARCHAR).as("password")
-                ).from(USERS)
+        return dsl
+                .select(USERS.ID, USERS.NAME, USERS.EMAIL,USERS.PASSWORD)
+                .from(USERS)
                 .fetch(r -> new User(
-                        r.get(USERS.ID),
-                        r.get(USERS.NAME),
-                        r.get(USERS.EMAIL),
-                        r.get(USERS.PASSWORD))
+                    r.get(USERS.ID),
+                    r.get(USERS.NAME),
+                    r.get(USERS.EMAIL),
+                    r.get(USERS.PASSWORD))
                 );
     }
 }
 ```
 
 * We are querying the **USERS** table to only return the **id**, **name**, **email** and **password** columns.
-* But we don't want to return the actual **password** value, so we are returning **null** for the **password** column.
 * The **fetch()** method returns a list of **UsersRecord** objects, and we are converting them to **User** objects.
+
+If the **User** record has a constructor which takes all the selected column value types as arguments 
+(in this case, Long, String, String, String), then we can use the following syntax:
+
+```java
+public List<User> findAllUsers() {
+    return dsl
+        .select(USERS.ID, USERS.NAME, USERS.EMAIL, USERS.PASSWORD)
+        .from(USERS)
+        .fetch(r -> r.into(User.class));
+}
+```
+
+Similarly, if we want to select all the columns from the **USERS** table, and we have a corresponding constructor, 
+then we can use the following syntax:
+
+```java
+public record User (Long id, String name, String email, String password,
+                    Long userPreferencesId, LocalDateTime createdAt, LocalDateTime updatedAt) { }
+
+public List<User> findAllUsers(){
+    return dsl.selectFrom(USERS).fetch(r->r.into(User.class));
+}
+```
+
+**But the best practice is to select only the columns/data you need for the usecase and map the result to a DTO/record.**
 
 ## Implementing findUserById()
 Let's implement **findUserById()** method in **UserRepository** class as follows:
 
 ```java
 public Optional<User> findUserById(Long id) {
-    return dsl.select(USERS.ID, USERS.NAME, USERS.EMAIL,
-                    inline(null, SQLDataType.VARCHAR).as("password")
-            ).from(USERS)
+    return dsl
+            .select(USERS.ID, USERS.NAME, USERS.EMAIL, USERS.PASSWORD)
+            .from(USERS)
             .where(USERS.ID.eq(id))
-            .fetchOptional(r -> new User(
-                    r.get(USERS.ID),
-                    r.get(USERS.NAME),
-                    r.get(USERS.EMAIL),
-                    r.get(USERS.PASSWORD))
-            );
+        .fetchOptional()
+        .map(r -> r.into(User.class));
 }
 ```
 The implementation is very similar to **findAllUsers()** method, 
 except that we are using **fetchOptional()** method to return an **Optional** object.
+
+If you want to load all the columns from the **USERS** table, and you have a corresponding User constructor, 
+then you can use the following syntax:
+
+```java
+public Optional<User> findUserById(Long id){
+    return dsl.fetchOptional(USERS,USERS.ID.eq(id))
+            .map(r -> r.into(User.class));
+}
+```
+
+If you have many **findByXXX()** methods which have the same select columns, and the same mapping logic,
+then you can extract it into a method as follows:
+
+```java
+public Optional<User> findUserById(Long id) {
+    return getSelectUserSpec()
+            .where(USERS.ID.eq(id))
+            .fetchOptional(new UserRecordMapper());
+}
+        
+public Optional<User> findUserByEmail(String email) {
+    return getSelectUserSpec()
+            .where(USERS.EMAIL.equalIgnoreCase(email))
+            .fetchOptional(new UserRecordMapper());
+}
+
+private SelectJoinStep<Record4<Long, String, String, String>> getSelectUserSpec() {
+        return dsl.select(USERS.ID, USERS.NAME, USERS.EMAIL, USERS.PASSWORD)
+        .from(USERS);
+}
+
+static class UserRecordMapper
+        implements RecordMapper<Record4<Long, String, String, String>, User> {
+    @Override
+    public User map(Record4<Long, String, String, String> userRecord) {
+        return new User(
+                userRecord.get(USERS.ID),
+                userRecord.get(USERS.NAME),
+                userRecord.get(USERS.EMAIL),
+                userRecord.get(USERS.PASSWORD)
+        );
+    }
+}
+```
 
 ## Implementing createUser()
 Let's implement **createUser()** method in **UserRepository** class as follows:
@@ -119,7 +179,7 @@ public User createUser(User user) {
                     record.getId(),
                     record.getName(),
                     record.getEmail(),
-                    null));
+                    record.getPassword()));
 }
 ```
 
@@ -134,13 +194,54 @@ public User createUser(User user){
     return dsl.insertInto(USERS,USERS.NAME,USERS.EMAIL,USERS.PASSWORD)
             .values(user.name(),user.email(),user.password())
             .returning()
-            .fetchOne(record->new User(
+            .fetchOne(record -> new User(
                         record.getId(),
                         record.getName(),
                         record.getEmail(),
-                        null));
+                        record.getPassword()));
 }
 ```
+
+Another approach using **UsersRecord** (**UpdatableRecord**) object:
+
+```java
+public User createUser(User user){
+    UsersRecord record=dsl.newRecord(USERS);
+    record.setName(user.name());
+    record.setEmail(user.email());
+    record.setPassword(user.password());
+    record.store();
+    
+    return new User(record.getId(),
+                    record.getName(),
+                    record.getEmail(),
+                    record.getPassword());
+}
+```
+
+Yet another approach using **UsersRecord** populating data from a **User** object:
+
+```java
+public User createUser(User user){
+    UsersRecord record = dsl.newRecord(USERS,user);
+    record.store();
+    return new User(record.getId(),
+                    record.getName(),
+                    record.getEmail(),
+                    record.getPassword());
+}
+```
+
+Check **org.jooq.Record.from(Object source)**, which is internally called by **dsl.newRecord(USERS, user)**, 
+API docs for knowing the mapping rules.
+
+{{< box info >}}
+**Persisting Associated Objects**
+
+Unlike JPA, there is no support for automatic persisting associated objects in jOOQ.
+
+For ex, if **User** has **UserPreferences**, then you need to persist **UserPreferences** separately.
+{{< /box >}}
 
 ## Implementing updateUser()
 Let's implement **updateUser()** method in **UserRepository** class as follows:
@@ -151,6 +252,15 @@ public void updateUser(User user) {
         .set(USERS.NAME, user.name())
         .where(USERS.ID.eq(user.id()))
         .execute();
+    
+    //Another approach to check for record existence before updating
+    /*
+    dsl.fetchOptional(USERS, USERS.ID.eq(user.id()))
+            .ifPresent(record -> {
+                record.setName(user.name());
+                record.store();
+            });
+    */
 }
 ```
 
@@ -173,8 +283,9 @@ public void deleteUser(Long id) {
 Let's write UserRepositoryTest to test the above CRUD operations.
 
 ```java
-package com.sivalabs.bookmarks.repo;
+package com.sivalabs.bookmarks.repositories;
 
+import com.sivalabs.bookmarks.models.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jooq.JooqTest;
@@ -184,6 +295,10 @@ import org.springframework.test.context.jdbc.Sql;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -198,22 +313,68 @@ class UserRepositoryTest {
 
     @Container
     @ServiceConnection
-    static final PostgreSQLContainer<?> postgres = 
-                    new PostgreSQLContainer<>("postgres:16-alpine");
+    static final PostgreSQLContainer<?> postgres =
+            new PostgreSQLContainer<>("postgres:16-alpine");
+
+    @Test
+    void findAllUsers() {
+        List<User> users = userRepository.findAllUsers();
+        assertThat(users).hasSize(2);
+        //more assertions
+    }
 
     @Test
     void findUserById() {
-        String username = userRepository.findUserById(1L);
-        assertThat(username).isEqualTo("Admin");
+        Optional<User> userOptional = userRepository.findUserById(1L);
+        assertThat(userOptional).isPresent();
+        assertThat(userOptional.get().id()).isEqualTo(1L);
+        assertThat(userOptional.get().name()).isEqualTo("Admin");
+        assertThat(userOptional.get().email()).isEqualTo("admin@gmail.com");
+        assertThat(userOptional.get().password()).isEqualTo("admin");
+    }
+
+    @Test
+    void createUser() {
+        User user = new User(null, "SivaLabs", "sivalabs@gmail.com", "siva1234");
+
+        User savedUser = userRepository.createUser(user);
+        assertThat(savedUser.id()).isNotNull();
+        assertThat(savedUser.name()).isEqualTo("SivaLabs");
+        assertThat(savedUser.email()).isEqualTo("sivalabs@gmail.com");
+        assertThat(savedUser.password()).isEqualTo("siva1234");
+    }
+
+    @Test
+    void updateUser() {
+        User user = createTestUser();
+        User updateUser = new User(user.id(), "TestName1", user.email(), user.password());
+        userRepository.updateUser(updateUser);
+
+        User updatedUser = userRepository.findUserById(updateUser.id()).orElseThrow();
+
+        assertThat(updatedUser.id()).isEqualTo(updateUser.id());
+        assertThat(updatedUser.name()).isEqualTo("TestName1");
+        assertThat(updatedUser.email()).isEqualTo(user.email());
+        assertThat(updatedUser.password()).isEqualTo(user.password());
+    }
+
+    @Test
+    void deleteUser() {
+        User user = createTestUser();
+        userRepository.deleteUser(user.id());
+
+        Optional<User> optionalUser = userRepository.findUserById(user.id());
+        assertThat(optionalUser).isEmpty();
+    }
+
+    private User createTestUser() {
+        String uuid = UUID.randomUUID().toString();
+        User user = new User(null, uuid, uuid+"@gmail.com", "Secret");
+        return userRepository.createUser(user);
     }
 }
 ```
 
-* We are using **@JooqTest** slice test annotation to test our repository class.
-* We are using **@Testcontainers** and **@Container** annotations to start a PostgreSQL database and 
-registering the DataSource properties using [ServiceConnection](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.testcontainers.service-connections) support.
-* We are using **@Sql** annotation to load the test data into the database.
-
 ## Conclusion
-In this first part, we have set the stage for exploring jOOQ.
-In the next part, we will learn how to implement basic CRUD operations using jOOQ.
+In this second part, we have learned how to implement basic CRUD operations using jOOQ.
+In the next part, we will explore how to **fetch One-to-One associations** such as **User** and **UserPreferences**.
