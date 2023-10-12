@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-jooq-tutorial-part-1.webp"]
 type: post
 draft: false
-date: 2023-10-15T06:00:00+05:30
+date: 2023-10-12T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-getting-started
 toc: true
 categories: ["SpringBoot"]
@@ -39,7 +39,7 @@ But, we will use to use [Testcontainers](https://testcontainers.com/) for jOOQ c
 ## Sample Database
 We will use the following sample database for this tutorial.
 
-{{< figure src="/images/jooq-db.webp" >}}
+{{< figure src="/images/jooq-demo-db.webp" >}}
 
 ## Create a Spring Boot Project
 Let's create a Spring Boot project using [Spring Initializr](https://start.spring.io/) by selecting the starters
@@ -53,25 +53,25 @@ Let's add the following SQL scripts under the **src/main/resources/db/migration*
 
 **V1__create_tables.sql**
 ```sql
-CREATE TABLE users
-(
-    id         bigserial primary key,
-    name       varchar(255) not null,
-    email      varchar(255) not null,
-    password   varchar(255) not null,
-    created_at timestamp,
-    updated_at timestamp,
-    CONSTRAINT user_email_unique UNIQUE (email)
-);
-
 CREATE TABLE user_preferences
 (
     id         bigserial primary key,
-    user_id    bigint REFERENCES users (id),
     theme      varchar(255),
     language   varchar(255),
-    created_at timestamp,
-    updated_at timestamp
+    created_at timestamp with time zone default CURRENT_TIMESTAMP,
+    updated_at timestamp with time zone
+);
+
+CREATE TABLE users
+(
+    id             bigserial primary key,
+    name           varchar(255) not null,
+    email          varchar(255) not null,
+    password       varchar(255) not null,
+    preferences_id bigint REFERENCES user_preferences (id),
+    created_at     timestamp with time zone default CURRENT_TIMESTAMP,
+    updated_at     timestamp with time zone,
+    CONSTRAINT user_email_unique UNIQUE (email)
 );
 
 CREATE TABLE bookmarks
@@ -80,14 +80,16 @@ CREATE TABLE bookmarks
     url        varchar(1024) not null,
     title      varchar(1024),
     created_by bigint        not null REFERENCES users (id),
-    created_at timestamp,
-    updated_at timestamp
+    created_at timestamp with time zone default CURRENT_TIMESTAMP,
+    updated_at timestamp with time zone
 );
 
 CREATE TABLE tags
 (
-    id   bigserial primary key,
-    name varchar(100) not null,
+    id         bigserial primary key,
+    name       varchar(100) not null,
+    created_at timestamp with time zone default CURRENT_TIMESTAMP,
+    updated_at timestamp with time zone,
     CONSTRAINT tag_name_unique UNIQUE (name)
 );
 
@@ -97,44 +99,13 @@ CREATE TABLE bookmark_tag
     tag_id      bigint not null REFERENCES tags (id)
 );
 
-ALTER SEQUENCE users_id_seq RESTART WITH 101;
 ALTER SEQUENCE user_preferences_id_seq RESTART WITH 101;
+ALTER SEQUENCE users_id_seq RESTART WITH 101;
 ALTER SEQUENCE bookmarks_id_seq RESTART WITH 101;
 ALTER SEQUENCE tags_id_seq RESTART WITH 101;
 ```
 
-**V2__insert_data.sql**
-```sql
-INSERT INTO users (id, email, password, name, created_at) VALUES
-(1, 'admin@gmail.com', 'admin', 'Admin', CURRENT_TIMESTAMP),
-(2, 'siva@gmail.com', 'siva', 'Siva', CURRENT_TIMESTAMP)
-;
-
-INSERT INTO user_preferences (id, user_id, theme, language, created_at) VALUES
-(1, 1, 'Dark', 'EN', CURRENT_TIMESTAMP),
-(2, 2, 'Light', 'EN', CURRENT_TIMESTAMP)
-;
-
-INSERT INTO tags(id, name) VALUES
-(1, 'java'),
-(2, 'spring-boot'),
-(3, 'spring-cloud'),
-(4, 'devops'),
-(5, 'security')
-;
-
-INSERT INTO bookmarks(id, title, url, created_by, created_at) VALUES
-(1, 'SivaLabs', 'https://sivalabs.in', 1, CURRENT_TIMESTAMP),
-(2, 'Spring Initializr', 'https://start.spring.io', 2, CURRENT_TIMESTAMP)
-;
-
-INSERT INTO bookmark_tag(bookmark_id, tag_id) VALUES
-(1,1),
-(1,2),
-(1,3),
-(2,2)
-;
-```
+We are altering the sequences to start with 101, so that we can insert some test data with ids 1, 2, 3, etc.
 
 ## Using jOOQ to execute native SQL queries
 When we add jOOQ starter, Spring Boot autoconfigures the jOOQ's **DSLContext** as a bean.
@@ -143,7 +114,7 @@ We can use the **DSLContext** bean to execute native SQL queries.
 Let's create **UserRepository** class as follows:
 
 ```java
-package com.sivalabs.bookmarks.repo;
+package com.sivalabs.bookmarks.repositories;
 
 import org.jooq.DSLContext;
 import org.jooq.Record;
@@ -157,28 +128,70 @@ class UserRepository {
         this.dsl = dsl;
     }
 
-    public String findUserById(Long id) {
+    public String findUserNameById(Long id) {
         Record record =
                 dsl.resultQuery("select * from users where id = ?", id)
                    .fetchOptional().orElseThrow();
         System.out.println(record);
         Object name = record.get("name");
-        System.out.println(name);
         return (String) name;
     }
 }
 ```
 
+Before writing test, let's create an SQL script to add some test data to the database.
+
+**src/test/resources/test-data.sql**
+
+```sql
+DELETE FROM bookmark_tag;
+DELETE FROM bookmarks;
+DELETE FROM tags;
+DELETE FROM users;
+DELETE FROM user_preferences;
+
+INSERT INTO user_preferences (id, theme, language) VALUES
+(1, 'Dark', 'EN'),
+(2, 'Light', 'EN')
+;
+
+INSERT INTO users (id, email, password, name, preferences_id) VALUES
+(1, 'admin@gmail.com', 'admin', 'Admin', 1),
+(2, 'siva@gmail.com', 'siva', 'Siva', 2)
+;
+
+INSERT INTO tags(id, name)
+VALUES (1, 'java'),
+       (2, 'spring-boot'),
+       (3, 'spring-cloud'),
+       (4, 'devops'),
+       (5, 'security')
+;
+
+INSERT INTO bookmarks(id, title, url, created_by, created_at)
+VALUES (1, 'SivaLabs', 'https://sivalabs.in', 1, CURRENT_TIMESTAMP),
+       (2, 'Spring Initializr', 'https://start.spring.io', 2, CURRENT_TIMESTAMP)
+;
+
+insert into bookmark_tag(bookmark_id, tag_id)
+VALUES (1, 1),
+       (1, 2),
+       (1, 3),
+       (2, 2)
+;
+```
+
 Let's create a simple test case to verify the above code.
 
 ```java
-package com.sivalabs.bookmarks.repo;
+package com.sivalabs.bookmarks.repositories;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jooq.JooqTest;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.context.jdbc.Sql;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -188,19 +201,20 @@ import static org.assertj.core.api.Assertions.assertThat;
 @JooqTest
 @Import({UserRepository.class})
 @Testcontainers
+@Sql("classpath:/test-data.sql")
 class UserRepositoryTest {
+
+    @Container
+    @ServiceConnection
+    static final PostgreSQLContainer<?> postgres =
+            new PostgreSQLContainer<>("postgres:16-alpine");
 
     @Autowired
     UserRepository userRepository;
 
-    @Container
-    @ServiceConnection
-    static final PostgreSQLContainer<?> postgres = 
-                    new PostgreSQLContainer<>("postgres:16-alpine");
-
     @Test
-    void findUserById() {
-        String username = userRepository.findUserById(1L);
+    void findUserNameById() {
+        String username = userRepository.findUserNameById(1L);
         assertThat(username).isEqualTo("Admin");
     }
 }
@@ -209,17 +223,26 @@ class UserRepositoryTest {
 We are using **@JooqTest** slice test annotation to test our repository class.
 We are using **@Testcontainers** and **@Container** annotations to start a PostgreSQL database and 
 registering the DataSource properties using [ServiceConnection](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.testing.testcontainers.service-connections) support.
+Also, we are executing the **test-data.sql** script using **@Sql** annotation.
 
-In our test, we are simply calling **userRepository.findUserById(1L)** and verifying the result.
+In our test, we are simply calling **userRepository.findUserNameById(1L)** and verifying the result.
+
+{{< box tip >}}
+**Logging SQL queries executed by jOOQ**
+
+You can enable logging of SQL queries executed by jOOQ by adding the following property to **application.properties** file.
+
+**logging.level.org.jooq.tools.LoggerListener=DEBUG**
+{{< /box >}}
 
 When we printed the jOOQ Record, we can see the following nicely formatted output in the console:
 
 ```shell
-+----+-----+---------------+--------+--------------------------+----------+
-|  id|name |email          |password|created_at                |updated_at|
-+----+-----+---------------+--------+--------------------------+----------+
-|   1|Admin|admin@gmail.com|admin   |2023-10-09 18:09:39.069383|{null}    |
-+----+-----+---------------+--------+--------------------------+----------+
++----+-----+---------------+--------+--------------+--------------------------------+----------+
+|  id|name |email          |password|preferences_id|created_at                      |updated_at|
++----+-----+---------------+--------+--------------+--------------------------------+----------+
+|   1|Admin|admin@gmail.com|admin   |             1|2023-10-12T11:01:58.471277+05:30|{null}    |
++----+-----+---------------+--------+--------------+--------------------------------+----------+
 ```
 
 So, we can use jOOQ to run native queries.
@@ -350,7 +373,7 @@ $ ./mvnw clean generate-sources
 Now let's rewrite our **UserRepository** class to use jOOQ Typesafe DSL.
 
 ```java
-package com.sivalabs.bookmarks.repo;
+package com.sivalabs.bookmarks.repositories;
 
 import com.sivalabs.bookmarks.jooq.tables.records.UsersRecord;
 import org.jooq.DSLContext;
@@ -366,7 +389,7 @@ class UserRepository {
         this.dsl = dsl;
     }
 
-    public String findUserById(Long id) {
+    public String findUserNameById(Long id) {
         UsersRecord usersRecord = dsl.selectFrom(USERS)
                 .where(USERS.ID.eq(id))
                 .fetchOptional().orElseThrow();
@@ -376,8 +399,8 @@ class UserRepository {
 ```
 
 As you can see, we are using the **UsersRecord** class generated by the jOOQ Code Generation tool.
-Now, we will get a compilation error if we pass any other type than **Long** for the "id" parameter.
-Also, we are getting the "name" value as **String** type.
+Now, we will get a compilation error if we pass any other type than **Long** for the **"id"** parameter.
+Also, we are getting the **"name"** value as **String** type.
 
 So, jOOQ typesafe DSL is very useful for writing typesafe SQL queries.
 
