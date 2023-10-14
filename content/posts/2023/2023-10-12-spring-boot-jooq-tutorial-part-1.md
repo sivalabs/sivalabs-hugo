@@ -151,13 +151,13 @@ DELETE FROM users;
 DELETE FROM user_preferences;
 
 INSERT INTO user_preferences (id, theme, language) VALUES
-(1, 'Dark', 'EN'),
-(2, 'Light', 'EN')
+(1, 'Light', 'EN'),
+(2, 'Dark', 'EN')
 ;
 
 INSERT INTO users (id, email, password, name, preferences_id) VALUES
-(1, 'admin@gmail.com', 'admin', 'Admin', 1),
-(2, 'siva@gmail.com', 'siva', 'Siva', 2)
+(1, 'admin@gmail.com', 'admin', 'Admin', 2),
+(2, 'siva@gmail.com', 'siva', 'Siva', 1)
 ;
 
 INSERT INTO tags(id, name)
