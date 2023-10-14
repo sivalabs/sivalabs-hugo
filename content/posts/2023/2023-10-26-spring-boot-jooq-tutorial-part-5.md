@@ -119,7 +119,7 @@ VALUES (1, 1),
 ;
 ```
 
-## Test Loading the One-to-Many Relationships 
+## Test Loading the Many-to-Many Relationships 
 Now, let's write a test case to verify the above method.
 
 ```java

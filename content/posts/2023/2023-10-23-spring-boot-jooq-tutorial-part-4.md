@@ -49,20 +49,25 @@ Also, I highly recommend reading [How jOOQ 3.15’s New Multiset Operator Will C
 Let's implement fetching a user details along with the bookmarks created by that user.
 
 ```java
-public Optional<UserWithBookmarks> getUserWithBookmarksById(Long userId) {
-    return dsl
-            .select(
-                USERS.ID, USERS.NAME, USERS.EMAIL,
-                multiset(
-                    select(BOOKMARKS.ID, BOOKMARKS.TITLE, BOOKMARKS.URL)
-                    .from(BOOKMARKS)
-                    .where(BOOKMARKS.CREATED_BY.eq(USERS.ID))
-                ).as("bookmarks").convertFrom(r -> r.map(mapping(UserWithBookmarks.BookmarkInfo::new)))
-            )
-            .from(USERS)
-            .where(USERS.ID.eq(userId))
-            .fetchOptional()
-            .map(mapping(UserWithBookmarks::new));
+@Repository
+public class UserRepository {
+    ...
+    ...
+    public Optional<UserWithBookmarks> getUserWithBookmarksById(Long userId) {
+        return dsl
+                .select(
+                        USERS.ID, USERS.NAME, USERS.EMAIL,
+                        multiset(
+                                select(BOOKMARKS.ID, BOOKMARKS.TITLE, BOOKMARKS.URL)
+                                        .from(BOOKMARKS)
+                                        .where(BOOKMARKS.CREATED_BY.eq(USERS.ID))
+                        ).as("bookmarks").convertFrom(r -> r.map(mapping(UserWithBookmarks.BookmarkInfo::new)))
+                )
+                .from(USERS)
+                .where(USERS.ID.eq(userId))
+                .fetchOptional()
+                .map(mapping(UserWithBookmarks::new));
+    }
 }
 ```
 
