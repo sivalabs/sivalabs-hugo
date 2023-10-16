@@ -90,7 +90,36 @@ public List<User> findAllUsers() {
 }
 ```
 
-Similarly, if we want to select all the columns from the **USERS** table, and we have a corresponding constructor, 
+Here the **UsersRecord** fields are mapped into a **User** object using **Reflection**.
+
+Instead, you can use **org.jooq.Records.mapping()** to map the **UsersRecord** fields to a **User** object as follows:
+
+```java
+import static org.jooq.Records.mapping;
+
+public List<User> findAllUsers(){
+    return dsl.select(USERS.ID,USERS.NAME,USERS.EMAIL,USERS.PASSWORD)
+            .from(USERS)
+            //using a lambda
+            .fetch(mapping((id,name,email,password) -> new User(id,name,email,password)));
+    
+            //using a constructor reference
+            //.fetch(mapping(User::new));
+        
+            //using a factory method reference
+            //.fetch(mapping(User::create));
+}
+
+// factory method in User class
+public record User (Long id, String name, String email, String password
+) {
+    public static User create(Long id, String name, String email, String password) {
+        return new User(id, name, email, password);
+    }
+}
+```
+
+If you want to select all the columns from the **USERS** table, and we have a corresponding constructor, 
 then we can use the following syntax:
 
 ```java
@@ -114,13 +143,16 @@ public Optional<User> findUserById(Long id) {
             .from(USERS)
             .where(USERS.ID.eq(id))
         .fetchOptional()
-        .map(r -> r.into(User.class));
+        //using reflection
+        //.map(r -> r.into(User.class));
+        // using factory method
+        .map(mapping(User::create));
 }
 ```
 The implementation is very similar to **findAllUsers()** method, 
 except that we are using **fetchOptional()** method to return an **Optional** object.
 
-If you want to load all the columns from the **USERS** table, and you have a corresponding User constructor, 
+If you want to load all the columns from the **USERS** table, and you have a corresponding **User** constructor, 
 then you can use the following syntax:
 
 ```java
