@@ -11,7 +11,7 @@ categories: ["SpringBoot"]
 tags: [SpringBoot, jOOQ]
 description: In this tutorial, we will learn how to implement fetch One-to-One relationships using jOOQ.
 ---
-In the [previous tutorial]({{< relref "2023-10-17-spring-boot-jooq-tutorial-part-2.md" >}}), 
+In the [previous tutorial]({{< relref "2023-10-16-spring-boot-jooq-tutorial-part-2.md" >}}), 
 we have learned how to implement basic CRUD Operations using jOOQ.
 In this tutorial, we will learn how to fetch **One-to-One** relationships using jOOQ.
 

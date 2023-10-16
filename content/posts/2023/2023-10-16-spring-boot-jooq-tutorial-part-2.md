@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-jooq-tutorial-part-2.webp"]
 type: post
 draft: false
-date: 2023-10-17T06:00:00+05:30
+date: 2023-10-16T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-crud-operations
 toc: true
 categories: ["SpringBoot"]
