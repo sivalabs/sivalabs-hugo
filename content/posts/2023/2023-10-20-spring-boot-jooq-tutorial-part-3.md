@@ -4,7 +4,7 @@ author: Siva
 images: ["/preview-images/spring-boot-jooq-tutorial-part-3.webp"]
 type: post
 draft: false
-date: 2023-10-20T06:00:00+05:30
+date: 2023-10-19T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-fetching-one-to-one-associations
 toc: true
 categories: ["SpringBoot"]
