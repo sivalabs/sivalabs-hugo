@@ -1380,3 +1380,8 @@ There are still many things I haven't covered in this article like **graceful sh
 But I hope this article will help you to get started with Go.
 
 You can find the complete code in the [GitHub repository](https://github.com/sivaprasadreddy/go-for-spring-boot-developers).
+In the repository, you can also find the implementation of the following:
+* Remaining API endpoints 
+* Graceful shutdown 
+* Repository implementation using [GORM](https://gorm.io/) 
+* Testing using [testcontainers-go](https://golang.testcontainers.org/)
