@@ -915,7 +915,11 @@ func (r bookmarkRepo) Delete(ctx context.Context, id int) error {
 }
 ```
 
-In the similar way, let's refactor API handlers also.
+You might be wondering why we are passing **context.Context** as input to all the methods.
+In Go, you can use **context.Context** to pass request-scoped values, cancellation signals, and deadlines across API boundaries.
+See [Context](https://golang.org/pkg/context/) for more details.
+
+Now, let's refactor API handlers also.
 
 Create a file called **handler.go** in the **internal/api** directory with the following content:
 
