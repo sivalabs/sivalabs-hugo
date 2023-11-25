@@ -5,78 +5,30 @@ images: ["/preview-images/go-for-spring-boot-devs-1.webp"]
 type: post
 draft: false
 toc: true
-date: 2023-11-20T04:59:17+05:30
+date: 2023-11-25T04:59:17+05:30
 url: /go-for-java-springboot-developers
 categories: [GoLang]
 tags: [GoLang]
-description: In this article, I will share my experience of building a REST API using Go language coming from a Java/Spring Boot developer background.
+description: In this article, I will explain how to build a REST API using Go language for the developers coming from a Java/Spring Boot developer background.
 ---
-In this article, I will share my experience of building a REST API using Go language coming from a Java/Spring Boot developer background.
-
-Whenever I try to learn a new framework or a language, I try to map the concepts of the new framework/language 
-to the one I am already familiar with. This helps me to understand the new framework/language ecosystem faster. 
-But this sometimes also becomes a bottleneck to adapt to the new framework/language idioms quickly.
-
-I have been using Java for more than 17 years, and I am a big fan of it.
+I have been using Java for more than 17 years, and I really like Java and its ecosystem.
 Within the Java ecosystem, Spring Boot is my go-to framework for building applications.
 
-I worked with Go language on an official project a couple of years ago, and initially I had mixed feelings about it.
-But the more I use it, the more I started liking it.
+I used the Go language for an official project a couple of years ago, and initially I had mixed feelings about it.
+But the more I use it, the more I like it.
 
-{{< box info >}}
-**IMPORTANT**
+I wanted to expand my skill set and decided to get more hands-on experience with Go.
+Whenever I try to learn a new language or a framework, I try to map the concepts of the new framework/language
+to the one I am already familiar with. This helps me to understand the new framework/language ecosystem faster.
+But this sometimes also becomes a bottleneck to adapt to the new framework/language idioms quickly.
 
-Before getting into the actual topic, let me make one thing very clear:
+The best way to learn anything new is to build something with it.
+So, in this article I will show how to build a REST API using Go covering various aspects such as
+configuration management, logging, database access, etc.
 
-**I am not trying to say one is better than the other. 
-I am just sharing my experience of learning Go coming from a Java/Spring Boot background.**
-{{< /box >}}
+I am not going to teach Go language basics of how to declare variables, loops, functions, etc.
 
-## Java/SpringBoot vs Go comparison
-Each language and framework has its own pros and cons, and it's up to us to choose the right tool for the job.
-There is no silver bullet, and there is no one size fits all solutions.
-
-Sometimes performance is the most important factor, and sometimes developer productivity is the most important factor.
-We need to evaluate the pros and cons of each technology and choose the right one for the problem at hand.
-
-IMO, Java/SpringBoot and Go took very different approaches to improve the developer productivity. 
-I already discussed some of them in detail in my previous article [Code simplicity by Abstraction vs Verbosity](https://www.sivalabs.in/code-simplicity-by-abstraction-vs-verbosity/).
-
-If I have to compare Java/SpringBoot and Go, I would say like this:
-
-**Java/SpringBoot:**
-
-* Java has a very matured ecosystem with a lot of libraries and tools available.
-* SpringBoot is a very opinionated framework, and it offers a lot of features out of the box.
-* Spring Boot greatly improves developer productivity by providing many commonly needed features out of the box. 
-* Spring Boot has a steep learning curve, and it takes a lot of time to master it.
-* Spring Boot consumes more resources (CPU, Memory) compared to Go.
-  With GraalVM native image support, this is changing rapidly. 
-  However, there are many libraries that are not compatible with GraalVM native image yet and native compilation is currently taking a lot of time.
-
-**Go:**
-
-* Go is a very simple language with a small set of features.
-* Go is a very opinionated language, and it forces you to do things in a certain way like formatting, unused variables, etc.
-* Go has a rich standard library and toolchain (formatting, testing, benchmarking, cross-platform compilation, etc) support.
-* Go is verbose, and it takes more lines of code to achieve the same thing compared to Java. IMO, this is mainly due to error handling approach in Go.
-* Go consumes fewer resources (CPU, Memory) compared to Java/SpringBoot.
-* In my opinion, the biggest advantage for Go is its simplicity. While the Go code looks more verbose, it's very easy to understand and maintain.
-
-Go community prefers using only the necessary libraries and integrating them instead of using an all-in-one framework like **Spring Boot** or **Django**.
-
-**Personally, I felt Go is more verbose and requires writing more lines of code compared to Java/SpringBoot.
-But it also results in a less cognitive load while working with Go code.**
-
-OTOH, once you understand the magic behind Spring Boot, it is super productive to build applications.
-Spring Boot already solved a lot of common application needs like **configuration management**, **logging**, **minoring**, etc.
-You can also find Spring Boot integrations with almost everything under the sun, which greatly helps to build applications quickly.
-
-As I mentioned earlier, I am not trying to convince you one is better than the other.
-If you are planning to build an application in Go coming from a Java/Spring Boot background, I hope this article might help you.
-
-I am not going to teach Go language basics of how to declare variables, functions, etc.
-There are many good resources available to learn the Go language basics.
+Following are very good resources to learn the Go language basics.
 
 * [GOLANGBOT Golang tutorial series](https://golangbot.com/learn-golang-series/)
 * [CALLICODER Go Tutorials](https://www.callicoder.com/categories/golang/)
@@ -84,8 +36,8 @@ There are many good resources available to learn the Go language basics.
 * [Go by Example](https://gobyexample.com/)
 
 ## What are we going to build?
-Go doesn't have a Spring Boot like framework. Usually, Go developers prefer to use the necessary libraries to build applications.
-We are going to follow the same in this tutorial.
+Go doesn't have a Spring Boot like framework. Usually, Go developers prefer to use the Standard Library and 
+add only the necessary libraries to build applications. We are going to follow the same in this tutorial.
 
 We are going to build a REST API in Go using the following libraries:
 
@@ -155,7 +107,7 @@ $ go run main.go
 Hello World!
 ```
 
-You can also build the application and use the binary to run the application as follows:
+You can also build the application to generate your OS-specific binary and use the binary to run the application as follows:
 
 ```shell
 $ go build
@@ -250,6 +202,8 @@ Let's add the **Gin** dependency to our project using the following command:
 $ go get -u github.com/gin-gonic/gin
 ```
 
+After running this command, gin module will be downloaded and added to the **go.mod** file.
+
 Update the **main.go** file as follows:
 
 ```go
@@ -276,10 +230,11 @@ func hello(c *gin.Context) {
 
 Here we are using the **gin.Default()** to create a Gin router and attached a handler function to handle **GET /hello** requests.
 In the handler, we are returning a JSON response using the **c.JSON()** method.
+The **gin.H** is a shortcut for **map[string]interface{}**.
 
 Before starting the application, run **go mod tidy** command.
-It adds any missing module requirements necessary to build the current module's packages and dependencies.
-If there are any not used dependencies **go mod tidy** will remove those from **go.mod** accordingly.
+This command adds any missing module dependencies used in the code but not declared in **go.mod** file.
+If there are any unused dependencies, **go mod tidy** will remove those from **go.mod** accordingly.
 
 If you take a look at the **go.mod** file, you can see the dependencies added in two sections.
 The first **require** section includes the **direct dependencies** which are used by our application code.
@@ -392,7 +347,7 @@ func GetConfig(configFilePath string) (AppConfig, error) {
 * We have configured viper in such a way that we can replace **db.host** property value with **DB_HOST** environment variable.
 * The **AutomaticEnv()** method will automatically read in environment variables.
 * We are using the **conf.Unmarshal()** method to unmarshal(bind) the configuration values into the **AppConfig** struct.
-* Finally, the method name **GetConfig()** is exported and visible outside the **config** package.
+* Finally, the method name **GetConfig()** is exported and is visible outside the **config** package.
 
 {{< box info >}}
 **Go internal packages**
@@ -456,7 +411,7 @@ However, it is very basic and doesn't have many features.
 There are many 3rd party logging libraries available for Go like [zap](https://github.com/uber-go/zap), [zerolog](https://github.com/rs/zerolog), etc.
 Inspiring from these libraries, Go 1.21 introduced a new package called **slog** to support structured logging.
 
-**Zap** is a very popular logging library and provides a lot of features. 
+But **Zap** is a very popular logging library which is widely used and provides a lot of features. 
 So, we are going to use it in our application.
 
 We are going to configure logging to log to a file and also to the console.
@@ -1366,16 +1321,58 @@ We can override the default configuration properties defined in **config.json** 
 For example, if you want to override the server port, then you can pass the **SERVER_PORT** environment variable to the container.
 You can pass database connection properties using **DB_HOST**, **DB_PORT**, **DB_USERNAME**, **DB_PASSWORD**, **DB_DATABASE** environment variables.
 
+
+## Java/SpringBoot vs Go comparison
+Each language and framework has its own pros and cons, and it's up to us to choose the right tool for the job.
+There is no silver bullet, and there is no one size fits all solutions.
+
+Sometimes performance is the most important factor, and sometimes developer productivity is the most important factor.
+We need to evaluate the pros and cons of each technology and choose the right one for the problem at hand.
+
+IMO, Java/SpringBoot and Go took very different approaches to improve the developer productivity.
+I already discussed some of them in detail in my previous article [Code simplicity by Abstraction vs Verbosity](https://www.sivalabs.in/code-simplicity-by-abstraction-vs-verbosity/).
+
+If I have to compare Java/SpringBoot and Go, I would say like this:
+
+**Java/SpringBoot:**
+
+* Java has a very matured ecosystem with a lot of libraries and tools available.
+* Spring Boot is a opinionated framework, and it offers a lot of features out of the box.
+* Spring Boot greatly improves developer productivity by providing many commonly needed features out of the box.
+* Spring Boot has a steep learning curve, and it takes a lot of time to master it.
+* Spring Boot consumes more resources (CPU, Memory) compared to Go.
+  With GraalVM native image support, this is changing rapidly.
+  However, there are many libraries that are not compatible with GraalVM native image yet and native compilation is currently taking a lot of time.
+
+**Go:**
+
+* Go is a very simple language with a small set of features.
+* Go is a very opinionated language, and it forces you to do things in a certain way like formatting, unused variables, etc.
+* Go has a rich standard library and toolchain (formatting, testing, benchmarking, cross-platform compilation, etc) support.
+* Go is verbose, and it takes more lines of code to achieve the same thing compared to Java. IMO, this is mainly due to error handling approach in Go.
+* Go consumes fewer resources (CPU, Memory) compared to Java/SpringBoot.
+* In my opinion, the biggest advantage for Go is its simplicity. While the Go code looks more verbose, it's very easy to understand and maintain.
+
+Go community prefers using only the necessary libraries and integrating them instead of using an all-in-one framework like **Spring Boot** or **Django**.
+
+**Personally, I felt Go is more verbose and requires writing more lines of code compared to Java/SpringBoot.
+But it also results in a less cognitive load while working with Go code.**
+
+OTOH, once you understand the magic behind Spring Boot, it is super productive to build applications.
+Spring Boot already solved a lot of common application needs like **configuration management**, **logging**, **minoring**, etc.
+You can also find Spring Boot integrations with almost everything under the sun, which greatly helps to build applications quickly.
+
 ## Conclusion
+
+I am not trying to convince you one is better than the other.
+If you are planning to build an application in Go coming from a Java/Spring Boot background, I hope this article might help you.
+
 If you are coming from a Spring Boot background, then you might find it a little bit difficult to get used to the Go way of doing things.
 Especially, Spring Boot has a lot of features and abstractions built-in to make the developer's life easy.
 But in Go, you have to implement or integrate various libraries yourself.
 
 However, once the skeleton is ready, you can focus on implementing the business logic with very less cognitive load.
 As there is no annotations magic and ten layers of abstractions, it is very easy to understand the code.
-
-While Go code is verbose, it is also very readable and easy to understand.
-If you stuck with a problem, you can debug the code and understand what is going on.
 
 Also, Go application consumes very less memory and starts very fast.
 In a containerized environment, this is very important.
