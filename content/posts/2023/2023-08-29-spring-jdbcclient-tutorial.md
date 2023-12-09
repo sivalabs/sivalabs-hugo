@@ -14,15 +14,11 @@ description: In this tutorial, you will learn how to use JdbcClient API introduc
 Spring framework 6.1 introduced a new **JdbcClient** API, which is a wrapper on top of **JdbcTemplate**,
 for performing database operations using a fluent API.
 
-Spring Boot 3.2 is going to include Spring framework 6.1, so let's take a quick look at 
+Spring Boot 3.2 includes Spring framework 6.1, so let's take a quick look at 
 how we can use **JdbcClient** to implement various database operations in a simplified manner.
 
 First, let's go to https://start.spring.io/ and create a Spring Boot application by selecting 
 **Spring JDBC**, **PostgreSQL Driver**, **Flyway Migration**, and **Testcontainers** starters.
-
-> **NOTE:** 
-> At the time of writing this article, Spring Boot 3.2.0-M2 is released, 
-> so we are going to select 3.2.0 (M2) as the Spring Boot version.
 
 ## Create Bookmark domain class
 Let's start with creating a Java record representing a **Bookmark** as follows:
@@ -196,8 +192,6 @@ package com.sivalabs.bookmarks.domain;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.JdbcClientAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.test.context.jdbc.Sql;
@@ -210,9 +204,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @JdbcTest(properties = {
    "spring.test.database.replace=none",
-   "spring.datasource.url=jdbc:tc:postgresql:15.4-alpine:///db"
+   "spring.datasource.url=jdbc:tc:postgresql:16-alpine:///db"
 })
-@ImportAutoConfiguration(JdbcClientAutoConfiguration.class)
 @Sql("/test-data.sql")
 class BookmarkRepositoryTest {
 
