@@ -41,6 +41,18 @@ tags: ["Java"]
 * [Remote debugging SpringBoot application]({{< relref "2020-05-31-remote-debugging-spring-boot-application.md" >}})
 * [Retrying Method Execution using Spring AOP]({{< relref "2016-01-05-retrying-method-execution-using-spring-aop.md" >}})
 
+### Spring Security OAuth 2.0 Tutorials
+* [Spring Security OAuth 2 Tutorial - 1 : Getting familiar with OAuth 2 concepts]({{< relref "2023-09-22-spring-security-oauth2-tutorial-part1.md" >}})
+* [Spring Security OAuth 2 Tutorial - 2 : Authorization Code Flow]({{< relref "2023-09-24-spring-security-oauth2-tutorial-part2.md" >}})
+* [Spring Security OAuth 2 Tutorial - 3 : Client Credentials Flow]({{< relref "2023-09-25-spring-security-oauth2-tutorial-part3.md" >}})
+* [Spring Security OAuth 2 Tutorial - 4 : Authorization Code Flow with PKCE]({{< relref "2023-09-27-spring-security-oauth2-tutorial-part4.md" >}})
+* [Spring Security OAuth 2 Tutorial - 5 : Implicit & Resource Owner Password Credentials Flows]({{< relref "2023-09-27-spring-security-oauth2-tutorial-part5.md" >}})
+* [Spring Security OAuth 2 Tutorial - 6 : Microservices Sample Project Setup]({{< relref "2023-09-28-spring-security-oauth2-tutorial-part6.md" >}})
+* [Spring Security OAuth 2 Tutorial - 7 : Securing Spring MVC Client Application]({{< relref "2023-09-28-spring-security-oauth2-tutorial-part7.md" >}})
+* [Spring Security OAuth 2 Tutorial - 8 : Securing Resource Server]({{< relref "2023-10-02-spring-security-oauth2-tutorial-part8.md" >}})
+* [Spring Security OAuth 2 Tutorial - 9 : Invoking Secured Resource Server APIs from Client Application]({{< relref "2023-10-06-spring-security-oauth2-tutorial-part9.md" >}})
+* [Spring Security OAuth 2 Tutorial - 10 : Service to Service Communication using Client Credentials Flow]({{< relref "2023-10-09-spring-security-oauth2-tutorial-part10.md" >}})
+
 ### Spring Cloud
 
 * [Introduction to Spring Cloud Config Server]({{< relref "2017-08-14-spring-cloud-tutorials-introduction-to-spring-cloud-config-server.md" >}}) 
