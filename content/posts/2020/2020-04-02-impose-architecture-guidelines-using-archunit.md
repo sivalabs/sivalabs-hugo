@@ -9,9 +9,9 @@ categories:
   - Java
 tags: [java, best-practices]
 ---
-While building the software we all agree, as a team, to follow a set of guidelines which are typically considered as best practices.
+While building the software, we all agree, as a team, to follow a set of guidelines which are typically considered as best practices.
 But during the development, developers might violate those guidelines unknowingly or ignorance.
-Typically we rely upon **code reviews** or code quality checking tools like **SonarQube**, **PMD** etc to check for such violations.
+Typically, we rely upon **code reviews** or code quality checking tools like **SonarQube**, **PMD**, etc. to check for such violations.
 But some of the guidelines could be opinionated decisions which might not be able to automate using SonarQube, PMD etc.
 
 For example, typically I would like to follow the guidelines mentioned below for my Java based applications:
@@ -19,11 +19,11 @@ For example, typically I would like to follow the guidelines mentioned below for
 1. **Follow 3-tier layering structure** (Web, Service, Repository layers) where any layer can only talk to the immediate lower layer and lower layer must not talk to upper layer.
    i.e, Web layer can talk to Service layer, Service layer can talk to Repository layer. But Repository layer can't talk to Service or Web layer, Service layer can't talk to Web layer.
 
-2. If the application is big we might want to follow **Package-By-Feature** where only the Web and Service components are public and rest of the components should be package-private in each feature package.
+2. If the application is big, we might want to follow **Package-By-Feature** where only the Web and Service components are public and rest of the components should be package-private in each feature package.
 
-3. While using Spring dependency injection, **Don't use Field based injection** and prefer Constructor based injection.
+3. While using Spring dependency injection, **Don't use Field-based injection** and prefer Constructor-based injection.
 
-Like this there could be many guidelines we want to follow. The good news is we can impose these guidelines as verifiable JUnit tests using [ArchUnit](https://www.archunit.org/).
+Like this, there could be many guidelines we want to follow. The good news is we can impose these guidelines as verifiable JUnit tests using [ArchUnit](https://www.archunit.org/).
 
 ![ArchUnit](/images/ArchUnit-Logo.webp "ArchUnit")
 
@@ -37,7 +37,7 @@ Add the following **archunit-junit5** dependency.
 <dependency>
     <groupId>com.tngtech.archunit</groupId>
     <artifactId>archunit-junit5</artifactId>
-    <version>0.13.1</version>
+    <version>1.2.1</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -57,13 +57,12 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.*;
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
 
 class ArchTest {
-
+   JavaClasses importedClasses = new ClassFileImporter()
+           .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+           .importPackages("com.sivalabs.moviebuffs");
+   
     @Test
     void servicesAndRepositoriesShouldNotDependOnWebLayer() {
-      JavaClasses importedClasses = new ClassFileImporter()
-          .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-          .importPackages("com.sivalabs.moviebuffs");
-
       noClasses()
           .that().resideInAnyPackage("com.sivalabs.moviebuffs.core.service..")
             .or().resideInAnyPackage("com.sivalabs.moviebuffs.core.repository..")
@@ -88,10 +87,6 @@ We can impose that restriction with the following test.
 ```java
 @Test
 void shouldFollowLayeredArchitecture() {
-  JavaClasses importedClasses = new ClassFileImporter()
-          .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-          .importPackages("com.sivalabs.moviebuffs");
-
   layeredArchitecture()
       .layer("Web").definedBy("..web..")
       .layer("Config").definedBy("..config..")
@@ -110,10 +105,6 @@ void shouldFollowLayeredArchitecture() {
 ```java
 @Test
 void shouldNotUseFieldInjection() {
-    JavaClasses importedClasses = new ClassFileImporter()
-          .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-          .importPackages("com.sivalabs.moviebuffs");
-
     noFields()
       .should().beAnnotatedWith(Autowired.class)
       .check(importedClasses);
@@ -127,9 +118,6 @@ We might want to follow some naming conventions like all service class names sho
 ```java
 @Test
 void shouldFollowNamingConvention() {
-    JavaClasses importedClasses = new ClassFileImporter()
-        .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
-        .importPackages("com.sivalabs.moviebuffs");
     classes()
         .that().resideInAPackage("com.sivalabs.moviebuffs.core.repository")
         .should().haveSimpleNameEndingWith("Repository")
@@ -166,6 +154,6 @@ void shouldNotUseJunit4Classes() {
 }
 ```
 
-I just described only a few of the possibilities and you can get as creative as you want :wink:
+I just described only a few of the possibilities, and you can get as creative as you want :wink:
 
 Please read the official [ArchUnit UserGuide](https://www.archunit.org/userguide/html/000_Index.html) on what are all the cool things you can do with **ArchUnit**.

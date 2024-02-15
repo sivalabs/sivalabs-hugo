@@ -356,6 +356,7 @@ to automatically set the **createdAt** and **updatedAt** values as follows:
 
 ```java
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 class Bookmark {
    ... 
    ... 
@@ -368,6 +369,8 @@ class Bookmark {
    private Instant updatedAt;
 }
 ```
+
+You also need to enable auditing in your Spring Boot application by adding **@EnableJpaAuditing** annotation on a configuration class.
 
 **Hibernate** also provides **@CreationTimestamp** and **@UpdateTimestamp** annotations for similar purpose.
 But I prefer to use one of the above-mentioned 2 approaches to keep the code independent of underlying persistence implementation framework.
