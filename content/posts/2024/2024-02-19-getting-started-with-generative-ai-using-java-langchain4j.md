@@ -227,7 +227,7 @@ However, this is low-level and not very convenient to use.
 In the next section, we will see how to use **LangChain4j** to interact with OpenAI.
 
 ## Using LangChain4j to interact with OpenAI
-[LangChain4j](https://langchain4j.github.io/langchain4j/) is a Java client library for interacting with LLMs.
+[LangChain4j](https://langchain4j.github.io/langchain4j/) is a Java port of the popular Python [LangChain](https://www.langchain.com/) library for interacting with LLMs.
 LangChain4j provides a high-level API to interact with [LLMs](https://langchain4j.github.io/langchain4j/docs/category/language-models), 
 including **OpenAI**, **Vertex AI**, **Ollama**, **HuggingFace**, etc.
 
