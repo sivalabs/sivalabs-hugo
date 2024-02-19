@@ -46,6 +46,13 @@ There are a few popular LLMs available as APIs, such as **GPT-3/4 from OpenAI**,
 ## Getting Started with OpenAI using Java
 In this section, we will explore how to interact with OpenAI APIs using Java.
 
+{{< box info >}}
+**Sample Code Repository**
+
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/java-ai-demos)
+
+{{< /box >}}
+
 First, we need to create an account in OpenAI and get the API key.
 * Go to [OpenAI Platform](https://platform.openai.com/) and create an account.
 * In the Dashboard, click on the **API Keys** from the left navigation menu and create a new API key.
@@ -271,6 +278,13 @@ public class LangChain4jOpenAIDemo {
 ```
 
 As you can see, using LangChain4j provides high-level abstraction and gives a simple API to interact with OpenAI.
+
+{{< box tip >}}
+**TIP**
+
+You can also use the special LangChain4j Open AI API key "demo" to test the OpenAI APIs without using your own API key. 
+
+{{< /box >}}
 
 We have just seen the basic usage of LangChain4j to interact with OpenAI.
 In the future articles, we will explore more advanced features of LangChain4j such as using PromptTemplates, AiServices, RAG, etc.
