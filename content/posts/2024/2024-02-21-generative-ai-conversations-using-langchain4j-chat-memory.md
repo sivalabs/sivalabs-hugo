@@ -6,6 +6,7 @@ type: post
 draft: false
 date: 2024-02-21T04:59:17+05:30
 url: /generative-ai-conversations-using-langchain4j-chat-memory
+toc: true
 categories: [AI]
 tags: [AI, Generative AI, Java, LangChain4j, OpenAI]
 ---
@@ -108,7 +109,7 @@ Let's see how to use **ConversationalChain** with **ChatMemory**.
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 
-public class OpenAIChatWindowDemo {
+public class OpenAIChatMemoryDemo {
     
     public static void main(String[] args) {
       String openAiKey = "demo";
