@@ -65,7 +65,7 @@ Let's try to implement the above conversation using LangChain4j OpenAI LLM.
 import dev.langchain4j.model.chat.ChatLanguageModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
 
-public class OpenAIChatWindowDemo {
+public class OpenAIChatMemoryDemo {
     
     public static void main(String[] args) {
       String openAiKey = "demo";
