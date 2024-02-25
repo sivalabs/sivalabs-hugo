@@ -26,6 +26,7 @@ You can check out the other articles in this series:
 * [Part 1: Getting Started with Generative AI using Java, LangChain4j, OpenAI and Ollama]({{< relref "2024-02-19-getting-started-with-generative-ai-using-java-langchain4j.md" >}})
 * [Part 2: Generative AI Conversations using LangChain4j ChatMemory]({{< relref "2024-02-21-generative-ai-conversations-using-langchain4j-chat-memory.md" >}})
 * [Part 3: LangChain4j AiServices Tutorial]({{< relref "2024-02-23-langchain4j-ai-services.md" >}})
+* [Part 4: LangChain4j Retrieval-Augmented Generation (RAG) Tutorial]({{< relref "2024-02-26-langchain4j-rag.md" >}})
 {{< /box >}}
 
 ## Introduction to Generative AI
