@@ -18,6 +18,16 @@ In this article, we will explore the following:
 * How to run a LLM model locally using Ollama?
 * Working with Ollama using LangChain4j and Testcontainers.
 
+{{< box info >}}
+**LangChain4j Tutorial Series**
+
+You can check out the other articles in this series:
+
+* [Part 1: Getting Started with Generative AI using Java, LangChain4j, OpenAI and Ollama]({{< relref "2024-02-19-getting-started-with-generative-ai-using-java-langchain4j.md" >}})
+* [Part 2: Generative AI Conversations using LangChain4j ChatMemory]({{< relref "2024-02-21-generative-ai-conversations-using-langchain4j-chat-memory.md" >}})
+* [Part 3: LangChain4j AiServices Tutorial]({{< relref "2024-02-23-langchain4j-ai-services.md" >}})
+{{< /box >}}
+
 ## Introduction to Generative AI
 Unless you are living under a rock, you might have heard about Generative AI. 
 It is a fascinating field of AI that is used to generate new content, such as images, text, audio, etc. 

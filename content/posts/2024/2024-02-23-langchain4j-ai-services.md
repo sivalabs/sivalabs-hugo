@@ -28,6 +28,16 @@ In the [previous article]({{< relref "2024-02-21-generative-ai-conversations-usi
 we have seen how to have a conversation using LangChain4j **ChatMemory** and **ConversationalChain**.
 As mentioned in the **ConversationalChain** JavaDocs, let us see how to use **AiServices** which is more flexible and feature rich.
 
+{{< box info >}}
+**LangChain4j Tutorial Series**
+
+You can check out the other articles in this series:
+
+* [Part 1: Getting Started with Generative AI using Java, LangChain4j, OpenAI and Ollama]({{< relref "2024-02-19-getting-started-with-generative-ai-using-java-langchain4j.md" >}})
+* [Part 2: Generative AI Conversations using LangChain4j ChatMemory]({{< relref "2024-02-21-generative-ai-conversations-using-langchain4j-chat-memory.md" >}})
+* [Part 3: LangChain4j AiServices Tutorial]({{< relref "2024-02-23-langchain4j-ai-services.md" >}})
+{{< /box >}}
+
 So far we have seen asking questions using **chatLanguageModel.generate(question)** method which returns response as **String**.
 But, using **AiServices**, we can create a Java interface that takes input and returns output in a specific format.
 
