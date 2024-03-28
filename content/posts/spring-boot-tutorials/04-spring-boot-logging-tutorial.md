@@ -148,7 +148,7 @@ Spring Boot Logback extensions comes handy if you want to use any Spring Boot pr
 </configuration>
 ```
 
-In the above configuration, we have enabled appenders based on Spring profile using **<springProfile name="...">**.
+In the above configuration, we have enabled appenders based on Spring profile using `<springProfile name="...">`.
 If **docker** profile is enabled then we are using **FILE**, **Logstash** appenders.
 If the **docker** profile is not activated then we are using **CONSOLE** appender only.
 Also, notice that we are using **<springProperty .../>** to use the **logstash.host** property value to specify the Logstash host. 

@@ -75,7 +75,7 @@ For example, if you want to use OpenAI's EmbeddingClient, you can add the follow
 <dependency>
     <groupId>org.springframework.ai</groupId>
     <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-    <version>0.0.8</version>
+    <version>0.8.1</version>
 </dependency>
 ```
 
