@@ -38,9 +38,6 @@ pygmentsCodeFences = true
   github = "sivaprasadreddy"
   linkedin = "ksivaprasadreddy"
 
-[social]
-  twitter = "sivalabs"
-
 [markup]
   [markup.highlight]
     anchorLineNos = false
