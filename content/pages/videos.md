@@ -9,9 +9,9 @@ categories: ["videos"]
 ---
 ## [My YouTube Channel](https://www.youtube.com/c/sivalabs)
 
-## SpringBoot Tips Series
+## Spring Boot MicroServices Series - Project Based Learning
 
-{{< youtubepl id="PLuNxlOYbv61jFFX2ARQKnBgkMF6DvEEic" >}}
+{{< youtubepl id="PLuNxlOYbv61g_ytin-wgkecfWDKVCEDmB" >}}
 
 ## SpringBoot + Kubernetes Tutorial Series
 
@@ -20,6 +20,10 @@ categories: ["videos"]
 ## Spring Boot - The Missing Guide
 
 {{< youtubepl id="PLuNxlOYbv61jZL1IiciTgWezZoqEp4WXh" >}}
+
+## SpringBoot Tips Series
+
+{{< youtubepl id="PLuNxlOYbv61jFFX2ARQKnBgkMF6DvEEic" >}}
 
 ## Java Testing Made Easy: Learn to write Unit, Integration, E2E & Performance Tests
 
