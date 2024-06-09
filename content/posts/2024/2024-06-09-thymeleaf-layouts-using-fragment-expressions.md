@@ -94,9 +94,9 @@ Let's create a page template `home.html` in `src/main/resources/templates` direc
   Here we are referencing the filename `layout.html` and the fragment name `layout`.
 * Then, we are passing all the parameter values with named arguments.
 * The **title** parameter is specified using the fragment expression **~{::title/text()}**.
-  This refers to the text content of the <title> element in the current page template.
+  This refers to the text content of the `<title>` element in the current page template.
 * The **content** parameter is specified using the fragment expression **~{::#content}**.
-  This refers to the content of the <div id="content"> element in the current page template.
+  This refers to the content of the `<div id="content">` element in the current page template.
 * The **pageScripts** parameter is specified using the fragment expression **~{}**.
   This refers to an empty fragment that can be used for specifying no markup.
 
@@ -138,7 +138,7 @@ Let's create another page template `about.html` in `src/main/resources/templates
 
 * We are passing the layout fragment parameters using positional arguments.
 * The **pageScripts** parameter is specified using the fragment expression **~{::#pageScripts}**.
-  This refers to the content of the **<div id="pageScripts">** element in the current page template.
+  This refers to the content of the `<div id="pageScripts">` element in the current page template.
   For this specific page, we are including a script tag that loads jQuery from the webjars.
 
 ## Run the Application

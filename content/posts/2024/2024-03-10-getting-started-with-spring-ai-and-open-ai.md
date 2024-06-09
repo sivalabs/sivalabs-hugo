@@ -15,7 +15,7 @@ In this article, we will explore the following:
 * Introduction to Spring AI.
 * Interacting with Open AI using Spring AI.
 * Using **PromptTemplates**.
-* Using **OutputParsers**.
+* Using **OutputConverters**.
 
 {{< box info >}}
 **Sample Code Repository**
@@ -65,13 +65,13 @@ class ChatController {
 
     private final ChatClient chatClient;
 
-    ChatController(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    ChatController(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
     }
 
     @GetMapping("/ai/chat")
     Map<String, String> chat(@RequestParam String question) {
-        String response = chatClient.call(question);
+        String response = chatClient.prompt().user(question).call().content();
         return Map.of("question", question, "answer", response);
     }
 }
@@ -130,15 +130,14 @@ class ChatController {
 class JokeService {
     private final ChatClient chatClient;
 
-    JokeService(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    JokeService(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
     }
 
     String getJoke(String subject) {
         PromptTemplate promptTemplate = new PromptTemplate("Tell me a joke about {subject}");
         Prompt prompt = promptTemplate.create(Map.of("subject", subject));
-        ChatResponse response = chatClient.call(prompt);
-        return response.getResult().getOutput().getContent();
+        return chatClient.prompt(prompt).call().content();
     }
 }
 ```
@@ -153,16 +152,15 @@ We can use **SystemMessage** to indicate the role of the LLM in the conversation
 class JokeService {
     private final ChatClient chatClient;
 
-    JokeService(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    JokeService(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
     }
 
     String getJoke(String subject) {
         SystemMessage systemMessage = new SystemMessage("You are a helpful and funny chat bot");
         UserMessage userMessage = new UserMessage("Tell me a joke about " + subject);
         Prompt prompt = new Prompt(List.of(systemMessage, userMessage));
-        ChatResponse response = chatClient.call(prompt);
-        return response.getResult().getOutput().getContent();
+        return  chatClient.prompt(prompt).call().content();
     }
 }
 ```
@@ -170,14 +168,14 @@ class JokeService {
 In the above example, we created a **SystemMessage** and **UserMessage** to represent the conversation between the user and the LLM.
 By using **SystemMessage**, we can define the role and provide additional context to the LLM.
 
-## Using OutputParsers
+## Using OutputConverters
 In the previous examples, we get the response from LLMs as Strings.
-We can use **OutputParsers** to parse the response and extract the required information in the desired format.
+We can use **OutputConverters** to parse the response and extract the required information in the desired format.
 
-As of now, Spring AI provides the following type of **OutputParsers**:
-* **BeanOutputParser** - To parse the response and convert into a Java Bean.
-* **MapOutputParser** - To parse the response and convert into a Map.
-* **ListOutputParser** - To parse the response and convert into a List.
+As of now, Spring AI provides the following type of **OutputConverters**:
+* **BeanOutputConverter** - To parse the response and convert into a Java Bean.
+* **MapOutputConverter** - To parse the response and convert into a Map.
+* **ListOutputConverter** - To parse the response and convert into a List.
 
 Let's create a new controller called **MovieController** to get the list of movies directed by a director.
 
@@ -186,8 +184,8 @@ Let's create a new controller called **MovieController** to get the list of movi
 class MovieController {
     private final ChatClient chatClient;
 
-    MovieController(ChatClient chatClient) {
-        this.chatClient = chatClient;
+    MovieController(ChatClient.Builder chatClientBuilder) {
+        this.chatClient = chatClientBuilder.build();
     }
 
     private static final String PROMPT_TEMPLATE = """
@@ -199,7 +197,7 @@ class MovieController {
 }
 ```
 
-Now, let's see how to use **BeanOutputParser** to parse the response and convert it into a Java Bean.
+Now, let's see how to use **BeanOutputConverter** to parse the response and convert it into a Java Bean.
 
 ```java
 record DirectorResponse(String director, List<String> movies) {}
@@ -210,20 +208,20 @@ class MovieController {
 
     @GetMapping("/ai/chat/movies")
     DirectorResponse chat(@RequestParam String director) {
-        var outputParser = new BeanOutputParser<>(DirectorResponse.class);
+        var outputConverter = new BeanOutputConverter<>(DirectorResponse.class);
         var userPromptTemplate = new PromptTemplate(PROMPT_TEMPLATE);
-        Map<String, Object> model = Map.of("director", director, "format", outputParser.getFormat());
+        Map<String, Object> model = Map.of("director", director, "format", outputConverter.getFormat());
         var prompt = userPromptTemplate.create(model);
-        var response = chatClient.call(prompt);
-        return outputParser.parse(response.getResult().getOutput().getContent());
+        var response = chatClient.prompt(prompt).call().content();
+        return outputConverter.convert(response);
     }
 }
 ```
 
 In the above example, we created a Java Bean called **DirectorResponse** to represent the response from the LLM.
-The **BeanOutputParser** will parse the response and convert it into **DirectorResponse** object.
+The **BeanOutputConverter** will parse the response and convert it into **DirectorResponse** object.
 
-Similarly, we can use **MapOutputParser** and **ListOutputParser** to parse the response and convert it into a Map and List respectively.
+Similarly, we can use **MapOutputConverter** and **ListOutputConverter** to parse the response and convert it into a Map and List respectively.
 
 ```java
 @RestController
@@ -232,22 +230,22 @@ class MovieController {
 
     @GetMapping("/ai/chat/movies-as-map")
     Map<String, Object> chatWithMapOutput(@RequestParam String director) {
-        var outputParser = new MapOutputParser();
+        var outputConverter = new MapOutputConverter();
         var userPromptTemplate = new PromptTemplate(PROMPT_TEMPLATE);
-        Map<String, Object> model = Map.of("director", director, "format", outputParser.getFormat());
+        Map<String, Object> model = Map.of("director", director, "format", outputConverter.getFormat());
         var prompt = userPromptTemplate.create(model);
-        var response = chatClient.call(prompt);
-        return outputParser.parse(response.getResult().getOutput().getContent());
+        var response = chatClient.prompt(prompt).call().content();
+        return outputConverter.convert(response);
     }
 
     @GetMapping("/ai/chat/movies-as-list")
     List<String> chatWithListOutput(@RequestParam String director) {
-        var outputParser = new ListOutputParser(new DefaultConversionService());
+        var outputConverter = new ListOutputConverter(new DefaultConversionService());
         var userPromptTemplate = new PromptTemplate(PROMPT_TEMPLATE);
-        Map<String, Object> model = Map.of("director", director, "format", outputParser.getFormat());
+        Map<String, Object> model = Map.of("director", director, "format", outputConverter.getFormat());
         var prompt = userPromptTemplate.create(model);
-        var response = chatClient.call(prompt);
-        return outputParser.parse(response.getResult().getOutput().getContent());
+        var response = chatClient.prompt(prompt).call().content();
+        return outputConverter.convert(response);
     }
 }
 ```
@@ -271,7 +269,7 @@ curl --location 'http://localhost:8080/ai/chat/movies-as-list?director=Quentin%2
 ["Pulp Fiction","Kill Bill: Volume 1","Inglourious Basterds","Django Unchained","Once Upon a Time in Hollywood"]
 ```
 
-You need to use the appropriate **OutputParser** based on the response from the LLM and in which format you want to convert to.
+You need to use the appropriate **OutputConverter** based on the response from the LLM and in which format you want to convert to.
 
 ## Conclusion
 In this article, we have seen how to interact with OpenAI using Spring AI.

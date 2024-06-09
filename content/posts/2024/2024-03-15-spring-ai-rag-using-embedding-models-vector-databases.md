@@ -61,21 +61,21 @@ An embedding is a vector representation of words, sentences, or documents.
 For example, A word "Apple" might be represented as a vector [0.1, 0.2, 0.3, 0.4, 0.5]. 
 A sentence "I love Apple" might be represented as a vector [0.1, 10.3, -10.2, 90.3, 2.4, -0.5].
 
-Spring AI provides an **EmbeddingClient** interface to convert text or documents into embeddings.
-You can use any of the supported **EmbeddingClient** implementations 
-like **OpenAiEmbeddingClient**, **OllamaEmbeddingClient**, 
-**AzureOpenAiEmbeddingClient**, **VertexAiEmbeddingClient**, etc.
+Spring AI provides an **EmbeddingModel** interface to convert text or documents into embeddings.
+You can use any of the supported **EmbeddingModel** implementations 
+like **OpenAiEmbeddingModel**, **OllamaEmbeddingModel**, 
+**AzureOpenAiEmbeddingModel**, **VertexAiEmbeddingModel**, etc.
 
 Depending on which implementation you want to use, you can add the corresponding dependency 
 and configure the properties in **application.properties** file.
 
-For example, if you want to use OpenAI's EmbeddingClient, you can add the following dependency to your **pom.xml** file.
+For example, if you want to use OpenAI's EmbeddingModel, you can add the following dependency to your **pom.xml** file.
 
 ```xml
 <dependency>
     <groupId>org.springframework.ai</groupId>
     <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-    <version>0.8.1</version>
+    <version>1.0.0-M1</version>
 </dependency>
 ```
 
@@ -88,24 +88,24 @@ spring.ai.openai.api-key=${OPENAI_API_KEY}
 spring.ai.openai.embedding.api-key=${OPENAI_API_KEY}
 ```
 
-With the above configuration, you can inject **EmbeddingClient** and 
+With the above configuration, you can inject **EmbeddingModel** and 
 convert text or documents into embeddings as follows:
 
 ```java
 @Component
 class MyComponent {
-    private final EmbeddingClient embeddingClient;
+    private final EmbeddingModel embeddingModel;
     
-    public MyComponent(EmbeddingClient embeddingClient) {
-        this.embeddingClient = embeddingClient;
+    public MyComponent(EmbeddingModel embeddingModel) {
+        this.embeddingModel = embeddingModel;
     }
     
     public void convertTextToEmbedding() {
         //Example 1: Convert text to embeddings
-        List<Double> embeddings1 = embeddingClient.embed("I like Spring Boot");
+        List<Double> embeddings1 = embeddingModel.embed("I like Spring Boot");
         
         //Example 2: Convert document to embeddings
-        List<Double> embeddings2 = embeddingClient.embed(new Document("I like Spring Boot"));
+        List<Double> embeddings2 = embeddingModel.embed(new Document("I like Spring Boot"));
         
         //Example 3: Convert text to embeddings using options
         EmbeddingRequest embeddingRequest =
@@ -113,7 +113,7 @@ class MyComponent {
                         OpenAiEmbeddingOptions.builder()
                                 .withModel("text-davinci-003")
                                 .build());
-        EmbeddingResponse embeddingResponse = embeddingClient.call(embeddingRequest);
+        EmbeddingResponse embeddingResponse = embeddingModel.call(embeddingRequest);
         List<Double> embeddings3 = embeddingResponse.getResult().getOutput();
     }
 }
@@ -134,8 +134,8 @@ Let us see how to use **SimpleVectorStore** to store and retrieve embeddings.
 @Configuration
 class AppConfig {
     @Bean
-    VectorStore vectorStore(EmbeddingClient embeddingClient) {
-        return new SimpleVectorStore(embeddingClient);
+    VectorStore vectorStore(EmbeddingModel embeddingModel) {
+        return new SimpleVectorStore(embeddingModel);
     }
 }
 
@@ -219,8 +219,8 @@ class RAGController {
     private final ChatClient chatClient;
     private final VectorStore vectorStore;
 
-    RAGController(ChatClient chatClient, VectorStore vectorStore) {
-        this.chatClient = chatClient;
+    RAGController(ChatClient.Builder chatClientBuilder, VectorStore vectorStore) {
+        this.chatClient = chatClientBuilder.build();
         this.vectorStore = vectorStore;
     }
     
@@ -247,8 +247,8 @@ class RAGController {
         var systemMessage = systemPromptTemplate.createMessage(
                 Map.of("information", information));
 
-        // Using BeanOutputParser to parse the response into an instance of Person.
-        var outputParser = new BeanOutputParser<>(Person.class);
+        // Using BeanOutputConverter to parse the response into an instance of Person.
+        var outputConverter = new BeanOutputConverter<>(Person.class);
         
         // Constructing the userMessage to ask the AI model to tell about the person.
         PromptTemplate userMessagePromptTemplate = new PromptTemplate("""
@@ -258,14 +258,14 @@ class RAGController {
         """);
         Map<String,Object> model = Map.of("name", name,
                 "current_date", LocalDate.now(),
-                "format", outputParser.getFormat());
+                "format", outputConverter.getFormat());
         var userMessage = new UserMessage(userMessagePromptTemplate.create(model).getContents());
 
         var prompt = new Prompt(List.of(systemMessage, userMessage));
 
-        var response = chatClient.call(prompt).getResult().getOutput().getContent();
+        var response = chatClient.prompt(prompt).call().content();
 
-        return outputParser.parse(response);
+        return outputConverter.convert(response);
     }
 }
 
@@ -280,12 +280,12 @@ The explanation of the above code is included in the comments.
 
 Overall, the RAG process involves the following steps:
 * Load the documents from different sources using **DocumentReaders**.
-* Convert the documents into embeddings using **EmbeddingClient** and store them in the **VectorStore**.
+* Convert the documents into embeddings using **EmbeddingModel** and store them in the **VectorStore**.
 * Query the VectorStore using natural language and retrieve relevant documents.
 * Construct the **SystemMessage** to indicate the AI model to use the passed information to answer the question.
 * Construct the **UserMessage** to ask the AI model for the information.
 * Construct the prompt and call the AI model to get the response.
-* Parse the response into the desired format using **OutputParsers**.
+* Parse the response into the desired format using **OutputConverters**.
 * Return the response.
 
 ## Conclusion
