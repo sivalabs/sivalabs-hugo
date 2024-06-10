@@ -31,7 +31,7 @@ You can check out the other articles in this series:
 {{< box info >}}
 **Sample Code Repository**
 
-You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/java-ai-demos)
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/langchain4j-demos)
 
 {{< /box >}}
 
