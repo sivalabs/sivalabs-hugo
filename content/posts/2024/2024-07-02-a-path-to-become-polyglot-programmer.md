@@ -101,7 +101,7 @@ I like Go, but it's not my first favourite language.
 After working with Go for some time, I realize how much we over-engineer few things in Java.
 It's not Java's fault BTW.
 
-Anyway, I hope these resources might help some of you.
+**Anyway, I hope these resources might help some of you. If you would like to contribute, you are most welcome :-)**
 
 **But REMEMBER:**
 
