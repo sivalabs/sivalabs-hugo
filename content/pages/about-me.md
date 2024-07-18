@@ -12,7 +12,7 @@ url: /about-me/
 * **Primary Skills:** Building scalable and distributed applications using 
 **Java, Kotlin, GoLang, Spring Boot, Spring Cloud, MicroServices, REST APIs, and Docker**.
 * Hands-on experience with building **MicroServices, and Modular Monoliths**.
-* Hands-on experience building **Even Driven Microservices** using **Kafka**, **RabbitMQ**, and **AWS SQS**.
+* Hands-on experience building **Event Driven Microservices** using **Kafka**, **RabbitMQ**, and **AWS SQS**.
 * Good experience with Agile, XP and TDD practices. 
 * Well-versed with infrastructure automation using **Jenkins, Terraform, AWS CDK and Pulumi**.
 * Basic knowledge on building **Gen AI** based applications using **LangChain4j** and **Spring AI**
