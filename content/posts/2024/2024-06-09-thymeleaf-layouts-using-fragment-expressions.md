@@ -128,7 +128,7 @@ Let's create another page template `about.html` in `src/main/resources/templates
     <a href="/about">About Page</a>
 </div>
 <th:block id="pageScripts">
-<script src="/webjars/jquery/3.7.1/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </th:block>
 </body>
 </html>
@@ -139,11 +139,57 @@ Let's create another page template `about.html` in `src/main/resources/templates
 * We are passing the layout fragment parameters using positional arguments.
 * The **pageScripts** parameter is specified using the fragment expression **~{::#pageScripts}**.
   This refers to the content of the `<div id="pageScripts">` element in the current page template.
-  For this specific page, we are including a script tag that loads jQuery from the webjars.
+  For this specific page, we are including a script tag that loads jQuery.
+
+## Create controller handler methods
+Finally, let's create the Controller to handle requests for `"/"` and `"/about"` URLs.
+
+```java
+package com.sivalabs.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+class DemoController {
+
+    @GetMapping
+    String home() {
+        return "home";
+    }
+
+    @GetMapping("/about")
+    String about() {
+        return "about";
+    }
+}
+```
 
 ## Run the Application
 First, let's verify that the application is working fine without any issues.
 Run the Spring Boot application and access the home page at `http://localhost:8080/`.
+
+If you are using Apple MacBook M1/M2/M3, then you can use `dashaun/builder:tiny` builder to support ARM64 architecture.
+
+```xml
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <image>
+            <builder>dashaun/builder:tiny</builder>
+        </image>
+    </configuration>
+</plugin>
+```
+
+If you are using Gradle:
+
+```groovy
+tasks.named("bootBuildImage") {
+	builder = "dashaun/builder:tiny"
+}
+```
 
 Now, lets compile the application to GraalVM native image and run it.
 
