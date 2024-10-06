@@ -25,7 +25,7 @@ But once in a while I get requests in such a way that I wonder, don't they even 
 When I receive requests for help, I don't look for polished English.
 But I look for the right attitude and some basic manners.
 
-In this article, I would like to share some tips on how to ask for technical helps in a more professional way.
+In this article, I would like to share some tips on asking for technical help in a more professional way.
 If you follow these tips, I cannot guarantee that you will get a reply, but there could be a better chance of getting a reply.
 
 First, let's look at some examples of how not to ask for help.
