@@ -139,6 +139,8 @@ Spring Boot provides different approaches to handle exceptions.
 
 * [Spring Boot REST API Best Practices - Part 4 : Exception Handling in REST APIs](https://www.sivalabs.in/spring-boot-rest-api-best-practices-part-4/)
 
+{{< youtube VvWtoaeHQUQ >}}
+
 To learn more about testing the Spring Boot applications, you can refer the following resources:
 * [Java Testing Made Easy](https://www.youtube.com/playlist?list=PLuNxlOYbv61jtHHFHBOc9N7Dg5jn013ix)
 * [Philip Riecks Blog](https://rieckpil.de/)
