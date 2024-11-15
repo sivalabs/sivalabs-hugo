@@ -23,7 +23,7 @@
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/schema.html" . }}
 
-    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media='all'/>
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" media='all'/>
 
     {{ $CSS := resources.Match "css/**.css" | resources.Concat "main.css"  | resources.Minify }}
     <link rel='stylesheet' href="{{ $CSS.RelPermalink }}" type='text/css' media='all'/>

@@ -5,8 +5,19 @@
     <a class="social-link-item"
        href="https://twitter.com/{{.Site.Params.twitter}}"
        aria-label="Follow me on Twitter"
+       title="Follow me on Twitter"
        target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-square-twitter fa-2xl twitter"></i>
+        <i class="fa-brands fa-square-x-twitter fa-2xl twitter-x"></i>
+    </a>
+    {{ end }}
+
+    {{ if (not (eq .Site.Params.bluesky "")) }}
+    <a class="social-link-item"
+       href="https://bsky.app/profile/{{.Site.Params.bluesky}}"
+       aria-label="Follow me on Bluesky"
+       title="Follow me on Bluesky"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-bluesky fa-2xl bluesky"></i>
     </a>
     {{ end }}
 
@@ -14,6 +25,7 @@
     <a class="social-link-item"
        href="https://www.linkedin.com/in/{{.Site.Params.linkedin}}"
        aria-label="Follow me on LinkedIn"
+       title="Follow me on LinkedIn"
        target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-linkedin fa-2xl linkedin"></i>
     </a>
@@ -23,6 +35,7 @@
     <a class="social-link-item"
        href="https://github.com/{{.Site.Params.github}}"
        aria-label="Follow me on GitHub"
+       title="Follow me on GitHub"
        target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-github fa-2xl github"></i>
     </a>
@@ -31,6 +44,8 @@
     {{ if (not (eq .Site.Params.youtube "")) }}
     <a class="social-link-item"
        href="https://www.youtube.com/{{.Site.Params.youtube}}"
+       aria-label="Follow me on YouTube"
+       title="Follow me on YouTube"
        target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-youtube fa-2xl youtube"></i>
     </a>

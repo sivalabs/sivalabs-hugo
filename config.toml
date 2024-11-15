@@ -34,6 +34,7 @@ pygmentsCodeFences = true
   images = ['/raw-images/Siva.jpg']
   facebook = ""
   twitter = "sivalabs"
+  bluesky = "sivalabs.in"
   youtube = "sivalabs"
   github = "sivaprasadreddy"
   linkedin = "ksivaprasadreddy"
