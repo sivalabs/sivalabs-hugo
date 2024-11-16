@@ -53,3 +53,6 @@ pygmentsCodeFences = true
     noHl = false
     #style = 'onedark'
     tabWidth = 4
+
+[security.http]
+mediaTypes = ['^audio/mpeg$']
