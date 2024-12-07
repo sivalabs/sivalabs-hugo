@@ -90,4 +90,4 @@ our previous post [JCart : Initial code setup for ShoppingCart]({{< relref "2015
 
 We have already created a couple of sample customer records using the seed data sql script **jcart-core/src/main/resources/data.sql**.
   
-You can try to login using sivaprasadreddy.k@gmail.com/siva credentials. If login is successful it will redirect to **/checkout** url which we have not yet implemented, otherwise it will show login error.
+You can try to login using sivalabs.in@gmail.com/siva credentials. If login is successful it will redirect to **/checkout** url which we have not yet implemented, otherwise it will show login error.

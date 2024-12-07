@@ -69,7 +69,7 @@ So, I decided to write more on blog and share on Twitter for reach and engage in
 I know people habituated to read small tweets and quickly reply (often knee-jerk reactions) than thinking through and engage in a meaningful conversations.
 But again they are not the people I/you may want to engage with, so losing those people is absolutely file.
 
-If you want to reach out to me, you can get in touch with me on https://sivalabs.in or sivaprasadreddy.k@gmail.com.
+If you want to reach out to me, you can get in touch with me on https://sivalabs.in or sivalabs.in@gmail.com.
 
 Cheers.
 

@@ -26,17 +26,19 @@ url: /about-me/
 
 
 ## How to reach me?
-* Email: sivaprasadreddy.k@gmail.com
+* Email: sivalabs.in@gmail.com
 * Blog: https://www.sivalabs.in
 * YouTube channel: https://www.youtube.com/sivalabs
 * LinkedIn: https://www.linkedin.com/in/ksivaprasadreddy/
 * GitHub: https://github.com/sivaprasadreddy
 * Twitter: [@sivalabs](https://twitter.com/sivalabs)
+* Bluesky: [@sivalabs.in](https://bsky.app/profile/sivalabs.in)
+* Mastadon: [@sivalabs](https://mastodon.social/@sivalabs)
 
 {{< box info >}}
 **Looking for a trainer or freelancer?**
 
-If you are looking for a trainer or freelancer for your next project, please contact me at **sivaprasadreddy.k@gmail.com**.
+If you are looking for a trainer or freelancer for your next project, please contact me at **sivalabs.in@gmail.com**.
 {{< /box >}}
 
 ### Publications
