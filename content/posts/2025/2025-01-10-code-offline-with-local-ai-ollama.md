@@ -13,10 +13,15 @@ tags: [Java, SpringBoot, AI, Ollama]
 ChatGPT and other Generative AI tools took the world by a storm.
 People are using these AI tools for various purposes such as to explore a topic, 
 to seek answers to their questions or to get help in coding, etc.
-
 ChatGPT and Google's Gemini are very popular AI tools that are available for free with some usage limitations.
-Now there are some FREE AI tools that you can run locally on your laptop so that you can get help even offline(without internet connection).
-Also, by using these local AI tools, you won't risk sharing your details with public AI tool vendors.
+
+**Coding without help from Google, StackOverflow and blogs is challenging.
+But what if you had to code without internet connectivity?**
+
+**No need to worry.**
+
+**Now there are some FREE AI tools that you can run locally on your laptop so that you can get help even offline(without internet connection).
+Also, by using these local AI tools, you won't risk sharing your details with public AI tool vendors.**
 
 In this article, we will explore:
 * Running Ollama locally
