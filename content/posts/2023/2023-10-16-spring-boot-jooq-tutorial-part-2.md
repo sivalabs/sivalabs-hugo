@@ -7,7 +7,7 @@ draft: false
 date: 2023-10-16T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-crud-operations
 toc: true
-categories: ["SpringBoot"]
+categories: ["jOOQ"]
 tags: [SpringBoot, jOOQ]
 description: In this tutorial, we will learn how to implement basic CRUD Operations using jOOQ.
 ---

@@ -31,8 +31,4 @@ tags: [Newsletter, Tech]
 * Spring 6.1 is introducing **RestClient** as an alternative to **RestTemplate** which provides the fluent API similar to Reactive **WebClient**.
   Read this [announcement](https://spring.io/blog/2023/07/13/new-in-spring-6-1-restclient) for more info.
 
-## Tweet of the week
-
-{{< tweet user="helpermethod" id="1678101064258658306" >}}
-
 Keep learning. Cheers.

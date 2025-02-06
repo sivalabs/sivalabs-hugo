@@ -7,7 +7,7 @@ draft: false
 date: 2023-10-12T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-getting-started
 toc: true
-categories: ["SpringBoot"]
+categories: ["jOOQ"]
 tags: [SpringBoot, jOOQ]
 description: In this tutorial, we will learn how to get started with jOOQ for implementing persistence layer in a Spring Boot application.
 ---

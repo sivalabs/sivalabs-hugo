@@ -7,7 +7,7 @@ draft: false
 date: 2023-10-19T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-fetching-one-to-one-associations
 toc: true
-categories: ["SpringBoot"]
+categories: ["jOOQ"]
 tags: [SpringBoot, jOOQ]
 description: In this tutorial, we will learn how to implement fetch One-to-One relationships using jOOQ.
 ---

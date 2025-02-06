@@ -7,7 +7,7 @@ draft: false
 date: 2023-10-26T06:00:00+05:30
 url: /spring-boot-jooq-tutorial-fetching-many-to-many-associations
 toc: true
-categories: ["SpringBoot"]
+categories: ["jOOQ"]
 tags: [SpringBoot, jOOQ]
 description: In this tutorial, we will learn how to implement fetch Many-to-Many relationships using jOOQ.
 ---
