@@ -57,7 +57,7 @@ For example, let's say I tweeted **I prefer Maven over Gradle**.
 
 If someone replies:
 * **May I know why?**
-* **Care to share what problems you are facing with Gradle are?**
+* **Care to share what problems you are facing with Gradle?**
 * **I have been using Gradle, and I am happy with it. May I know what features you have in Maven, but not in Gradle?** 
  
 **Good, reply to them**. These are good replies that are trying to understand what you said, and you can engage in those conversations.
@@ -76,7 +76,7 @@ Don't reply to them.
 > Respect your time.
 
 ## Don't engage in conversations with bullies
-Some people build their empire over the time by sharing their knowledge, opinions, and sometimes infusing fear into the public.
+Some people build their empire over time by sharing their knowledge, opinions, and sometimes infusing fear into the public.
 If someone doesn't agree 100% with their ideology, they can't take it.
 They go all the way to twist your words and use their cult followers to bully you.
 
@@ -96,7 +96,7 @@ You still welcome polite, professional criticism. But there is no need to tolera
 > Take constructive criticism, but mute/block jerks.
 
 ## Don't push your ideology on others
-Our experience shapes your opinions, and it's fine to share them.
+Our experience shapes our opinions, and it's fine to share them.
 But we shouldn't assume our way is the only right way.
 
 For example, again as I mentioned earlier, I do not have good experience with Gradle and Maven worked flawlessly for me over the years.
