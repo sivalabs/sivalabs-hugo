@@ -1,5 +1,5 @@
 ---
-title: "Protecting Your Mental Health While Being On Social Media"
+title: "Protect Your Mental Health While Being On Social Media"
 author: Siva
 images: ["/images/protect-mental-health-on-social-media.webp"]
 type: post
@@ -17,6 +17,10 @@ This in turn gave me a lot of opportunities such as learning from the experts, j
 
 Having said that, being on social media is also very stressful. Not everyone online is kind or polite.
 Some people feel unhappy or frustrated in their lives, and they use the internet to take out their anger on strangers.
+
+{{< figure src="/images/social-media-overwhelmed.webp" alt="Overwhelmed by Social Media"
+ width="350" height="300" >}}
+
 
 I have been in my share of debates and heated discussions on social media. I've tried quitting Twitter many times, 
 but I always come back because I don't want to lose the benefits over some bad experiences. 
