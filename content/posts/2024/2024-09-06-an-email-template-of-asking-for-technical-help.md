@@ -15,6 +15,8 @@ But as years passed by, I realized it is also equally important to learn how to 
 Now remote work is becoming new normal and social media platforms like Twitter, LinkedIn, etc. 
 are a common place to interact with people across the globe. 
 
+<!--more-->
+
 No matter how skilled you are, you will need help from others.
 It is important to learn how to ask for help in a polite and professional manner 
 so that you may have a better chance of getting help.

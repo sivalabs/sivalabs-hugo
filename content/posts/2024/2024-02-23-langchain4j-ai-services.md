@@ -17,6 +17,11 @@ In this article, we will explore the following:
 * Summarizing the given text in different formats.
 * Analyzing the sentiment of the given text.
 
+Let's get started.
+
+<!--more-->
+
+
 {{< box info >}}
 **Sample Code Repository**
 

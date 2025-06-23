@@ -18,6 +18,11 @@ In this article, we will explore the following:
 * Ingesting data into EmbeddingStore.
 * Querying LLMs with data from EmbeddingStore.
 
+Let's get started.
+
+<!--more-->
+
+
 {{< box info >}}
 **Sample Code Repository**
 

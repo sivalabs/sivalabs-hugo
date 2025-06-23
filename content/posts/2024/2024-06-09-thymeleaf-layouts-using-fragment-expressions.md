@@ -19,6 +19,8 @@ But when we compile the Spring Boot application to GraalVM native image,
 it is failing due to [this error](https://github.com/ultraq/thymeleaf-layout-dialect/issues/235).
 I tried many suggestions mentioned in the above issue, but none of them worked for me. 
 
+<!--more-->
+
 Then [Oliver Drotbohm](https://twitter.com/odrotbohm) suggested me [Flexible layouts](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#flexible-layouts-beyond-mere-fragment-insertion) 
 approach to create layouts support natively provided by Thymeleaf itself.
 This approach works fine with GraalVM native image as well.

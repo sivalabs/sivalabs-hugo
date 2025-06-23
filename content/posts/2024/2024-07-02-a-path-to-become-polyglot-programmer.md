@@ -3,7 +3,7 @@ title: "A path to become a Polyglot Programmer"
 author: Siva
 images: ["/images/polyglot-programmer.webp"]
 type: post
-draft: false
+draft: true
 date: 2024-07-02T04:59:17+05:30
 url: /a-path-to-become-polyglot-programmer
 toc: false
@@ -15,6 +15,8 @@ Nowadays, we are using a wide range of technologies and tools for building moder
 As software developers, we need to keep upskilling ourselves to be able to build the software efficiently.
 
 One question that often pops up is, **should I become a Generalist or a Specialist?**
+
+<!--more-->
 
 **Personally, I highly recommend to be a generalist at the beginning of your career 
 so that you can get some experience in building software end-to-end.

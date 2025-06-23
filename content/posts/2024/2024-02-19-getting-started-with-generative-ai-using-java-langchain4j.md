@@ -18,6 +18,11 @@ In this article, we will explore the following:
 * How to run a LLM model locally using Ollama?
 * Working with Ollama using LangChain4j and Testcontainers.
 
+Let's get started.
+
+<!--more-->
+
+
 {{< box info >}}
 **LangChain4j Tutorial Series**
 

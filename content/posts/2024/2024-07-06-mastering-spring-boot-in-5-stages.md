@@ -16,6 +16,8 @@ Also, Spring Boot is the most sought-after skill to get hired as a Java develope
 
 Here is my recommended approach to learn Spring Boot.
 
+<!--more-->
+
 ## 1. Prerequisites: What you should already know
 1. If you are completely new to Java, then directly jumping on to Spring Boot is NOT recommended.
 2. First, learning Core Java and get familiar with Java ecosystem.
