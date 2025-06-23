@@ -430,7 +430,7 @@ We will use apache commons-io library to store/read the files from disk, so add 
 </dependency>
 ```
 
-SpringBoot (SpringMVC) supports Servlet 3 javax.servlet.http.Part API for uploading files. for more details see Handling Multipart File Uploads <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration" target="_blank">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration</a>
+SpringBoot (SpringMVC) supports Servlet 3 javax.servlet.http.Part API for uploading files. for more details see Handling Multipart File Uploads [http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-multipart-file-upload-configuration)
 
 ### Implement the ProductController to handle product related actions.
 

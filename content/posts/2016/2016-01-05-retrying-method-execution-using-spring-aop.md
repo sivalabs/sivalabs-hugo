@@ -10,7 +10,7 @@ tags:
   - Spring
 
 ---
-One of my blog follower sends an email asking me to show an example of **&#8220;RealWorld Usage of Spring AOP&#8221;**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **&#8220;Real Project for Real Problems&#8221;**.
+One of my blog follower sends an email asking me to show an example of **"RealWorld Usage of Spring AOP"**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **"Real Project for Real Problems"**.
 
 So I would like to show how I have used Spring AOP for one of my project to handle a real problem.
 
@@ -29,7 +29,7 @@ Let us see how we can use Spring AOP to automatically retry the method execution
 
 We can use Spring AOP **@Around** advice to create a proxy for those objects whose methods needs to be retried and implement the retry logic in **Aspect**.
 
-Before jumping on to implementing these Spring Advice and Aspect, first let us write a simple utility to execute a **&#8220;Task&#8221;** which automatically retry for N times ignoring the given set of Exceptions.
+Before jumping on to implementing these Spring Advice and Aspect, first let us write a simple utility to execute a **"Task"** which automatically retry for N times ignoring the given set of Exceptions.
 
 ```java
 public interface Task<T> {

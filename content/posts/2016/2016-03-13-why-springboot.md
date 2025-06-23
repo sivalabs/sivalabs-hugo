@@ -43,7 +43,7 @@ Along with Spring framework there are many other Spring sister projects which he
   * Spring Social: Supports integration with social networking sites like Facebook, Twitter, LinkedIn, GitHub etc.
   * Spring Integration: An implementation of Enterprise Integration Patterns to facilitate integration with other enterprise applications using lightweight messaging and declarative adapters.
 
-There are many other interesting projects addressing various other modern application development needs. For more information take a look at <http://spring.io/projects>.
+There are many other interesting projects addressing various other modern application development needs. For more information take a look at http://spring.io/projects.
 
 In the initial days, Spring framework provides XML based approach for configuring beans. Later Spring introduced XML based DSLs, Annotations and JavaConfig based approaches for configuring beans.
 
@@ -138,7 +138,7 @@ But there is no one-size fits all kind of solution. One has to choose the approa
 
 OK, now that you had a glimpse of how various styles of Spring bean configurations looks like.
 
-**You can find the source code of this article on GitHub at <a href="https://github.com/sivaprasadreddy/springboot-tutorials">https://github.com/sivaprasadreddy/springboot-tutorials</a>**
+**You can find the source code of this article on GitHub at https://github.com/sivaprasadreddy/springboot-tutorials**
 
 Let us take a quick look at the configuration of a typical SpringMVC + JPA/Hibernate web application configuration looks like.
 

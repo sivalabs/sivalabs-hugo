@@ -14,7 +14,7 @@ Like many people I started working with computers on Windows XP operating system
 
 Initially I didn't get a chance(need) to work on Unix/Linux because we didn't have access to any of production systems which are using Linux. After few years we got a new client for whom we need to do deployment also in QA/UAT environments which are all Linux based. Then one guy who was doing all these deployment activities shared few documents, shell scripts with all the instructions regarding how to deploy the apps, stop/start the containers etc.
 
-My very first expressions is &#8220;Whaaaat?? you do all these deployment activities using these cryptic commands running in this black terminal??? No GUI??&#8221;. They smiled and said &#8220;No, in Linux you have to do all these using these commands only.&#8221; Ok, fine, no problem. I get familiar with few commands like copy, rm, ps, kill, chmod etc which are just enough to get the things done. I never bothered to learn Linux really.
+My very first expressions is "Whaaaat?? you do all these deployment activities using these cryptic commands running in this black terminal??? No GUI??". They smiled and said "No, in Linux you have to do all these using these commands only." Ok, fine, no problem. I get familiar with few commands like copy, rm, ps, kill, chmod etc which are just enough to get the things done. I never bothered to learn Linux really.
 
 But recently I got to work on Linux more and more, so I thought it is good to get some good hands on experience with Linux.
 

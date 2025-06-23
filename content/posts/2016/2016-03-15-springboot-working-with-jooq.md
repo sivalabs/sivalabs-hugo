@@ -17,14 +17,13 @@ JOOQ (JOOQ Object Oriented Querying) is a persistence framework which embraces S
 
 JOOQ provides the following features:
 
-  * Building Typesafe SQL using DSL API&nbsp;
-  * Typesafe database object referencing using Code Generation&nbsp;
-  * Easy to use API for Querying and Data fetching&nbsp;
+  * Building Typesafe SQL using DSL API
+  * Typesafe database object referencing using Code Generation
+  * Easy to use API for Querying and Data fetching
   * SQL logging and debugging
-      
-    etc etc&nbsp;
+  * etc etc
 
-SpringBoot provides a starter, **spring-boot-starter-jooq**, to be able to quickly integrate with JOOQ.&nbsp;
+SpringBoot provides a starter, **spring-boot-starter-jooq**, to be able to quickly integrate with JOOQ.
 
 In this article we will see how to use **spring-boot-starter-jooq** using step by step approach.
 
@@ -513,8 +512,8 @@ spring.datasource.password=admin
 spring.jooq.sql-dialect=MYSQL
 ```
 
-> Note that we should use correct <b>SqlDialect</b> for the database otherwise you may get SQL syntax errors at runtime.
+> Note that we should use correct **SqlDialect** for the database otherwise you may get SQL syntax errors at runtime.
 
-You can find the source code of this article at my Github repository <https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo>
+You can find the source code of this article at my GitHub repository https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo
 
-For more info on **JOOQ** you can look at <http://www.jooq.org/learn/>
+For more info on **JOOQ** you can look at http://www.jooq.org/learn/

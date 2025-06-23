@@ -12,7 +12,7 @@ tags:
 ---
 In this post we will setup the layout for our ShoppingCart UI using Thymeleaf templates.
 
-Download the ustore theme zip file from <a href="https://www.freshdesignweb.com/ustora/" target="_blank">https://www.freshdesignweb.com/ustora/</a>  and copy the following directories/files into **jcart-site/src/main/resources/static/assets** folder.
+Download the ustore theme zip file from [https://www.freshdesignweb.com/ustora/](https://www.freshdesignweb.com/ustora/) and copy the following directories/files into **jcart-site/src/main/resources/static/assets** folder.
 
   * css
   * fonts

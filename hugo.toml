@@ -2,13 +2,21 @@ baseURL = "https://www.sivalabs.in/"
 languageCode = "en-us"
 title = "SivaLabs"
 theme = "wellington"
-paginate=10
+pagination.pagerSize=10
 
-disqusShortname = "sivalabs"
-googleAnalytics = "G-N5019E5MWE"
+#disqusShortname = "sivalabs"
+#googleAnalytics = "G-N5019E5MWE"
 enableRobotsTXT = true
 enableEmoji = true
 pygmentsCodeFences = true
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[services]
+  [services.googleAnalytics]
+    id = 'G-N5019E5MWE'
+  [services.disqus]
+    shortname = 'sivalabs'
+
 [taxonomies]
   category = "categories"
   tag = "tags"
@@ -38,8 +46,15 @@ pygmentsCodeFences = true
   youtube = "sivalabs"
   github = "sivaprasadreddy"
   linkedin = "ksivaprasadreddy"
+  [params.social]
+    twitter = "sivalabs"
+
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
   [markup.highlight]
     anchorLineNos = false
     codeFences = true

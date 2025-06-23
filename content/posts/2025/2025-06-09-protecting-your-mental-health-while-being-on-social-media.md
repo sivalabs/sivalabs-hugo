@@ -15,6 +15,8 @@ Social media is a double-edged sword. If used properly, it can be immensely help
 Personally, being on social media, especially on Twitter, helped me to connect with amazing people across the world.
 This in turn gave me a lot of opportunities such as learning from the experts, job opportunities, a chance to write books, speaking at conferences, etc.
 
+<!--more-->
+
 Having said that, being on social media is also very stressful. Not everyone online is kind or polite.
 Some people feel unhappy or frustrated in their lives, and they use the internet to take out their anger on strangers.
 

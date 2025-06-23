@@ -34,7 +34,7 @@
     <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{ end }}
-    {{ if (not (eq .Site.GoogleAnalytics "")) }}
+    {{ if (not (eq .Site.Config.Services.GoogleAnalytics.ID "")) }}
     {{ if not (in (printf "%#v" .Site.BaseURL) "localhost") }}
     {{ template "_internal/google_analytics.html" . }}
     {{ end }}

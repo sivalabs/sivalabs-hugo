@@ -14,7 +14,7 @@ tags:
 
 > SpringBoot doesn’t provide official support for MyBatis integration, but MyBatis community built a SpringBoot starter for MyBatis.
 
-You can read about the SpringBoot MyBatis Starter release announcement at <http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html> and you can explore the source code on GitHub <https://github.com/mybatis/mybatis-spring-boot>.
+You can read about the SpringBoot MyBatis Starter release announcement at http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html and you can explore the source code on GitHub https://github.com/mybatis/mybatis-spring-boot.
 
 ### Create a SpringBoot Maven project and add the following MyBatis Starter dependency.
 
@@ -77,7 +77,7 @@ Few things to observe here are:
 
   * Namespace in Mapper XML should be same as Fully Qualified Name (FQN) for Mapper Interface
   * Statement id values should be same as Mapper Interface method names.
-  * If the query result column names are different from bean property names we can use <resultMap> configuration to provide mapping between column names and their corresponding bean property names.&nbsp;
+  * If the query result column names are different from bean property names we can use `<resultMap>` configuration to provide mapping between column names and their corresponding bean property names.&nbsp;
 
 MyBatis also provides annotation based query configurations without requiring Mapper XMLs.
   
@@ -132,7 +132,7 @@ public class SpringbootMyBatisDemoApplication
 }
 ```
 
-Observe that we have used **@MapperScan(&#8220;com.sivalabs.demo.mappers&#8221;)** annotation to specify where to look for Mapper interfaces.
+Observe that we have used **@MapperScan("com.sivalabs.demo.mappers")** annotation to specify where to look for Mapper interfaces.
 
 Now create a JUnit test class and test our UserMapper methods.
 
@@ -168,6 +168,6 @@ public class SpringbootMyBatisDemoApplicationTests
 }
 ```
 
-You can find the source code of the article at my GitHub repo&nbsp;<https://github.com/sivaprasadreddy/springboot-tutorials>
+You can find the source code of the article at my GitHub repo https://github.com/sivaprasadreddy/springboot-tutorials
 
-You can read more about MyBatis and Spring integration at <http://blog.mybatis.org/p/products.html>&nbsp;and&nbsp;<http://www.mybatis.org/spring/>.
+You can read more about MyBatis and Spring integration at http://blog.mybatis.org/p/products.html and http://www.mybatis.org/spring/.

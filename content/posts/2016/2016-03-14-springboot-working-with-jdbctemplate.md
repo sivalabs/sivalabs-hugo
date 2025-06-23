@@ -288,8 +288,8 @@ public class SpringbootJdbcDemoApplicationTests
         
 
 > By default SpringBoot features such as external properties, logging etc are available in 
-    the ApplicationContext only if you use <b>SpringApplication</b>. So, SpringBoot provides <b>@SpringApplicationConfiguration</b> annotation 
-    to configure the ApplicationContext for tests which uses <b>SpringApplication </b>behind the scenes.
+    the ApplicationContext only if you use **SpringApplication**. So, SpringBoot provides **@SpringApplicationConfiguration** annotation 
+    to configure the ApplicationContext for tests which uses **SpringApplication** behind the scenes.
 
 We have learned how to get started quickly with Embedded database. 
 
@@ -339,4 +339,4 @@ For example, If you want to use **HikariDataSource** then you can exclude **tomc
         
 With this dependency configuration SpringBoot will use **HikariCP** to configure **DataSource** bean.
 
-You can find the source code of the article at my GitHub repo <https://github.com/sivaprasadreddy/springboot-tutorials>
+You can find the source code of the article at my GitHub repo https://github.com/sivaprasadreddy/springboot-tutorials

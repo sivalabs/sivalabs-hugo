@@ -93,7 +93,7 @@ Download Jenkins war from <a href="https://jenkins-ci.org/" target="_blank">http
 
 Now you can go to http://localhost:8080/ and click on Manage Plugins.
   
-Click on **Available** tab and search for **Git** in filter box then select &#8220;**Git plugin**&#8221; and &#8220;**Github plugin**&#8220;.
+Click on **Available** tab and search for **Git** in filter box then select "**Git plugin**" and "**Github plugin**".
   
 Click on **Install without restart**.
 
@@ -109,7 +109,7 @@ Select **Git** for **Source Code Management** and give **https://github.com/siva
 
 In **Build Triggers** section, select **Poll SCM** with **schedule** _H/15 \* \* \* \*_ (every fifteen minutes)
 
-In **Build** section, enter **pom.xml** for **Root POM** and &#8220;**clean install**&#8221; for **Goals** **and options.**
+In **Build** section, enter **pom.xml** for **Root POM** and "**clean install**" for **Goals** **and options.**
 
 We can configure Jenkins to perform Sonar code quality checks if the build is successful.
   
@@ -127,11 +127,11 @@ In **Build Triggers** section, select **Build when a change is pushed to GitHub*
 
 In order to trigger Jenkins build when code is pushed to Github repository we need to configure Webhook.
   
-Go to GitHub repository **Settings** tab, click on **Webhooks & services** -> **Add service** -> **Choose &#8220;Jenkins (GitHub plugin)**&#8220;.
+Go to GitHub repository **Settings** tab, click on **Webhooks & services** -> **Add service** -> **Choose "Jenkins (GitHub plugin)**".
   
 Then fill in the Jenkins hook url with your jenkins url like this: **http://your\_jenkins\_url/github-webhook/**
 
-<span style="color: #ff0000;">But giving jenkins url like http://localhost:8080/github-webhook/ won't work (obviously!!) as it tries to resolve &#8220;localhost&#8221; from Github server.</span>
+<span style="color: #ff0000;">But giving jenkins url like http://localhost:8080/github-webhook/ won't work (obviously!!) as it tries to resolve "localhost" from Github server.</span>
 
 See <a href="http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top" target="_blank">http://stackoverflow.com/questions/30576881/jenkins-build-when-a-change-is-pushed-to-github-option-is-not-working?answertab=active#tab-top</a> for more details.
 

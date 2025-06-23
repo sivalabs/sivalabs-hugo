@@ -491,7 +491,7 @@ We will explore how to implement **Create and Update Bookmark API endpoints** in
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

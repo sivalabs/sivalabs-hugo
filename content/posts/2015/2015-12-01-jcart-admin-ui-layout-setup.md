@@ -92,12 +92,12 @@ Create login view page **jcart-admin/src/main/resources/templates/public/login.h
 
 ### Things to observe here:
 
-  * We are specifying to use guestlayout template for this Login page by using layout:decorator=&#8221;layout/guestLayout&#8221;
+  * We are specifying to use guestlayout template for this Login page by using layout:decorator="layout/guestLayout"
   * We are using various Thymeleaf attributes like th:action, th:if, th:text to provide the dynamic content
-  * We are using th:text=&#8221;#{some\_message\_key}&#8221; to provide all the labels dynamically from ResourceBundles jcart-admin/src/main/resources/messages.properties so that we can provide I18N feature easily.
+  * We are using th:text="#{some\_message\_key}" to provide all the labels dynamically from ResourceBundles jcart-admin/src/main/resources/messages.properties so that we can provide I18N feature easily.
   * We are using ${param.someKey} to access HttpServletRequest parameters.
   * We are using ${someKey} to access HttpServletRequest attributes.
-  * We are using th:action=&#8221;@{/login}&#8221; and th:href=&#8221;@{/forgotPwd}&#8221; for URLs so that we don't have to worry about Context Relative URL problems.
+  * We are using th:action="@{/login}" and th:href="@{/forgotPwd}" for URLs so that we don't have to worry about Context Relative URL problems.
 For more information on using Thymeleaf Layouts refer <a href="http://www.thymeleaf.org/doc/articles/layouts.html" target="_blank">http://www.thymeleaf.org/doc/articles/layouts.html</a>
 
 ## Using ResourceBundles for Internationalization (I18N)

@@ -13,20 +13,20 @@ tags:
 ---
 Last week I got to take interviews to hire senior java developers with around 5 years of experience. But after the interview process is over I felt like the frameworks makes developers life easier but at the same time making them dumb.
 
-Everyone puts almost all the new frameworks on their resume claiming they have &#8220;Strong, working experience on Spring, Hibernate, Web Services etc&#8221;.
+Everyone puts almost all the new frameworks on their resume claiming they have "Strong, working experience on Spring, Hibernate, Web Services etc".
 
 Here is how the interviews went on.
 
 **Me:** You have used Spring in your latest project. What are the advantages of using Spring?  
 **Interviewee:** We can configure beans in XML and it will take care of instantiating and give it to us.
 
-**Me:** If Spring is for only creating objects why is it required at all, I can directly instantiate the dependencies using &#8220;new&#8221;. Why should I configure the class names in XML and get the object from Spring?
+**Me:** If Spring is for only creating objects why is it required at all, I can directly instantiate the dependencies using "new". Why should I configure the class names in XML and get the object from Spring?
 
 **Interviewee:** If tomorrow we want to create another implementation of our interface we can create new implementation and update the XML configuration to use new impl. We don't need to change Java class and compile them.  
 **Me:** But you are writing a new Java class, so obviously you need to compile the project.  
 Regarding XML change, 99% of the times your XML will be packaged in war or ear file.   
 So you will run ANT script and create the war with the all the new changes.  
-Then your point of &#8220;if it is XML i don't need to compile&#8221; is not a valid point.
+Then your point of "if it is XML i don't need to compile" is not a valid point.
 
 **Interviewee:** Hmmm, But the Dependency Injection design pattern suggests to follow this way.  
 **Me:** OK. I am done with the interview. Our HR will get back to you. 🙂
@@ -36,9 +36,9 @@ Interview with another guy:
 **Me:** Can you explain about your latest project and what technologies have you used?  
 **Interviewee:** It is some XYZ System and we are using Spring, Hibernate, REST WebServices.  
 **Me:** Ok. Can you explain something about RESTful architecture?  
-**Interviewee:** We can develop RESTful application by using @RequestMapping(value=&#8221;/url&#8221;, method=&#8221;POST&#8221;). And also we can use PUT, DELETE methods.  
+**Interviewee:** We can develop RESTful application by using @RequestMapping(value="/url", method="POST"). And also we can use PUT, DELETE methods.  
 **Me:** That OK, but what is the concept of RESTful architecture?  
-**Interviewee:** That's what I am explaining. If you use @RequestMapping(value=&#8221;/url&#8221;, method=&#8221;POST&#8221;) you can develop RESTful application.
+**Interviewee:** That's what I am explaining. If you use @RequestMapping(value="/url", method="POST") you can develop RESTful application.
 
 **Me:** Ok, How good are you in Hibernate?  
 **Interviewee:** I am using Hibernate for the last 2 years. I am very good in using Hibernate.  
@@ -52,6 +52,6 @@ Interview with another guy:
 
 Interview process went on like this&#8230;
 
-I strongly believe frameworks will increase developer productivity. But the developers should try to understand how the framework is doing the stuff. You need not learn all the internal working mechanisms of frameworks. If you are really good at Servlets and JSP then it is very easy to understand any Java Web framework like Struts, SpringMVC etc.If you aren't good at the basics then obviously for every other question reply would be.. &#8220;framework's annotation/xml will execute this&#8221; 
+I strongly believe frameworks will increase developer productivity. But the developers should try to understand how the framework is doing the stuff. You need not learn all the internal working mechanisms of frameworks. If you are really good at Servlets and JSP then it is very easy to understand any Java Web framework like Struts, SpringMVC etc.If you aren't good at the basics then obviously for every other question reply would be.. "framework's annotation/xml will execute this" 
 
 I strongly recommend the people who want to start their career as a Java developer to work on Core Java, Servlets, JSP for sometime.Then only one can understand the frameworks in proper way.

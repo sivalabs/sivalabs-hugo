@@ -347,7 +347,7 @@ Then we have written various tests to test our CRUD operations.
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

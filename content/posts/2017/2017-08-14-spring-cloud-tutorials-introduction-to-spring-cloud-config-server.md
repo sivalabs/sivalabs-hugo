@@ -192,7 +192,7 @@ Spring Cloud Config Server exposes the following REST endpoints to get applicati
 /{label}/{application}-{profile}.properties
 ```
 
-Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to &#8220;master&#8221;).
+Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to "master").
 
 Now if you access the URL http://localhost:8888/catalogservice/default then you will get the following response with catalogservice **default** configuration details:
 

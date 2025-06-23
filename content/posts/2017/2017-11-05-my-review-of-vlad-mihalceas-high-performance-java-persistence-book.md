@@ -12,7 +12,7 @@ tags:
 In Java world, JPA/Hibernate is the most popular and widely used framework. 
 When it comes to overall performance of a software system database persistence layer plays the crucial role. 
 The tricky part with JPA/Hibernate is it is very easy to get started but very very hard to master. 
-This is where **Vlad Mihalcea**&#8216;s **High-Performance Java Persistence** book helps you a lot.
+This is where **Vlad Mihalcea**'s **High-Performance Java Persistence** book helps you a lot.
 
 ![High-Performance Java Persistence](/images/VladBook.webp "High-Performance Java Persistence")
 
