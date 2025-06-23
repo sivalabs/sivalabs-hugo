@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "hugo-bin": "^0.144.9",
     "imagemin": "^8.0.1",
     "imagemin-webp": "^8.0.0"
   }
