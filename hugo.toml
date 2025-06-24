@@ -2,14 +2,13 @@ baseURL = "https://www.sivalabs.in/"
 languageCode = "en-us"
 title = "SivaLabs"
 theme = "wellington"
-pagination.pagerSize=10
 
-#disqusShortname = "sivalabs"
-#googleAnalytics = "G-N5019E5MWE"
 enableRobotsTXT = true
 enableEmoji = true
 pygmentsCodeFences = true
-ignoreLogs = ['warning-goldmark-raw-html']
+
+[pagination]
+  pagerSize=10
 
 [services]
   [services.googleAnalytics]

@@ -41,7 +41,7 @@ In the **New Project** Dialog, you can see **User-defined** section and when you
   
 Select the **SpringBootBasic** template we created earlier and provide the **project name** and click **Finish**.
 
-Well, we won't get any fancy Spring support features like Ultimate Edition provides, but it will help us to get started quickly without requiring us to manually create Maven/Gradle project, configure <parent> etc etc.
+Well, we won't get any fancy Spring support features like Ultimate Edition provides, but it will help us to get started quickly without requiring us to manually create Maven/Gradle project, configure `<parent>` etc etc.
   
 Of course, it is not specific to SpringBoot only, we can create templates for any of our favorite tech stacks.
 
