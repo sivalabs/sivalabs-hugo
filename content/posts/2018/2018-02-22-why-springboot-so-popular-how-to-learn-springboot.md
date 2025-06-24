@@ -17,6 +17,9 @@ Occasionally this discussion of **“Why is SpringBoot so popular?”** come bet
 my friends/colleagues. Also, I do get emails from various people asking **“Spring is huge and how to learn it quickly?”**. 
 In this post, I will try to answer these 2 questions.
 
+<!--more-->
+
+
 # Why is SpringBoot so popular?
 There could be many reasons why Spring and SpringBoot are very popular, but in my opinion following are the key reasons:
 

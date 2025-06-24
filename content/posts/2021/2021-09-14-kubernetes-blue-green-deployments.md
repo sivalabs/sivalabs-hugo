@@ -12,6 +12,9 @@ tags: [Kubernetes, DevOps, Java, SpringBoot]
 
 In the previous article [Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}}) we have learned how to release a new version of application using **Deployment Rolling Updates** and how to use **Readiness** and **Liveness** probes to route traffic to only fully initialized containers.
 
+<!--more-->
+
+
 * [1. Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
 * [2. Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
 * [3. Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})

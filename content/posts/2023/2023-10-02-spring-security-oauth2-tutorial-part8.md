@@ -15,6 +15,9 @@ description: In this tutorial, we will create a Spring Boot Resource Server and 
 In the previous article, we have created **messages-webapp** and secured it with **Spring Security OAuth 2.0** using Authorization Code Flow.
 In this article, we will create **messages-service**, which is a Spring Boot Resource Server, and secure it with Spring Security OAuth 2.0.
 
+<!--more-->
+
+
 {{< box info >}}
 **Source Code:**
 

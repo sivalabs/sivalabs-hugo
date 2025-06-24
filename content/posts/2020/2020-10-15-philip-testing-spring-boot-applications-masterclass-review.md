@@ -15,6 +15,9 @@ If you ever worked on a large project which doesn't have any tests then you know
 
 > You know what is more painful? Working on a project which has plenty of USELESS tests written for the sake of passing minimum code coverage requirement.
 
+<!--more-->
+
+
 Being a Professional Software Developer means more than solving a problem. One needs to learn how to write maintainable and testable code, 
 write meaningful tests, know what to test and what not to test, how to evolve the codebase backing with a good set of test suite.
 

@@ -14,6 +14,9 @@ But during the development, developers might violate those guidelines unknowingl
 Typically, we rely upon **code reviews** or code quality checking tools like **SonarQube**, **PMD**, etc. to check for such violations.
 But some of the guidelines could be opinionated decisions which might not be able to automate using SonarQube, PMD etc.
 
+<!--more-->
+
+
 For example, typically I would like to follow the guidelines mentioned below for my Java based applications:
 
 1. **Follow 3-tier layering structure** (Web, Service, Repository layers) where any layer can only talk to the immediate lower layer and lower layer must not talk to upper layer.

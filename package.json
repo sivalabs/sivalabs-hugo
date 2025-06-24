@@ -8,7 +8,7 @@
     "clean": "npm run hugo:clean",
     "serve": "npm run hugo:serve",
     "hugo:build": "hugo -d build",
-    "hugo:serve": "hugo server -D -F",
+    "hugo:serve": "hugo server -D -F --disableFastRender",
     "hugo:clean": "rm -rf build resources public",
     "images:optimize": "node scripts/optimize-images.mjs",
     "dev": "npm run images:optimize && npm run hugo:serve"

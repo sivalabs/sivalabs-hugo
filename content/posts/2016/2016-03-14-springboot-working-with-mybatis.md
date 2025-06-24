@@ -14,6 +14,9 @@ tags:
 
 > SpringBoot doesn’t provide official support for MyBatis integration, but MyBatis community built a SpringBoot starter for MyBatis.
 
+<!--more-->
+
+
 You can read about the SpringBoot MyBatis Starter release announcement at http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html and you can explore the source code on GitHub https://github.com/mybatis/mybatis-spring-boot.
 
 ### Create a SpringBoot Maven project and add the following MyBatis Starter dependency.

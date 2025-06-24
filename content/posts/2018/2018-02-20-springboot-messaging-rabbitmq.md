@@ -17,6 +17,9 @@ Java, Scala, .NET, Go, Python, Ruby, PHP etc. In this tutorial, we will learn ho
 from a SpringBoot application. We will also look at how to send messages as JSON payloads and how to deal with errors using 
 Dead Letter Queues (DLQ).
 
+<!--more-->
+
+
 First, install RabbitMQ server on your local machine as documented here https://www.rabbitmq.com/download.html or 
 run as a Docker image with the following **docker-compose.yml**.
 

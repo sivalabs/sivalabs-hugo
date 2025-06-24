@@ -16,6 +16,9 @@ I am happy to announce that my new book [SpringBoot : Learn By Example](https://
 
 {{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
 
+<!--more-->
+
+
 ### What is SpringBoot?
 
 Spring is one of the most popular Java frameworks out there to build web and enterprise application.

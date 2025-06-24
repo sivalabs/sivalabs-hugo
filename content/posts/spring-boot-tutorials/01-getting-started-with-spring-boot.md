@@ -20,6 +20,9 @@ building Spring framework based applications.
 Using Spring Boot, you can build different kinds of applications such as 
 monolithic applications, microservices, serverless applications, Batch applications, etc.
 
+<!--more-->
+
+
 Let us take a quick look at what are the key features of Spring Boot that make it so popular.
 
 ## Spring Boot Key Features

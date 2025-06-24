@@ -17,6 +17,9 @@ front-end, back-end and infrastructure etc etc will make us successful in our ca
 Yes, the above mentioned skills definitely help, but just being good at tech skills might not make us successful.
 There is more to it. 
 
+<!--more-->
+
+
 Let me share you the story of my friend who restarted her career after a break of 3 years.
 I would say she really did amazing, and I would like to share her story.
 

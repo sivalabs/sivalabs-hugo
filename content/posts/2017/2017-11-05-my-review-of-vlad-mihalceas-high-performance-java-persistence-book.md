@@ -14,6 +14,9 @@ When it comes to overall performance of a software system database persistence l
 The tricky part with JPA/Hibernate is it is very easy to get started but very very hard to master. 
 This is where **Vlad Mihalcea**'s **High-Performance Java Persistence** book helps you a lot.
 
+<!--more-->
+
+
 ![High-Performance Java Persistence](/images/VladBook.webp "High-Performance Java Persistence")
 
 The High-Performance Java Persistence book is not just another Hibernate book saying 

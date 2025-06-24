@@ -15,6 +15,9 @@ In the [Part 3: OAuth 2.0 Client Credentials Flow]({{< relref "2023-09-25-spring
 we learned how to acquire **access_token** using **Client Credentials Flow**. 
 In this article, we will explore how to use **Authorization Code Flow with PKCE**.
 
+<!--more-->
+
+
 ## Authorization Code Flow with PKCE
 The **Authorization Code Flow with PKCE** is an OpenId Connect flow primarily designed to secure native, 
 mobile applications and Single Page Applications (SPA).

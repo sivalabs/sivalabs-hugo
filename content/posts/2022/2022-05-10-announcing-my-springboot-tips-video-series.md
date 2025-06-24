@@ -15,6 +15,9 @@ I am happy to announce that I am going to create **"SpringBoot Tips Video Series
 This **"SpringBoot Tips Series"** is to help people who are new to [SpringBoot](https://spring.io) to learn **how to use SpringBoot** 
 with a keen focus on **understanding how it works behind the scenes**.
 
+<!--more-->
+
+
 ### Longer version
 I have been working with SpringBoot for several years, and I have written couple of books on it too.
 Also, I have been giving online trainings on SpringBoot for students and working professionals too.

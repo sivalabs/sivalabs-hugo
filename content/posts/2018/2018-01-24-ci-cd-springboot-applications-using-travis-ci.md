@@ -17,6 +17,9 @@ In this article we are going to learn how we can use **Travis CI** for Continuou
 of a **SpringBoot** application. We will learn how to run maven build goals, perform test coverage validation using JaCoCo plugin, 
 Code Quality checks using **SonarCloud**, build Docker image and push it to **DockerHub** and finally deploy it to **Heroku**.
 
+<!--more-->
+
+
 > The source code for this article is at https://github.com/sivaprasadreddy/jblogger
 
 Last week I was talking to my friend about how easy it became to build a Java application and deploy it using SpringBoot. During the discussion one point came out about how much it cost to build a Java application and deploy it somewhere (cloud). So, I thought of exploring more about the free services that we can use to automate all the project development activities with minimal or no cost at all.

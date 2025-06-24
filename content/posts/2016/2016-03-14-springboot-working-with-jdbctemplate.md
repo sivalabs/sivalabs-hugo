@@ -13,6 +13,9 @@ tags:
 Spring provides a nice abstraction on top of JDBC API using **JdbcTemplate** and also provides great transaction management capabilities 
 using annotation based approach.
 
+<!--more-->
+
+
 First let’s take a quick look at how we generally use Spring’s **JdbcTemplate** (**without SpringBoot**) by registering **DataSource**, 
 **TransactionManager** and **JdbcTemplate** beans and optionally we can register **DataSourceInitializer** bean to initialize our database.
 

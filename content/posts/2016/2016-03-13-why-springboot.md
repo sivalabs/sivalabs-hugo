@@ -14,6 +14,9 @@ Spring is a very popular Java based framework for building web and enterprise ap
 
 Spring framework provides flexibility to configure the beans in multiple ways such as **XML**, **Annotations** and **JavaConfig**. With the number of features increased the complexity also gets increased and configuring Spring applications becomes tedious and error-prone.
 
+<!--more-->
+
+
 Spring team created SpringBoot to address the complexity of configuration.
 
 But before diving into SpringBoot, we will take a quick look at Spring framework and see what kind of problems SpringBoot is trying to address.

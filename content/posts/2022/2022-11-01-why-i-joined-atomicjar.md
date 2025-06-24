@@ -13,6 +13,9 @@ tags: [career]
 After working as a Developer/TechLead/Architect for around 16 years, I am joining [AtomicJar](https://www.atomicjar.com/) as a **Developer Advocate**.
 Here are a few reasons why I am so excited about this new role and specifically why I am joining **AtomicJar**.
 
+<!--more-->
+
+
 [![AtomicJar](/images/AtomicJar.webp "AtomicJar")](https://www.atomicjar.com/)
 
 ## 1. Developer Happiness

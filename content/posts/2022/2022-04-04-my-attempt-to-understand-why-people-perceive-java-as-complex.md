@@ -15,6 +15,9 @@ And, **Java** is the primary programming language that I have used most of my ca
 In recent years I got an opportunity to work with **Go**, **NodeJS** and **.Net Core** technologies too.
 I find Java, especially with **SpringBoot**, a solid platform to build enterprise grade applications.
 
+<!--more-->
+
+
 Occasionally there comes a discussion of technology selection, and I noticed some people don't prefer/like Java.
 Also, on social media I see a lot of jokes on Java's complexity. 
 While I enjoy the humour out of it, it makes me wonder why so many people perceive Java as complex??!!

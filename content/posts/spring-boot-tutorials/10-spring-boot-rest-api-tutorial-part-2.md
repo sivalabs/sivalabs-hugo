@@ -15,6 +15,12 @@ description: In this tutorial, you will learn how to create a Spring Boot REST A
 In this **Spring Boot REST API Best Practices - Part-2**, I will explain some of the best practices we should follow 
 while implementing **Create and Update API endpoints**.
 
+<!--more-->
+
+
+You can find the sample code for this tutorial in this
+[GitHub](https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series/tree/main/spring-boot-rest-api-tutorial) repository.
+
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}})
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}}) (This article)
 * [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}})
@@ -22,10 +28,6 @@ while implementing **Create and Update API endpoints**.
 
 This article is a continuation of [Spring Boot REST API Best Practices - Part 1]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}}).
 So, if you haven't already, please read **Part-1** first. We are going to build the APIs on top of the code we have implemented in Part-1.
-
-You can find the sample code for this tutorial in this
-[GitHub](https://github.com/sivaprasadreddy/spring-boot-tutorials-blog-series/tree/main/spring-boot-rest-api-tutorial) repository.
-
 
 ## Implementing POST /api/bookmarks API endpoint
 We may think of implementing the **POST /api/bookmarks** API endpoint as follows:

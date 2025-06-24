@@ -15,12 +15,15 @@ tags:
   - springcloud
 ---
 
-
-
 In the microservices world, to fulfill a client request one microservice may need to talk to other microservices. 
 We should minimize this kind of direct dependencies on other microservices but in some cases it is unavoidable. 
 If a microservice is down or not functioning properly then the issue may cascade up to the upstream services. 
 Netflix created Hystrix library implementing [Circuit Breaker](https://martinfowler.com/bliki/CircuitBreaker.html) pattern to address these kinds of issues. 
+
+
+<!--more-->
+
+
 We can use **Spring Cloud Netflix Hystrix Circuit Breaker** to protect microservices from cascading failures.
 
 **MicroServices using Spring Boot & Spring Cloud**

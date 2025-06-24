@@ -17,6 +17,9 @@ using the static site generator [Hugo](https://gohugo.io/), writing content usin
 and [Asciidoctor](https://docs.asciidoctor.org/), 
 and deploy on [Netlify](https://www.netlify.com/).
 
+<!--more-->
+
+
 ## Why should you have a blog?
 For a software developer, having a well-maintained blog opens up a lot of opportunities.
 First of all, you can write down your learnings and keep it as a quick reference for yourself.

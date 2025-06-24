@@ -15,6 +15,9 @@ I am happy to announce that I am starting the **SpringBoot - The Missing Guide**
 This **SpringBoot - The Missing Guide** video series is for those who need help understanding SpringBoot's magic.
 In this series, I will explain the core concepts used in Spring and SpringBoot with practical examples.
 
+<!--more-->
+
+
 Also, I will give a deep-dive explanation of SpringBoot's AutoConfiguration and how to customize the default configuration.
 Throughout the series, we will build a REST API using Spring Data JPA, and along the way, I will explain how to use various features of SpringBoot.
 

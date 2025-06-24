@@ -15,6 +15,9 @@ description: In this tutorial, we will explore how to invoke the secured Resourc
 In the previous articles, we have created **messages-webapp** and **messages-service** and invoked API endpoints using Postman.
 In this article, we will learn how to invoke the secured **messages-service** API endpoints from the Client application **messages-webapp**.
 
+<!--more-->
+
+
 {{< box info >}}
 **Source Code:**
 

@@ -17,6 +17,9 @@ Before joining AtomicJar, I worked as a TechLead/Architect at various companies 
 When I got the opportunity to join AtomicJar, I was very excited to work with my favourite technology [Testcontainers](https://www.testcontainers.org/).
 I have been using Testcontainers for more than 4 years, and I am a big fan of it.
 
+<!--more-->
+
+
 But I was also a bit nervous about how I will perform as a Developer Advocate. 
 In fact, I had little idea about what a Developer Advocate does.
 So, I talked to the AtomicJar team and learned about the Developer Advocate role and responsibilities.

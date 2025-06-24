@@ -18,6 +18,9 @@ It is very understandable though.
 Many people start using JPA/Hibernate with minimal knowledge and keep adding logic (read as "annotations") as and when required to get the job done.
 While checking the overall application performance, most of the time people realize it's because of poor performance of persistence layer. 
 
+<!--more-->
+
+
 Some people simply blame Hibernate saying it's generating/executing too many unoptimised queries. 
 Some people try to learn JPA/Hibernate a little more to optimize their code and overwhelmed by the sheer volume of things to know in order to properly use JPA/Hibernate. 
 

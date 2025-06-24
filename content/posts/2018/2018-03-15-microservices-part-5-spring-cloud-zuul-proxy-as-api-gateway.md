@@ -15,9 +15,10 @@ tags:
   - springcloud
 ---
 
-
-
 In microservices architecture, there could be a number of API services and few UI components that are talking to APIs. As of now, many microservices based application still use monolithic front-ends where the entire UI is built as a single module. You may choose to go with micro-frontends where the UI is also decomposed into multiple microservice talking to APIs to get the relevant data. Instead of letting UI know about all our microservices details we can provide a unified proxy interface that will delegate the calls to various microservices based on URL pattern. In this post, we will learn how to create API Gateway using Spring Cloud Zuul Proxy.
+
+<!--more-->
+
 
 **MicroServices using Spring Boot & Spring Cloud**
 

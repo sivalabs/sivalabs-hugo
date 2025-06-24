@@ -14,6 +14,9 @@ popular: false
 [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) has revolutionized how we build and run the applications. 
 In recent years containerization becomes new normal, and many organizations start using Kubernetes as Container Orchestration Platform.
 
+<!--more-->
+
+
 I was curious about Kubernetes and [played with it a bit 3 years ago](https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/spring-boot-k8s-demo) but I thought let's wait and see is it going to be a real thing or just another over hyped technology. Now I see Kubernetes everywhere, especially where microservice architecture is used for their systems. So, I finally decided to learn it properly and share my learning along the way.
 
 * [1. Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})

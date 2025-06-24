@@ -14,6 +14,9 @@ popular: true
 I have been working with [SpringBoot](https://spring.io/projects/spring-boot) for many years and over the time I worked with many SpringBoot based codebases.
 There are few common mistakes that I observe in the projects that use SpringBoot. So, I thought of writing down few good practices that can be followed while using SpringBoot.
 
+<!--more-->
+
+
 ## 1. Understand SpringBoot Core Concepts
 I know, this sounds very obvious but I see many developers jumping onto using SpringBoot without having any prior knowledge on Spring, Dependency Injection. So they just keep adding annotations and **@Bean** definitions here and there until it works.
 

@@ -19,6 +19,9 @@ and finally in **Production** environments.
 You may have to configure your application with different configuration properties while running the application 
 in different environments. 
 
+<!--more-->
+
+
 For example, if you are using a database then you may configure the database connection properties to a locally running database 
 during development. While deploying it on QA, Staging, Performance and Production environments, 
 you will need to configure the database properties to that environment specific database.

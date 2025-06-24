@@ -16,6 +16,9 @@ In addition to the springboot starters that comes out-of-the-box provided by Cor
 
 In this post we will look into how to create a custom SpringBoot starter. To demonstrate it we are going to create **twitter4j-spring-boot-starter** which will auto-configure Twitter4J beans.
 
+<!--more-->
+
+
 To accomplish this, we are going to create:
 
   1. &nbsp;**twitter4j-spring-boot-autoconfigure** module which contains Twitter4J AutoConfiguration bean definitions&nbsp;

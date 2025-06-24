@@ -16,6 +16,9 @@ I was working on a SpringBoot application which is planned to deploy on AWS and,
 [LocalStack](https://github.com/localstack/localstack) provides an easy-to-use test/mocking framework 
 for developing AWS based Cloud applications. 
 
+<!--more-->
+
+
 I want to use Localstack mock services instead of using real AWS services for two purposes:
 
 * To run integration tests

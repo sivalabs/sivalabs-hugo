@@ -21,6 +21,11 @@ A simple user action might trigger a chain of downstream microservice calls.
 It would be tedious to trace the logs related to a particular user action across microservices. 
 In addition to that, we might want to track down why a certain microservice call is taking so much time. 
 We can use [Spring Cloud Sleuth](http://cloud.spring.io/spring-cloud-static/Finchley.M7/single/spring-cloud.html#_spring_cloud_sleuth) to handle these kinds of issues. 
+
+
+<!--more-->
+
+
 Spring Cloud Sleuth provides the distributed tracing capabilities and we can also export these trace information to [Zipkin](https://zipkin.io/) 
 to visualize the call traces.
 

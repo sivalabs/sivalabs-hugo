@@ -11,8 +11,12 @@ tags: [Architecture]
 toc: true
 ---
 
-After a couple of years into software development, I wanted to improve my skills by learning more about 
-Software Architecture and Design. As you might guess, various sources suggested learning:
+After a couple of years into software development, I wanted to improve my skills by learning more about Software Architecture and Design. 
+
+<!--more-->
+
+
+As you might guess, various sources suggested learning:
 * [Design Patterns](https://refactoring.guru/design-patterns)
 * [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 * [Onion Architecture](https://jeffreypalermo.wpcomstaging.com/2008/07/the-onion-architecture-part-1/)

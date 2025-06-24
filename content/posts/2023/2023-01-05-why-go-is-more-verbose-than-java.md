@@ -11,6 +11,9 @@ tags: [GoLang, Java]
 ---
 Few months ago I asked on Twitter "why you think Java is complex?" to understand others perspective.
 
+<!--more-->
+
+
 {{< x user="sivalabs" id="1509905489911762950" >}}
 
 And, I got many responses(opinions, insights) 

@@ -12,6 +12,9 @@ tags: [thoughts, social-media]
 Social media is a double-edged sword. Depending on how you use it can be really be helpful or become a source of pressure and frustration.
 I don't use Facebook and Instagram much, but I use [Twitter](https://twitter.com/sivalabs) and recently started using [LinkedIn](https://www.linkedin.com/in/siva-prasad-reddy-katamreddy/) too.
 
+<!--more-->
+
+
 Twitter is my primary source of technical information. I follow many good people in Java Community.
 Twitter is a great platform to connect with those awesome people and I learn a lot from what they share.
 We also exchange our views on many technical and non-technical aspects and learn from each other.

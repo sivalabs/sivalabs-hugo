@@ -14,6 +14,9 @@ description: In this tutorial, we will explore the sample microservices project 
 In the previous articles, we have learned about various OAuth 2.0 / OpenID Connect flows using web browser, cURL and Postman.
 Now it's time to put what we have learned into practice. What better way to do that than to build a sample project?
 
+<!--more-->
+
+
 While implementing OAuth 2.0 / OpenID Connect based security using a Security framework like [Spring Security](https://spring.io/projects/spring-security),
 many activities are performed by the framework under the hood. 
 It is important to understand what is happening under the hood so that we can use the framework effectively.

@@ -14,6 +14,9 @@ You might have heard from IT employees that there is no work-life balance in IT 
 I did work crazy hours in the first 7 or 8 years of my career, but not anymore.
 Fortunately, I have been working in the companies that value work-life balance, and I never had to work beyond 8 hours in the recent past.
 
+<!--more-->
+
+
 However, I have been working on writing blogs, making videos, etc. in my free time.
 Though I enjoy doing it, it is taking a toll on my health.
 I am not going to blame anyone for this because I am the one willingly doing it out of passion for sharing my knowledge.

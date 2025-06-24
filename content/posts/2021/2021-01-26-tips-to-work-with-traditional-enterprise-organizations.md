@@ -16,6 +16,9 @@ On the positive side you get to work on different types of domains/applications,
 and you may get to learn verity of organizational cultures. On the downside you may end up working with 
 **"Typical traditional enterprise organizations"** which makes you question your career choices!!!
 
+<!--more-->
+
+
 If you are about to say dude, **"Typical traditional enterprise organizations" doesn't always mean bad workplaces**.
 Yes, I totally agree with you and I have once worked at such a large organization which I still consider "happiest days of my career".
 So, there can be "large enterprise organizations" which have great work culture, 

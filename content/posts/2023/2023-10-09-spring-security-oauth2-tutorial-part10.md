@@ -16,6 +16,9 @@ In this article, we will learn how to implement **Service to Service Communicati
 We will create the **archival-service** in which we will use a scheduler job to invoke the **messages-service** APIs to archive the messages.
 For implementing this, we will use **Client Credentials Flow**.
 
+<!--more-->
+
+
 We will also implement **POST /api/messages/archive** API endpoint in **archival-service** which can only be called by users who have **ROLE_ADMIN** role.
 
 Considering this, **archival-service** will act as a **Resource Server** and as a **Client** too.

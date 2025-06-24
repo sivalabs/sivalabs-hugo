@@ -17,6 +17,9 @@ using [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) and
 Frameworks and libraries, like [Spring Security](https://spring.io/projects/spring-security), help to reduce the complexity,
 but still there is a steep learning curve to understand how to properly implement security.
 
+<!--more-->
+
+
 In this **Spring Security OAuth2 Tutorial series**, I would like to share my learning on implementing security 
 for a simple microservices based application using [Spring Security OAuth2](https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html). 
 

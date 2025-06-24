@@ -22,6 +22,9 @@ In the previous article [Introduction to Spring Cloud Config Server]({{< relref 
 
 But, the problem is to reload the config changes in Config Client applications we need to trigger **/refresh** endpoint manually. This is not practical and viable if you have large number of applications.
 
+<!--more-->
+
+
 # Solution
 
 **Spring Cloud Bus** module can be used to link multiple applications with a message broker and we can broadcast configuration changes.

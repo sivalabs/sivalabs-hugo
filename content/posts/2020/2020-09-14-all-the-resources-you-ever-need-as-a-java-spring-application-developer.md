@@ -16,6 +16,9 @@ Nowadays software development is a challenging task as the number of programming
 Luckily, the number of resources to learn on the internet for free also increased a lot. There are a ton of free resources to learn almost everything on the internet.
 There are lots of official documentation, blog posts, Udemy courses, YouTube videos etc.
 
+<!--more-->
+
+
 As a backend developer who primarily work on JVM based languages/frameworks like **Java, Kotlin, SpringBoot** etc, 
 following are a collection of resources I usually follow to learn new things. Thought of sharing with you, it could be helpful for you too.
 

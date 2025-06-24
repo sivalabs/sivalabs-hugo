@@ -15,6 +15,9 @@ it's great support for [Testing](https://docs.spring.io/spring-boot/docs/current
 We can write unit tests using [Mockito](https://site.mockito.org/) without requiring any Spring features. 
 And, we can write Integration Tests using Spring testing support by creating Spring ApplicationContext. 
 
+<!--more-->
+
+
 > Read [Guide to Testing SpringBoot Applications](https://sivalabs.in/spring-boot-testing/)
     
 While running integration tests we might need to interact with external services like relational databases, NoSQL datastores, Kafka etc. 

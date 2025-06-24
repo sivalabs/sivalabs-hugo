@@ -17,6 +17,9 @@ However, I see few people that I greatly admire and learn from, often complain t
 Obviously, I am curious to know what am I missing? I know a couple of scenarios where using Lombok brings some challenges.
 Apart from it, I really enjoy using the Lombok library.
 
+<!--more-->
+
+
 ## Why I use Lombok?
 I, like most others, spend a lot of time reading code and I like to read concise code.
 I know I can generate the **setters**, **getters**, **toString()** etc from the IDE. 

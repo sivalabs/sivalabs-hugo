@@ -15,6 +15,9 @@ description: In this tutorial, you will learn how to create a Spring Boot REST A
 In this **Spring Boot REST API Best Practices Series**, I will explain some of the best practices we should follow while implementing REST APIs.
 Also, I will explain some of the common mistakes developers do and how to avoid them.
 
+<!--more-->
+
+
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}}) (This article)
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
 * [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}})

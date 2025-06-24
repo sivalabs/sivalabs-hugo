@@ -12,6 +12,9 @@ tags: [SpringBoot, Cloud, Books]
 
 I got a chance to review the upcoming [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book by [Thomas Vitale](https://twitter.com/vitalethomas) and here my review of the book.
 
+<!--more-->
+
+
 ![Cloud Native Spring in Action](/raw-images/cnsia-book-cover.jpeg "Cloud Native Spring in Action")
 
 ## TLDR:

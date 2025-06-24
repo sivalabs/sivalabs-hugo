@@ -14,6 +14,9 @@ I would like to share how was my year 2020 and what I am planning to do in 2021.
 As we all know 2020 was a rough year due to COVID-19, lockdown and all, but 2020 is a good year for me in many ways.
 It used to take minimum 2 to 3 hours of daily commute for office, now that I have been working from home I am able to use that time for other activities.
 
+<!--more-->
+
+
 ### Following are few notable things for me in 2020:
 
 * Learned and [worked on GoLang]({{< relref "2020-07-02-golang-from-a-java-developer-perspective.md" >}}) for a project.

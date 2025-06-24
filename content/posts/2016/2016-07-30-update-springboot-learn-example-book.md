@@ -20,6 +20,9 @@ I would like to let you know that I have updated/added the following sections to
   * **Working with Multiple Databases**
   * **Exposing JPA entities with bi-directional references through RESTful services**
 
+<!--more-->
+
+
 In some of our applications we need to work with multiple databases. For example, we may have a primary database and a reporting database where most the application uses primary database and the application reports will be generated out of reporting database data.
 
 The section **Working with Multiple Databases** explains how to configure multiple databases while using JPA in a SpringBoot application.

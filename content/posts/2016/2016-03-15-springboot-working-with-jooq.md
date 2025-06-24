@@ -15,6 +15,9 @@ In my previous article [SpringBoot : Working with MyBatis]({{< relref "2016-03-1
 
 JOOQ (JOOQ Object Oriented Querying) is a persistence framework which embraces SQL.
 
+<!--more-->
+
+
 JOOQ provides the following features:
 
   * Building Typesafe SQL using DSL API

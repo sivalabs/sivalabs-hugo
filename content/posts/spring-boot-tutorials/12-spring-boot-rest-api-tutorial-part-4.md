@@ -15,6 +15,9 @@ description: In this tutorial, you will learn how to implement exception handlin
 In this **Spring Boot REST API Best Practices** series, we have learned how to implement CRUD operations so far.
 In this **Part-4**, we will explore how to **implement exception handling** for our APIs.
 
+<!--more-->
+
+
 * [Spring Boot REST API Best Practices - Part 1 : Implementing Get Collection API]({{< relref "09-spring-boot-rest-api-tutorial-part-1.md" >}})
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
 * [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}})

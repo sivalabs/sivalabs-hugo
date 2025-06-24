@@ -12,6 +12,9 @@ tags: [Kubernetes, DevOps, Java, SpringBoot]
 
 In the previous article [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}}) we have learned how to deploy a SpringBoot application on Kubernetes(Minikube) using **Deployment** and **Service** primitives. We also looked at how to access our application using **NodePort** on Minikube IP address.
 
+<!--more-->
+
+
 * [1. Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
 * [2. Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
 * [3. Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
