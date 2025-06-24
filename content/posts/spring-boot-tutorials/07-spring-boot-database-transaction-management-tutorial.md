@@ -18,6 +18,9 @@ to make it easier to perform database operations.
 Spring also provides a high-level abstraction on top of **JPA** 
 with **Spring Data JPA** to make it easy to implement CRUD operations, sorting, pagination, etc.
 
+<!--more-->
+
+
 Whether you use **JdbcTemplate** or **JPA/Hibernate** or **Spring Data JPA**, you need to take care of 
 handling database transactions.
 
@@ -288,7 +291,7 @@ There are alternative ways such as injecting the same class dependency into itse
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

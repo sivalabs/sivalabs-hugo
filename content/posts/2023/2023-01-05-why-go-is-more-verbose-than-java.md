@@ -11,7 +11,10 @@ tags: [GoLang, Java]
 ---
 Few months ago I asked on Twitter "why you think Java is complex?" to understand others perspective.
 
-{{< tweet user="sivalabs" id="1509905489911762950" >}}
+<!--more-->
+
+
+{{< x user="sivalabs" id="1509905489911762950" >}}
 
 And, I got many responses(opinions, insights) 
 and I compiled all the responses into this blog post [My attempt to understand why people perceive Java as complex](https://www.sivalabs.in/my-attempt-to-understand-why-people-perceive-java-as-complex/).
@@ -26,7 +29,7 @@ Java is way more verbose than Python, Ruby, JavaScript/TypeScript. But I don't t
 
 So, I tweeted this :-)
 
-{{< tweet user="sivalabs" id="1610446679970545664" >}}
+{{< x user="sivalabs" id="1610446679970545664" >}}
 
 Of course some would disagree, not at all unexpected.
 

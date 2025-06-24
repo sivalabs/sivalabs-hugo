@@ -17,6 +17,9 @@ tags: [Kafka]
 * Kafka can be used as Streaming platform for processing events in realtime
 etc etc.
 
+<!--more-->
+
+
 You can learn more about Kafka from it's official documentation https://kafka.apache.org/documentation/.
 
 > If you like to learn from video tutorials I would suggest to watch https://www.learningjournal.guru/courses/kafka/kafka-foundation-training/.

@@ -19,6 +19,8 @@ That sounds intriguing.
 Recently I wrote an article about software complexity and shared my view point.
 Many people appreciated it and some people didn't. That is fine to have different opinions.
 
+<!--more-->
+
 I thought, lets see how NotebookLM interprets what I said.
 
 So, I went to https://notebooklm.google/ and used the Webpage URL of my article

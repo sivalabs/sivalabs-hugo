@@ -17,6 +17,11 @@ In this article, we will explore the following:
 
 In the [previous article]({{< relref "2024-02-19-getting-started-with-generative-ai-using-java-langchain4j.md" >}}), we have seen how to interact with OpenAI using Java and LangChain4j.
 
+Let's get started.
+
+<!--more-->
+
+
 {{< box info >}}
 **LangChain4j Tutorial Series**
 

@@ -15,7 +15,7 @@ I am glad to announce that my second book PrimeFaces Beginner's Guide is publish
 
 As many of us know PrimeFaces is leading JSF component library for JSF based web applications. This PrimeFaces Beginner's Guide book targets the Java developers with basic knowledge on JSF and jQuery and covers most of the commonly used PrimeFaces components.
 
-> Good news is that PrimeFaces Beginner's Guide book covers the latest <b>PrimeFaces 4.0 version features such as <b>Client Side Validations (CSV) framework: Dialog Framework, <b>Search Expressions, <b>Sticky Component and many other enhancement as well.
+> Good news is that PrimeFaces Beginner's Guide book covers the latest PrimeFaces 4.0 version features such as Client Side Validations (CSV) framework: Dialog Framework, Search Expressions, Sticky Component and many other enhancement as well.
 
 [![Primefaces Beginners Guide](/images/0698OS.webp)](https://www.packtpub.com/web-development/primefaces-beginners-guide)
 
@@ -25,7 +25,7 @@ The book contains the following 13 chapters covering various PrimeFaces componen
   
 * **Chapter 2: Introducing Sample Application TechBuzz**, provides an overview of the sample application TechBuzz, which we are going to build incrementally throughout the book, and explains what PrimeFaces components will be used for various requirements. This chapter also provides an overall picture on setting up the development environment with all the required software, such as JDK, IDE, database, and so on.&nbsp;
 
-* **Chapter 3: Using PrimeFaces Common Utility Components**, introduces various ommonly used utility components provided by PrimeFaces, such as Growl, Tooltip, BlockUI, NotificationBar, and so on. This chapter also explains new features introduced in PrimeFaces 4.0, such as Fragment, Sticky, Search Expression Framework, and Dialog Framework.&nbsp;
+* **Chapter 3: Using PrimeFaces Common Utility Components**, introduces various commonly used utility components provided by PrimeFaces, such as Growl, Tooltip, BlockUI, NotificationBar, and so on. This chapter also explains new features introduced in PrimeFaces 4.0, such as Fragment, Sticky, Search Expression Framework, and Dialog Framework.&nbsp;
 
 * **Chapter 4: Introducing PrimeFaces Client Side Validation Framework**, covers PrimeFaces Client Side Validations (CSV) Framework in detail, explaining how to configure and enable client-side validations, integrating the CSV framework with the Bean Validation API, and extending the CSV framework to support custom JSF Validators/-Converters and custom Bean Validation Annotations.&nbsp;
 

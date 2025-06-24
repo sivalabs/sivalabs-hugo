@@ -15,6 +15,9 @@ Logging is a common and important requirement for running applications in produc
 Spring Boot provides great support for application logging out of the box and offers various customization options.
 In this tutorial, you will learn how to implement logging in your Spring Boot application using **Logback** and **Log4j2**. 
 
+<!--more-->
+
+
 {{< box info >}}
 **Getting Started with Spring Boot**
 
@@ -228,7 +231,7 @@ The slf4j API will delegate the actual logging to log4j2.
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

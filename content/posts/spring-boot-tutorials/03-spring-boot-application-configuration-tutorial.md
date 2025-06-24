@@ -18,6 +18,9 @@ we have learned how to write unit, slice and integration tests for a Spring Boot
 In this tutorial, you will learn how to configure your Spring Boot application using **properties** and **YAML** files 
 for running the application in different environments.
 
+<!--more-->
+
+
 ## Externalizing Spring Boot Application Configuration
 Any non-trivial application will have some configuration that you would like to make it configurable 
 instead of hard-coding those values in the application code. 
@@ -444,7 +447,7 @@ These configuration options will be explained in separate tutorials in the futur
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page.
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page.
 {{< /box >}}
 
 ## Summary

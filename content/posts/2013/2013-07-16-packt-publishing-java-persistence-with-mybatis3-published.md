@@ -17,7 +17,7 @@ JDBC is too low level API and needs to write a lot of boilerplate code. On the o
 
 **So what if I don't want to use low level JDBC API and can't go for full fledged ORMs? MyBatis to the rescue.**
 
-MyBatis is a SQL Mapper framework which simplify data persistence logic by hiding all the low level JDBC code and provides easy to use API. Nothing more, nothing less..No magic&#8230; You need to write SQL by yourself.(Whenever I hear someone saying &#8220;By using ORM frameworks we don't need to know SQL, we can use HQL and ORM will take care of it&#8221;, I just LOL)
+MyBatis is a SQL Mapper framework which simplify data persistence logic by hiding all the low level JDBC code and provides easy to use API. Nothing more, nothing less..No magic&#8230; You need to write SQL by yourself.(Whenever I hear someone saying "By using ORM frameworks we don't need to know SQL, we can use HQL and ORM will take care of it", I just LOL)
 
 So what exactly MyBatis offers you?  
 **1. Manage Resources:** Based on the provided configuration, MyBatis takes care of creating Connection(pool), Statement/PreparedStatement/CallableStatement, ResultSet and closing them once the task is done.

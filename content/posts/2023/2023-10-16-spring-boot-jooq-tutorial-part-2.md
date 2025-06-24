@@ -16,6 +16,9 @@ the [testcontainers-jooq-codegen-maven-plugin](https://github.com/testcontainers
 and use jOOQ Typesafe DSL to execute SQL queries.
 In this tutorial, we will learn how to implement basic CRUD Operations using jOOQ.
 
+<!--more-->
+
+
 * [jOOQ Tutorial - 1 : Getting Started]({{< relref "2023-10-12-spring-boot-jooq-tutorial-part-1.md" >}})
 * [jOOQ Tutorial - 2 : Implementing CRUD Operations]({{< relref "2023-10-16-spring-boot-jooq-tutorial-part-2.md" >}})
 * [jOOQ Tutorial - 3 : Fetching One-to-One Relationships]({{< relref "2023-10-19-spring-boot-jooq-tutorial-part-3.md" >}})

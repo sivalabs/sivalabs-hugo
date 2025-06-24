@@ -16,6 +16,8 @@ The Spring Initializr is a web application that you can use to create a Spring B
 Do you know Spring Initializr itself is an [open-source Spring Boot application](https://github.com/spring-io/start.spring.io)?
 You can fork it, customize it, deploy on your infrastructure and use it to generate Spring Boot applications.
 
+<!--more-->
+
 The next question would be what kind of customizations I can do? Why should I bother to host it myself?
 
 Imagine you are working for a large enterprise organization that uses Spring Boot for building various applications.

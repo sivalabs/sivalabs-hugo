@@ -14,6 +14,9 @@ SocialMedia is a double-edged sword. We can put it to good use or become addicte
 The challenge is, it is hard to know when it became addiction. 
 Most of the time we get to know that we are addicted to it once we started suffering.
 
+<!--more-->
+
+
 I use social media, especially [Twitter](https://twitter.com/sivalabs), very much mainly to keep up with what is going on in the tech world.
 I must say Twitter helped me in several ways throughout my career.
 

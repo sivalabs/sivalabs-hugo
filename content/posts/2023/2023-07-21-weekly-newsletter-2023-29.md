@@ -31,6 +31,6 @@ That made me feel the time and effort of making videos is worth it :smile:
 
 ## Tweet of the week
 
-{{< tweet user="asaikali" id="1682210450820218882" >}}
+{{< x user="asaikali" id="1682210450820218882" >}}
 
 Keep learning. Cheers.

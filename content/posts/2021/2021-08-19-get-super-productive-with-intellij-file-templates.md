@@ -15,6 +15,9 @@ We all know about [Live Templates](https://www.jetbrains.com/help/idea/using-liv
 
 Recently I came to know about **File Templates**, and I realized I can put it to good use and be more productive.
 
+<!--more-->
+
+
 First let us discuss the problem I was trying to solve with File Templates.
 
 I work with **SpringBoot** a lot, and I work on implementing REST APIs in most of my projects.
@@ -310,7 +313,7 @@ There are few things that I would like Intellij IDEA to improve upon **File and 
 
 You can refactor **@RequestMapping(method=GET, value="...")** into **@GetMapping("...")** as follows:
 
-{{< tweet user="sivalabs" id="1377637211651203082" >}}
+{{< x user="sivalabs" id="1377637211651203082" >}}
 
 {{< figure src="/images/structural-search.webp" height="450" width="720" >}}
 

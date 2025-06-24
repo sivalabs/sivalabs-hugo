@@ -15,6 +15,9 @@ description: In this tutorial, we will create a Spring MVC + Thymeleaf web appli
 In this article, we will create **messages-webapp** which is a **Spring MVC + Thymeleaf** web application 
 and secure it with **Spring Security OAuth 2.0** using **Keycloak**.
 
+<!--more-->
+
+
 {{< box info >}}
 **Source Code:**
 

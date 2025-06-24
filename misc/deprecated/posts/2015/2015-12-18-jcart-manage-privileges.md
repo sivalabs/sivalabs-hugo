@@ -12,7 +12,7 @@ tags:
 ---
 This is the simplest usecase of entire JCart admin application :-). We need to show list of permissions configured in our system.
   
-In our system each permission is more like access to a particular screen. For example, If a user has MANAGE_CATEGORIES permission then only he can access &#8220;Categories&#8221; screen. So these set of permission are something like implemented features set, hence we don't need any provision to add/update/delete permissions dynamically.
+In our system each permission is more like access to a particular screen. For example, If a user has MANAGE_CATEGORIES permission then only he can access "Categories" screen. So these set of permission are something like implemented features set, hence we don't need any provision to add/update/delete permissions dynamically.
 
 We already have Permission JPA entity created and some sample data is already inserted using data.sql script.
 
@@ -45,7 +45,7 @@ public class SecurityService
 
 Create a SpringMVC controller to handle all Permission related actions (in our case we only need list all permissions).
   
-This action should be available to only users who have &#8220;ROLE\_MANAGE\_PERMISSIONS&#8221;, so let us add @Secured annotation to PermissionController.
+This action should be available to only users who have "ROLE\_MANAGE\_PERMISSIONS", so let us add @Secured annotation to PermissionController.
 
 Instead of using Strings let us create constants for Permissions as follows:
 
@@ -66,7 +66,7 @@ public class SecurityUtil
 }
 ```
 
-> Observe that each permission is prefixed with &#8220;ROLE_&#8221; which is expected by Spring Security.
+> Observe that each permission is prefixed with "ROLE_" which is expected by Spring Security.
 
 ```java
 @Controller

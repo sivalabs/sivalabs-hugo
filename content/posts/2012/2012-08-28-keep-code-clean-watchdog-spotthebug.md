@@ -32,7 +32,7 @@ So what just happend? Where is the problem?
 
 We started this project by pledging to keep the code clean and highly maintainable/enhanceable. But now it is in worst possible state.
 
-> **_Somehow it is understandable if the code is legacy code and is messy&nbsp;because&nbsp;today's latest way of doing things becomes tomorrow's legacy and bad approach like externalizing the application configuration into XML was the way to go sometime back and now it became XML hell with shiny new Annotations.&nbsp;I am pretty sure that in a&nbsp;couple&nbsp;of years we will see &#8220;Get Rid of Annotation Hell by Using SomeNew Gr8 Way&#8221;.&nbsp;_**
+> **_Somehow it is understandable if the code is legacy code and is messy&nbsp;because&nbsp;today's latest way of doing things becomes tomorrow's legacy and bad approach like externalizing the application configuration into XML was the way to go sometime back and now it became XML hell with shiny new Annotations.&nbsp;I am pretty sure that in a&nbsp;couple&nbsp;of years we will see "Get Rid of Annotation Hell by Using SomeNew Gr8 Way".&nbsp;_**
 
 But, in my case it is just 3 months old project.
 
@@ -53,15 +53,15 @@ Manager is busy in aggregating the team's task status reports to satisfy his bos
 
 So whose responsibility it is to clean the code? Or in other way, How can we keep code clean even with all the above said Busy circumstances?
 
-Before going to explain How &#8220;WatchDog & SpotTheBug Approach&#8221; works let me tell you another story.
+Before going to explain How "WatchDog & SpotTheBug Approach" works let me tell you another story.
 
 3 years back I worked on a banking project which is well designed, well organised and well written code that I have ever seen so far.&nbsp;That&nbsp;project&nbsp;started almost 10 years back, but still the code quality is very good. How is it possible?
 
-> **_The only reason is If any developer check-in the code with some bad code like adding duplicate utility methods then within 4 hours that developer will recieve an email from a GUY asking for the explanation what is the need to add that method when that utility method is already available in core-utilities module.&nbsp;In case there is no valid reason, that developer has to open a new defect with &#8220;Cleaning Bad Code&#8221; in the defect title, assign the defect to himself and change the code and should check-in the files ASAP._**
+> **_The only reason is If any developer check-in the code with some bad code like adding duplicate utility methods then within 4 hours that developer will recieve an email from a GUY asking for the explanation what is the need to add that method when that utility method is already available in core-utilities module.&nbsp;In case there is no valid reason, that developer has to open a new defect with "Cleaning Bad Code" in the defect title, assign the defect to himself and change the code and should check-in the files ASAP._**
 
 With this process, every team member in our team used to tripple check the code before checking into repository.
 
-I think this is the best possible way to keep the code clean. By now you may have clue on what I mean by &#8220;WatchDog&#8221;. Yes, I called the GUY as WatchDog.&nbsp;First of all, sorry for calling such an important role as Dog but it better describe what that guy will do. It will bark as soon as it saw some bad code.
+I think this is the best possible way to keep the code clean. By now you may have clue on what I mean by "WatchDog". Yes, I called the GUY as WatchDog.&nbsp;First of all, sorry for calling such an important role as Dog but it better describe what that guy will do. It will bark as soon as it saw some bad code.
 
 **Need for WatchDog:**  
 

@@ -15,6 +15,9 @@ tags:
 
 In web applications, user session management is very crucial for managing user state. In this article, we are going to learn about what are the approaches we have been following to manage user sessions in a clustered environment and how we can use Spring Session to implement it in a much simpler and more scalable way.
 
+<!--more-->
+
+
 Typically in production environments, we will have multiple server nodes with a load balancer in front of them and all the client traffic will be coming through the load balancer to one of the server nodes. So we need some mechanism to make the user session data available to each client in a clustered environment.
 
 Traditionally we have been using the following techniques to manage sessions:

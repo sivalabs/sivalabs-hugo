@@ -41,7 +41,7 @@ function addItemToCart(sku)
 }
 ```
 
-This function triggers an Ajax call to **url &#8216;/cart/items'** using jQuery and if it is successful we are calling another JavaScript function **updateCartItemCount()**.
+This function triggers an Ajax call to **url '/cart/items'** using jQuery and if it is successful we are calling another JavaScript function **updateCartItemCount()**.
 
 The **updateCartItemCount()** function updates the current Cart Items count in the page header section.
 
@@ -67,7 +67,7 @@ function updateCartItemCount()
 }
 ```
 
-The **updateCartItemCount()** function triggers an Ajax call to **url: &#8216;/cart/items/count'** to get the current Cart Item count. Once the response is received we are setting the count value.
+The **updateCartItemCount()** function triggers an Ajax call to **url: '/cart/items/count'** to get the current Cart Item count. Once the response is received we are setting the count value.
 
 We need to display the current Cart Item Count on all pages, so let us invoke **updateCartItemCount()** function in **app.js** for all the page load as follows:
 

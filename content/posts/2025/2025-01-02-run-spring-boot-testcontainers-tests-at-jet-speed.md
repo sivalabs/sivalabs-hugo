@@ -15,6 +15,8 @@ Spring Boot 3.1.0 introduced [support for Testcontainers](https://docs.spring.io
 to simplify local development and testing. 
 [Testcontainers](https://testcontainers.com/) helps in writing tests using real dependencies instead of mocks, but it may also increase the test execution time.
 
+<!--more-->
+
 In this article, I will share some insights on **how to reduce test execution time while using Testcontainers**.
 
 ## Sample Spring Boot application

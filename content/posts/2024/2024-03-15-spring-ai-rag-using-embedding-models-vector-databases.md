@@ -17,6 +17,12 @@ In this article, we will explore the following:
 * Storing embeddings in VectorStores.
 * Implementing RAG (Retrieval-Augmented Generation), a.k.a. Prompt Stuffing.
 
+Let's get started.
+
+<!--more-->
+
+## Introduction
+
 {{< box info >}}
 **Sample Code Repository**
 

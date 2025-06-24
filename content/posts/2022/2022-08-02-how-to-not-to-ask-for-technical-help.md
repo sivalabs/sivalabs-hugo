@@ -14,6 +14,9 @@ We, software developers, have a great advantage when it comes to getting help fr
 Irrespective of how much experience you have you will need help fromm others. 
 And, there are plenty of good people out there willing to help you by means of answering on StackOverflow, writing blog posts, making video tutorials etc. They are taking their personal time to help strangers whom they may never meet in-person, kudos to all of them.
 
+<!--more-->
+
+
 But, in order to help you they need some context of the problem, and you need to approach them in reasonable ways.
 
 Here I would like share my thoughts on **what are the better ways to ask for help?** and what are **some patterns that you should avoid while asking for help**.

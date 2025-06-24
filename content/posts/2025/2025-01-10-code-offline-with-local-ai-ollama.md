@@ -15,6 +15,8 @@ People are using these AI tools for various purposes such as to explore a topic,
 to seek answers to their questions or to get help in coding, etc.
 ChatGPT and Google's Gemini are very popular AI tools that are available for free with some usage limitations.
 
+<!--more-->
+
 **Coding without help from Google, StackOverflow and blogs is challenging.
 But what if you had to code without internet connectivity?**
 

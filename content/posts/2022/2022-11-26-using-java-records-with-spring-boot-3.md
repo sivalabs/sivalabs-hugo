@@ -13,6 +13,9 @@ tags: [SpringBoot, Java]
 Records were introduced in Java 14 as a preview feature and became a standard feature with JDK 16.
 Records are a concise representation of immutable data class. 
 
+<!--more-->
+
+
 Prior to Records this is how we usually create an immutable class.
 
 ```java

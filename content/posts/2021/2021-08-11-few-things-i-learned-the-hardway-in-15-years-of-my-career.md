@@ -17,6 +17,9 @@ As I am not a super smart person by birth, I ended up learning many things in th
 
 In this article, I would like to share some of my learnings.
 
+<!--more-->
+
+
 1. **You will always be working in a time and resources-constrained environment**. 
    So those who can get things done within the given constraints will succeed. 
    Your ideals won't help you because you are not living in an ideal world.

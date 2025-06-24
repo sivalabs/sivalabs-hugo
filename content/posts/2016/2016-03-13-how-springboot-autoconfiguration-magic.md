@@ -12,6 +12,9 @@ popular: true
 ---
 In my previous post [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}}) we have looked at how to create a SpringBoot application. But you may or may not understand what is going on behind the scenes. You may want to understand the magic behind the SpringBoot’s AutoConfiguration.
 
+<!--more-->
+
+
 But before that you should know about Spring’s **@Conditional** feature based on which all the SpringBoot’s AutoConfiguration magic depends.
 
 ## Exploring the power of @Conditional
@@ -95,7 +98,7 @@ public class MongoUserDAO implements UserDAO
 }
 ```
 
-We can implement the Condition **MySQLDatabaseTypeCondition** to check whether the System Property **dbType** is **&#8220;MYSQL&#8221;** as follows:
+We can implement the Condition **MySQLDatabaseTypeCondition** to check whether the System Property **dbType** is **"MYSQL"** as follows:
 
 ```java
 public class MySQLDatabaseTypeCondition implements Condition
@@ -109,7 +112,7 @@ public class MySQLDatabaseTypeCondition implements Condition
 }
 ```
 
-We can implement the Condition **MongoDBDatabaseTypeCondition** to check whether the System Property **dbType** is &#8220;**MONGODB**&#8221; as follows:
+We can implement the Condition **MongoDBDatabaseTypeCondition** to check whether the System Property **dbType** is "**MONGODB**" as follows:
 
 ```java
 public class MongoDBDatabaseTypeCondition implements Condition
@@ -149,9 +152,9 @@ But if you set the System property like **-DdbType=MONGODB** then only **MongoUs
 
 Now that we have seen how to conditionally register a bean based on System Property.
 
-Suppose we want to register **MongoUserDAO** bean only when **MongoDB** java driver class **&#8220;com.mongodb.Server&#8221;** is available on classpath, if not we want to register **JdbcUserDAO** bean.&nbsp;
+Suppose we want to register **MongoUserDAO** bean only when **MongoDB** java driver class **"com.mongodb.Server"** is available on classpath, if not we want to register **JdbcUserDAO** bean.&nbsp;
 
-To accomplish that we can create Conditions to check the presence or absence of MongoDB driver class **&#8220;com.mongodb.Server&#8221;** as follows:
+To accomplish that we can create Conditions to check the presence or absence of MongoDB driver class **"com.mongodb.Server"** as follows:
 
 ```java
 public class MongoDriverPresentsCondition implements Condition

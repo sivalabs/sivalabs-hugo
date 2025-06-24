@@ -267,5 +267,5 @@ public class Payment implements Serializable
 As we have configured **spring.jpa.hibernate.ddl-auto=update** when we run the JCartCoreApplicationTest again all the tables will be automatically created/updated.
 
 SpringBoot provides a nice and easy way to initialize the database with some seed data using **data.sql** file.
-  
-We can use **jcart-core/src/test/resources/data.sql** script <a href="https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql" target="_blank">https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql</a> to populate some sample data.
+
+We can use **jcart-core/src/test/resources/data.sql** script [https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql](https://github.com/sivaprasadreddy/jcart/blob/master/jcart-core/src/test/resources/data.sql) to populate some sample data.

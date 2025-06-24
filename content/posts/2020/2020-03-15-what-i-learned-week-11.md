@@ -17,6 +17,9 @@ Usually I keep track of this information using **Browser Bookmarks** and [Pocket
 
 I thought may be this information could be useful for others too. So, I am going to share it weekly on my blog.
 
+<!--more-->
+
+
 * If you are looking for a detailed and practical guide for implementing Microservices using SpringBoot then look no further 
 [Java Microservices: A Practical Guide](https://www.marcobehler.com/guides/java-microservices-a-practical-guide)
 

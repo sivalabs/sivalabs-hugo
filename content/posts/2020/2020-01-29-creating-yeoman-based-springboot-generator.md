@@ -16,6 +16,9 @@ I needed to create lot of Spring(Boot) applications for various reasons like
 [book sample code](https://github.com/sivaprasadreddy/beginning-spring-boot-2) and for my personal learning as well. 
 So, I needed some tool/mechanism to quickly create Spring(Boot) application with most commonly used configuration.
 
+<!--more-->
+
+
 I know we have the most popular [SpringBoot Initializer](http://start.spring.io/) to create SpringBoot applications. 
 But, it generates the application with only selected starter dependencies added and nothing more.
 

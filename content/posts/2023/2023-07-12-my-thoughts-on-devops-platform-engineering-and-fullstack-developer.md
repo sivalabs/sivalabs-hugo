@@ -17,6 +17,9 @@ A decade ago it was Agile/Scrum, then DevOps, then SRE and now Platform Engineer
 Somehow, I got curious about what is all the fuss about Platform engineering and read a bit about it, 
 and I felt **"Oh, people realized that DevOps is a good idea but impractical, and they are correcting it now"**.
 
+<!--more-->
+
+
 Though these ideologies/processes like Agile, DevOps, etc are created with good intentions, 
 somehow they are misunderstood and applied wrongly and end up with not so good results.
 

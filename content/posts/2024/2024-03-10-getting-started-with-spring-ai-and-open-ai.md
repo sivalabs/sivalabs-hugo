@@ -17,6 +17,10 @@ In this article, we will explore the following:
 * Using **PromptTemplates**.
 * Using **OutputConverters**.
 
+Let's get started.
+
+<!--more-->
+
 {{< box info >}}
 **Sample Code Repository**
 

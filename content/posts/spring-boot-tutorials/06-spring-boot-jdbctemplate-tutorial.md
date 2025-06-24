@@ -17,6 +17,9 @@ Spring's **JdbcTemplate** provides high-level abstraction on top of **DataSource
 In addition to that Spring's declarative Transaction Management capabilities helps to manage database transactions 
 in a simplified way without having to write boilerplate code.
 
+<!--more-->
+
+
 Spring Boot simplifies the configuration of **DataSource**, **TransactionManager**, etc. by using 
 it's AutoConfiguration mechanism.
 
@@ -347,7 +350,7 @@ Then we have written various tests to test our CRUD operations.
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

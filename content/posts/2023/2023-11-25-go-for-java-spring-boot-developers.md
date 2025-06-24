@@ -17,6 +17,9 @@ Within the Java ecosystem, Spring Boot is my go-to framework for building applic
 I used the Go language for an official project a couple of years ago, and initially I had mixed feelings about it.
 But the more I use it, the more I like it.
 
+<!--more-->
+
+
 I wanted to expand my skill set and decided to get more hands-on experience with Go.
 Whenever I try to learn a new language or a framework, I try to map the concepts of the new framework/language
 to the one I am already familiar with. This helps me to understand the new framework/language ecosystem faster.

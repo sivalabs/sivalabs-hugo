@@ -27,6 +27,9 @@ In this post, we are going to learn:
 * Create Spring Cloud Config Server
 * Using Vault for storing sensitive data
 
+<!--more-->
+
+
 **MicroServices using Spring Boot & Spring Cloud**
 
 * [Part 1 : MicroServices : Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})

@@ -22,7 +22,7 @@ In out **mainLayout.html** header we have ShoppingCart icon showing the cart ite
 </div>
 ```
 
-When customer clicks on Cart icon we will show the Cart details. Let us implement the **&#8220;/cart&#8221;** url handler method in **CartController** as follows:
+When customer clicks on Cart icon we will show the Cart details. Let us implement the **"/cart"** url handler method in **CartController** as follows:
 
 ```java
 @Controller

@@ -10,7 +10,7 @@ categories: [SpringBoot]
 tags: [SpringBoot, DevOps]
 ---
 
-Few years ago I wrote a series of blog posts on [Developing a simple e-commerce application from scratch to production using SpringBoot]({{< relref "2015-11-20-developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot.md" >}}).
+Few years ago I wrote a series of blog posts on **Developing a simple e-commerce application from scratch to production using SpringBoot**.
 Well, I covered most of the development stuff but left "to production" part because other things came up. Many things changed since then.
 
 Now I want to write a series of articles focusing on deployment and monitoring.

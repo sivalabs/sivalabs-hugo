@@ -12,10 +12,13 @@ tags:
 ---
 ## Happy new year to you :-)
 
-![Happy new year](/images/2018-year.webp "Happy new year")
 
 I don't really believe in new year resolutions or making big 5 year plans!! 
 But I do realize that by making a list of things that I want to do keeps me focus on those things and minimize the distractions.
+
+<!--more-->
+
+![Happy new year](/images/2018-year.webp "Happy new year")
 
 Before going to talk about my grand plans for 2018 let me take moment and see how was my 2017.
 

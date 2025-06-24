@@ -16,12 +16,12 @@ After installing CentOS 7, before installing Virtualbox Guest Additions first th
  
 `sudo yum update`
 
-When I run this command I got the error &#8220;**cannot find a valid baseurl for repo**&#8220;
+When I run this command I got the error "**cannot find a valid baseurl for repo**"
 
 After googling for sometime I figured that **the network card is not enabled by default** and I need to enable the baseUrl in some configuration file.
 
 1) Edit **_/etc/sysconfig/network-scripts/ifcfg-eth0_** file and change **ONBOOT=no** to **ONBOOT=yes**  
-Instead of **eth0** you may have a different file name. To know the right one, run the command &#8220;**ifconfig -a**&#8220;
+Instead of **eth0** you may have a different file name. To know the right one, run the command "**ifconfig -a**"
 
 2) Edited the file **_/etc/yum.repos.d/CentOS-Base.repo_** and uncomment **baseurl**.
 

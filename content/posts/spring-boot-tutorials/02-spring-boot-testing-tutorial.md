@@ -17,6 +17,9 @@ we have learned how to create a Spring Boot application and built a simple REST 
 
 In this tutorial, you will learn how to write **unit**, **slice** and **integration tests** for your Spring Boot application.
 
+<!--more-->
+
+
 ## Testing Spring Boot applications
 We should write Unit Tests to verify the business logic of a particular unit(a class, a method, or a set of classes),
 and they shouldn't be talking to any external services like database, queues or other webservices etc.
@@ -236,7 +239,7 @@ Gradle:
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page.
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page.
 {{< /box >}}
 
 ## Summary

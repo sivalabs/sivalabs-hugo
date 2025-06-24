@@ -16,6 +16,9 @@ In the previous [Spring Boot JdbcTemplate Tutorial]({{< relref "06-spring-boot-j
 we have seen how to initialize database using **schema.sql** and **data.sql** scripts.
 This may be useful for demos and quick prototypes, but for real world applications we should use a database migration tool.
 
+<!--more-->
+
+
 [Flyway](https://flywaydb.org/) is one of the most popular Java-based database migration libraries.
 Database migrations can be performed using Flyway as a standalone library, 
 using [flyway-maven-plugin](https://documentation.red-gate.com/fd/maven-goal-184127408.html) 
@@ -196,7 +199,7 @@ such as **JdbcTemplate**, **Spring Data Jdbc**, **Spring Data JPA**, **jOOQ**, e
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

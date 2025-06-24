@@ -15,6 +15,9 @@ Nowadays we might need to work with multiple languages to some extent such as Py
 
 Out of personal interest I started learning [Go Language](https://golang.org/) 3 months ago and I am using Go for our current application. In this article I would like to share my first impression on Go language.
 
+<!--more-->
+
+
 ## 1. Happy Beginning
 
 Few years ago I thought of switching from WordPress to a static generator for my blog and tried [Jekyll](https://jekyllrb.com/) and [Hugo](https://gohugo.io/).

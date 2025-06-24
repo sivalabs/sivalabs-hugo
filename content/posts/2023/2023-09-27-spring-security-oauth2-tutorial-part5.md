@@ -11,9 +11,18 @@ categories: ["SpringBoot"]
 tags: [SpringBoot, SpringSecurity, OAuth2]
 description: In this tutorial, you will learn how OAuth 2.0 Implicit Flow and Resource Owner Password Credentials Flow works.
 ---
+
 In the [Part 4: OAuth 2.0 Authorization Code Flow with PKCE]({{< relref "2023-09-27-spring-security-oauth2-tutorial-part4.md" >}}), 
 we learned how to acquire **access_token** using **Authorization Code Flow with PKCE**. 
+
 In this article, we will explore how to use **Implicit Flow** and **Resource Owner Password Credentials Flow**.
+
+<!--more-->
+
+
+## Implicit Flow
+The **Implicit Flow** is a kind of shorter version of **Authorization Code Flow** where you will be directly getting **access_token**
+using **authorization_endpoint** itself.
 
 {{< box warning >}}
 **IMPORTANT**
@@ -22,10 +31,6 @@ The **Implicit Flow** and **Resource Owner Password Credentials Flow** are **DEP
 
 Unless you have a good reason, you shouldn't be using them.
 {{< /box >}}
-
-## Implicit Flow
-The **Implicit Flow** is a kind of shorter version of **Authorization Code Flow** where you will be directly getting **access_token**
-using **authorization_endpoint** itself.
 
 If you have been following this series, you know how to create a Client with certain **Authentication flows** enabled.
 Instead of creating a new client, let's enable **Implicit flow** for **messages-webapp** client.

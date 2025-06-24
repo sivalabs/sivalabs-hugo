@@ -17,6 +17,9 @@ for performing database operations using a fluent API.
 Spring Boot 3.2 includes Spring framework 6.1, so let's take a quick look at 
 how we can use **JdbcClient** to implement various database operations in a simplified manner.
 
+<!--more-->
+
+
 First, let's go to https://start.spring.io/ and create a Spring Boot application by selecting 
 **Spring JDBC**, **PostgreSQL Driver**, **Flyway Migration**, and **Testcontainers** starters.
 
@@ -283,7 +286,7 @@ We have used the Testcontainers special JDBC URL to start PostgreSQL database an
 {{< box info >}}
 **Spring Boot Tutorials**
 
-You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{< relref "/spring-boot-tutorials" >}}) page. 
+You can find more Spring Boot tutorials on [Spring Boot Tutorials]({{% relref "/pages/spring-boot-tutorials" %}}) page. 
 {{< /box >}}
 
 ## Summary

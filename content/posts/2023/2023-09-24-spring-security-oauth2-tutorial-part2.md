@@ -14,6 +14,9 @@ description: In this tutorial, you will learn how OAuth 2.0 Authorization Code F
 In the [Part 1: Getting familiar with OAuth 2 concepts]({{< relref "2023-09-22-spring-security-oauth2-tutorial-part1.md" >}}), we learned how to set up Keycloak, created a realm, a client with Standard flow enabled and a user.
 In this Part 2, you will learn how to authenticate a user using **Authorization Code Flow**.
 
+<!--more-->
+
+
 First of all, let's clear up the confusion between **Authorization Code Grant Type** vs **Authorization Code Flow**.
 
 As I mentioned earlier, **OAuth 2.0** spec concern about only **Authorization** and 

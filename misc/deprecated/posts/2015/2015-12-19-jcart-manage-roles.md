@@ -14,8 +14,7 @@ In our previous post **Manage Privileges – List all privileges** we have imple
 
 Basically a Role is nothing a but group of Permissions assigned so that giving access to a set of action to user will become easy by assigning Roles.
 
-In this post we are going to see lot of code snippets, so I would suggest to clone the repo <a href="https://github.com/sivaprasadreddy/jcart" target="_blank">https://github.com/sivaprasadreddy/jcart</a>.
-
+In this post we are going to see lot of code snippets, so I would suggest to clone the repo [https://github.com/sivaprasadreddy/jcart](https://github.com/sivaprasadreddy/jcart).
 We already have **Role** JPA entity created and some sample data is already inserted using data.sql script.
 
 ## List all Roles
@@ -51,7 +50,7 @@ public class SecurityService
 
 Create a SpringMVC controller to handle all Role related actions.
   
-This action should be available to only users who have &#8220;**ROLE\_MANAGE\_ROLES**&#8220;, so let us add @Secured annotation to **RoleController**.
+This action should be available to only users who have **ROLE\_MANAGE\_ROLES**, so let us add @Secured annotation to **RoleController**.
 
 ```java
 @Controller
@@ -137,13 +136,13 @@ Create thymeleaf view **jcart-admin/src/main/resources/templates/roles/roles.htm
 </html>
 ```
 
-Observe that though we have not yet implemented functionality for adding new Role or view/edit Role we have added &#8220;New Role&#8221; button and links to view/edit Role info which we are going to implement next.
+Observe that though we have not yet implemented functionality for adding new Role or view/edit Role we have added **New Role** button and links to view/edit Role info which we are going to implement next.
 
 Now run **JCartAdminApplication.java** and login and go click on Roles menu in Left side navigation and you should be able to see list of all Roles.
 
 ## Create New Role
 
-In our List Roles screen we have added a button &#8220;New Role&#8221; which will take you to &#8220;roles/new&#8221; URL. Let us implement SpringMVC controller methods to handle showing new role form and role creation POST method.
+In our List Roles screen we have added a button “New Role” which will take you to “roles/new” URL. Let us implement SpringMVC controller methods to handle showing new role form and role creation POST method.
 
 While showing New Role form we should also show list of permission that we would like to add to the newly creating Role.
 
@@ -191,7 +190,7 @@ public class RoleValidator implements Validator
 }
 ```
 
-One thing to notice here is we already have **BeanValidation** annotation **@NotEmpty** on **&#8220;name&#8221;** property which SpringMVC automatically checks for. But we also need to check whether the new is already in use or not by talking to database.
+One thing to notice here is we already have **BeanValidation** annotation **@NotEmpty** on **"name"** property which SpringMVC automatically checks for. But we also need to check whether the new is already in use or not by talking to database.
 
 Also observe that we are using message keys from ResourceBundle **messages.properties** to have internationalization.
 
@@ -349,9 +348,9 @@ Let us create the CreateRole thymeleaf view **jcart-admin/src/main/resources/tem
 
 ### Few things to observe:
 
-  * We are applying css error class if a field has error using th:classappend=&#8221;${#fields.hasErrors(&#8216;name')}? &#8216;has-error'&#8221;
-  * Showing error if a field has error using <p th:if=&#8221;${#fields.hasErrors(&#8216;name')}&#8221; th:errors=&#8221;*{name}&#8221; th:class=&#8221;text-red&#8221;>Incorrect data</p>
-  * We are iterating through List<Permission> showing them as checkboxes and binding the selected checkboxes (Permission Ids) to &#8220;id&#8221; property of List<Permission> permissions property in Role as follows:
+* We are applying css error class if a field has error using `th:classappend="${#fields.hasErrors('name')}? 'has-error'"`
+* Showing error if a field has error using `<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="text-red">Incorrect data</p>`
+* We are iterating through `List<Permission>` showing them as checkboxes and binding the selected checkboxes (Permission Ids) to "id" property of `List<Permission>` permissions property in `Role` as follows:
 
 ```html
 <p th:each="permission,rowStat : ${permissionsList}">

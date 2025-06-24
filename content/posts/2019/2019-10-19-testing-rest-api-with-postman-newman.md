@@ -14,6 +14,9 @@ tags: [postman, newman, testing]
 I guess most of the developers are familiar with how to use Postman to send various types (GET, POST, PUT, DELETE, etc) of HTTP requests 
 with various types of payloads (form data, JSON etc).
 
+<!--more-->
+
+
 In addition to triggering one API request and verifying the response, I frequently come across some common needs like
 
 * Call an API and assert response

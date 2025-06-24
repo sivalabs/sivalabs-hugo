@@ -59,7 +59,7 @@ _I feel there are more severe issues than architecture issues which are causing 
 
   * Having developers without sufficient skills
   * Having developers who don't want to learn anything new
-  * Having developers who don't have courage to say &#8220;NO, we can't do that in that time&#8221;
+  * Having developers who don't have courage to say "NO, we can't do that in that time"
   * Having Architects who abandoned coding years ago
   * Having Architects who think they know everything and don't need to listen to their developers pain
   * Having Managers who just blame the developers for not meeting the imposed deadlines without ever asking the&nbsp; developers for time-lines
@@ -68,6 +68,6 @@ These are the real problems which are really causing the project failures.
 
 **Now do you think just moving to MicroServices architecture saves the IT without fixing these problems?**
 
-Continuously innovating new ways of doing things is awesome and is required to move ahead. At the same time assuming &#8220;the next cool methodology/technology will fix all the problems is also wrong&#8221;.
+Continuously innovating new ways of doing things is awesome and is required to move ahead. At the same time assuming "the next cool methodology/technology will fix all the problems is also wrong".
 
 > So those of you who are just about to jump on MicroServices boat..THINK. FIX THE REAL PROBLEMS FIRST. You can't fill a bottle which has a hole at it's bottom.

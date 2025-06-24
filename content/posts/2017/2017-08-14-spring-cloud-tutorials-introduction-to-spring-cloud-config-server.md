@@ -16,6 +16,9 @@ tags:
 
 SpringBoot provides lot of flexibility in externalizing configuration properties via properties or YAML files. We can also configure properties for each environment (dev, qa, prod etc) separately using profile specific configuration files such as **application.properties**, **application-dev.properties**, **application-prod.properties** etc. But once the application is started we can not update the properties at runtime. If we change the properties we need to restart the application to use the updated configuration properties.
 
+<!--more-->
+
+
 Also, in the context of large number of MicroService based applications, we want the ability to configure and manage the configuration properties of all MicroServices from a centralized place.
 
 # Solution
@@ -192,7 +195,7 @@ Spring Cloud Config Server exposes the following REST endpoints to get applicati
 /{label}/{application}-{profile}.properties
 ```
 
-Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to &#8220;master&#8221;).
+Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to "master").
 
 Now if you access the URL http://localhost:8888/catalogservice/default then you will get the following response with catalogservice **default** configuration details:
 

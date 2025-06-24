@@ -17,9 +17,9 @@ popular: false
 ---
 We can find plenty of information on any technical topic, be it Java, .NET, Python or any frameworks like Spring, Hibernate, CDI, JSF etc. You can find hundreds of well written blogs on many of these topics. For example, you can find lot of tutorials on how to use SpringBoot or how to use various mappings in JPA/Hibernate or how to do form validations in JSF etc. Also, there are plenty of books published by well established publishers on most of the technologies.
 
-But once the &#8220;Junior Developer&#8221; stage is crossed, many developers would like to learn more about how to design an application, how to modularize the code, what security aspects should be considered, what measures we should take while deploying into production and how to handle the production issues etc.
+But once the "Junior Developer" stage is crossed, many developers would like to learn more about how to design an application, how to modularize the code, what security aspects should be considered, what measures we should take while deploying into production and how to handle the production issues etc.
 
-We can find articles on these topics in bits and pieces but not in an organized manner. So, I thought of starting a series of articles covering &#8220;**How to develop an application from scratch to production?**&#8220;. What I am going to do is I will start developing an application (neither a simple HelloWorld app nor a NextGenerationAwesome product, but a decent size application) and write a series of articles explaining how we can develop the application in a step by step manner.
+We can find articles on these topics in bits and pieces but not in an organized manner. So, I thought of starting a series of articles covering "**How to develop an application from scratch to production?**". What I am going to do is I will start developing an application (neither a simple HelloWorld app nor a NextGenerationAwesome product, but a decent size application) and write a series of articles explaining how we can develop the application in a step by step manner.
 
 ### Why I am writing these article series?
 
@@ -81,7 +81,7 @@ We will develop an e-commerce application using Java technologies. We will start
 
 &nbsp;
 
-For this whole exercise we will build a ShoppingCart application &#8220;JCart&#8221; using SpringBoot, SpringMVC, Thymeleaf, JPA(Hibernate). I too have this habit of prefixing with J for everything I built with Java :-).
+For this whole exercise we will build a ShoppingCart application "JCart" using SpringBoot, SpringMVC, Thymeleaf, JPA(Hibernate). I too have this habit of prefixing with J for everything I built with Java :-).
 
 If everything goes as planned and once we finish this application, then probably I will try to implement the same application using JavaEE stack (CDI, EJB, JPA, JSF etc).
 

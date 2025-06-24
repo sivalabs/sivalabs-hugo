@@ -13,6 +13,9 @@ Java is and has been the primary programming language I have used throughout my 
 If I want to build something quick for a prototype or if I need to pick the tech stack with a tight deadline then Java is my first choice.
 Especially after Java 8 it becomes more and more feature rich and powerful. 
 
+<!--more-->
+
+
 On top of it with frameworks like [SpringBoot](https://spring.io/projects/spring-boot), [Quarkus](https://quarkus.io/) and [Micronaut](https://micronaut.io/) building enterprise grade applications becomes a breeze.
 **When people from Non-Java community complain about Java being verbose and complex, I actually don't get it.**
 

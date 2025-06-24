@@ -13,6 +13,8 @@ tags: [Java, SpringBoot, IntelliJ, Microservices]
 
 As a Java Developer Advocate at JetBrains, I frequently demonstrate IntelliJ IDEA features through videos and articles. To do this, I usually create small demo applications focused on specific features. While this works well initially, the number of such applications grows quickly. Soon, it becomes difficult to remember which app was built for what purpose, turning it into a maintenance headache.
 
+<!--more-->
+
 Some of the newer features in IntelliJ IDEA, like [Spring Debugger](https://www.jetbrains.com/help/idea/spring-debugger.html) and [Workspaces](https://blog.jetbrains.com/idea/2024/08/workspaces-in-intellij-idea/), require more complex applications to showcase their capabilities effectively.
 
 * [Spring Debugger Features Preview in Tweets](https://x.com/intellijidea/status/1927686185247215911)

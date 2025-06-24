@@ -13,6 +13,8 @@ tags: [Tech, Architecture]
 In the software development world, trends come and go, and often we go through the same cycle again and again.
 It seems 2024 is the year of **"Framework vs Libraries"** debate. I mean this debate is not new, but it is getting louder again.
 
+<!--more-->
+
 For example, most of the Go community prefers to use libraries instead of a framework.
 The Java community is divided into two groups, one prefers to use Spring Boot or Quarkus or Micronaut, and the other prefers to use libraries.
 

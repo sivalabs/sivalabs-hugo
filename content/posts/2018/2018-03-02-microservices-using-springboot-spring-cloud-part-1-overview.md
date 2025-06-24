@@ -22,6 +22,9 @@ using MicroServices architecture. In Java community, SpringBoot is the most wide
 I am planning to write a series of articles covering how to build microservices using [SpringBoot](https://projects.spring.io/spring-boot/) 
 and [SpringCloud](https://projects.spring.io/spring-cloud/).
 
+<!--more-->
+
+
 In this article we are going to learn about following:
 
 * Monoliths

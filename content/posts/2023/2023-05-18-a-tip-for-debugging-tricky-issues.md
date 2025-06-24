@@ -13,6 +13,9 @@ tags: [Debugging, Tips]
 While building software, once in a while we face some weird issue which is supposed to just work fine 
 according to our understanding, but it is not working, and we don't have any clue. 
 
+<!--more-->
+
+
 We spent hours and hours trying to understand what the hell is going wrong and why it is not working.
 Even worse, the exact same code is working fine in a small demo application. 
 We all have been into this situation at some point in our careers, right?

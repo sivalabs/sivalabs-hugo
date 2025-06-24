@@ -22,6 +22,11 @@ we need a mechanism to call other services without hardcoding their hostnames or
 In addition to that, in Cloud environments service instances may come up and go down anytime. 
 So we need some automatic service registration and discovery mechanism. **Spring Cloud** provides **Service Registry and Discovery** features, as usual, 
 with multiple options. We can use **Netflix Eureka** or **Consul** for Service Registry and Discovery. 
+
+
+<!--more-->
+
+
 In this post, we will learn how to use SpringCloud Netflix Eureka for Service Registry and Discovery.
 
 **MicroServices using Spring Boot & Spring Cloud**

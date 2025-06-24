@@ -16,6 +16,9 @@ Even when they have to deal with difficulties in life they deal with it calmly.
 Even when some people undermine them they simply give a smile and move on rather than trying to prove they are wrong.
 **I wonder is growing older makes them wise?**
 
+<!--more-->
+
+
 Looking at some people I know who is in their 50's, I can confidently say **No, becoming older doesn't make them wiser automatically** :-)
 
 But, I guess they have seen enough things in their lifetime, and they understood that **this too will pass** and 

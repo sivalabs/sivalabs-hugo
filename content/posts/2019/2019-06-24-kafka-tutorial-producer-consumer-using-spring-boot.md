@@ -13,6 +13,9 @@ In the previous post [Kafka Tutorial - Java Producer and Consumer]({{< relref "2
 
 In this post we are going to look at how to use Spring for Kafka which provides high level abstraction over Kafka Java Client API to make it easier to work with Kafka.
 
+<!--more-->
+
+
 > You can find the source code for this article at https://github.com/sivaprasadreddy/kafka-tutorial
 
 ## Spring for Kafka without SpringBoot

@@ -13,8 +13,12 @@ description: In this tutorial, you will learn how OAuth 2.0 Client Credentials F
 ---
 In the [Part 2: OAuth 2.0 Authorization Code Flow]({{< relref "2023-09-24-spring-security-oauth2-tutorial-part2.md" >}}), 
 we learned how to authenticate a user using **Authorization Code Flow**. 
+
 In this article, we will explore how to use **Client Credentials Flow** that is typically used for **Service-to-Service** 
 communication without any user (Resource Owner) context.
+
+<!--more-->
+
 
 ## Client Credentials Flow
 Sometimes a Resource Server needs to interact with another Resource Server without any user context.

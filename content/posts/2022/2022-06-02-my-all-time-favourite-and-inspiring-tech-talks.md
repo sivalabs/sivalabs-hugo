@@ -12,6 +12,9 @@ tags: [videos]
 We, software developers, aspire to become better by learning new tools and techniques.
 In addition to that, I find listening to the experts and learning from their experiences is a great way to upskill ourselves.
 
+<!--more-->
+
+
 We may want to learn a new technology, or want to start our own start-up company or learn why some hyped technologies failed.
 Also, we may want to learn some behavioural aspects like how to be empathetic to others, be a better mentor to juniors etc.
 

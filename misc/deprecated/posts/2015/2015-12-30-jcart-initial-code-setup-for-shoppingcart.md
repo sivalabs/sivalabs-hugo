@@ -83,11 +83,9 @@ Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our Sho
 </project>
 ```
 
-For our JCart - Admin application we have used **AdminLTE** (<a href="https://almsaeedstudio.com/preview" target="_blank">https://almsaeedstudio.com/preview</a>) theme which is based on Bootstrap with nice coloring scheme. It looks good for Administration kind of applications but not so good for a public facing e-commerce application, IMHO.
+For our JCart - Admin application we have used **AdminLTE** ([https://almsaeedstudio.com/preview](https://almsaeedstudio.com/preview)) theme which is based on Bootstrap with nice coloring scheme. It looks good for Administration kind of applications but not so good for a public facing e-commerce application, IMHO. 
 
-As I said earlier I am not a UI designer, so again I have googled for free e-commerce templates and found **Ustora HTML5 ECommerce Template** (<a href="https://www.freshdesignweb.com/ustora/" target="_blank">https://www.freshdesignweb.com/ustora/</a>)
-  
-which looks good to me. So we will be using this template for our ShoppingCart screens.
+As I said earlier I am not a UI designer, so again I have googled for free e-commerce templates and found **Ustora HTML5 ECommerce Template** ([https://www.freshdesignweb.com/ustora/](https://www.freshdesignweb.com/ustora/)) which looks good to me. So we will be using this template for our ShoppingCart screens.
 
 ### Configuring HTTPS/SSL
 
