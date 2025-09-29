@@ -1,0 +1,164 @@
+:root {
+    --primary-color: #0d6efd; /* Accent Blue */
+    --dark-bg: #ffffff;      /* Main Background */
+    --dark-card: #f8f9fa;    /* Card/Navbar Background */
+    --text-light: #212529;   /* Main Dark Text */
+    --text-muted: #6c757d;   /* Muted Gray Text */
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    scroll-behavior: smooth;
+    padding-top: 70px; /* Offset for fixed navbar */
+}
+
+.navbar {
+    background-color: var(--dark-card) !important;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Nav links and brand text updated for dark text on light background */
+.navbar-brand, .nav-link {
+    font-weight: 600;
+    color: var(--text-light) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.card {
+    background-color: var(--dark-card);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Lighter border */
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0a58ca; /* Darker primary color */
+    border-color: #0a58ca;
+}
+
+/* Updated Secondary button for light theme */
+.btn-outline-light {
+    color: var(--text-light);
+    border-color: var(--text-muted);
+}
+
+.btn-outline-light:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    border-color: var(--primary-color);
+}
+
+/* Hero Section Specific */
+#profile {
+    /* Dark radiant gradient background for a modern hero */
+    background:
+        radial-gradient(1000px circle at -10% -10%, rgba(99, 102, 241, 0.35), transparent 60%),
+        radial-gradient(800px circle at 110% -10%, rgba(236, 72, 153, 0.25), transparent 60%),
+        linear-gradient(180deg, #0b1020 0%, #0a0f1e 60%, #070b16 100%);
+    color: #e5e7eb; /* Default light text on dark */
+    padding: 100px 0 100px;
+}
+
+.profile-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #ffffff !important; /* Ensure strong contrast on dark bg */
+}
+
+/* Keep the accent vibe but ensure readability on dark */
+.profile-subtitle {
+    color: #60a5fa; /* Soft sky-blue accent */
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* Improve text contrast inside hero */
+#profile .text-muted,
+#profile .text-secondary {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Button styling tuned for dark hero */
+#profile .btn-outline-light {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+#profile .btn-outline-light:hover {
+    background-color: #ffffff;
+    color: #0b1020;
+    border-color: #ffffff;
+}
+
+.profile-image-container {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 0 10px rgba(13, 110, 253, 0.2);
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Services and Projects styling */
+.badge-pill {
+    padding: 0.5em 1em;
+    border-radius: 50rem;
+    font-size: 0.85rem;
+}
+
+/* Contact form styling */
+.form-control {
+    background-color: #e9ecef; /* Light gray input background */
+    border: 1px solid #ced4da;
+    color: var(--text-light);
+    border-radius: 8px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    background-color: #e9ecef;
+    color: var(--text-light);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-label {
+    color: var(--text-muted);
+}
+
+/* Larger badges exclusively for the Skills section */
+#skills .badge {
+    font-size: 0.95rem;      /* Increase text size */
+    padding: 0.6em 0.9em;    /* Increase vertical and horizontal padding */
+}

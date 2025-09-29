@@ -2,10 +2,14 @@
 title: Microservices Tutorials
 author: Siva
 type: page
-date: 2023-07-18T02:32:39+00:00
-url: /microservices-tutorials/
-categories: ["Microservices"]
-tags: ["Microservices"]
+date: 2023-07-18T02:32:39.000Z
+url: /blog/microservices-tutorials/
+categories:
+  - Microservices
+tags:
+  - Microservices
+aliases:
+  - /microservices-tutorials/
 ---
 
 ### Microservices

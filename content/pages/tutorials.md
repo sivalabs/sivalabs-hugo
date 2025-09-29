@@ -2,10 +2,14 @@
 title: Tutorials
 author: Siva
 type: page
-date: 2020-11-30T02:32:39+00:00
-url: /tutorials/
-categories: ["Java"]
-tags: ["Java"]
+date: 2020-11-30T02:32:39.000Z
+url: /blog/tutorials/
+categories:
+  - Java
+tags:
+  - Java
+aliases:
+  - /tutorials/
 ---
 
 ### Kubernetes

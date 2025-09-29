@@ -2,10 +2,14 @@
 title: Kubernetes Tutorials
 author: Siva
 type: page
-date: 2023-07-18T02:32:39+00:00
-url: /kubernetes-tutorials/
-categories: ["Kubernetes"]
-tags: ["Kubernetes"]
+date: 2023-07-18T02:32:39.000Z
+url: /blog/kubernetes-tutorials/
+categories:
+  - Kubernetes
+tags:
+  - Kubernetes
+aliases:
+  - /kubernetes-tutorials/
 ---
 
 ### Kubernetes

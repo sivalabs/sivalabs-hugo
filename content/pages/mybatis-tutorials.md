@@ -2,10 +2,14 @@
 title: MyBatis Tutorials
 author: Siva
 type: page
-date: 2023-07-18T02:32:39+00:00
-url: /mybatis-tutorials/
-categories: ["MyBatis"]
-tags: ["MyBatis"]
+date: 2023-07-18T02:32:39.000Z
+url: /blog/mybatis-tutorials/
+categories:
+  - MyBatis
+tags:
+  - MyBatis
+aliases:
+  - /mybatis-tutorials/
 ---
 
 ### MyBatis

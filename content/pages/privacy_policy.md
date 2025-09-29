@@ -2,8 +2,10 @@
 title: Privacy Policy
 author: Siva
 type: page
-date: 2023-07-24
-url: /privacy_policy/
+date: 2023-07-24T00:00:00.000Z
+url: /blog/privacy_policy/
+aliases:
+  - /privacy_policy/
 ---
 
 # Privacy Policy
