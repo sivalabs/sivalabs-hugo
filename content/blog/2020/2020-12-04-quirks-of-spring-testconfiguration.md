@@ -1,13 +1,18 @@
 ---
 title: Quirks of Spring's @TestConfiguration
 author: Siva
-images: ["/preview-images/surprised.webp"]
+images:
+  - /preview-images/surprised.webp
 type: post
 draft: false
-date: 2020-12-04T04:59:17+05:30
-url: /quirks-of-spring-testconfiguration/
-categories: [SpringBoot]
-tags: [SpringBoot]
+date: 2020-12-03T23:29:17.000Z
+url: /blog/quirks-of-spring-testconfiguration/
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+aliases:
+  - /quirks-of-spring-testconfiguration/
 ---
 If you know me you know that I am a big fan of Spring ecosystem.
 I have been using Spring framework since 2007, and I am pretty familiar with many of its features.

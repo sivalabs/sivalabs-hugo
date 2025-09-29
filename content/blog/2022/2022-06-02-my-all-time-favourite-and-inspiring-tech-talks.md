@@ -1,13 +1,18 @@
 ---
 title: My all-time favourite 20 inspiring Tech Talks
 author: Siva
-images: ["/preview-images/audience.webp"]
+images:
+  - /preview-images/audience.webp
 type: post
 draft: false
-date: 2022-06-02T04:59:17+05:30
-url: /my-all-time-favourite-20-inspiring-tech-talks/
-categories: [Videos]
-tags: [videos]
+date: 2022-06-01T23:29:17.000Z
+url: /blog/my-all-time-favourite-20-inspiring-tech-talks/
+categories:
+  - Videos
+tags:
+  - videos
+aliases:
+  - /my-all-time-favourite-20-inspiring-tech-talks/
 ---
 We, software developers, aspire to become better by learning new tools and techniques.
 In addition to that, I find listening to the experts and learning from their experiences is a great way to upskill ourselves.

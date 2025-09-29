@@ -1,13 +1,18 @@
 ---
 title: Why I am excited to join AtomicJar
 author: Siva
-images: ["/images/AtomicJar.webp"]
+images:
+  - /images/AtomicJar.webp
 type: post
 draft: true
-date: 2022-11-01T04:59:17+05:30
-url: /why-i-joined-atomicjar/
-categories: [Career]
-tags: [career]
+date: 2022-10-31T23:29:17.000Z
+url: /blog/why-i-joined-atomicjar/
+categories:
+  - Career
+tags:
+  - career
+aliases:
+  - /why-i-joined-atomicjar/
 ---
 
 After working as a Developer/TechLead/Architect for around 16 years, I am joining [AtomicJar](https://www.atomicjar.com/) as a **Developer Advocate**.

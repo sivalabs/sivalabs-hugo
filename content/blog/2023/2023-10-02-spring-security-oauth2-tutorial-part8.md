@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 8 : Securing Resource Server"
+title: 'Spring Security OAuth 2 Tutorial - 8 : Securing Resource Server'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part8.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part8.webp
 type: post
 draft: false
-date: 2023-10-02T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-securing-resource-server
+date: 2023-10-02T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-securing-resource-server
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, we will create a Spring Boot Resource Server and secure it with Spring Security OAuth 2.0 using Keycloak.
+aliases:
+  - /spring-security-oauth2-tutorial-securing-resource-server
 ---
 
 In the previous article, we have created **messages-webapp** and secured it with **Spring Security OAuth 2.0** using Authorization Code Flow.

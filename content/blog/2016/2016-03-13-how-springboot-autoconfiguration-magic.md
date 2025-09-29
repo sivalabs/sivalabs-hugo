@@ -2,13 +2,15 @@
 title: How SpringBoot AutoConfiguration magic works?
 author: Siva
 type: post
-date: 2016-03-13T07:04:56+00:00
-url: /how-springboot-autoconfiguration-magic/
+date: 2016-03-13T07:04:56.000Z
+url: /blog/how-springboot-autoconfiguration-magic/
 categories:
   - Spring
 tags:
   - SpringBoot
 popular: true
+aliases:
+  - /how-springboot-autoconfiguration-magic/
 ---
 In my previous post [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}}) we have looked at how to create a SpringBoot application. But you may or may not understand what is going on behind the scenes. You may want to understand the magic behind the SpringBoot’s AutoConfiguration.
 

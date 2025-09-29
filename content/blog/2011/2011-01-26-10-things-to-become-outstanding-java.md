@@ -2,8 +2,8 @@
 title: 10 things to become an outstanding Java developer
 author: Siva
 type: post
-date: 2011-01-26T07:11:00+00:00
-url: /10-things-to-become-outstanding-java/
+date: 2011-01-26T07:11:00.000Z
+url: /blog/10-things-to-become-outstanding-java/
 categories:
   - Best-Practices
   - Java
@@ -11,6 +11,8 @@ tags:
   - best-practices
   - Java
 popular: true
+aliases:
+  - /10-things-to-become-outstanding-java/
 ---
 If you are a java developer and passionate about technology, you can follow the below things which makes you an outstanding Java developer.
 

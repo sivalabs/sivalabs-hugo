@@ -1,15 +1,21 @@
 ---
-title: "The new JdbcClient Introduced in Spring Framework 6.1"
+title: The new JdbcClient Introduced in Spring Framework 6.1
 author: Siva
-images: ["/preview-images/spring-jdbcclient.webp"]
+images:
+  - /preview-images/spring-jdbcclient.webp
 type: post
 draft: false
-date: 2023-08-29T06:00:00+05:30
-url: /spring-boot-jdbcclient-tutorial
+date: 2023-08-29T00:30:00.000Z
+url: /blog/spring-boot-jdbcclient-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to use JdbcClient API introduced in Spring Framework 6.1 to perform various JDBC operations using Fluent API.
+aliases:
+  - /spring-boot-jdbcclient-tutorial
 ---
 Spring framework 6.1 introduced a new **JdbcClient** API, which is a wrapper on top of **JdbcTemplate**,
 for performing database operations using a fluent API.

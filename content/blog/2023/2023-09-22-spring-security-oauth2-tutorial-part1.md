@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 1 : Getting familiar with OAuth 2 concepts"
+title: 'Spring Security OAuth 2 Tutorial - 1 : Getting familiar with OAuth 2 concepts'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part1.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part1.webp
 type: post
 draft: false
-date: 2023-09-22T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-introduction
+date: 2023-09-22T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-introduction
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, you will learn the basic concepts of OAuth 2.0 using Keycloak.
+aliases:
+  - /spring-security-oauth2-tutorial-introduction
 ---
 Security is a complex topic to understand in-depth. In addition to that, implementing security for complex microservices based systems 
 using [OAuth 2.0](https://datatracker.ietf.org/doc/html/rfc6749) and 

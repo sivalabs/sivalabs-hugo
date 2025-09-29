@@ -1,13 +1,19 @@
 ---
 title: A Tip for Debugging Tricky Software Bugs or Issues
 author: Siva
-images: ["/preview-images/debugging.webp"]
+images:
+  - /preview-images/debugging.webp
 type: post
 draft: false
-date: 2023-05-18T04:59:17+05:30
-url: /a-tip-for-debugging-tricky-software-bugs-issues/
-categories: [Tips]
-tags: [Debugging, Tips]
+date: 2023-05-17T23:29:17.000Z
+url: /blog/a-tip-for-debugging-tricky-software-bugs-issues/
+categories:
+  - Tips
+tags:
+  - Debugging
+  - Tips
+aliases:
+  - /a-tip-for-debugging-tricky-software-bugs-issues/
 ---
 
 While building software, once in a while we face some weird issue which is supposed to just work fine 

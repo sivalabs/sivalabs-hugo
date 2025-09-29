@@ -1,13 +1,18 @@
 ---
 title: Creating Yeoman based SpringBoot Generator
 author: Siva
-images: ["/preview-images/yeoman-logo.webp"]
+images:
+  - /preview-images/yeoman-logo.webp
 type: post
-date: 2020-01-29T04:59:17+05:30
-url: /creating-yeoman-based-springboot-generator/
+date: 2020-01-28T23:29:17.000Z
+url: /blog/creating-yeoman-based-springboot-generator/
 categories:
   - SpringBoot
-tags: [SpringBoot, Yeoman]
+tags:
+  - SpringBoot
+  - Yeoman
+aliases:
+  - /creating-yeoman-based-springboot-generator/
 ---
 
 I have been working with Spring and [SpringBoot](https://spring.io/projects/spring-boot) for many years and 

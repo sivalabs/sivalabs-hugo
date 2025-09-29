@@ -1,13 +1,21 @@
 ---
 title: Kubernetes - Blue/Green Deployments
 author: Siva
-images: ["/preview-images/Kubernetes_BG_Deployments.webp"]
+images:
+  - /preview-images/Kubernetes_BG_Deployments.webp
 type: post
 draft: false
-date: 2021-09-14T04:59:17+05:30
-url: /kubernetes-blue-green-deployments/
-categories: [Kubernetes]
-tags: [Kubernetes, DevOps, Java, SpringBoot]
+date: 2021-09-13T23:29:17.000Z
+url: /blog/kubernetes-blue-green-deployments/
+categories:
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Java
+  - SpringBoot
+aliases:
+  - /kubernetes-blue-green-deployments/
 ---
 
 In the previous article [Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}}) we have learned how to release a new version of application using **Deployment Rolling Updates** and how to use **Readiness** and **Liveness** probes to route traffic to only fully initialized containers.

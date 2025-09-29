@@ -1,14 +1,24 @@
 ---
-title: "Getting Started with Generative AI using Java, LangChain4j, OpenAI and Ollama"
+title: Getting Started with Generative AI using Java, LangChain4j, OpenAI and Ollama
 author: Siva
-images: ["/preview-images/getting-started-with-generative-ai.webp"]
+images:
+  - /preview-images/getting-started-with-generative-ai.webp
 type: post
 draft: false
-date: 2024-02-19T04:59:17+05:30
-url: /getting-started-with-generative-ai-using-java-langchain4j-openai-ollama
+date: 2024-02-18T23:29:17.000Z
+url: /blog/getting-started-with-generative-ai-using-java-langchain4j-openai-ollama
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, LangChain4j, OpenAI, Ollama]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - LangChain4j
+  - OpenAI
+  - Ollama
+aliases:
+  - /getting-started-with-generative-ai-using-java-langchain4j-openai-ollama
 ---
 In this article, we will explore the following:
 

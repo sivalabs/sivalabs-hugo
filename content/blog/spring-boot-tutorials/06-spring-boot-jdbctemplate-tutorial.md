@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot JdbcTemplate Tutorial"
+title: Spring Boot JdbcTemplate Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-jdbctemplate-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-jdbctemplate-tutorial.webp
 type: post
 draft: false
-date: 2023-08-01T06:00:00+05:30
-url: /spring-boot-jdbctemplate-tutorial
+date: 2023-08-01T00:30:00.000Z
+url: /blog/spring-boot-jdbctemplate-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to work with SQL databases using JdbcTemplate in Spring Boot applications.
+aliases:
+  - /spring-boot-jdbctemplate-tutorial
 ---
 
 ## Introducing Spring Boot JDBC Support

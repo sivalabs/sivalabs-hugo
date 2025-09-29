@@ -1,14 +1,20 @@
 ---
 title: Testing SpringBoot Applications
 author: Siva
-images: ["/preview-images/spring-boot-1.webp"]
+images:
+  - /preview-images/spring-boot-1.webp
 type: post
-date: 2019-10-07T07:59:17+05:30
-url: /spring-boot-testing/
+date: 2019-10-07T02:29:17.000Z
+url: /blog/spring-boot-testing/
 categories:
   - SpringBoot
-tags: [Spring, SpringBoot, Testing]
+tags:
+  - Spring
+  - SpringBoot
+  - Testing
 popular: true
+aliases:
+  - /spring-boot-testing/
 ---
 
 **SpringBoot** is the most popular tech stack for building Java based REST APIs.

@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Testing Tutorial"
+title: Spring Boot Testing Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-testing-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-testing-tutorial.webp
 type: post
 draft: false
-date: 2023-07-24T06:00:00+05:30
-url: /spring-boot-testing-tutorial
+date: 2023-07-24T00:30:00.000Z
+url: /blog/spring-boot-testing-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to write unit, slice and integration tests for a Spring Boot application.
+aliases:
+  - /spring-boot-testing-tutorial
 ---
 
 In the previous [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}}) tutorial,

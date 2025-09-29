@@ -2,13 +2,14 @@
 title: Retrying Method Execution using Spring AOP
 author: Siva
 type: post
-date: 2016-01-05T15:40:36+00:00
-url: /retrying-method-execution-using-spring-aop/
+date: 2016-01-05T15:40:36.000Z
+url: /blog/retrying-method-execution-using-spring-aop/
 categories:
   - Spring
 tags:
   - Spring
-
+aliases:
+  - /retrying-method-execution-using-spring-aop/
 ---
 One of my blog follower sends an email asking me to show an example of **"RealWorld Usage of Spring AOP"**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **"Real Project for Real Problems"**.
 

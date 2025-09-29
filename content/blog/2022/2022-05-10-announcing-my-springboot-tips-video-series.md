@@ -1,13 +1,21 @@
 ---
 title: Announcing My "SpringBoot Tips Video Series" on YouTube
 author: Siva
-images: ["/preview-images/SpringBoot-Tips-Series.webp"]
+images:
+  - /preview-images/SpringBoot-Tips-Series.webp
 type: post
 draft: false
-date: 2022-05-10T04:59:17+05:30
-url: /announcing-my-springboot-tips-video-series/
-categories: [SpringBoot]
-tags: [Java, SpringBoot, Tutorials, YouTube]
+date: 2022-05-09T23:29:17.000Z
+url: /blog/announcing-my-springboot-tips-video-series/
+categories:
+  - SpringBoot
+tags:
+  - Java
+  - SpringBoot
+  - Tutorials
+  - YouTube
+aliases:
+  - /announcing-my-springboot-tips-video-series/
 ---
 
 ### TLDR;

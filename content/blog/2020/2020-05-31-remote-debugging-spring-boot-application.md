@@ -1,13 +1,18 @@
 ---
 title: Remote debugging SpringBoot application
 author: Siva
-images: ["/preview-images/remote-1.webp"]
+images:
+  - /preview-images/remote-1.webp
 type: post
-date: 2020-05-31T04:59:17+05:30
-url: /remote-debugging-spring-boot-application/
+date: 2020-05-30T23:29:17.000Z
+url: /blog/remote-debugging-spring-boot-application/
 categories:
   - Java
-tags: [Java, SpringBoot]
+tags:
+  - Java
+  - SpringBoot
+aliases:
+  - /remote-debugging-spring-boot-application/
 ---
 
 We all know how to run SpringBoot application in debug mode from our favorite IDEs(Eclipse/IntellijIDEA etc) and debug the code.

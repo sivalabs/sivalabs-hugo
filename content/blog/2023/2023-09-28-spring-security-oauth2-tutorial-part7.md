@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 7 : Securing Spring MVC Client Application"
+title: 'Spring Security OAuth 2 Tutorial - 7 : Securing Spring MVC Client Application'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part7.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part7.webp
 type: post
 draft: false
-date: 2023-09-28T09:00:00+05:30
-url: /spring-security-oauth2-tutorial-securing-springmvc-client-application
+date: 2023-09-28T03:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-securing-springmvc-client-application
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, we will create a Spring MVC + Thymeleaf web application and secure it with Spring Security OAuth 2.0 using Keycloak.
+aliases:
+  - /spring-security-oauth2-tutorial-securing-springmvc-client-application
 ---
 
 In this article, we will create **messages-webapp** which is a **Spring MVC + Thymeleaf** web application 

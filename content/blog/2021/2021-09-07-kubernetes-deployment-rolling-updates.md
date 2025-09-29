@@ -1,13 +1,21 @@
 ---
 title: Kubernetes - Releasing a new version of the application using Deployment Rolling Updates
 author: Siva
-images: ["/preview-images/Kubernetes_RollUpdates.webp"]
+images:
+  - /preview-images/Kubernetes_RollUpdates.webp
 type: post
 draft: false
-date: 2021-09-07T04:59:17+05:30
-url: /kubernetes-deployment-rolling-updates/
-categories: [Kubernetes]
-tags: [Kubernetes, DevOps, Java, SpringBoot]
+date: 2021-09-06T23:29:17.000Z
+url: /blog/kubernetes-deployment-rolling-updates/
+categories:
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Java
+  - SpringBoot
+aliases:
+  - /kubernetes-deployment-rolling-updates/
 ---
 
 In the previous article [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}}) we have learned how to deploy a SpringBoot application on Kubernetes(Minikube) using **Deployment** and **Service** primitives. We also looked at how to access our application using **NodePort** on Minikube IP address.

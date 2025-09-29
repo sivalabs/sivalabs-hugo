@@ -2,15 +2,16 @@
 title: Getting Started with SpringBoot in Intellij IDEA Community Edition
 author: Siva
 type: post
-date: 2016-09-07T09:53:35+00:00
-url: /getting-started-springboot-intellij-idea-community-edition/
+date: 2016-09-07T09:53:35.000Z
+url: /blog/getting-started-springboot-intellij-idea-community-edition/
 categories:
   - IDE
   - Spring
 tags:
   - IDE
   - SpringBoot
-
+aliases:
+  - /getting-started-springboot-intellij-idea-community-edition/
 ---
 We can use **Intellij IDEA Community Edition** for working with **SpringBoot** applications as we don't need support for configuring servers like Tomcat, Wildlfy etc and can simply run the applications by running **main()** method.
 

@@ -1,13 +1,19 @@
 ---
-title: "Why I think Go is more verbose than Java"
+title: Why I think Go is more verbose than Java
 author: Siva
-images: ["/preview-images/go-vs-java.webp"]
+images:
+  - /preview-images/go-vs-java.webp
 type: post
 draft: false
-date: 2023-01-05T04:59:17+05:30
-url: /why-go-is-more-verbose-than-java
-categories: [Thoughts]
-tags: [GoLang, Java]
+date: 2023-01-04T23:29:17.000Z
+url: /blog/why-go-is-more-verbose-than-java
+categories:
+  - Thoughts
+tags:
+  - GoLang
+  - Java
+aliases:
+  - /why-go-is-more-verbose-than-java
 ---
 Few months ago I asked on Twitter "why you think Java is complex?" to understand others perspective.
 

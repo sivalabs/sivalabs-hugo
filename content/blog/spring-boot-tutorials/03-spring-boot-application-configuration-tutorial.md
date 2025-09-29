@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Application Configuration Tutorial"
+title: Spring Boot Application Configuration Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-configuration-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-configuration-tutorial.webp
 type: post
 draft: false
-date: 2023-07-26T06:00:00+05:30
-url: /spring-boot-application-configuration-tutorial
+date: 2023-07-26T00:30:00.000Z
+url: /blog/spring-boot-application-configuration-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to configure your Spring Boot application using properties and YAML files for running in different environments.
+aliases:
+  - /spring-boot-application-configuration-tutorial
 ---
 
 In the previous [Spring Boot Testing Tutorial]({{< relref "02-spring-boot-testing-tutorial.md" >}}),

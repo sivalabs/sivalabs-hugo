@@ -1,14 +1,23 @@
 ---
-title: "Spring AI RAG using Embedding Models and Vector Databases"
+title: Spring AI RAG using Embedding Models and Vector Databases
 author: Siva
-images: ["/preview-images/spring-ai-rag.webp"]
+images:
+  - /preview-images/spring-ai-rag.webp
 type: post
 draft: false
-date: 2024-03-15T04:59:17+05:30
-url: /spring-ai-rag-using-embedding-models-vector-databases
+date: 2024-03-14T23:29:17.000Z
+url: /blog/spring-ai-rag-using-embedding-models-vector-databases
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, SpringAI, OpenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - SpringAI
+  - OpenAI
+aliases:
+  - /spring-ai-rag-using-embedding-models-vector-databases
 ---
 In this article, we will explore the following:
 

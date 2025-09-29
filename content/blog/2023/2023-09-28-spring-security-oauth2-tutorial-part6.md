@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 6 : Microservices Sample Project Setup"
+title: 'Spring Security OAuth 2 Tutorial - 6 : Microservices Sample Project Setup'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part6.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part6.webp
 type: post
 draft: false
-date: 2023-09-28T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-microservices-project-setup
+date: 2023-09-28T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-microservices-project-setup
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, we will explore the sample microservices project for the Spring Security OAuth 2 Tutorial series.
+aliases:
+  - /spring-security-oauth2-tutorial-microservices-project-setup
 ---
 In the previous articles, we have learned about various OAuth 2.0 / OpenID Connect flows using web browser, cURL and Postman.
 Now it's time to put what we have learned into practice. What better way to do that than to build a sample project?

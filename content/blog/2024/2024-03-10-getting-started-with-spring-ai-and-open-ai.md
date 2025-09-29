@@ -1,14 +1,23 @@
 ---
-title: "Getting Started with Spring AI and Open AI"
+title: Getting Started with Spring AI and Open AI
 author: Siva
-images: ["/preview-images/spring-ai-introduction.webp"]
+images:
+  - /preview-images/spring-ai-introduction.webp
 type: post
 draft: false
-date: 2024-03-10T04:59:17+05:30
-url: /getting-started-with-spring-ai-and-open-ai
+date: 2024-03-09T23:29:17.000Z
+url: /blog/getting-started-with-spring-ai-and-open-ai
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, SpringAI, OpenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - SpringAI
+  - OpenAI
+aliases:
+  - /getting-started-with-spring-ai-and-open-ai
 ---
 In this article, we will explore the following:
 

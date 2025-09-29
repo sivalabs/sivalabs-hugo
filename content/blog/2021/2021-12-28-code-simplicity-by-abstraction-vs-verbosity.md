@@ -1,13 +1,20 @@
 ---
 title: Code simplicity by Abstraction vs Verbosity
 author: Siva
-images: ["/preview-images/dev-thinking.webp"]
+images:
+  - /preview-images/dev-thinking.webp
 type: post
 draft: false
-date: 2021-12-28T04:59:17+05:30
-url: /code-simplicity-by-abstraction-vs-verbosity/
-categories: [GoLang]
-tags: [GoLang, Java, Thoughts]
+date: 2021-12-27T23:29:17.000Z
+url: /blog/code-simplicity-by-abstraction-vs-verbosity/
+categories:
+  - GoLang
+tags:
+  - GoLang
+  - Java
+  - Thoughts
+aliases:
+  - /code-simplicity-by-abstraction-vs-verbosity/
 ---
 Java is and has been the primary programming language I have used throughout my career.
 If I want to build something quick for a prototype or if I need to pick the tech stack with a tight deadline then Java is my first choice.

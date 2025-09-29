@@ -1,14 +1,22 @@
 ---
 title: Getting Started with Kubernetes
 author: Siva
-images: ["/preview-images/Kubernetes_New.webp"]
+images:
+  - /preview-images/Kubernetes_New.webp
 type: post
 draft: false
-date: 2021-09-01T04:59:17+05:30
-url: /getting-started-with-kubernetes/
-categories: [Kubernetes]
-tags: [Kubernetes, DevOps, Java, SpringBoot]
+date: 2021-08-31T23:29:17.000Z
+url: /blog/getting-started-with-kubernetes/
+categories:
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Java
+  - SpringBoot
 popular: false
+aliases:
+  - /getting-started-with-kubernetes/
 ---
 
 [Docker](https://www.docker.com/) and [Kubernetes](https://kubernetes.io/) has revolutionized how we build and run the applications. 

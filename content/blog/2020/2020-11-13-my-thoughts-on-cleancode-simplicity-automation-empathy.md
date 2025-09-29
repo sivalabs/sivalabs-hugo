@@ -1,14 +1,18 @@
 ---
 title: My Thoughts on CleanCode, Simplicity, Automation and Empathy
 author: Siva
-images: ["/preview-images/team.webp"]
+images:
+  - /preview-images/team.webp
 type: post
 draft: false
-date: 2020-11-13T04:59:17+05:30
-url: /my-thoughts-on-cleancode-simplicity-automation-empathy/
+date: 2020-11-12T23:29:17.000Z
+url: /blog/my-thoughts-on-cleancode-simplicity-automation-empathy/
 categories:
   - Thoughts
-tags: [Thoughts]
+tags:
+  - Thoughts
+aliases:
+  - /my-thoughts-on-cleancode-simplicity-automation-empathy/
 ---
 
 When I observe old people I notice one interesting thing. They don't usually react aggressively like teenagers do.

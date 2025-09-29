@@ -1,13 +1,21 @@
 ---
 title: Kubernetes - Exposing Services to outside of Cluster using Ingress
 author: Siva
-images: ["/preview-images/Kubernetes_Ingress.webp"]
+images:
+  - /preview-images/Kubernetes_Ingress.webp
 type: post
 draft: false
-date: 2021-09-22T04:59:17+05:30
-url: /kubernetes-ingress/
-categories: [Kubernetes]
-tags: [Kubernetes, DevOps, Java, SpringBoot]
+date: 2021-09-21T23:29:17.000Z
+url: /blog/kubernetes-ingress/
+categories:
+  - Kubernetes
+tags:
+  - Kubernetes
+  - DevOps
+  - Java
+  - SpringBoot
+aliases:
+  - /kubernetes-ingress/
 ---
 
 In the previous article [Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}}) we have learned how to release a new version of application using **Blue/Green Deployments strategy**.

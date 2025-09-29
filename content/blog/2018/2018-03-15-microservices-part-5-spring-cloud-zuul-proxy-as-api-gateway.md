@@ -1,10 +1,11 @@
 ---
 title: 'MicroServices - Part 5 : Spring Cloud Zuul Proxy as API Gateway'
 author: Siva
-images: ["/preview-images/proxy.webp"]
+images:
+  - /preview-images/proxy.webp
 type: post
-date: 2018-03-15T07:59:17+05:30
-url: /microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
+date: 2018-03-15T02:29:17.000Z
+url: /blog/microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
 categories:
   - microservices
   - springboot
@@ -13,6 +14,8 @@ tags:
   - microservices
   - springboot
   - springcloud
+aliases:
+  - /microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
 ---
 
 In microservices architecture, there could be a number of API services and few UI components that are talking to APIs. As of now, many microservices based application still use monolithic front-ends where the entire UI is built as a single module. You may choose to go with micro-frontends where the UI is also decomposed into multiple microservice talking to APIs to get the relevant data. Instead of letting UI know about all our microservices details we can provide a unified proxy interface that will delegate the calls to various microservices based on URL pattern. In this post, we will learn how to create API Gateway using Spring Cloud Zuul Proxy.

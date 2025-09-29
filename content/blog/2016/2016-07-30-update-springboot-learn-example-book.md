@@ -2,14 +2,15 @@
 title: 'Update on SpringBoot : Learn By Example book'
 author: Siva
 type: post
-date: 2016-07-30T02:53:50+00:00
-url: /update-springboot-learn-example-book/
+date: 2016-07-30T02:53:50.000Z
+url: /blog/update-springboot-learn-example-book/
 categories:
   - Books
   - Spring
 tags:
   - SpringBoot
-
+aliases:
+  - /update-springboot-learn-example-book/
 ---
 I would like to let you know that I have updated/added the following sections to my [SpringBoot : Learn By Example][1] book.
 

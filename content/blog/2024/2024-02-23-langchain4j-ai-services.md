@@ -1,14 +1,23 @@
 ---
-title: "LangChain4j AiServices Tutorial"
+title: LangChain4j AiServices Tutorial
 author: Siva
-images: ["/preview-images/langchain4j-ai-services.webp"]
+images:
+  - /preview-images/langchain4j-ai-services.webp
 type: post
 draft: false
-date: 2024-02-23T04:59:17+05:30
-url: /langchain4j-ai-services-tutorial
+date: 2024-02-22T23:29:17.000Z
+url: /blog/langchain4j-ai-services-tutorial
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, LangChain4j, OpenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - LangChain4j
+  - OpenAI
+aliases:
+  - /langchain4j-ai-services-tutorial
 ---
 In this article, we will explore the following:
 

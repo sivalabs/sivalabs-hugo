@@ -1,15 +1,18 @@
 ---
 title: SpringBoot Messaging with RabbitMQ
 author: Siva
-images: ["/preview-images/RabbitMQ.webp"]
+images:
+  - /preview-images/RabbitMQ.webp
 type: post
-date: 2018-02-20T07:59:17+05:30
-url: /springboot-messaging-rabbitmq/
+date: 2018-02-20T02:29:17.000Z
+url: /blog/springboot-messaging-rabbitmq/
 categories:
   - springboot
 tags:
   - springboot
   - rabbitmq
+aliases:
+  - /springboot-messaging-rabbitmq/
 ---
 
 [RabbitMQ](https://www.rabbitmq.com/) is one of the popular message broker solutions and provides client libraries to be used from various programming languages including 

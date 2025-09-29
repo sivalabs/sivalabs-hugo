@@ -2,15 +2,16 @@
 title: 'My New Book SpringBoot : Learn By Example Published Today'
 author: Siva
 type: post
-date: 2016-07-20T06:05:31+00:00
-url: /my-new-book-springboot-learn-by-example/
+date: 2016-07-20T06:05:31.000Z
+url: /blog/my-new-book-springboot-learn-by-example/
 categories:
   - Books
   - Spring
 tags:
   - Books
   - SpringBoot
-
+aliases:
+  - /my-new-book-springboot-learn-by-example/
 ---
 I am happy to announce that my new book [SpringBoot : Learn By Example](https://leanpub.com/springboot-learn-by-example/)  got published today on **Leanpub**.
 

@@ -2,13 +2,14 @@
 title: 'SpringBoot : Working with JdbcTemplate'
 author: Siva
 type: post
-date: 2016-03-14T07:08:22+00:00
-url: /springboot-working-with-jdbctemplate/
+date: 2016-03-14T07:08:22.000Z
+url: /blog/springboot-working-with-jdbctemplate/
 categories:
   - Spring
 tags:
   - SpringBoot
-
+aliases:
+  - /springboot-working-with-jdbctemplate/
 ---
 Spring provides a nice abstraction on top of JDBC API using **JdbcTemplate** and also provides great transaction management capabilities 
 using annotation based approach.

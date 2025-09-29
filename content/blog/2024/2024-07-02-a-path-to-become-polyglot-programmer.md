@@ -1,14 +1,19 @@
 ---
-title: "A path to become a Polyglot Programmer"
+title: A path to become a Polyglot Programmer
 author: Siva
-images: ["/images/polyglot-programmer.webp"]
+images:
+  - /images/polyglot-programmer.webp
 type: post
 draft: true
-date: 2024-07-02T04:59:17+05:30
-url: /a-path-to-become-polyglot-programmer
+date: 2024-07-01T23:29:17.000Z
+url: /blog/a-path-to-become-polyglot-programmer
 toc: false
-categories: [Learning]
-tags: [Learning]
+categories:
+  - Learning
+tags:
+  - Learning
+aliases:
+  - /a-path-to-become-polyglot-programmer
 ---
 
 Nowadays, we are using a wide range of technologies and tools for building modern software systems.

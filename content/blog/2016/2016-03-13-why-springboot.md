@@ -2,13 +2,15 @@
 title: Why SpringBoot?
 author: Siva
 type: post
-date: 2016-03-13T07:02:10+00:00
-url: /why-springboot/
+date: 2016-03-13T07:02:10.000Z
+url: /blog/why-springboot/
 categories:
   - Spring
 tags:
   - SpringBoot
 popular: true
+aliases:
+  - /why-springboot/
 ---
 Spring is a very popular Java based framework for building web and enterprise applications. Unlike many other frameworks which focuses on only one area, Spring framework provides a wide verity of features addressing the modern business needs via its portfolio projects.
 

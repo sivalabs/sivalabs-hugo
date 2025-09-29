@@ -1,13 +1,20 @@
 ---
 title: How I dealt with burn out?
 author: Siva
-images: ["/preview-images/stress.webp"]
+images:
+  - /preview-images/stress.webp
 type: post
 draft: false
-date: 2021-12-20T04:59:17+05:30
-url: /how-i-dealt-with-burnout/
-categories: [Career]
-tags: [Career, Tips, Productivity]
+date: 2021-12-19T23:29:17.000Z
+url: /blog/how-i-dealt-with-burnout/
+categories:
+  - Career
+tags:
+  - Career
+  - Tips
+  - Productivity
+aliases:
+  - /how-i-dealt-with-burnout/
 ---
 
 A month ago I was constantly feeling stressed out, tired and not getting proper sleep. To put it simply I got burned out.

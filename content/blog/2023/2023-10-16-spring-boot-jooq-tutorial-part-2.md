@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot + jOOQ Tutorial - 2 : Implementing CRUD Operations"
+title: 'Spring Boot + jOOQ Tutorial - 2 : Implementing CRUD Operations'
 author: Siva
-images: ["/preview-images/spring-boot-jooq-tutorial-part-2.webp"]
+images:
+  - /preview-images/spring-boot-jooq-tutorial-part-2.webp
 type: post
 draft: false
-date: 2023-10-16T06:00:00+05:30
-url: /spring-boot-jooq-tutorial-crud-operations
+date: 2023-10-16T00:30:00.000Z
+url: /blog/spring-boot-jooq-tutorial-crud-operations
 toc: true
-categories: ["jOOQ"]
-tags: [SpringBoot, jOOQ]
+categories:
+  - jOOQ
+tags:
+  - SpringBoot
+  - jOOQ
 description: In this tutorial, we will learn how to implement basic CRUD Operations using jOOQ.
+aliases:
+  - /spring-boot-jooq-tutorial-crud-operations
 ---
 In the [previous tutorial]({{< relref "2023-10-12-spring-boot-jooq-tutorial-part-1.md" >}}), we have seen how to generate jOOQ code using 
 the [testcontainers-jooq-codegen-maven-plugin](https://github.com/testcontainers/testcontainers-jooq-codegen-maven-plugin) 

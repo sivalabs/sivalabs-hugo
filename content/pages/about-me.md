@@ -2,8 +2,10 @@
 title: About Me
 author: Siva
 type: page
-date: 2024-07-17T13:06:31+00:00
-url: /about-me/
+date: 2024-07-17T13:06:31.000Z
+url: /blog/about-me/
+aliases:
+  - /about-me/
 ---
 
 ## K. Siva Prasad Reddy

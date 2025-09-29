@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 2 : Authorization Code Flow"
+title: 'Spring Security OAuth 2 Tutorial - 2 : Authorization Code Flow'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part2.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part2.webp
 type: post
 draft: false
-date: 2023-09-24T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-authorization-code-flow
+date: 2023-09-24T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-authorization-code-flow
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, you will learn how OAuth 2.0 Authorization Code Flow works.
+aliases:
+  - /spring-security-oauth2-tutorial-authorization-code-flow
 ---
 In the [Part 1: Getting familiar with OAuth 2 concepts]({{< relref "2023-09-22-spring-security-oauth2-tutorial-part1.md" >}}), we learned how to set up Keycloak, created a realm, a client with Standard flow enabled and a user.
 In this Part 2, you will learn how to authenticate a user using **Authorization Code Flow**.

@@ -1,13 +1,20 @@
 ---
-title: "Book Review : Cloud Native Spring in Action"
+title: 'Book Review : Cloud Native Spring in Action'
 author: Siva
-images: ["/raw-images/cnsia-book-cover.jpeg"]
+images:
+  - /raw-images/cnsia-book-cover.jpeg
 type: post
 draft: false
-date: 2022-10-27T04:59:17+05:30
-url: /cloud-native-spring-in-action-book-review/
-categories: [Books]
-tags: [SpringBoot, Cloud, Books]
+date: 2022-10-26T23:29:17.000Z
+url: /blog/cloud-native-spring-in-action-book-review/
+categories:
+  - Books
+tags:
+  - SpringBoot
+  - Cloud
+  - Books
+aliases:
+  - /cloud-native-spring-in-action-book-review/
 ---
 
 I got a chance to review the upcoming [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book by [Thomas Vitale](https://twitter.com/vitalethomas) and here my review of the book.

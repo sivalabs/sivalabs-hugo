@@ -16,19 +16,19 @@
     </div>
     <ul>
         <li class="widget__item">
-            <a class="widget__link" href="{{ "/spring-boot-tutorials" | relLangURL }}/">Spring Boot Tutorials</a>
+            <a class="widget__link" href="{{ "/blog/spring-boot-tutorials" | relLangURL }}/">Spring Boot Tutorials</a>
         </li>
         <li class="widget__item">
-            <a class="widget__link" href="{{ "/microservices-tutorials" | relLangURL }}/">Microservices Tutorials</a>
+            <a class="widget__link" href="{{ "/blog/microservices-tutorials" | relLangURL }}/">Microservices Tutorials</a>
         </li>
         <li class="widget__item">
-            <a class="widget__link" href="{{ "/kubernetes-tutorials" | relLangURL }}/">Kubernetes Tutorials</a>
+            <a class="widget__link" href="{{ "/blog/kubernetes-tutorials" | relLangURL }}/">Kubernetes Tutorials</a>
         </li>
         <li class="widget__item">
-            <a class="widget__link" href="{{ "/jooq-tutorials" | relLangURL }}/">jOOQ Tutorials</a>
+            <a class="widget__link" href="{{ "/blog/jooq-tutorials" | relLangURL }}/">jOOQ Tutorials</a>
         </li>
         <li class="widget__item">
-            <a class="widget__link" href="{{ "/mybatis-tutorials" | relLangURL }}/">MyBatis Tutorials</a>
+            <a class="widget__link" href="{{ "/blog/mybatis-tutorials" | relLangURL }}/">MyBatis Tutorials</a>
         </li>
     </ul>
 </aside>
@@ -37,7 +37,7 @@
 <aside id="top-posts" class="widget clearfix">
     <div class="widget-header"><h3 class="widget-title">Top Posts</h3></div>
     <ul>
-        {{ range (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+        {{ range (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "blog"))) }}
         {{- if (.Params.popular) }}
         <li>
             <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
@@ -53,7 +53,7 @@
     </div>
     <ul>
         {{- $recent_articles_num := (.Site.Params.widgets.recent_articles_num | default 5) }}
-        {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "posts"))) }}
+        {{- range first $recent_articles_num (where .Site.RegularPages "Section" "in" (.Site.Params.postSections | default (slice "blog"))) }}
         <li class="widget__item"><a class="widget__link" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{- end }}
     </ul>

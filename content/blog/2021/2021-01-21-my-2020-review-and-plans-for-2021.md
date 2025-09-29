@@ -1,13 +1,18 @@
 ---
 title: My 2020 year review and plans for 2021
 author: Siva
-images: ["/preview-images/owl-reading.webp"]
+images:
+  - /preview-images/owl-reading.webp
 type: post
 draft: false
-date: 2021-01-21T04:59:17+05:30
-url: /my-2020-review-and-plans-for-2021/
-categories: [Career]
-tags: [Career]
+date: 2021-01-20T23:29:17.000Z
+url: /blog/my-2020-review-and-plans-for-2021/
+categories:
+  - Career
+tags:
+  - Career
+aliases:
+  - /my-2020-review-and-plans-for-2021/
 ---
 
 I would like to share how was my year 2020 and what I am planning to do in 2021.

@@ -1,15 +1,21 @@
 ---
 title: All the resources you ever need as a Java & Spring application developer
 author: Siva
-images: ["/preview-images/blogs.webp"]
+images:
+  - /preview-images/blogs.webp
 type: post
 draft: false
-date: 2020-09-14T04:59:17+05:30
-url: /all-the-resources-you-ever-need-as-a-java-spring-application-developer/
+date: 2020-09-13T23:29:17.000Z
+url: /blog/all-the-resources-you-ever-need-as-a-java-spring-application-developer/
 categories:
   - Java
-tags: [Spring, SpringBoot, Java]
+tags:
+  - Spring
+  - SpringBoot
+  - Java
 popular: false
+aliases:
+  - /all-the-resources-you-ever-need-as-a-java-spring-application-developer/
 ---
 
 Nowadays software development is a challenging task as the number of programming languages, frameworks, libraries are increasing rapidly day by day.

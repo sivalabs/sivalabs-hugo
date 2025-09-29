@@ -1,16 +1,19 @@
 ---
 title: CI/CD for SpringBoot applications using Travis-CI
 author: Siva
-images: ["/preview-images/TravisCI-Mascot-1.webp"]
+images:
+  - /preview-images/TravisCI-Mascot-1.webp
 type: post
-date: 2018-01-24T07:59:17+05:30
-url: /ci-cd-springboot-applications-using-travis-ci/
+date: 2018-01-24T02:29:17.000Z
+url: /blog/ci-cd-springboot-applications-using-travis-ci/
 categories:
   - DevOps
   - SpringBoot
 tags:
   - travis-ci
   - springboot
+aliases:
+  - /ci-cd-springboot-applications-using-travis-ci/
 ---
 
 In this article we are going to learn how we can use **Travis CI** for Continuous Integration and Continuous Deployment (CI/CD) 

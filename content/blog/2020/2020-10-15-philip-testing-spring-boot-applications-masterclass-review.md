@@ -1,14 +1,19 @@
 ---
 title: Philip's Testing Spring Boot Applications Masterclass Course Review
 author: Siva
-images: ["/preview-images/TSBAM.webp"]
+images:
+  - /preview-images/TSBAM.webp
 type: post
 draft: false
-date: 2020-10-15T04:59:17+05:30
-url: /philip-testing-spring-boot-applications-masterclass-course-review/
+date: 2020-10-14T23:29:17.000Z
+url: /blog/philip-testing-spring-boot-applications-masterclass-course-review/
 categories:
   - Java
-tags: [Spring, SpringBoot]
+tags:
+  - Spring
+  - SpringBoot
+aliases:
+  - /philip-testing-spring-boot-applications-masterclass-course-review/
 ---
 
 If you ever worked on a large project which doesn't have any tests then you know how painful it is to work on such codebase.

@@ -2,13 +2,14 @@
 title: 'SpringBoot : Working with MyBatis'
 author: Siva
 type: post
-date: 2016-03-14T07:10:42+00:00
-url: /springboot-working-with-mybatis/
+date: 2016-03-14T07:10:42.000Z
+url: /blog/springboot-working-with-mybatis/
 categories:
   - Spring
 tags:
   - SpringBoot
-
+aliases:
+  - /springboot-working-with-mybatis/
 ---
 **MyBatis** is a SQL Mapping framework with support for custom SQL, stored procedures and advanced mappings.
 

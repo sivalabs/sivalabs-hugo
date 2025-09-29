@@ -1,13 +1,19 @@
 ---
-title: How (not) to ask for Technical Help? 
+title: How (not) to ask for Technical Help?
 author: Siva
-images: ["/preview-images/help-hand.webp"]
+images:
+  - /preview-images/help-hand.webp
 type: post
 draft: false
-date: 2022-08-02T04:59:17+05:30
-url: /how-to-not-to-ask-for-technical-help/
-categories: [Tips]
-tags: [Tech, Tips]
+date: 2022-08-01T23:29:17.000Z
+url: /blog/how-to-not-to-ask-for-technical-help/
+categories:
+  - Tips
+tags:
+  - Tech
+  - Tips
+aliases:
+  - /how-to-not-to-ask-for-technical-help/
 ---
 
 We, software developers, have a great advantage when it comes to getting help from others.

@@ -1,14 +1,22 @@
 ---
-title: "You Can Code Offline With Local AI(Ollama)"
+title: You Can Code Offline With Local AI(Ollama)
 author: Siva
-images: ["/images/code-offline-with-local-ai.webp"]
+images:
+  - /images/code-offline-with-local-ai.webp
 type: post
 draft: false
-date: 2025-01-10T04:59:17+05:30
-url: /code-offline-with-local-ai-ollama
+date: 2025-01-09T23:29:17.000Z
+url: /blog/code-offline-with-local-ai-ollama
 toc: true
-categories: [AI]
-tags: [Java, SpringBoot, AI, Ollama]
+categories:
+  - AI
+tags:
+  - Java
+  - SpringBoot
+  - AI
+  - Ollama
+aliases:
+  - /code-offline-with-local-ai-ollama
 ---
 ChatGPT and other Generative AI tools took the world by a storm.
 People are using these AI tools for various purposes such as to explore a topic, 

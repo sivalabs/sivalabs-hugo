@@ -1,13 +1,19 @@
 ---
 title: Kafka Tutorial - Producer and Consumer using SpringBoot
 author: Siva
-images: ["/preview-images/springboot-kafka.webp"]
+images:
+  - /preview-images/springboot-kafka.webp
 type: post
-date: 2019-06-24T07:59:17+05:30
-url: /kafka-tutorial-producer-consumer-using-spring-boot/
+date: 2019-06-24T02:29:17.000Z
+url: /blog/kafka-tutorial-producer-consumer-using-spring-boot/
 categories:
   - Kafka
-tags: [Kafka, SpringBoot, Spring]
+tags:
+  - Kafka
+  - SpringBoot
+  - Spring
+aliases:
+  - /kafka-tutorial-producer-consumer-using-spring-boot/
 ---
 In the previous post [Kafka Tutorial - Java Producer and Consumer]({{< relref "2019-06-21-kafka-tutorial-java-producer-consumer.md" >}}) we have learned how to implement a Producer and Consumer for a Kafka topic using plain Java Client API.
 

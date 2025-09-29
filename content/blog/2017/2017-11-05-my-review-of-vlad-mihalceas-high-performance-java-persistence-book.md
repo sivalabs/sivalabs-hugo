@@ -2,12 +2,14 @@
 title: My Review of Vlad Mihalcea’s High-Performance Java Persistence book
 author: Siva
 type: post
-date: 2017-11-05T04:59:17+00:00
-url: /my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
+date: 2017-11-05T04:59:17.000Z
+url: /blog/my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
 categories:
   - Books
 tags:
   - Books
+aliases:
+  - /my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
 ---
 In Java world, JPA/Hibernate is the most popular and widely used framework. 
 When it comes to overall performance of a software system database persistence layer plays the crucial role. 

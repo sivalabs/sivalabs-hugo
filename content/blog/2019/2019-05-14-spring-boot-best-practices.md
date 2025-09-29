@@ -1,14 +1,19 @@
 ---
 title: SpringBoot Best Practices
 author: Siva
-images: ["/preview-images/spring-boot-1.webp"]
+images:
+  - /preview-images/spring-boot-1.webp
 type: post
-date: 2019-05-14T07:59:17+05:30
-url: /spring-boot-best-practices/
+date: 2019-05-14T02:29:17.000Z
+url: /blog/spring-boot-best-practices/
 categories:
   - SpringBoot
-tags: [SpringBoot, best-practices]
+tags:
+  - SpringBoot
+  - best-practices
 popular: true
+aliases:
+  - /spring-boot-best-practices/
 ---
 
 I have been working with [SpringBoot](https://spring.io/projects/spring-boot) for many years and over the time I worked with many SpringBoot based codebases.

@@ -1,13 +1,18 @@
 ---
 title: What I Learned in Week-14, 2020
 author: Siva
-images: ["/preview-images/WIL-3.webp"]
+images:
+  - /preview-images/WIL-3.webp
 type: post
-date: 2020-04-06T04:59:17+05:30
-url: /what-i-learned-2020-week-14/
+date: 2020-04-05T23:29:17.000Z
+url: /blog/what-i-learned-2020-week-14/
 categories:
   - Java
-tags: [Java, Blogging]
+tags:
+  - Java
+  - Blogging
+aliases:
+  - /what-i-learned-2020-week-14/
 ---
 
 It's been tough time for everyone due to the Corona virus situation. 

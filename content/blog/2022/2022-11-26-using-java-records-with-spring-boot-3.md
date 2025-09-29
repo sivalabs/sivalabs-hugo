@@ -1,13 +1,19 @@
 ---
 title: Using Java Records with Spring Boot 3
 author: Siva
-images: ["/preview-images/java-records-with-sb3.webp"]
+images:
+  - /preview-images/java-records-with-sb3.webp
 type: post
 draft: false
-date: 2022-11-26T04:59:17+05:30
-url: /using-java-records-with-spring-boot-3
-categories: [SpringBoot]
-tags: [SpringBoot, Java]
+date: 2022-11-25T23:29:17.000Z
+url: /blog/using-java-records-with-spring-boot-3
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Java
+aliases:
+  - /using-java-records-with-spring-boot-3
 ---
 
 Records were introduced in Java 14 as a preview feature and became a standard feature with JDK 16.

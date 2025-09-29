@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Logging Tutorial"
+title: Spring Boot Logging Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-logging-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-logging-tutorial.webp
 type: post
 draft: false
-date: 2023-07-28T06:00:00+05:30
-url: /spring-boot-logging-tutorial
+date: 2023-07-28T00:30:00.000Z
+url: /blog/spring-boot-logging-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to implement logging in your Spring Boot application using Logback and Log4j2.
+aliases:
+  - /spring-boot-logging-tutorial
 ---
 Logging is a common and important requirement for running applications in production.
 Spring Boot provides great support for application logging out of the box and offers various customization options.

@@ -2,13 +2,14 @@
 title: Creating Custom SpringBoot Starter for Twitter4j
 author: Siva
 type: post
-date: 2016-04-08T06:57:23+00:00
-url: /creating-custom-springboot-starter-for/
+date: 2016-04-08T06:57:23.000Z
+url: /blog/creating-custom-springboot-starter-for/
 categories:
   - Spring
 tags:
   - SpringBoot
-
+aliases:
+  - /creating-custom-springboot-starter-for/
 ---
 **SpringBoot** provides lot of starter modules to get up and running quickly. SpringBoot’s auto-configure mechanism takes care of configuring SpringBeans on our behalf based on various criteria.
 

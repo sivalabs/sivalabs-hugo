@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot + jOOQ Tutorial - 1 : Getting Started"
+title: 'Spring Boot + jOOQ Tutorial - 1 : Getting Started'
 author: Siva
-images: ["/preview-images/spring-boot-jooq-tutorial-part-1.webp"]
+images:
+  - /preview-images/spring-boot-jooq-tutorial-part-1.webp
 type: post
 draft: false
-date: 2023-10-12T06:00:00+05:30
-url: /spring-boot-jooq-tutorial-getting-started
+date: 2023-10-12T00:30:00.000Z
+url: /blog/spring-boot-jooq-tutorial-getting-started
 toc: true
-categories: ["jOOQ"]
-tags: [SpringBoot, jOOQ]
+categories:
+  - jOOQ
+tags:
+  - SpringBoot
+  - jOOQ
 description: In this tutorial, we will learn how to get started with jOOQ for implementing persistence layer in a Spring Boot application.
+aliases:
+  - /spring-boot-jooq-tutorial-getting-started
 ---
 [jOOQ](https://www.jooq.org/) is a Java persistence library that provides SQL DSL for writing typesafe SQL queries. 
 It supports most of the popular databases like **MySQL**, **PostgreSQL**, **Oracle**, **SQL Server**, and many more. 

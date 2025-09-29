@@ -1,13 +1,18 @@
 ---
 title: Imposing Code Structure Guidelines using ArchUnit
 author: Siva
-images: ["/preview-images/ArchUnit-Logo.webp"]
+images:
+  - /preview-images/ArchUnit-Logo.webp
 type: post
-date: 2020-04-02T04:59:17+05:30
-url: /impose-architecture-guidelines-using-archunit/
+date: 2020-04-01T23:29:17.000Z
+url: /blog/impose-architecture-guidelines-using-archunit/
 categories:
   - Java
-tags: [java, best-practices]
+tags:
+  - java
+  - best-practices
+aliases:
+  - /impose-architecture-guidelines-using-archunit/
 ---
 While building the software, we all agree, as a team, to follow a set of guidelines which are typically considered as best practices.
 But during the development, developers might violate those guidelines unknowingly or ignorance.

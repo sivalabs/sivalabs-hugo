@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot REST API Best Practices - Part 2"
+title: Spring Boot REST API Best Practices - Part 2
 author: Siva
-images: ["/preview-images/spring-boot-rest-api-part-2.webp"]
+images:
+  - /preview-images/spring-boot-rest-api-part-2.webp
 type: post
 draft: false
-date: 2023-08-23T06:00:00+05:30
-url: /spring-boot-rest-api-best-practices-part-2
+date: 2023-08-23T00:30:00.000Z
+url: /blog/spring-boot-rest-api-best-practices-part-2
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to create a Spring Boot REST API and use best practices to implement Create and Update API endpoints.
+aliases:
+  - /spring-boot-rest-api-best-practices-part-2
 ---
 
 In this **Spring Boot REST API Best Practices - Part-2**, I will explain some of the best practices we should follow 

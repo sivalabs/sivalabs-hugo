@@ -1,13 +1,20 @@
 ---
-title: "Should I use a framework or libraries?"
+title: Should I use a framework or libraries?
 author: Siva
-images: ["/preview-images/framework-vs-libraries.webp"]
+images:
+  - /preview-images/framework-vs-libraries.webp
 type: post
 draft: false
-date: 2024-01-23T04:59:17+05:30
-url: /should-i-use-framework-or-libraries
-categories: [Tech, Architecture]
-tags: [Tech, Architecture]
+date: 2024-01-22T23:29:17.000Z
+url: /blog/should-i-use-framework-or-libraries
+categories:
+  - Tech
+  - Architecture
+tags:
+  - Tech
+  - Architecture
+aliases:
+  - /should-i-use-framework-or-libraries
 ---
 
 In the software development world, trends come and go, and often we go through the same cycle again and again.

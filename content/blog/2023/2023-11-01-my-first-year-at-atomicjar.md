@@ -1,13 +1,18 @@
 ---
-title: "My First Year at AtomicJar as a Developer Advocate"
+title: My First Year at AtomicJar as a Developer Advocate
 author: Siva
-images: ["/preview-images/AtomicJar.webp"]
+images:
+  - /preview-images/AtomicJar.webp
 type: post
 draft: false
-date: 2023-11-01T04:59:17+05:30
-url: /my-first-year-at-atomicjar
-categories: [Career]
-tags: [Career]
+date: 2023-10-31T23:29:17.000Z
+url: /blog/my-first-year-at-atomicjar
+categories:
+  - Career
+tags:
+  - Career
+aliases:
+  - /my-first-year-at-atomicjar
 ---
 
 I joined [AtomicJar](https://www.atomicjar.com/) as a **Developer Advocate** on 1st November 2022.

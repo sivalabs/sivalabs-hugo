@@ -1,13 +1,19 @@
 ---
-title: "Spring Boot 3 : Error Responses using Problem Details for HTTP APIs"
+title: 'Spring Boot 3 : Error Responses using Problem Details for HTTP APIs'
 author: Siva
-images: ["/preview-images/springboot-3-problemdetails.webp"]
+images:
+  - /preview-images/springboot-3-problemdetails.webp
 type: post
 draft: false
-date: 2022-11-30T04:59:17+05:30
-url: /spring-boot-3-error-reporting-using-problem-details
-categories: [SpringBoot]
-tags: [SpringBoot, Java]
+date: 2022-11-29T23:29:17.000Z
+url: /blog/spring-boot-3-error-reporting-using-problem-details
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Java
+aliases:
+  - /spring-boot-3-error-reporting-using-problem-details
 ---
 Spring Framework 6 implemented the **Problem Details for HTTP APIs** specification, [RFC 7807](https://www.rfc-editor.org/rfc/rfc7807.html). 
 In this article we will learn how to handle exceptions in SpringBoot 3 REST API(which uses Spring Framework 6) and provide error responses using **ProblemDetails** API.

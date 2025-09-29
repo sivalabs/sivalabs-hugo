@@ -1,14 +1,19 @@
 ---
-title: "Tomato Architecture - A Pragmatic Approach to Software Design"
+title: Tomato Architecture - A Pragmatic Approach to Software Design
 author: Siva
-images: ["/preview-images/tomato-architecture.webp"]
+images:
+  - /preview-images/tomato-architecture.webp
 type: post
 draft: false
-date: 2023-07-11T04:59:17+05:30
-url: /tomato-architecture-pragmatic-approach-to-software-design
-categories: [Architecture]
-tags: [Architecture]
+date: 2023-07-10T23:29:17.000Z
+url: /blog/tomato-architecture-pragmatic-approach-to-software-design
+categories:
+  - Architecture
+tags:
+  - Architecture
 toc: true
+aliases:
+  - /tomato-architecture-pragmatic-approach-to-software-design
 ---
 
 After a couple of years into software development, I wanted to improve my skills by learning more about Software Architecture and Design. 

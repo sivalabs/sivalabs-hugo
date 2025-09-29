@@ -2,14 +2,15 @@
 title: PrimeFaces Beginner’s Guide book published
 author: Siva
 type: post
-date: 2013-11-28T04:02:00+00:00
-url: /primefaces-beginners-guide-book-published/
+date: 2013-11-28T04:02:00.000Z
+url: /blog/primefaces-beginners-guide-book-published/
 categories:
   - Books
 tags:
   - JSF
   - PrimeFaces
-
+aliases:
+  - /primefaces-beginners-guide-book-published/
 ---
 I am glad to announce that my second book PrimeFaces Beginner's Guide is published.
 

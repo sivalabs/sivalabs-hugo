@@ -2,8 +2,8 @@
 title: Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus
 author: Siva
 type: post
-date: 2017-08-14T12:30:43+00:00
-url: /spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
+date: 2017-08-14T12:30:43.000Z
+url: /blog/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
 categories:
   - Java
   - Spring
@@ -12,9 +12,11 @@ tags:
   - SpringBoot
   - SpringCloud
 keywords:
-    - Spring
-    - SpringBoot
-    - SpringCloud
+  - Spring
+  - SpringBoot
+  - SpringCloud
+aliases:
+  - /spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
 ---
 # Problem
 

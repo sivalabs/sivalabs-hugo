@@ -1,13 +1,19 @@
 ---
 title: My attempt to understand why people perceive Java as complex
 author: Siva
-images: ["/preview-images/group-discussion.webp"]
+images:
+  - /preview-images/group-discussion.webp
 type: post
 draft: false
-date: 2022-04-04T04:59:17+05:30
-url: /my-attempt-to-understand-why-people-perceive-java-as-complex/
-categories: [Java]
-tags: [Java, Thoughts]
+date: 2022-04-03T23:29:17.000Z
+url: /blog/my-attempt-to-understand-why-people-perceive-java-as-complex/
+categories:
+  - Java
+tags:
+  - Java
+  - Thoughts
+aliases:
+  - /my-attempt-to-understand-why-people-perceive-java-as-complex/
 ---
 
 I work as an Architect/TechLead/SeniorDeveloper depending on client engagement. 

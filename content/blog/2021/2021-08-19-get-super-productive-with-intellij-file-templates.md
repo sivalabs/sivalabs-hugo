@@ -1,13 +1,22 @@
 ---
 title: Get Super Productive with Intellij File Templates
 author: Siva
-images: ["/preview-images/intellij-idea-logo.webp"]
+images:
+  - /preview-images/intellij-idea-logo.webp
 type: post
 draft: false
-date: 2021-08-19T04:59:17+05:30
-url: /get-super-productive-with-intellij-file-templates/
-categories: [IDE]
-tags: [Java, SpringBoot, IDE, Intellij, Productivity]
+date: 2021-08-18T23:29:17.000Z
+url: /blog/get-super-productive-with-intellij-file-templates/
+categories:
+  - IDE
+tags:
+  - Java
+  - SpringBoot
+  - IDE
+  - Intellij
+  - Productivity
+aliases:
+  - /get-super-productive-with-intellij-file-templates/
 ---
 
 [Intellij IDEA](https://www.jetbrains.com/idea/) is the most popular IDE for **Java** development and there are tons of features to explore and become more productive.

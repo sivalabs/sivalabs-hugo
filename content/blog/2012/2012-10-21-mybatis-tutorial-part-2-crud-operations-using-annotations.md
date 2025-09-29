@@ -2,13 +2,14 @@
 title: 'MyBatis Tutorial: Part-2: CRUD operations Using Annotations'
 author: Siva
 type: post
-date: 2012-10-21T11:49:00+00:00
-url: /mybatis-tutorial-part-2-crud-operations-using-annotations/
+date: 2012-10-21T11:49:00.000Z
+url: /blog/mybatis-tutorial-part-2-crud-operations-using-annotations/
 categories:
   - Java
 tags:
   - MyBatis
-
+aliases:
+  - /mybatis-tutorial-part-2-crud-operations-using-annotations/
 ---
 In this post I will explain how to perform CRUD operations using MyBatis Annotation support without need of Queries configuration in XML mapper files.
 

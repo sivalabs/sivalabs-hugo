@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 5 : Implicit & Resource Owner Password Credentials Flows"
+title: 'Spring Security OAuth 2 Tutorial - 5 : Implicit & Resource Owner Password Credentials Flows'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part5.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part5.webp
 type: post
 draft: false
-date: 2023-09-27T09:00:00+05:30
-url: /spring-security-oauth2-tutorial-implicit-and-resource-owner-password-credentials-flow
+date: 2023-09-27T03:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-implicit-and-resource-owner-password-credentials-flow
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, you will learn how OAuth 2.0 Implicit Flow and Resource Owner Password Credentials Flow works.
+aliases:
+  - /spring-security-oauth2-tutorial-implicit-and-resource-owner-password-credentials-flow
 ---
 
 In the [Part 4: OAuth 2.0 Authorization Code Flow with PKCE]({{< relref "2023-09-27-spring-security-oauth2-tutorial-part4.md" >}}), 

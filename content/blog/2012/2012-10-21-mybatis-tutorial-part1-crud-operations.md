@@ -2,14 +2,15 @@
 title: 'MyBatis Tutorial: Part1 – CRUD Operations'
 author: Siva
 type: post
-date: 2012-10-21T11:10:00+00:00
-url: /mybatis-tutorial-part1-crud-operations/
+date: 2012-10-21T11:10:00.000Z
+url: /blog/mybatis-tutorial-part1-crud-operations/
 categories:
   - Java
 tags:
   - Java
   - MyBatis
-
+aliases:
+  - /mybatis-tutorial-part1-crud-operations/
 ---
 MyBatis is an SQL Mapper tool which greatly simplifies the database programing when compared to using JDBC directly.
 

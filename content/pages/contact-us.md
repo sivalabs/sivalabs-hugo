@@ -2,8 +2,10 @@
 title: Contact Me
 author: Siva
 type: page
-date: 2023-10-15T06:06:31+00:00
-url: /contact-me/
+date: 2023-10-15T06:06:31.000Z
+url: /blog/contact-me/
+aliases:
+  - /contact-me/
 ---
 
 You can reach out to us using any of the following channels:

@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot + jOOQ Tutorial - 3 : Fetching One-to-One Relationships"
+title: 'Spring Boot + jOOQ Tutorial - 3 : Fetching One-to-One Relationships'
 author: Siva
-images: ["/preview-images/spring-boot-jooq-tutorial-part-3.webp"]
+images:
+  - /preview-images/spring-boot-jooq-tutorial-part-3.webp
 type: post
 draft: false
-date: 2023-10-19T06:00:00+05:30
-url: /spring-boot-jooq-tutorial-fetching-one-to-one-associations
+date: 2023-10-19T00:30:00.000Z
+url: /blog/spring-boot-jooq-tutorial-fetching-one-to-one-associations
 toc: true
-categories: ["jOOQ"]
-tags: [SpringBoot, jOOQ]
+categories:
+  - jOOQ
+tags:
+  - SpringBoot
+  - jOOQ
 description: In this tutorial, we will learn how to implement fetch One-to-One relationships using jOOQ.
+aliases:
+  - /spring-boot-jooq-tutorial-fetching-one-to-one-associations
 ---
 In the [previous tutorial]({{< relref "2023-10-16-spring-boot-jooq-tutorial-part-2.md" >}}), 
 we have learned how to implement basic CRUD Operations using jOOQ.

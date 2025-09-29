@@ -1,13 +1,17 @@
 ---
 title: Kafka Tutorial - Java Producer and Consumer
 author: Siva
-images: ["/preview-images/kafka.webp"]
+images:
+  - /preview-images/kafka.webp
 type: post
-date: 2019-06-21T07:59:17+05:30
-url: /kafka-tutorial-java-producer-consumer/
+date: 2019-06-21T02:29:17.000Z
+url: /blog/kafka-tutorial-java-producer-consumer/
 categories:
   - Kafka
-tags: [Kafka]
+tags:
+  - Kafka
+aliases:
+  - /kafka-tutorial-java-producer-consumer/
 ---
 
 [Kafka](https://kafka.apache.org/), depending on how you use it, can be seen as a Message Broker, Event Store or a Streaming Platform etc. Kafka became a preferred technology for many of the modern applications because of various reasons like:

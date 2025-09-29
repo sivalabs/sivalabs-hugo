@@ -1,10 +1,11 @@
 ---
 title: 'MicroServices - Part 4 : Spring Cloud Circuit Breaker using Netflix Hystrix'
 author: Siva
-images: ["/preview-images/hystrix-dashboard.webp"]
+images:
+  - /preview-images/hystrix-dashboard.webp
 type: post
-date: 2018-03-12T07:59:17+05:30
-url: /spring-cloud-netflix-circuit-breaker/
+date: 2018-03-12T02:29:17.000Z
+url: /blog/spring-cloud-netflix-circuit-breaker/
 categories:
   - microservices
   - springboot
@@ -13,6 +14,8 @@ tags:
   - microservices
   - springboot
   - springcloud
+aliases:
+  - /spring-cloud-netflix-circuit-breaker/
 ---
 
 In the microservices world, to fulfill a client request one microservice may need to talk to other microservices. 

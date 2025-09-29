@@ -1,13 +1,19 @@
 ---
-title: "SivaLabs Weekly Newsletter - 2023, Week 27"
+title: SivaLabs Weekly Newsletter - 2023, Week 27
 author: Siva
-images: ["/preview-images/newsletter.webp"]
+images:
+  - /preview-images/newsletter.webp
 type: post
 draft: false
-date: 2023-07-06T04:59:17+05:30
-url: /sivalabs-weekly-newsletter-2023-27
-categories: [Newsletter]
-tags: [Newsletter, Tech]
+date: 2023-07-05T23:29:17.000Z
+url: /blog/sivalabs-weekly-newsletter-2023-27
+categories:
+  - Newsletter
+tags:
+  - Newsletter
+  - Tech
+aliases:
+  - /sivalabs-weekly-newsletter-2023-27
 ---
 
 ## SivaLabs Weekly Newsletter - 2023 Week 27

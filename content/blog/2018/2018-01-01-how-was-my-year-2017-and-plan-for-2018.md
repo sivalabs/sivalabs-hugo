@@ -1,14 +1,17 @@
 ---
 title: How was my year 2017 and my plans for 2018
 author: Siva
-images: ["/preview-images/2018-year.webp"]
+images:
+  - /preview-images/2018-year.webp
 type: post
-date: 2018-01-01T07:59:17+05:30
-url: /how-was-my-year-2017-and-plan-for-2018/
+date: 2018-01-01T02:29:17.000Z
+url: /blog/how-was-my-year-2017-and-plan-for-2018/
 categories:
   - Blogging
 tags:
   - blogging
+aliases:
+  - /how-was-my-year-2017-and-plan-for-2018/
 ---
 ## Happy new year to you :-)
 

@@ -2,13 +2,14 @@
 title: Welcome note
 author: Siva
 type: post
-date: 2008-12-21T08:05:00+00:00
-url: /welcome-note/
+date: 2008-12-21T08:05:00.000Z
+url: /blog/welcome-note/
 categories:
   - Java
 tags:
   - Blogging
-
+aliases:
+  - /welcome-note/
 ---
 Hi All, 
 Welcome folks.

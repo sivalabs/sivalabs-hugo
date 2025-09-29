@@ -1,13 +1,19 @@
 ---
-title: "My Thoughts on DevOps, Platform Engineering, and FullStack Developer"
+title: My Thoughts on DevOps, Platform Engineering, and FullStack Developer
 author: Siva
-images: ["/preview-images/social-media.webp"]
+images:
+  - /preview-images/social-media.webp
 type: post
 draft: false
-date: 2023-07-12T04:59:17+05:30
-url: /my-thoughts-on-devops-platform-engineering-and-fullstack-developer
-categories: [Thoughts]
-tags: [Thoughts, Opinions]
+date: 2023-07-11T23:29:17.000Z
+url: /blog/my-thoughts-on-devops-platform-engineering-and-fullstack-developer
+categories:
+  - Thoughts
+tags:
+  - Thoughts
+  - Opinions
+aliases:
+  - /my-thoughts-on-devops-platform-engineering-and-fullstack-developer
 ---
 
 In the software development world, once in a while a new ideology or process or technology 

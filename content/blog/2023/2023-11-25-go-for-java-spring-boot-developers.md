@@ -1,15 +1,20 @@
 ---
-title: "Go for Java/SpringBoot Developers"
+title: Go for Java/SpringBoot Developers
 author: Siva
-images: ["/preview-images/go-for-spring-boot-devs-1.webp"]
+images:
+  - /preview-images/go-for-spring-boot-devs-1.webp
 type: post
 draft: false
 toc: true
-date: 2023-11-25T04:59:17+05:30
-url: /go-for-java-springboot-developers
-categories: [GoLang]
-tags: [GoLang]
+date: 2023-11-24T23:29:17.000Z
+url: /blog/go-for-java-springboot-developers
+categories:
+  - GoLang
+tags:
+  - GoLang
 description: In this article, I will explain how to build a REST API using Go language for the developers coming from a Java/Spring Boot developer background.
+aliases:
+  - /go-for-java-springboot-developers
 ---
 I have been using Java for more than 17 years, and I really like Java and its ecosystem.
 Within the Java ecosystem, Spring Boot is my go-to framework for building applications.

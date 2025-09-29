@@ -2,15 +2,16 @@
 title: 'Keep The Code Clean: WatchDog & SpotTheBug Approach'
 author: Siva
 type: post
-date: 2012-08-28T04:55:00+00:00
-url: /keep-code-clean-watchdog-spotthebug/
+date: 2012-08-28T04:55:00.000Z
+url: /blog/keep-code-clean-watchdog-spotthebug/
 categories:
   - Best-Practices
 tags:
   - best-practices
   - java
   - java-ee
-
+aliases:
+  - /keep-code-clean-watchdog-spotthebug/
 ---
 Before going to discuss **WatchDog & SpotTheBug Approach**, let me give a brief context on what is the needs for this.
 

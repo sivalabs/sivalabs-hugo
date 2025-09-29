@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot REST API Best Practices - Part 4"
+title: Spring Boot REST API Best Practices - Part 4
 author: Siva
-images: ["/preview-images/spring-boot-rest-api-part-4.webp"]
+images:
+  - /preview-images/spring-boot-rest-api-part-4.webp
 type: post
 draft: false
-date: 2023-08-27T06:00:00+05:30
-url: /spring-boot-rest-api-best-practices-part-4
+date: 2023-08-27T00:30:00.000Z
+url: /blog/spring-boot-rest-api-best-practices-part-4
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to implement exception handling while creating Spring Boot REST APIs.
+aliases:
+  - /spring-boot-rest-api-best-practices-part-4
 ---
 
 In this **Spring Boot REST API Best Practices** series, we have learned how to implement CRUD operations so far.

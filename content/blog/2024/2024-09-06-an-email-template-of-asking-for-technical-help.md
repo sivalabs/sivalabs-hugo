@@ -1,14 +1,19 @@
 ---
-title: "Master the Art of Requesting Technical Help: A Handy Email Template"
+title: 'Master the Art of Requesting Technical Help: A Handy Email Template'
 author: Siva
-images: ["/images/sunset-1807524.webp"]
+images:
+  - /images/sunset-1807524.webp
 type: post
 draft: false
-date: 2024-09-06T04:59:17+05:30
-url: /an-email-template-of-asking-for-technical-help
+date: 2024-09-05T23:29:17.000Z
+url: /blog/an-email-template-of-asking-for-technical-help
 toc: false
-categories: [Career]
-tags: [Career]
+categories:
+  - Career
+tags:
+  - Career
+aliases:
+  - /an-email-template-of-asking-for-technical-help
 ---
 As a software developer, at the beginning of my career, I thought it was more important to learn one more programming language or framework or library.
 But as years passed by, I realized it is also equally important to learn how to interact with people.

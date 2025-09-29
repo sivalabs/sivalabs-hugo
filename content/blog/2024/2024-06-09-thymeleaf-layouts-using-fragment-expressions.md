@@ -1,14 +1,21 @@
 ---
-title: "Thymeleaf Layouts using Fragment Expressions in Spring Boot GraalVM Native Image"
+title: Thymeleaf Layouts using Fragment Expressions in Spring Boot GraalVM Native Image
 author: Siva
-images: ["/preview-images/thymeleaf-layouts.webp"]
+images:
+  - /preview-images/thymeleaf-layouts.webp
 type: post
 draft: false
-date: 2024-06-09T04:59:17+05:30
-url: /thymeleaf-layouts-using-fragment-expressions
+date: 2024-06-08T23:29:17.000Z
+url: /blog/thymeleaf-layouts-using-fragment-expressions
 toc: true
-categories: [SpringBoot]
-tags: [SpringBoot, Thymeleaf, GraalVM]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Thymeleaf
+  - GraalVM
+aliases:
+  - /thymeleaf-layouts-using-fragment-expressions
 ---
 
 Typically, in Spring Boot + Thyemleaf applications, 

@@ -1,14 +1,20 @@
 ---
-title: "Spring Boot + Testcontainers Tests at Jet Speed"
+title: Spring Boot + Testcontainers Tests at Jet Speed
 author: Siva
-images: ["/images/springboot-testcontainers-tests-fast.webp"]
+images:
+  - /images/springboot-testcontainers-tests-fast.webp
 type: post
 draft: false
-date: 2025-01-02T04:59:17+05:30
-url: /run-spring-boot-testcontainers-tests-at-jet-speed
+date: 2025-01-01T23:29:17.000Z
+url: /blog/run-spring-boot-testcontainers-tests-at-jet-speed
 toc: true
-categories: [SpringBoot]
-tags: [SpringBoot, Testcontainers]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Testcontainers
+aliases:
+  - /run-spring-boot-testcontainers-tests-at-jet-speed
 ---
 
 Spring Boot 3.1.0 introduced [support for Testcontainers](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html) 

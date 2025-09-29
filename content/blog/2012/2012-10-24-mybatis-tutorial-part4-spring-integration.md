@@ -2,14 +2,15 @@
 title: 'MyBatis Tutorial : Part4 – Spring Integration'
 author: Siva
 type: post
-date: 2012-10-24T00:40:00+00:00
-url: /mybatis-tutorial-part4-spring-integration/
+date: 2012-10-24T00:40:00.000Z
+url: /blog/mybatis-tutorial-part4-spring-integration/
 categories:
   - Java
 tags:
   - MyBatis
   - Spring
-
+aliases:
+  - /mybatis-tutorial-part4-spring-integration/
 ---
 [**MyBatis Tutorial: Part1 &#8211; CRUD Operations**]({{< relref "2012-10-21-mybatis-tutorial-part1-crud-operations.md" >}}) 
   

@@ -1,14 +1,19 @@
 ---
-title: "Mastering Spring Boot in 5 Stages"
+title: Mastering Spring Boot in 5 Stages
 author: Siva
-images: ["/images/spring-boot-in-5-stages.webp"]
+images:
+  - /images/spring-boot-in-5-stages.webp
 type: post
 draft: false
-date: 2024-07-06T04:59:17+05:30
-url: /mastering-spring-boot-in-5-stages
+date: 2024-07-05T23:29:17.000Z
+url: /blog/mastering-spring-boot-in-5-stages
 toc: true
-categories: [SpringBoot]
-tags: [SpringBoot]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+aliases:
+  - /mastering-spring-boot-in-5-stages
 ---
 
 [Spring Boot](https://spring.io/) is the most popular framework in the Java world to build enterprise applications.

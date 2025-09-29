@@ -1,13 +1,19 @@
 ---
 title: Should you use Lombok? Or, is it bad for you?
 author: Siva
-images: ["/preview-images/lombok.webp"]
+images:
+  - /preview-images/lombok.webp
 type: post
 draft: false
-date: 2023-04-25T04:59:17+05:30
-url: /should-you-use-lombok-or-is-it-bad-for-you/
-categories: [Java]
-tags: [Java, Lombok]
+date: 2023-04-24T23:29:17.000Z
+url: /blog/should-you-use-lombok-or-is-it-bad-for-you/
+categories:
+  - Java
+tags:
+  - Java
+  - Lombok
+aliases:
+  - /should-you-use-lombok-or-is-it-bad-for-you/
 ---
 
 I'm a happy [Lombok](https://projectlombok.org/) library user. I found this library a decade ago, and I've been using it ever since.

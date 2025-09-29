@@ -1,14 +1,19 @@
 ---
 title: Few things I learned in the hard way in 15 years of my career
 author: Siva
-images: ["/preview-images/career-lessons.webp"]
+images:
+  - /preview-images/career-lessons.webp
 type: post
 draft: false
-date: 2021-08-11T04:59:17+05:30
-url: /few-things-i-learned-the-hardway-in-15-years-of-my-career/
-categories: [Career]
-tags: [Career]
+date: 2021-08-10T23:29:17.000Z
+url: /blog/few-things-i-learned-the-hardway-in-15-years-of-my-career/
+categories:
+  - Career
+tags:
+  - Career
 popular: true
+aliases:
+  - /few-things-i-learned-the-hardway-in-15-years-of-my-career/
 ---
 
 I started my career as a Java developer in 2006, and it is almost 15 years that I have been continuing as a software developer.

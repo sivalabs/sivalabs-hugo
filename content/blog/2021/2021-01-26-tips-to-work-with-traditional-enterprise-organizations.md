@@ -1,13 +1,18 @@
 ---
 title: Tips to work at traditional enterprise organizations as consultant/contractor (and save your ass)
 author: Siva
-images: ["/preview-images/corp-emp.webp"]
+images:
+  - /preview-images/corp-emp.webp
 type: post
 draft: false
-date: 2021-01-26T04:59:17+05:30
-url: /tips-to-work-with-traditional-enterprise-organizations/
-categories: [Thoughts]
-tags: [Thoughts]
+date: 2021-01-25T23:29:17.000Z
+url: /blog/tips-to-work-with-traditional-enterprise-organizations/
+categories:
+  - Thoughts
+tags:
+  - Thoughts
+aliases:
+  - /tips-to-work-with-traditional-enterprise-organizations/
 ---
 
 I worked at different types of IT organizations including small 20 people company, world's largest bank,

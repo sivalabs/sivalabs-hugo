@@ -1,14 +1,20 @@
 ---
-title: "Protect Your Mental Health While Being On Social Media"
+title: Protect Your Mental Health While Being On Social Media
 author: Siva
-images: ["/images/protect-mental-health-on-social-media.webp"]
+images:
+  - /images/protect-mental-health-on-social-media.webp
 type: post
 draft: false
-date: 2025-06-09T04:59:17+05:30
-url: /protecting-your-mental-health-while-being-on-social-media
+date: 2025-06-08T23:29:17.000Z
+url: /blog/protecting-your-mental-health-while-being-on-social-media
 toc: false
-categories: [Career]
-tags: [Career, SocialMedia]
+categories:
+  - Career
+tags:
+  - Career
+  - SocialMedia
+aliases:
+  - /protecting-your-mental-health-while-being-on-social-media
 ---
 
 Social media is a double-edged sword. If used properly, it can be immensely helpful.

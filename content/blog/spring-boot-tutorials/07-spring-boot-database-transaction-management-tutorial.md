@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Database Transaction Management Tutorial"
+title: Spring Boot Database Transaction Management Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-database-transaction-management-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-database-transaction-management-tutorial.webp
 type: post
 draft: false
-date: 2023-08-03T06:00:00+05:30
-url: /spring-boot-database-transaction-management-tutorial
+date: 2023-08-03T00:30:00.000Z
+url: /blog/spring-boot-database-transaction-management-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to handle database transactions while using SQL databases.
+aliases:
+  - /spring-boot-database-transaction-management-tutorial
 ---
 
 Spring provides a high-level abstraction on top of **JDBC** with 

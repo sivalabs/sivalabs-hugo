@@ -1,13 +1,18 @@
 ---
-title: "Its time to apply KISS principle to career"
+title: Its time to apply KISS principle to career
 author: Siva
-images: ["/preview-images/kiss-principle-to-career.webp"]
+images:
+  - /preview-images/kiss-principle-to-career.webp
 type: post
 draft: false
-date: 2023-12-30T04:59:17+05:30
-url: /time-to-apply-kiss-principle-to-career
-categories: [Career]
-tags: [Career]
+date: 2023-12-29T23:29:17.000Z
+url: /blog/time-to-apply-kiss-principle-to-career
+categories:
+  - Career
+tags:
+  - Career
+aliases:
+  - /time-to-apply-kiss-principle-to-career
 ---
 
 You might have heard from IT employees that there is no work-life balance in IT due to unrealistic deadlines, long working hours, etc.

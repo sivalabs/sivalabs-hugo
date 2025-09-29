@@ -1,13 +1,19 @@
 ---
 title: Improve JPA application performance using HypersistenceOptimizer
 author: Siva
-images: ["/preview-images/hypersistence-optimizer.webp"]
+images:
+  - /preview-images/hypersistence-optimizer.webp
 type: post
 draft: false
-date: 2021-01-02T04:59:17+05:30
-url: /improve-jpa-performance-using-hypersistence-optimizer/
-categories: [Java]
-tags: [JPA, Hibernate]
+date: 2021-01-01T23:29:17.000Z
+url: /blog/improve-jpa-performance-using-hypersistence-optimizer/
+categories:
+  - Java
+tags:
+  - JPA
+  - Hibernate
+aliases:
+  - /improve-jpa-performance-using-hypersistence-optimizer/
 ---
 
 In Java world, [Hibernate/JPA](https://hibernate.org/) is the most popular ORM framework. 

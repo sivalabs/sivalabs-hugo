@@ -1,15 +1,21 @@
 ---
-title: "Getting Started with Spring Boot"
+title: Getting Started with Spring Boot
 author: Siva
-images: ["/preview-images/spring-boot-getting-started.webp"]
+images:
+  - /preview-images/spring-boot-getting-started.webp
 type: post
 draft: false
-date: 2023-07-21T05:00:00+05:30
-url: /getting-started-with-spring-boot
+date: 2023-07-20T23:30:00.000Z
+url: /blog/getting-started-with-spring-boot
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this Spring Boot tutorial, you will learn what are the key features of Spring Boot, how to create a Spring Boot application and build a REST API.
+aliases:
+  - /getting-started-with-spring-boot
 ---
 
 ## Introducing Spring Boot

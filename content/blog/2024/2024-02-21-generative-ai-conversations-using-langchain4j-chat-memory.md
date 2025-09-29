@@ -1,14 +1,23 @@
 ---
-title: "Generative AI Conversations using LangChain4j ChatMemory"
+title: Generative AI Conversations using LangChain4j ChatMemory
 author: Siva
-images: ["/preview-images/langchain4j-chat-memory.webp"]
+images:
+  - /preview-images/langchain4j-chat-memory.webp
 type: post
 draft: false
-date: 2024-02-21T04:59:17+05:30
-url: /generative-ai-conversations-using-langchain4j-chat-memory
+date: 2024-02-20T23:29:17.000Z
+url: /blog/generative-ai-conversations-using-langchain4j-chat-memory
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, LangChain4j, OpenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - LangChain4j
+  - OpenAI
+aliases:
+  - /generative-ai-conversations-using-langchain4j-chat-memory
 ---
 In this article, we will explore the following:
 

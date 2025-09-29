@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 4 : Authorization Code Flow with PKCE"
+title: 'Spring Security OAuth 2 Tutorial - 4 : Authorization Code Flow with PKCE'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part4.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part4.webp
 type: post
 draft: false
-date: 2023-09-27T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-authorization-code-flow-with-pkce
+date: 2023-09-27T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-authorization-code-flow-with-pkce
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, you will learn how OAuth 2.0 Authorization Code Flow with PKCE works.
+aliases:
+  - /spring-security-oauth2-tutorial-authorization-code-flow-with-pkce
 ---
 In the [Part 3: OAuth 2.0 Client Credentials Flow]({{< relref "2023-09-25-spring-security-oauth2-tutorial-part3.md" >}}), 
 we learned how to acquire **access_token** using **Client Credentials Flow**. 

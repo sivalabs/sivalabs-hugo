@@ -1,13 +1,18 @@
 ---
 title: SpringBoot Integration Testing using TestContainers Starter
 author: Siva
-images: ["/preview-images/testcontainers.webp"]
+images:
+  - /preview-images/testcontainers.webp
 type: post
-date: 2020-02-03T04:59:17+05:30
-url: /spring-boot-integration-testing-using-testcontainers-starter/
+date: 2020-02-02T23:29:17.000Z
+url: /blog/spring-boot-integration-testing-using-testcontainers-starter/
 categories:
   - SpringBoot
-tags: [SpringBoot, Testcontainers]
+tags:
+  - SpringBoot
+  - Testcontainers
+aliases:
+  - /spring-boot-integration-testing-using-testcontainers-starter/
 ---
 
 One of the many reasons for huge popularity of Spring and SpringBoot is 

@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Profiles Tutorial"
+title: Spring Boot Profiles Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-profiles-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-profiles-tutorial.webp
 type: post
 draft: false
-date: 2023-07-30T06:00:00+05:30
-url: /spring-boot-profiles-tutorial
+date: 2023-07-30T00:30:00.000Z
+url: /blog/spring-boot-profiles-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to use Profiles in your Spring Boot application to configure properties and beans differently for different environments.
+aliases:
+  - /spring-boot-profiles-tutorial
 ---
 
 ## Introducing Spring Profiles

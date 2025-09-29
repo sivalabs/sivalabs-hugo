@@ -2,10 +2,14 @@
 title: JOOQ Tutorials
 author: Siva
 type: page
-date: 2020-11-30T02:32:39+00:00
-url: /jooq-tutorials/
-categories: ["JOOQ"]
-tags: ["JOOQ"]
+date: 2020-11-30T02:32:39.000Z
+url: /blog/jooq-tutorials/
+categories:
+  - JOOQ
+tags:
+  - JOOQ
+aliases:
+  - /jooq-tutorials/
 ---
 
 ### jOOQ

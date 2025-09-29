@@ -1,14 +1,23 @@
 ---
-title: "LangChain4j Retrieval-Augmented Generation (RAG) Tutorial"
+title: LangChain4j Retrieval-Augmented Generation (RAG) Tutorial
 author: Siva
-images: ["/preview-images/langchain4j-rag.webp"]
+images:
+  - /preview-images/langchain4j-rag.webp
 type: post
 draft: false
-date: 2024-02-26T04:59:17+05:30
-url: /langchain4j-retrieval-augmented-generation-tutorial
+date: 2024-02-25T23:29:17.000Z
+url: /blog/langchain4j-retrieval-augmented-generation-tutorial
 toc: true
-categories: [AI]
-tags: [AI, Generative AI, Java, LangChain4j, OpenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - Generative AI
+  - Java
+  - LangChain4j
+  - OpenAI
+aliases:
+  - /langchain4j-retrieval-augmented-generation-tutorial
 ---
 In this article, we will explore the following:
 

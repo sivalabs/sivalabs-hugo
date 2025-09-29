@@ -1,13 +1,17 @@
 ---
 title: My proud moment as a mentor
 author: Siva
-images: ["/preview-images/strong-women.webp"]
+images:
+  - /preview-images/strong-women.webp
 type: post
-date: 2020-06-08T04:59:17+05:30
-url: /my-proud-moment-as-a-mentor/
+date: 2020-06-07T23:29:17.000Z
+url: /blog/my-proud-moment-as-a-mentor/
 categories:
   - Career
-tags: [Career]
+tags:
+  - Career
+aliases:
+  - /my-proud-moment-as-a-mentor/
 ---
 
 As software developers, most of us implicitly assume gaining strong technical skills might make us successful.

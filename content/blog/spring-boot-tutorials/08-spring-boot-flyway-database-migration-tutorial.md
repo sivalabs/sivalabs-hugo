@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot Flyway Database Migration Tutorial"
+title: Spring Boot Flyway Database Migration Tutorial
 author: Siva
-images: ["/preview-images/spring-boot-flyway-tutorial.webp"]
+images:
+  - /preview-images/spring-boot-flyway-tutorial.webp
 type: post
 draft: false
-date: 2023-08-08T06:00:00+05:30
-url: /spring-boot-flyway-database-migration-tutorial
+date: 2023-08-08T00:30:00.000Z
+url: /blog/spring-boot-flyway-database-migration-tutorial
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to use Flyway for performing database migrations in Spring Boot applications.
+aliases:
+  - /spring-boot-flyway-database-migration-tutorial
 ---
 
 In the previous [Spring Boot JdbcTemplate Tutorial]({{< relref "06-spring-boot-jdbctemplate-tutorial.md" >}}) 

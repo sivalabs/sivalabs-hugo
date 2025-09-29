@@ -1,13 +1,19 @@
 ---
 title: Testing REST APIs using Postman and Newman
 author: Siva
-images: ["/preview-images/postman.webp"]
+images:
+  - /preview-images/postman.webp
 type: post
-date: 2019-10-20T07:59:17+05:30
-url: /testing-rest-apis-with-postman-newman/
+date: 2019-10-20T02:29:17.000Z
+url: /blog/testing-rest-apis-with-postman-newman/
 categories:
   - Testing
-tags: [postman, newman, testing]
+tags:
+  - postman
+  - newman
+  - testing
+aliases:
+  - /testing-rest-apis-with-postman-newman/
 ---
 
 [**Postman**](https://www.getpostman.com/) is the most popular tool for testing REST APIs.

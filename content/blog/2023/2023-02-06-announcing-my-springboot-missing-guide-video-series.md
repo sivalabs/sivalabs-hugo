@@ -1,13 +1,21 @@
 ---
 title: Announcing My "SpringBoot - The Missing Guide" Video Series on YouTube
 author: Siva
-images: ["/preview-images/spring-boot-missing-guide.webp"]
+images:
+  - /preview-images/spring-boot-missing-guide.webp
 type: post
 draft: false
-date: 2023-02-06T04:59:17+05:30
-url: /announcing-my-springboot-missing-guide-video-series/
-categories: [SpringBoot]
-tags: [Java, SpringBoot, Tutorials, YouTube]
+date: 2023-02-05T23:29:17.000Z
+url: /blog/announcing-my-springboot-missing-guide-video-series/
+categories:
+  - SpringBoot
+tags:
+  - Java
+  - SpringBoot
+  - Tutorials
+  - YouTube
+aliases:
+  - /announcing-my-springboot-missing-guide-video-series/
 ---
 
 ### TLDR;

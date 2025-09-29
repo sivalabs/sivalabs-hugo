@@ -1,13 +1,19 @@
 ---
 title: Sharing Thoughts and Knowledge via Twitter vs Blogging
 author: Siva
-images: ["/preview-images/discussions.webp"]
+images:
+  - /preview-images/discussions.webp
 type: post
 draft: false
-date: 2023-07-03T04:59:17+05:30
-url: /sharing-thoughts-and-knowledge-via-twitter-vs-blogging
-categories: [Thoughts]
-tags: [thoughts, social-media]
+date: 2023-07-02T23:29:17.000Z
+url: /blog/sharing-thoughts-and-knowledge-via-twitter-vs-blogging
+categories:
+  - Thoughts
+tags:
+  - thoughts
+  - social-media
+aliases:
+  - /sharing-thoughts-and-knowledge-via-twitter-vs-blogging
 ---
 
 SocialMedia is a double-edged sword. We can put it to good use or become addicted to it and suffer.

@@ -1,10 +1,11 @@
 ---
 title: 'MicroServices - Part 3 : Spring Cloud Service Registry and Discovery'
 author: Siva
-images: ["/preview-images/EurekaDashboard.webp"]
+images:
+  - /preview-images/EurekaDashboard.webp
 type: post
-date: 2018-03-08T07:59:17+05:30
-url: /microservices-springcloud-eureka/
+date: 2018-03-08T02:29:17.000Z
+url: /blog/microservices-springcloud-eureka/
 categories:
   - microservices
   - springboot
@@ -13,6 +14,8 @@ tags:
   - microservices
   - springboot
   - springcloud
+aliases:
+  - /microservices-springcloud-eureka/
 ---
 
 

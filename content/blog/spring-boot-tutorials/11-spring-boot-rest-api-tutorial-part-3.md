@@ -1,15 +1,21 @@
 ---
-title: "Spring Boot REST API Best Practices - Part 3"
+title: Spring Boot REST API Best Practices - Part 3
 author: Siva
-images: ["/preview-images/spring-boot-rest-api-part-3.webp"]
+images:
+  - /preview-images/spring-boot-rest-api-part-3.webp
 type: post
 draft: false
-date: 2023-08-26T06:00:00+05:30
-url: /spring-boot-rest-api-best-practices-part-3
+date: 2023-08-26T00:30:00.000Z
+url: /blog/spring-boot-rest-api-best-practices-part-3
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, Tutorials]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - Tutorials
 description: In this tutorial, you will learn how to implement API endpoints for finding and deleting a resource by ID.
+aliases:
+  - /spring-boot-rest-api-best-practices-part-3
 ---
 
 In this **Spring Boot REST API Best Practices - Part-3**, we will see how to implement **FindById and DeleteById API endpoints**.

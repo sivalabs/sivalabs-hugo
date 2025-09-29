@@ -1,14 +1,20 @@
 ---
-title: "Running your own Spring Initializr and using it from IntelliJ IDEA"
+title: Running your own Spring Initializr and using it from IntelliJ IDEA
 author: Siva
-images: ["/images/start-spring-io.webp"]
+images:
+  - /images/start-spring-io.webp
 type: post
 draft: false
-date: 2024-09-07T04:59:17+05:30
-url: /running-custom-spring-initializr
+date: 2024-09-06T23:29:17.000Z
+url: /blog/running-custom-spring-initializr
 toc: false
-categories: [SpringBoot]
-tags: [SpringBoot, IntelliJIDEA]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - IntelliJIDEA
+aliases:
+  - /running-custom-spring-initializr
 ---
 If you ever worked with **Spring Boot**, then you are probably aware of [Spring Initializr](https://start.spring.io/).
 The Spring Initializr is a web application that you can use to create a Spring Boot application.

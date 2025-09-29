@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 9 : Invoking Secured Resource Server APIs from Client Application"
+title: 'Spring Security OAuth 2 Tutorial - 9 : Invoking Secured Resource Server APIs from Client Application'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part9.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part9.webp
 type: post
 draft: false
-date: 2023-10-06T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-integrating-client-and-resource-server
+date: 2023-10-06T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-integrating-client-and-resource-server
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, we will explore how to invoke the secured Resource Server API endpoints from the Client application.
+aliases:
+  - /spring-security-oauth2-tutorial-integrating-client-and-resource-server
 ---
 
 In the previous articles, we have created **messages-webapp** and **messages-service** and invoked API endpoints using Postman.

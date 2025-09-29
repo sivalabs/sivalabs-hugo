@@ -2,14 +2,16 @@
 title: A Developers Perspective on Spring vs JavaEE
 author: Siva
 type: post
-date: 2015-06-15T13:04:00+00:00
-url: /a-developers-perspective-on-spring-vs-javaee/
+date: 2015-06-15T13:04:00.000Z
+url: /blog/a-developers-perspective-on-spring-vs-javaee/
 categories:
   - JavaEE
   - Spring
 tags:
   - Java-EE
   - Spring
+aliases:
+  - /a-developers-perspective-on-spring-vs-javaee/
 ---
 In Java community Spring vs JavaEE is a never ending debate. In such debates people form two groups consisting of evangelists, architects and hard core fans of one platform and debate endlessly. Those who participate in the debates may be architects who are responsible for platform selection. But what would developers think about this Spring vs JavaEE debate?
 

@@ -1,14 +1,20 @@
 ---
 title: The lost art of "Simple Application Development"
 author: Siva
-images: ["/preview-images/checklist.webp"]
+images:
+  - /preview-images/checklist.webp
 type: post
 draft: true
-date: 2020-08-06T04:59:17+05:30
-url: /the-lost-art-of-simple-application-development/
+date: 2020-08-05T23:29:17.000Z
+url: /blog/the-lost-art-of-simple-application-development/
 categories:
   - Architecture
-tags: [Thoughts, Architecture, Simplicity]
+tags:
+  - Thoughts
+  - Architecture
+  - Simplicity
+aliases:
+  - /the-lost-art-of-simple-application-development/
 ---
 
 I am a software developer working in India. Many IT companies in India (at least the companies I worked for) 

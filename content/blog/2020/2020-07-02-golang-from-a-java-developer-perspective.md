@@ -1,13 +1,18 @@
 ---
 title: GoLang from a Java developer perspective
 author: Siva
-images: ["/preview-images/golang.webp"]
+images:
+  - /preview-images/golang.webp
 type: post
-date: 2020-07-02T04:59:17+05:30
-url: /golang-from-a-java-developer-perspective/
+date: 2020-07-01T23:29:17.000Z
+url: /blog/golang-from-a-java-developer-perspective/
 categories:
   - GoLang
-tags: [GoLang, Java]
+tags:
+  - GoLang
+  - Java
+aliases:
+  - /golang-from-a-java-developer-perspective/
 ---
 
 Gone are the days we can call ourselves as Java developer, .NET developer, Python developer etc.

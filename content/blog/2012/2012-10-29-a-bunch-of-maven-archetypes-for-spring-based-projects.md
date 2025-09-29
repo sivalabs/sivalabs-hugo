@@ -2,14 +2,15 @@
 title: A bunch of Maven Archetypes for Spring based Projects
 author: Siva
 type: post
-date: 2012-10-29T12:18:00+00:00
-url: /a-bunch-of-maven-archetypes-for-spring-based-projects/
+date: 2012-10-29T12:18:00.000Z
+url: /blog/a-bunch-of-maven-archetypes-for-spring-based-projects/
 categories:
   - Spring
 tags:
   - Maven
   - Spring
-
+aliases:
+  - /a-bunch-of-maven-archetypes-for-spring-based-projects/
 ---
 Maven is a good project management tool which&nbsp;greatly&nbsp;reduces the amount of time we spend on creating java projects with proper structure.&nbsp;With so many&nbsp;predefined&nbsp;maven archetypes it is even easier to create projects by simply selecting the archetype based on the technologies we need and type(jar/war/ear) of project we want to create.
 

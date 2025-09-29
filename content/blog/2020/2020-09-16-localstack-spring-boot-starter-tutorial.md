@@ -1,14 +1,20 @@
 ---
 title: LocalStack SpringBoot Starter Tutorial
 author: Siva
-images: ["/preview-images/localstack.webp"]
+images:
+  - /preview-images/localstack.webp
 type: post
 draft: false
-date: 2020-09-16T04:59:17+05:30
-url: /localstack-spring-boot-starter-tutorial/
+date: 2020-09-15T23:29:17.000Z
+url: /blog/localstack-spring-boot-starter-tutorial/
 categories:
   - Java
-tags: [Spring, SpringBoot, Localstack]
+tags:
+  - Spring
+  - SpringBoot
+  - Localstack
+aliases:
+  - /localstack-spring-boot-starter-tutorial/
 ---
 
 I was working on a SpringBoot application which is planned to deploy on AWS and, we were using S3, SQS and RDS services.

@@ -2,13 +2,15 @@
 title: My Life as a Software Developer in India
 author: Siva
 type: post
-date: 2015-07-06T16:17:00+00:00
-url: /my-life-as-software-developer-in-india/
+date: 2015-07-06T16:17:00.000Z
+url: /blog/my-life-as-software-developer-in-india/
 categories:
   - Java
 tags:
   - Thoughts
 popular: false
+aliases:
+  - /my-life-as-software-developer-in-india/
 ---
 I am Siva, working as a Software Developer in Hyderabad, India. Working as a Software Developer is very exciting as you see new things coming in everyday. If there are no new things at least we put a new fancy name to some old concept and celebrate (#microservices) :-). But in my opinion working as a Software Developer in India is little bit different and hard too. Few things are good, and few things are bad.
 

@@ -2,14 +2,15 @@
 title: Are frameworks making developers dumb?
 author: Siva
 type: post
-date: 2011-08-22T01:16:00+00:00
-url: /frameworks-making-developers-dumb/
+date: 2011-08-22T01:16:00.000Z
+url: /blog/frameworks-making-developers-dumb/
 categories:
   - Thoughts
 tags:
   - Interviews
   - Java
-
+aliases:
+  - /frameworks-making-developers-dumb/
 ---
 Last week I got to take interviews to hire senior java developers with around 5 years of experience. But after the interview process is over I felt like the frameworks makes developers life easier but at the same time making them dumb.
 

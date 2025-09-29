@@ -1,13 +1,18 @@
 ---
 title: What I Learned in Week-11, 2020
 author: Siva
-images: ["/preview-images/man-reading.webp"]
+images:
+  - /preview-images/man-reading.webp
 type: post
-date: 2020-03-15T04:59:17+05:30
-url: /what-i-learned-2020-week-11/
+date: 2020-03-14T23:29:17.000Z
+url: /blog/what-i-learned-2020-week-11/
 categories:
   - Java
-tags: [Java, Blogging]
+tags:
+  - Java
+  - Blogging
+aliases:
+  - /what-i-learned-2020-week-11/
 ---
 
 I come across many blog posts from various sources like [Twitter](https://twitter.com/sivalabs), 

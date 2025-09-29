@@ -1,15 +1,22 @@
 ---
-title: "Spring Security OAuth 2 Tutorial - 10 : Service to Service Communication using Client Credentials Flow"
+title: 'Spring Security OAuth 2 Tutorial - 10 : Service to Service Communication using Client Credentials Flow'
 author: Siva
-images: ["/preview-images/spring-security-oauth2-part10.webp"]
+images:
+  - /preview-images/spring-security-oauth2-part10.webp
 type: post
 draft: false
-date: 2023-10-09T06:00:00+05:30
-url: /spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
+date: 2023-10-09T00:30:00.000Z
+url: /blog/spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
 toc: true
-categories: ["SpringBoot"]
-tags: [SpringBoot, SpringSecurity, OAuth2]
+categories:
+  - SpringBoot
+tags:
+  - SpringBoot
+  - SpringSecurity
+  - OAuth2
 description: In this tutorial, we will explore how to implement Service to Service Communication using Client Credentials Flow.
+aliases:
+  - /spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
 ---
 
 In this article, we will learn how to implement **Service to Service Communication** using **Client Credentials Flow**.

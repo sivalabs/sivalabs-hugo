@@ -1,14 +1,20 @@
 ---
-title: "My First Impression of Google's NotebookLM"
+title: My First Impression of Google's NotebookLM
 author: Siva
-images: ["/images/GoogleNotebookLM.webp"]
+images:
+  - /images/GoogleNotebookLM.webp
 type: post
 draft: false
-date: 2024-11-16T04:59:17+05:30
-url: /my-first-impression-of-notebooklm
+date: 2024-11-15T23:29:17.000Z
+url: /blog/my-first-impression-of-notebooklm
 toc: false
-categories: [AI]
-tags: [AI, GenAI]
+categories:
+  - AI
+tags:
+  - AI
+  - GenAI
+aliases:
+  - /my-first-impression-of-notebooklm
 ---
 
 I came across [NotebookLM](https://notebooklm.google/) from my social media feed, and it looks interesting.
