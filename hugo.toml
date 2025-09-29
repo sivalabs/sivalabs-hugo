@@ -10,6 +10,20 @@ pygmentsCodeFences = true
 [pagination]
   pagerSize=10
 
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+
+
 [services]
   [services.googleAnalytics]
     id = 'G-N5019E5MWE'
