@@ -71,15 +71,15 @@ class Person {
 }
 ```
 
-While most of the time we usually generate **equals()**, **hashCode()** and **toString()** using either IDE generation or using **Lombok**, it is more noise in the code.
+While most of the time we usually generate **equals()**, **hashCode()** and **toString()** using either IDE generation or using **Lombok**, it adds more noise to the code.
 The same Person class can be written as a Record as follows:
 
 ```java
 public record Person(Long id, String name){ }
 ```
 
-That's it. The **equals()**, **hashCode()** and **toString()** methods will be auto generated for records.
-However, note that getters doesn't follow the usual **getId(), getName()** pattern. 
+That's it. The **equals()**, **hashCode()** and **toString()** methods will be auto-generated for records.
+However, note that getters don't follow the usual **getId(), getName()** pattern. 
 Instead, it will generate accessor methods as **person.id()** and **person.name()**.
 
 ## Using Records with SpringBoot 3
@@ -158,8 +158,8 @@ public record ApplicationProperties(
 
 This is very concise and also prevents accidentally modifying the configuration properties values.
 
-## Binding to Http Request/Response Payloads
-We usually create DTO classes with setters and getters to bind incoming HTTP request payload because frameworks needs a way to bind the request payload to the class properties.
+## Binding to HTTP Request/Response Payloads
+We usually create DTO classes with setters and getters to bind incoming HTTP request payload because frameworks need a way to bind the request payload to the class properties.
 
 SpringBoot by default uses [Jackson](https://github.com/FasterXML/jackson) library to convert request/response payloads to/from JSON and Jackson 2.12 introduced support for Records.
 So, we can use Records to bind incoming request payloads and also return records as response.
@@ -213,4 +213,4 @@ Here we are binding the JSON request payload to Bookmark record and also returni
 
 # Conclusion
 Java records are very useful to model the immutable data carrier objects with very concise syntax.
-However, Records are not silver bullet solution for every scenario. There could be cases where a regular class is better suited than Records.
+However, records are not a silver bullet solution for every scenario. There could be cases where a regular class is better suited than records.

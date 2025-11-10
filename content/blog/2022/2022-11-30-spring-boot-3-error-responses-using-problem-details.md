@@ -59,7 +59,7 @@ public class BookmarkNotFoundException extends RuntimeException {
 }
 ```
 
-Now, when you make an API call to create a bookmark with invalid data (title and url are required) using following cURL 
+Now, when you make an API call to create a bookmark with invalid data (title and url are required) using the following cURL 
 ```shell
 curl --location --request POST 'http://localhost:8080/api/bookmarks' \
 --header 'Content-Type: application/json' \
@@ -166,7 +166,7 @@ Now when you make the same API call you will get the RFC 7807 compliant response
 }
 ```
 
-The **ResponseEntityExceptionHandler** implemented **@ExceptionHandler** methods for most of the Spring MVC built-in exceptions such as **MethodArgumentNotValidException**, **ServletRequestBindingException**, **HttpRequestMethodNotSupportedException** etc.
+The **ResponseEntityExceptionHandler** implements **@ExceptionHandler** methods for most of the Spring MVC built-in exceptions such as **MethodArgumentNotValidException**, **ServletRequestBindingException**, **HttpRequestMethodNotSupportedException**, etc.
 So, the **MethodArgumentNotValidException** is handled by the exception handler method and the appropriate error response is returned.
 
 ## 2. Handling Custom Exceptions
@@ -197,7 +197,7 @@ then you will get the following response:
 }
 ```
 
-To customise the error response we can create a ExceptionHandler in **GlobalExceptionHandler** and use ProblemDetail to return a customised response.
+To customize the error response we can create an ExceptionHandler in **GlobalExceptionHandler** and use ProblemDetail to return a customized response.
 
 ```java
 @RestControllerAdvice
@@ -258,7 +258,7 @@ We have added 2 custom properties **errorCategory** and **timestamp** which will
 
 In addition to **ProblemDetail**, you can also return an instance of **ErrorResponse** which is a contract to expose HTTP error response details including HTTP status, response headers, and a body in the format of RFC 7807.
 
-> All Spring MVC exceptions such as MethodArgumentNotValidException, ServletRequestBindingException, HttpRequestMethodNotSupportedException etc implements ErrorResponse.
+> All Spring MVC exceptions such as MethodArgumentNotValidException, ServletRequestBindingException, HttpRequestMethodNotSupportedException, etc. implement ErrorResponse.
 
 ```java
 @RestControllerAdvice
@@ -308,5 +308,5 @@ By making **BookmarkNotFoundException** extending **ErrorResponseException** we 
 SpringMVC will handle it and return the error response in RFC 7807 compliant format without requiring us to implement **@ExceptionHandler** method in **GlobalExceptionHandler**.
 
 ## Conclusion
-By using Spring Framework's ProblemDetails API for error responses we can standardize on the response format which will be very beneficial 
-when you have large number of microservices communicating with each other.
+By using Spring Framework's ProblemDetails API for error responses we can standardize on the response format which will be very beneficial
+when you have a large number of microservices communicating with each other.

@@ -17,7 +17,7 @@ aliases:
   - /cloud-native-spring-in-action-book-review/
 ---
 
-I got a chance to review the upcoming [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book by [Thomas Vitale](https://twitter.com/vitalethomas) and here my review of the book.
+I got a chance to review the upcoming [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book by [Thomas Vitale](https://twitter.com/vitalethomas) and here is my review of the book.
 
 <!--more-->
 
@@ -32,12 +32,12 @@ how to build & deploy production grade SpringBoot applications on Kubernetes the
 ## Longer version:
 
 There are many books on SpringBoot that are aimed towards complete beginners to intermediate skilled developers.
-But **Cloud Native Spring in Action** book's target audience are developers who have basic knowledge on SpringBoot and looking forward to master the advanced concepts.
+But **Cloud Native Spring in Action** book's target audience is developers who have basic knowledge of SpringBoot and are looking forward to mastering the advanced concepts.
 
 * The 1st chapter introduces you to the concept of "Cloud Native" application development and set the stage for coming chapters.
   If you are already familiar with **Cloud Native**, **Kubernetes** and **SpringBoot** then probably you can quickly skim through it.
 
-* From the 2nd chapter onwards you can learn how to build SpringBoot based applications, containerize them using Buildpacks suuport and deploy them on Minikube cluster.
+* From the 2nd chapter onwards you can learn how to build SpringBoot based applications, containerize them using Buildpacks support and deploy them on Minikube cluster.
 
 * Then onwards author shows how to build a [BookStore](https://github.com/PolarBookshop) application using microservices architecture using SpringBoot, SpringCloud and Kubernetes.
 
@@ -49,25 +49,25 @@ But **Cloud Native Spring in Action** book's target audience are developers who 
   * Event driven microservices using RabbitMQ
   * Serverless functions using Spring Cloud Functions
 
-* My favourite topic/chapter among all is about implementing API Gateway using Spring Cloud Gateway. 
-  Author explained how to implement API Gateway with resiliency/fault tolerance using Resilience4j, 
-  added security using OAuth 2.0 with KeyCloak.
+* My favorite topic/chapter among all is about implementing API Gateway using Spring Cloud Gateway.
+  The author explained how to implement API Gateway with resiliency/fault tolerance using Resilience4j,
+  and added security using OAuth 2.0 with KeyCloak.
 
-* Author also covered lot of concepts around deployment using"
+* The author also covered a lot of concepts around deployment using:
   * GitHub Actions to build CI pipeline
   * docker-compose based local dev environment setup
   * Creating Kubernetes YAML manifest files and also using Kustomize to prepare production grade deployment manifests.
 
-* Monitoring and Observability is very crucial in production. Author explained how to use Prometheus, Grafana, Loki, OpenTelemetry and Tempo to setup Observability stack.
+* Monitoring and Observability is very crucial in production. The author explained how to use Prometheus, Grafana, Loki, OpenTelemetry and Tempo to set up the Observability stack.
 
 * Finally, concluded with complete production deployment setup using Kustomize, ArgoCD and GitHub Actions.
 
-## Couple of things that could be improved
-* Many people are currently using Spring Cloud modules which can be replaced with some Kubernetes features such as Service Registry, Ribbon Load Balancer etc.
+## A couple of things that could be improved
+* Many people are currently using Spring Cloud modules which can be replaced with some Kubernetes features such as Service Registry, Ribbon Load Balancer, etc.
   Having a mapping from Spring Cloud features to Kubernetes would help the migration path. Something like https://dzone.com/articles/deploying-microservices-spring-cloud-vs-kubernetes
 * KeyCloak server setup is done via CLI commands, but for beginners it would be easy to do it from UI. And, then showing how to export the realm and creating KeyCloak server using that realm config would have been great.
 
 ## Conclusion
-> Overall the **Cloud Native Spring in Action** is a must-read for every developer who are interested to learn building production grade SpringBoot applications and deploy them on Cloud.
+> Overall the **Cloud Native Spring in Action** is a must-read for every developer who is interested in learning to build production grade SpringBoot applications and deploy them on the Cloud.
 
 The sample code at https://github.com/PolarBookshop can be taken as a reference for building Cloud Native SpringBoot applications.

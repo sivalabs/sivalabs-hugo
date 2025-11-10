@@ -27,9 +27,9 @@ I find Java, especially with **SpringBoot**, a solid platform to build enterpris
 Occasionally there comes a discussion of technology selection, and I noticed some people don't prefer/like Java.
 Also, on social media I see a lot of jokes on Java's complexity. 
 While I enjoy the humour out of it, it makes me wonder why so many people perceive Java as complex??!!
-An annoying thing is some people who just started their careers and never worked with Java at all also has a strong opinion that "Java is complex"..
+An annoying thing is some people who just started their careers and never worked with Java at all also have a strong opinion that "Java is complex"..
 
-Some experienced developers also has the opinion that "Java is complex" based on their prior 2004 timeframe experience.
+Some experienced developers also have the opinion that "Java is complex" based on their prior 2004 timeframe experience.
 It is understandable though. How many of us who worked with JSF 1.x pledged to never touch a JSF project again in our lifetime??!!
 Even though JSF 2 is lot better, still some people don't like to try JSF again. I think same is happening for "Java" as a whole.
 
@@ -63,7 +63,7 @@ Let's take a look at how a newbie getting started with Java experience looks lik
 * Upon exploring further I learned there are free alternatives like **OpenJDK, AdoptOpenJDK, Amazon Correto, Microsoft OpenJDK, Zulu, Temurin**. 
   What are the differences among those variations? God knows, anyway let me go with OpenJDK.
 * Installed OpenJDK, set JAVA_HOME and added JAVA_HOME/bin to PATH, and I am good to go.
-* Opened VS Code, created a .java file, copy-pasted infamous HelloWorld program and did **javac HelloWorld.java** nad **java HelloWorld** ... voila...
+* Opened VS Code, created a .java file, copy-pasted infamous HelloWorld program and did **javac HelloWorld.java** and **java HelloWorld** ... voila...
 * Let me write a test. Google suggested to use **JUnit**.
 * How to use JUnit library? Again upon a bit of googling most of the articles showed using JUnit with **Maven** or **Gradle**.
 * What is Maven/Gradle? Okay, they are build tools. Let me install Maven/Gradle, done..cool.
@@ -110,7 +110,7 @@ If you want to play with Java for learning purpose I would recommend using **[JB
 While most of the Java developers use full-blown powerful IDES like **Intellij IDEA** or **Eclipse** or **NetBeans**, you can work with Java using **VS Code** too.
 
 ## 2. Core Standard Library is not enough
-Another common compliant was Java's Core Standard Library is not enough and many tasks needs some external library, and it's true.
+Another common complaint was Java's Core Standard Library is not enough and many tasks need some external library, and it's true.
 
 * There is no built-in testing library, no built-in JSON (un)marshalling support, etc.
 * While Java NIO is a big improvement, still File I/O is complex and verbose in Java compared to other languages.
@@ -193,7 +193,7 @@ IMO, any language/framework/library is created to solve one primary problem and 
 Java is designed as Object-Oriented language, and it will not be as good as Clojure or Haskell if you want it to be a Functional Programming Language.
 Each programming language has it's niche areas like Python for Machine Learning, Go/Rust for Systems Programming, Java/NodeJS for enterprise application development etc.
 
-Java's niche is in building large enterprise applications, not to print "Hello World!!!" in console.
+Java's niche is in building large enterprise applications, not to print "Hello World!!!" in the console.
 The Java ecosystem grew addressing the enterprise needs, and improving developer productivity. 
 
 In a typical enterprise business application you need to build complex business processes by integrating with several other external systems, 
@@ -204,11 +204,11 @@ Show me a more productive platform to build such enterprise applications rapidly
 Yes, you need to learn/know a shitload of things to make effective use of such rapid application development platform. 
 That is the price you may need to pay to achieve that productivity.
 
-But, that is not the only approach. you can go in another direction of picking the only-needed libraries and stitch them together by yourself.
+But, that is not the only approach. You can go in another direction of picking the only-needed libraries and stitch them together by yourself.
 Add cross-cutting logic all over the place, add monitoring capabilities, write cloud service adapters by yourself. 
 This may result in good light-weight system that requires minimal cognitive load for developers.
 
 # Summary
 Don't simply discard any programming language/platform just because there are "Language X is complex" memes/jokes on the internet.
 Don't just keep repeating "Language X is complex" because you heard someone else saying it based on their 2004 timeframe experience.
-Try it yourself, you may like it or may not. It's worth taking a look at old things to know are they still bad, or they improved a lot over the years.
+Try it yourself, you may like it or may not. It's worth taking a look at old things to know if they are still bad, or if they improved a lot over the years.

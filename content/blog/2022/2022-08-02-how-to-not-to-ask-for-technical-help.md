@@ -17,15 +17,15 @@ aliases:
 ---
 
 We, software developers, have a great advantage when it comes to getting help from others.
-Irrespective of how much experience you have you will need help fromm others. 
-And, there are plenty of good people out there willing to help you by means of answering on StackOverflow, writing blog posts, making video tutorials etc. They are taking their personal time to help strangers whom they may never meet in-person, kudos to all of them.
+Irrespective of how much experience you have you will need help from others. 
+And, there are plenty of good people out there willing to help you by means of answering on StackOverflow, writing blog posts, making video tutorials, etc. They are taking their personal time to help strangers whom they may never meet in person, kudos to all of them.
 
 <!--more-->
 
 
 But, in order to help you they need some context of the problem, and you need to approach them in reasonable ways.
 
-Here I would like share my thoughts on **what are the better ways to ask for help?** and what are **some patterns that you should avoid while asking for help**.
+Here I would like to share my thoughts on **what are the better ways to ask for help?** and what are **some patterns that you should avoid while asking for help**.
 
 ## How NOT to ask for help
 ### 1. Use the right medium/channel
@@ -36,8 +36,8 @@ Here I would like share my thoughts on **what are the better ways to ask for hel
 It is very hard for the people to make sense of code on Twitter DMs and WhatsApp. Use the right medium/channel.
 
 ### 2. Asking "I need XYZ, it is very urgent"
-Those who want to help others may also have a regular day job, they have their own priorities, families to take care.
-What is urgent for you, may/need not be urgent for them, especially when they are offering their help for FREE.
+Those who want to help others may also have a regular day job, they have their own priorities, families to take care of.
+What is urgent for you may not be urgent for them, especially when they are offering their help for FREE.
 
 Just adding "It is very urgent" doesn't help much, in fact that may have a negative impact also.
 

@@ -15,7 +15,7 @@ tags:
 aliases:
   - /rethinking-about-my-social-media-usage/
 ---
-Social media is a double-edged sword. Depending on how you use it can be really be helpful or become a source of pressure and frustration.
+Social media is a double-edged sword. Depending on how you use it, it can be really helpful or become a source of pressure and frustration.
 I don't use Facebook and Instagram much, but I use [Twitter](https://twitter.com/sivalabs) and recently started using [LinkedIn](https://www.linkedin.com/in/siva-prasad-reddy-katamreddy/) too.
 
 <!--more-->
@@ -40,12 +40,12 @@ So, I decided to write a blog post whenever it makes sense than tweeting.
 Of course, I would share the link to my post on Twitter too.
 
 ## 2. Worthiness of Conversations
-We, as human beings, express our feelings. Especially during and after this pandemic and WorkFromHome, loneliness became real problem.
+We, as human beings, express our feelings. Especially during and after this pandemic and WorkFromHome, loneliness became a real problem.
 Sharing your joy or excitement or frustration over Zoom is not the same as doing it face-to-face.
 
-You may learn something new, and you are excited to share it with someone. 
-Or, you are struggling to with some tricky problem for hours and there is no one sitting next to you to share your frustration.
-Then we may express those feeling, opinions or frustrations in Social media like Twitter. 
+You may learn something new, and you are excited to share it with someone.
+Or, you are struggling with some tricky problem for hours and there is no one sitting next to you to share your frustration.
+Then we may express those feelings, opinions or frustrations on social media like Twitter. 
 As long as it is not offending anybody or belittling someone it shouldn't be a problem.
 But, if people have that much understanding the world would be a better place.
 
@@ -64,13 +64,13 @@ You are insulting all other ice cream manufacturers. I won't let you get away wi
 Life is too short to waste by engaging in conversations with those kind of people.
 So, I learned that it is very important to know whether someone is worthy of having a conversation or not.
 
-**I do have my own opinions which are different from others and at time I disagree with some people that I greatly admire and respect.
-But what we don't do is disrespecting each others and doing personal attacks because we are matured enough to respect others opinions.**
+**I do have my own opinions which are different from others and at times I disagree with some people that I greatly admire and respect.
+But what we don't do is disrespect each other and do personal attacks because we are mature enough to respect others' opinions.**
 
 ## 3. I own my content
-One of my primary usage of Twitter is bookmarking references to good resources(articles, code repositories etc) using **Like** so that I can read it later.
-If worse comes to worst I may lose all that information. 
+One of my primary uses of Twitter is bookmarking references to good resources (articles, code repositories, etc.) using **Like** so that I can read them later.
+If worst comes to worst, I may lose all that information. 
 Earlier I started writing [What I Learned in Week](https://www.sivalabs.in/what-i-learned-2020-week-14/) but stopped for some reason.
-I am going to restart that so that I don't have to worry about loosing that data.
+I am going to restart that so that I don't have to worry about losing that data.
 
 Happy learning & sharing :-)

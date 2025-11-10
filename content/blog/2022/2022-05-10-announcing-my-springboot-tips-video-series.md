@@ -27,8 +27,8 @@ with a keen focus on **understanding how it works behind the scenes**.
 
 
 ### Longer version
-I have been working with SpringBoot for several years, and I have written couple of books on it too.
-Also, I have been giving online trainings on SpringBoot for students and working professionals too.
+I have been working with SpringBoot for several years, and I have written a couple of books on it too.
+Also, I have been giving online training on SpringBoot for students and working professionals too.
 A common thing I noticed is for the people who are completely new to SpringBoot, it looks like a magic.
 Even people, who have been working with SpringBoot for some time, know how to use it but don't know how it works behind the scenes.
 
@@ -51,7 +51,7 @@ Recently I gave SpringBoot training to a group of people, and I noticed the same
 
 and many more...
 
-As I have written few articles on these topics earlier I shared those articles.
+As I have written a few articles on these topics earlier, I shared those articles.
 
 * [How SpringBoot AutoConfiguration magic works?](https://www.sivalabs.in/how-springboot-autoconfiguration-magic/)
 * [Testing SpringBoot Applications](https://www.sivalabs.in/spring-boot-testing/)
