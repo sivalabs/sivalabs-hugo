@@ -11,29 +11,28 @@ tags:
 aliases:
   - /retrying-method-execution-using-spring-aop/
 ---
-One of my blog follower sends an email asking me to show an example of **"RealWorld Usage of Spring AOP"**. He mentioned that in most of the examples the usage of **Spring AOP** is demonstrated for **logging method entry/exit** or **Transaction management** or **Security checks**. He wanted to know how Spring AOP is being used in **"Real Project for Real Problems"**.
+One of my blog followers sent an email asking me to show an example of **"Real-World Usage of Spring AOP"**. He mentioned that in most examples, the usage of **Spring AOP** is demonstrated for **logging method entry/exit**, **Transaction management**, or **Security checks**. He wanted to know how Spring AOP is being used in **"Real Projects for Real Problems"**.
 
-So I would like to show how I have used Spring AOP for one of my project to handle a real problem.
+So I would like to show how I have used Spring AOP in one of my projects to handle a real problem.
 
 <!--more-->
 
+**We won't face some kinds of problems in development phases and will only come to know about them during Load Testing or in production environments.**
 
-**We won't face some kind of problems in development phases and only come to know during Load Testing or in production environments only.**
-  
 **For example:**
 
-  * Remote WebService invocation failures due to network latency issues
-  * Database query failures because of Lock exceptions
-  
-    etc
+*   Remote WebService invocation failures due to network latency issues
+*   Database query failures because of Lock exceptions
 
-In most of the cases just retrying the same operation is sufficient to solve these kind of failures.
-  
-Let us see how we can use Spring AOP to automatically retry the method execution if any exception occurs.
+    etc.
 
-We can use Spring AOP **@Around** advice to create a proxy for those objects whose methods needs to be retried and implement the retry logic in **Aspect**.
+In most cases, just retrying the same operation is sufficient to solve these kinds of failures.
 
-Before jumping on to implementing these Spring Advice and Aspect, first let us write a simple utility to execute a **"Task"** which automatically retry for N times ignoring the given set of Exceptions.
+Let us see how we can use Spring AOP to automatically retry method execution if any exception occurs.
+
+We can use Spring AOP's **@Around** advice to create a proxy for those objects whose methods need to be retried and implement the retry logic in an **Aspect**.
+
+Before jumping on to implementing these Spring Advice and Aspect, first, let us write a simple utility to execute a **"Task"** which automatically retries for N times, ignoring the given set of Exceptions.
 
 ```java
 public interface Task<T> {
@@ -110,7 +109,7 @@ public class TaskExecutionUtil
 }
 ```
 
-I hope this method is self explanatory. It is taking a **Task** and retries **noOfRetryAttempts** times in case method **task.execute()** throws any Exception and **ignoreExceptions** indicates what type of exceptions to be ignored while retrying.
+I hope this method is self-explanatory. It takes a **Task** and retries **noOfRetryAttempts** times in case the method **task.execute()** throws any Exception, and **ignoreExceptions** indicates what type of exceptions to be ignored while retrying.
 
 Now let us create a Retry annotation as follows:
 
@@ -133,9 +132,9 @@ public  @interface Retry {
 }
 ```
 
-We will use this **@Retry** annotation to demarcate which methods needs to be retried.
+We will use this **@Retry** annotation to demarcate which methods need to be retried.
 
-Now let us implement the Aspect which applies to the method with **@Retry** annotation.
+Now let us implement the Aspect which applies to methods with the **@Retry** annotation.
 
 ```java
 import java.lang.reflect.Method;
@@ -191,7 +190,7 @@ public class MethodRetryHandlerAspect {
 
 That's it. We just need some test cases to actually test it.
 
-First create **AppConfig.java** configuration class as follows:
+First, create the **AppConfig.java** configuration class as follows:
 
 ```java
 import org.springframework.context.annotation.ComponentScan;
@@ -206,7 +205,7 @@ public class AppConfig {
 }
 ```
 
-And couple of dummy Service beans.
+And a couple of dummy Service beans.
 
 ```java
 import org.springframework.stereotype.Service;
@@ -254,7 +253,7 @@ public class ServiceB {
 }
 ```
 
-Finally write a simple Junit test to invoke these methods.
+Finally, write a simple JUnit test to invoke these methods.
 
 ```java
 import org.junit.Test;
@@ -296,18 +295,18 @@ public class RetryTest
 }
 ```
 
-Yeah, I know I could have written these test methods a bit better, but I hope you got the idea.
+Yeah, I know I could have written these test methods a bit better, but I hope you get the idea.
 
-Run the JUnit tests and observe the log statement to verify whether the method retry is happening in case of Exception or not.
+Run the JUnit tests and observe the log statements to verify whether the method retry is happening in case of an Exception or not.
 
-**Case#1:** When invoking ServiceA.method1() is invoked MethodRetryHandlerAspect won't be applied at all.
+**Case#1:** When `ServiceA.method1()` is invoked, `MethodRetryHandlerAspect` won't be applied at all.
 
-**Case#2:** When invoking ServiceA.method2() is invoked, we are maintaining a counter and throwing NullPointerException for 2 times. But we have marked that method to ignore NullPointerExceptions. So it will continue to retry for 5 times. But 3rd time method will be executed normally and exits the method normally.
+**Case#2:** When `ServiceA.method2()` is invoked, we are maintaining a counter and throwing a `NullPointerException` two times. But we have marked that method to ignore `NullPointerException`. So it will continue to retry for 5 times. But the 3rd time, the method will be executed normally and exit.
 
-**Case#3:** When invoking ServiceB.method3() is invoked, we are throwing ArrayIndexOutOfBoundsException but that method is marked to ignore only IOException only.
-  
-So this method execution won't be retried and throws the Exception immediately.
+**Case#3:** When `ServiceB.method3()` is invoked, we are throwing an `ArrayIndexOutOfBoundsException`, but that method is marked to ignore only `IOException`.
 
-**Case#4:** When invoking ServiceB.method4() is invoked, everything is fine so it should exit in the first attempt itself normally.
+So this method execution won't be retried and will throw the Exception immediately.
 
-I hope this example demonstrate a good enough real world usage of Spring AOP 🙂
+**Case#4:** When `ServiceB.method4()` is invoked, everything is fine, so it should exit in the first attempt itself.
+
+I hope this example demonstrates a good enough real-world usage of Spring AOP. 🙂

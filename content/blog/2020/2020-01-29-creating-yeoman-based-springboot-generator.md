@@ -15,73 +15,72 @@ aliases:
   - /creating-yeoman-based-springboot-generator/
 ---
 
-I have been working with Spring and [SpringBoot](https://spring.io/projects/spring-boot) for many years and 
-I needed to create lot of Spring(Boot) applications for various reasons like 
-[blog posts](https://sivalabs.in/categories/springboot/), [sample apps](https://github.com/sivaprasadreddy/spring-boot-tutorials), 
-[book sample code](https://github.com/sivaprasadreddy/beginning-spring-boot-2) and for my personal learning as well. 
-So, I needed some tool/mechanism to quickly create Spring(Boot) application with most commonly used configuration.
+I have been working with Spring and [Spring Boot](https://spring.io/projects/spring-boot) for many years, and
+I needed to create a lot of Spring (Boot) applications for various reasons, like
+[blog posts](https://sivalabs.in/categories/springboot/), [sample apps](https://github.com/sivaprasadreddy/spring-boot-tutorials),
+[book sample code](https://github.com/sivaprasadreddy/beginning-spring-boot-2), and for my personal learning as well.
+So, I needed some tool/mechanism to quickly create a Spring (Boot) application with the most commonly used configuration.
 
 <!--more-->
 
 
-I know we have the most popular [SpringBoot Initializer](http://start.spring.io/) to create SpringBoot applications. 
+I know we have the most popular [Spring Boot Initializer](http://start.spring.io/) to create Spring Boot applications.
 But, it generates the application with only selected starter dependencies added and nothing more.
 
-Most of the times I needed to configure some common properties in **application.properties** file, additional libraries like 
-**Testcontainers**, Zalando's **Problem Spring Web** etc. So, I thought of automating this repetitive work in some way.
+Most of the time, I needed to configure some common properties in the **application.properties** file, additional libraries like
+**Testcontainers**, Zalando's **Problem Spring Web**, etc. So, I thought of automating this repetitive work in some way.
 
-As a first attempt I tried to automate this by creating various [Maven archetypes](https://github.com/sivaprasadreddy/maven-archetype-templates) 
-with various combination of technologies. It helped me to some extent but I had to refactor few things after generating the application. 
+As a first attempt, I tried to automate this by creating various [Maven archetypes](https://github.com/sivaprasadreddy/maven-archetype-templates)
+with various combinations of technologies. It helped me to some extent, but I had to refactor a few things after generating the application.
 Also, I couldn't find a way to include some dependencies/configuration conditionally based on user input.
 
-As a second attempt I tried to extend [SpringBoot Initializer](https://github.com/sivaprasadreddy/spring-initializr-extensions) 
-by adding new features. I felt it was okayish but not productive enough. In addition to that I need to host it somewhere and 
-make sure it is running all the times.
+As a second attempt, I tried to extend [Spring Boot Initializer](https://github.com/sivaprasadreddy/spring-initializr-extensions)
+by adding new features. I felt it was okayish but not productive enough. In addition to that, I needed to host it somewhere and
+make sure it was running all the time.
 
-And then I thought of creating a [Yeoman](https://yeoman.io/) based generator. 
-First, I came to know about Yeoman when AngularJS 1.x was hot and there was an amazing Yeoman generator for 
-creating AngularJS applications. Later I stumbled upon [JHipster](https://www.jhipster.tech/) which blew my mind. 
-JHipster is amazing and what you can build with JHipster in just 30 minutes is phenomenal. 
-However, there are certain JHipster features that does not fit for my personal preferences such as:
+And then I thought of creating a [Yeoman](https://yeoman.io/) based generator.
+First, I came to know about Yeoman when AngularJS 1.x was hot, and there was an amazing Yeoman generator for
+creating AngularJS applications. Later I stumbled upon [JHipster](https://www.jhipster.tech/), which blew my mind.
+JHipster is amazing, and what you can build with JHipster in just 30 minutes is phenomenal.
+However, there are certain JHipster features that do not fit my personal preferences, such as:
 
-- I like **jar** packaging
-- I like to use **spring-boot-starter-\*** than configuring individual libraries
-- I like to have an option to generate application **without spring-security**
-- I prefer **Flyway** over **Liquibase**
-- I like to have only minimum and required configuration ie **no AsyncConfiguration, LocaleConfiguration, CacheConfiguration, Logstash Logging** etc.
-- I like **.properties** over **.yml**
+*   I like **jar** packaging
+*   I like to use **spring-boot-starter-\*** rather than configuring individual libraries
+*   I like to have an option to generate an application **without spring-security**
+*   I prefer **Flyway** over **Liquibase**
+*   I like to have only minimum and required configuration, i.e., **no AsyncConfiguration, LocaleConfiguration, CacheConfiguration, Logstash Logging**, etc.
+*   I like **.properties** over **.yml**
 
-So, I decided to write my own SpringBoot Generator using Yeoman and 
+So, I decided to write my own Spring Boot Generator using Yeoman, and
 I started creating [generator-springboot](https://github.com/sivaprasadreddy/generator-springboot).
-And, I have implemented the generator to generate a SpringBoot application with following features:
+And, I have implemented the generator to generate a Spring Boot application with the following features:
 
-* SpringBoot REST API with jar type packaging
-* Generate CRUD operations along with Unit and Integration Tests
-* CORS configuration
-* Swagger UI Integration
-* Spring Data JPA integration with option to select databases like MySQL, Postgresql, MariaDB etc
-* Flyway or Liquibase data migration support
-* SpringBoot Actuator configuration
-* Integration with Config Server, Service Registry, Sleuth, Zipkin
-* TestContainers integration
-* JUnit 5
-* Docker configuration
-* Jenkinsfile
+*   Spring Boot REST API with jar type packaging
+*   Generate CRUD operations along with Unit and Integration Tests
+*   CORS configuration
+*   Swagger UI Integration
+*   Spring Data JPA integration with option to select databases like MySQL, PostgreSQL, MariaDB, etc.
+*   Flyway or Liquibase data migration support
+*   Spring Boot Actuator configuration
+*   Integration with Config Server, Service Registry, Sleuth, Zipkin
+*   TestContainers integration
+*   JUnit 5
+*   Docker configuration
+*   Jenkinsfile
 
+I thought of writing an article on how to create a Yeoman-based generator so that others can also create their own generators if interested.
 
-I thought of writing an article on how to create a Yeoman based generator so that others can also create their own generators if interested.
-
-First of all there is wonderfully written [Official Documentation](https://yeoman.io/authoring/) on how to create our own Yeoman generator. 
-I strongly recommend to go through it.
+First of all, there is wonderfully written [Official Documentation](https://yeoman.io/authoring/) on how to create our own Yeoman generator.
+I strongly recommend going through it.
 
 ### How Yeoman Generators work?
-To put it simply, Yeoman generator works as follows:
+To put it simply, a Yeoman generator works as follows:
 
-- Create template file(s) with placeholders
-- Prompt user for inputs
-- Generate files by replacing the placeholders with user provided values
+*   Create template file(s) with placeholders.
+*   Prompt the user for inputs.
+*   Generate files by replacing the placeholders with user-provided values.
 
-Okay, enough talk. Let's get to the business.
+Okay, enough talk. Let's get to business.
 
 ## Create SpringBoot Yeoman Generator
 

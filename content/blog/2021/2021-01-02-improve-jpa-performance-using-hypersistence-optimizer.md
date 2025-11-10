@@ -27,7 +27,7 @@ While checking the overall application performance, most of the time people real
 <!--more-->
 
 
-Some people simply blame Hibernate saying it's generating/executing too many unoptimised queries. 
+Some people simply blame Hibernate saying it's generating/executing too many unoptimized queries. 
 Some people try to learn JPA/Hibernate a little more to optimize their code and overwhelmed by the sheer volume of things to know in order to properly use JPA/Hibernate. 
 
 After using ORM frameworks like JPA/Hibernate and SQL oriented persistence frameworks like [MyBatis](https://mybatis.org/mybatis-3/) over a decade this is how I felt about JPA/Hibernate.
@@ -47,7 +47,7 @@ Mastering JPA/Hibernate is definitely not an easy task and takes significant tim
 But, there is a tremendous reward for learning all these concepts which is **ultra productivity with minimal code**.
 
 ## Introducing Hypersistence Optimizer
-Anybody working with JPA/Hibernate surely end up spending good amount of time on https://vladmihalcea.com/ blog which is One Stop Shop for anything related JPA/Hibernate.
+Anybody working with JPA/Hibernate surely ends up spending good amount of time on https://vladmihalcea.com/ blog which is One Stop Shop for anything related JPA/Hibernate.
 [Vlad Mihalcea](https://twitter.com/vlad_mihalcea) built a product called [Hypersistence Optimizer](https://vladmihalcea.com/hypersistence-optimizer/) to provide "Expert's Assistance" for any JPA/Hibernate related issues.
 
 Basically, Hypersistence Optimizer profiles your JPA/Hibernate code and give you a report of issues.

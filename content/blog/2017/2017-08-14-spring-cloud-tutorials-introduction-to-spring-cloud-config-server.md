@@ -14,35 +14,32 @@ tags:
 aliases:
   - /spring-cloud-tutorials-introduction-to-spring-cloud-config-server/
 ---
-# Problem
-
-SpringBoot provides lot of flexibility in externalizing configuration properties via properties or YAML files. We can also configure properties for each environment (dev, qa, prod etc) separately using profile specific configuration files such as **application.properties**, **application-dev.properties**, **application-prod.properties** etc. But once the application is started we can not update the properties at runtime. If we change the properties we need to restart the application to use the updated configuration properties.
+Spring Boot provides a lot of flexibility in externalizing configuration properties via properties or YAML files. We can also configure properties for each environment (dev, qa, prod, etc.) separately using profile-specific configuration files such as **application.properties**, **application-dev.properties**, **application-prod.properties**, etc. But once the application is started, we cannot update the properties at runtime. If we change the properties, we need to restart the application to use the updated configuration properties.
 
 <!--more-->
 
-
-Also, in the context of large number of MicroService based applications, we want the ability to configure and manage the configuration properties of all MicroServices from a centralized place.
+Also, in the context of a large number of MicroService-based applications, we want the ability to configure and manage the configuration properties of all MicroServices from a centralized place.
 
 # Solution
 
-We can use **Spring Cloud Config Server** ([http://cloud.spring.io/spring-cloud-static/Dalston.SR2/#\_spring\_cloud_config][1]) to centralize all the applications configuration and use **Spring Cloud Config Client** module from the applications to consume configuration properties from Config Server. We can also update the configuration properties at runtime without requiring to restart the application.
+We can use **Spring Cloud Config Server** ([http://cloud.spring.io/spring-cloud-static/Dalston.SR2/#\_spring\_cloud_config][1]) to centralize all the application's configuration and use the **Spring Cloud Config Client** module from the applications to consume configuration properties from the Config Server. We can also update the configuration properties at runtime without needing to restart the application.
 
-> Many of the Spring Cloud modules can be used in SpringBoot applications even though you are not going to deploy your application in any Cloud platforms such as AWS, Pivotal CloudFoundry etc.
+> Many of the Spring Cloud modules can be used in Spring Boot applications even though you are not going to deploy your application on any Cloud platforms such as AWS, Pivotal CloudFoundry, etc.
 
 ## Spring Cloud Config Server
 
-Spring Cloud Config Server is nothing but a SpringBoot application with a configured configuration properties source. The configuration source can be a **git** repository, **svn** repository or Consul service (<https://www.consul.io/>).
+Spring Cloud Config Server is nothing but a Spring Boot application with a configured configuration properties source. The configuration source can be a **git** repository, an **svn** repository, or a Consul service (<https://www.consul.io/>).
 
 {{< figure src="/images/config.webp" >}}
 
-In this post we are going to use a git repository as configuration properties source.
+In this post, we are going to use a git repository as the configuration properties source.
 
 ### Git Config Repository
 
-Create a git repository to store properties files. I have created a repository **config-repo** in GitHub ie <https://github.com/sivaprasadreddy/config-repo.git>.
+Create a git repository to store properties files. I have created a repository **config-repo** on GitHub, i.e., <https://github.com/sivaprasadreddy/config-repo.git>.
 
-Suppose we are going to develop two SpringBoot applications **catalog-service** and **order-service**. 
-Let us create configuration files **catalogservice.properties** and **orderservice.properties** for **catalog-service** and **order-service** respectively.
+Suppose we are going to develop two Spring Boot applications, **catalog-service** and **order-service**.
+Let us create configuration files **catalogservice.properties** and **orderservice.properties** for **catalog-service** and **order-service**, respectively.
 
 **config-repo/catalogservice.properties**
 
@@ -62,7 +59,7 @@ spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
 ```
 
-We can also create profile specific configuration files such as **catalogservice-dev.properties**, **catalogservice-prod.properties**, **orderservice-dev.properties**, **orderservice-prod.properties**.
+We can also create profile-specific configuration files such as **catalogservice-dev.properties**, **catalogservice-prod.properties**, **orderservice-dev.properties**, and **orderservice-prod.properties**.
 
 **config-repo/catalogservice-prod.properties**
 
@@ -82,13 +79,13 @@ spring.rabbitmq.username=admin23
 spring.rabbitmq.password=uY7&%we@1!
 ```
 
-Now commit all the configuration properties files in **config-repo** git repository.
+Now commit all the configuration properties files in the **config-repo** git repository.
 
 #### Spring Cloud Config Server Application
 
-Let us create a SpringBoot application **spring-cloud-config-server** from <http://start.spring.io> or from your favorite IDE by selecting the starters **Config Server** and **Actuator**.
+Let us create a Spring Boot application, **spring-cloud-config-server**, from <http://start.spring.io> or from your favorite IDE by selecting the starters **Config Server** and **Actuator**.
 
-This will generate the maven project with following **pom.xml**.
+This will generate the Maven project with the following **pom.xml**.
 
 ```xml
 
@@ -158,7 +155,7 @@ This will generate the maven project with following **pom.xml**.
 </project>
 ```
 
-To make our SpringBoot application as a SpringCloud Config Server, we just need to add **@EnableConfigServer** annotation to the main entry point class and configure **spring.cloud.config.server.git.uri** property pointing to the git repository.
+To make our Spring Boot application a Spring Cloud Config Server, we just need to add the **@EnableConfigServer** annotation to the main entry point class and configure the **spring.cloud.config.server.git.uri** property pointing to the git repository.
 
 ```java
 package com.sivalabs.configserver;
@@ -185,9 +182,9 @@ spring.cloud.config.server.git.uri=https://github.com/sivaprasadreddy/config-rep
 management.security.enabled=false
 ```
 
-In addition to configuring git repo uri, we configured **server.port** to 8888 and **disabled actuator security**. Now you can start the application which will start on port 8888.
+In addition to configuring the git repo URI, we configured the **server.port** to 8888 and **disabled actuator security**. Now you can start the application, which will start on port 8888.
 
-Spring Cloud Config Server exposes the following REST endpoints to get application specific configuration properties:
+Spring Cloud Config Server exposes the following REST endpoints to get application-specific configuration properties:
 
 ```properties
 /{application}/{profile}[/{label}]
@@ -197,9 +194,9 @@ Spring Cloud Config Server exposes the following REST endpoints to get applicati
 /{label}/{application}-{profile}.properties
 ```
 
-Here **{application}** refers to value of **spring.config.name** property, **{profile}** is an active profile and **{label}** is an optional git label (defaults to "master").
+Here, **{application}** refers to the value of the **spring.config.name** property, **{profile}** is an active profile, and **{label}** is an optional git label (defaults to "master").
 
-Now if you access the URL http://localhost:8888/catalogservice/default then you will get the following response with catalogservice **default** configuration details:
+Now, if you access the URL http://localhost:8888/catalogservice/default, you will get the following response with the `catalogservice` **default** configuration details:
 
 ```json
 {
@@ -224,7 +221,7 @@ Now if you access the URL http://localhost:8888/catalogservice/default then you 
 }
 ```
 
-If you access the URL http://localhost:8888/catalogservice/prod then you will get the following response with catalogservice **prod** configuration details.
+If you access the URL http://localhost:8888/catalogservice/prod, you will get the following response with the `catalogservice` **prod** configuration details.
 
 ```json
 {
@@ -258,16 +255,16 @@ If you access the URL http://localhost:8888/catalogservice/prod then you will ge
 }
 ```
 
-In addition to the application specific configuration files like **catalogservice.properties**, **orderservice.properties**, you can create **application.properties** file to contain common configuration properties for all applications. As you might have guessed you can have profile specific files like **application-dev.properties, application-prod.properties**.
+In addition to the application-specific configuration files like **catalogservice.properties** and **orderservice.properties**, you can create an **application.properties** file to contain common configuration properties for all applications. As you might have guessed, you can have profile-specific files like **application-dev.properties, application-prod.properties**.
 
-Suppose you have **application.properties** file in **config-repo** with the following properties:
+Suppose you have an **application.properties** file in **config-repo** with the following properties:
 
 ```properties
 message=helloworld
 jdbc.datasource.url=jdbc:mysql://localhost:3306/defapp
 ```
 
-Now if you access http://localhost:8888/catalogservice/prod then you will get the following response:
+Now, if you access http://localhost:8888/catalogservice/prod, you will get the following response:
 
 ```json
 {
@@ -308,7 +305,7 @@ Now if you access http://localhost:8888/catalogservice/prod then you will get th
 }
 ```
 
-Similarly you can access http://localhost:8888/orderservice/default to get the orderservice configuration details.
+Similarly, you can access http://localhost:8888/orderservice/default to get the `orderservice` configuration details.
 
 ```json
 {
@@ -340,13 +337,13 @@ Similarly you can access http://localhost:8888/orderservice/default to get the o
 }
 ```
 
-Now that we have seen how to create configuration server using Spring Cloud Config Server and how to fetch the application specific configuration properties using REST API.
+Now that we have seen how to create a configuration server using Spring Cloud Config Server and how to fetch application-specific configuration properties using a REST API.
 
-Let us see how we can create a SpringBoot application and use configuration properties from Config Server instead of putting them inside the application.
+Let us see how we can create a Spring Boot application and use configuration properties from the Config Server instead of putting them inside the application.
 
 #### Spring Cloud Config Client (catalog-service)
 
-Create a SpringBoot application **catalog-service** with **Config Client,** **Web** and **Actuator** starters.
+Create a Spring Boot application, **catalog-service**, with **Config Client**, **Web**, and **Actuator** starters.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -421,7 +418,7 @@ Create a SpringBoot application **catalog-service** with **Config Client,** **We
 </project>
 ```
 
-Usually in SpringBoot application we configure properties in **_application.properties_**. But while using Spring Cloud Config Server we use **_bootstrap.properties_** or **_bootstrap.yml_** file to configure the URL of Config Server and Spring Cloud Config Client module will take care of starting the application by fetching the application properties from Config Server.
+Usually, in a Spring Boot application, we configure properties in **_application.properties_**. But while using Spring Cloud Config Server, we use **_bootstrap.properties_** or **_bootstrap.yml_** to configure the URL of the Config Server, and the Spring Cloud Config Client module will take care of starting the application by fetching the application properties from the Config Server.
 
 Configure the following properties in **src/main/resources/bootstrap.properties**:
 
@@ -432,11 +429,11 @@ spring.cloud.config.uri=http://localhost:8888
 management.security.enabled=false
 ```
 
-We have configured the url of configuration server using **spring.cloud.config.uri** property. Also we have specified the application name using **spring.application.name** property.
+We have configured the URL of the configuration server using the **spring.cloud.config.uri** property. We have also specified the application name using the **spring.application.name** property.
 
-> Note that the value of **spring.application.name** property should match with base filename (catalogservice) in config-repo.
+> Note that the value of the **spring.application.name** property should match the base filename (`catalogservice`) in `config-repo`.
 
-Now run the following catalog-service main entry point class:
+Now run the following `catalog-service` main entry point class:
 
 ```java
 package com.sivalabs.catalogservice;
@@ -496,31 +493,30 @@ We can access the actuator endpoint http://localhost:8181/env to see all the con
 }
 ```
 
-You can see that catalog-service application fetches the catalogservice properties from Config Server during bootstrap time. You can bind these properties using **@Value** or **@EnableConfigurationProperties** just the way you bind if they are defined within the application itself.
+You can see that the `catalog-service` application fetches the `catalogservice` properties from the Config Server during bootstrap time. You can bind these properties using **@Value** or **@EnableConfigurationProperties** just the way you would if they were defined within the application itself.
 
 #### Precedence of properties
 
-Now that we know there are many ways to provide configuration properties in many files such as **application.properties, bootstrap.properties** and their profile variants inside application **src/main/resources** and **{application-name}-{profile}.properties, application-{profile}.properties** in config-repo.
+Now that we know there are many ways to provide configuration properties in many files, such as **application.properties, bootstrap.properties**, and their profile variants inside the application's **src/main/resources** and **{application-name}-{profile}.properties, application-{profile}.properties** in `config-repo`.
 
-The following diagrams shows the precedence of configuration properties from various properties locations.
+The following diagram shows the precedence of configuration properties from various properties locations.
 
 {{< figure src="/images/precedence.webp" >}}
 
 #### Refresh properties at runtime
 
-Let us see how we can update the configuration properties of catalog-service at runtime without requiring to restart the application.
+Let us see how we can update the configuration properties of `catalog-service` at runtime without needing to restart the application.
 
-Update the **catalogservice.properties** in config-repo git repository and commit the changes. Now if you access http://localhost:8181/env you will still see the old properties.
+Update the **catalogservice.properties** in the `config-repo` git repository and commit the changes. Now, if you access http://localhost:8181/env, you will still see the old properties.
 
-In order to reload the configuration properties we need to do the following:
+In order to reload the configuration properties, we need to do the following:
 
-  * Mark Spring beans that you want to reload on config changes with @RefreshScope
-  * Issue http://localhost:8181/refresh request using **POST** method
+*   Mark Spring beans that you want to reload on config changes with `@RefreshScope`.
+*   Issue an http://localhost:8181/refresh request using the **POST** method.
 
-To test the reloading behaviour let's add a property **name=Siva** in **config-repo/catalogservice.properties** and commit it.
+To test the reloading behavior, let's add a property **name=Siva** in **config-repo/catalogservice.properties** and commit it.
 
-Create a simple RestController to display **name** value as follows:
-
+Create a simple RestController to display the **name** value as follows:
 
 ```java
 
@@ -539,15 +535,15 @@ class HomeController
 }
 ```
 
-Now access http://localhost:8181/name which which will display **Siva**. Now change the property value to **name=Prasad** in **config-repo/catalogservice.properties** and commit it.
+Now access http://localhost:8181/name, which will display **Siva**. Now change the property value to **name=Prasad** in **config-repo/catalogservice.properties** and commit it.
 
-In order to reload the config changes trigger http://localhost:8181/refresh request using **POST** method and again access http://localhost:8181/name which should display **Prasad**.
+In order to reload the config changes, trigger an http://localhost:8181/refresh request using the **POST** method and again access http://localhost:8181/name, which should display **Prasad**.
 
-But issuing **/refresh** requests manually is tedious and impractical in case of large number of applications and multiple instances of same application. We will cover how to handle this problem using **Spring Cloud Bus** in next post
-  
-[Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus]({{< relref "2017-08-14-spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus.md" >}}).
+But issuing **/refresh** requests manually is tedious and impractical in the case of a large number of applications and multiple instances of the same application. We will cover how to handle this problem using **Spring Cloud Bus** in the next post.
 
-The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial
+[Spring Cloud Tutorials – Auto-Refresh Config Changes using Spring Cloud Bus]({{< relref "2017-08-14-spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus.md" >}}).
+
+The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial.
 
 &nbsp;
 

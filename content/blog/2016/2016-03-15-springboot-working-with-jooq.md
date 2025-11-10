@@ -12,28 +12,27 @@ tags:
 aliases:
   - /springboot-working-with-jooq/
 ---
-In my previous article [SpringBoot : Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}}) we have learned how to use SpringBoot MyBatis Starter to quickly get up and running with Spring and MyBatis. In this article we are going to learn about how to use SpringBoot JOOQ Starter.
+In my previous article, [SpringBoot: Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}}), we learned how to use the Spring Boot MyBatis Starter to quickly get up and running with Spring and MyBatis. In this article, we are going to learn about how to use the Spring Boot jOOQ Starter.
 
-JOOQ (JOOQ Object Oriented Querying) is a persistence framework which embraces SQL.
+jOOQ (jOOQ Object Oriented Querying) is a persistence framework that embraces SQL.
 
 <!--more-->
 
+jOOQ provides the following features:
 
-JOOQ provides the following features:
+*   Building typesafe SQL using a DSL API
+*   Typesafe database object referencing using Code Generation
+*   An easy-to-use API for Querying and Data fetching
+*   SQL logging and debugging
+*   etc.
 
-  * Building Typesafe SQL using DSL API
-  * Typesafe database object referencing using Code Generation
-  * Easy to use API for Querying and Data fetching
-  * SQL logging and debugging
-  * etc etc
+Spring Boot provides a starter, **spring-boot-starter-jooq**, to be able to quickly integrate with jOOQ.
 
-SpringBoot provides a starter, **spring-boot-starter-jooq**, to be able to quickly integrate with JOOQ.
+In this article, we will see how to use **spring-boot-starter-jooq** using a step-by-step approach.
 
-In this article we will see how to use **spring-boot-starter-jooq** using step by step approach.
+### Step 1: Create a Spring Boot Maven Project
 
-### Step 1: Create SpringBoot Maven Project
-
-Create a SpringBoot maven based project and configure **spring-boot-starter-jooq** dependency.
+Create a Spring Boot Maven-based project and configure the **spring-boot-starter-jooq** dependency.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -89,12 +88,12 @@ Create a SpringBoot maven based project and configure **spring-boot-starter-jooq
 </project>
 ```
 
-We are going to use **H2** in-memory database first, later we will see how to use MySQL.
+We are going to use the **H2** in-memory database first; later, we will see how to use MySQL.
 
 ### Step 2: Create the database initialization scripts
 
 We are going to create a simple database with 2 tables.
-  
+
 **src/main/resources/schema.sql**
 
 ```sql
@@ -122,9 +121,9 @@ CREATE TABLE COMMENTS (
 );
 ```
 
-We will populate some sample data using **data.sql** script.
+We will populate some sample data using a **data.sql** script.
 
-**src/main/resources/data.sql** 
+**src/main/resources/data.sql**
 
 ```sql
 insert into posts(id, title, content, created_on) 
@@ -146,9 +145,9 @@ insert into comments(id, post_id, name, email, content, created_on)
 values(3, 2, 'User1', 'user1@gmail.com', 'This is comment 1 on post 2', '2016-01-07');
 ```
 
-### Step 3: Configure JOOQ Maven Codegen Plugin to generate database artifacts
+### Step 3: Configure the jOOQ Maven Codegen Plugin to generate database artifacts
 
-We will use Maven profiles to configure the **jooq-codegen-maven** configuration properties based on database type.
+We will use Maven profiles to configure the **jooq-codegen-maven** configuration properties based on the database type.
 
 ```xml
 <profiles>
@@ -245,18 +244,17 @@ We will use Maven profiles to configure the **jooq-codegen-maven** configuration
 </profiles>
 ```
 
-We have configured two profile (**h2** and **mysql**) with appropriate JDBC configuration parameters.
+We have configured two profiles (**h2** and **mysql**) with appropriate JDBC configuration parameters.
 
-We have specified to generate the code artifacts and place it in **com.sivalabs.demo.jooq.domain** package within **gensrc/main/java directory**.
+We have specified to generate the code artifacts and place them in the **com.sivalabs.demo.jooq.domain** package within the **gensrc/main/java directory**.
 
-We can run the maven build activating **h2** or **mysql** profile as follows:
-  
+We can run the Maven build, activating the **h2** or **mysql** profile as follows:
+
 **mvn clean install -P h2** (or) **mvn clean install -P mysql**
 
+### Step 4: Configure the Maven build-helper-maven-plugin to add the generated source as a sources folder
 
-### Step 4: Configure Maven build-helper-maven-plugin Plugin to add the generated source as sources folder
-
-We will configure the **build-helper-maven-plugin** plugin such that maven will add the JOOQ generated code resides in **gensrc/main/java** directory as source folder.
+We will configure the **build-helper-maven-plugin** so that Maven will add the jOOQ-generated code that resides in the **gensrc/main/java** directory as a source folder.
 
 ```xml
 <plugin>
@@ -280,7 +278,7 @@ We will configure the **build-helper-maven-plugin** plugin such that maven will 
 
 ### Step 5: Create domain objects.
 
-We can use these domain object to pass data across the layer and JOOQ generated database artifacts to talk to database.
+We can use these domain objects to pass data across the layers and the jOOQ-generated database artifacts to talk to the database.
 
 ```java
 public class Post
@@ -308,7 +306,7 @@ public class Comment
 }
 ```
 
-### Step 6: Implement the data persistence methods using JOOQ as follows
+### Step 6: Implement the data persistence methods using jOOQ as follows:
 
 ```java
 package com.sivalabs.demo;
@@ -423,10 +421,9 @@ public class BlogService
 }
 ```
 
-Observe that we are auto-wiring **DSLContext** instance into our Spring Bean and using it to build the TypeSafe queries.
+Observe that we are autowiring the **DSLContext** instance into our Spring Bean and using it to build the typesafe queries.
 
-### Step 7: Create Entry point class and JUnit test
-
+### Step 7: Create an entry point class and a JUnit test
 
 ```java
 @SpringBootApplication
@@ -503,9 +500,9 @@ public class SpringbootJooqDemoApplicationTests
 }
 ```
 
-Assuming you have generated code using **H2** profile, we can run the JUnit test with out any further configuration.
+Assuming you have generated code using the **H2** profile, we can run the JUnit test without any further configuration.
 
-But if you have generated code using **mysql** profile then you will have to configure the following properties in **application.properties**.
+But if you have generated code using the **mysql** profile, then you will have to configure the following properties in **application.properties**:
 
 ```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
@@ -516,8 +513,8 @@ spring.datasource.password=admin
 spring.jooq.sql-dialect=MYSQL
 ```
 
-> Note that we should use correct **SqlDialect** for the database otherwise you may get SQL syntax errors at runtime.
+> Note that we should use the correct **SqlDialect** for the database; otherwise, you may get SQL syntax errors at runtime.
 
-You can find the source code of this article at my GitHub repository https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo
+You can find the source code for this article at my GitHub repository: https://github.com/sivaprasadreddy/springboot-tutorials/tree/master/database/springboot-jooq-demo
 
-For more info on **JOOQ** you can look at http://www.jooq.org/learn/
+For more info on **jOOQ**, you can look at http://www.jooq.org/learn/.

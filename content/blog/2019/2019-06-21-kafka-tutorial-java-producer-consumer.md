@@ -14,38 +14,37 @@ aliases:
   - /kafka-tutorial-java-producer-consumer/
 ---
 
-[Kafka](https://kafka.apache.org/), depending on how you use it, can be seen as a Message Broker, Event Store or a Streaming Platform etc. Kafka became a preferred technology for many of the modern applications because of various reasons like:
+[Kafka](https://kafka.apache.org/), depending on how you use it, can be seen as a Message Broker, Event Store, or a Streaming Platform, etc. Kafka became a preferred technology for many modern applications because of various reasons, like:
 
-* Kafka can be used as an Event Store if you are using Event Driven Microservices architecture
-* Kafka can be used as a Message Broker to enable communication across multiple applications
-* Kafka can be used as Streaming platform for processing events in realtime
-etc etc.
+*   Kafka can be used as an Event Store if you are using an event-driven microservices architecture.
+*   Kafka can be used as a Message Broker to enable communication across multiple applications.
+*   Kafka can be used as a streaming platform for processing events in real-time.
+    etc. etc.
 
 <!--more-->
 
+You can learn more about Kafka from its official documentation: https://kafka.apache.org/documentation/.
 
-You can learn more about Kafka from it's official documentation https://kafka.apache.org/documentation/.
+> If you like to learn from video tutorials, I would suggest watching https://www.learningjournal.guru/courses/kafka/kafka-foundation-training/.
 
-> If you like to learn from video tutorials I would suggest to watch https://www.learningjournal.guru/courses/kafka/kafka-foundation-training/.
-
-In this post, We are going to use Kafka as a Message Broker and learn how to send and receive messages to and from Kafka topics using Java Client API.
+In this post, we are going to use Kafka as a Message Broker and learn how to send and receive messages to and from Kafka topics using the Java Client API.
 
 ## Kafka Installation
-You can download Kafka distribution from https://kafka.apache.org/downloads and start Kafka server as follows.
+You can download Kafka distribution from https://kafka.apache.org/downloads and start the Kafka server as follows.
 
-[Kafka uses ZooKeeper](https://www.cloudkarafka.com/blog/2018-07-04-cloudkarafka_what_is_zookeeper.html) for Controller election, Configuration Of Topics, Membership of the cluster etc and is bundled with Kafka distribution. So, first we need to start ZooKeeper as follows:
+[Kafka uses ZooKeeper](https://www.cloudkarafka.com/blog/2018-07-04-cloudkarafka_what_is_zookeeper.html) for Controller election, Configuration of Topics, Membership of the cluster, etc., and is bundled with the Kafka distribution. So, first we need to start ZooKeeper as follows:
 
 ```bash
 kafka_2.12-2.2.0> bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 
-Once the ZooKeeper started successfully, start Kafka server as follows:
+Once ZooKeeper has started successfully, start the Kafka server as follows:
 
 ```bash
 kafka_2.12-2.2.0> bin/kafka-server-start.sh config/server.properties
 ```
 
-Instead of installing Kafka as described above, if you prefer using Docker to spin up Kafka server you can use the following docker-compose configuration. You can also find various docker-compose configurations at https://github.com/confluentinc/cp-docker-images/tree/5.2.2-post/examples.
+Instead of installing Kafka as described above, if you prefer using Docker to spin up a Kafka server, you can use the following docker-compose configuration. You can also find various docker-compose configurations at https://github.com/confluentinc/cp-docker-images/tree/5.2.2-post/examples.
 
 **docker-compose.yml**
 
@@ -107,11 +106,10 @@ compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
 ```
 
 ### Kafka Topic Producer
- A message to a Kafka topic typically contains a key, value and optionally a set of headers.
- While creating a producer we need to specify Key and Value Serializers so that the API knows how to serialize those values.
-
- Let us create **MessageProducer** class as follows:
-
+ A message to a Kafka topic typically contains a key, a value, and optionally a set of headers.
+ While creating a producer, we need to specify Key and Value Serializers so that the API knows how to serialize those values.
+ 
+ Let us create the **MessageProducer** class as follows:
 ```java
 package com.sivalabs.kafkasample;
 
@@ -162,9 +160,9 @@ public class MessageProducer {
 }
 ```
 
-We have created an instance of Properties to populate producer configuration properties like bootstrap servers, key and value serializer types. We are planning to send **Long/String** key/value pair so we used **LongSerializer** and **StringSerializer** respectively. Then we created **KafkaProducer** instance using **producerProperties**. A message to be sent to a topic is represented as an instance of **ProducerRecord**. Finally we send the message using **KafkaProducer.send()** method.
+We have created an instance of Properties to populate producer configuration properties like bootstrap servers and key and value serializer types. We are planning to send a **Long/String** key/value pair, so we used **LongSerializer** and **StringSerializer** respectively. Then we created a **KafkaProducer** instance using **producerProperties**. A message to be sent to a topic is represented as an instance of **ProducerRecord**. Finally, we send the message using **KafkaProducer.send()** method.
 
-We have configured **ProducerConfig.ACKS_CONFIG** to **all** so that the message is considered successfully written to Kafka topic only when the full set of in-sync replicas acknowledged.
+We have configured **ProducerConfig.ACKS_CONFIG** to **all** so that the message is considered successfully written to the Kafka topic only when the full set of in-sync replicas has acknowledged it.
 
 ### Kafka Topic Consumer
 Let us create a Consumer to read from Kafka **topic-1** as follows:
@@ -225,15 +223,15 @@ public class MessageConsumer {
 }
 ```
 
-Similar to Producer, we have created a Properties instance with consumer configuration properties. We have created a **KafkaConsumer** and subscribed to a single topic **test-topic**.
+Similar to the Producer, we have created a `Properties` instance with consumer configuration properties. We have created a **KafkaConsumer** and subscribed to a single topic, **test-topic**.
 
-We are polling for new message with a timeout value of 1000 milli seconds and printing each message key and value. Along with it we are also printing the headers of each message. When we poll if there are no new messages then it would return an empty list.
+We are polling for new messages with a timeout value of 1000 milliseconds and printing each message key and value. Along with it, we are also printing the headers of each message. When we poll, if there are no new messages, it will return an empty list.
 
-We have configured **ConsumerConfig.AUTO_OFFSET_RESET_CONFIG** property to **earliest** so when we start the consumer it will start reading the messages from the last acknowledged offset.
+We have configured the **ConsumerConfig.AUTO_OFFSET_RESET_CONFIG** property to **earliest** so when we start the consumer, it will start reading messages from the last acknowledged offset.
 
-We have turned off the default automatic acknowledgement mechanism by setting **ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG** to **false** and as we read the message we are acknowledging with **kafkaConsumer.commitSync()**.
+We have turned off the default automatic acknowledgment mechanism by setting **ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG** to **false**, and as we read the message, we are acknowledging them with **kafkaConsumer.commitSync()**.
 
-Also we are limiting the max number of records to read per poll to 10 by configuring  **ConsumerConfig.MAX_POLL_RECORDS_CONFIG** property.
+Also, we are limiting the maximum number of records to read per poll to 10 by configuring **ConsumerConfig.MAX_POLL_RECORDS_CONFIG** property.
 
 ## Summary
-In this post we have learned how to create a simple Producer and Consumer for a Kafka topic using Java Client API. In the next article we will learn how to implement a Kafka Producer and Consumer using **Spring for Kafka**.
+In this post, we have learned how to create a simple Producer and Consumer for a Kafka topic using the Java Client API. In the next article, we will learn how to implement a Kafka Producer and Consumer using **Spring for Kafka**.

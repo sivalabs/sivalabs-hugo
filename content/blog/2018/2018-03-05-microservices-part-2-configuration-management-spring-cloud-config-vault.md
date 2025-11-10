@@ -20,63 +20,61 @@ aliases:
 
 
 
-In [MicroServices using Spring Boot & Spring Cloud – Part 1 : Overview](http://sivalabs.in/microservices-using-springboot-spring-cloud-part-1-overview/),
- we took a brief look at what are micro-services and how we can use **SpringBoot** and **SpringCloud** to build micro-services.
+In [MicroServices using Spring Boot & Spring Cloud – Part 1: Overview](http://sivalabs.in/microservices-using-springboot-spring-cloud-part-1-overview/),
+we took a brief look at what microservices are and how we can use **Spring Boot** and **Spring Cloud** to build them.
 
 In this post, we are going to learn:
 
-* What is the need for Spring Cloud Config and Vault?
-* Create our first micro-service: catalog-service
-* Create Spring Cloud Config Server
-* Using Vault for storing sensitive data
+*   What is the need for Spring Cloud Config and Vault?
+*   How to create our first microservice: catalog-service
+*   How to create a Spring Cloud Config Server
+*   How to use Vault for storing sensitive data
 
 <!--more-->
 
-
 **MicroServices using Spring Boot & Spring Cloud**
 
-* [Part 1 : MicroServices : Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})
-* [Part 2 : MicroServices : Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})
-* [Part 3 : MicroServices : Spring Cloud Service Registry and Discovery]({{< relref "2018-03-08-microservices-springcloud-eureka.md" >}})
-* [Part 4 : MicroServices : Spring Cloud Circuit Breaker using Netflix Hystrix]({{< relref "2018-03-12-spring-cloud-netflix-circuit-breaker.md" >}})
-* [Part 5 : MicroServices : Spring Cloud Zuul Proxy as API Gateway]({{< relref "2018-03-15-microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway.md" >}})
-* [Part 6 : MicroServices : Distributed Tracing with Spring Cloud Sleuth and Zipkin]({{< relref "2018-03-20-microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin.md" >}})
+*   [Part 1: MicroServices: Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})
+*   [Part 2: MicroServices: Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})
+*   [Part 3: MicroServices: Spring Cloud Service Registry and Discovery]({{< relref "2018-03-08-microservices-springcloud-eureka.md" >}})
+*   [Part 4: MicroServices: Spring Cloud Circuit Breaker using Netflix Hystrix]({{< relref "2018-03-12-spring-cloud-netflix-circuit-breaker.md" >}})
+*   [Part 5: MicroServices: Spring Cloud Zuul Proxy as API Gateway]({{< relref "2018-03-15-microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway.md" >}})
+*   [Part 6: MicroServices: Distributed Tracing with Spring Cloud Sleuth and Zipkin]({{< relref "2018-03-20-microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin.md" >}})
 
 # What is the need for Spring Cloud Config and Vault?
-SpringBoot already provides a lot of options to [externalize configuration properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config). 
-However, once the application is started you can’t change those property values at runtime. 
-You need to update the properties and restart the application to take those changes into effect.
+Spring Boot already provides a lot of options to [externalize configuration properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config).
+However, once the application is started, you can’t change those property values at runtime.
+You need to update the properties and restart the application for those changes to take effect.
 
-In the microservices world, there could be a large number of microservices and multiple instances of those microservices are running. 
-Updating configuration properties and restarting all those instances manually or even with automated scripts may not be feasible. 
+In the microservices world, there could be a large number of microservices, and multiple instances of those microservices are running.
+Updating configuration properties and restarting all those instances manually, or even with automated scripts, may not be feasible.
 Spring Cloud Config addresses this problem.
 
-We can create a Spring Cloud Config Server which provides the configuration values for all of our microservices. 
-We can use **git**, **svn**, **database** or **Consul** as a backend to store the configuration parameters. 
-Then we can configure the location of Spring Cloud Config server in our microservice so that it will load all the properties 
-when we start the application. In addition to that, whenever we update the properties we can invoke **/refresh** REST endpoint 
-in our microservice so that it will reload the configuration changes without requiring to restart the application.
+We can create a Spring Cloud Config Server that provides the configuration values for all of our microservices.
+We can use **git**, **svn**, a **database**, or **Consul** as a backend to store the configuration parameters.
+Then we can configure the location of the Spring Cloud Config server in our microservice so that it will load all the properties
+when we start the application. In addition to that, whenever we update the properties, we can invoke the **/refresh** REST endpoint
+in our microservice so that it will reload the configuration changes without requiring a restart of the application.
 
-In our applications, we also need to configure various sensitive data like database credentials, keys, tokens etc. 
-Obviously, we don’t want to store them in plain text. A better approach would be to store them in an encrypted format 
-and Spring Cloud Config Server provides the ability to encrypt and decrypt the data. 
-Even better we should use secure data storage tools like [Vault](https://www.vaultproject.io/). 
-Spring Cloud also provides the integration with Vault so that we can store any sensitive configuration properties in Vault.
-
+In our applications, we also need to configure various sensitive data like database credentials, keys, tokens, etc.
+Obviously, we don’t want to store them in plain text. A better approach would be to store them in an encrypted format,
+and Spring Cloud Config Server provides the ability to encrypt and decrypt the data.
+Even better, we should use secure data storage tools like [Vault](https://www.vaultproject.io/).
+Spring Cloud also provides integration with Vault so that we can store any sensitive configuration properties in Vault.
 
 I have already written a couple of tutorials on Spring Cloud Config Server which you can refer to:
 
-* [Introduction to Spring Cloud Config Server](http://sivalabs.in/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/)
-* [Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/)
+*   [Introduction to Spring Cloud Config Server](http://sivalabs.in/spring-cloud-tutorials-introduction-to-spring-cloud-config-server/)
+*   [Auto-Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/)
 
-# Create our first micro-service: catalog-service
-Let us start with our first microservice ie, catalog-service. 
-Create a SpringBoot app with **Web, JPA, MySQL, Actuator, DevTools, Lombok** starters. 
-Nothing fancy here so far, a typical SpringBoot application.
+# Create our first microservice: catalog-service
+Let us start with our first microservice, i.e., `catalog-service`.
+Create a Spring Boot app with **Web, JPA, MySQL, Actuator, DevTools, and Lombok** starters.
+Nothing fancy here so far; it's a typical Spring Boot application.
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series
 
-First, let’s implement a REST endpoint to give products data and later refactor it to use Cloud Config Server.
+First, let’s implement a REST endpoint to provide product data and later refactor it to use the Cloud Config Server.
 
 We are going to use Docker and run MySQL as a Docker container.
 
@@ -94,7 +92,7 @@ services:
        MYSQL_ROOT_PASSWORD: admin
        MYSQL_DATABASE: catalog
 ```
-       
+
 Configure datasource properties in **application.properties** as follows:
 
 ```properties
@@ -114,7 +112,7 @@ spring.jpa.show-sql=true
 management.endpoints.web.exposure.include=*
 ```
 
-Create JPA entity **Product.java** as follows:
+Create the JPA entity **Product.java** as follows:
 
 ```java
 import lombok.Data;
@@ -135,7 +133,7 @@ public class Product {
 }
 ```
 
-Create Spring Data JPA repository **ProductRepository.java** as follows:
+Create the Spring Data JPA repository **ProductRepository.java** as follows:
 
 ```java
 import com.sivalabs.catalogservice.entities.Product;
@@ -147,8 +145,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 }
 ```
 
-Create **ProductService** which just delegate to **ProductRepository** for now. 
-We can directly inject Repository into our web layer components (Controllers) but going forward there could be business logic which I don’t like to put in either Controller or in Repository.
+Create **ProductService**, which just delegates to **ProductRepository** for now.
+We can directly inject the Repository into our web layer components (Controllers), but going forward, there could be business logic that I don’t like to put in either the Controller or the Repository.
 
 ```java
 import com.sivalabs.catalogservice.entities.Product;
@@ -181,7 +179,7 @@ public class ProductService {
 }
 ```
 
-Finally, create our REST controller **ProductController.java**
+Finally, create our REST controller, **ProductController.java**:
 
 ```java
 import com.sivalabs.catalogservice.entities.Product;
@@ -221,7 +219,7 @@ public class ProductController {
 }
 ```
 
-Create **ProductNotFoundException** extending **RuntimeException** and annotate with **@ResponseStatus(HttpStatus.NOT_FOUND)**.
+Create **ProductNotFoundException** extending **RuntimeException** and annotate it with **@ResponseStatus(HttpStatus.NOT_FOUND)**.
 
 ```java
 import org.springframework.http.HttpStatus;
@@ -246,10 +244,9 @@ public class ProductNotFoundException extends RuntimeException {
 }
 ```
 
-
 Let’s insert some sample products into our database.
 
-src/main/resources/data.sql
+`src/main/resources/data.sql`
 
 ```sql
 DELETE FROM products;
@@ -261,13 +258,13 @@ insert into products(id, code, name, description, price) VALUES
 ;
 ```
 
-Okay, now we can start our SpringBoot application and hit http://localhost:8181/api/products. You should be able to see the JSON response with products info.
+Okay, now we can start our Spring Boot application and hit http://localhost:8181/api/products. You should be able to see the JSON response with product info.
 
-# Create Spring Cloud Config Server
+# Create a Spring Cloud Config Server
 
-we are going to create Spring Cloud Config Server using Git backend. Spring Cloud Config Server is nothing but a SpringBoot project. Create a SpringBoot project with Config Server starter.
+We are going to create a Spring Cloud Config Server using a Git backend. A Spring Cloud Config Server is nothing but a Spring Boot project. Create a Spring Boot project with the Config Server starter.
 
-Configure the location of git repository where we are going to store all our configuration files in the **application.properties** file.
+Configure the location of the Git repository where we are going to store all our configuration files in the **application.properties** file.
 
 ```properties
 spring.config.name=configserver
@@ -279,7 +276,7 @@ spring.cloud.config.server.git.clone-on-start=true
 management.endpoints.web.exposure.include=*
 ```
 
-Now annotate the entry point class with **@EnableConfigServer**.
+Now, annotate the entry point class with **@EnableConfigServer**.
 
 ```java
 import org.springframework.boot.SpringApplication;
@@ -296,14 +293,13 @@ public class ConfigServerApplication {
 }
 ```
 
+That’s it. This is all you need to do to create a Spring Cloud Config Server, and you just need to add application-specific config files to the Git repository.
 
-That’s it. This is all you need to do to create Spring Cloud Config Server and you just need to add application-specific config files in the git repository.
+> If you have mentally prepared to write a bunch of code to create a Spring Cloud Config Server, sorry to disappoint you. :-)
 
-> If you have mentally prepared to write a bunch of code to create Spring Cloud Config Server, sorry to disappoint you :-).
+# Refactor catalog-service to use the Config Server
 
-# Refactor catalog-service to use Config Server
-
-Our catalog-service will become a client for Config Server. So, let us add **Config Client** starter to **catalog-service** which will add the following dependency.
+Our `catalog-service` will become a client for the Config Server. So, let us add the **Config Client** starter to **catalog-service**, which will add the following dependency.
 
 ```xml
 <dependency>
@@ -312,9 +308,9 @@ Our catalog-service will become a client for Config Server. So, let us add **Con
 </dependency>
 ```
 
-Make sure you also add the **spring-cloud-dependencies** BOM and in `<properties>` section.
+Make sure you also add the **spring-cloud-dependencies** BOM in the `<properties>` section.
 
-While using Spring Cloud Config Server the properties loading process happens at multiple stages, first loading **bootstrap.properties/yml** and then from config server.
+While using Spring Cloud Config Server, the properties loading process happens in multiple stages: first loading **bootstrap.properties/yml** and then from the config server.
 
 So, let’s rename **application.properties** to **bootstrap.properties** and update it to have the following properties.
 
@@ -325,10 +321,9 @@ management.endpoints.web.exposure.include=*
 spring.cloud.config.uri=http://localhost:8888
 ```
 
+Here, we have configured the location of our Config Server and gave the name **catalog-service** to our application using **spring.application.name**.
 
-Here, we have configured the location of our Config Server and gave the name as **catalog-service** to our application using **spring.application.name**.
-
-Now we need to add all the properties of our **catalog-service** in **catalog-service.properties** and commit/push it to our git repo microservices-config-repo.
+Now we need to add all the properties of our **catalog-service** to **catalog-service.properties** and commit/push it to our Git repo, `microservices-config-repo`.
 
 **microservices-config-repo/catalog-service.properties**
 
@@ -345,33 +340,32 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
+You can also add separate config files for different profiles, like **catalog-service-qa.properties, catalog-service-prod.properties**, etc.
 
-You can also add separate config files for different files like **catalog-service-qa.properties, catalog-service-prod.properties** etc.
+Now, first start the Config Server application and then the `catalog-service` application.
+This should work fine. You can check the console logs to see that `catalog-service` is fetching the properties from the
+config server at http://localhost:8888/ during startup.
 
-Now first start Config Server application and then catalog-service application. 
-This should work fine. You can check the console logs that catalog-service is fetching the properties from 
-config server http://localhost:8888/ at startup.
-
-Now we are getting little close to our goal but we are still storing the credentials in plain text. 
+Now we are getting a little close to our goal, but we are still storing the credentials in plain text.
 Let’s move the sensitive config properties to Vault.
 
 # Using Vault for storing sensitive data
 
-Vault is a tool for securely storing and accessing secrets. You can read more about Vault here https://www.vaultproject.io/intro/index.html. Vault comes as a single binary which you can download from https://www.vaultproject.io/downloads.html.
+Vault is a tool for securely storing and accessing secrets. You can read more about Vault here: https://www.vaultproject.io/intro/index.html. Vault comes as a single binary which you can download from https://www.vaultproject.io/downloads.html.
 
 Now start Vault in dev mode using the following command:
 
 **$ vault server -dev**
 
-In the console, you can see the information about how to use Vault and Root token.
-Open a new terminal window, set VAULT_ADDR environment variable.
+In the console, you can see information about how to use Vault and the Root token.
+Open a new terminal window and set the `VAULT_ADDR` environment variable.
 
 **$ export VAULT_ADDR=’http://127.0.0.1:8200′**
 
-> NOTE: The vault dev mode is only for development purpose and is not meant for production usage.
+> NOTE: The Vault dev mode is only for development purposes and is not meant for production usage.
 
-We can write secrets to Vault using **vault write secret/somename key1=value1 key2=value2**
-We can also put all our secrets in a JSON file and write from the file as well. 
+We can write secrets to Vault using **vault write secret/somename key1=value1 key2=value2**.
+We can also put all our secrets in a JSON file and write from the file as well.
 Let us create a JSON file with MySQL database credentials and write to Vault.
 
 **catalog-service-credentials.json**
@@ -385,13 +379,13 @@ Let us create a JSON file with MySQL database credentials and write to Vault.
 
 **$ vault write secret/catalog-service @catalog-service-credentials.json**
 
-You can verify the values by running vault read **secret/catalog-service**.
+You can verify the values by running `vault read secret/catalog-service`.
 
-> We can automate this whole process of setting up Vault and initializing with secrets using Docker. Please look at the source repository on github to know how to do it, well one way of doing it.
+> We can automate this whole process of setting up Vault and initializing it with secrets using Docker. Please look at the source repository on GitHub to know how to do it—well, one way of doing it.
 
-Now that Vault is configured and initialized with secrets. Let us refactor **catalog-service** to use Vault.
+Now that Vault is configured and initialized with secrets, let us refactor **catalog-service** to use Vault.
 
-Add Vault Configuration starter to **catalog-service** which will add the following dependency.
+Add the Vault Configuration starter to **catalog-service**, which will add the following dependency:
 
 ```xml
 <dependency>
@@ -417,24 +411,23 @@ spring.cloud.vault.authentication=token
 spring.cloud.vault.token=934f9eae-31ff-a8ef-e1ca-4bea9e07aa09
 ```
 
-We have configured the Vault properties, using token-based authentication and configured the Root Taken that is printed in the console log 
-when you started the vault server.
+We have configured the Vault properties, using token-based authentication, and configured the Root Token that is printed in the console log
+when you started the Vault server.
 
-We are all set. We moved the service properties into external config server and sensitive data into Vault.
+We are all set. We moved the service properties into an external config server and sensitive data into Vault.
 
-Now start the Config Server and **catalog-service** and it should work just fine.
+Now start the Config Server and **catalog-service**, and it should work just fine.
 
 # Summary
-In this post, we learned how to use Spring Cloud Config to externalize the configuration properties and Vault to store secrets. 
-You can use Spring Cloud Bus to Auto Refresh Config Changes as described in 
-[Spring Cloud Tutorials – Auto Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/).
+In this post, we learned how to use Spring Cloud Config to externalize configuration properties and Vault to store secrets.
+You can use Spring Cloud Bus to auto-refresh config changes as described in
+[Spring Cloud Tutorials – Auto-Refresh Config Changes using Spring Cloud Bus](http://sivalabs.in/spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/).
 
-You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series
+You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series.
 
-In next article, we will take a look at how to use **Netflix Eureka for Service Registry and Service Discovery**.
+In the next article, we will take a look at how to use **Netflix Eureka for Service Registry and Service Discovery**.
 
 # References:
-* [Spring Cloud Reference Documentation](http://cloud.spring.io/spring-cloud-static/Finchley.M7/single/spring-cloud.html)
-* [Vault Getting Started](https://www.vaultproject.io/intro/getting-started/install.html)
-* [Spring Blog: Managing Secrets with Vault](https://spring.io/blog/2016/06/24/managing-secrets-with-vault)
-
+*   [Spring Cloud Reference Documentation](http://cloud.spring.io/spring-cloud-static/Finchley.M7/single/spring-cloud.html)
+*   [Vault Getting Started](https://www.vaultproject.io/intro/getting-started/install.html)
+*   [Spring Blog: Managing Secrets with Vault](https://spring.io/blog/2016/06/24/managing-secrets-with-vault)

@@ -11,7 +11,7 @@ tags:
 aliases:
   - /mybatis-tutorial-part-3-mapping-relationships/
 ---
-In this post let us see how to use MyBatis ResultMap configuration to map relationships.
+In this post, let us see how to use MyBatis ResultMap configuration to map relationships.
 
 [**MyBatis Tutorial: Part1 &#8211; CRUD Operations**]({{< relref "2012-10-21-mybatis-tutorial-part1-crud-operations.md" >}}) 
   
@@ -21,11 +21,11 @@ In this post let us see how to use MyBatis ResultMap configuration to map relati
   
 [**MyBatis Tutorial : Part4 &#8211; Spring Integration**]({{< relref "2012-10-24-mybatis-tutorial-part4-spring-integration.md" >}}) 
 
-To illustrate we are considering the following sample domain model:
+To illustrate, we are considering the following sample domain model:
   
 There will be Users and each User may have a Blog and each Blog can contain zero or more posts.
 
-The Database structure of the three tables are as follows:
+The database structure of the three tables is as follows:
 
 ```sql
 CREATE TABLE user (

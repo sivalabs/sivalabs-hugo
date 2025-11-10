@@ -11,17 +11,15 @@ tags:
 aliases:
   - /springboot-working-with-mybatis/
 ---
-**MyBatis** is a SQL Mapping framework with support for custom SQL, stored procedures and advanced mappings.
+**MyBatis** is an SQL Mapping framework with support for custom SQL, stored procedures, and advanced mappings.
 
-> SpringBoot doesn’t provide official support for MyBatis integration, but MyBatis community built a SpringBoot starter for MyBatis.
+> Spring Boot doesn’t provide official support for MyBatis integration, but the MyBatis community built a Spring Boot starter for MyBatis.
 
 <!--more-->
 
+You can read about the Spring Boot MyBatis Starter release announcement at http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html, and you can explore the source code on GitHub at https://github.com/mybatis/mybatis-spring-boot.
 
-You can read about the SpringBoot MyBatis Starter release announcement at http://blog.mybatis.org/2015/11/mybatis-spring-boot-released.html and you can explore the source code on GitHub https://github.com/mybatis/mybatis-spring-boot.
-
-### Create a SpringBoot Maven project and add the following MyBatis Starter dependency.
-
+### Create a Spring Boot Maven project and add the following MyBatis Starter dependency.
 
 ```xml
 <dependency>
@@ -31,9 +29,9 @@ You can read about the SpringBoot MyBatis Starter release announcement at http:/
 </dependency>
 ```
 
-We will be reusing **User.java, schema.sql and data.sql** files created in my previous article [SpringBoot : Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}})
+We will be reusing the **User.java, schema.sql, and data.sql** files created in my previous article, [SpringBoot: Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}}).
 
-Create MyBatis SQL Mapper interface **UserMapper.java** with few database operations as follows:
+Create a MyBatis SQL Mapper interface, **UserMapper.java**, with a few database operations as follows:
 
 ```java
 package com.sivalabs.demo.domain;
@@ -48,7 +46,7 @@ public interface UserMapper
 
 We need to create Mapper XML files to define the queries for the mapped SQL statements for the corresponding Mapper interface methods.
 
-Create **UserMapper.xml** file in **src/main/resources/com/sivalabs/demo/mappers/** directory as follows:
+Create the **UserMapper.xml** file in the **src/main/resources/com/sivalabs/demo/mappers/** directory as follows:
 
 ```xml
 <!DOCTYPE mapper
@@ -77,15 +75,15 @@ Create **UserMapper.xml** file in **src/main/resources/com/sivalabs/demo/mappers
 </mapper>
 ```
 
-Few things to observe here are:
+A few things to observe here are:
 
-  * Namespace in Mapper XML should be same as Fully Qualified Name (FQN) for Mapper Interface
-  * Statement id values should be same as Mapper Interface method names.
-  * If the query result column names are different from bean property names we can use `<resultMap>` configuration to provide mapping between column names and their corresponding bean property names.&nbsp;
+*   The namespace in the Mapper XML should be the same as the Fully Qualified Name (FQN) for the Mapper Interface.
+*   Statement `id` values should be the same as the Mapper Interface method names.
+*   If the query result column names are different from the bean property names, we can use the `<resultMap>` configuration to provide a mapping between the column names and their corresponding bean property names.
 
-MyBatis also provides annotation based query configurations without requiring Mapper XMLs.
-  
-We can create **UserMapper.java** interface and configure the mapped SQLs using annotations as follows:
+MyBatis also provides annotation-based query configurations without requiring Mapper XMLs.
+
+We can create the **UserMapper.java** interface and configure the mapped SQLs using annotations as follows:
 
 ```java
 public interface UserMapper
@@ -104,15 +102,15 @@ public interface UserMapper
 }
 ```
 
-SpringBoot MyBatis starter provides the following MyBatis configuration parameters which we can use to customize MyBatis settings.
+The Spring Boot MyBatis starter provides the following MyBatis configuration parameters, which we can use to customize MyBatis settings:
 
 ```java
-mybatis.config = mybatis config file name
-mybatis.mapperLocations = mappers file locations
-mybatis.typeAliasesPackage = domain object's package
-mybatis.typeHandlersPackage = handler's package
-mybatis.check-config-location = check the mybatis configuration exists
-mybatis.executorType = mode of execution. Default is SIMPLE
+mybatis.config=mybatis config file name
+mybatis.mapperLocations=mappers file locations
+mybatis.typeAliasesPackage=domain object's package
+mybatis.typeHandlersPackage=handler's package
+mybatis.check-config-location=check that the mybatis configuration exists
+mybatis.executorType=mode of execution. Default is SIMPLE
 ```
 
 Configure the **typeAliasesPackage** and **mapperLocations** in **application.properties**.
@@ -136,9 +134,9 @@ public class SpringbootMyBatisDemoApplication
 }
 ```
 
-Observe that we have used **@MapperScan("com.sivalabs.demo.mappers")** annotation to specify where to look for Mapper interfaces.
+Observe that we have used the **@MapperScan("com.sivalabs.demo.mappers")** annotation to specify where to look for Mapper interfaces.
 
-Now create a JUnit test class and test our UserMapper methods.
+Now create a JUnit test class and test our `UserMapper` methods.
 
 ```java
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -172,6 +170,6 @@ public class SpringbootMyBatisDemoApplicationTests
 }
 ```
 
-You can find the source code of the article at my GitHub repo https://github.com/sivaprasadreddy/springboot-tutorials
+You can find the source code of the article at my GitHub repo: https://github.com/sivaprasadreddy/springboot-tutorials
 
 You can read more about MyBatis and Spring integration at http://blog.mybatis.org/p/products.html and http://www.mybatis.org/spring/.

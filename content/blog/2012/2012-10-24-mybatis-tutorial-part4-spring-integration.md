@@ -20,21 +20,18 @@ aliases:
   
 [**MyBatis Tutorial : Part4 &#8211; Spring Integration**]({{< relref "2012-10-24-mybatis-tutorial-part4-spring-integration.md" >}}) 
 
-MyBatis-Spring is a sub-project of MyBatis and provides Spring integration support which drastically simplifies the MyBatis usage. For those who are familiar with Spring's way of Dependency Injection process, using MyBatis-Spring is a very simple.
+MyBatis-Spring is a sub-project of MyBatis that provides Spring integration support, which drastically simplifies MyBatis usage. For those who are familiar with Spring's Dependency Injection process, using MyBatis-Spring is very simple.
 
-First let us see the process of using MyBatis without Spring.
+First, let us see the process of using MyBatis without Spring.
 
-1. Create SqlSessionFactory using SqlSessionFactoryBuilder by passing mybatis-config.xml which contains DataSource properties, List of Mapper XMLs and TypeAliases etc.
+1.  Create SqlSessionFactory using SqlSessionFactoryBuilder by passing mybatis-config.xml, which contains DataSource properties, a list of Mapper XMLs, TypeAliases, etc.
+2.  Create an SqlSession object from SqlSessionFactory.
+3.  Get a Mapper instance from SqlSession and execute queries.
+4.  Commit or roll back the transaction using the SqlSession object.
 
-2. Create SqlSession object from SqlSessionFactory
+With MyBatis-Spring, most of the above steps can be configured in the Spring ApplicationContext, and SqlSession or Mapper instances can be injected into Spring Beans. Then we can use Spring's TransactionManagement features without writing transaction commit/rollback code all over the place.
 
-3. Get Mapper instance from SqlSession and execute queries.
-
-4. Commit or rollback the transaction using SqlSession object.
-
-With MyBatis-Spring, most of the above steps can be configured in Spring ApplicationContext and SqlSession or Mapper instances can be injected into Spring Beans. Then we can use Spring's TransactionManagement features without writing transaction commit/rollback code all over the code.
-
-Now let us see how we can configure MyBatis+Spring integration stuff.
+Now, let us see how we can configure MyBatis+Spring integration.
 
 **Step#1:** Configure MyBatis-Spring dependencies in pom.xml
 

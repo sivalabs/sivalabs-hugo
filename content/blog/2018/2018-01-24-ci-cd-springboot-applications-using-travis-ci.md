@@ -16,47 +16,46 @@ aliases:
   - /ci-cd-springboot-applications-using-travis-ci/
 ---
 
-In this article we are going to learn how we can use **Travis CI** for Continuous Integration and Continuous Deployment (CI/CD) 
-of a **SpringBoot** application. We will learn how to run maven build goals, perform test coverage validation using JaCoCo plugin, 
-Code Quality checks using **SonarCloud**, build Docker image and push it to **DockerHub** and finally deploy it to **Heroku**.
+In this article, we are going to learn how we can use **Travis CI** for Continuous Integration and Continuous Deployment (CI/CD)
+of a **Spring Boot** application. We will learn how to run Maven build goals, perform test coverage validation using the JaCoCo plugin,
+run Code Quality checks using **SonarCloud**, build a Docker image and push it to **DockerHub**, and finally deploy it to **Heroku**.
 
 <!--more-->
 
-
 > The source code for this article is at https://github.com/sivaprasadreddy/jblogger
 
-Last week I was talking to my friend about how easy it became to build a Java application and deploy it using SpringBoot. During the discussion one point came out about how much it cost to build a Java application and deploy it somewhere (cloud). So, I thought of exploring more about the free services that we can use to automate all the project development activities with minimal or no cost at all.
+Last week, I was talking to my friend about how easy it has become to build and deploy a Java application using Spring Boot. During the discussion, one point came up about how much it costs to build a Java application and deploy it somewhere (in the cloud). So, I thought of exploring more about the free services that we can use to automate all project development activities with minimal or no cost at all.
 
-Few years ago I used **CloudBees** and **CloudFoundry** to build and deploy my pet projects which were offering free hosting service, but they are not providing free services anymore.
+A few years ago, I used **CloudBees** and **CloudFoundry** to build and deploy my pet projects, which were offering free hosting services, but they are not providing free services anymore.
 
-In the past I have used **Travis CI** for my java projects just for preliminary testing purpose, but looking at their documentation I realised they provide a lot more features.
+In the past, I have used **Travis CI** for my Java projects just for preliminary testing purposes, but looking at their documentation, I realized they provide a lot more features.
 
-So I thought of checking can I use Travis CI for my projects to do all the usual tasks such as:
+So I thought of checking if I can use Travis CI for my projects to do all the usual tasks, such as:
 
-* Checkout the latest code
-* Compile and run Unit and Integration Tests
-* Run JaCoCo code coverage and fail the build if desired percentage is not met
-* Run SonarQube code quality checks
-* Optionally, built Docker image and publish it to Docker Hub
-* Deploy application on some free cloud hosting service like Heroku or OpenShift
+*   Checkout the latest code
+*   Compile and run Unit and Integration Tests
+*   Run JaCoCo code coverage and fail the build if the desired percentage is not met
+*   Run SonarQube code quality checks
+*   Optionally, build a Docker image and publish it to Docker Hub
+*   Deploy the application on some free cloud hosting service like Heroku or OpenShift
 
-After going through their documentation I realised that we can do all these tasks by using some of the free online services and Travis-CI integration with them.
+After going through their documentation, I realized that we can do all these tasks by using some of the free online services and Travis CI's integration with them.
 
-* **GitHub** for code repository
-* **SonarCloud** for free SonarQube service
-* **Docker Hub** for publishing Docker images
-* **Heroku** for deploying the application
+*   **GitHub** for the code repository
+*   **SonarCloud** for a free SonarQube service
+*   **Docker Hub** for publishing Docker images
+*   **Heroku** for deploying the application
 
-Let us see how we can do all the above mentioned tasks using Travis-CI for a SpringBoot project.
+Let us see how we can do all the above-mentioned tasks using Travis CI for a Spring Boot project.
 
-## Step 1: Create SpringBoot project
+## Step 1: Create a Spring Boot project
 
-Create a SpringBoot project either using http://start.spring.io or from your IDE. I am using Maven build tool, you can use Gradle also if you prefer. Now commit the project into your github repository.
+Create a Spring Boot project either using http://start.spring.io or from your IDE. I am using the Maven build tool; you can use Gradle also if you prefer. Now commit the project into your GitHub repository.
 
-## Step 2: Create .travis.yml file
+## Step 2: Create a .travis.yml file
 
-In order to enable Travis-CI integration we need to create **.travis.yml** file in project root folder.
-As we are creating the Maven based java project create .travis.yml file with following content:
+In order to enable Travis CI integration, we need to create a **.travis.yml** file in the project's root folder.
+As we are creating a Maven-based Java project, create a `.travis.yml` file with the following content:
 
 **.travis.yml**
 
@@ -65,31 +64,30 @@ language: java
 jdk: oraclejdk8
 ```
 
-This minimal configuration is sufficient for Travis-CI to recognize our Maven based Java project and build it. 
-If there is a build.gradle file in our project root folder Travis will treat it as Gradle project, or if there is pom.xml it will treat it as Maven project.  If both build.gradle and pom.xml are there then Gradle build script will take priority.
+This minimal configuration is sufficient for Travis CI to recognize our Maven-based Java project and build it.
+If there is a `build.gradle` file in our project's root folder, Travis will treat it as a Gradle project, or if there is a `pom.xml`, it will treat it as a Maven project. If both `build.gradle` and `pom.xml` are there, then the Gradle build script will take priority.
 
-By default Travis will run **mvn test -B** for building the project. 
-If Travis finds mvnw wrapper then it will be used like **./mvnw test -B**.
+By default, Travis will run **mvn test -B** for building the project.
+If Travis finds the `mvnw` wrapper, then it will be used like **./mvnw test -B**.
 
+But if you want to run a different command or want to run multiple commands, we can use a script block to customize it.
 
-But if you want to run a different command or want to run multiple commands we can use script block to customize it.
+Now commit and push the `.travis.yml` file to GitHub.
 
-Now commit and push the .travis.yml file to GitHub.
+## Step 3: Enable Travis CI for the GitHub repository
 
-## Step 3: Enable Travis-CI for GitHub repository
-
-Go to https://travis-ci.org/ and **Signin with GitHub**.
+Go to https://travis-ci.org/ and **Sign in with GitHub**.
 
 Now click on **Add New Repository** (+ symbol).
 
-Enable Travis for the repository. After enabling Travis click on that repository and you can trigger build by selecting 
+Enable Travis for the repository. After enabling Travis, click on that repository, and you can trigger a build by selecting
 **More Options -> Trigger build**.
 
-Now you can see that build is running and tests are executed and an email notification will be sent to your email regarding the build status.
+Now you can see that the build is running, tests are being executed, and an email notification will be sent to your email regarding the build status.
 
 ## Step 4: Add JaCoCo Code Coverage check
 
-Add the Maven JaCoCo plugin to pom.xml with options like what is the desired code coverage percentage, packages/classes to ignore etc.
+Add the Maven JaCoCo plugin to `pom.xml` with options like what is the desired code coverage percentage, packages/classes to ignore, etc.
 
 ```xml
 <plugin>
@@ -156,12 +154,12 @@ Add the Maven JaCoCo plugin to pom.xml with options like what is the desired cod
 
 ## Step 5: Run Unit and Integration Tests
 
-As I mentioned earlier, by default Travis run **mvn test -B** which will **only run Unit tests**.
+As I mentioned earlier, by default, Travis runs **mvn test -B**, which will **only run Unit tests**.
 
-We want to run Unit tests and Integration tests separately by using **maven-failsafe-plugin**. 
+We want to run Unit tests and Integration tests separately by using the **maven-failsafe-plugin**.
 We will follow the convention by naming **Unit tests** as **\*Test.java/\*Tests.java** and **Integration tests** as **\*IT.java**.
 
-Add **maven-failsafe-plugin** as mentioned below:
+Add the **maven-failsafe-plugin** as mentioned below:
 
 ```xml
 <plugin>
@@ -184,8 +182,8 @@ Add **maven-failsafe-plugin** as mentioned below:
 </plugin>
 ```
 
-While configuring the maven-failsafe-plugin for SpringBoot project I hit this issue https://github.com/spring-projects/spring-boot/issues/6254 .
-To fix this issue I have added the **classifier** configuration to spring-boot-maven-plugin as follows:
+While configuring the `maven-failsafe-plugin` for a Spring Boot project, I hit this issue: https://github.com/spring-projects/spring-boot/issues/6254.
+To fix this issue, I have added the **classifier** configuration to the `spring-boot-maven-plugin` as follows:
 
 ```xml
 <plugin>
@@ -197,7 +195,7 @@ To fix this issue I have added the **classifier** configuration to spring-boot-m
 </plugin>
 ```
 
-Now we are going to use **script** block to specify our custom maven goal to run instead of default goal.
+Now we are going to use the **script** block to specify our custom Maven goal to run instead of the default goal.
 
 **.travis.yml**
 
@@ -211,20 +209,20 @@ script:
 
 ## Step 6: SonarQube code quality checks using SonarCloud
 
-SonarCloud , which built on **SonarQube**, offers free code quality checks for Open Source projects.
+SonarCloud, which is built on **SonarQube**, offers free code quality checks for Open Source projects.
 
-**Login with GitHub** and go to **My Account -> Security** and generate a new token for your project and save it somewhere. 
-Now click on **Organizations** tab and create an Organization with some unique key.
+**Login with GitHub**, go to **My Account -> Security**, and generate a new token for your project and save it somewhere.
+Now click on the **Organizations** tab and create an Organization with a unique key.
 
-Travis-CI provides ability to encrypt sensitive data (https://docs.travis-ci.com/user/encryption-keys/) so that we can encrypt any keys, password and configure in .travis.yml file.
+Travis CI provides the ability to encrypt sensitive data (https://docs.travis-ci.com/user/encryption-keys/) so that we can encrypt any keys or passwords and configure them in the `.travis.yml` file.
 
 `> sudo gem install travis`
 
-From project root folder run the following command to encrypt data:
+From the project root folder, run the following command to encrypt data:
 
 **travis encrypt SOMEVAR="secretvalue"**
 
-This will generate output like
+This will generate output like:
 
 **secure: "…. encrypted data …."**
 
@@ -236,7 +234,7 @@ env:
   - secure: "....encrypted data....."
 ```
 
-Now let us encrypt SonarCloud Token as follows:
+Now let us encrypt the SonarCloud Token as follows:
 
 **travis encrypt SONAR_TOKEN="my-sonar-token-here"**
 
@@ -261,14 +259,14 @@ script:
 - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 ```
 
-Note that we used **$SONAR_TOKEN** to refer to encrypted token variable and added one more command to run in **script** block to run **sonar:sonar** goal.
+Note that we used **$SONAR_TOKEN** to refer to the encrypted token variable and added one more command to run in the **script** block to run the **sonar:sonar** goal.
 
-## Step 7: Build Docker image and publish to DockerHub
+## Step 7: Build a Docker image and publish it to DockerHub
 
-Travis CI builds can run and build Docker images, and can also push images to Docker repositories. 
-For more information read https://docs.travis-ci.com/user/docker/
+Travis CI builds can run and build Docker images, and can also push images to Docker repositories.
+For more information, read https://docs.travis-ci.com/user/docker/.
 
-Create **Dockerfile** in project root folder for our SpringBoot application as follows:
+Create a **Dockerfile** in the project's root folder for our Spring Boot application as follows:
 
 ```Dockerfile
 FROM frolvlad/alpine-oraclejdk8:slim
@@ -280,7 +278,7 @@ EXPOSE 8080 8787
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -Dspring.profiles.active=docker -jar /app.jar" ]
 ```
 
-To use Docker add the following settings to **.travis.yml**:
+To use Docker, add the following settings to **.travis.yml**:
 
 ```yml
 sudo: required
@@ -291,19 +289,19 @@ services:
 
 Now we can run Docker commands in our build.
 
-Once the build is successful we may want to build the Docker image and push it to Docker Hub. 
-We can leverage **after_success** section to perform this action.
+Once the build is successful, we may want to build the Docker image and push it to Docker Hub.
+We can leverage the **after_success** section to perform this action.
 
-We need to login into DockerHub before pushing the image, we are going to configure DockerHub credentials by encrypting them.
+We need to log in to DockerHub before pushing the image; we are going to configure the DockerHub credentials by encrypting them.
 
 ```shell
 travis encrypt DOCKER_USER=”dockerhub-username”
 travis encrypt DOCKER_PASS=”dockerhub-password”
 ```
 
-Add these 2 secrets to **env.global** section of .travis.yml.
+Add these 2 secrets to the **env.global** section of `.travis.yml`.
 
-Now we can add our docker commands to build image and publish to dockerhub in **after_success** section as follows:
+Now we can add our Docker commands to build the image and publish it to Docker Hub in the **after_success** section as follows:
 
 ```yml
 after_success:
@@ -318,22 +316,22 @@ after_success:
 
 ## Step 8: Deploy to Heroku
 
-Travis CI provides options to deploy on a wide range of platforms including Heroku, OpenShift, AWS, Azure etc. 
+Travis CI provides options to deploy on a wide range of platforms, including Heroku, OpenShift, AWS, Azure, etc.
 Travis CI can automatically deploy your Heroku application after a successful build.
 
-We are going to deploy our SpringBoot application on Heroku using Travis https://docs.travis-ci.com/user/deployment/heroku/. Before deploying our application to Heroku first we need to login to https://www.heroku.com/ and create an application from Dashboard.
+We are going to deploy our Spring Boot application on Heroku using Travis: https://docs.travis-ci.com/user/deployment/heroku/. Before deploying our application to Heroku, first we need to log in to https://www.heroku.com/ and create an application from the Dashboard.
 
-Now create **Procfile** in root folder of the project as follows:
+Now create a **Procfile** in the root folder of the project as follows:
 
 ```shell
 web java -Dserver.port=$PORT -Dspring.profiles.active=heroku $JAVA_OPTS -jar target/jblogger-0.0.1-SNAPSHOT-exec.jar
 ```
 
-First we need to get the Heroku API Key and add it as encrypted secret.
+First, we need to get the Heroku API Key and add it as an encrypted secret.
 
 **travis encrypt HEROKU_API_KEY="your-heroku-api-key-here"**
 
-We can deploy to Heroku from Travis by adding **deploy** section as follows:
+We can deploy to Heroku from Travis by adding a **deploy** section as follows:
 
 ```yml
 deploy:
@@ -342,7 +340,7 @@ deploy:
   app: jblogger
 ```
 
-Now the complete .travis.yml file will look like follows:
+Now the complete `.travis.yml` file will look as follows:
 
 ```yml
 sudo: required
@@ -372,7 +370,7 @@ script:
  
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH&amp;amp;amp;amp;amp;amp;amp;lt;span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start"&amp;amp;amp;amp;amp;amp;amp;gt;&amp;amp;amp;amp;amp;amp;amp;lt;/span&amp;amp;amp;amp;amp;amp;amp;gt;; fi`
+- export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH; fi`
 - export IMAGE_NAME=sivaprasadreddy/jblogger
 - docker build -t $IMAGE_NAME:$COMMIT .
 - docker tag $IMAGE_NAME:$COMMIT $IMAGE_NAME:$TAG
@@ -384,7 +382,7 @@ deploy:
   app: jblogger
 ```
 
-Once the build is successful and deployed on Heroku you should be able to access the application at `https://<app>.herokuapp.com/`.
+Once the build is successful and deployed on Heroku, you should be able to access the application at `https://<app>.herokuapp.com/`.
 
-I just covered the most commonly performed tasks in Java applications only, but Travis-CI can perform lot more. 
-Checkout the TravisCI documentation at https://docs.travis-ci.com/.
+I have just covered the most commonly performed tasks in Java applications, but Travis CI can do a lot more.
+Check out the Travis CI documentation at https://docs.travis-ci.com/.

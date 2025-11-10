@@ -11,22 +11,22 @@ tags:
 aliases:
   - /when-to-use-requestdispatcherforward/
 ---
-Many people know about how RequestDispatcher.forward() and response.sendRedirect() works.
+Many people know how RequestDispatcher.forward() and response.sendRedirect() work.
 
-RequestDispatcher.forward() is generally called Server side redirection and is used to forward to a resource within the same application. That resource could be a JSP or another Servlet.
+RequestDispatcher.forward() is generally called server-side redirection and is used to forward to a resource within the same application. That resource could be a JSP or another servlet.
 
-response.sendRedirect() is generally called as Client side redirection as it issues a new request from the browser. This method is used to redirect to another resource within the same application or to the resource in some other application running in the same web container or can redirect to any other resource running in someother web container.
+response.sendRedirect() is generally called client-side redirection, as it issues a new request from the browser. This method is used to redirect to another resource within the same application, to a resource in some other application running in the same web container, or to any other resource running in some other web container.
 
-There is one more important thing to consider when to use forward() and sendRedirect().
+There is one more important thing to consider when choosing between forward() and sendRedirect().
 
-Suppose you are on a new customer creation form and you filled the data and sumit it to CreateCustomerServlet. In CreateCustomerServlet you get all the data entered in the form and insert a row in the database and showing status.jsp saying Customer Created successfully.
+Suppose you are on a new customer creation form, you have filled in the data, and you submit it to CreateCustomerServlet. In CreateCustomerServlet, you get all the data entered in the form, insert a row into the database, and show status.jsp, saying "Customer Created successfully."
 
-Assume you use requestDispatcher.forward("status.jsp") to display the status page.  
-Then in the browser the URL remains as http://localhost:8080/App/CreateCustomerServlet.
+Assume you use requestDispatcher.forward("status.jsp") to display the status page.
+Then, in the browser, the URL remains http://localhost:8080/App/CreateCustomerServlet.
 
-**Now if the user press Refresh(F5) button on the browser the web container starts executing the request from CreateCustomerServlet. Again it will insert another duplicate row in database and show the status page.**
+**Now, if the user presses the Refresh (F5) button on the browser, the web container starts executing the request from CreateCustomerServlet. Again, it will insert another duplicate row in the database and show the status page.**
 
-**But in CreateCustomerServlet, if you use response.sendRedirect("status.jsp") to show status page the browser URL will be changed to http://localhost:8080/App/status.jsp.  
-Now if the user press F5 the container will start processing the status.jsp only. It won't invoke CreateCustomerServlet.**
+**But in CreateCustomerServlet, if you use response.sendRedirect("status.jsp") to show the status page, the browser URL will be changed to http://localhost:8080/App/status.jsp.
+Now, if the user presses F5, the container will start processing status.jsp only. It won't invoke CreateCustomerServlet.**
 
-So if you are doing any data modifications like insertion/updation/deletion always use response.sendRedirect().
+So if you are doing any data modifications like insertion, updation, or deletion, always use response.sendRedirect().

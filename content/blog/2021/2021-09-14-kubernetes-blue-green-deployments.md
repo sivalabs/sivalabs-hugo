@@ -44,7 +44,7 @@ But it poses some problems on the application architecture and design such as:
 While it is generally a good idea to keep new versions backward compatible we also need to keep in mind the cost of it.
 You may have to add feature toggles and additional configuration to handle both versions at the same time which definitely increase the complexity and tech debt.
 
-So, instead of immediately rolling out the new version by replacing the old version how about deploying the new version along side current version and test it thoroughly for a while and once we are confident with new version changes redirect the application traffic to new version? That is exacly what Blue/Green Deployment Strategy suggests.  
+So, instead of immediately rolling out the new version by replacing the old version how about deploying the new version along side current version and test it thoroughly for a while and once we are confident with new version changes redirect the application traffic to new version? That is exactly what Blue/Green Deployment Strategy suggests.  
 
 ## 2. What is Blue/Green Deployments strategy?
 

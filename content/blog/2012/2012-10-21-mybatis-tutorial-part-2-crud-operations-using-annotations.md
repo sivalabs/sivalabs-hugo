@@ -11,7 +11,7 @@ tags:
 aliases:
   - /mybatis-tutorial-part-2-crud-operations-using-annotations/
 ---
-In this post I will explain how to perform CRUD operations using MyBatis Annotation support without need of Queries configuration in XML mapper files.
+In this post, I will explain how to perform CRUD operations using MyBatis's annotation support without needing to configure queries in XML mapper files.
 
 [**MyBatis Tutorial: Part1 &#8211; CRUD Operations**]({{< relref "2012-10-21-mybatis-tutorial-part1-crud-operations.md" >}}) 
   
@@ -44,7 +44,7 @@ public class Blog
      private String blogName;
      private Date createdOn;
      
-     //Seeters and getters
+     //Setters and getters
      
      @Override
      public String toString() {

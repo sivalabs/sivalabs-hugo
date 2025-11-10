@@ -16,68 +16,67 @@ aliases:
 ---
 
 
-In web applications, user session management is very crucial for managing user state. In this article, we are going to learn about what are the approaches we have been following to manage user sessions in a clustered environment and how we can use Spring Session to implement it in a much simpler and more scalable way.
+In web applications, user session management is very crucial for managing user state. In this article, we are going to learn about the approaches we have been following to manage user sessions in a clustered environment and how we can use Spring Session to implement it in a much simpler and more scalable way.
 
 <!--more-->
 
+Typically, in production environments, we will have multiple server nodes with a load balancer in front of them, and all the client traffic will be coming through the load balancer to one of the server nodes. So we need some mechanism to make the user session data available to each client in a clustered environment.
 
-Typically in production environments, we will have multiple server nodes with a load balancer in front of them and all the client traffic will be coming through the load balancer to one of the server nodes. So we need some mechanism to make the user session data available to each client in a clustered environment.
+Traditionally, we have been using the following techniques to manage sessions:
 
-Traditionally we have been using the following techniques to manage sessions:
-
-1. Single Node Server
-2. Multi-Node Server with Load Balancer and Sticky sessions
-3. Multi-Node Server with Load Balancer and Session Replication
-4. Multi-Node Server with Load Balancer and Session Data in a Persistent DataStore
+1.  Single Node Server
+2.  Multi-Node Server with Load Balancer and Sticky Sessions
+3.  Multi-Node Server with Load Balancer and Session Replication
+4.  Multi-Node Server with Load Balancer and Session Data in a Persistent DataStore
 
 Let us briefly look at these approaches.
 
 ## 1. Single Node Server
-If your application is not a critical service to your business, there won’t be too many users concurrently and some downtime is accepted then we can have Single Node Server deployment as shown below:
+If your application is not a critical service to your business, there won’t be too many users concurrently, and some downtime is acceptable, then we can have a Single Node Server deployment as shown below:
 
 ![Single Node Sessions](/images/SingleNode-Sessions.webp "Single Node Sessions")
 
-In this model, for each browser client, a session object is created on the server (HttpSession in case of Java) and SESSION_ID will be set as a cookie on the browser to identify the session object. But this Single Server Node deployment is not acceptable for most of the applications because if the server goes down the service will be down altogether.
+In this model, for each browser client, a session object is created on the server (HttpSession in the case of Java), and a SESSION_ID will be set as a cookie on the browser to identify the session object. But this Single Server Node deployment is not acceptable for most applications because if the server goes down, the service will be down altogether.
 
 ## 2. Multi-Node Server with Sticky Sessions
 
-In order to make our application highly available and cater more number of users, we can have multiple server nodes behind a load balancer. In the Sticky Sessions approach, we configure our load balancer to route all the requests from the same client to the same node.
+In order to make our application highly available and cater to a larger number of users, we can have multiple server nodes behind a load balancer. In the Sticky Sessions approach, we configure our load balancer to route all the requests from the same client to the same node.
 
 ![Multi-Node Server with Sticky Sessions](/images/MultiNode-StickySessions.webp "Multi-Node Server with Sticky Sessions")
 
-In this model, the user session will be created on any one of the server node and all the further requests from that client will be sent to that same node. But the problem with this approach is if a server node goes down then all the user sessions on that server is gone.
+In this model, the user session will be created on any one of the server nodes, and all further requests from that client will be sent to that same node. But the problem with this approach is that if a server node goes down, then all the user sessions on that server are gone.
 
 ## 3. Multi-Node Server with Session Replication
-In this model, the user session data will be replicated on all the server nodes so that any request can be routed to any server node. Even if one node goes down the client request can be served by another node.
+In this model, the user session data will be replicated on all the server nodes so that any request can be routed to any server node. Even if one node goes down, the client request can be served by another node.
 
 ![Multi-Node Server with SessionReplication](/images/MultiNode-SessionReplication.webp "Multi-Node Server with SessionReplication")
 
-But the Session Replication requires better hardware support and involves some server specific configuration.
+But Session Replication requires better hardware support and involves some server-specific configuration.
 
 ## 4. Multi-Node Server with Session Data in a Persistent DataStore
 
-In this model, the user session data will not be held in server’s memory, instead, it will be persisted into a data store and associate it with SESSION_ID.
+In this model, the user session data will not be held in the server’s memory; instead, it will be persisted into a data store and associated with a SESSION_ID.
 
 ![Multi-Node Server with Spring Session](/images/MultiNode-SpringSession.webp "Multi-Node Server with Spring Session")
 
-This solution will be server independent but we may need to write custom code to transparently store the session data in a Persistent datastore whenever a user adds some information to his/her session.
+This solution will be server-independent, but we may need to write custom code to transparently store the session data in a persistent datastore whenever a user adds some information to his/her session.
 This is where Spring Session comes into the picture.
 
 ## Spring Session
 
-[Spring Session](https://projects.spring.io/spring-session/) is an implementation of approach 4, which is Storing session data in a persistent datastore. 
-Spring Session supports multiple datastores like RDBMS, Redis, HazelCast, MongoDB etc to transparently save use session data. 
-As usual, using Spring Session with Spring Boot is as simple as adding a dependency and configuring few properties.
-Let us see how we can use Spring Session with JDBC backend store in a Spring Boot application.
+[Spring Session](https://projects.spring.io/spring-session/) is an implementation of approach 4, which is storing session data in a persistent datastore.
+Spring Session supports multiple datastores like RDBMS, Redis, Hazelcast, MongoDB, etc., to transparently save user session data.
+As usual, using Spring Session with Spring Boot is as simple as adding a dependency and configuring a few properties.
+Let us see how we can use Spring Session with a JDBC backend store in a Spring Boot application.
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-session-samples
 
-### Step 1: Create Spring Boot application
+### Step 1: Create a Spring Boot application
 
-Create a SpringBoot application using the latest version (it is 2.0.0.RC1 as of writing) with **Web, Thymeleaf, JPA, H2, Session** starters.
+Create a Spring Boot application using the latest version (it is 2.0.0.RC1 as of writing) with **Web, Thymeleaf, JPA, H2, and Session** starters.
 
-By default Session starter will add **org.springframework.session:spring-session-core** dependency, 
-let us change it to **spring-session-jdbc** as we are going to use JDBC backend.
+By default, the Session starter will add the **org.springframework.session:spring-session-core** dependency.
+Let us change it to **spring-session-jdbc** as we are going to use a JDBC backend.
 
 ```xml
 <dependency>
@@ -87,13 +86,13 @@ let us change it to **spring-session-jdbc** as we are going to use JDBC backend.
 ```
 
 ### Step 2: Configure Spring Session properties
-We can configure type of Spring Session backend data-store using **spring.session.store-type** property in application.properties.
+We can configure the type of Spring Session backend data store using the **spring.session.store-type** property in `application.properties`.
 
 ```properties
 spring.session.store-type=jdbc
 ```
 
-As we are using the H2 In-Memory database, Spring Session creates the following tables required to store session data automatically 
+As we are using the H2 In-Memory database, Spring Session creates the following tables required to store session data automatically
 from the script **spring-session-jdbc-2.0.1.RELEASE.jar!/org/springframework/session/jdbc/schema-h2.sql**.
 
 ```sql
@@ -123,9 +122,9 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 CREATE INDEX SPRING_SESSION_ATTRIBUTES_IX1 ON SPRING_SESSION_ATTRIBUTES (SESSION_PRIMARY_ID);
 ```
 
-But if we are going to use other RDBMS like MySQL we can configure as follows:
+But if we are going to use another RDBMS like MySQL, we can configure it as follows:
 
-Add MySQL maven dependency.
+Add the MySQL Maven dependency.
 
 ```xml
 <dependency>
@@ -143,11 +142,11 @@ spring.datasource.username=root
 spring.datasource.password=admin
 ```
 
-With this property, Spring Session will try to create tables using the script 
-**classpath:org/springframework/session/jdbc/schema-@@platform@@.sql**, so in our case, it will use **schema-mysql.sql**.
+With this property, Spring Session will try to create tables using the script
+**classpath:org/springframework/session/jdbc/schema-@@platform@@.sql**; so in our case, it will use **schema-mysql.sql**.
 
 ### Step 3: Add data to HttpSession
-Now create a simple form in src/main/resources/templates/index.html.
+Now create a simple form in `src/main/resources/templates/index.html`.
 
 ```xml
 <!DOCTYPE html>
@@ -174,7 +173,7 @@ Now create a simple form in src/main/resources/templates/index.html.
 </html>
 ```
 
-Let us implement a Controller to add messages to HttpSession and display them.
+Let us implement a Controller to add messages to the HttpSession and display them.
 
 ```java
 import org.springframework.stereotype.Controller;
@@ -215,12 +214,12 @@ public class MessagesController
 }
 ```
 
-Now you can start the application and add some messages to HttpSession and you can see the rows in 
-**SPRING_SESSION, SPRING_SESSION_ATTRIBUTES** tables. 
-By default, Spring Session converts the objects that we are trying to add to HttpSession into **ByteArray** and store it in the table.
+Now you can start the application, add some messages to the HttpSession, and you can see the rows in the
+**SPRING_SESSION** and **SPRING_SESSION_ATTRIBUTES** tables.
+By default, Spring Session converts the objects that we are trying to add to the HttpSession into a **ByteArray** and stores it in the table.
 
 ## Spring Session with Spring Security
-Spring Session seamlessly integrates with Spring Security because of SpringBoot’s auto-configuration.
+Spring Session seamlessly integrates with Spring Security because of Spring Boot’s auto-configuration.
 Let us add Spring Security to our application.
 
 ```xml
@@ -230,26 +229,26 @@ Let us add Spring Security to our application.
 </dependency>
 ```
 
-Add a default user credentials in application.properties as follows:
+Add default user credentials in `application.properties` as follows:
 
 ```properties
 spring.security.user.name=admin
 spring.security.user.password=secret
 ```
 
-Now if you try to access http://localhost:8080/ you will be redirected to auto-generated Login page.
-Once you login and see the data in **SPRING_SESSION** table you can see that login username is stored in **PRINCIPAL_NAME** column.
+Now, if you try to access http://localhost:8080/, you will be redirected to an auto-generated Login page.
+Once you log in and see the data in the **SPRING_SESSION** table, you can see that the login username is stored in the **PRINCIPAL_NAME** column.
 
 ### How does Spring Session work?
 
-Spring Session provides implementations for **HttpServletRequest** and **HttpSession** which are **SessionRepositoryRequestWrapper**
- and **HttpSessionWrapper**. Spring Session provides **SessionRepositoryFilter** to intercept all the requests and wrap the **HttpServletRequest**
-  in **SessionRepositoryRequestWrapper**.
+Spring Session provides implementations for **HttpServletRequest** and **HttpSession**, which are **SessionRepositoryRequestWrapper**
+and **HttpSessionWrapper**. Spring Session provides **SessionRepositoryFilter** to intercept all requests and wrap the **HttpServletRequest**
+in **SessionRepositoryRequestWrapper**.
 
-In **SessionRepositoryRequestWrapper.getSession(boolean)** is overriden to return **HttpSessionWrapper** object instead of default server implementation of HttpSession. 
+In **SessionRepositoryRequestWrapper.getSession(boolean)** is overridden to return an **HttpSessionWrapper** object instead of the default server implementation of HttpSession.
 The **HttpSessionWrapper** uses **SessionRepository** to persist session information in a datastore.
 
-The SessionRepository interface has various methods to manage sessions.
+The `SessionRepository` interface has various methods to manage sessions.
 
 ```java
 public interface SessionRepository<S extends Session> 
@@ -264,13 +263,13 @@ public interface SessionRepository<S extends Session>
 }
 ```
 
-This SessionRepository interface is implemented by various classes based on the type of backend we are using. 
-In our case, we are using **JdbcOperationsSessionRepository** provided by **spring-session-jdbc**.
+This `SessionRepository` interface is implemented by various classes based on the type of backend we are using.
+In our case, we are using **JdbcOperationsSessionRepository**, provided by **spring-session-jdbc**.
 
 ## Conclusion
 
-As you might have already observed we can manage user sessions effectively by using Spring Session with very minimal configuration 
-because of Spring Boot auto-configuration. If for any reason we want to change the backend from JDBC to Redis or Hazelcast etc 
-it is only simple configuration change as we are not directly depending on any Spring Session classes.
+As you might have already observed, we can manage user sessions effectively by using Spring Session with very minimal configuration
+because of Spring Boot's auto-configuration. If for any reason we want to change the backend from JDBC to Redis or Hazelcast, etc.,
+it is only a simple configuration change, as we are not directly depending on any Spring Session classes.
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-session-samples

@@ -11,25 +11,23 @@ tags:
 aliases:
   - /creating-custom-springboot-starter-for/
 ---
-**SpringBoot** provides lot of starter modules to get up and running quickly. SpringBoot’s auto-configure mechanism takes care of configuring SpringBeans on our behalf based on various criteria.
+**Spring Boot** provides a lot of starter modules to get up and running quickly. Spring Boot’s auto-configure mechanism takes care of configuring Spring Beans on our behalf based on various criteria.
 
-In addition to the springboot starters that comes out-of-the-box provided by Core Spring Team, we can also create our own starter modules.
+In addition to the Spring Boot starters that come out-of-the-box provided by the Core Spring Team, we can also create our own starter modules.
 
-In this post we will look into how to create a custom SpringBoot starter. To demonstrate it we are going to create **twitter4j-spring-boot-starter** which will auto-configure Twitter4J beans.
+In this post, we will look into how to create a custom Spring Boot starter. To demonstrate, we are going to create a **twitter4j-spring-boot-starter** which will auto-configure Twitter4J beans.
 
 <!--more-->
 
-
 To achieve this, we are going to create:
 
-  1. **twitter4j-spring-boot-autoconfigure** module which contains Twitter4J AutoConfiguration bean definitions 
-  2. **twitter4j-spring-boot-starter** module which pulls in **twitter4j-spring-boot-autoconfigure** and **twitter4j-core** dependencies 
-  3. Sample application which uses **twitter4j-spring-boot-starter** 
-
+1.  A **twitter4j-spring-boot-autoconfigure** module which contains Twitter4J AutoConfiguration bean definitions.
+2.  A **twitter4j-spring-boot-starter** module which pulls in **twitter4j-spring-boot-autoconfigure** and **twitter4j-core** dependencies.
+3.  A sample application which uses the **twitter4j-spring-boot-starter**.
 
 ### Create Parent Module spring-boot-starter-twitter4j
 
-First we are going to create a parent pom type module to define dependency versions and sub-modules.
+First, we are going to create a parent `pom` type module to define dependency versions and sub-modules.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,14 +76,13 @@ First we are going to create a parent pom type module to define dependency versi
 </project>
 ```
 
-In this **pom.xml** we are defining the SpringBoot and Twitter4j versions in `<dependencymanagement>` section so that we don’t need to specify versions all over the places.
-  
+In this **pom.xml**, we are defining the Spring Boot and Twitter4j versions in the `<dependencyManagement>` section so that we don’t need to specify versions all over the place.
 
 ### Create twitter4j-spring-boot-autoconfigure module
 
-Create a child module with name **twitter4j-spring-boot-autoconfigure** in our parent maven module **spring-boot-starter-twitter4j**. 
+Create a child module with the name **twitter4j-spring-boot-autoconfigure** in our parent Maven module **spring-boot-starter-twitter4j**.
 
-Add the maven dependencies such as spring-boot, **spring-boot-autoconfigure**, **twitter4j-core** and **junit** as follows:
+Add the Maven dependencies such as `spring-boot`, **spring-boot-autoconfigure**, **twitter4j-core**, and **junit** as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -137,11 +134,9 @@ Add the maven dependencies such as spring-boot, **spring-boot-autoconfigure**, *
 </project>
 ```
 
+Note that we have specified **twitter4j-core** as an **optional** dependency because **twitter4j-core** should be added to the project only when **twitter4j-spring-boot-starter** is added to the project.
 
-Note that we have specified **twitter4j-core** as **optional** dependency because **twitter4j-core** should be added to the project only when **twitter4j-spring-boot-starter** is added to the project.
-
-
-### Create Twitter4jProperties to hold the Twitter4J config parameters 
+### Create Twitter4jProperties to hold the Twitter4J config parameters
 
 Create `Twitter4jProperties.java` to hold the Twitter4J OAuth config parameters.
 
@@ -211,11 +206,9 @@ public class Twitter4jProperties {
     }
 }
 ```
-  
-  
-With this configuration object we can configure the twitter4j properties in `application.properties` as follows:
-    
-      
+
+With this configuration object, we can configure the `twitter4j` properties in `application.properties` as follows:
+
 ```java
 twitter4j.debug=true
 twitter4j.oauth.consumer-key=your-consumer-key-here
@@ -224,17 +217,16 @@ twitter4j.oauth.access-token=your-access-token-here
 twitter4j.oauth.access-token-secret=your-access-token-secret-here
 ```
 
-##  Create Twitter4jAutoConfiguration to auto-configure Twitter4J 
-  
-  
-Here comes the key part of our starter. `Twitter4jAutoConfiguration` configuration class contains the bean definitions that will be automatically configured based on some criteria. 
-  
+## Create Twitter4jAutoConfiguration to auto-configure Twitter4J
+
+Here comes the key part of our starter. The `Twitter4jAutoConfiguration` configuration class contains the bean definitions that will be automatically configured based on some criteria.
+
 What is that criteria?
 
-* If `twitter4j.TwitterFactory.class` is on classpath 
-* If `TwitterFactory` bean is not already defined explicitly 
+*   If `twitter4j.TwitterFactory.class` is on the classpath.
+*   If a `TwitterFactory` bean is not already defined explicitly.
 
-So, the `Twitter4jAutoConfiguration` goes like this.
+So, the `Twitter4jAutoConfiguration` goes like this:
 
 ```java
 package com.sivalabs.spring.boot.autoconfigure;
@@ -295,23 +287,20 @@ public class Twitter4jAutoConfiguration {
 
 }
 ```
-            
-            
-We have used `@ConditionalOnClass({ TwitterFactory.class, Twitter.class })` to specify that this auto configuration should take place only when `TwitterFactory.class, Twitter.class `classes are present.
 
-We have also used `@ConditionalOnMissingBean` on bean definition methods to specify consider this bean definition only if `TwitterFactory`/`Twitter `beans are not already defined explicitly. 
+We have used `@ConditionalOnClass({ TwitterFactory.class, Twitter.class })` to specify that this auto-configuration should take place only when the `TwitterFactory.class` and `Twitter.class` classes are present.
 
+We have also used `@ConditionalOnMissingBean` on the bean definition methods to specify that this bean definition should be considered only if `TwitterFactory`/`Twitter` beans are not already defined explicitly.
 
-Also note that we have annotated with `@EnableConfigurationProperties(Twitter4jProperties.class)` to enable support for ConfigurationProperties and injected `Twitter4jProperties` bean. 
+Also, note that we have annotated with `@EnableConfigurationProperties(Twitter4jProperties.class)` to enable support for `ConfigurationProperties` and injected the `Twitter4jProperties` bean.
 
-Now we need to configure our custom `Twitter4jAutoConfiguration` in `src/main/resources/META-INF/spring.factories` file as follows:
+Now we need to configure our custom `Twitter4jAutoConfiguration` in the `src/main/resources/META-INF/spring.factories` file as follows:
 
-`org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sivalabs.spring.boot.autoconfigure.Twitter4jAutoConfiguration` 
+`org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sivalabs.spring.boot.autoconfigure.Twitter4jAutoConfiguration`
 
+## Create the twitter4j-spring-boot-starter module
 
-## Create twitter4j-spring-boot-starter module
-
-Create a child module with name `twitter4j-spring-boot-starter` in our parent maven module `spring-boot-starter-twitter4j`.
+Create a child module with the name `twitter4j-spring-boot-starter` in our parent Maven module `spring-boot-starter-twitter4j`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -356,21 +345,20 @@ Create a child module with name `twitter4j-spring-boot-starter` in our parent ma
 
 </project>
 ```
-                    
-Note that in this maven module we are actually pulling in `twitter4j-core` dependency.
 
-We don’t need to add any code in this module, but optionally we can specify what are the dependencies we are going to provide through this starter in `src/main/resources/META-INF/spring.provides` file as follows:
+Note that in this Maven module, we are actually pulling in the `twitter4j-core` dependency.
 
+We don’t need to add any code in this module, but optionally we can specify what dependencies we are going to provide through this starter in the `src/main/resources/META-INF/spring.provides` file as follows:
 
 `provides: twitter4j-core`
 
-That’s all for our starter. 
+That’s all for our starter.
 
-Let us create a sample using our brand new starter `twitter4j-spring-boot-starter`. 
+Let us create a sample using our brand-new starter, `twitter4j-spring-boot-starter`.
 
-## Create twitter4j-spring-boot-sample sample application
+## Create a twitter4j-spring-boot-sample application
 
-Let us create a simple SpringBoot application and add our `twitter4j-spring-boot-starter` dependency.
+Let us create a simple Spring Boot application and add our `twitter4j-spring-boot-starter` dependency.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -420,9 +408,9 @@ Let us create a simple SpringBoot application and add our `twitter4j-spring-boot
 
 </project>
 ```
-                        
+
 Create the entry-point class `SpringbootTwitter4jDemoApplication` as follows:
-  
+
 ```java
 package com.sivalabs.demo;
 
@@ -437,10 +425,8 @@ public class SpringbootTwitter4jDemoApplication {
     }
 }
 ```
-                            
-                           
-Create `TweetService `as follows:
 
+Create `TweetService` as follows:
 
 ```java
 package com.sivalabs.demo;
@@ -476,11 +462,10 @@ public class TweetService {
     }
 }
 ```
-                                
-                               
+
 Now create a Test to verify our Twitter4j AutoConfiguration.
 
-**Before that make sure you have set your twitter4j oauth configuration parameter to your actual values. 
+**Before that, make sure you have set your `twitter4j` OAuth configuration parameters to your actual values.
 You can get them from https://apps.twitter.com/**
 
 ```java
@@ -514,7 +499,7 @@ public class SpringbootTwitter4jDemoApplicationTest  {
 
 }
 ```
-  
-Now you should be able to see the latest tweets on your console output. 
 
-You can find the code on GitHub https://github.com/sivaprasadreddy/twitter4j-spring-boot-starter
+Now you should be able to see the latest tweets in your console output.
+
+You can find the code on GitHub: https://github.com/sivaprasadreddy/twitter4j-spring-boot-starter

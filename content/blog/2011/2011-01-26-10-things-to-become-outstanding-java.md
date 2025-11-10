@@ -14,44 +14,44 @@ popular: true
 aliases:
   - /10-things-to-become-outstanding-java/
 ---
-If you are a java developer and passionate about technology, you can follow the below things which makes you an outstanding Java developer.
+If you are a Java developer and passionate about technology, you can follow the tips below, which will make you an outstanding Java developer.
 
-#### 1. Have a strong foundation and understanding on OO Principles
+#### 1. Have a strong foundation and understanding of OO Principles
   
-For a java developer having strong understanding on Object Oriented Programming is a must. Without having a strong foundation on OOPS, one can't realize the beauty of an Object Oriented Programming language like Java. If you don't have good idea on what OOPS is, eventhough you are using OOP language you may be still coding in procedural way.Just studying OO principles definitions won't help much. we should know how to apply those OO principles in designing a solution in OO way. So one should have a strong knowledge on Object modeling, Inheritance, Polymorphism, Design Patterns.
+For a Java developer, having a strong understanding of Object-Oriented Programming is a must. Without a strong foundation in OOPS, one can't realize the beauty of an object-oriented programming language like Java. If you don't have a good idea of what OOPS is, even though you are using an OOP language, you may still be coding in a procedural way. Just studying the definitions of OO principles won't help much. You should know how to apply those OO principles when designing a solution in an OO way. So, one should have strong knowledge of object modeling, inheritance, polymorphism, and design patterns.
 
 #### 2. Master the core APIs
   
-It doesn't matter how strong you are in terms of theoretical knowledge if you don't know the language constructs and core APIs. In case of Java, one should have very strong hands on experience on core APIs like java.lang.*, I/O, Exceptions, Collections, Generics, Threads, JDBC etc. When it comes to Web application development, no matter which framework you are using having strong knowledge on Servlets, JSPs is a must.
+It doesn't matter how strong you are in terms of theoretical knowledge if you don't know the language constructs and core APIs. In the case of Java, one should have very strong hands-on experience with core APIs like java.lang.*, I/O, Exceptions, Collections, Generics, Threads, JDBC, etc. When it comes to Web application development, no matter which framework you are using, having strong knowledge of Servlets and JSPs is a must.
 
 #### 3. Keep coding
   
-Things look simpler when talking about them theoretically. We can give a solution to a problem very easily in theory. But we can realize the depth of the problem when we start implementing our approach. You will come to know the language limitations, or design best practices while coding. So keep coding.
+Things look simpler when talking about them in theory. We can provide a solution to a problem very easily in theory. But we can realize the depth of the problem when we start implementing our approach. You will come to know the language's limitations or design best practices while coding. So keep coding.
 
 #### 4. Subscribe to forums
   
-We are not alone. There are lots of people working on the same technologies that we are working on. When doing a simple proof of concept on a framework may not give you real challenges. But when you start using it on real projects you will face weird issues and you won't find any solution in their official documentation. When started working on a new technology the best and first thing to do is subscribing to that technology forums. Whatever the issue you are facing someone else in this world might have already faced it earlier and might have found the solution. And it would be really really great if you can answer the questions asked by other forum users.
+We are not alone. There are a lot of people working on the same technologies that we are working on. Doing a simple proof of concept on a framework may not present real challenges. But when you start using it on real projects, you will face weird issues and you won't find any solution in their official documentation. When you start working on a new technology, the best and first thing to do is subscribe to that technology's forums. Whatever issue you are facing, someone else in this world might have already faced it and found a solution. And it would be really great if you could answer the questions asked by other forum users.
 
 #### 5. Follow blogs and respond
   
-As I already told you are not alone. There are thousands of enthusiastic technology freaks around the world blogging their insights on technology. You can see different perspectives of same technology on blogs. Someone can find great features in a technology and someone else feels its a stupid framework giving his own reasons of why he felt like that. So you can see both good and bad of a technology on blogs. Follow the good blogs and respond/comment on posts with your opinion on that.
+As I already said, you are not alone. There are thousands of enthusiastic technology enthusiasts around the world blogging their insights on technology. You can see different perspectives on the same technology on blogs. Someone might find great features in a technology, while someone else feels it's a stupid framework, giving their own reasons for why they feel that way. So you can see both the good and bad of a technology on blogs. Follow good blogs and respond/comment on posts with your opinion.
 
 #### 6. Read open source frameworks source code
   
-A good developer will learn how to use a framework. But if you want to be an outstanding developer you should study the source code of various successful, popular frameworks where you can see the internal working mechanism of the framework and lot of best practices. It will help a lot in using the frameworks in very effective way.
+A good developer will learn how to use a framework. But if you want to be an outstanding developer, you should study the source code of various successful and popular frameworks, where you can see the internal working mechanism of the framework and a lot of best practices. It will help a lot in using the frameworks in a very effective way.
 
 #### 7. Know the technology trends
   
-In the open source software development technology trends keep on changing. By the time you get good idea on a framework that might become obsolete and some brand new framework came into picture with super-set of features. The problem which you are trying to solve with your current framework may be already solved by the new framework with a single line of configuration. So keep an eye on whats coming in and whats going out.
+In open-source software development, technology trends are constantly changing. By the time you get a good handle on a framework, it might become obsolete, and a brand-new framework with a superset of features might have come into the picture. The problem you are trying to solve with your current framework may already be solved by the new framework with a single line of configuration. So keep an eye on what's coming in and what's going out.
 
-#### 8. Keep repeatedly using code snippets/utilities handy
+#### 8. Keep repeatedly used code snippets/utilities handy
   
-Overtime you may need to write/copy-paste same piece of code/configuration again and again. Keeping those kind of configuration snippets like log4.properties, jdbc configuration etc and utilities like StringUtils, ReflectionUtils, DBUtils will be more helpful. I know it itself don't make you outstanding developer. But just imagine some co-developer came and ask you to help in fetching the list of values of a property from a collection of objects and then you just used your ReflectionUtil and gave the solution in few minutes. That will make you outstanding.
+Over time, you may need to write/copy-paste the same piece of code/configuration again and again. Keeping those kinds of configuration snippets, like log4.properties, JDBC configuration, etc., and utilities like StringUtils, ReflectionUtils, and DBUtils, will be more helpful. I know this in itself won't make you an outstanding developer. But just imagine a co-developer comes and asks you to help fetch the list of values of a property from a collection of objects, and you just use your ReflectionUtil and provide the solution in a few minutes. That will make you stand out.
 
 #### 9. Know different development methodologies
   
-Be familiar with various kinds of methodologies like Agile, SCRUM, XP, Waterfall etc. Nowadays choosing the development methodology is depending on the client. Some clients are preferring Agile and some clients are happy with waterfall model. So having an idea on various methodologies would be great.
+Be familiar with various kinds of methodologies like Agile, SCRUM, XP, Waterfall etc. Nowadays, the choice of development methodology depends on the client. Some clients prefer Agile, and some are happy with the waterfall model. So having an idea of various methodologies would be great.
 
 #### 10. Document/blog your thoughts on technology
   
-In day to day job you may learn new things, new and better way of doing things, best practices, architectural ideas. Keep documenting those thoughts or blog it and share across the community. Imagine you solved a weird problem occurred while doing a simple POC and you blogged about it. May be some developer elsewhere in the world is facing the same issue on a production deployed application. Think how important that solution for that developer. So blog your thoughts, they might be helpful for others or to yourself.
+In your day-to-day job, you may learn new things, new and better ways of doing things, best practices, and architectural ideas. Keep documenting those thoughts or blog about them and share them with the community. Imagine you solved a weird problem that occurred while doing a simple POC and you blogged about it. Maybe a developer elsewhere in the world is facing the same issue on a production-deployed application. Think how important that solution is for that developer. So blog your thoughts; they might be helpful for others or for yourself.

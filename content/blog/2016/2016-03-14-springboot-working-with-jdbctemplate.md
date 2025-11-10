@@ -11,14 +11,13 @@ tags:
 aliases:
   - /springboot-working-with-jdbctemplate/
 ---
-Spring provides a nice abstraction on top of JDBC API using **JdbcTemplate** and also provides great transaction management capabilities 
-using annotation based approach.
+Spring provides a nice abstraction on top of the JDBC API using **JdbcTemplate** and also provides great transaction management capabilities
+using an annotation-based approach.
 
 <!--more-->
 
-
-First let’s take a quick look at how we generally use Spring’s **JdbcTemplate** (**without SpringBoot**) by registering **DataSource**, 
-**TransactionManager** and **JdbcTemplate** beans and optionally we can register **DataSourceInitializer** bean to initialize our database.
+First, let’s take a quick look at how we generally use Spring’s **JdbcTemplate** (**without Spring Boot**) by registering **DataSource**,
+**TransactionManager**, and **JdbcTemplate** beans. Optionally, we can register a **DataSourceInitializer** bean to initialize our database.
 
 ```java
 @Configuration
@@ -119,15 +118,15 @@ class UserRowMapper implements RowMapper<User>
 }
 ```
 
-You might have observed that most of the times we use this similar kind of configuration in our applications.
+You might have observed that most of the time, we use this similar kind of configuration in our applications.
 
-Now let us see how to use **JdbcTemplate** without requiring to configure all these beans manually by using **SpringBoot**.
+Now let us see how to use **JdbcTemplate** without needing to configure all these beans manually by using **Spring Boot**.
 
 ## Using JdbcTemplate with SpringBoot
 
-By using SpringBoot we can take advantage of auto configuration feature and eliminate the need to configure beans by ourselves.
+By using Spring Boot, we can take advantage of the auto-configuration feature and eliminate the need to configure beans by ourselves.
 
-**Create a SpringBoot maven based project and add spring-boot-starter-jdbc module.**
+**Create a Spring Boot Maven-based project and add the spring-boot-starter-jdbc module.**
 
 ```xml
 <dependency>
@@ -136,38 +135,37 @@ By using SpringBoot we can take advantage of auto configuration feature and elim
 </dependency>
 ```
 
-By adding **spring-boot-starter-jdbc** module, we get the following auto configuration:
+By adding the **spring-boot-starter-jdbc** module, we get the following auto-configuration:
 
+*   The `spring-boot-starter-jdbc` module transitively pulls `tomcat-jdbc-{version}.jar`, which is used to configure the `DataSource` bean.
+*   If you have not defined any `DataSource` bean explicitly and if you have any embedded database driver in the classpath, such as H2, HSQL, or Derby, then Spring Boot will automatically register a `DataSource` bean using in-memory database settings.
+*   If you haven’t registered any of the following types of beans, then Spring Boot will register them automatically:
+    *   **PlatformTransactionManager (DataSourceTransactionManager)**
+    *   **JdbcTemplate**
+    *   **NamedParameterJdbcTemplate**
+*   We can have **schema.sql** and **data.sql** files in the root classpath, which Spring Boot will automatically use to initialize the database. In addition to `schema.sql` and `data.sql`, Spring Boot will load **schema-${platform}.sql** and **data-${platform}.sql** files if they are available in the root classpath.
 
-  * The spring-boot-starter-jdbc module transitively pulls tomcat-jdbc-{version}.jar which is used to configure the DataSource bean.
-  * If you have not defined any DataSource bean explicitly and if you have any embedded database driver in classpath such as H2, HSQL or Derby then SpringBoot will automatically registers DataSource bean using in-memory database settings.
-  * If you haven’t registered any of the following type beans then SpringBoot will register them automatically. 
-    * **PlatformTransactionManager (DataSourceTransactionManager)**
-    * **JdbcTemplate**
-    * **NamedParameterJdbcTemplate** 
-  * We can have **schema.sql** and **data.sql** files in root classpath which SpringBoot will automatically use to initialize database.In addition to schema.sql and data.sql, Spring Boot will load **schema-${platform}.sql** and **data-${platform}.sql** files if they are available in root classpath.
-  
-Here platform value is the value of the property spring.datasource.platform which can be **hsqldb, h2, oracle, mysql, postgresql** etc.
+Here, the `platform` value is the value of the property `spring.datasource.platform`, which can be **hsqldb, h2, oracle, mysql, postgresql**, etc.
 You can customize the default names of the scripts using the following properties:
-        
-* **spring.datasource.schema=create-db.sql**
-* **spring.datasource.data=seed-data.sql**
-        
-SpringBoot uses **spring.datasource.initialize** property value, which is **true** by default, to determine whether to initialize database or not. If you want to turn off the database initialization you can set **spring.datasource.initialize=false**
 
-If there are any errors in executing the scripts then application will fail to start. If you want to continue then you can set **spring.datasource.continueOnError=true**.
+*   **spring.datasource.schema=create-db.sql**
+*   **spring.datasource.data=seed-data.sql**
 
-Let us add **H2** database driver to our **pom.xml**.
-        
+Spring Boot uses the **spring.datasource.initialize** property value, which is **true** by default, to determine whether to initialize the database or not. If you want to turn off database initialization, you can set **spring.datasource.initialize=false**.
+
+If there are any errors in executing the scripts, the application will fail to start. If you want to continue, then you can set **spring.datasource.continueOnError=true**.
+
+Let us add the **H2** database driver to our **pom.xml**.
+
 ```xml
 <dependency>
     <groupId>com.h2database</groupId>
     <artifactId>h2</artifactId>
 </dependency>
 ```
-        
+
 Create **schema.sql** in **src/main/resources** as follows:
-        
+
 ```sql
 CREATE TABLE users
 (
@@ -177,7 +175,7 @@ CREATE TABLE users
     PRIMARY KEY (id)
 );
 ```
-        
+
 Create **data.sql** in **src/main/resources** as follows:
 
 ```sql
@@ -185,7 +183,7 @@ insert into users(id, name, email) values(1,'Siva','siva@gmail.com');
 insert into users(id, name, email) values(2,'Prasad','prasad@gmail.com');
 insert into users(id, name, email) values(3,'Reddy','reddy@gmail.com');
 ```
-        
+
 Now you can inject **JdbcTemplate** into **UserRepository** as follows:
 
 ```java
@@ -241,7 +239,7 @@ class UserRowMapper implements RowMapper<User>
     }
 }
 ```
-        
+
 Create the entry point **SpringbootJdbcDemoApplication.java**.
 
 ```java
@@ -254,8 +252,8 @@ public class SpringbootJdbcDemoApplication
     }
 }
 ```
-        
-Let us create a JUnit Test class to test our UserRepository methods.
+
+Let us create a JUnit Test class to test our `UserRepository` methods.
 
 ```java
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -289,17 +287,16 @@ public class SpringbootJdbcDemoApplicationTests
     }
 }
 ```
-        
 
-> By default SpringBoot features such as external properties, logging etc are available in 
-    the ApplicationContext only if you use **SpringApplication**. So, SpringBoot provides **@SpringApplicationConfiguration** annotation 
-    to configure the ApplicationContext for tests which uses **SpringApplication** behind the scenes.
+> By default, Spring Boot features such as external properties, logging, etc., are available in
+the ApplicationContext only if you use **SpringApplication**. So, Spring Boot provides the **@SpringApplicationConfiguration** annotation
+to configure the ApplicationContext for tests, which uses **SpringApplication** behind the scenes.
 
-We have learned how to get started quickly with Embedded database. 
+We have learned how to get started quickly with an embedded database.
 
-**What if we want to use Non-Embedded databases like MySQL, Oracle or PostgreSQL etc?**.
+**What if we want to use non-embedded databases like MySQL, Oracle, or PostgreSQL, etc.?**
 
-We can configure the database properties in application.properties file so that SpringBoot will use those jdbc parameters to configure DataSource bean.
+We can configure the database properties in the `application.properties` file so that Spring Boot will use those JDBC parameters to configure the `DataSource` bean.
 
 ```properties
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
@@ -307,21 +304,21 @@ spring.datasource.url=jdbc:mysql://localhost:3306/test
 spring.datasource.username=root
 spring.datasource.password=admin
 ```
-        
-For any reason if you want to have more control and configure **DataSource** bean by yourself then you can configure DataSource bean in a Configuration class. If you register DataSource bean then SpringBoot will not configure DataSource automatically using AutoConfiguration.
+
+For any reason, if you want to have more control and configure the **DataSource** bean by yourself, then you can configure the `DataSource` bean in a Configuration class. If you register a `DataSource` bean, then Spring Boot will not configure `DataSource` automatically using AutoConfiguration.
 
 **What if you want to use another Connection Pooling library?**
 
-SpringBoot by default pulls in **tomcat-jdbc-{version}.jar** and uses **org.apache.tomcat.jdbc.pool.DataSource** to configure **DataSource** bean.
+Spring Boot by default pulls in **tomcat-jdbc-{version}.jar** and uses **org.apache.tomcat.jdbc.pool.DataSource** to configure the **DataSource** bean.
 
-SpringBoot checks the availability of the following classes and uses the first one that is available in classpath.
+Spring Boot checks for the availability of the following classes and uses the first one that is available in the classpath:
 
-  * org.apache.tomcat.jdbc.pool.DataSource
-  * com.zaxxer.hikari.HikariDataSource
-  * org.apache.commons.dbcp.BasicDataSource
-  * org.apache.commons.dbcp2.BasicDataSource
+*   `org.apache.tomcat.jdbc.pool.DataSource`
+*   `com.zaxxer.hikari.HikariDataSource`
+*   `org.apache.commons.dbcp.BasicDataSource`
+*   `org.apache.commons.dbcp2.BasicDataSource`
 
-For example, If you want to use **HikariDataSource** then you can exclude **tomcat-jdbc** and add **HikariCP** dependency as follows:
+For example, if you want to use **HikariDataSource**, then you can exclude **tomcat-jdbc** and add the **HikariCP** dependency as follows:
 
 ```xml
 <dependency>
@@ -340,7 +337,7 @@ For example, If you want to use **HikariDataSource** then you can exclude **tomc
     <artifactId>HikariCP</artifactId>
 </dependency>
 ```
-        
-With this dependency configuration SpringBoot will use **HikariCP** to configure **DataSource** bean.
 
-You can find the source code of the article at my GitHub repo https://github.com/sivaprasadreddy/springboot-tutorials
+With this dependency configuration, Spring Boot will use **HikariCP** to configure the **DataSource** bean.
+
+You can find the source code of the article at my GitHub repo: https://github.com/sivaprasadreddy/springboot-tutorials

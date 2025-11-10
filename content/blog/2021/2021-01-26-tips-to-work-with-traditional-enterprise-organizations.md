@@ -17,8 +17,8 @@ aliases:
 
 I worked at different types of IT organizations including small 20 people company, world's largest bank,
 start-ups etc. Working at a service based company is both very interesting and at times frustrating depending on the client.
-On the positive side you get to work on different types of domains/applications, different tech stacks, 
-and you may get to learn verity of organizational cultures. On the downside you may end up working with 
+On the positive side you get to work on different types of domains/applications, different tech stacks,
+and you may get to learn variety of organizational cultures. On the downside you may end up working with 
 **"Typical traditional enterprise organizations"** which makes you question your career choices!!!
 
 <!--more-->

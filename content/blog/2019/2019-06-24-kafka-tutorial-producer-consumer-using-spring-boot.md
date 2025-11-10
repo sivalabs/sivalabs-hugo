@@ -15,9 +15,9 @@ tags:
 aliases:
   - /kafka-tutorial-producer-consumer-using-spring-boot/
 ---
-In the previous post [Kafka Tutorial - Java Producer and Consumer]({{< relref "2019-06-21-kafka-tutorial-java-producer-consumer.md" >}}) we have learned how to implement a Producer and Consumer for a Kafka topic using plain Java Client API.
+In the previous post [Kafka Tutorial - Java Producer and Consumer]({{< relref "2019-06-21-kafka-tutorial-java-producer-consumer.md" >}}), we learned how to implement a Producer and Consumer for a Kafka topic using the plain Java Client API.
 
-In this post we are going to look at how to use Spring for Kafka which provides high level abstraction over Kafka Java Client API to make it easier to work with Kafka.
+In this post, we are going to look at how to use Spring for Kafka, which provides a high-level abstraction over the Kafka Java Client API to make it easier to work with Kafka.
 
 <!--more-->
 
@@ -25,7 +25,7 @@ In this post we are going to look at how to use Spring for Kafka which provides 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/kafka-tutorial
 
 ## Spring for Kafka without SpringBoot
-First let us look at how to use Spring for Kafka without SpringBoot magic so that we will understand how to configure necessary components.
+First, let's look at how to use Spring for Kafka without Spring Boot magic so that we will understand how to configure the necessary components.
 
 Create a maven based project and configure the dependencies as follows:
 
@@ -208,12 +208,12 @@ public class MessageListener {
 }
 ```
 
-Well, this is how we can configure Kafka Producer and Consumer using Spring JavaConfiguration without using SpringBoot.
-As you might have guessed, with SpringBoot auto-configuration the same application can be implemented with much less code.
+Well, this is how we can configure a Kafka Producer and Consumer using Spring JavaConfiguration without using Spring Boot.
+As you might have guessed, with Spring Boot auto-configuration, the same application can be implemented with much less code.
 
 ## Spring for Kafka with SpringBoot
 
-Let us create a SpringBoot application with Kafka starter. 
+Let us create a Spring Boot application with the Kafka starter. 
 
 ```xml
 <dependency>
@@ -227,7 +227,7 @@ Let us create a SpringBoot application with Kafka starter.
 </dependency>
 ```
 
-SpringBoot provides **org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration** which auto-configures **ProducerFactory, KafkaTemplate,ConsumerFactory, ConcurrentKafkaListenerContainerFactory** etc beans automatically. We just need to configure the following necessary properties in **application.properties** as follows:
+Spring Boot provides **org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration**, which auto-configures **ProducerFactory, KafkaTemplate, ConsumerFactory, ConcurrentKafkaListenerContainerFactory**, etc., beans. We just need to configure the following properties in **application.properties** as follows:
 
 
 ```properties
@@ -242,9 +242,9 @@ spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.Strin
 spring.kafka.producer.value-serializer=org.apache.kafka.common.serialization.StringSerializer
 ```
 
-That's it. Now we can send messages to a topic using **KafkaTemplate** and implement listeners using **@KafkaListener** as explained in earlier section.
+That's it. Now we can send messages to a topic using **KafkaTemplate** and implement listeners using **@KafkaListener** as explained in the earlier section.
 
-> The SpringBoot auto-configuration for Kafka only works for single **ProducerFactory** and **ConsumerFactory**. If you want to configure multiple **ProducerFactory** and **ConsumerFactory** beans then you can disable **KafkaAutoConfiguration** and configure the beans by yourself as shown in [this github repo](https://github.com/sivaprasadreddy/kafka-tutorial/tree/master/spring-boot-multiple-producers-consumers).
+> The Spring Boot auto-configuration for Kafka only works for a single **ProducerFactory** and **ConsumerFactory**. If you want to configure multiple **ProducerFactory** and **ConsumerFactory** beans, you can disable **KafkaAutoConfiguration** and configure the beans by yourself as shown in [this github repo](https://github.com/sivaprasadreddy/kafka-tutorial/tree/master/spring-boot-multiple-producers-consumers).
 
 ## Summary
-In this post we have learned how to implement a Kafka Producer and Consumer using **Spring for Kafka** with and without SpringBoot. In next post we will learn about working with Kafka using **Spring Cloud Streams with Kafka binder**.
+In this post, we have learned how to implement a Kafka Producer and Consumer using **Spring for Kafka** with and without Spring Boot. In the next post, we will learn about working with Kafka using **Spring Cloud Streams with Kafka binder**.

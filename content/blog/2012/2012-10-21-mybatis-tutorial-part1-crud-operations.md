@@ -12,7 +12,7 @@ tags:
 aliases:
   - /mybatis-tutorial-part1-crud-operations/
 ---
-MyBatis is an SQL Mapper tool which greatly simplifies the database programing when compared to using JDBC directly.
+MyBatis is an SQL Mapper tool which greatly simplifies database programming when compared to using JDBC directly.
 
 [**MyBatis Tutorial: Part1 &#8211; CRUD Operations**]({{< relref "2012-10-21-mybatis-tutorial-part1-crud-operations.md" >}}) 
   

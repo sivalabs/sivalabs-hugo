@@ -18,24 +18,21 @@ keywords:
 aliases:
   - /spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/
 ---
-# Problem
+In the previous article, [Introduction to Spring Cloud Config Server]({{< relref "2017-08-14-spring-cloud-tutorials-introduction-to-spring-cloud-config-server.md" >}}), we have seen how to use Spring Cloud Config Server.
 
-In the previous article [Introduction to Spring Cloud Config Server]({{< relref "2017-08-14-spring-cloud-tutorials-introduction-to-spring-cloud-config-server.md" >}})  we have seen how to use Spring Cloud Config Server.
-
-But, the problem is to reload the config changes in Config Client applications we need to trigger **/refresh** endpoint manually. This is not practical and viable if you have large number of applications.
+But the problem is that to reload the config changes in Config Client applications, we need to trigger the **/refresh** endpoint manually. This is not practical or viable if you have a large number of applications.
 
 <!--more-->
 
-
 # Solution
 
-**Spring Cloud Bus** module can be used to link multiple applications with a message broker and we can broadcast configuration changes.
+The **Spring Cloud Bus** module can be used to link multiple applications with a message broker, and we can broadcast configuration changes.
 
-Let us see how we can use RabbitMQ as message broker and connect multiple applications to receive the configuration change events and refresh the bounded property values.
+Let us see how we can use RabbitMQ as a message broker and connect multiple applications to receive configuration change events and refresh the bound property values.
 
-In previous post we have created **catalog-service** as a SpringBoot application which act as a Config Client.
-  
-Let us add **Cloud Bus AMQP** starter to **catalog-service/pom.xml**.
+In the previous post, we created **catalog-service** as a Spring Boot application that acts as a Config Client.
+
+Let us add the **Cloud Bus AMQP** starter to **catalog-service/pom.xml**.
 
 ```xml
 <dependency>
@@ -44,7 +41,7 @@ Let us add **Cloud Bus AMQP** starter to **catalog-service/pom.xml**.
 </dependency>
 ```
 
-We are going to use RabbitMQ as message broker to broadcast config changes. We can install RabbitMQ on our local machine or run in a docker container. I am going to run rabbitmq in docker container using the following **docker-compose.yml** configuration.
+We are going to use RabbitMQ as a message broker to broadcast config changes. We can install RabbitMQ on our local machine or run it in a Docker container. I am going to run RabbitMQ in a Docker container using the following **docker-compose.yml** configuration.
 
 ```yml
 version: '2'
@@ -61,9 +58,9 @@ services:
         - "15672:15672"
 ```
 
-Now run **docker-compose up** to start rabbitmq container.
+Now run **docker-compose up** to start the RabbitMQ container.
 
-Next we need to configure the RabbitMQ server details in catalog-service properties files.
+Next, we need to configure the RabbitMQ server details in the `catalog-service` properties files.
 
 **config-repo/catalogservice.properties**
 
@@ -74,16 +71,16 @@ spring.rabbitmq.username=guest
 spring.rabbitmq.password=guest
 ```
 
-Now we can run **catalog-service** and to reload the configuration changes we can trigger POST &#8211; **http://localhost:8181/bus/refresh** instead of **http://localhost:8181/refresh**.
+Now we can run **catalog-service**, and to reload the configuration changes, we can trigger POST – **http://localhost:8181/bus/refresh** instead of **http://localhost:8181/refresh**.
 
-Next, let us create another SpringBoot application **order-service** which runs on port **8282** and configure Cloud Config Client, Cloud Bus AMQP same as catalog-service. The order-service is also connected to the same RabbitMQ message broker as catalog-service.
+Next, let us create another Spring Boot application, **order-service**, which runs on port **8282** and configure the Cloud Config Client and Cloud Bus AMQP the same as `catalog-service`. The `order-service` is also connected to the same RabbitMQ message broker as `catalog-service`.
 
-Now run order-service application which should be running at http://localhost:8282.
+Now run the `order-service` application, which should be running at http://localhost:8282.
 
-**Now if you update properties of both catalog-service and order-service and commit the changes, you just need to trigger /bus/refresh on any one application. This will automatically broadcast the config changes to all the services that subscribed to RabbitMQ and refresh the properties.**
+**Now, if you update the properties of both `catalog-service` and `order-service` and commit the changes, you just need to trigger `/bus/refresh` on any one application. This will automatically broadcast the config changes to all the services that are subscribed to RabbitMQ and refresh the properties.**
 
-Not only different applications, you may be running multiple instances of same application on different ports. The same process works in these cases also.
+Not only different applications, but you may also be running multiple instances of the same application on different ports. The same process works in these cases also.
 
-So, with Spring Cloud Bus AMQP it is easy to reload configuration changes for any number of applications with one single /bus/refresh request.
+So, with Spring Cloud Bus AMQP, it is easy to reload configuration changes for any number of applications with one single `/bus/refresh` request.
 
 The source code for this article is at https://github.com/sivaprasadreddy/spring-cloud-tutorial.

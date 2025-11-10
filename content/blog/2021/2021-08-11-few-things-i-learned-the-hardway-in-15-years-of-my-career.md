@@ -1,5 +1,5 @@
 ---
-title: Few things I learned in the hard way in 15 years of my career
+title: Few things I learned the hard way in 15 years of my career
 author: Siva
 images:
   - /preview-images/career-lessons.webp
@@ -96,8 +96,8 @@ In this article, I would like to share some of my learnings.
 19. While it feels good to be in an echo chamber where everyone will agree to everything you say, 
     **have someone who can tell you that you are wrong on your face**.
 
-20. **If you realize that the work culture is shitty, and you can't change anything there, then get the hell out of there 
-    as quickly as you can**. Staying in such environment for too long will make you loose self-confidence.
+20. **If you realize that the work culture is shitty, and you can't change anything there, then get the hell out of there
+    as quickly as you can**. Staying in such environment for too long will make you lose self-confidence.
 
 21. We don't have an infinite amount of time to learn and master every programming language, framework, and tool. 
     So, learn what may help you in the near future, and you can learn other things if need be. 

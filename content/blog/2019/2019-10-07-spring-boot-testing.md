@@ -17,8 +17,8 @@ aliases:
   - /spring-boot-testing/
 ---
 
-**SpringBoot** is the most popular tech stack for building Java based REST APIs.
-In this tutorial we will learn how to write tests for SpringBoot applications.
+**Spring Boot** is the most popular tech stack for building Java-based REST APIs.
+In this tutorial, we will learn how to write tests for Spring Boot applications.
 
 * Create SpringBoot Application
 * Unit Testing using [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and [Mockito](https://site.mockito.org/)
@@ -28,23 +28,22 @@ In this tutorial we will learn how to write tests for SpringBoot applications.
 <!--more-->
 
 
-As we all know, we write unit tests for testing single component (a class) behaviour 
-where as we write integration tests for testing a feature which may involve interaction with multiple components.
+As we all know, we write unit tests for testing a single component's (a class's) behavior, whereas we write integration tests for testing a feature that may involve interaction with multiple components.
 
-Most of the times one component will depend on other component(s), so while implementing unit tests we should mock 
-the dependencies with the desired behaviour using frameworks like [Mockito](https://site.mockito.org/).
+Most of the time, one component will depend on other component(s), so while implementing unit tests, we should mock
+the dependencies with the desired behavior using frameworks like [Mockito](https://site.mockito.org/).
 
-So, the question is how do we implement Unit Tests and Integration tests in SpringBoot application? Read on :-)
+So, the question is, how do we implement Unit Tests and Integration tests in a Spring Boot application? Read on :-)
 
 > Sample application Code for this article can be found at https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/testing/springboot-testing-demo
 
 ## Create SpringBoot Application
 
-Let us consider a scenario where we are building a REST API to manage users. 
-If we follow typical 3-tier layered architecture we might have JPA entity **User**, Spring Data JPA Repository **UserRepository**, 
-**UserService** and **UserController** implementing CRUD operations as follows:
+Let us consider a scenario where we are building a REST API to manage users.
+If we follow a typical 3-tier layered architecture, we might have a JPA entity **User**, Spring Data JPA Repository **UserRepository**,
+**UserService**, and **UserController** implementing CRUD operations as follows:
 
-First of all, create a SpringBoot application with the following dependencies:
+First of all, create a Spring Boot application with the following dependencies:
 
 #### pom.xml
 ```xml
@@ -332,13 +331,13 @@ public class UserController {
 }
 ```
 
-Nothing too fancy here, typical CRUD operations in SpringBoot application.
+Nothing too fancy here, typical CRUD operations in a Spring Boot application.
 
-### ExceptionHandling using Zalando Problem Web
-We are going to use [Zalando Problem Web](https://github.com/zalando/problem-spring-web) [SpringBoot starter](https://github.com/zalando/problem-spring-web/tree/master/problem-spring-web) to handle 
-Exceptions so that it will automatically convert the application errors into JSON responses.
+### Exception Handling using Zalando Problem Web
+We are going to use [Zalando Problem Web](https://github.com/zalando/problem-spring-web) [Spring Boot starter](https://github.com/zalando/problem-spring-web/tree/master/problem-spring-web) to handle
+Exceptions so that it automatically converts application errors into JSON responses.
 
-Just adding the following dependency is enough to start using Zalando Problem Web, and of course you can customize it if you want to.
+Just adding the following dependency is enough to start using Zalando Problem Web, and of course, you can customize it if you want to.
 
 ```xml
 <problem-spring-web.version>0.25.0</problem-spring-web.version>
@@ -355,10 +354,10 @@ Just adding the following dependency is enough to start using Zalando Problem We
 Now let us see how we can write Unit Tests and Integration Tests for this functionality.
 
 ## Unit Testing using JUnit 5 and Mockito
-Let us start writing unit tests for **UserService**.
+Let's start by writing unit tests for **UserService**.
 *We should be able to write unit tests for UserService WITHOUT using any Spring features*.
 
-We are going to create a mock **UserRepository** using **Mockito.mock()** and create UserService instance using the mock UserRepository instance.
+We are going to create a mock **UserRepository** using **Mockito.mock()** and create a UserService instance using the mock UserRepository instance.
 
 ```java
 package com.sivalabs.myservice.services;
@@ -415,12 +414,12 @@ class UserServiceTest {
 }
 ```
 
-I have created **UserRepository** mock object and **UserService** instance in **@BeforeEach** method so that every test has a clean setup.
-Here we are not using any Spring or SpringBoot testing features such as **@SpringBootTest** because we don't have to for testing the behaviour of UserService.
+I have created a **UserRepository** mock object and a **UserService** instance in the **@BeforeEach** method so that every test has a clean setup.
+Here we are not using any Spring or Spring Boot testing features such as **@SpringBootTest** because we don't have to for testing the behavior of UserService.
 
 I am not going to write tests for other methods because they are simply delegating the calls to **UserRepository**.
 
-If you prefer to use annotations magic to create mock **UserRepository** and inject that mock into **UserService**, 
+If you prefer to use annotation magic to create a mock **UserRepository** and inject that mock into **UserService**,
 you can use **mockito-junit-jupiter** as follows: 
 
 Add **mockito-junit-jupiter** dependency
@@ -457,28 +456,28 @@ class UserServiceAnnotatedTest {
 
 ### Now, shall we write tests for UserRepository? hmmmm...
 
-The **UserRepository** is an interface extending **JpaRepository** and there is hardly any logic we implemented and 
-we shouldn't be testing Spring Data JPA framework as I strongly believe Spring Data JPA team already tested it :-)
+The **UserRepository** is an interface extending **JpaRepository**, and there is hardly any logic we implemented, and
+we shouldn't be testing the Spring Data JPA framework, as I strongly believe the Spring Data JPA team has already tested it :-)
 
-However, we added a couple of custom methods, one leveraging Query naming convention **findByEmail()** and another with custom JPQL query **login()**.
-We should test these methods. If there are any syntactic errors Spring Data JPA throw errors on startup but we should test the logical errors by ourselves.
+However, we added a couple of custom methods, one leveraging the Query naming convention **findByEmail()** and another with a custom JPQL query **login()**.
+We should test these methods. If there are any syntactic errors, Spring Data JPA will throw errors on startup, but we should test the logical errors ourselves.
 
-We could implement tests for **UserRepository** using SpringBoot's **@DataJpaTest** annotation with **In-memory database support**.
-But running tests against in-memory database might give a false impression that it will also work on real production database as well.
-So, I prefer to run tests against the production database type, in our case Postgresql.
+We could implement tests for **UserRepository** using Spring Boot's **@DataJpaTest** annotation with **in-memory database support**.
+But running tests against an in-memory database might give a false impression that it will also work on a real production database.
+So, I prefer to run tests against the production database type, in our case, PostgreSQL.
 
-We can use [TestContainers support to spin up a postgresql](https://www.testcontainers.org/modules/databases/postgres/) docker container and run the tests pointing to that database.
-However I consider this as an Integration Test rather than Unit Test as we are talking to a real database.
-So, we will see how to write Integration tests for UserRepository later.
+We can use [TestContainers support to spin up a PostgreSQL](https://www.testcontainers.org/modules/databases/postgres/) Docker container and run the tests pointing to that database.
+However, I consider this an Integration Test rather than a Unit Test, as we are talking to a real database.
+So, we will see how to write integration tests for `UserRepository` later.
 
 ### What about unit tests for Controller?
-Yes, I want to write unit tests for controller and I want to check whether the REST endpoint is giving the proper 
-HTTP ResponseCode or not, returning the expected JSON or not etc.
+Yes, I want to write unit tests for the controller, and I want to check whether the REST endpoint is giving the proper
+HTTP ResponseCode, returning the expected JSON, etc.
 
-SpringBoot provides **@WebMvcTest** annotation to test Spring MVC Controllers. 
-Also, **@WebMvcTest** based tests runs faster as it will load only the specified controller and its dependencies only without loading the entire application.
+Spring Boot provides the **@WebMvcTest** annotation to test Spring MVC Controllers.
+Also, **@WebMvcTest** based tests run faster as it will load only the specified controller and its dependencies, without loading the entire application.
 
-While loading the Controller using **@WebMvcTest** SpringBoot won't automatically load Zalando Problem Web AutoConfiguration.
+While loading the Controller using **@WebMvcTest**, Spring Boot won't automatically load the Zalando Problem Web AutoConfiguration.
 So, we need to configure **ControllerAdvice** as follows:
 
 ```java
@@ -497,7 +496,7 @@ public final class ExceptionHandling implements ProblemHandling {
 
 Now we can write tests for **UserController** by injecting a Mock **UserService** bean and invoke API endpoints using **MockMvc**.
 
-As SpringBoot is creating the **UserController** instance we are creating mock **UserService** bean using Spring's **@MockBean** as opposed to plain Mockito's **@Mock**.
+As Spring Boot is creating the **UserController** instance, we are creating a mock **UserService** bean using Spring's **@MockBean** as opposed to plain Mockito's **@Mock**.
 
 ```java
 package com.sivalabs.myservice.web.controllers;
@@ -680,18 +679,17 @@ class UserControllerTest {
 }
 ```
 
-Now we have good amount of unit tests testing various components of our application.
-But still there is a lot of chance for things to go wrong, may be we might have some property configuration issues, 
-we might have some errors in our DB migration scripts etc etc.
+Now we have a good amount of unit tests testing various components of our application.
+But still, there is a lot of chance for things to go wrong; maybe we have some property configuration issues, or we might have some errors in our DB migration scripts, etc.
 
-So, lets write Integration Tests to have more confidence that our application is running properly.
+So, let's write Integration Tests to have more confidence that our application is running properly.
 
-## Integration Testing using TestContainer
-SpringBoot provides excellent support for integration testing. We can use **@SpringBootTest** annotation 
+## Integration Testing using TestContainers
+Spring Boot provides excellent support for integration testing. We can use the **@SpringBootTest** annotation
 to load the application context and test various components.
 
-Let us start with writing integration tests for **UserController**. 
-As I mentioned earlier we want to test using postgres database instead of in-memory database.
+Let us start with writing integration tests for **UserController**.
+As I mentioned earlier, we want to test using a PostgreSQL database instead of an in-memory database.
 
 Add the following dependencies.
 
@@ -711,10 +709,10 @@ Add the following dependencies.
 ```
 
 We can use TestContainers support for JUnit 5 as mentioned here https://www.testcontainers.org/test_framework_integration/junit_5/.
-However, starting and stopping docker containers for every test or every test class might cause tests running slowly.
-So, we are going to use Singleton Containers approach mentioned at https://www.testcontainers.org/test_framework_integration/manual_lifecycle_control/#singleton-containers
+However, starting and stopping Docker containers for every test or every test class might cause tests to run slowly.
+So, we are going to use the Singleton Containers approach mentioned at https://www.testcontainers.org/test_framework_integration/manual_lifecycle_control/#singleton-containers
 
-Let us create a base class **AbstractIntegrationTest** so that all our integration tests can extend without repeating the common configuration.
+Let us create a base class **AbstractIntegrationTest** so that all our integration tests can extend it without repeating the common configuration.
 
 ```java
 package com.sivalabs.myservice.common;
@@ -771,13 +769,13 @@ public abstract class AbstractIntegrationTest {
 }
 ```
 
-We have used **@AutoConfigureMockMvc** to auto-configure **MockMvc**, 
+We have used **@AutoConfigureMockMvc** to auto-configure **MockMvc**,
 and **@SpringBootTest(webEnvironment = RANDOM_PORT)** to start the server on a random available port.
 
-We have started **PostgreSQLContainer** and used **@ContextConfiguration(initializers={AbstractIntegrationTest.Initializer.class})** 
+We have started **PostgreSQLContainer** and used **@ContextConfiguration(initializers = {AbstractIntegrationTest.Initializer.class})**
 to configure the dynamic database connection properties.
 
-Now we can implement Integration Test for **UserController** as follows:
+Now we can implement an Integration Test for **UserController** as follows:
 
 ```java
 package com.sivalabs.myservice.web.controllers;
@@ -901,15 +899,15 @@ class UserControllerIT extends AbstractIntegrationTest {
 }
 ```
 
-The **UserControllerIT** tests looks very similar to **UserControllerTest** with the difference being how we load the ApplicationContext.
-While using **@SpringBootTest** SpringBoot will actually start the application by loading the entire application 
-so that tests will fail if there is any mis-configuration.
+The **UserControllerIT** tests look very similar to **UserControllerTest**, with the difference being how we load the ApplicationContext.
+While using **@SpringBootTest**, Spring Boot will actually start the application by loading the entire application,
+so that tests will fail if there is any misconfiguration.
 
-Next, we are going to write test for **UserRepository** using **@DataJpaTest**. 
-But we want to run tests against a real database not with in-memory database.
-We can use **@AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)** to turn-off using in-memory database and use the configured database.
+Next, we are going to write a test for **UserRepository** using **@DataJpaTest**.
+But we want to run tests against a real database, not with an in-memory database.
+We can use **@AutoConfigureTestDatabase(replace=AutoConfigureTestDatabase.Replace.NONE)** to turn off using an in-memory database and use the configured database.
 
-Let us create **PostgreSQLContainerInitializer** so that any repository tests can use this to configure dynamic postgres database properties.
+Let us create **PostgreSQLContainerInitializer** so that any repository tests can use this to configure dynamic PostgreSQL database properties.
 
 ```java
 package com.sivalabs.myservice.common;
@@ -986,16 +984,16 @@ class UserRepositoryTest {
 }
 ```
 
-Well, I guess we learned something about how to write unit tests and integration tests using various SpringBoot features.
+Well, I guess we learned something about how to write unit and integration tests using various Spring Boot features.
 
-We are living in Microservices world and there is a high chance that our service might talk to other microservices.
+We are living in a Microservices world, and there is a high chance that our service might talk to other microservices.
 How are we going to test those integration points? How are we going to verify the timeout scenarios?
-Well, we can certainly use a Mock object and pray GOD that it will work fine in production :-)
-Or we can use libraries like **MockServer** to simulate the service-to-service communication.
+Well, we can certainly use a Mock object and pray to God that it will work fine in production :-)
+Or we can use libraries like **MockServer** to simulate service-to-service communication.
 
 ## Testing MicroService Integrations using MockServer
-Assume from our application we want to fetch GitHub profile of a user. We can use GitHub REST API to fetch the user profile.
-Also, we want to timeout the call after 2 seconds and if we don't get response by that time we want to return a default user response.
+Assume from our application we want to fetch a GitHub profile of a user. We can use the GitHub REST API to fetch the user profile.
+Also, we want to time out the call after 2 seconds, and if we don't get a response by that time, we want to return a default user response.
 
 We can implement this using **Hystrix** as follows:
 
@@ -1020,7 +1018,7 @@ public class ApplicationProperties {
 }
 ```
 
-Register **RestTemplate** bean and enable Hystrix CircuitBreaker using **@EnableCircuitBreaker**.
+Register a **RestTemplate** bean and enable the Hystrix Circuit Breaker using **@EnableCircuitBreaker**.
 
 ```java
 package com.sivalabs.myservice;
@@ -1046,7 +1044,7 @@ public class Application
 }
 ```
 
-Create **GithubUser** class which holds response from GitHub API.
+Create a **GithubUser** class which holds the response from the GitHub API.
 
 ```java
 package com.sivalabs.myservice.model;
@@ -1067,7 +1065,7 @@ public class GithubUser {
 }
 ```
 
-Create **GithubService** which talks to GitHub REST API using **RestTemplate** as follows:
+Create **GithubService** which talks to the GitHub REST API using **RestTemplate** as follows:
 
 ```java
 package com.sivalabs.myservice.services;
@@ -1113,7 +1111,7 @@ public class GithubService {
 }
 ```
 
-Let us create a **GithubController** with an endpoint to return the users GitHub profile.
+Let us create a **GithubController** with an endpoint to return the user's GitHub profile.
 
 ```java
 package com.sivalabs.myservice.web.controllers;
@@ -1144,9 +1142,9 @@ public class GithubController {
 }
 ```
 
-We can use **MockServer** to simulate the dependent microservice responses so that we can verify our application behaviour in various scenarios.
+We can use **MockServer** to simulate the dependent microservice responses so that we can verify our application's behavior in various scenarios.
 
-We can use [TestContainers support to spin up MockServer](https://www.testcontainers.org/modules/mockserver/) docker container as follows:
+We can use [TestContainers support to spin up MockServer](https://www.testcontainers.org/modules/mockserver/) Docker container as follows:
 
 Add the following dependencies:
 
@@ -1208,8 +1206,8 @@ public abstract class AbstractIntegrationTest {
 }
 ```
 
-Note that we are stating **MockServerContainer** and injecting the endpoint URL with **"githuub.api.base-url="+mockServerContainer.getEndpoint()**.
-Also, we have created **MockServerClient** which we are going to use for setting up expected responses.
+Note that we are starting **MockServerContainer** and injecting the endpoint URL with **"githuub.api.base-url="+mockServerContainer.getEndpoint()**.
+Also, we have created **MockServerClient**, which we are going to use for setting up the expected responses.
 
 ```java
 package com.sivalabs.myservice.web.controllers;
@@ -1276,11 +1274,11 @@ class GithubControllerIT extends AbstractIntegrationTest {
 }
 ```
 
-Note that we are setting up expected JSON response for **\<githuub.api.base-url\>/users/.\*** URL pattern on **mockServerClient**.
-So, when we make a call to **http://localhost:8080/api/github/users/{username}** GithubController will in-turn call GithubService which makes a call to 
-**\<githuub.api.base-url\>/users/{username}** and return the mock JSON response that we set using **mockServerClient**.
+Note that we are setting up an expected JSON response for the **\<githuub.api.base-url\>/users/.\*** URL pattern on **mockServerClient**.
+So, when we make a call to **http://localhost:8080/api/github/users/{username}**, GithubController will in turn call GithubService, which makes a call to
+**\<githuub.api.base-url\>/users/{username}** and returns the mock JSON response that we set using **mockServerClient**.
 
-We can also simulate the failures and timeout scenarios as follows:
+We can also simulate failure and timeout scenarios as follows:
 
 ```java
 @Test
@@ -1320,20 +1318,20 @@ private void mockGetUserFromGithubFailure() {
 }
 ```
 
-In **shouldGetDefaultUserProfileWhenFetchingFromGithubFails()** test we are setting up the mockServer to respond 
-with **404 error** to verify **Hystrix fallback** method is working or not.
+In **shouldGetDefaultUserProfileWhenFetchingFromGithubFails()** test, we are setting up the mockServer to respond
+with a **404 error** to verify whether the **Hystrix fallback** method is working.
 
-Similarly, In shouldGetDefaultUserProfileWhenFetchingFromGithubTimeout() test we are setting up the mockServer to respond 
-with **delay of 10 SECONDS** to verify whether **Hystrix timeout** is working or not.
+Similarly, in shouldGetDefaultUserProfileWhenFetchingFromGithubTimeout() test, we are setting up the mockServer to respond
+with a **delay of 10 SECONDS** to verify whether the **Hystrix timeout** is working.
 
-Make sure to reset **mockServerClient** using **mockServerClient.reset()** for every test in **@BeforeEach** method to reset any expectations set in previous test run.
+Make sure to reset **mockServerClient** using **mockServerClient.reset()** for every test in the **@BeforeEach** method to reset any expectations set in the previous test run.
 
 > Sample application Code for this article can be found at https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/testing/springboot-testing-demo
 
-I hope we have covered many common testing scenarios in SpringBoot applications.
+I hope we have covered many common testing scenarios in Spring Boot applications.
 
-Thank you reading the article, your feedback is welcome. 
-If you find this article useful please share it on Twitter.
+Thank you for reading the article; your feedback is welcome.
+If you find this article useful, please share it on Twitter.
 
 
 

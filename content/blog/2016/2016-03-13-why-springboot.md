@@ -12,48 +12,46 @@ popular: true
 aliases:
   - /why-springboot/
 ---
-Spring is a very popular Java based framework for building web and enterprise applications. Unlike many other frameworks which focuses on only one area, Spring framework provides a wide verity of features addressing the modern business needs via its portfolio projects.
+Spring is a very popular Java-based framework for building web and enterprise applications. Unlike many other frameworks which focus on only one area, the Spring framework provides a wide variety of features addressing modern business needs via its portfolio of projects.
 
-Spring framework provides flexibility to configure the beans in multiple ways such as **XML**, **Annotations** and **JavaConfig**. With the number of features increased the complexity also gets increased and configuring Spring applications becomes tedious and error-prone.
+Spring framework provides the flexibility to configure beans in multiple ways, such as **XML**, **Annotations**, and **JavaConfig**. As the number of features increased, the complexity also increased, and configuring Spring applications became tedious and error-prone.
 
 <!--more-->
 
+The Spring team created Spring Boot to address the complexity of configuration.
 
-Spring team created SpringBoot to address the complexity of configuration.
+But before diving into Spring Boot, we will take a quick look at the Spring framework and see what kind of problems Spring Boot is trying to address.
 
-But before diving into SpringBoot, we will take a quick look at Spring framework and see what kind of problems SpringBoot is trying to address.
+**In this article, we will cover:**
 
-**In this article we will cover:**
+*   An overview of the Spring framework
+*   A web application using Spring MVC and JPA (Hibernate)
+*   A quick taste of Spring Boot
 
-  * Overview of Spring framework
-  * A web application using Spring MVC and JPA(Hibernate)
-  * A quick taste of SpringBoot
+## Overview of the Spring framework
 
-## Overview of Spring framework
-  
-If you are a Java developer then there is a high chance that you might have heard about Spring framework and probably have used it in your projects. Spring framework was created primarily as a Dependency Injection container but it is much more than that.
+If you are a Java developer, then there is a high chance that you might have heard about the Spring framework and probably have used it in your projects. The Spring framework was created primarily as a Dependency Injection container, but it is much more than that.
 
-**Spring is very popular because of several reasons:**
+**Spring is very popular for several reasons:**
 
-  * Spring’s dependency injection approach encourages writing testable code
-  * Easy to use but powerful database transaction management capabilities
-  * Spring simplifies integration with other Java frameworks like JPA/Hibernate ORM, Struts/JSF etc web frameworks
-  * State of the art Web MVC framework for building web applications
+*   Spring’s dependency injection approach encourages writing testable code.
+*   Easy-to-use but powerful database transaction management capabilities.
+*   Spring simplifies integration with other Java frameworks like JPA/Hibernate ORM, Struts/JSF, etc., web frameworks.
+*   A state-of-the-art Web MVC framework for building web applications.
 
-Along with Spring framework there are many other Spring sister projects which helps to build applications addressing modern business needs:
+Along with the Spring framework, there are many other Spring sister projects which help to build applications addressing modern business needs:
 
-  * Spring Data: Simplifies data access from relational and NoSQL data stores.
-  * Spring Batch: Provides powerful batch processing framework.
-  * Spring Security: Robust security framework to secure applications.
-  * Spring Social: Supports integration with social networking sites like Facebook, Twitter, LinkedIn, GitHub etc.
-  * Spring Integration: An implementation of Enterprise Integration Patterns to facilitate integration with other enterprise applications using lightweight messaging and declarative adapters.
+*   Spring Data: Simplifies data access from relational and NoSQL data stores.
+*   Spring Batch: Provides a powerful batch processing framework.
+*   Spring Security: A robust security framework to secure applications.
+*   Spring Social: Supports integration with social networking sites like Facebook, Twitter, LinkedIn, GitHub, etc.
+*   Spring Integration: An implementation of Enterprise Integration Patterns to facilitate integration with other enterprise applications using lightweight messaging and declarative adapters.
 
-There are many other interesting projects addressing various other modern application development needs. For more information take a look at http://spring.io/projects.
+There are many other interesting projects addressing various other modern application development needs. For more information, take a look at http://spring.io/projects.
 
-In the initial days, Spring framework provides XML based approach for configuring beans. Later Spring introduced XML based DSLs, Annotations and JavaConfig based approaches for configuring beans.
+In the initial days, the Spring framework provided an XML-based approach for configuring beans. Later, Spring introduced XML-based DSLs, Annotations, and JavaConfig-based approaches for configuring beans.
 
-Let us take a quick look at how each of those configuration styles looks like.
-
+Let us take a quick look at how each of those configuration styles looks.
 
 ### XML based configuration
 
@@ -75,7 +73,6 @@ Let us take a quick look at how each of those configuration styles looks like.
 ```
 
 ### Annotation based configuration
-
 
 ```java
 @Service
@@ -135,25 +132,25 @@ public class AppConfig
 }
 ```
 
-Wow… Spring provides many approaches for doing the same thing and we can even mix the approaches as well like you can use both JavaConfig and Annotation based configuration styles in the same application.
+Wow… Spring provides many approaches for doing the same thing, and we can even mix the approaches as well, like you can use both JavaConfig and Annotation-based configuration styles in the same application.
 
-> That is a lot of flexibility and it is one way good and one way bad. People new to Spring framework may gets confused about which approach to follow. As of now the Spring team is suggesting to follow JavaConfig based approach as it gives more flexibility.
+> That is a lot of flexibility, and it is good in one way and bad in another. People new to the Spring framework may get confused about which approach to follow. As of now, the Spring team is suggesting following the JavaConfig-based approach as it gives more flexibility.
 
-But there is no one-size fits all kind of solution. One has to choose the approach based on their own application needs.
+But there is no one-size-fits-all kind of solution. One has to choose the approach based on their own application needs.
 
-OK, now that you had a glimpse of how various styles of Spring bean configurations looks like.
+OK, now that you have had a glimpse of how various styles of Spring bean configurations look.
 
 **You can find the source code of this article on GitHub at https://github.com/sivaprasadreddy/springboot-tutorials**
 
-Let us take a quick look at the configuration of a typical SpringMVC + JPA/Hibernate web application configuration looks like.
+Let us take a quick look at what the configuration of a typical Spring MVC + JPA/Hibernate web application looks like.
 
 ## A web application using Spring MVC and JPA(Hibernate)
 
-Before getting to know what is SpringBoot and what kind of features it provides, let us take a look at how a typical Spring web application configuration looks like, what are the pain points and then we will discuss about how SpringBoot addresses those problems.
+Before getting to know what Spring Boot is and what kind of features it provides, let us take a look at how a typical Spring web application configuration looks, what the pain points are, and then we will discuss how Spring Boot addresses those problems.
 
 **Step 1: Configure Maven Dependencies**
 
-First thing we need to do is configure all the dependencies required in our **pom.xml**.
+The first thing we need to do is configure all the dependencies required in our **pom.xml**.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -241,7 +238,7 @@ First thing we need to do is configure all the dependencies required in our **po
 </project>
 ```
 
-We have configured all our Maven jar dependencies to include Spring MVC, Spring Data JPA, JPA/Hibernate, Thymeleaf and Log4j.
+We have configured all our Maven jar dependencies to include Spring MVC, Spring Data JPA, JPA/Hibernate, Thymeleaf, and Log4j.
 
 **Step 2: Configure Service/DAO layer beans using JavaConfig.**
 
@@ -324,18 +321,16 @@ public class AppConfig
 }
 ```
 
+In our `AppConfig.java` configuration class, we have done the following:
 
-In our AppConfig.java configuration class we have done the following:
+*   Marked it as a Spring Configuration class using the **@Configuration** annotation.
+*   Enabled Annotation-based transaction management using **@EnableTransactionManagement**.
+*   Configured **@EnableJpaRepositories** to indicate where to look for Spring Data JPA repositories.
+*   Configured a PropertyPlaceHolder bean using the **@PropertySource** annotation and a **PropertySourcesPlaceholderConfigurer** bean definition, which loads properties from the **application.properties** file.
+*   Defined beans for **DataSource**, JPA **EntityManagerFactory**, and **JpaTransactionManager**.
+*   Configured a **DataSourceInitializer** bean to initialize the database by executing the **data.sql** script on application startup.
 
-  * Marked it as as a Spring Configuration class using **@Configuration** annotation.
-  * Enabled Annotation based transaction management using **@EnableTransactionManagement**
-  * Configured **@EnableJpaRepositories** to indicate where to look for Spring Data JPA repositories
-  * Configured PropertyPlaceHolder bean using **@PropertySource** annotation and **PropertySourcesPlaceholderConfigurer** bean definition which loads properties from **application.properties** file.
-  * Defined beans for **DataSource**, JPA **EntityManagerFactory**, **JpaTransactionManager**.
-  * Configured **DataSourceInitializer** bean to initialize the database by executing **data.sql** script on application start up.
-
-we need to configure property placeholder values in **application.properties** in src/main/resources as follows:
-
+We need to configure property placeholder values in **application.properties** in `src/main/resources` as follows:
 
 ```properties
 jdbc.driverClassName=com.mysql.jdbc.Driver
@@ -348,7 +343,7 @@ hibernate.show_sql=true
 hibernate.hbm2ddl.auto=update
 ```
 
-we can create a simple sql script **data.sql** to populate sample data into **USER** table.
+We can create a simple SQL script, **data.sql**, to populate sample data into the **USER** table.
 
 ```sql
 delete from user;
@@ -357,7 +352,7 @@ insert into user(id, name) values(2,'Prasad');
 insert into user(id, name) values(3,'Reddy');
 ```
 
-We can create **log4j.properties** file with basic configuration as follows:
+We can create a **log4j.properties** file with a basic configuration as follows:
 
 ```properties
 log4j.rootCategory=INFO, stdout
@@ -371,7 +366,7 @@ log4j.category.com.sivalabs=DEBUG
 
 **Step 3: Configure Spring MVC web layer beans**
 
-We will have to configure Thymeleaf **ViewResolver**, static **ResourceHandlers**, **MessageSource** for i18n etc.
+We will have to configure the Thymeleaf **ViewResolver**, static **ResourceHandlers**, **MessageSource** for i18n, etc.
 
 ```java
 @Configuration
@@ -428,21 +423,21 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter
 }
 ```
 
-In our **WebMvcConfig.java** configuration class we have done the following:
+In our **WebMvcConfig.java** configuration class, we have done the following:
 
-  * Marked it as as a Spring Configuration class using **@Configuration** annotation.
-  * Enabled Annotation based Spring MVC configuration using **@EnableWebMvc**
-  * Configured Thymeleaf ViewResolver by registering **TemplateResolver**, **SpringTemplateEngine**, **ThymeleafViewResolver** beans.
-  * Registered ResourceHandlers bean to indicate requests for static resources with URI **/resources/**** will be served from the location **/resources/** directory.
-  * Configured **MessageSource** bean to load i18n messages from ResourceBundle **messages-{country-code}.properties** from classpath.
+*   Marked it as a Spring Configuration class using the **@Configuration** annotation.
+*   Enabled Annotation-based Spring MVC configuration using **@EnableWebMvc**.
+*   Configured the Thymeleaf ViewResolver by registering **TemplateResolver**, **SpringTemplateEngine**, and **ThymeleafViewResolver** beans.
+*   Registered a ResourceHandlers bean to indicate that requests for static resources with the URI **/resources/\*\*** will be served from the **/resources/** directory.
+*   Configured a **MessageSource** bean to load i18n messages from the ResourceBundle **messages-{country-code}.properties** from the classpath.
 
-For now we do not have any messages to be configured, so create an empty **messages.properties** file in **src/main/resources** folder.
+For now, we do not have any messages to be configured, so create an empty **messages.properties** file in the **src/main/resources** folder.
 
-**Step 4: Register Spring MVC FrontController servlet DispatcherServlet.**
+**Step 4: Register the Spring MVC FrontController servlet, DispatcherServlet.**
 
-Prior to Servlet 3.x specification we have to register Servlets/Filters in **web.xml**. Since Servlet 3.x specification we can register Servlets/Filters programatically using **ServletContainerInitializer**.
+Prior to the Servlet 3.x specification, we had to register Servlets/Filters in **web.xml**. Since the Servlet 3.x specification, we can register Servlets/Filters programmatically using **ServletContainerInitializer**.
 
-Spring MVC provides a convenient class **AbstractAnnotationConfigDispatcherServletInitializer** to register **DispatcherServlet**.
+Spring MVC provides a convenient class, **AbstractAnnotationConfigDispatcherServletInitializer**, to register **DispatcherServlet**.
 
 ```java
 public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer
@@ -473,16 +468,16 @@ public class SpringWebAppInitializer extends AbstractAnnotationConfigDispatcherS
 }
 ```
 
-In our **SpringWebAppInitializer.java** configuration class we have done the following:
+In our **SpringWebAppInitializer.java** configuration class, we have done the following:
 
-  * We have configured **AppConfig.class** as **RootConfirationClasses** which will become the parent **ApplicationContext** that contains bean definitions shared by all child (**DispatcherServlet**) contexts.
-  * We have configured **WebMvcConfig.class** as **ServletConfigClasses** which is child **ApplicationContext** that contains WebMvc bean definitions.
-  * We have configured **”/”** as **ServletMapping** means all the requests will be handled by **DispatcherServlet**.
-  * We have registered **OpenEntityManagerInViewFilter** as a Servlet Filter so that we can lazy load the JPA Entity lazy collections while rendering the view.
+*   We have configured **AppConfig.class** as **RootConfirationClasses**, which will become the parent **ApplicationContext** that contains bean definitions shared by all child (**DispatcherServlet**) contexts.
+*   We have configured **WebMvcConfig.class** as **ServletConfigClasses**, which is a child **ApplicationContext** that contains WebMvc bean definitions.
+*   We have configured **”/”** as a **ServletMapping**, which means all requests will be handled by **DispatcherServlet**.
+*   We have registered **OpenEntityManagerInViewFilter** as a Servlet Filter so that we can lazy-load the JPA Entity lazy collections while rendering the view.
 
-**Step 5: Create a JPA Entity and Spring Data JPA Repository**
+**Step 5: Create a JPA Entity and a Spring Data JPA Repository**
 
-Create a JPA entity **User.java** and a Spring Data JPA repository for User entity.
+Create a JPA entity, **User.java**, and a Spring Data JPA repository for the User entity.
 
 ```java
 @Entity
@@ -502,9 +497,9 @@ public interface UserRepository extends JpaRepository<User, Integer>
 }
 ```
 
-**Step 6: Create a SpringMVC Controller**
+**Step 6: Create a Spring MVC Controller**
 
-Create a SpringMVC controller to handle URL **"/"** and render list of users.
+Create a Spring MVC controller to handle the URL **"/"** and render a list of users.
 
 ```java
 @Controller
@@ -521,7 +516,7 @@ public class HomeController
 }
 ```
 
-**Step 7: Create a thymeleaf view /WEB-INF/views/index.html to render list of Users.**
+**Step 7: Create a Thymeleaf view, /WEB-INF/views/index.html, to render a list of Users.**
 
 ```xml
 <!DOCTYPE html>
@@ -550,50 +545,50 @@ public class HomeController
 </html>
 ```
 
-We are all set now to run the application. But before that we need to download and configure the server like 
-**Tomcat** or **Jetty** or **Wildfly** etc in your IDE.
+We are all set now to run the application. But before that, we need to download and configure a server like
+**Tomcat**, **Jetty**, or **Wildfly**, etc., in your IDE.
 
-You can download Tomcat 8 and configure in your favourite IDE,run the application and point your browser to 
-**http://localhost:8080/springmvcjpa-demo**. You should see the list of users details in a table.
+You can download Tomcat 8 and configure it in your favorite IDE, run the application, and point your browser to
+**http://localhost:8080/springmvcjpa-demo**. You should see the list of user details in a table.
 
-Yay…We did it.
+Yay… We did it.
 
-**But wait..Isn’t it too much work to just show a list of user details pulled from a database table?
-Let us be honest and fair. All this configuration is not just for this one use-case. 
-This configuration is basis for rest of the application also.**
+**But wait... Isn’t it too much work to just show a list of user details pulled from a database table?
+Let us be honest and fair. All this configuration is not just for this one use case.
+This configuration is the basis for the rest of the application also.**
 
-**But again, this is too much of work to do if you want to quickly get up and running. 
-Another problem with it is, assume you want to develop another SpringMVC application with similar technical stack?**
+**But again, this is too much work to do if you want to get up and running quickly.
+Another problem with it is, assume you want to develop another Spring MVC application with a similar technical stack.**
 
 **Well, you copy-paste the configuration and tweak it. Right? But remember one thing: if you have to do the same thing again and again,
 you should find an automated way to do it.**
 
 Apart from writing the same configuration again and again, do you see any other problems here?
 
-**Well, let me list our what are the problems I am seeing here.**
+**Well, let me list what problems I am seeing here.**
 
-  * You need to hunt for all the **compatible libraries** for the specific Spring version and configure them.
-  * 95% of the times we configure the **DataSource**, **EntitymanagerFactory**, **TransactionManager** etc beans in the same way. Wouldn’t it be great if Spring can do it for me automatically.
-  * Similarly we configure SpringMVC beans like **ViewResolver**, **MessageSource** etc in the same way most of the times.
+*   You need to hunt for all the **compatible libraries** for the specific Spring version and configure them.
+*   95% of the time, we configure the **DataSource**, **EntityManagerFactory**, **TransactionManager**, etc., beans in the same way. Wouldn’t it be great if Spring could do it for me automatically?
+*   Similarly, we configure Spring MVC beans like **ViewResolver**, **MessageSource**, etc., in the same way most of the time.
 
-> If Spring can automatically do it for me that would be awesome!!!.
+> If Spring can automatically do it for me, that would be awesome!
 
-Imagine, what if Spring is capable of configuring beans automatically? 
-What if you can customize the automatic configuration using simple customizable properties?
-For example, instead of mapping DispatcherServlet url-pattern to “/” you want to map it to “/app/”. 
-Instead of putting thymeleaf views in “/WEB-INF/views” folder you may want to place them in “/WEB-INF/templates/” folder.
-So basically you want Spring to do things automatically but provide the flexibility to override the default configuration in a simpler way?
-Well, you are about to enter into the world of SpringBoot where your dreams come true!!!
+Imagine, what if Spring is capable of configuring beans automatically?
+What if you can customize the automatic configuration using simple, customizable properties?
+For example, instead of mapping the DispatcherServlet URL pattern to “/”, you want to map it to “/app/”.
+Instead of putting Thymeleaf views in the “/WEB-INF/views” folder, you may want to place them in the “/WEB-INF/templates/” folder.
+So basically, you want Spring to do things automatically but provide the flexibility to override the default configuration in a simpler way?
+Well, you are about to enter the world of Spring Boot, where your dreams come true!
 
 ## A quick taste of SpringBoot
-  
-Welcome to SpringBoot!. SpringBoot do what exactly you are looking for. It will do things automatically for you but allows you to override the defaults if you want to.
 
-Instead of explaining in theory I prefer to explain by example.
+Welcome to Spring Boot! Spring Boot does exactly what you are looking for. It will do things automatically for you but allows you to override the defaults if you want to.
 
-So let us implement the same application that we built earlier but this time using SpringBoot.
+Instead of explaining in theory, I prefer to explain by example.
 
-**Step 1: Create a Maven based SpringBoot Project**
+So let us implement the same application that we built earlier, but this time using Spring Boot.
+
+**Step 1: Create a Maven-based Spring Boot Project**
 
 Create a Maven project and configure the dependencies as follows:
 
@@ -649,7 +644,7 @@ Create a Maven project and configure the dependencies as follows:
 </project>
 ```
 
-Wow our **pom.xml** suddenly become so small!!.
+Wow, our **pom.xml** suddenly became so small!
 
 **Step 2: Configure datasource/JPA properties in application.properties in src/main/resources as follows.**
 
@@ -663,19 +658,19 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
-you can copy the same **data.sql** file into **src/main/resources** folder.
+You can copy the same **data.sql** file into the **src/main/resources** folder.
 
-**Step 3: Create a JPA Entity and Spring Data JPA Repository Interface for the entity.**
+**Step 3: Create a JPA Entity and a Spring Data JPA Repository Interface for the entity.**
 
-Create **User.java, UserRepository.java** and **HomeController.java** same as in **springmvc-jpa-demo** application.
+Create **User.java, UserRepository.java**, and **HomeController.java** the same as in the **springmvc-jpa-demo** application.
 
-**Step 4: Create Thymeleaf view to show list of users**
+**Step 4: Create a Thymeleaf view to show a list of users.**
 
-Copy **/WEB-INF/views/index.html** that we created in **springmvc-jpa-demo** application into **src/-main/resources/templates** folder in our new project.
+Copy **/WEB-INF/views/index.html** that we created in the **springmvc-jpa-demo** application into the **src/main/resources/templates** folder in our new project.
 
-**Step 5: Create SpringBoot EntryPoint Class.**
+**Step 5: Create a Spring Boot EntryPoint Class.**
 
-Create a Java class **Application.java** with main method as follows:
+Create a Java class, **Application.java**, with a `main` method as follows:
 
 ```java
 @SpringBootApplication
@@ -690,54 +685,53 @@ public class Application
 
 Now run **Application.java** as a Java Application and point your browser to **http://localhost:8080/**.
 
-You should see the list of users in table format. Coool!!!
+You should see the list of users in table format. Cool!
 
-Ok ok, I hear you are shouting “What is going on???”.
+OK, OK, I hear you shouting, “What is going on???”
 
 Let me explain what just happened.
 
-**1. Easy dependency Management**
+**1. Easy Dependency Management**
 
-  * First thing to observe is we are using some dependencies named like **spring-boot-starter-***.
-  
-    Remember I said “95% of the times I use same configuration”. So when you add **springboot-starter-web** dependency by default it will pull all the commonly used libraries while developing Spring MVC applications such as **spring-webmvc, jackson-json, validation-api** and **tomcat**.
-  * We have added **spring-boot-starter-data-jpa** dependency. This pulls all the **spring-data-jpa** dependencies and also adds **Hibernate** libraries because majority of the applications use Hibernate as JPA implementation.
+*   The first thing to observe is that we are using some dependencies named like **spring-boot-starter-\***.
 
-**2. Auto Configuration**
+    Remember I said, “95% of the time, I use the same configuration.” So when you add the **springboot-starter-web** dependency, by default, it will pull all the commonly used libraries while developing Spring MVC applications, such as **spring-webmvc, jackson-json, validation-api**, and **tomcat**.
+*   We have added the **spring-boot-starter-data-jpa** dependency. This pulls all the **spring-data-jpa** dependencies and also adds **Hibernate** libraries because the majority of applications use Hibernate as the JPA implementation.
 
-  * Not only the **spring-boot-starter-web** adds all these libraries but also configures the commonly registered beans like **DispatcherServlet, ResourceHandlers, MessageSource** etc beans with sensible defaults.
-  * We also added **spring-boot-starter-thymeleaf** which not only adds the thymeleaf library dependencies but also configures **ThymeleafViewResolver** beans as well automatically.
-  * We haven’t defined any of the **DataSource, EntityManagerFactory, TransactionManager** etc beans but they are automatically gets created. **How?** 
-  
-  If we have any in-memory database drivers like **H2** or **HSQL** in our classpath then SpringBoot will automatically creates an in-memory **DataSource** and then registers **EntityManagerFactory, TransactionManager** beans automatically with sensible defaults.But we are using MySQL, so we need to explicitly provide MySQL connection details. We have configured those MySQL connection details in **application.properties** file and SpringBoot creates a **DataSource** using these properties.
+**2. Auto-Configuration**
+
+*   Not only does **spring-boot-starter-web** add all these libraries, but it also configures the commonly registered beans like **DispatcherServlet, ResourceHandlers, MessageSource**, etc., with sensible defaults.
+*   We also added **spring-boot-starter-thymeleaf**, which not only adds the Thymeleaf library dependencies but also configures **ThymeleafViewResolver** beans automatically.
+*   We haven’t defined any of the **DataSource, EntityManagerFactory, TransactionManager**, etc., beans, but they are automatically created. **How?**
+
+    If we have any in-memory database drivers like **H2** or **HSQL** in our classpath, then Spring Boot will automatically create an in-memory **DataSource** and then register **EntityManagerFactory, TransactionManager** beans automatically with sensible defaults. But we are using MySQL, so we need to explicitly provide MySQL connection details. We have configured those MySQL connection details in the **application.properties** file, and Spring Boot creates a **DataSource** using these properties.
 
 **3. Embedded Servlet Container Support**
 
-The most important and surprising thing is we have created a simple Java class annotated with some magical annotation **@SpringBootApplication** having a main method and by running that main we are able to run the application and access it at **http://localhost:8080/**.
+The most important and surprising thing is that we have created a simple Java class annotated with a magical annotation, **@SpringBootApplication**, having a `main` method, and by running that `main`, we are able to run the application and access it at **http://localhost:8080/**.
 
-**Where is the servlet container comes from?**
-  
-We have added **spring-boot-starter-web** which pull the **spring-boot-starter-tomcat** automatically and when we run the main() method it started tomcat as an **embedded container** so that we don’t have to deploy our application on any externally installed tomcat server.
+**Where does the servlet container come from?**
 
-By the way have you observe that our packaging type in **pom.xml** is **‘jar’ not ‘war’**. Wonderful!
+We have added **spring-boot-starter-web**, which pulls **spring-boot-starter-tomcat** automatically, and when we run the `main()` method, it starts Tomcat as an **embedded container** so that we don’t have to deploy our application on any externally installed Tomcat server.
 
-**Ok, but what if I want to use Jetty server instead of tomcat?**
-  
-Simple, exclude **spring-bootstarter-tomcat** from **spring-boot-starter-web** and include **spring-boot-starter-jetty**.
+By the way, have you observed that our packaging type in **pom.xml** is **‘jar’**, not **‘war’**? Wonderful!
+
+**OK, but what if I want to use the Jetty server instead of Tomcat?**
+
+Simple, exclude **spring-boot-starter-tomcat** from **spring-boot-starter-web** and include **spring-boot-starter-jetty**.
 
 That’s it.
-  
-But, this looks all magical!!!
 
-I can imagine what you are thinking. You are thinking like SpringBoot looks cool and it is doing lot of things automatically for me. But still I am not fully understand how it is all really working behind the scenes. Right?
+But this looks all magical!
 
-I can understand. Watching magic show is fun normally, but not in Software Development. Don’t worry, we will be looking at each of those things and explain in-detail how things are happening behind the scenes in future articles. But I don’t want to overwhelm you by dumping everything on to your hear right now in this article.
+I can imagine what you are thinking. You are thinking that Spring Boot looks cool and it is doing a lot of things automatically for me. But I still don't fully understand how it is all really working behind the scenes. Right?
+
+I can understand. Watching a magic show is fun normally, but not in Software Development. Don’t worry, we will be looking at each of those things and explaining in detail how things are happening behind the scenes in future articles. But I don’t want to overwhelm you by dumping everything on your head right now in this article.
 
 ### Summary
 
-In this article we had a quick overview of various Spring configuration styles and understand the complexity of configuring Spring applications. Also, we had a quick look at SpringBoot by creating a simple web application.
+In this article, we had a quick overview of various Spring configuration styles and understood the complexity of configuring Spring applications. Also, we had a quick look at Spring Boot by creating a simple web application.
 
-In next article we will deep dive into SpringBoot and understand how it works.
+In the next article, we will deep dive into Spring Boot and understand how it works.
 
 [How SpringBoot AutoConfiguration Works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
-
