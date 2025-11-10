@@ -23,12 +23,12 @@ are a common place to interact with people across the globe.
 <!--more-->
 
 No matter how skilled you are, you will need help from others.
-It is important to learn how to ask for help in a polite and professional manner 
-so that you may have a better chance of getting help.
+It is important to learn how to ask for help in a polite and professional manner
+so that you have a better chance of getting help.
 
 I occasionally get emails and DMs on Twitter and LinkedIn asking for some technical help.
-Most of them are polite and very professional. 
-But once in a while I get requests in such a way that I wonder, don't they even know how to ask for help??!!! 
+Most of them are polite and very professional.
+But once in a while, I get requests in such a way that I wonder, don't they even know how to ask for help??!!! 
 When I receive requests for help, I don't look for polished English.
 But I look for the right attitude and some basic manners.
 
@@ -50,7 +50,7 @@ Im getting an error in Spring Security. plz help, its urgent.
 
 First, looking at the title "hi" I don't know whether it is a genuine email or a spam mail trying to sell viagra pills.
 
-Second, nobody has time to come up with a questionnaire asking for more details about what you are working on, what is the usecase, what is the Excception you are getting, etc.
+Second, nobody has time to come up with a questionnaire asking for more details about what you are working on, what is the use case, what is the Exception you are getting, etc.
 You are supposed to provide that.
 
 **Example 2**
@@ -85,13 +85,13 @@ Make more in-depth videos and publish them regularly.
 This is better than previous examples, but can be improved.
 
 **The phrase "I need more in-depth videos" is very vague.** Are you looking for something specific?
-Any specific complex usecase you have in mind. 
+Any specific complex use case you have in mind? 
 Giving more details might help them plan for the videos covering advanced concepts.
 
 Second, using a simple word **"Please"** would go a long way.
 
 The sentence **"Make more in-depth videos and publish them regularly"** sounds like you are passing an order.
-Instead, write **"Could you please make videos covering those advanced usecases. 
+Instead, write **"Could you please make videos covering those advanced use cases. 
 That would be really helpful. Looking forward to more videos in this series"**.
 
 **Example 4**
@@ -160,7 +160,7 @@ I am facing a problem, and I am unable to figure out what is the root cause of i
 
 **[Explain what problem you are facing]**
 
-Here is the usecase I am implementing: **[Usecase description here]**
+Here is the use case I am implementing: **[Use case description here]**
 
 This is how I configured the application: **[Key configuration relevant to the problem]**
 

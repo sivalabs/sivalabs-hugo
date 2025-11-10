@@ -19,15 +19,15 @@ aliases:
 
 I came across [NotebookLM](https://notebooklm.google/) from my social media feed, and it looks interesting.
 
-With NotebookLM, you can upload documents, videos, web urls and let the AI agents talk about the uploaded material.
+With NotebookLM, you can upload documents, videos, web URLs and let the AI agents talk about the uploaded material.
 That sounds intriguing.
 
-Recently I wrote an article about software complexity and shared my view point.
+Recently I wrote an article about software complexity and shared my viewpoint.
 Many people appreciated it and some people didn't. That is fine to have different opinions.
 
 <!--more-->
 
-I thought, lets see how NotebookLM interprets what I said.
+I thought, let's see how NotebookLM interprets what I said.
 
 So, I went to https://notebooklm.google/ and used the Webpage URL of my article
 **Is Software Development Hard? Or, We are making it complicated?** (https://www.sivaprasadreddy.com/is-software-development-hard/)

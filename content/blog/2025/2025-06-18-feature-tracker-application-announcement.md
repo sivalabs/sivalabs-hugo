@@ -76,7 +76,7 @@ All the code is available at https://github.com/feature-tracker.
 
 This release includes:
 
-* Initial setup of keyclaok, config-server, api-gateway
+* Initial setup of keycloak, config-server, api-gateway
 * Initial setup of feature-service, user-service, notification-service
 * Initial setup of Angular Frontend
 

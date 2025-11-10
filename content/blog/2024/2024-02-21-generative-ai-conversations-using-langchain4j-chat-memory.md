@@ -213,10 +213,10 @@ Prompt prompt = PromptTemplate
                     .apply(Map.of("name","Quentin Tarantino"));
 ```
 
-PromptTemplates provides many other features, and we will explore them in the future articles.
+PromptTemplates provides many other features, and we will explore them in future articles.
 
 ## Manually adding messages to ChatMemory
-You can also manually add messages to **ChatMemory** without using **ConversationalChain**, 
+You can also manually add messages to **ChatMemory** without using **ConversationalChain**. 
 
 ```java
 ChatLanguageModel model = OpenAiChatModel.withApiKey(openAiKey);

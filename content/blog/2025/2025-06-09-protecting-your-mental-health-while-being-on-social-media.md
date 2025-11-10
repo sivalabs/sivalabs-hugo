@@ -59,7 +59,7 @@ We usually get into these debates to defend something we believe in, and we may 
 
 > Remember, for most people these debates are nothing but a popcorn time.
 
-## No everyone deserves a reply
+## Not everyone deserves a reply
 Every tweet/post/message has context, but it can be lost or misread.
 
 If someone asks genuine questions to understand your point, feel free to explain.

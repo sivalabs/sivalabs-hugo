@@ -18,7 +18,7 @@ aliases:
   - /thymeleaf-layouts-using-fragment-expressions
 ---
 
-Typically, in Spring Boot + Thyemleaf applications, 
+Typically, in Spring Boot + Thymeleaf applications, 
 we use [thymeleaf-layout-dialect](https://github.com/ultraq/thymeleaf-layout-dialect) 
 to define the common layout of the web pages and it works fine. 
 
@@ -178,7 +178,7 @@ class DemoController {
 First, let's verify that the application is working fine without any issues.
 Run the Spring Boot application and access the home page at `http://localhost:8080/`.
 
-If you are using Apple MacBook M1/M2/M3, then you can use `dashaun/builder:tiny` builder to support ARM64 architecture.
+If you are using an Apple MacBook M1/M2/M3, then you can use the `dashaun/builder:tiny` builder to support ARM64 architecture.
 
 ```xml
 <plugin>

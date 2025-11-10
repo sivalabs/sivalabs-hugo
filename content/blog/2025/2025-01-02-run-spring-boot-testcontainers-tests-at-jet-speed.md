@@ -335,7 +335,7 @@ Now if you run all the tests from console using **./mvnw test** you will see out
 
 **There are few problems with this approach:**
 
-* We are duplicating the container definition inn each class. If we need to upgrade postgresql container version to a newer version, you will need to update in a lot of places.
+* We are duplicating the container definition in each class. If we need to upgrade postgresql container version to a newer version, you will need to update in a lot of places.
 * If you search for **'Creating container for image: postgres:17'**, you will notice **four** occurrences, meaning each test class spun up a new postgresql docker container.
   As the project grows, there could be 100's of repositories and controllers.
   If a new container is started for every test class, then the test execution will take a very long time.

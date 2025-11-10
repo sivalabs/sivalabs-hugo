@@ -24,21 +24,21 @@ You can fork it, customize it, deploy on your infrastructure and use it to gener
 
 <!--more-->
 
-The next question would be what kind of customizations I can do? Why should I bother to host it myself?
+The next question would be, what kind of customizations can I do? Why should I bother to host it myself?
 
 Imagine you are working for a large enterprise organization that uses Spring Boot for building various applications.
 To improve developer productivity, you might have created your own spring-boot starters that provide your domain-specific functionality.
 Now, you may want to make those custom starters available in the Spring Initializr.
 This is where you can customize the Spring Initializr to make those custom starters available in the starter list.
-This is one of the usecase only, but you can customize other aspects of code generation as you see fit for your needs.
+This is only one use case, but you can customize other aspects of code generation as you see fit for your needs.
 
 Let me demonstrate how you can customize the Spring Initializr to add a new dependency support.
 While building Spring Boot applications, I often use [RestAssured](https://rest-assured.io/) for testing REST APIs.
 Let's customize the Spring Initializr to add RestAssured dependency support.
 
-## Run Spring Initializer Locally
+## Run Spring Initializr Locally
 
-1. Clone start.spring.io GitHub repository
+1. Clone the start.spring.io GitHub repository
     ```shell
     $ git clone https://github.com/spring-io/start.spring.io.git
     ```
@@ -48,18 +48,18 @@ Let's customize the Spring Initializr to add RestAssured dependency support.
     $ cd start-site
     $ ../mvnw spring-boot:run
     ```
-3. Now you should be able to access locally running Spring Initializer at [http://localhost:8080](http://localhost:8080).
+3. Now you should be able to access the locally running Spring Initializr at [http://localhost:8080](http://localhost:8080).
 You can generate a Spring Boot application using this local service just like you would with https://start.spring.io.
 
 {{< box warning >}}
-**Slow Response for first requests**
+**Slow Response for First Requests**
 
-When you run the Spring Initializer locally and try to generate the application, for the first time
+When you run the Spring Initializr locally and try to generate the application for the first time,
 it may take some time (10+ seconds). From the next time onwards, it will be faster.
 {{< /box >}}
 
 ## Add RestAssured Dependency Support
-All the dependencies(starters) that we see when we click on **ADD DEPENDENCIES** button 
+All the dependencies (starters) that we see when we click on the **ADD DEPENDENCIES** button
 are configured in the **start-site/src/main/resources/application.yml** file.
 
 Now, let's add the following **RestAssured** dependency configuration under **Testing** group after **Testcontainers** configuration.
@@ -123,8 +123,8 @@ then your build file should have the **RestAssured** dependency added.
 testImplementation 'io.rest-assured:rest-assured'
 ```
 
-## Using Custom Spring Initializr from IntelliJ IDEA Ultimate Edition.
-IntelliJ IDEA Ultimate Edition provides [extensive support for Spring Boot](https://www.jetbrains.com/idea/spring/) including a dedicated project wizard.
+## Using Custom Spring Initializr from IntelliJ IDEA Ultimate Edition
+IntelliJ IDEA Ultimate Edition provides [extensive support for Spring Boot](https://www.jetbrains.com/idea/spring/), including a dedicated project wizard.
 IntelliJ IDEA under the hood uses https://start.spring.io to create Spring Boot applications.
 We can customize the default **Server URL** to **http://localhost:8080**.
 

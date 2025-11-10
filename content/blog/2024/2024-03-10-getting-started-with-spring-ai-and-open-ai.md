@@ -38,8 +38,8 @@ You can find the sample code for this article in the [GitHub repository](https:/
 {{< /box >}}
 
 ## Introduction to Open AI and Spring AI
-ChatGPT took the world by storm when it was released by OpenAI. 
-It was the first time that a language model was able to generate human-like responses to prompts. 
+ChatGPT took the world by storm when it was released by OpenAI.
+It was the first time a language model was able to generate human-like responses to prompts. 
 OpenAI has since released several other models, including DALL-E, which can generate images from textual prompts.
 
 [Spring AI](https://spring.io/projects/spring-ai) is a Java library that provides a simple and easy-to-use interface to interact with LLM models.
@@ -50,7 +50,7 @@ In this article, we are going to explore how to interact with Open AI using Spri
 
 First, we need to create an account in OpenAI and get the API key.
 * Go to [OpenAI Platform](https://platform.openai.com/) and create an account.
-* In the Dashboard, click on the **API Keys** from the left navigation menu and create a new API key.
+* In the Dashboard, click on **API Keys** from the left navigation menu and create a new API key.
 
 > **If you are creating a new account, you will be granted some free credits to use the OpenAI APIs.
 Otherwise, you need to buy credits to use the OpenAI APIs.**

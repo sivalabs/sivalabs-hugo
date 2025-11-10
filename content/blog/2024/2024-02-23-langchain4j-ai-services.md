@@ -53,7 +53,7 @@ You can check out the other articles in this series:
 * [Part 4: LangChain4j Retrieval-Augmented Generation (RAG) Tutorial]({{< relref "2024-02-26-langchain4j-rag.md" >}})
 {{< /box >}}
 
-So far we have seen asking questions using **chatLanguageModel.generate(question)** method which returns response as **String**.
+So far we have seen asking questions using the **chatLanguageModel.generate(question)** method which returns a response as a **String**.
 But, using **AiServices**, we can create a Java interface that takes input and returns output in a specific format.
 
 ## Using AiServices to interact with LLMs
@@ -152,7 +152,7 @@ But the point is, you can use **@SystemMessage** to tell the AI model about the 
 You can also use both **@UserMessage** and **@SystemMessage** on the same method.
 
 ## Summarizing the given text
-A good usecase for Generative AI is analyzing the large text and summarizing it.
+A good use case for Generative AI is analyzing large text and summarizing it.
 Let's see how we can summarize the given text using AiServices.
 
 ```java

@@ -47,7 +47,7 @@ Once installed, you can start Ollama and run any available [Models](https://olla
 You can perform various actions using `ollama` as follows:
 
 ```shell
-$ ollama list // <- to list downloded models
+$ ollama list // <- to list downloaded models
 $ ollama ps // <- to list running models
 $ ollama run <model> // <- to download and run the model
 $ ollama show llama3.2 // <- to show information about llama3.2 model

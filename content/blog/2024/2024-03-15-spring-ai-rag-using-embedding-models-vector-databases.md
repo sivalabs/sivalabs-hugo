@@ -39,8 +39,8 @@ You can find the sample code for this article in the [GitHub repository](https:/
 
 {{< /box >}}
 
-Large Language Models(LLMs) like OpenAI, Azure Open AI, Google Vertex, etc are 
-trained on large datasets. But those models are not trained on your private data, 
+Large Language Models (LLMs) like OpenAI, Azure Open AI, Google Vertex, etc. are
+trained on large datasets. But those models are not trained on your private data,
 so they may not be able to answer questions specific to your domain.
 But training a model on your private data may be expensive and time-consuming.
 So, how can we use these LLMs to answer questions specific to our domain?
@@ -179,8 +179,8 @@ class MyComponent {
 }
 ```
 
-In the above code, we are adding the Documents to the VectorStore, 
-which internally converts the documents into embeddings using the EmbeddingClient 
+In the above code, we are adding the Documents to the VectorStore,
+which internally converts the documents into embeddings using the EmbeddingClient
 and stores them in the Vector Database.
 
 We are then querying the VectorStore using natural language and retrieving relevant data.

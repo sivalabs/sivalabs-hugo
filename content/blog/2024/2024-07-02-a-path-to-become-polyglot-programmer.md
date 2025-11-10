@@ -23,7 +23,7 @@ One question that often pops up is, **should I become a Generalist or a Speciali
 
 <!--more-->
 
-**Personally, I highly recommend to be a generalist at the beginning of your career 
+**Personally, I highly recommend being a generalist at the beginning of your career
 so that you can get some experience in building software end-to-end.
 Then you can choose your most interesting area to specialize in.**
 
@@ -63,7 +63,7 @@ I have come to know about [RealWorld](https://github.com/gothinkster/realworld) 
 
 > "The mother of all demo apps" — Exemplary fullstack Medium.com clone powered by React, Angular, Node, Django, and many more.
 
-I use a similar approach to learning, but with a trimmed down version of the application called [DevZone](https://github.com/fullstack-devzone/fullstack-devzone)
+I use a similar approach to learning, but with a trimmed-down version of the application called [DevZone](https://github.com/fullstack-devzone/fullstack-devzone)
 
 You can find what is the DevZone application, its features and the API endpoint requirements in this [repository](https://github.com/fullstack-devzone/fullstack-devzone).
 
