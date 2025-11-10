@@ -162,8 +162,8 @@ and then override those values using Environment Variables if required.
 Spring Boot support [Relaxed Binding](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config.typesafe-configuration-properties.relaxed-binding)
 which allows us to use environment variables with capitalized variable names separated with underscores follows:
 
-* The **spring.datasource.url** property value can be overriden by environment variable **SPRING_DATASOURCE_URL**.
-* The **app.jwt.expiryDuration** property value can be overriden by environment variable **APP_JWT_EXPIRY_DURATION**.
+* The **spring.datasource.url** property value can be overridden by environment variable **SPRING_DATASOURCE_URL**.
+* The **app.jwt.expiryDuration** property value can be overridden by environment variable **APP_JWT_EXPIRY_DURATION**.
 
 ## How to use the configured properties from application?
 There are multiple ways we can use the configured properties values.
@@ -236,7 +236,7 @@ class MyService {
 We have used Spring property reference syntax **@Value("${property.name}")** to inject the configured value.
 Optionally, we can also specify a default value using **@Value("${property.name:defaultValue}")** syntax.
 
-You can also inject the property value using Field Injection, by highly discouraged.
+You can also inject the property value using Field Injection, but it is highly discouraged.
 
 ```java
 @Service

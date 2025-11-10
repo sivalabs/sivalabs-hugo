@@ -89,8 +89,8 @@ spring.datasource.password=${DB_PASSWORD}
 ```
 
 ## Profile specific configuration using Configuration classes
-Profiles support not only limited to configuring properties.
-We can also use Profiles to register beans in Spring Configuration classes a follows:
+Profiles support is not only limited to configuring properties.
+We can also use Profiles to register beans in Spring Configuration classes as follows:
 
 ```java
 @Configuration

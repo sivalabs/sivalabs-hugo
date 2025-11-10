@@ -59,7 +59,7 @@ public class InvalidBookmarkUrlException extends RuntimeException {
 ```
 
 But most likely, you would like to return a customized error response body with an appropriate HTTP Status Code as the response.
-So, let's see what are the different approaches to handle the exceptions to handling Exceptions and returning error responses.
+So, let's see what are the different approaches to handling Exceptions and returning error responses.
 
 ## Different approaches to handling exceptions
 We can handle exceptions in different ways, and depending on your use-case, you can choose one of the approaches that fit best for you.

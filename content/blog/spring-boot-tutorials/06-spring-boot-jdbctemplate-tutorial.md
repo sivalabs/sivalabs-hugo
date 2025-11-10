@@ -41,7 +41,7 @@ Let's see how we can perform CRUD operations using **JdbcTemplate** with Postgre
 First, go to https://start.spring.io/ and create a Spring Boot application by selecting **JDBC API**, **PostgreSQL Driver** 
 and **Testcontainers** starters.
 
-Imagine we are a building a simple application to manage bookmarks.
+Imagine we are building a simple application to manage bookmarks.
 So, we are going to create **bookmarks** table with **id, title, url and created_at** columns.
 
 ## Initializing the Database

@@ -133,7 +133,7 @@ The following rules must be followed, otherwise Flyway will throw error while ap
 * There should be no duplicate version numbers in flyway migration script file names. 
    
    Ex: **V1__init.sql**, **V1__indexes.sql**. Here version number 1 is used multiple times.
-* Once a migration is applied, you should not change it's content.
+* Once a migration is applied, you should not change its content.
 {{< /box >}}
 
 ## Customizing Flyway Configuration

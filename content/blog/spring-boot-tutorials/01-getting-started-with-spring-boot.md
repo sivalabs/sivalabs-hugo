@@ -94,7 +94,7 @@ customization properties as well.
 
 ### Spring Ecosystem
 
-Spring Boot has a huge ecosystem of projects to support wide verity of application types.
+Spring Boot has a huge ecosystem of projects to support wide variety of application types.
 
 * **SpringMVC & Spring WebFlux**: You can build traditional web applications and REST APIs using **SpringMVC** or **Spring WebFlux**.
 * **Spring Data**: Spring Data provides high-level abstraction over ORM and NoSQL data access libraries so that you don't need to implement boilerplate CRUD operations again and again.
