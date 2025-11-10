@@ -84,7 +84,7 @@ Okay, enough talk. Let's get to business.
 
 ## Create SpringBoot Yeoman Generator
 
-There are some fundamental concepts to be understood which explained clearly in the documentation and repeating it over here is redundant.
+There are some fundamental concepts to be understood which are explained clearly in the documentation, and repeating them here is redundant.
 So, once again I strongly recommend going through this official documentation to get some basic understanding of concepts https://yeoman.io/authoring/index.html.
 
 Create a directory called **generator-springboot** and create the following files and directories inside generator-springboot as follows:
@@ -136,7 +136,7 @@ module.exports = class extends Generator {
 };
 ```
 
-During the development we can symlink to the npm package to run the generator.
+During development, we can symlink to the npm package to run the generator.
 From the root of your generator project (**generator-springboot/** folder), type:
 
 ```bash
@@ -151,7 +151,7 @@ generator-springboot> yo springboot
 
 It will execute both method1() and method2() and print the log statements on console.
 
-As we have not explicitly mentioned any priority to the methods method1() and method2() ran with default priority as follows:
+As we have not explicitly mentioned any priority, the methods method1() and method2() ran with default priority as follows:
 
 ```js
 "use strict";
@@ -221,7 +221,7 @@ Now let's create **pom.xml** template **pom.xml.tpl** and **src/main/java/com/my
     </dependencies>
 </project>
 ```
-Notice we have the placeholders with syntax **<%= variableName %>**.
+Notice that we have the placeholders with the syntax **<%= variableName %>**.
 
 **generators/app/templates/src/main/java/com/mycompany/demo/Application.java**
 
@@ -290,12 +290,12 @@ module.exports = class extends Generator {
 };
 ```
 
-As per the priorities order first **initializing()** block gets executed, then **prompting()** then **writing()** and finally **end()**.
-In **prompting()** we are asking user to provide application name and store it in **appName** variable for later use.
+As per the priorities order, first the **initializing()** block gets executed, then **prompting()**, then **writing()**, and finally **end()**.
+In **prompting()** we are asking the user to provide the application name and store it in the **appName** variable for later use.
 
-In **writing()** we are generating **pom.xml** file using the **pom.xml.tpl** template by replacing the **appName** placeholder with the user provided value. Also, we are copying the entire **src** directory.
+In **writing()** we are generating the **pom.xml** file using the **pom.xml.tpl** template by replacing the **appName** placeholder with the user-provided value. Also, we are copying the entire **src** directory.
 
-Instead of storing each user input in separate variable and passing them explicitly to replace placeholders we can store all the user provided input values in a JSON object and pass it as follows:
+Instead of storing each user input in a separate variable and passing them explicitly to replace placeholders, we can store all the user-provided input values in a JSON object and pass it as follows:
 
 ```js
 "use strict";
@@ -365,9 +365,9 @@ module.exports = class extends Generator {
 
 We have added one more prompt of type **list** to select the **appType**.
 
-Notice that we are initializing **configOptions** in the constructor and adding the user provided propmt answers into configOptions. Later we are simply passing the configOptions object which will contain all the placeholders.
+Notice that we are initializing **configOptions** in the constructor and adding the user-provided prompt answers into configOptions. Later we are simply passing the configOptions object, which will contain all the placeholders.
 
-Now, we can conditionally include either **webmvc** and **webflux** starter in **pom.xml.tpl** based on the user selection as follows:
+Now, we can conditionally include either **webmvc** or **webflux** starter in **pom.xml.tpl** based on the user selection as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -412,7 +412,7 @@ Now, we can conditionally include either **webmvc** and **webflux** starter in *
 </project>
 ```
 
-Over the time the number of inputs we need from user may grow. Instead of adding prompt questions in the same **index.js** file we can create separate **prompt.js** file and add all prompts in that file.
+Over time, the number of inputs we need from the user may grow. Instead of adding prompt questions in the same **index.js** file, we can create a separate **prompt.js** file and add all prompts in that file.
 
 Create **generators/app/prompt.js** as follows:
 
@@ -470,8 +470,8 @@ module.exports = class extends Generator {
 }
 ```
 
-Sometimes we might want to ask more questions based on previous prompt answer.
-We can conditionally prompt user using **when** as follows:
+Sometimes we might want to ask more questions based on a previous prompt answer.
+We can conditionally prompt the user using **when** as follows:
 
 ```js
 const prompts = [
@@ -509,9 +509,9 @@ const prompts = [
 
 ### Composing with Sub-generator
 
-We may want to add more and more features to our generator. Instead of adding all those features to a single generator we can create sub-generators and invoke them from main generator using **this.composeWith(...)**.
+We may want to add more and more features to our generator. Instead of adding all those features to a single generator, we can create sub-generators and invoke them from the main generator using **this.composeWith(...)**.
 
-Suppose we have main generator **app** and 3 other sub-generators **microservice**, **config-server** and **service-registry**.
+Suppose we have the main generator **app** and 3 other sub-generators: **microservice**, **config-server**, and **service-registry**.
 
 ```bash
 +- generator-springboot/
@@ -527,7 +527,7 @@ Suppose we have main generator **app** and 3 other sub-generators **microservice
          +- index.js
 ```
 
-Now from main app generator we can invoke sub-generators as follows:
+Now from the main app generator we can invoke sub-generators as follows:
 
 **generator-springboot/generators/app/index.js**
 
@@ -586,10 +586,10 @@ myservice> yo springboot:entity Product
 
 ### Using user configuration
 
-We can save the user selected options so that we can use them later while running sub-generators.
-For example, if user selected to use FlywayDB migration tool then while running Entity generator we can check which DB migration option is selected and generate DB migration scripts accordingly.
+We can save the user-selected options so that we can use them later while running sub-generators.
+For example, if the user selected to use the FlywayDB migration tool, then while running the Entity generator we can check which DB migration option is selected and generate DB migration scripts accordingly.
 
-We can save the user configuration in main generator as follows:
+We can save the user configuration in the main generator as follows:
 
 **generators/app/index.js**
 
@@ -646,7 +646,7 @@ module.exports = class extends Generator {
 }
 ```
 
-We can also pass **Arguments** and **Options** to the generator. For example for entity sub-generator we want to pass mandatory **entityName** as an argument and optional **table-name** as an argument.
+We can also pass **Arguments** and **Options** to the generator. For example, for the entity sub-generator we want to pass the mandatory **entityName** as an argument and the optional **table-name** as an option.
 
 **generators/entity/index.js**
 
@@ -678,7 +678,7 @@ module.exports = class extends Generator {
 }
 ```
 
-Now we can invoke entity sub-generator from within the generated application directory as follows:
+Now we can invoke the entity sub-generator from within the generated application directory as follows:
 
 ```bash
 myservice> yo springboot:entity Person --table-name persons
@@ -686,7 +686,7 @@ myservice> yo springboot:entity Person --table-name persons
 
 ### Testing Yeoman generator
 
-We can also unit test yeoman generators by using **mocha**, **yeoman-test** and **yeoman-assert** packages.
+We can also unit test Yeoman generators by using **mocha**, **yeoman-test**, and **yeoman-assert** packages.
 
 **package.json**
 
@@ -744,10 +744,10 @@ describe("SpringBoot Microservice Generator", () => {
   });
 });
 ```
-Of course here I am doing a simple sanity check of whether pom.xml is generated or not. We can test much more if we want to.
+Of course, here I am doing a simple sanity check of whether pom.xml is generated or not. We can test much more if we want to.
 
 Now we can run tests using `npm run test`.
 
 I think we have covered sufficient ground to start building a Yeoman generator.
 
-For reference please checkout my github repository https://github.com/sivaprasadreddy/generator-springboot.
+For reference, please check out my GitHub repository https://github.com/sivaprasadreddy/generator-springboot.

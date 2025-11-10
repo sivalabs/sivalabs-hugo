@@ -15,8 +15,8 @@ aliases:
   - /spring-boot-integration-testing-using-testcontainers-starter/
 ---
 
-One of the many reasons for huge popularity of Spring and SpringBoot is 
-it's great support for [Testing](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-testing).
+One of the many reasons for the huge popularity of Spring and SpringBoot is
+its great support for [Testing](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-testing).
 We can write unit tests using [Mockito](https://site.mockito.org/) without requiring any Spring features. 
 And, we can write Integration Tests using Spring testing support by creating Spring ApplicationContext. 
 
@@ -25,7 +25,7 @@ And, we can write Integration Tests using Spring testing support by creating Spr
 
 > Read [Guide to Testing SpringBoot Applications](https://sivalabs.in/spring-boot-testing/)
     
-While running integration tests we might need to interact with external services like relational databases, NoSQL datastores, Kafka etc. 
+While running integration tests, we might need to interact with external services like relational databases, NoSQL datastores, Kafka, etc. 
 We can spin up those external services as Docker containers and run tests against them.
 
 ## Testcontainers
@@ -72,12 +72,12 @@ class UserServiceIntegrationTest {
 }
 ```
 
-This is such a very common requirement in SpringBoot applications, so the community built 
-[Testcontainers SpringBoot starter](https://github.com/testcontainers/testcontainers-spring-boot) to make it more easy.
+This is such a common requirement in SpringBoot applications, so the community built
+[Testcontainers SpringBoot starter](https://github.com/testcontainers/testcontainers-spring-boot) to make it easier.
 
 ## Testcontainers SpringBoot starter
 The Testcontainers SpringBoot starter depends on **spring-cloud-starter**. 
-If you are NOT already using any SpringCloud starters in the application then include **spring-cloud-starter** as a **test** dependency.
+If you are NOT already using any SpringCloud starters in the application, then include **spring-cloud-starter** as a **test** dependency.
 
 ```xml
 <dependency>
@@ -87,8 +87,8 @@ If you are NOT already using any SpringCloud starters in the application then in
 </dependency>
 ```
 
-Now include data service library depending on what data service you need.
-For example if you want to use **Postgresql** docker container then add the following dependency:
+Now include the data service library depending on what data service you need.
+For example, if you want to use a **Postgresql** docker container, then add the following dependency:
 
 ```xml
 <dependency>
@@ -97,7 +97,7 @@ For example if you want to use **Postgresql** docker container then add the foll
     <scope>test</scope>
 </dependency>
 ```
-When you add the **embedded-postgresql** dependency then following properties will be added to the Environment:
+When you add the **embedded-postgresql** dependency, the following properties will be added to the Environment:
 
 * embedded.postgresql.port
 * embedded.postgresql.host
@@ -144,7 +144,7 @@ class UserServiceIntegrationTest {
 }
 ```
 
-We may want to use specific version of a docker image, then you can configure it as follows:
+We may want to use a specific version of a docker image, then you can configure it as follows:
 
 **src/test/resources/bootstrap-integration-test.properties**
 
@@ -153,8 +153,8 @@ embedded.postgresql.dockerImage=postgres:10.7
 embedded.postgresql.enabled=true
 ```
 
-The Testcontainers SpringBoot starter already provide support for most commonly used containers like 
-Postgresql, MariaDB, MongoDB, Redis, RabbitMQ, Kafka, Elasticsearch etc.
+The Testcontainers SpringBoot starter already provides support for most commonly used containers like
+Postgresql, MariaDB, MongoDB, Redis, RabbitMQ, Kafka, Elasticsearch, etc.
 
-To my surprise there is no direct support for MySQL as of now. But there is a simple workaround 
-for this as described here https://github.com/testcontainers/testcontainers-spring-boot/issues/151.
+To my surprise, there is no direct support for MySQL as of now. But there is a simple workaround
+for this as described here: https://github.com/testcontainers/testcontainers-spring-boot/issues/151.
