@@ -57,7 +57,7 @@ public record UserWithBookmarks(Long id, String name, String email, List<Bookmar
 ## Fetching One-to-Many Relationships using MULTISET value constructor
 
 We are going to use jOOQ's **MULTISET** value constructor to fetch the list of bookmarks created by the user.
-You can more details about **MULTISET value constructor** here: https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/multiset-value-constructor/.
+You can find more details about **MULTISET value constructor** here: https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/multiset-value-constructor/.
 
 Also, I highly recommend reading [How jOOQ 3.15’s New Multiset Operator Will Change How You Think About SQL](https://blog.jooq.org/jooq-3-15s-new-multiset-operator-will-change-how-you-think-about-sql/) article.
 

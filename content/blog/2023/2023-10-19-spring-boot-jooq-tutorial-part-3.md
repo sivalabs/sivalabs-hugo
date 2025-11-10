@@ -160,8 +160,8 @@ class UserRepositoryTest {
 If you run the test, it should pass.
 
 ## Using Implicit Join Path
-The jOOQ generated code provides a better way to fetch the One-to-One relationships using 
-the implicit join path to the associated table like **USERS.userPreferences().ID, USERS.userPreferences().THEME**, etc.
+The jOOQ generated code provides a better way to fetch the One-to-One relationships using
+the implicit join path to the associated table like **USERS.userPreferences().ID**, **USERS.userPreferences().THEME**, etc.
 
 Let's update our **findUserById()** method to use the implicit join path.
 

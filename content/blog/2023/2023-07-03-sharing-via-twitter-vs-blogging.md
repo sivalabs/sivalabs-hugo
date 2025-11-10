@@ -76,7 +76,7 @@ This approach feels much better than debating on Twitter without a shared contex
 So, I decided to write more on blog and share on Twitter for reach and engage in discussion only on blog comment section.
 
 I know people habituated to read small tweets and quickly reply (often knee-jerk reactions) than thinking through and engage in a meaningful conversations.
-But again they are not the people I/you may want to engage with, so losing those people is absolutely file.
+But again they are not the people I/you may want to engage with, so losing those people is absolutely fine.
 
 If you want to reach out to me, you can get in touch with me on https://sivalabs.in or sivalabs.in@gmail.com.
 

@@ -49,7 +49,7 @@ https://github.com/sivaprasadreddy/spring-boot-jooq-demo
 * Install any container runtime like **Docker Desktop**, **OrbStack**, etc.
  
 **NOTE:** **jOOQ** doesn't require Docker. 
-But, we will use to use [Testcontainers](https://testcontainers.com/) for jOOQ code generation and testing, which needs a container runtime.
+But, we will use [Testcontainers](https://testcontainers.com/) for jOOQ code generation and testing, which needs a container runtime.
 
 ## Sample Database
 We will use the following sample database for this tutorial.

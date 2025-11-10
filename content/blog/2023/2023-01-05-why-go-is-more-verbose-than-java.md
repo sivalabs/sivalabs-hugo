@@ -22,7 +22,7 @@ Few months ago I asked on Twitter "why you think Java is complex?" to understand
 
 {{< x user="sivalabs" id="1509905489911762950" >}}
 
-And, I got many responses(opinions, insights) 
+And, I got many responses (opinions, insights) 
 and I compiled all the responses into this blog post [My attempt to understand why people perceive Java as complex](https://www.sivalabs.in/my-attempt-to-understand-why-people-perceive-java-as-complex/).
 The intention is purely to understand the other's perspective, not to prove "Java is not verbose".
 

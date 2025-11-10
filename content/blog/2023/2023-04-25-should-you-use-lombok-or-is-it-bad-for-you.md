@@ -19,7 +19,7 @@ aliases:
 I'm a happy [Lombok](https://projectlombok.org/) library user. I found this library a decade ago, and I've been using it ever since.
 I don't remember facing any major problems with it so far.
 
-However, I see few people that I greatly admire and learn from, often complain that Lombok is very bad, and you should avoid it.
+However, I see a few people that I greatly admire and learn from often complain that Lombok is very bad, and you should avoid it.
 Obviously, I am curious to know what am I missing? I know a couple of scenarios where using Lombok brings some challenges.
 Apart from it, I really enjoy using the Lombok library.
 
@@ -42,7 +42,7 @@ Implementing **equals()** and **hashCode()** should be a conscious choice, and I
 with appropriate fields selected or writing it by hand.
 
 I'm well aware of the Java Records, and I use them when appropriate and use normal classes for other scenarios.
-Also, if the Lombok generated setters/getters/toString() etc is not what you want, and you can write your own and Lombok will backoff.
+Also, if the Lombok generated setters/getters/toString() etc is not what you want, you can write your own and Lombok will back off.
 
 * I never noticed any compilation slowness because of Lombok.
 * I never experienced CI pipelines becoming slower because of Lombok.

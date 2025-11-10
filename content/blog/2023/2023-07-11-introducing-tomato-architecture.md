@@ -46,8 +46,8 @@ But some people were saying this is **Anemic Domain Model** with the **Transacti
 Then, if I ask how to rewrite this following proper DDD, they won't give an answer. 
 They tell you to read one of the 3 books mentioned above.
 
-And, there is another group of people where if you ask how to apply DDD, then they suggest using 
-the whole pack of **CQRS**, **Even Driven Architecture**, **Event Sourcing**, etc.
+And, there is another group of people where if you ask how to apply DDD, then they suggest using
+the whole pack of **CQRS**, **Event Driven Architecture**, **Event Sourcing**, etc.
 
 One fine day, I realized that many people simply parrot what they read without understanding it.
 
@@ -80,7 +80,7 @@ Maybe this _"Testability using Unit Tests without depending on external services
 is a good thing for certain types of applications. But in my experience, most of the enterprise business applications 
 heavily depend on various external services like databases, FileSystem, Message Brokers, etc. 
 
-No matter how many 1000s of unit tests you have, you will not have confidence in your software 
+No matter how many 1,000s of unit tests you have, you will not have confidence in your software
 without having an Integration Test suite which actually talks to those real external dependencies.
 
 So, I would say introducing the abstractions/indirections so that you can "unit test" your application 

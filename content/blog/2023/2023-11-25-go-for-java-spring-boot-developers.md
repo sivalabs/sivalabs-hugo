@@ -44,8 +44,8 @@ Following are very good resources to learn the Go language basics.
 * [Go by Example](https://gobyexample.com/)
 
 ## What are we going to build?
-Go doesn't have a Spring Boot like framework. Usually, Go developers prefer to use the Standard Library and 
-add only the necessary libraries to build applications. We are going to follow the same in this tutorial.
+Go doesn't have a Spring Boot-like framework. Usually, Go developers prefer to use the Standard Library and
+add only the necessary libraries to build applications. We are going to follow the same approach in this tutorial.
 
 We are going to build a REST API in Go using the following libraries:
 
@@ -210,7 +210,7 @@ Let's add the **Gin** dependency to our project using the following command:
 $ go get -u github.com/gin-gonic/gin
 ```
 
-After running this command, gin module will be downloaded and added to the **go.mod** file.
+After running this command, the gin module will be downloaded and added to the **go.mod** file.
 
 Update the **main.go** file as follows:
 
@@ -240,12 +240,12 @@ Here we are using the **gin.Default()** to create a Gin router and attached a ha
 In the handler, we are returning a JSON response using the **c.JSON()** method.
 The **gin.H** is a shortcut for **map[string]interface{}**.
 
-Before starting the application, run **go mod tidy** command.
-This command adds any missing module dependencies used in the code but not declared in **go.mod** file.
+Before starting the application, run the **go mod tidy** command.
+This command adds any missing module dependencies used in the code but not declared in the **go.mod** file.
 If there are any unused dependencies, **go mod tidy** will remove those from **go.mod** accordingly.
 
 If you take a look at the **go.mod** file, you can see the dependencies added in two sections.
-The first **require** section includes the **direct dependencies** which are used by our application code.
+The first **require** section includes the **direct dependencies** that are used by our application code.
 The second **require** section includes the **indirect dependencies** used by the packages.
 
 It will also create or update **go.sum** file which contains checksums for the exact contents of each dependency at the time it is added to your module.
@@ -258,7 +258,7 @@ $ air
 
 ## Application Configuration Management using Viper
 Any non-trivial application has some configuration such as database connection details, API keys, etc.
-In Spring Boot this is a solved problem. You can configure your properties in **application.properties** or **application.yml** file 
+In Spring Boot, this is a solved problem. You can configure your properties in **application.properties** or **application.yml** file
 and bind them to your objects by annotating them with **@ConfigurationProperties**.
 
 In Go, there are many [3rd party libraries](https://awesome-go.com/configuration/) available for configuration management.
@@ -409,8 +409,8 @@ Now you need to restart the application manually for air to pick up the new conf
 Okay, we have the configuration management in place. Let's move on to the next topic.
 
 ## Logging using zap
-Again, in Spring Boot this is a solved problem.
-Spring Boot by default automatically configures the logging using **Slf4j** and **Logback**.
+Again, in Spring Boot, this is a solved problem.
+Spring Boot by default automatically configures logging using **Slf4j** and **Logback**.
 If you want to switch to a different logging implementation like log4j2, then it is simply a matter of excluding the default logging implementation and adding the new one.
 And, you can configure the logging using **application.properties** or **application.yml** file.
 
@@ -1145,8 +1145,8 @@ func applyDbMigrations(config AppConfig, logger *Logger) {
 
 We have loaded the migration scripts from **migrations** directory of **MigrationsFS** and applied them to the database.
 Note that we also need to import the **postgres** driver to use it with **golang-migrate**.
-By default, Go doesn't allow declaring unused variables or imports. 
-So, we have to use the **_** to import the package to avoid the error.
+By default, Go doesn't allow declaring unused variables or imports.
+So, we have to use **_** to import the package to avoid the error.
 
 Also, notice that we are passing **config.Logger** to the **GetDb()** function.
 So, we need to pass it from **app.go** file **NewApp(cfg config.AppConfig)** function as well.
@@ -1344,8 +1344,8 @@ If I have to compare Java/SpringBoot and Go, I would say like this:
 
 **Java/SpringBoot:**
 
-* Java has a very matured ecosystem with a lot of libraries and tools available.
-* Spring Boot is a opinionated framework, and it offers a lot of features out of the box.
+* Java has a very mature ecosystem with a lot of libraries and tools available.
+* Spring Boot is an opinionated framework, and it offers a lot of features out of the box.
 * Spring Boot greatly improves developer productivity by providing many commonly needed features out of the box.
 * Spring Boot has a steep learning curve, and it takes a lot of time to master it.
 * Spring Boot consumes more resources (CPU, Memory) compared to Go.
@@ -1367,7 +1367,7 @@ Go community prefers using only the necessary libraries and integrating them ins
 But it also results in a less cognitive load while working with Go code.**
 
 OTOH, once you understand the magic behind Spring Boot, it is super productive to build applications.
-Spring Boot already solved a lot of common application needs like **configuration management**, **logging**, **minoring**, etc.
+Spring Boot already solved a lot of common application needs like **configuration management**, **logging**, **monitoring**, etc.
 You can also find Spring Boot integrations with almost everything under the sun, which greatly helps to build applications quickly.
 
 ## Conclusion

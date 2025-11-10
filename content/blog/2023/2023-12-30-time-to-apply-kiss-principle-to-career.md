@@ -1,5 +1,5 @@
 ---
-title: Its time to apply KISS principle to career
+title: It's time to apply KISS principle to career
 author: Siva
 images:
   - /preview-images/kiss-principle-to-career.webp
@@ -74,7 +74,7 @@ In the process of retrospection, the following things came to my mind:
 
 * **Too much time on Twitter**:
   I really enjoyed interacting with people on Twitter, but I think I am spending too much time on Twitter.
-  Especially in the recent times, somehow people are becoming more judgemental and aggressive.
+  Especially in recent times, somehow people are becoming more judgmental and aggressive.
   After being on Twitter for several years, I learned not to engage with some known assholes, but occasionally I end up engaging with new people who turn out to be trolls or sad people venting their anger on random people on internet.
   In any case, I think I should reduce my time on Twitter.
 

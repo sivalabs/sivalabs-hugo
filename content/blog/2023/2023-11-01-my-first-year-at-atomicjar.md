@@ -16,7 +16,7 @@ aliases:
 ---
 
 I joined [AtomicJar](https://www.atomicjar.com/) as a **Developer Advocate** on 1st November 2022.
-Time flies when you are enjoying your work, isn't it.
+Time flies when you are enjoying your work, doesn't it?
 
 Before joining AtomicJar, I worked as a TechLead/Architect at various companies for more than 15 years.
 When I got the opportunity to join AtomicJar, I was very excited to work with my favourite technology [Testcontainers](https://www.testcontainers.org/).
@@ -58,7 +58,7 @@ Though there are specific roles (such as DevTeam, DevOps, UX), everyone is highl
   Not just "getting things done" type of education, but properly explaining the concepts and making me understand it better.
 
 I can go on and on about everyone, but I will stop here.
-I am surrounded by people who are very knowledgeable that inspires me to become better every day.
+I am surrounded by people who are very knowledgeable, which inspires me to become better every day.
 
 ## Work-Life Balance
 The last few years are challenging for many of us because of COVID, wars, etc.
