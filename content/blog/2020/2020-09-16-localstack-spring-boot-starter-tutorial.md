@@ -245,7 +245,7 @@ As we have enabled Localstack auto-configuration using **local** profile, we can
 
 `java –jar -Dspring.profiles.active=local app.jar`
 
-We can also run the application from IDE itself by setting environment variable SPRING_PROFILES_ACTIVE=local.
+We can also run the application from the IDE itself by setting environment variable SPRING_PROFILES_ACTIVE=local.
 
 ### 7. How to use with Spring Cloud AWS?
 We can use `localstack-spring-boot-starter` with Spring Cloud AWS as well. To run Spring Cloud AWS application locally we need to disable following properties:

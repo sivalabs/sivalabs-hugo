@@ -111,7 +111,7 @@ Let's build a simple REST API application using Spring Boot and explore some of 
 ## Creating a Spring Boot Application
 
 Spring Boot applications can be created either using [Spring Initializr](https://start.spring.io/) or
-[Spring Tool Suite](https://spring.io/tools) or [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/)
+[IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/) or [Spring Tool Suite](https://spring.io/tools)
 or [NetBeans IDE](https://netbeans.apache.org/) with [Spring Boot Plugin](https://github.com/AlexFalappa/nb-springboot).
 
 {{< box tip >}}
@@ -224,7 +224,7 @@ public class HelloWorldController {
 ```
 
 * **(1)** Declares the class as Spring Controller with request handler methods.
-* **(2)** Using Lomkok's **@Slf4j** annotation to automatically create a SLF4J Logger instance instead of manually creating as **private static final Logger log = LoggerFactory.getLogger(HelloWorldController.class);**
+* **(2)** Using Lombok's **@Slf4j** annotation to automatically create a SLF4J Logger instance instead of manually creating as **private static final Logger log = LoggerFactory.getLogger(HelloWorldController.class);**
 * **(3)** The **sayHello()** method is annotated with **@GetMapping("/api/hello")** indicating it as a request handler method for **HTTP GET /api/hello** URL.
 
 Let's configure the properties in **src/main/resources/application.properties** as follows:
@@ -256,7 +256,7 @@ public class SpringBootHelloWorldApplication {
 * **(1)** Explicitly enabling the configuration properties binding for **ApplicationProperties** class. If we have more such configuration-binding classes, we can list them all.
 * **(2)** Instead of explicitly specifying all the configuration-binding classes, we can use **@ConfigurationPropertiesScan** annotation to scan for all the classes that are annotated with **@ConfigurationProperties**.
 
-We can run the application from IDE by simply running the **main()** method in **SpringBootHelloWorldApplication**.
+We can run the application from the IDE by simply running the **main()** method in **SpringBootHelloWorldApplication**.
 
 ## Run application using Maven and Gradle
 Spring Boot Maven and Gradle plugins provide the ability to run the application without requiring to build the artifact(jar or war).

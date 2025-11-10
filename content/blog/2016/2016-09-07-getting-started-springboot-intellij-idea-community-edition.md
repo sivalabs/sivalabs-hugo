@@ -20,7 +20,7 @@ However, there is no provision in Intellij IDEA Community Edition to create Spri
 <!--more-->
 
 
-We can go to http://start.spring.io/ and generate the project and then import into our IDE. But it would be nice to be able to create the SpringBoot project from IDE itself.
+We can go to http://start.spring.io/ and generate the project and then import into our IDE. But it would be nice to be able to create the SpringBoot project from the IDE itself.
 
 One simple alternative I found to circumvent this problem is by using **Project Template support in IntellijIDEA**.
 

@@ -15,7 +15,7 @@ aliases:
   - /remote-debugging-spring-boot-application/
 ---
 
-We all know how to run SpringBoot application in debug mode from our favorite IDEs(Eclipse/IntellijIDEA etc) and debug the code.
+We all know how to run SpringBoot application in debug mode from our favorite IDEs(IntelliJ IDEA, Eclipse etc) and debug the code.
 Recently I had to debug a SpringBoot application which is running on a remote server. 
 
 There is already lot of information on the Internet on how to remote debug java applications, but some approaches didn't work for me.

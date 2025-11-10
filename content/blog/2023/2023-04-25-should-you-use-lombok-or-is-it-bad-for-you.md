@@ -38,7 +38,7 @@ Mostly, I use the following Lombok annotations:
 * **@Builder**
 
 I know there are features in Lombok like **@SneakyThrows**, **@EqualsAndHashCode** etc which I don't usually use.
-Implementing **equals()** and **hashCode()** should be a conscious choice, and I prefer either generating from IDE 
+Implementing **equals()** and **hashCode()** should be a conscious choice, and I prefer either generating from the IDE 
 with appropriate fields selected or writing it by hand.
 
 I'm well aware of the Java Records, and I use them when appropriate and use normal classes for other scenarios.

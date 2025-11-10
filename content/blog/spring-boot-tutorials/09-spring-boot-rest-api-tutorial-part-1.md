@@ -197,7 +197,7 @@ public class TestApplication {
 }
 ```
 
-We can start the application locally by running **TestApplication.java** from IDE or 
+We can start the application locally by running **TestApplication.java** from the IDE or 
 by running **./mvnw spring-boot:test-run** from the command-line.
 
 Now we have all the basic code setup ready to start implementing our API endpoints.

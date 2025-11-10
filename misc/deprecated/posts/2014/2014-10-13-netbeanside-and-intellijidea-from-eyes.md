@@ -60,7 +60,7 @@ Whenever I read about IntellijIDEA user experience, I always here 'wow', 'amazin
 **Pros:**
 
   * No random NullPointerException/IllegalArgumentException exception alerts.
-  * Everything can be done from IDE itself. Be it Working with Database, tinkering from Command Prompt, Maven/Gradle tasks execution, RestClient etc etc.
+  * Everything can be done from the IDE itself. Be it Working with Database, tinkering from Command Prompt, Maven/Gradle tasks execution, RestClient etc etc.
   * AutoCompletion support is just mind blowing. Type sort and Ctrl+Space twice showing sort methods from all Java classes. Wonderful.
   * Interaction with many Version Control Systems works smoothly.
   * Support for other IDE's key bindings.
@@ -71,7 +71,7 @@ Whenever I read about IntellijIDEA user experience, I always here 'wow', 'amazin
   * Project/Module style code organization is very different from other IDEs.
   * I terribly miss right clicking on a web project and choosing Run on Server. It took me 30 mins to figure out how to run a web application on IntellijIDEA. Please provide an option 'Run on Server' and open Edit Configuration window to choose the Server and other stuff.
 
-Actually, it is too early for me to say whether IntellijIDEA is best or not because still I am learning to do things in Intellij way. But I can clearly sense that IntellijIDEA is very addictive because of its Editing capabilities and 'Everything from IDE' experience. But the major issue is it is very costly and I am 100% sure that my employer won't pay for IDE though its great productivity booster.
+Actually, it is too early for me to say whether IntellijIDEA is best or not because still I am learning to do things in Intellij way. But I can clearly sense that IntellijIDEA is very addictive because of its Editing capabilities and 'Everything from the IDE' experience. But the major issue is it is very costly and I am 100% sure that my employer won't pay for IDE though its great productivity booster.
 
 I am actually considering to use IntellijIDEA Community Edition also because it has Java/Groovy/Maven/Gradle support. And SpringBoot can be run as a standalone Java program and no need of Server support.
 

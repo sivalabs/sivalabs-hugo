@@ -67,8 +67,8 @@ Let's take a look at how a newbie getting started with Java experience looks lik
 * Let me write a test. Google suggested to use **JUnit**.
 * How to use JUnit library? Again upon a bit of googling most of the articles showed using JUnit with **Maven** or **Gradle**.
 * What is Maven/Gradle? Okay, they are build tools. Let me install Maven/Gradle, done..cool.
-* How to create a Maven/Gradle project? Most of the tutorials are showing project creation using Eclipse or Intellij Idea. So now I need to install an IDE.
-* After creating a Maven/Gradle project from IDE it seems downloading half of the internet for my HelloWorld project...okay no problem..I have good internet connection.
+* How to create a Maven/Gradle project? Most of the tutorials are showing project creation using IntelliJ IDEA or Eclipse. So now I need to install an IDE.
+* After creating a Maven/Gradle project from the IDE it seems downloading half of the internet for my HelloWorld project...okay no problem..I have good internet connection.
 
 It's not as easy as it can be, but it's not so much terrible either. Also, many of these tasks are one time setup.
 However, there are some uncertainties, and gives an impression of Java needs complex setup and can't work with Java without heavy IDE setup.
