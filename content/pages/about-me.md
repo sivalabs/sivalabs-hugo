@@ -46,7 +46,7 @@ If you are looking for a trainer or freelancer for your next project, please con
 ### Publications
 I have written the following books:
 
-{{< figure src="/raw-images/apress-beginning-spring-boot-3.webp" alt="Beginning Spring Boot 3"
+{{< figure src="/images/beginning-spring-boot-3.webp" alt="Beginning Spring Boot 3"
 class="alignleft size-medium" width="250" height="200" >}}
 
 {{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"
