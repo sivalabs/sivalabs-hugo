@@ -81,7 +81,7 @@ body {
         radial-gradient(800px circle at 110% -10%, rgba(236, 72, 153, 0.25), transparent 60%),
         linear-gradient(180deg, #0b1020 0%, #0a0f1e 60%, #070b16 100%);
     color: #e5e7eb; /* Default light text on dark */
-    padding: 100px 0 100px;
+    padding: 25px 0 30px;
 }
 
 .profile-title {
