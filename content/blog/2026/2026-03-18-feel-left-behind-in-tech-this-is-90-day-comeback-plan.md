@@ -20,6 +20,8 @@ New frameworks. New tools. New expectations.
 
 And the thought creeps in: *"Have I fallen behind?"*
 
+<!--more-->
+
 Here's the truth most people won't tell you: **Your old tech stack isn't your biggest problem. Your approach to upskilling is.**
 
 You don't need to learn *everything*. You don't need to start from scratch. 

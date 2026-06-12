@@ -13,6 +13,8 @@ tags: ["Thoughts", "Career", "AI"]
 
 If you are feeling overwhelmed by the rapid pace of technological advancements, especially in the field of AI, know that you are not alone. 
 The AI landscape is evolving at an unbelievable speed, with new ideas and tools emerging every day. 
+<!--more-->
+
 This can be both exciting and daunting, as it challenges our understanding of what's possible and forces us to adapt quickly.
 
 You may encounter conflicting narratives: a CEO claims that in 9 months a 90% percentage of code 

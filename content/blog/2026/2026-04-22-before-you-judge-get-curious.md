@@ -15,6 +15,8 @@ A few years ago, I was working at a fintech company in Germany. Our business uni
 Our team — product owner, business analyst, developers, and QA — gathered at a location and ran brainstorming sessions. 
 Since we were also using the product ourselves, we were essentially both the builders and the end users.
 
+<!--more-->
+
 After a full day of discussions, we collectively came up with a list of features for the first MVP. 
 The BA took brief notes, and later, together with the developers, prepared JIRA cards for all those features. 
 We then expanded on the requirements to flesh out the use case details and added acceptance criteria. 
