@@ -1,5 +1,5 @@
 ---
-title: "Don't Pollute Spring Boot Main Entrypoint Class"
+title: "Don't Pollute Your Spring Boot Main Class"
 author: Siva
 images: ["/images/dont-pollute-springboot-main-class.webp"]
 type: post
@@ -7,14 +7,31 @@ draft: false
 date: 2026-06-16T04:59:17+05:30
 url: /dont-pollute-spring-boot-main-class
 toc: false
-categories: [SpringBoot]
+categories: ["SpringBoot"]
 tags: ["Java", "SpringBoot"]
 ---
-One common mistake Spring Boot application developers do is enabling features by adding **@EnableXXX** annotation on the main entrypoint class.
-In this article, let's explore why it is a bad practice and learn what is the recommended way.
+
+Most Spring Boot applications start with a beautifully boring main class.
+
+Then one day we need caching. We add `@EnableCaching`.
+
+Then we need async processing. We add `@EnableAsync`.
+
+Then scheduling. Then JPA auditing. Then maybe something else.
+
+Before we know it, the main class has become the place where every framework feature goes to live.
+
+At first glance, this feels harmless. The application starts. The feature works. Everybody moves on.
+
+This works great... until a slice test gets involved.
+
+Let's look at why adding every `@EnableXXX` annotation to the Spring Boot main class can make your tests more fragile, and what I prefer to do instead.
+
 <!--more-->
 
-In a Spring Boot application you usually have one main entrypoint class as follows:
+## The Main Class Should Be Boring
+
+In a typical Spring Boot application, the main class looks like this:
 
 ```java
 package dev.sivalabs.demo;
@@ -32,7 +49,11 @@ public class Application {
 }
 ```
 
-If you want to enable some features like caching, async processing, JPA Auditing, etc, then the quickest way to do is to add **@EnableXXX** annotations to the main entrypoint class.
+This class has one job: start the application.
+
+That is it.
+
+But the quickest way to enable many Spring features is to add an annotation directly here:
 
 ```java
 package dev.sivalabs.demo;
@@ -58,11 +79,26 @@ public class Application {
 }
 ```
 
-This seems to be working just fine. However, there are some problems lurking around.
+You will see this style in many projects. I have written this style too.
 
-Let's understand the problem with an example.
+And to be fair, it works.
 
-Let's build a very simple REST API endpoint using Spring Data JPA and H2.
+The problem is not that the application fails to start. The problem is that the main class is now carrying configuration for multiple technical concerns:
+
+* caching
+* async execution
+* scheduling
+* persistence auditing
+
+Those concerns may not all be needed in every Spring ApplicationContext you create.
+
+And tests create many different kinds of ApplicationContexts.
+
+## Here's Where The Trouble Starts
+
+Let's use a small example with Spring Data JPA auditing.
+
+Suppose we have a `User` entity with `createdAt` and `updatedAt` fields:
 
 ```java
 import jakarta.persistence.EntityListeners;
@@ -98,14 +134,16 @@ class User {
 }
 ```
 
-This is a JPA entity that is leveraging Spring Data JPA Auditing support by using **@CreatedDate** and **@LastModifiedDate**
+The entity uses Spring Data JPA auditing through `@CreatedDate` and `@LastModifiedDate`.
 
-Next, create Spring Data Repository and REST Controller.
+Then we create a repository:
 
 ```java
 interface UserRepository extends JpaRepository<User, Long> {
 }
 ```
+
+And a simple REST controller:
 
 ```java
 @RestController
@@ -125,9 +163,9 @@ class UserController {
 }
 ```
 
-We almost have everything except we need to enable Spring Data JPA Auditing support by using **@EnableJpaAuditing** on a Spring Configuration class.
+To make auditing work, we need to enable it using `@EnableJpaAuditing`.
 
-You can simply add **@EnableJpaAuditing** to the main entrypoint class, and it just works fine.
+The easy option is to put it on the main class:
 
 ```java
 @SpringBootApplication
@@ -141,7 +179,9 @@ public class Application {
 }
 ```
 
-Now, let's say we want to write a slice test to test the **UserController** as follows:
+Again, the application starts fine.
+
+But now let's write a focused test for the web layer:
 
 ```java
 @WebMvcTest(controllers = UserController.class)
@@ -164,9 +204,20 @@ class UserControllerTests {
 }
 ```
 
-The **@WebMvcTest** slice test annotation only loads the "web" layer components, and we have provided its dependency **UserRepository** using a Mock.
+`@WebMvcTest` is intentionally narrow. It loads the MVC layer, not the entire application.
 
-However, if you run this test, you will see the following error:
+That is exactly why we use it. We want to test request mapping, validation, JSON serialization, HTTP status codes, exception handling, and controller behavior without starting the database layer.
+
+We also provide the controller dependency using a mock:
+
+```java
+@MockitoBean
+UserRepository userRepository;
+```
+
+So, in theory, JPA should not matter here.
+
+But if `@EnableJpaAuditing` is sitting on the main class, the test can fail with an error like this:
 
 ```shell
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaAuditingHandler': Cannot resolve reference to bean 'jpaMappingContext' while setting constructor argument
@@ -178,11 +229,31 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 ....
 ```
 
-This error usually occurs when **@EnableJpaAuditing** is enabled, but Spring Data JPA's mapping infrastructure (**JpaMetamodelMappingContext**) is not available when the auditing bean is being created.
+This is the annoying part.
 
-When the **@EnableJpaAuditing** is added on the main entrypoint class itself, bootstrapping Spring ApplicationContext failed because JPA infrastructure is not loaded as we are using **@WebMvcTest**.
+We are testing a controller. We mocked the repository. We did not ask Spring to start JPA.
 
-The fix is simply moving **@EnableJpaAuditing** to its own Configuration class and removing it from the main entrypoint class.
+But JPA auditing still entered the room because we attached it to the main application configuration.
+
+## So What's Actually Going On?
+
+Spring Boot test slices like `@WebMvcTest` still need to find the application's boot configuration.
+
+In a normal project, that usually means the class annotated with `@SpringBootApplication`.
+
+If that class only says "this is my Spring Boot application", life is simple.
+
+But if that class also enables JPA auditing, scheduling, async processing, caching, or other infrastructure, those choices become part of the boot configuration that test slices have to deal with.
+
+In this specific case, `@EnableJpaAuditing` tries to create auditing infrastructure. That infrastructure expects JPA mapping support to be available. A web slice does not load the full JPA stack, so Spring ends up trying to create a persistence-related bean in a context where persistence was never supposed to exist.
+
+That is how you get a JPA error from a controller test.
+
+The framework is not being unreasonable. We gave it mixed signals.
+
+## Move Feature Configuration To Its Own Place
+
+The fix is simple: move `@EnableJpaAuditing` into a dedicated configuration class.
 
 ```java
 import org.springframework.context.annotation.Configuration;
@@ -195,7 +266,84 @@ public class PersistenceConfig {
 }
 ```
 
-Now run the test again and it should PASS.
+And keep the main class clean:
 
-The lesson is not to put all those **@EnableXXX** annotations on the main entrypoint class, instead create separate Configuration classes.
-This helps in keeping hte separation of concerns and also helps in writing clean tests loading only what is necessary.
+```java
+package dev.sivalabs.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+}
+```
+
+Now the application still enables JPA auditing during a normal application startup, because `PersistenceConfig` is part of component scanning.
+
+But the main class no longer forces every test slice to carry that persistence concern as part of the boot configuration.
+
+Run the `@WebMvcTest` again, and it should pass.
+
+## This Is Not Just About JPA Auditing
+
+JPA auditing is a good example because it fails loudly.
+
+But the same smell appears with other annotations too:
+
+```java
+@SpringBootApplication
+@EnableCaching
+@EnableAsync
+@EnableScheduling
+@EnableJpaAuditing
+public class Application {
+}
+```
+
+Each annotation may be perfectly valid.
+
+The question is: should it live on the main class?
+
+In most business applications, I prefer grouping these concerns into small configuration classes:
+
+```java
+@Configuration
+@EnableCaching
+class CacheConfig {
+}
+```
+
+```java
+@Configuration
+@EnableAsync
+class AsyncConfig {
+}
+```
+
+```java
+@Configuration
+@EnableScheduling
+class SchedulingConfig {
+}
+```
+
+```java
+@Configuration
+@EnableJpaAuditing
+class PersistenceConfig {
+}
+```
+
+This is not about creating configuration classes for the sake of architecture theater.
+
+It is about making each technical concern explicit, named, and easier to include or exclude when needed.
+
+The main class should be the front door of the application.
+
+Don't turn it into the storage room.
