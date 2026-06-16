@@ -1,5 +1,5 @@
 ---
-title: "Don't Pollute Your Spring Boot Main Class"
+title: "Don't Pollute Your Spring Boot Main EntryPoint Class"
 author: Siva
 images: ["/images/dont-pollute-springboot-main-class.webp"]
 type: post
