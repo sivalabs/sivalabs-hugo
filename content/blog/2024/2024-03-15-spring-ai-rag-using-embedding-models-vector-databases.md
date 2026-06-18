@@ -89,8 +89,8 @@ For example, if you want to use OpenAI's EmbeddingModel, you can add the followi
 ```xml
 <dependency>
     <groupId>org.springframework.ai</groupId>
-    <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-    <version>1.0.0-M1</version>
+    <artifactId>spring-ai-starter-model-openai</artifactId>
+    <version>2.0.0-M4</version>
 </dependency>
 ```
 
@@ -126,7 +126,7 @@ class MyComponent {
         EmbeddingRequest embeddingRequest =
                 new EmbeddingRequest(List.of("I like Spring Boot"),
                         OpenAiEmbeddingOptions.builder()
-                                .withModel("text-davinci-003")
+                                .model("text-embedding-3-small")
                                 .build());
         EmbeddingResponse embeddingResponse = embeddingModel.call(embeddingRequest);
         List<Double> embeddings3 = embeddingResponse.getResult().getOutput();
@@ -150,7 +150,7 @@ Let us see how to use **SimpleVectorStore** to store and retrieve embeddings.
 class AppConfig {
     @Bean
     VectorStore vectorStore(EmbeddingModel embeddingModel) {
-        return new SimpleVectorStore(embeddingModel);
+        return SimpleVectorStore.builder(embeddingModel).build();
     }
 }
 
@@ -170,17 +170,17 @@ class MyComponent {
         vectorStore.add(documents);
         
         // Retrieve embeddings
-        SearchRequest query = SearchRequest.query("Spring Boot").withTopK(2);
+        SearchRequest query = SearchRequest.builder().query("Spring Boot").topK(2).build();
         List<Document> similarDocuments = vectorStore.similaritySearch(query);
         String relevantData = similarDocuments.stream()
-                            .map(Document::getContent)
+                            .map(Document::getText)
                             .collect(Collectors.joining(System.lineSeparator()));
     }
 }
 ```
 
 In the above code, we are adding the Documents to the VectorStore,
-which internally converts the documents into embeddings using the EmbeddingClient
+which internally converts the documents into embeddings using the EmbeddingModel
 and stores them in the Vector Database.
 
 We are then querying the VectorStore using natural language and retrieving relevant data.
@@ -246,9 +246,9 @@ class RAGController {
     Person chatWithRag(@RequestParam String name) {
         // Querying the VectorStore using natural language looking for the information about a person.
         List<Document> similarDocuments = 
-                vectorStore.similaritySearch(SearchRequest.query(name).withTopK(2));
+                vectorStore.similaritySearch(SearchRequest.builder().query(name).topK(2).build());
         String information = similarDocuments.stream()
-                .map(Document::getContent)
+                .map(Document::getText)
                 .collect(Collectors.joining(System.lineSeparator()));
         
         // Constructing the systemMessage to indicate the AI model to use the passed information

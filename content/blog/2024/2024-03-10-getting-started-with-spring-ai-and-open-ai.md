@@ -96,7 +96,7 @@ We can configure the **ChatClient** to use OpenAI by providing the API key and o
 
 ```properties
 spring.ai.openai.api-key=${OPENAI_API_KEY}
-spring.ai.openai.chat.model=gpt-3.5-turbo
+spring.ai.openai.chat.model=gpt-4o-mini
 spring.ai.openai.chat.temperature=0.7
 ```
 
@@ -185,7 +185,7 @@ By using **SystemMessage**, we can define the role and provide additional contex
 In the previous examples, we get the response from LLMs as Strings.
 We can use **OutputConverters** to parse the response and extract the required information in the desired format.
 
-As of now, Spring AI provides the following type of **OutputConverters**:
+Spring AI provides the following type of **OutputConverters**:
 * **BeanOutputConverter** - To parse the response and convert into a Java Bean.
 * **MapOutputConverter** - To parse the response and convert into a Map.
 * **ListOutputConverter** - To parse the response and convert into a List.
