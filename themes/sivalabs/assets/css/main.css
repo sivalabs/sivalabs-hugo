@@ -1,5 +1,13 @@
 html {
+  box-sizing: border-box;
   min-height: 100%;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -9,10 +17,10 @@ body {
   flex-direction: column;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
-  margin: 0 auto;
-  max-width: 1180px;
+  margin: 0;
   min-height: 100vh;
-  padding: 0 1.5rem;
+  overflow-x: clip;
+  padding: 0;
 }
 
 a {
@@ -34,12 +42,12 @@ a:hover {
   border-bottom: 0;
   border-radius: 0;
   box-shadow: 0 14px 32px rgb(15 23 42 / 0.06);
-  margin-left: calc(50% - 50vw);
+  margin-left: calc(50% - 50svw);
   margin-top: 0;
   position: sticky;
   right: 0;
   top: 0;
-  width: 100vw;
+  width: 100svw;
   z-index: 20;
 }
 
@@ -144,8 +152,12 @@ a:hover {
   border-radius: 0 0 8px 8px;
   border-top: 0;
   box-shadow: 0 18px 36px rgb(15 23 42 / 0.06);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 0;
+  max-width: 1180px;
   padding: 3rem;
+  width: 100%;
 }
 
 .site-footer {
@@ -156,6 +168,9 @@ a:hover {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1180px;
+  width: 100%;
 }
 
 .site-footer p {
@@ -869,10 +884,6 @@ time {
 }
 
 @media (max-width: 640px) {
-  body {
-    padding: 0 1rem;
-  }
-
   .site-header {
     margin-top: 0;
   }
