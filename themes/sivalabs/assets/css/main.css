@@ -629,6 +629,21 @@ a:hover {
   color: #344054;
 }
 
+.about-profile-photo {
+  margin: 2rem 0;
+}
+
+.about-profile-photo img {
+  aspect-ratio: 1;
+  background: #dbeafe;
+  border: 1px solid #d1d5db;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  width: min(100%, 340px);
+}
+
 .article figure {
   margin: 2rem 0;
   max-width: 100%;
@@ -654,6 +669,16 @@ a:hover {
   border: 1px solid #e5e7eb;
   border-radius: 8px;
   overflow: hidden;
+}
+
+.book-card a {
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.book-card a:hover {
+  text-decoration: none;
 }
 
 .book-card img {

@@ -9,6 +9,15 @@
         <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
       {{ end }}
     </div>
+    {{ if eq .RelPermalink "/about/" }}
+      {{ with .Params.profile }}
+        {{ with .image }}
+          <div class="about-profile-photo">
+            <img src="{{ . }}" alt="{{ $.Params.profile.alt | default $.Title }}">
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
     {{ with index .Params.images 0 }}
       <img class="article__hero" src="{{ . }}" alt="">
     {{ end }}
@@ -17,13 +26,15 @@
       <div class="book-grid">
         {{ range . }}
           <article class="book-card">
-            {{ with .image }}
-              <img src="{{ . }}" alt="">
-            {{ end }}
-            <div class="book-card__body">
-              <h2>{{ .title }}</h2>
-              <p>{{ .description }}</p>
-            </div>
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+              {{ with .image }}
+                <img src="{{ . }}" alt="">
+              {{ end }}
+              <div class="book-card__body">
+                <h2>{{ .title }}</h2>
+                <p>{{ .description }}</p>
+              </div>
+            </a>
           </article>
         {{ end }}
       </div>

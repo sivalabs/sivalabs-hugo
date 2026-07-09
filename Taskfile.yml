@@ -7,4 +7,6 @@ tasks:
   dev:
     cmds:
       - npm run dev
-    #silent: true
+  genimg:
+    cmds:
+      - npm run images:optimize

@@ -49,7 +49,7 @@ pygmentsCodeFences = true
 
     [[menus.footer]]
         name = 'About Me'
-        pageRef = '/about'
+        url = '/about/'
         weight = 10
 
 [services]
