@@ -4,7 +4,7 @@ This file provides guidance to AI Agents when working with code in this reposito
 
 ## What this is
 
-Personal blog for [sivalabs.in](https://www.sivalabs.in) — a Hugo static site using the custom `wellington` theme, deployed to Netlify.
+Personal blog for [sivalabs.in](https://www.sivalabs.in) — a Hugo static site using the custom `sivalabs` theme, deployed to Netlify.
 
 ## Commands
 
@@ -65,10 +65,6 @@ Posts use `<!--more-->` to set the excerpt boundary.
 | `{{< box "info" >}}…{{< /box >}}`    | Callout box — types: `info`, `warning`, `important`, `tip` |
 | `{{< audio path="…" caption="…" >}}` | Audio player                                               |
 | `{{< youtubepl id="PLxxx" >}}`       | YouTube playlist embed                                     |
-
-## Theme overrides
-
-Custom layouts in `layouts/` override the `themes/wellington/layouts/` equivalents. Edit theme behavior here rather than in `themes/wellington/` directly.
 
 ## Deployment
 
