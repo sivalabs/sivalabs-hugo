@@ -1,0 +1,26 @@
+{{- $image := "" -}}
+{{- with .Params.images -}}
+  {{- $image = index . 0 -}}
+{{- end -}}
+
+<article class="post-card">
+  <a class="post-card__image-link" href="{{ .RelPermalink }}" aria-label="{{ .LinkTitle }}">
+  {{- with $image }}
+    <img class="post-card__image" src="{{ . }}" alt="">
+  {{- else }}
+    <span class="post-card__image post-card__image--blank" aria-hidden="true"></span>
+  {{ end }}
+  </a>
+  <div class="post-card__body">
+    <div class="post-card__meta">
+      {{ with .Date }}
+        <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ with index .Params.tags 0 }}
+        <span>{{ . }}</span>
+      {{ end }}
+    </div>
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 150 }}{{ end }}</p>
+  </div>
+</article>

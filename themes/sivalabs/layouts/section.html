@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="hero">
+    <p class="eyebrow">Browse</p>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+  </section>
+
+  {{ $pages := .Pages }}
+  {{ if eq .Section "blog" }}
+    {{ $pages = (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+  {{ end }}
+  {{ $pageSize := site.Params.pagination.blogPerPage | default 12 }}
+  {{ $paginator := .Paginate $pages $pageSize }}
+
+  <div class="post-grid">
+    {{ range $paginator.Pages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+
+  {{ partial "pagination.html" $paginator }}
+{{ end }}

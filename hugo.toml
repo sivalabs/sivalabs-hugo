@@ -1,28 +1,57 @@
 baseURL = "https://www.sivalabs.in/"
 languageCode = "en-us"
 title = "SivaLabs"
-theme = "wellington"
+theme = "sivalabs"
 
 enableRobotsTXT = true
 enableEmoji = true
 pygmentsCodeFences = true
 
-[pagination]
-  pagerSize=10
+[menus]
+    [[menus.main]]
+        name = 'Home'
+        pageRef = '/'
+        weight = 10
 
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
+    [[menus.main]]
+        name = 'Blog'
+        pageRef = '/blog'
+        weight = 20
 
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 2
+    [[menus.main]]
+        name = 'About'
+        url = '/about/'
+        weight = 70
 
+    [[menus.main]]
+        name = 'Conferences'
+        url = '/conferences/'
+        weight = 40
+
+    [[menus.main]]
+        name = 'Books'
+        url = '/books/'
+        weight = 50
+
+    [[menus.main]]
+        name = 'Projects'
+        url = '/projects/'
+        weight = 60
+
+    [[menus.main]]
+        name = 'Courses'
+        url = '/courses/'
+        weight = 62
+
+    [[menus.main]]
+        name = 'Tutorials'
+        url = '/tutorials/'
+        weight = 65
+
+    [[menus.footer]]
+        name = 'About Me'
+        pageRef = '/about'
+        weight = 10
 
 [services]
   [services.googleAnalytics]
@@ -33,6 +62,9 @@ pygmentsCodeFences = true
 [taxonomies]
   category = "categories"
   tag = "tags"
+
+[params.pagination]
+  blogPerPage = 12
 
 [related]
   includeNewer = true
@@ -48,19 +80,30 @@ pygmentsCodeFences = true
     weight = 10
 
 [params]
-  author = "Siva"
   subtitle = "Java, Spring Boot, Microservices, Cloud and DevOps Tutorials"
   description = "Java, Spring Boot, JPA, Hibernate, SQL, REST API, Microservices, Architecture, CI/CD, Docker, Kubernetes, Cloud, and DevOps Tutorials"
   publisher = "SivaLabs"
-  images = ['/raw-images/Siva.jpg']
-  facebook = ""
-  twitter = "sivalabs"
-  bluesky = "sivalabs.in"
-  youtube = "sivalabs"
-  github = "sivaprasadreddy"
-  linkedin = "ksivaprasadreddy"
-  [params.social]
-    twitter = "sivalabs"
+  images = ['/raw-images/Siva.png']
+  [params.author]
+  name = 'Siva'
+  role = 'Software Developer, Architect, and Developer Advocate'
+  image = '/raw-images/Siva.png'
+  bio = 'I am Siva, a passionate software engineer with expertise in building scalable web applications. I enjoy working across the stack and constantly learning new technologies.'
+    [[params.author.socials]]
+      name = "GitHub"
+      url = "https://github.com/sivaprasadreddy"
+    [[params.author.socials]]
+      name = "LinkedIn"
+      url = "https://www.linkedin.com/in/ksivaprasadreddy"
+    [[params.author.socials]]
+      name = "YouTube"
+      url = "https://www.youtube.com/@sivalabs"
+    [[params.author.socials]]
+      name = "Twitter"
+      url = "https://twitter.com/sivalabs"
+    [[params.author.socials]]
+      name = "Bluesky"
+      url = "https://bsky.app/profile/sivalabs.in"
 
 
 [markup]

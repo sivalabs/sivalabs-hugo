@@ -1,0 +1,20 @@
+<p>&copy; {{ now.Year }} {{ site.Title }}</p>
+<div class="footer-links">
+  {{ with site.Menus.footer }}
+    <nav class="footer-nav" aria-label="Footer navigation">
+      {{ range . }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+  {{ end }}
+  {{ with site.Params.author.socials }}
+    <nav class="footer-socials" aria-label="Social links">
+      {{ range . }}
+        <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
+          {{ partial "social-icon.html" .name }}
+          <span>{{ .name }}</span>
+        </a>
+      {{ end }}
+    </nav>
+  {{ end }}
+</div>

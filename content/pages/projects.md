@@ -3,9 +3,9 @@ title: Projects
 author: Siva
 type: page
 date: 2017-12-16T06:36:31.000Z
-url: /blog/projects/
+url: /projects/
 aliases:
-  - /projects/
+  - /blog/projects/
 ---
 
 ## [1. generator-springboot](https://github.com/sivaprasadreddy/generator-springboot)

@@ -5,7 +5,7 @@ images: ["/images/90-day-comeback-plan.webp"]
 type: post
 draft: false
 date: 2026-03-18T04:59:17+05:30
-url: /feel-left-behind-in-tech-this-is-90-day-comeback-plan
+url: /blog/feel-left-behind-in-tech-this-is-90-day-comeback-plan
 toc: false
 categories: [Thoughts]
 tags: ["Thoughts", "Career", "AI"]

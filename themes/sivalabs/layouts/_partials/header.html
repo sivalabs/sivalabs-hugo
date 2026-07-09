@@ -1,0 +1,10 @@
+<a class="site-brand" href="{{ site.Home.RelPermalink }}">
+  {{ with site.Params.author.image }}
+    <img src="{{ . }}" alt="">
+  {{ end }}
+  <span>{{ site.Title }}</span>
+</a>
+{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<button class="site-search-button" type="button" data-search-open aria-label="Search">
+  <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+</button>

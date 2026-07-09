@@ -1,8 +1,9 @@
 {
-  "name": "hugo-npm",
+  "name": "sivalabs-hugo",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "SivaLabs Blog using Hugo SSG",
+  "author": "SivaLabs",
+  "license": "MIT",
   "scripts": {
     "build": "npm run hugo:build",
     "clean": "npm run hugo:clean",
@@ -11,11 +12,8 @@
     "hugo:serve": "hugo server -D -F --disableFastRender",
     "hugo:clean": "rm -rf build resources public",
     "images:optimize": "node scripts/optimize-images.mjs",
-    "fix:blog-urls": "node scripts/add-blog-prefix-and-alias.js",
     "dev": "npm run images:optimize && npm run hugo:serve"
   },
-  "author": "SivaLabs",
-  "license": "ISC",
   "devDependencies": {
     "imagemin": "^9.0.1",
     "imagemin-webp": "^8.0.0",

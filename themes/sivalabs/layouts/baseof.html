@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      {{ partial "header.html" . }}
+    </div>
+  </header>
+  <main class="site-main">
+    <div class="content-panel">
+      {{ block "main" . }}{{ end }}
+    </div>
+  </main>
+  <footer class="site-footer">
+    {{ partial "footer.html" . }}
+  </footer>
+  <div class="search-modal" data-search-modal hidden>
+    <div class="search-modal__backdrop" data-search-close></div>
+    <div class="search-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="search-modal-title">
+      <button class="search-modal__close" type="button" data-search-close aria-label="Close search">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <h2 id="search-modal-title">Search SivaLabs</h2>
+      <form class="search-form" data-search-form>
+        <label for="site-search-input">Keywords</label>
+        <div class="search-form__row">
+          <input id="site-search-input" name="q" type="search" placeholder="Search articles, tutorials, projects..." autocomplete="off" data-search-input>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{ partialCached "head/js.html" . }}
+</body>
+</html>

@@ -1,0 +1,42 @@
+{{- $paginator := . -}}
+{{- if $paginator -}}
+  <nav class="pagination-nav" aria-label="Pagination">
+    <ul class="pagination">
+      <li class="{{ if not $paginator.HasPrev }}disabled{{ end }}">
+        {{ if $paginator.HasPrev }}
+          <a href="{{ $paginator.First.URL }}">First</a>
+        {{ else }}
+          <span>First</span>
+        {{ end }}
+      </li>
+
+      <li class="{{ if not $paginator.HasPrev }}disabled{{ end }}">
+        {{ with $paginator.Prev }}
+          <a href="{{ .URL }}">Previous</a>
+        {{ else }}
+          <span>Previous</span>
+        {{ end }}
+      </li>
+
+      <li class="active">
+        <span aria-current="page">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+      </li>
+
+      <li class="{{ if not $paginator.HasNext }}disabled{{ end }}">
+        {{ with $paginator.Next }}
+          <a href="{{ .URL }}">Next</a>
+        {{ else }}
+          <span>Next</span>
+        {{ end }}
+      </li>
+
+      <li class="{{ if not $paginator.HasNext }}disabled{{ end }}">
+        {{ if $paginator.HasNext }}
+          <a href="{{ $paginator.Last.URL }}">Last</a>
+        {{ else }}
+          <span>Last</span>
+        {{ end }}
+      </li>
+    </ul>
+  </nav>
+{{- end -}}

@@ -5,7 +5,7 @@ images: ["/images/dont-pollute-springboot-main-class.webp"]
 type: post
 draft: false
 date: 2026-06-16T04:59:17+05:30
-url: /dont-pollute-spring-boot-main-class
+url: /blog/dont-pollute-spring-boot-main-class
 toc: false
 categories: ["SpringBoot"]
 tags: ["Java", "SpringBoot"]

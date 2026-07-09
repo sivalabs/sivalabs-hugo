@@ -1,0 +1,14 @@
+{{- $name := lower . -}}
+{{- $icon := "fa-circle-info" -}}
+{{- if eq $name "github" -}}
+  {{- $icon = "fa-github" -}}
+{{- else if eq $name "linkedin" -}}
+  {{- $icon = "fa-linkedin" -}}
+{{- else if eq $name "youtube" -}}
+  {{- $icon = "fa-youtube" -}}
+{{- else if or (eq $name "x") (eq $name "twitter") -}}
+  {{- $icon = "fa-x-twitter" -}}
+{{- else if eq $name "bluesky" -}}
+  {{- $icon = "fa-bluesky" -}}
+{{- end -}}
+<i class="fa-brands {{ $icon }}" aria-hidden="true"></i>

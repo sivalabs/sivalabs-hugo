@@ -5,7 +5,7 @@ images: ["/images/ai-stressed-awe.webp"]
 type: post
 draft: false
 date: 2026-01-22T04:59:17+05:30
-url: /stepping-into-crazy-ai-world
+url: /blog/stepping-into-crazy-ai-world
 toc: false
 categories: [Thoughts]
 tags: ["Thoughts", "Career", "AI"]
@@ -69,7 +69,6 @@ So, don't be too hard on yourself thinking only you are not able to keep up with
 Embrace the change and leverage AI tools to enhance your productivity and deliver high-quality software faster than ever before.
 
 Peace!
-
 
 
 

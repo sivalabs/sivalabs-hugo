@@ -1,0 +1,47 @@
+{{ define "main" }}
+  <section class="home-intro">
+    <div class="home-intro__content">
+      <h1>{{ site.Title }}</h1>
+      {{ .Content }}
+
+      {{ with site.Params.author }}
+        <div class="about-me">
+          <p>{{ .bio }}</p>
+          {{ with .socials }}
+            <div class="social-links" aria-label="Social links">
+              {{ range . }}
+                <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
+                  {{ partial "social-icon.html" .name }}
+                  <span>{{ .name }}</span>
+                </a>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+
+    {{ with site.Params.author.image }}
+      <div class="home-intro__media">
+        <img src="{{ . }}" alt="{{ site.Params.author.name }}">
+      </div>
+    {{ end }}
+  </section>
+
+  {{ $recentPosts := (where site.RegularPages "Section" "blog").ByDate.Reverse }}
+  {{ with first 6 $recentPosts }}
+    <section class="articles-section" aria-labelledby="latest-articles">
+      <div class="section-heading">
+        <h2 id="latest-articles">Latest Articles</h2>
+      </div>
+      <div class="post-grid">
+      {{ range . }}
+        {{ partial "post-card.html" . }}
+      {{ end }}
+      </div>
+      <div class="section-actions">
+        <a class="button-link" href="{{ "blog/" | relURL }}">All Posts</a>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

@@ -1,0 +1,51 @@
+{{ define "main" }}
+  <article class="article">
+    {{ if eq .Section "blog" }}
+      <a class="back-link" href="{{ "blog/" | relURL }}">Back to Blog</a>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    <div class="article__meta">
+      {{ with .Date }}
+        <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
+    {{ with index .Params.images 0 }}
+      <img class="article__hero" src="{{ . }}" alt="">
+    {{ end }}
+    {{ .Content }}
+    {{ with .Params.courses }}
+      <div class="course-grid">
+        {{ range . }}
+          <article class="course-card">
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+              {{ with .image }}
+                <img src="{{ . }}" alt="">
+              {{ end }}
+              <div class="course-card__body">
+                <p class="course-card__meta">{{ .lessons }}</p>
+                <h2>{{ .title }}</h2>
+                <p>{{ .description }}</p>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ if eq .RelPermalink "/about/" }}
+      {{ with site.Params.author.socials }}
+        <div class="social-links social-links--page" aria-label="Social links">
+          {{ range . }}
+            <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
+              {{ partial "social-icon.html" .name }}
+              <span>{{ .name }}</span>
+            </a>
+          {{ end }}
+        </div>
+      {{ end }}
+    {{ end }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ if eq .Section "blog" }}
+      {{ partial "share-links.html" . }}
+    {{ end }}
+  </article>
+{{ end }}
