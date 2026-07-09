@@ -614,6 +614,57 @@ a:hover {
   color: #344054;
 }
 
+.article figure {
+  margin: 2rem 0;
+  max-width: 100%;
+}
+
+.article figure img,
+.article > img:not(.article__hero) {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.book-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 2rem;
+}
+
+.book-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.book-card img {
+  aspect-ratio: 3 / 4;
+  background: #f8fafc;
+  display: block;
+  object-fit: contain;
+  padding: 1rem;
+  width: 100%;
+}
+
+.book-card__body {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.25rem;
+}
+
+.book-card h2 {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.book-card p:last-child {
+  margin-bottom: 0;
+}
+
 .course-grid {
   display: grid;
   gap: 1.5rem;
@@ -759,6 +810,22 @@ a:hover {
 .terms__list a:hover {
   background: #dbeafe;
   text-decoration: none;
+}
+
+.related-posts {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+}
+
+.related-posts h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+
+.related-posts__grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .share-links {

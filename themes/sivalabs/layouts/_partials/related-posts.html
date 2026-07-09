@@ -1,0 +1,11 @@
+{{- $related := first 3 (site.RegularPages.Related .) -}}
+{{- with $related }}
+  <section class="related-posts" aria-labelledby="related-posts-title">
+    <h2 id="related-posts-title">Related Posts</h2>
+    <div class="post-grid related-posts__grid">
+      {{- range . }}
+        {{ partial "post-card.html" . }}
+      {{- end }}
+    </div>
+  </section>
+{{- end }}

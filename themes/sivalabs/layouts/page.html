@@ -13,6 +13,21 @@
       <img class="article__hero" src="{{ . }}" alt="">
     {{ end }}
     {{ .Content }}
+    {{ with .Params.books }}
+      <div class="book-grid">
+        {{ range . }}
+          <article class="book-card">
+            {{ with .image }}
+              <img src="{{ . }}" alt="">
+            {{ end }}
+            <div class="book-card__body">
+              <h2>{{ .title }}</h2>
+              <p>{{ .description }}</p>
+            </div>
+          </article>
+        {{ end }}
+      </div>
+    {{ end }}
     {{ with .Params.courses }}
       <div class="course-grid">
         {{ range . }}
@@ -46,6 +61,8 @@
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     {{ if eq .Section "blog" }}
       {{ partial "share-links.html" . }}
+      {{ partial "related-posts.html" . }}
+      {{ template "_internal/disqus.html" . }}
     {{ end }}
   </article>
 {{ end }}

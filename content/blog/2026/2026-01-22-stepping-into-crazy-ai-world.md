@@ -23,10 +23,6 @@ And then suddenly, you come across a Tweet or a LinkedIn post saying AI is not y
 
 If you are spending too much time on social media, it's easy to get confused and become anxious and overwhelmed. 
 
-{{< figure src="/images/ai-stressed-awe.webp" alt="Overwhelmed by AI"
-width="350" height="300" >}}
-
-
 Remember that while the AI revolution is happening, content creators and CEOs often have reasons to exaggerate.
 
 So, chill a little bit.
