@@ -14,6 +14,8 @@ Architecture, Testing, and Developer Productivity.
 * [Spring I/O 2026 - Skyrocket Developer Productivity with Spring Boot & IntelliJ IDEA](https://2026.springio.net/sessions/skyrocket-developer-productivity-with-spring-boot-and-intellij-idea/)
 * [Naija JUG - Spring Boot : "From Beginner to Pro"](https://www.youtube.com/watch?v=ZFCbYLmLRKs)
 * [GIDS 2025 - Building Modular Monoliths using Spring Modulith](https://www.youtube.com/watch?v=LOrTLDpVbAA)
+* [Podcast with Josh Long](https://www.youtube.com/watch?v=r0GckYxLugQ)
+* [Podcast with Dan Vega and DaShaun Carter on Spring Office Hours](https://www.youtube.com/watch?v=i0pokvrl4xc)
 * [Bangalore JUG - Modern Spring Boot Application Development](https://www.meetup.com/bangalorejug/events/298925096/)
 * [Bangalore JUG - Modern Spring Boot Application development with JDK 21](https://www.meetup.com/bangalorejug/events/300267722/)
 * [Hyderabad JUG - Harnessing the Power of Java 21 and Spring Boot 3 for Modern Software Development](https://www.meetup.com/jughyderabad/events/300108982/)
