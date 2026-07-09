@@ -7,14 +7,5 @@
       {{ end }}
     </nav>
   {{ end }}
-  {{ with site.Params.author.socials }}
-    <nav class="footer-socials" aria-label="Social links">
-      {{ range . }}
-        <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
-          {{ partial "social-icon.html" .name }}
-          <span>{{ .name }}</span>
-        </a>
-      {{ end }}
-    </nav>
-  {{ end }}
+  {{ partial "social-links.html" (dict "links" site.Params.author.socials "class" "footer-socials") }}
 </div>

@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <article class="article">
+    <a class="back-link" href="{{ "blog/" | relURL }}">Back to Blog</a>
+    {{ partial "page/article-header.html" . }}
+    {{ .Content }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    {{ partial "share-links.html" . }}
+    {{ partial "related-posts.html" . }}
+    {{ template "_internal/disqus.html" . }}
+  </article>
+{{ end }}

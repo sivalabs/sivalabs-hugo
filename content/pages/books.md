@@ -2,6 +2,7 @@
 title: Books
 author: Siva
 type: page
+layout: books
 date: 2026-07-09T00:00:00+05:30
 url: /books/
 books:

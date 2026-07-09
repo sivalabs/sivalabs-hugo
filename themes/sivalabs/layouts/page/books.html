@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <article class="article">
+    {{ partial "page/article-header.html" . }}
+    {{ .Content }}
+    {{ with .Params.books }}
+      <div class="book-grid">
+        {{ range . }}
+          <article class="book-card">
+            <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+              {{ with .image }}
+                <img src="{{ . }}" alt="">
+              {{ end }}
+              <div class="book-card__body">
+                <h2>{{ .title }}</h2>
+                <p>{{ .description }}</p>
+              </div>
+            </a>
+          </article>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </article>
+{{ end }}

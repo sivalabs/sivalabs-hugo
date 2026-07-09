@@ -7,16 +7,7 @@
       {{ with site.Params.author }}
         <div class="about-me">
           <p>{{ .bio }}</p>
-          {{ with .socials }}
-            <div class="social-links" aria-label="Social links">
-              {{ range . }}
-                <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
-                  {{ partial "social-icon.html" .name }}
-                  <span>{{ .name }}</span>
-                </a>
-              {{ end }}
-            </div>
-          {{ end }}
+          {{ partial "social-links.html" (dict "links" .socials) }}
         </div>
       {{ end }}
     </div>

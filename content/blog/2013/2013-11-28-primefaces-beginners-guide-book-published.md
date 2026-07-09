@@ -18,7 +18,7 @@ As many of us know, PrimeFaces is the leading JSF component library for JSF-base
 
 > The good news is that the "PrimeFaces Beginner's Guide" book covers the latest PrimeFaces 4.0 version features, such as the Client-Side Validations (CSV) framework, Dialog Framework, Search Expressions, Sticky Component, and many other enhancements as well.
 
-[![Primefaces Beginners Guide](/images/0698OS.webp)](https://www.packtpub.com/web-development/primefaces-beginners-guide)
+[![Primefaces Beginners Guide](/images/primefaces-beginners-guide-cover.webp)](https://www.packtpub.com/web-development/primefaces-beginners-guide)
 
 The book contains the following 13 chapters covering various PrimeFaces components:
 

@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <article class="article">
+    <h1>{{ .Title }}</h1>
+    <div class="article__meta">
+      {{ with .Date }}
+        <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+      {{ end }}
+    </div>
+    {{ with .Params.profile }}
+      {{ with .image }}
+        <div class="about-profile-photo">
+          <img src="{{ . }}" alt="{{ $.Params.profile.alt | default $.Title }}">
+        </div>
+      {{ end }}
+    {{ end }}
+    {{ .Content }}
+    {{ partial "social-links.html" (dict "links" site.Params.author.socials "class" "social-links social-links--page") }}
+    {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+  </article>
+{{ end }}

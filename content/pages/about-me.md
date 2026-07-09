@@ -2,6 +2,7 @@
 title: About Me
 author: Siva
 type: page
+layout: about
 date: 2024-07-17T13:06:31.000Z
 url: /about/
 profile:

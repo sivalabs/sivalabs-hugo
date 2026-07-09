@@ -7,15 +7,15 @@
 <div class="share-links" aria-label="Share this article">
   <span class="share-links__label">Share:</span>
   <a href="{{ $twitterURL | safeURL }}" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+    {{ partial "icon.html" "x" }}
     <span>Twitter</span>
   </a>
   <a href="{{ $linkedinURL | safeURL }}" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+    {{ partial "icon.html" "linkedin" }}
     <span>LinkedIn</span>
   </a>
   <a href="{{ $redditURL | safeURL }}" target="_blank" rel="noopener noreferrer">
-    <i class="fa-brands fa-reddit" aria-hidden="true"></i>
+    {{ partial "icon.html" "reddit" }}
     <span>Reddit</span>
   </a>
 </div>

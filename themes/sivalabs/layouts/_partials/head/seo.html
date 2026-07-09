@@ -1,0 +1,10 @@
+{{- $description := .Description | default .Summary | plainify | default site.Params.description -}}
+{{- with $description }}
+  <meta name="description" content="{{ . }}">
+{{- end }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{- with .OutputFormats.Get "RSS" }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
+{{- end }}
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}

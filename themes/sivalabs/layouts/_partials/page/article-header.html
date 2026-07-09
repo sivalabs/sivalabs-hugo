@@ -1,0 +1,9 @@
+<h1>{{ .Title }}</h1>
+<div class="article__meta">
+  {{ with .Date }}
+    <time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>
+  {{ end }}
+</div>
+{{ with index .Params.images 0 }}
+  <img class="article__hero" src="{{ . }}" alt="">
+{{ end }}

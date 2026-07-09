@@ -32,6 +32,22 @@ a:hover {
   text-decoration: underline;
 }
 
+.icon {
+  fill: none;
+  flex: 0 0 auto;
+  height: 1em;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 1em;
+}
+
+.icon--brand {
+  fill: currentColor;
+  stroke: none;
+}
+
 .site-header,
 .site-footer {
   padding: 1.25rem 0;
@@ -382,8 +398,8 @@ a:hover {
   padding: 0.65rem 0.9rem;
 }
 
-.social-links i,
-.footer-socials i {
+.social-links .icon,
+.footer-socials .icon {
   flex: 0 0 auto;
 }
 
@@ -811,6 +827,63 @@ a:hover {
 .alert-info,
 .alert-note {
   background: #eff6ff;
+}
+
+.box-shortcode {
+  border: 1px solid #bfdbfe;
+  border-left: 5px solid #2563eb;
+  border-radius: 8px;
+  color: #344054;
+  line-height: 1.5;
+  margin: 1.5rem 0 2rem;
+  padding: 1rem 1rem 1rem 1.25rem;
+}
+
+.box-shortcode.info {
+  background: #eff6ff;
+}
+
+.box-shortcode.warning {
+  background: #fffbeb;
+  border-color: #fde68a;
+  border-left-color: #f59e0b;
+}
+
+.box-shortcode.important {
+  background: #fefce8;
+  border-color: #fef08a;
+  border-left-color: #eab308;
+}
+
+.box-shortcode.tip {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+  border-left-color: #22c55e;
+}
+
+.icon-box {
+  display: inline-flex;
+  margin-right: 0.5rem;
+  vertical-align: -0.125em;
+}
+
+.icon-box svg {
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+}
+
+.box-shortcode p {
+  margin: 0.5rem 0 0;
+}
+
+.box-shortcode p:first-of-type {
+  display: inline;
+  margin-top: 0;
+}
+
+.box-shortcode p:last-child {
+  margin-bottom: 0;
 }
 
 .terms {

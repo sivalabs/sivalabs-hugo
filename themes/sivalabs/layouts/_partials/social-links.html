@@ -1,0 +1,12 @@
+{{- $class := .class | default "social-links" -}}
+{{- $ariaLabel := .ariaLabel | default "Social links" -}}
+{{- with .links }}
+  <div class="{{ $class }}" aria-label="{{ $ariaLabel }}">
+    {{- range . }}
+      <a href="{{ .url }}" target="_blank" rel="me noopener noreferrer">
+        {{ partial "icon.html" .name }}
+        <span>{{ .name }}</span>
+      </a>
+    {{- end }}
+  </div>
+{{- end }}

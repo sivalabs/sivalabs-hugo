@@ -2,6 +2,7 @@
 title: Courses
 author: Siva
 type: page
+layout: courses
 date: 2026-07-09T00:00:00+05:30
 url: /courses/
 courses:

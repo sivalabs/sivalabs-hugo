@@ -35,7 +35,7 @@ So what exactly does MyBatis offer you?
 
 > **I feel that just as Gradle is the sweet spot between Ant and Maven, MyBatis is the sweet spot between JDBC and ORMs (JPA/Hibernate/EclipseLink).**
 
-{{< figure src="/images/6801OScov.webp"  width="250" height="200" >}}
+{{< figure src="/images/mybatis-3-cover.webp" width="250" height="200" >}}
 
 The **Java Persistence With MyBatis3** book covers:
 
