@@ -37,6 +37,19 @@
       setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
     });
 
+    document.addEventListener("click", (event) => {
+      if (
+        !mobileQuery.matches ||
+        menuButton.getAttribute("aria-expanded") !== "true" ||
+        !(event.target instanceof Node) ||
+        menuButton.contains(event.target) ||
+        navigation.contains(event.target)
+      ) {
+        return;
+      }
+      setMenuOpen(false);
+    });
+
     navigation.addEventListener("click", (event) => {
       if (event.target instanceof HTMLAnchorElement && mobileQuery.matches) {
         setMenuOpen(false);
