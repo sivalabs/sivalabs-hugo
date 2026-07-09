@@ -18,7 +18,7 @@ npm run images:optimize  # convert static/raw-images/*.{jpg,jpeg,png} → .webp
 task                 # alias for npm run dev
 ```
 
-Hugo version: **0.147.9** (set in `netlify.toml`).
+Hugo version: **0.164.0** (set in `netlify.toml`).
 
 ## Content structure
 
