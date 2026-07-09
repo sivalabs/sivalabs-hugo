@@ -1,5 +1,4 @@
 baseURL = "https://www.sivalabs.in/"
-locale = "en-us"
 title = "SivaLabs"
 theme = "sivalabs"
 
