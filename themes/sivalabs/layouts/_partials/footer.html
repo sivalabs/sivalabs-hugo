@@ -1,4 +1,3 @@
-<p>&copy; {{ now.Year }} {{ site.Title }}</p>
 <div class="footer-links">
   {{ with site.Menus.footer }}
     <nav class="footer-nav" aria-label="Footer navigation">
@@ -9,3 +8,4 @@
   {{ end }}
   {{ partial "social-links.html" (dict "links" site.Params.author.socials "class" "footer-socials") }}
 </div>
+<p>&copy; {{ now.Year }} {{ site.Title }}</p>

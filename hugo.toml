@@ -47,11 +47,6 @@ pygmentsCodeFences = true
         url = '/tutorials/'
         weight = 65
 
-    [[menus.footer]]
-        name = 'About Me'
-        url = '/about/'
-        weight = 10
-
 [services]
   [services.googleAnalytics]
     id = 'G-N5019E5MWE'

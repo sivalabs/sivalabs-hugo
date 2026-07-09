@@ -10,7 +10,7 @@ Personal blog for [sivalabs.in](https://www.sivalabs.in) — a Hugo static site 
 
 ```shell
 npm install          # install dependencies (imagemin for image optimization)
-npm run dev          # optimize images then serve with drafts/future posts enabled
+npm run dev          # serve with drafts/future posts enabled
 npm run build        # production build → public/
 npm run serve        # serve only (skip image optimization)
 npm run clean        # rm -rf build resources public
