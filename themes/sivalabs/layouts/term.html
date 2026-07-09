@@ -5,9 +5,14 @@
     {{ .Content }}
   </section>
 
+  {{ $pageSize := site.Params.pagination.blogPerPage | default 12 }}
+  {{ $paginator := .Paginate .Pages.ByDate.Reverse $pageSize }}
+
   <div class="post-grid">
-    {{ range .Pages }}
+    {{ range $paginator.Pages }}
       {{ partial "post-card.html" . }}
     {{ end }}
   </div>
+
+  {{ partial "pagination.html" $paginator }}
 {{ end }}
