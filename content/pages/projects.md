@@ -2,36 +2,27 @@
 title: Projects
 author: Siva
 type: page
-date: 2017-12-16T06:36:31.000Z
+date: 2026-07-08T06:36:31.000Z
 url: /projects/
 aliases:
   - /blog/projects/
 ---
 
-## [1. generator-springboot](https://github.com/sivaprasadreddy/generator-springboot)
-A Yeoman generator for generating MicroServices with SpringBoot. We can use generator-springboot to 
-generate a SpringBoot microservice, Spring Cloud Config Server or Service Registry based on Netflix Eureka.
+## [1. testcontainers-jooq-codegen-maven-plugin](https://github.com/sivalabs/testcontainers-jooq-codegen-maven-plugin)
 
-### How to use?
+A Maven plugin to run jOOQ code generation using Testcontainers, so database schema-based code generation can run consistently without requiring a locally installed database.
 
-```bash
-$ npm install -g yo
-$ npm install -g generator-springboot
-$ yo springboot
-```
+## [2. sivalabs-agent-skills](https://github.com/sivaprasadreddy/sivalabs-agent-skills)
 
-For more information on features see https://github.com/sivaprasadreddy/generator-springboot
+A collection of Agent Skills and guidelines for Java/Spring Boot application development.
 
-## [2. LocalStack SpringBoot Starter](https://github.com/sivalabs/localstack-spring-boot-starter)
+## [3. sdd-skills](https://github.com/sivaprasadreddy/sdd-skills)
 
-Localstack-spring-boot-starter is a SpringBoot starter for LocalStack auto-configuration. 
-This starter will spin up the Localstack docker container using Testcontainers and auto-configure beans 
-such as AmazonS3, AmazonSQSAsync, etc.
+Agent Skills supporting Spec Driven Development with AI Agents.
 
-For more information see https://github.com/sivalabs/localstack-spring-boot-starter
+## [4. progen](https://github.com/sivaprasadreddy/progen)
 
-## [3. SpringBoot JWT Security Starter](https://github.com/sivalabs/spring-boot-jwt-security-starter)
+A project generator CLI tool for quickly creating Spring Boot applications with common best practices baked in.
 
-This is a SpringBoot starter to provide JWT token based security auto-configuration.
-
-For more information see https://github.com/sivalabs/spring-boot-jwt-security-starter
+## [5. generator-springboot](https://github.com/sivaprasadreddy/generator-springboot)
+A Yeoman generator for generating MicroServices with SpringBoot. 

@@ -10,10 +10,13 @@ I speak at developer conferences, Java user groups, meetups, and internal engine
 Architecture, Testing, and Developer Productivity.
 
 ## Speaker
-* [Modern Spring Boot Application Development](https://www.meetup.com/bangalorejug/events/298925096/)
-* [Modern Spring Boot Application development with JDK 21](https://www.meetup.com/bangalorejug/events/300267722/)
-* [Harnessing the Power of Java 21 and Spring Boot 3 for Modern Software Development](https://www.meetup.com/jughyderabad/events/300108982/)
-
+* [GIDS 2026 - Spring AI + MCP: Building the Missing Bridge Between Java Apps and AI Agents](https://www.youtube.com/watch?v=xWz-vXnKvEo)
+* [Spring I/O 2026 - Skyrocket Developer Productivity with Spring Boot & IntelliJ IDEA](https://2026.springio.net/sessions/skyrocket-developer-productivity-with-spring-boot-and-intellij-idea/)
+* [Naija JUG - Spring Boot : "From Beginner to Pro"](https://www.youtube.com/watch?v=ZFCbYLmLRKs)
+* [GIDS 2025 - Building Modular Monoliths using Spring Modulith](https://www.youtube.com/watch?v=LOrTLDpVbAA)
+* [Bangalore JUG - Modern Spring Boot Application Development](https://www.meetup.com/bangalorejug/events/298925096/)
+* [Bangalore JUG - Modern Spring Boot Application development with JDK 21](https://www.meetup.com/bangalorejug/events/300267722/)
+* [Hyderabad JUG - Harnessing the Power of Java 21 and Spring Boot 3 for Modern Software Development](https://www.meetup.com/jughyderabad/events/300108982/)
 
 ## Topics
 

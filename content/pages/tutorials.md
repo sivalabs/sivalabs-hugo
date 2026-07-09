@@ -12,20 +12,6 @@ aliases:
   - /blog/tutorials/
 ---
 
-### Kubernetes
-* [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
-* [Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
-* [Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
-* [Kubernetes - Exposing Services to outside of Cluster using Ingress]({{< relref "2021-09-22-kubernetes-ingress.md" >}})
-
-### Microservices
-* [Part 1 : MicroServices : Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})
-* [Part 2 : MicroServices : Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})
-* [Part 3 : MicroServices : Spring Cloud Service Registry and Discovery]({{< relref "2018-03-08-microservices-springcloud-eureka.md" >}})
-* [Part 4 : MicroServices : Spring Cloud Circuit Breaker using Netflix Hystrix]({{< relref "2018-03-12-spring-cloud-netflix-circuit-breaker.md" >}})
-* [Part 5 : MicroServices : Spring Cloud Zuul Proxy as API Gateway]({{< relref "2018-03-15-microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway.md" >}})
-* [Part 6 : MicroServices : Distributed Tracing with Spring Cloud Sleuth and Zipkin]({{< relref "2018-03-20-microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin.md" >}})
-
 ### Spring Boot
 
 * [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}})
@@ -72,6 +58,20 @@ aliases:
 * [Introduction to Spring Cloud Config Server]({{< relref "2017-08-14-spring-cloud-tutorials-introduction-to-spring-cloud-config-server.md" >}}) 
 * [Auto Refresh Config Changes using Spring Cloud Bus]({{< relref "2017-08-14-spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus.md" >}}) 
 
+### Microservices
+* [Part 1 : MicroServices : Spring Boot & Spring Cloud Overview]({{< relref "2018-03-02-microservices-using-springboot-spring-cloud-part-1-overview.md" >}})
+* [Part 2 : MicroServices : Configuration Management with Spring Cloud Config and Vault]({{< relref "2018-03-05-microservices-part-2-configuration-management-spring-cloud-config-vault.md" >}})
+* [Part 3 : MicroServices : Spring Cloud Service Registry and Discovery]({{< relref "2018-03-08-microservices-springcloud-eureka.md" >}})
+* [Part 4 : MicroServices : Spring Cloud Circuit Breaker using Netflix Hystrix]({{< relref "2018-03-12-spring-cloud-netflix-circuit-breaker.md" >}})
+* [Part 5 : MicroServices : Spring Cloud Zuul Proxy as API Gateway]({{< relref "2018-03-15-microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway.md" >}})
+* [Part 6 : MicroServices : Distributed Tracing with Spring Cloud Sleuth and Zipkin]({{< relref "2018-03-20-microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin.md" >}})
+
+### Kubernetes
+* [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}})
+* [Kubernetes - Releasing a new version of the application using Deployment Rolling Updates]({{< relref "2021-09-07-kubernetes-deployment-rolling-updates.md" >}})
+* [Kubernetes - Blue/Green Deployments]({{< relref "2021-09-14-kubernetes-blue-green-deployments.md" >}})
+* [Kubernetes - Exposing Services to outside of Cluster using Ingress]({{< relref "2021-09-22-kubernetes-ingress.md" >}})
+
 ### jOOQ
 
 * [jOOQ Tutorial - 1 : Getting Started]({{< relref "2023-10-12-spring-boot-jooq-tutorial-part-1.md" >}})
@@ -87,16 +87,13 @@ aliases:
 * [MyBatis Tutorial: Part 3 – Mapping Relationships]({{< relref "2012-10-21-mybatis-tutorial-part-3-mapping-relationships.md" >}})
 * [MyBatis Tutorial : Part4 – Spring Integration]({{< relref "2012-10-24-mybatis-tutorial-part4-spring-integration.md" >}})
 
-### Java
-* [When to use RequestDispatcher.forward() and response.sendRedirect()?]({{< relref "2011-08-25-when-to-use-requestdispatcherforward.md" >}})
-* [Clean Code: Don’t mix different levels of abstractions]({{< relref "2013-12-29-clean-code-dont-mix-different-levels-of-abstractions.md" >}})
-
 ### Thoughts & Opinions
 
 * [Few Things I learned in the HardWay in 15 years of my career]({{< relref "2021-08-11-few-things-i-learned-the-hardway-in-15-years-of-my-career.md" >}})
 * [My Life as a Software Developer in India]({{< relref "2015-07-06-my-life-as-software-developer-in-india.md" >}})
 * [A Developers Perspective on Spring vs JavaEE]({{< relref "2015-06-15-a-developers-perspective-on-spring-vs-javaee.md" >}})
 * [Can MicroServices Architecture Solve All Your Problems?]({{< relref "2014-11-30-can-microservices-architecture-solve-all-your-problems.md" >}})
+* [Clean Code: Don’t mix different levels of abstractions]({{< relref "2013-12-29-clean-code-dont-mix-different-levels-of-abstractions.md" >}})
 * [Keep The Code Clean: WatchDog & SpotTheBug Approach]({{< relref "2012-08-28-keep-code-clean-watchdog-spotthebug.md" >}})
 * [Are frameworks making developers dumb?]({{< relref "2011-08-22-frameworks-making-developers-dumb.md" >}})
 * [10 things to become an outstanding Java developer]({{< relref "2011-01-26-10-things-to-become-outstanding-java.md" >}})
