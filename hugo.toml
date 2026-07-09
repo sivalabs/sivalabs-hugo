@@ -82,11 +82,11 @@ pygmentsCodeFences = true
   subtitle = "Java, Spring Boot, Microservices, Cloud and DevOps Tutorials"
   description = "Java, Spring Boot, JPA, Hibernate, SQL, REST API, Microservices, Architecture, CI/CD, Docker, Kubernetes, Cloud, and DevOps Tutorials"
   publisher = "SivaLabs"
-  images = ['/raw-images/Siva.png']
+  images = ['/images/Siva.webp']
   [params.author]
   name = 'Siva'
   role = 'Software Developer, Architect, and Developer Advocate'
-  image = '/raw-images/Siva.png'
+  image = '/images/Siva.webp'
   bio = 'I am Siva, a passionate software engineer with expertise in building scalable web applications. I enjoy working across the stack and constantly learning new technologies.'
     [[params.author.socials]]
       name = "GitHub"
