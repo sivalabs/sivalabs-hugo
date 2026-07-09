@@ -4,6 +4,9 @@
   {{ end }}
   <span>{{ site.Title }}</span>
 </a>
+<button class="site-menu-button" type="button" data-menu-toggle aria-label="Menu" aria-expanded="false" aria-controls="site-navigation">
+  {{ partial "icon.html" "menu" }}
+</button>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 <button class="site-search-button" type="button" data-search-open aria-label="Search" aria-expanded="false" aria-controls="site-search-modal">
   {{ partial "icon.html" "search" }}

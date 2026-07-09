@@ -4,6 +4,8 @@
   const closeButtons = document.querySelectorAll("[data-search-close]");
   const form = document.querySelector("[data-search-form]");
   const input = document.querySelector("[data-search-input]");
+  const menuButton = document.querySelector("[data-menu-toggle]");
+  const navigation = document.querySelector("[data-site-navigation]");
   const focusableSelector = [
     "a[href]",
     "button:not([disabled])",
@@ -13,6 +15,37 @@
     "[tabindex]:not([tabindex='-1'])",
   ].join(",");
   let previousFocus = null;
+
+  if (menuButton && navigation) {
+    const mobileQuery = window.matchMedia("(max-width: 640px)");
+
+    const setMenuOpen = (isOpen) => {
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      navigation.hidden = !isOpen && mobileQuery.matches;
+    };
+
+    const syncMenu = () => {
+      if (mobileQuery.matches) {
+        setMenuOpen(menuButton.getAttribute("aria-expanded") === "true");
+      } else {
+        navigation.hidden = false;
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+    };
+
+    menuButton.addEventListener("click", () => {
+      setMenuOpen(menuButton.getAttribute("aria-expanded") !== "true");
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement && mobileQuery.matches) {
+        setMenuOpen(false);
+      }
+    });
+
+    mobileQuery.addEventListener("change", syncMenu);
+    syncMenu();
+  }
 
   if (!modal || !openButton || !form || !input) {
     return;
