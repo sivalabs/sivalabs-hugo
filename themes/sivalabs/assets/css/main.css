@@ -152,6 +152,7 @@ a:hover {
 }
 
 .site-menu-button,
+.site-coffee-button,
 .site-search-button {
   align-items: center;
   aspect-ratio: 1;
@@ -166,18 +167,65 @@ a:hover {
   width: 2.5rem;
 }
 
+.site-header__actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-self: end;
+}
+
 .site-menu-button {
   display: none;
 }
 
-.site-search-button {
-  justify-self: end;
-}
-
 .site-menu-button:hover,
+.site-coffee-button:hover,
 .site-search-button:hover {
   background: #eff6ff;
   color: #1d4ed8;
+}
+
+.site-coffee-button:hover {
+  text-decoration: none;
+}
+
+.support-page {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.support-page__icon {
+  color: #b45309;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.support-page__icon .icon {
+  display: inline-block;
+}
+
+.support-page p {
+  font-size: 1.1rem;
+}
+
+.support-page__button {
+  align-items: center;
+  background: #f59e0b;
+  border-radius: 999px;
+  color: #1f2933;
+  display: inline-flex;
+  font-size: 1.05rem;
+  font-weight: 800;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1.25rem;
+}
+
+.support-page__button:hover {
+  background: #d97706;
+  color: #fff;
+  text-decoration: none;
 }
 
 .site-main {
@@ -672,6 +720,72 @@ a:hover {
   color: #344054;
 }
 
+.article table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.article th,
+.article td {
+  border: 1px solid #d0d5dd;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.article th {
+  background: #eff6ff;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.article tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.article-toc {
+  background: linear-gradient(135deg, #f8fafc, #eff6ff);
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+}
+
+.article-toc h2 {
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.article-toc ul {
+  display: grid;
+  gap: 0.45rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-toc a {
+  color: #344054;
+  display: inline-block;
+  font-weight: 600;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.article-toc a::before {
+  color: #2563eb;
+  content: "#";
+  left: 0;
+  position: absolute;
+}
+
+.article-toc a:hover {
+  color: #1d4ed8;
+}
+
 .about-profile-photo {
   margin: 2rem 0;
 }
@@ -1074,6 +1188,11 @@ time {
   }
 
   .site-search-button {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+
+  .site-coffee-button {
     height: 2.25rem;
     width: 2.25rem;
   }

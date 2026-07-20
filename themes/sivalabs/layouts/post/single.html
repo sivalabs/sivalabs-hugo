@@ -2,6 +2,7 @@
   <article class="article">
     <a class="back-link" href="{{ "blog/" | relURL }}">Back to Blog</a>
     {{ partial "page/article-header.html" . }}
+    {{ partial "page/article-toc.html" . }}
     {{ .Content }}
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     {{ partial "share-links.html" . }}

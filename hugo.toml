@@ -102,6 +102,8 @@ pygmentsCodeFences = true
 
 [markup]
   [markup.goldmark]
+    [markup.goldmark.extensions]
+      table = true
     [markup.goldmark.renderer]
       hardWraps = false
       unsafe = false

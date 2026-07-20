@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <article class="article support-page">
+    <div class="support-page__icon" aria-hidden="true">
+      {{ partial "icon.html" "coffee" }}
+    </div>
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <a class="support-page__button" href="https://paypal.me/ksivaprasadreddy" target="_blank" rel="noopener noreferrer">
+      {{ partial "icon.html" "coffee" }}
+      Buy me a coffee
+    </a>
+  </article>
+{{ end }}

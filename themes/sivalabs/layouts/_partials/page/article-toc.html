@@ -1,0 +1,6 @@
+{{ if .Param "toc" }}
+  <aside class="article-toc" aria-labelledby="article-toc-title">
+    <h2 id="article-toc-title">Table of Contents</h2>
+    {{ .Fragments.ToHTML 2 2 false }}
+  </aside>
+{{ end }}
