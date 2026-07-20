@@ -5,7 +5,7 @@ images:
   - /preview-images/spring-ai-chat-with-llms.webp
 type: post
 draft: false
-date: 2026-07-20T23:29:17.000Z
+date: 2026-07-20T06:00:00.000Z
 url: /blog/spring-ai-chat-with-llms
 toc: true
 categories:
