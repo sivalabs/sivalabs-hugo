@@ -1,5 +1,5 @@
 ---
-title: Getting Started with Spring AI and Open AI
+title: Getting Started with Spring AI and OpenAI
 author: Siva
 images:
   - /preview-images/spring-ai-introduction.webp
@@ -22,7 +22,7 @@ aliases:
 In this article, we will explore the following:
 
 * Introduction to Spring AI.
-* Interacting with Open AI using Spring AI.
+* Interacting with OpenAI using Spring AI.
 * Using **PromptTemplates**.
 * Using **OutputConverters**.
 
@@ -37,16 +37,16 @@ You can find the sample code for this article in the [GitHub repository](https:/
 
 {{< /box >}}
 
-## Introduction to Open AI and Spring AI
+## Introduction to OpenAI and Spring AI
 ChatGPT took the world by storm when it was released by OpenAI.
 It was the first time a language model was able to generate human-like responses to prompts. 
 OpenAI has since released several other models, including DALL-E, which can generate images from textual prompts.
 
 [Spring AI](https://spring.io/projects/spring-ai) is a Java library that provides a simple and easy-to-use interface to interact with LLM models.
 Spring AI provides higher-level abstractions to interact with various LLMs such as 
-**Open AI**, **Azure Open AI**, **Hugging Face**, **Google Vertex**, **Ollama**, **Amazon Bedrock**, etc.
+**OpenAI**, **Azure OpenAI**, **Hugging Face**, **Google Vertex**, **Ollama**, **Amazon Bedrock**, etc.
 
-In this article, we are going to explore how to interact with Open AI using Spring AI.
+In this article, we are going to explore how to interact with OpenAI using Spring AI.
 
 First, we need to create an account in OpenAI and get the API key.
 * Go to [OpenAI Platform](https://platform.openai.com/) and create an account.
@@ -60,13 +60,13 @@ Once you have the API key, set the environment variable `OPENAI_API_KEY` with th
 ```bash
 export OPENAI_API_KEY=<your-api-key>
 ```
-## Create Spring AI Project
+## Create a Spring AI Project
 Let's create a new Spring Boot project using Spring Initializr.
 
 * Go to [Spring Initializr](https://start.spring.io/)
 * Select **Web**, and **OpenAI** starters
 
-## Interacting with Open AI using ChatClient
+## Interacting with OpenAI using ChatClient
 Spring AI provides **ChatClient** abstraction to interact with different types of LLMs 
 without coupling with the actual LLM model.
 

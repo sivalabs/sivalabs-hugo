@@ -39,7 +39,7 @@ You can find the sample code for this article in the [GitHub repository](https:/
 
 {{< /box >}}
 
-Large Language Models (LLMs) like OpenAI, Azure Open AI, Google Vertex, etc. are
+Large Language Models (LLMs) like OpenAI, Azure OpenAI, Google Vertex, etc. are
 trained on large datasets. But those models are not trained on your private data,
 so they may not be able to answer questions specific to your domain.
 But training a model on your private data may be expensive and time-consuming.

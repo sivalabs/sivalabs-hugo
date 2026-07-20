@@ -23,7 +23,7 @@ aliases:
 In this article, we will explore the following:
 
 * Brief introduction to Generative AI?
-* How to interact with Open AI APIs using Java?
+* How to interact with OpenAI APIs using Java?
 * How to use LangChain4j to interact with OpenAI?
 * How to run a LLM model locally using Ollama?
 * Working with Ollama using LangChain4j and Testcontainers.
@@ -88,7 +88,7 @@ First, we need to create an account in OpenAI and get the API key.
 Otherwise, you need to buy credits to use the OpenAI APIs.**
 
 Once you have the API key, you can use it to interact with OpenAI APIs.
-You can find the Open AI API Reference documentation [here](https://platform.openai.com/docs/api-reference/).
+You can find the OpenAI API Reference documentation [here](https://platform.openai.com/docs/api-reference/).
 
 First, let us see how we can ask a question to OpenAI using its [Chat API endpoint](https://platform.openai.com/docs/api-reference/chat).
 
@@ -253,7 +253,7 @@ An important thing to note here is the **usage** field in the response, which gi
 }
 ```
 
-Your Open AI API usage is metered based on the number of tokens used.
+Your OpenAI API usage is metered based on the number of tokens used.
 You can learn more about token at [What are tokens and how to count them?](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them).
 
 We have seen how to interact with OpenAI using Java's **HttpClient**.
@@ -285,7 +285,7 @@ Create a Java project and add the following dependency to your **pom.xml**:
 </dependency>
 ```
 
-We have added the **langchain4j** core library and **langchain4j-open-ai** which provides integration with Open AI.
+We have added the **langchain4j** core library and **langchain4j-open-ai** which provides integration with OpenAI.
 
 Now, let's see how to use LangChain4j to interact with OpenAI.
 
@@ -309,14 +309,14 @@ As you can see, using LangChain4j provides high-level abstraction and gives a si
 {{< box tip >}}
 **TIP**
 
-You can also use the special LangChain4j Open AI API key "demo" to test the OpenAI APIs without using your own API key. 
+You can also use the special LangChain4j OpenAI API key "demo" to test the OpenAI APIs without using your own API key. 
 
 {{< /box >}}
 
 We have just seen the basic usage of LangChain4j to interact with OpenAI.
 In the future articles, we will explore more advanced features of LangChain4j such as using PromptTemplates, AiServices, RAG, etc.
 
-Open AI is a paid service, and you will be charged based on the number of tokens used.
+OpenAI is a paid service, and you will be charged based on the number of tokens used.
 While learning and experimenting, you might want to run the LLM model locally without incurring cost.
 Luckily, there are a few open-source projects that provide LLM models that you can run locally.
 In the next section, we will see how to run a LLM model locally using Ollama.
