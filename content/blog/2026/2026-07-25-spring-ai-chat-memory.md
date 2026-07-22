@@ -209,9 +209,13 @@ For a typical Spring Boot application that already uses PostgreSQL, JDBC is the 
 
 ## Persisting chat memory in PostgreSQL
 
-Add the JDBC memory repository, PostgreSQL driver, and Spring Boot's Docker Compose support:
+Add the JDBC, JDBC memory repository, PostgreSQL driver, and Spring Boot's Docker Compose support:
 
 ```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jdbc</artifactId>
+</dependency>
 <dependency>
     <groupId>org.springframework.ai</groupId>
     <artifactId>spring-ai-starter-model-chat-memory-repository-jdbc</artifactId>

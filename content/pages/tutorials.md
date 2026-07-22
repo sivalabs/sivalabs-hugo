@@ -12,6 +12,12 @@ aliases:
   - /blog/tutorials/
 ---
 
+### Spring AI
+
+* [Spring AI : Chat with LLMs]({{< relref "2026-07-20-spring-ai-chat-with-llms.md" >}})
+* [Spring AI : Structured Output]({{< relref "2026-07-22-spring-ai-structured-output.md" >}})
+* [Spring AI : Chat Memory]({{< relref "2026-07-25-spring-ai-chat-memory.md" >}})
+
 ### Spring Boot
 
 * [Getting Started with Spring Boot]({{< relref "01-getting-started-with-spring-boot.md" >}})
@@ -29,12 +35,9 @@ aliases:
 * [Why SpringBoot is so popular and how to learn SpringBoot effectively?]({{< relref "2018-02-22-why-springboot-so-popular-how-to-learn-springboot.md" >}})
 * [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}})
 * [How SpringBoot AutoConfiguration magic works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
-* [Getting Started with SpringBoot in Intellij IDEA Community Edition]({{< relref "2016-09-07-getting-started-springboot-intellij-idea-community-edition.md" >}})
-* [SpringBoot : Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}})
 * [Creating Custom SpringBoot Starter for Twitter4j]({{< relref "2016-04-08-creating-custom-springboot-starter-for.md" >}})
 * [SpringBoot Messaging with RabbitMQ]({{< relref "2018-02-20-springboot-messaging-rabbitmq.md" >}})
 * [Session Management using Spring Session with JDBC DataStore]({{< relref "2018-02-07-session-management-using-spring-session-jdbc-datastore.md" >}})
-* [CI/CD for SpringBoot applications using Travis-CI]({{< relref "2018-01-24-ci-cd-springboot-applications-using-travis-ci.md" >}})
 * [SpringBoot Best Practices]({{< relref "2019-05-14-spring-boot-best-practices.md" >}})
 * [Testing SpringBoot Applications]({{< relref "2019-10-07-spring-boot-testing.md" >}})
 * [SpringBoot Integration Testing using TestContainers Starter]({{< relref "2020-02-03-spring-boot-integration-testing-using-testcontainers-starter.md" >}})
