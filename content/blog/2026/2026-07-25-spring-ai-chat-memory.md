@@ -5,7 +5,7 @@ images:
   - /preview-images/spring-ai-chat-memory.webp
 type: post
 draft: true
-date: 2026-07-25T06:00:00.000Z
+date: 2026-07-25T06:00:00+05:30
 url: /blog/spring-ai-chat-memory
 toc: true
 categories:

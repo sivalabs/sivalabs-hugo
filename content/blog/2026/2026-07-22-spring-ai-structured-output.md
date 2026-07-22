@@ -5,7 +5,7 @@ images:
   - /preview-images/spring-ai-structured-output.webp
 type: post
 draft: false
-date: 2026-07-22T06:00:00.000Z
+date: 2026-07-22T06:00:00+05:30
 url: /blog/spring-ai-structured-output
 toc: true
 categories:
