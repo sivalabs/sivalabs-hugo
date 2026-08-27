@@ -8,11 +8,15 @@
   {{ $pageSize := site.Params.pagination.blogPerPage | default 12 }}
   {{ $paginator := .Paginate .Pages.ByDate.Reverse $pageSize }}
 
-  <div class="post-grid">
-    {{ range $paginator.Pages }}
-      {{ partial "post-card.html" . }}
-    {{ end }}
+  <div class="listing-layout">
+    <div class="listing-layout__main">
+      <div class="post-list">
+        {{ range $paginator.Pages }}
+          {{ partial "post-card.html" . }}
+        {{ end }}
+      </div>
+      {{ partial "pagination.html" $paginator }}
+    </div>
+    {{ partial "list-sidebar.html" . }}
   </div>
-
-  {{ partial "pagination.html" $paginator }}
 {{ end }}

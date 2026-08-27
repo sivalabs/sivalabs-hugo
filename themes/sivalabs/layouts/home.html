@@ -20,15 +20,18 @@
   </section>
 
   {{ $recentPosts := (where site.RegularPages "Section" "blog").ByDate.Reverse }}
-  {{ with first 6 $recentPosts }}
+  {{ with first 12 $recentPosts }}
     <section class="articles-section" aria-labelledby="latest-articles">
       <div class="section-heading">
         <h2 id="latest-articles">Latest Articles</h2>
       </div>
-      <div class="post-grid">
-      {{ range . }}
-        {{ partial "post-card.html" . }}
-      {{ end }}
+      <div class="listing-layout">
+        <div class="post-list">
+        {{ range . }}
+          {{ partial "post-card.html" . }}
+        {{ end }}
+        </div>
+        {{ partial "list-sidebar.html" . }}
       </div>
       <div class="section-actions">
         <a class="button-link" href="{{ "blog/" | relURL }}">All Posts</a>
