@@ -5,10 +5,9 @@ type: post
 date: 2015-06-15T13:04:00.000Z
 url: /blog/a-developers-perspective-on-spring-vs-javaee/
 categories:
-  - JavaEE
-  - Spring
+  - Java
 tags:
-  - Java-EE
+  - JavaEE
   - Spring
 aliases:
   - /a-developers-perspective-on-spring-vs-javaee/

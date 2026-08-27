@@ -12,7 +12,7 @@ categories:
   - SpringBoot
 tags:
   - SpringBoot
-  - IntelliJIDEA
+  - IntelliJ IDEA
 aliases:
   - /running-custom-spring-initializr
 ---

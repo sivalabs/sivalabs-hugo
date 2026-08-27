@@ -10,7 +10,7 @@ categories:
   - SpringBoot
 tags:
   - SpringBoot
-  - best-practices
+  - BestPractices
 popular: true
 aliases:
   - /spring-boot-best-practices/

@@ -7,9 +7,8 @@ type: post
 date: 2018-03-15T02:29:17.000Z
 url: /blog/microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
 categories:
-  - microservices
-  - springboot
-  - springcloud
+  - Microservices
+  - SpringBoot
 tags:
   - microservices
   - springboot

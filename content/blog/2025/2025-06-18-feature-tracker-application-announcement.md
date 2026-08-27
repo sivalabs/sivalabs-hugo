@@ -9,7 +9,7 @@ url: /blog/feature-tracker-application-announcement
 aliases: ['/feature-tracker-application-announcement']
 toc: false
 categories: [Microservices]
-tags: [Java, SpringBoot, IntelliJ, Microservices]
+tags: [Java, SpringBoot, IntelliJ IDEA, Microservices]
 ---
 
 As a Java Developer Advocate at JetBrains, I frequently demonstrate IntelliJ IDEA features through videos and articles. To do this, I usually create small demo applications focused on specific features. While this works well initially, the number of such applications grows quickly. Soon, it becomes difficult to remember which app was built for what purpose, turning it into a maintenance headache.

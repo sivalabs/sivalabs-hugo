@@ -7,9 +7,8 @@ type: post
 date: 2018-03-12T02:29:17.000Z
 url: /blog/spring-cloud-netflix-circuit-breaker/
 categories:
-  - microservices
-  - springboot
-  - springcloud
+  - Microservices
+  - SpringBoot
 tags:
   - microservices
   - springboot

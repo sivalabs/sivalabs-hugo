@@ -9,7 +9,7 @@ date: 2023-10-19T00:30:00.000Z
 url: /blog/spring-boot-jooq-tutorial-fetching-one-to-one-associations
 toc: true
 categories:
-  - jOOQ
+  - Java
 tags:
   - SpringBoot
   - jOOQ

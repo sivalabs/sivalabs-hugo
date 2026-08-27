@@ -9,7 +9,7 @@ date: 2023-07-13T23:29:17.000Z
 url: /blog/sivalabs-weekly-newsletter-2023-28
 toc: true
 categories:
-  - Newsletter
+  - Misc
 tags:
   - Newsletter
   - Tech

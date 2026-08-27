@@ -5,7 +5,7 @@ type: page
 date: 2020-11-30T02:32:39.000Z
 url: /blog/jooq-tutorials/
 categories:
-  - JOOQ
+  - Java
 tags:
   - JOOQ
 aliases:

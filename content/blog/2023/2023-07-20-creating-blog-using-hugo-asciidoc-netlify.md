@@ -8,7 +8,7 @@ draft: false
 date: 2023-07-19T23:29:17.000Z
 url: /blog/creating-blog-using-hugo-asciidoc-netlify
 categories:
-  - Blogging
+  - Misc
 tags:
   - Blogging
 description: In this tutorial, you will learn setting up a blog using Hugo, writing content using Markdown/Asciidoctor, and deploy on Netlify.

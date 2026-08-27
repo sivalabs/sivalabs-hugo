@@ -10,7 +10,7 @@ categories:
   - Java
 tags:
   - java
-  - best-practices
+  - BestPractices
 aliases:
   - /impose-architecture-guidelines-using-archunit/
 ---

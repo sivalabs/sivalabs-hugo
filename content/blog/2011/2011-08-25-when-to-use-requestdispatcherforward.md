@@ -5,9 +5,9 @@ type: post
 date: 2011-08-25T00:35:00.000Z
 url: /blog/when-to-use-requestdispatcherforward/
 categories:
-  - JavaEE
+  - Java
 tags:
-  - java-ee
+  - JavaEE
 aliases:
   - /when-to-use-requestdispatcherforward/
 ---

@@ -8,7 +8,7 @@ draft: false
 date: 2023-07-05T23:29:17.000Z
 url: /blog/sivalabs-weekly-newsletter-2023-27
 categories:
-  - Newsletter
+  - Misc
 tags:
   - Newsletter
   - Tech

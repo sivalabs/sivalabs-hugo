@@ -8,9 +8,8 @@ draft: false
 date: 2022-08-01T23:29:17.000Z
 url: /blog/how-to-not-to-ask-for-technical-help/
 categories:
-  - Tips
+  - Misc
 tags:
-  - Tech
   - Tips
 aliases:
   - /how-to-not-to-ask-for-technical-help/

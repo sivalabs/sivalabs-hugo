@@ -5,10 +5,9 @@ type: post
 date: 2011-01-26T07:11:00.000Z
 url: /blog/10-things-to-become-outstanding-java/
 categories:
-  - Best-Practices
   - Java
 tags:
-  - best-practices
+  - BestPractices
   - Java
 popular: true
 aliases:

@@ -7,9 +7,8 @@ type: post
 date: 2018-03-05T02:29:17.000Z
 url: /blog/microservices-part-2-configuration-management-spring-cloud-config-vault/
 categories:
-  - microservices
-  - springboot
-  - springcloud
+  - Microservices
+  - SpringBoot
 tags:
   - microservices
   - springboot

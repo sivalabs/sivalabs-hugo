@@ -5,8 +5,7 @@ type: post
 date: 2016-07-20T06:05:31.000Z
 url: /blog/my-new-book-springboot-learn-by-example/
 categories:
-  - Books
-  - Spring
+  - Misc
 tags:
   - Books
   - SpringBoot

@@ -9,7 +9,7 @@ date: 2023-10-16T00:30:00.000Z
 url: /blog/spring-boot-jooq-tutorial-crud-operations
 toc: true
 categories:
-  - jOOQ
+  - Java
 tags:
   - SpringBoot
   - jOOQ

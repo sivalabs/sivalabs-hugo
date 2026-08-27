@@ -18,7 +18,7 @@
     <section class="sidebar-widget">
       <h2><a href="{{ "categories/" | relURL }}">Categories</a></h2>
       <ul class="sidebar-categories">
-        {{ range .ByCount }}
+        {{ range .Alphabetical }}
           <li>
             <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a>
             <span>{{ .Count }}</span>
@@ -32,7 +32,7 @@
     <section class="sidebar-widget">
       <h2><a href="{{ "tags/" | relURL }}">Tag Cloud</a></h2>
       <div class="sidebar-tags">
-        {{ range .ByCount }}
+        {{ range .Alphabetical }}
           <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <span>{{ .Count }}</span></a>
         {{ end }}
       </div>

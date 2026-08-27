@@ -7,7 +7,7 @@ type: post
 date: 2019-06-24T02:29:17.000Z
 url: /blog/kafka-tutorial-producer-consumer-using-spring-boot/
 categories:
-  - Kafka
+  - Java
 tags:
   - Kafka
   - SpringBoot

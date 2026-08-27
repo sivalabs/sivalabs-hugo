@@ -9,9 +9,9 @@ date: 2024-07-01T23:29:17.000Z
 url: /blog/a-path-to-become-polyglot-programmer
 toc: false
 categories:
-  - Learning
+  - Misc
 tags:
-  - Learning
+  - Career
 aliases:
   - /a-path-to-become-polyglot-programmer
 ---

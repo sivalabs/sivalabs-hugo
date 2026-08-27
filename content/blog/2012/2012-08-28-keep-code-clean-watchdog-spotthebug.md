@@ -5,11 +5,11 @@ type: post
 date: 2012-08-28T04:55:00.000Z
 url: /blog/keep-code-clean-watchdog-spotthebug/
 categories:
-  - Best-Practices
+  - Java
 tags:
-  - best-practices
-  - java
-  - java-ee
+  - BestPractices
+  - Java
+  - JavaEE
 aliases:
   - /keep-code-clean-watchdog-spotthebug/
 ---

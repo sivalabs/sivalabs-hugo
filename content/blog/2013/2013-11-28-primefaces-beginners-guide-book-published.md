@@ -5,10 +5,11 @@ type: post
 date: 2013-11-28T04:02:00.000Z
 url: /blog/primefaces-beginners-guide-book-published/
 categories:
-  - Books
+  - Misc
 tags:
   - JSF
   - PrimeFaces
+  - Books
 aliases:
   - /primefaces-beginners-guide-book-published/
 ---

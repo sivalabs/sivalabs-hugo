@@ -8,7 +8,7 @@ draft: false
 date: 2022-10-26T23:29:17.000Z
 url: /blog/cloud-native-spring-in-action-book-review/
 categories:
-  - Books
+  - Misc
 tags:
   - SpringBoot
   - Cloud

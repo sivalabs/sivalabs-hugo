@@ -12,7 +12,7 @@ categories:
   - AI
 tags:
   - AI
-  - GenAI
+  - Generative AI
 aliases:
   - /my-first-impression-of-notebooklm
 ---

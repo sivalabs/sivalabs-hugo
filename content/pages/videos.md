@@ -7,7 +7,7 @@ url: /blog/videos/
 tags:
   - videos
 categories:
-  - videos
+  - Misc
 aliases:
   - /videos/
 ---

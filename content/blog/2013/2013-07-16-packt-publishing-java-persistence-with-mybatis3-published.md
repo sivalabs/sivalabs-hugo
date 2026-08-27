@@ -5,9 +5,10 @@ type: post
 date: 2013-07-16T10:01:00.000Z
 url: /blog/packt-publishing-java-persistence-with-mybatis3-published/
 categories:
-  - Books
+  - Misc
 tags:
   - MyBatis
+  - Books
 aliases:
   - /packt-publishing-java-persistence-with-mybatis3-published/
 ---

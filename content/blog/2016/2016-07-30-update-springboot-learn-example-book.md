@@ -5,10 +5,10 @@ type: post
 date: 2016-07-30T02:53:50.000Z
 url: /blog/update-springboot-learn-example-book/
 categories:
-  - Books
-  - Spring
+  - Misc
 tags:
   - SpringBoot
+  - Books
 aliases:
   - /update-springboot-learn-example-book/
 ---

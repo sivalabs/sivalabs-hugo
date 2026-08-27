@@ -10,9 +10,7 @@ url: /blog/the-lost-art-of-simple-application-development/
 categories:
   - Architecture
 tags:
-  - Thoughts
   - Architecture
-  - Simplicity
 aliases:
   - /the-lost-art-of-simple-application-development/
 ---

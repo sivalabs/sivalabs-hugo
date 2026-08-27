@@ -11,7 +11,6 @@ categories:
   - Thoughts
 tags:
   - Thoughts
-  - Opinions
 aliases:
   - /my-thoughts-on-devops-platform-engineering-and-fullstack-developer
 ---

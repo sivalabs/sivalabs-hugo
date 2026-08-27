@@ -7,7 +7,7 @@ type: post
 date: 2019-06-21T02:29:17.000Z
 url: /blog/kafka-tutorial-java-producer-consumer/
 categories:
-  - Kafka
+  - Java
 tags:
   - Kafka
 aliases:

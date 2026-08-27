@@ -12,7 +12,7 @@ categories:
   - Career
 tags:
   - Career
-  - SocialMedia
+  - Social-Media
 aliases:
   - /protecting-your-mental-health-while-being-on-social-media
 ---

@@ -8,11 +8,10 @@ draft: false
 date: 2024-01-22T23:29:17.000Z
 url: /blog/should-i-use-framework-or-libraries
 categories:
-  - Tech
-  - Architecture
+  - Java
 tags:
-  - Tech
-  - Architecture
+  - Java
+  - Lombok
 aliases:
   - /should-i-use-framework-or-libraries
 ---

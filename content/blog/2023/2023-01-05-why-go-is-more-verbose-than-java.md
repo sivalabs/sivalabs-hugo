@@ -8,7 +8,7 @@ draft: false
 date: 2023-01-04T23:29:17.000Z
 url: /blog/why-go-is-more-verbose-than-java
 categories:
-  - Thoughts
+  - GoLang
 tags:
   - GoLang
   - Java

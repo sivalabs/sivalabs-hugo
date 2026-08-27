@@ -8,12 +8,11 @@ draft: false
 date: 2021-08-18T23:29:17.000Z
 url: /blog/get-super-productive-with-intellij-file-templates/
 categories:
-  - IDE
+  - Misc
 tags:
   - Java
   - SpringBoot
-  - IDE
-  - Intellij
+  - IntelliJ IDEA
   - Productivity
 aliases:
   - /get-super-productive-with-intellij-file-templates/
