@@ -38,7 +38,7 @@ It stores the relevant messages and adds them to each new prompt, giving the mod
 {{< box info >}}
 **Sample Code Repository**
 
-You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/spring-ai-tutorial/tree/main/03-chat-memory)
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/sivalabs-blog-samples-code/tree/master/spring-ai-tutorial/03-chat-memory)
 
 {{< /box >}}
 

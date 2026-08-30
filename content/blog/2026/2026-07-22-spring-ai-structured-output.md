@@ -26,7 +26,7 @@ Spring AI's **Structured Output Converters** bridge that gap: they turn plain-te
 {{< box info >}}
 **Sample Code Repository**
 
-You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/spring-ai-tutorial/tree/main/02-structured-output)
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/sivalabs-blog-samples-code/tree/master/spring-ai-tutorial/02-structured-output)
 
 {{< /box >}}
 

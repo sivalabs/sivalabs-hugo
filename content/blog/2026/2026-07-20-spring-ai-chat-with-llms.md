@@ -30,7 +30,7 @@ we will use `ChatClient` to talk to OpenAI's GPT-5 model and then make our promp
 {{< box info >}}
 **Sample Code Repository**
 
-You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/spring-ai-tutorial/tree/main/01-chat-openai)
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/sivalabs-blog-samples-code/tree/master/spring-ai-tutorial/01-chat-openai)
 
 {{< /box >}}
 

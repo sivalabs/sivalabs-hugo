@@ -27,7 +27,7 @@ Putting all of that code directly around every `ChatClient` call works for a whi
 {{< box info >}}
 **Sample Code Repository**
 
-You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/spring-ai-tutorial/tree/main/04-advisors)
+You can find the sample code for this article in the [GitHub repository](https://github.com/sivaprasadreddy/sivalabs-blog-samples-code/tree/master/spring-ai-tutorial/04-advisors)
 
 {{< /box >}}
 
