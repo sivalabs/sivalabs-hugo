@@ -8,10 +8,10 @@ date: 2018-03-05T02:29:17.000Z
 url: /blog/microservices-part-2-configuration-management-spring-cloud-config-vault/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 aliases:
   - /microservices-part-2-configuration-management-spring-cloud-config-vault/
@@ -42,7 +42,7 @@ In this post, we are going to learn:
 
 # What is the need for Spring Cloud Config and Vault?
 Spring Boot already provides a lot of options to [externalize configuration properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config).
-However, once the application is started, you can’t change those property values at runtime.
+However, once the application is started, you can't change those property values at runtime.
 You need to update the properties and restart the application for those changes to take effect.
 
 In the microservices world, there could be a large number of microservices, and multiple instances of those microservices are running.
@@ -56,7 +56,7 @@ when we start the application. In addition to that, whenever we update the prope
 in our microservice so that it will reload the configuration changes without requiring a restart of the application.
 
 In our applications, we also need to configure various sensitive data like database credentials, keys, tokens, etc.
-Obviously, we don’t want to store them in plain text. A better approach would be to store them in an encrypted format,
+Obviously, we don't want to store them in plain text. A better approach would be to store them in an encrypted format,
 and Spring Cloud Config Server provides the ability to encrypt and decrypt the data.
 Even better, we should use secure data storage tools like [Vault](https://www.vaultproject.io/).
 Spring Cloud also provides integration with Vault so that we can store any sensitive configuration properties in Vault.
@@ -73,7 +73,7 @@ Nothing fancy here so far; it's a typical Spring Boot application.
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/spring-boot-microservices-series
 
-First, let’s implement a REST endpoint to provide product data and later refactor it to use the Cloud Config Server.
+First, let's implement a REST endpoint to provide product data and later refactor it to use the Cloud Config Server.
 
 We are going to use Docker and run MySQL as a Docker container.
 
@@ -145,7 +145,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 ```
 
 Create **ProductService**, which just delegates to **ProductRepository** for now.
-We can directly inject the Repository into our web layer components (Controllers), but going forward, there could be business logic that I don’t like to put in either the Controller or the Repository.
+We can directly inject the Repository into our web layer components (Controllers), but going forward, there could be business logic that I don't like to put in either the Controller or the Repository.
 
 ```java
 import com.sivalabs.catalogservice.entities.Product;
@@ -243,7 +243,7 @@ public class ProductNotFoundException extends RuntimeException {
 }
 ```
 
-Let’s insert some sample products into our database.
+Let's insert some sample products into our database.
 
 `src/main/resources/data.sql`
 
@@ -292,7 +292,7 @@ public class ConfigServerApplication {
 }
 ```
 
-That’s it. This is all you need to do to create a Spring Cloud Config Server, and you just need to add application-specific config files to the Git repository.
+That's it. This is all you need to do to create a Spring Cloud Config Server, and you just need to add application-specific config files to the Git repository.
 
 > If you have mentally prepared to write a bunch of code to create a Spring Cloud Config Server, sorry to disappoint you. :-)
 
@@ -311,7 +311,7 @@ Make sure you also add the **spring-cloud-dependencies** BOM in the `<properties
 
 While using Spring Cloud Config Server, the properties loading process happens in multiple stages: first loading **bootstrap.properties/yml** and then from the config server.
 
-So, let’s rename **application.properties** to **bootstrap.properties** and update it to have the following properties.
+So, let's rename **application.properties** to **bootstrap.properties** and update it to have the following properties.
 
 ```properties
 spring.application.name=catalog-service
@@ -346,7 +346,7 @@ This should work fine. You can check the console logs to see that `catalog-servi
 config server at http://localhost:8888/ during startup.
 
 Now we are getting a little close to our goal, but we are still storing the credentials in plain text.
-Let’s move the sensitive config properties to Vault.
+Let's move the sensitive config properties to Vault.
 
 # Using Vault for storing sensitive data
 
@@ -359,7 +359,7 @@ Now start Vault in dev mode using the following command:
 In the console, you can see information about how to use Vault and the Root token.
 Open a new terminal window and set the `VAULT_ADDR` environment variable.
 
-**$ export VAULT_ADDR=’http://127.0.0.1:8200′**
+**$ export VAULT_ADDR='http://127.0.0.1:8200′**
 
 > NOTE: The Vault dev mode is only for development purposes and is not meant for production usage.
 

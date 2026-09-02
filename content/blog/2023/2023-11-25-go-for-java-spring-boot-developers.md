@@ -1,5 +1,5 @@
 ---
-title: Go for Java/SpringBoot Developers
+title: Go for Java/Spring Boot Developers
 author: Siva
 images:
   - /preview-images/go-for-spring-boot-devs-1.webp
@@ -1330,19 +1330,19 @@ For example, if you want to override the server port, then you can pass the **SE
 You can pass database connection properties using **DB_HOST**, **DB_PORT**, **DB_USERNAME**, **DB_PASSWORD**, **DB_DATABASE** environment variables.
 
 
-## Java/SpringBoot vs Go comparison
+## Java/Spring Boot vs Go comparison
 Each language and framework has its own pros and cons, and it's up to us to choose the right tool for the job.
 There is no silver bullet, and there is no one size fits all solutions.
 
 Sometimes performance is the most important factor, and sometimes developer productivity is the most important factor.
 We need to evaluate the pros and cons of each technology and choose the right one for the problem at hand.
 
-IMO, Java/SpringBoot and Go took very different approaches to improve the developer productivity.
+IMO, Java/Spring Boot and Go took very different approaches to improve the developer productivity.
 I already discussed some of them in detail in my previous article [Code simplicity by Abstraction vs Verbosity](https://www.sivalabs.in/code-simplicity-by-abstraction-vs-verbosity/).
 
-If I have to compare Java/SpringBoot and Go, I would say like this:
+If I have to compare Java/Spring Boot and Go, I would say like this:
 
-**Java/SpringBoot:**
+**Java/Spring Boot:**
 
 * Java has a very mature ecosystem with a lot of libraries and tools available.
 * Spring Boot is an opinionated framework, and it offers a lot of features out of the box.
@@ -1358,12 +1358,12 @@ If I have to compare Java/SpringBoot and Go, I would say like this:
 * Go is a very opinionated language, and it forces you to do things in a certain way like formatting, unused variables, etc.
 * Go has a rich standard library and toolchain (formatting, testing, benchmarking, cross-platform compilation, etc) support.
 * Go is verbose, and it takes more lines of code to achieve the same thing compared to Java. IMO, this is mainly due to error handling approach in Go.
-* Go consumes fewer resources (CPU, Memory) compared to Java/SpringBoot.
+* Go consumes fewer resources (CPU, Memory) compared to Java/Spring Boot.
 * In my opinion, the biggest advantage for Go is its simplicity. While the Go code looks more verbose, it's very easy to understand and maintain.
 
 Go community prefers using only the necessary libraries and integrating them instead of using an all-in-one framework like **Spring Boot** or **Django**.
 
-**Personally, I felt Go is more verbose and requires writing more lines of code compared to Java/SpringBoot.
+**Personally, I felt Go is more verbose and requires writing more lines of code compared to Java/Spring Boot.
 But it also results in a less cognitive load while working with Go code.**
 
 OTOH, once you understand the magic behind Spring Boot, it is super productive to build applications.

@@ -9,9 +9,9 @@ date: 2024-09-06T23:29:17.000Z
 url: /blog/running-custom-spring-initializr
 toc: false
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - IntelliJ IDEA
 aliases:
   - /running-custom-spring-initializr

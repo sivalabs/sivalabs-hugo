@@ -12,7 +12,7 @@ categories:
   - AI
 tags:
   - Java
-  - SpringBoot
+  - Spring Boot
   - AI
   - Ollama
 aliases:

@@ -11,7 +11,7 @@ toc: true
 categories:
   - Java
 tags:
-  - SpringBoot
+  - Spring Boot
   - jOOQ
 description: In this tutorial, we will learn how to get started with jOOQ for implementing persistence layer in a Spring Boot application.
 aliases:

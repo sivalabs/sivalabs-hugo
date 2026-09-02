@@ -9,9 +9,9 @@ date: 2023-07-24T00:30:00.000Z
 url: /blog/spring-boot-testing-tutorial
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to write unit, slice and integration tests for a Spring Boot application.
 aliases:

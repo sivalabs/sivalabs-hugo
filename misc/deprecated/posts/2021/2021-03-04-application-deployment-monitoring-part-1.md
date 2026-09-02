@@ -1,16 +1,16 @@
 ---
-title: SpringBoot application deployment and monitoring series - Part 1 - Build Services
+title: Spring Boot application deployment and monitoring series - Part 1 - Build Services
 author: Siva
 images: ["/preview-images/bookmark-services.webp"]
 type: post
 draft: false
 date: 2021-03-04T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-part-1/
-categories: [SpringBoot]
-tags: [SpringBoot, DevOps]
+categories: [Spring Boot]
+tags: [Spring Boot, DevOps]
 ---
 
-This is the first part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
+This is the first part of our [journey to learn Spring Boot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
 We will be using the following tools throughout the process, so please install them based on your operating system.
 
 ### Prerequisites
@@ -41,7 +41,7 @@ I have implemented the services and pushed the code into following repositories 
 * vote-service https://github.com/sivaprasadreddy/vote-service
 * bookmarks-ui https://github.com/sivaprasadreddy/bookmarks-ui
 
-The **bookmark-service** and **vote-service** are pretty standard SpringBoot applications using
+The **bookmark-service** and **vote-service** are pretty standard Spring Boot applications using
 **Spring Data JPA, FlywayDB Migrations, Spring MVC REST APIs** with **Swagger UI** and **CORS** configured.
 
 The **bookmarks-ui** is implemented as **Spring Cloud Gateway** and also contains UI.

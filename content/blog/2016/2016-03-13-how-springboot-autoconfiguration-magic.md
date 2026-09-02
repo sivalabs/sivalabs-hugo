@@ -1,5 +1,5 @@
 ---
-title: How SpringBoot AutoConfiguration magic works?
+title: How Spring Boot AutoConfiguration magic works?
 author: Siva
 type: post
 date: 2016-03-13T07:04:56.000Z
@@ -7,16 +7,16 @@ url: /blog/how-springboot-autoconfiguration-magic/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
 popular: true
 aliases:
   - /how-springboot-autoconfiguration-magic/
 ---
-In my previous post, [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}}), we looked at how to create a Spring Boot application. But you may or may not understand what is going on behind the scenes. You may want to understand the magic behind Spring Boot’s AutoConfiguration.
+In my previous post, [Why Spring Boot?]({{< relref "2016-03-13-why-springboot.md" >}}), we looked at how to create a Spring Boot application. But you may or may not understand what is going on behind the scenes. You may want to understand the magic behind Spring Boot's AutoConfiguration.
 
 <!--more-->
 
-But before that, you should know about Spring’s **@Conditional** feature, on which all of Spring Boot’s AutoConfiguration magic depends.
+But before that, you should know about Spring's **@Conditional** feature, on which all of Spring Boot's AutoConfiguration magic depends.
 
 ## Exploring the power of @Conditional
 
@@ -62,7 +62,7 @@ For example, you may want to register a bean when:
 
 These are just a few examples, and you can have any condition you want.
 
-Let us take a look at how Spring’s @Conditional works.
+Let us take a look at how Spring's @Conditional works.
 
 Suppose we have a **UserDAO** interface with methods to get data from a data store. We have two implementations of the **UserDAO** interface, namely **JdbcUserDAO**, which talks to a **MySQL** database, and **MongoUserDAO**, which talks to **MongoDB**.
 
@@ -288,10 +288,10 @@ But what exactly triggers the auto-configuration mechanism?
 
 This is what we are going to look at in the next section.
 
-### SpringBoot AutoConfiguration
+### Spring Boot AutoConfiguration
 
-The key to Spring Boot’s auto-configuration magic is the **@EnableAutoConfiguration** annotation.
-Typically, we annotate our Application entry point class with either **@SpringBootApplication** or,
+The key to Spring Boot's auto-configuration magic is the **@EnableAutoConfiguration** annotation.
+Typically, we annotate our Application entry point class with either **@Spring BootApplication** or,
 if we want to customize the defaults, we can use the following annotations:
 
 ```java
@@ -408,7 +408,7 @@ spring.datasource.password=secret
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 ```
 
-You can also see some inner classes and bean definition methods that are annotated with Spring Boot’s Conditional annotations,
+You can also see some inner classes and bean definition methods that are annotated with Spring Boot's Conditional annotations,
 such as **@ConditionalOnMissingBean, @ConditionalOnClass, and @ConditionalOnProperty**, etc.
 
 These bean definitions will be registered in the **ApplicationContext** only if those conditions are matched.

@@ -1,5 +1,5 @@
 ---
-title: Remote debugging SpringBoot application
+title: Remote debugging Spring Boot application
 author: Siva
 images:
   - /preview-images/remote-1.webp
@@ -10,13 +10,13 @@ categories:
   - Java
 tags:
   - Java
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /remote-debugging-spring-boot-application/
 ---
 
-We all know how to run SpringBoot application in debug mode from our favorite IDEs(IntelliJ IDEA, Eclipse etc) and debug the code.
-Recently I had to debug a SpringBoot application which is running on a remote server. 
+We all know how to run Spring Boot application in debug mode from our favorite IDEs(IntelliJ IDEA, Eclipse etc) and debug the code.
+Recently I had to debug a Spring Boot application which is running on a remote server. 
 
 There is already lot of information on the Internet on how to remote debug java applications, but some approaches didn't work for me.
 So, here I would like to share my findings.
@@ -70,7 +70,7 @@ Note we gave the address as **address=0.0.0.0:8787** instead of **address=8787**
 
 With this I am able to remote debug the application in the same way I did when I run it on localhost.
 
-By the way, we can also run our SpringBoot application in debug mode as follows without creating jar file:
+By the way, we can also run our Spring Boot application in debug mode as follows without creating jar file:
 
 > `mvn spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8787"`
 

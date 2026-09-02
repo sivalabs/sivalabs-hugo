@@ -1,20 +1,20 @@
 ---
-title: SpringBoot Application deployment and monitoring series
+title: Spring Boot Application deployment and monitoring series
 author: Siva
 images: ["/preview-images/space-center.webp"]
 type: post
 draft: false
 date: 2021-02-26T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-series/
-categories: [SpringBoot]
-tags: [SpringBoot, DevOps]
+categories: [Spring Boot]
+tags: [Spring Boot, DevOps]
 ---
 
-Few years ago I wrote a series of blog posts on **Developing a simple e-commerce application from scratch to production using SpringBoot**.
+Few years ago I wrote a series of blog posts on **Developing a simple e-commerce application from scratch to production using Spring Boot**.
 Well, I covered most of the development stuff but left "to production" part because other things came up. Many things changed since then.
 
 Now I want to write a series of articles focusing on deployment and monitoring.
-So, I am planning to build a simple application using SpringBoot and deploy it in different ways.
+So, I am planning to build a simple application using Spring Boot and deploy it in different ways.
 Along the way I want to learn the things such as infrastructure provisioning, automated deployments and monitoring. 
 
 Let me introduce the sample application that we are going to work on.
@@ -40,13 +40,13 @@ automate the process of deployment and monitoring all by yourself.
 So, here is what I wanted to do:
 
 * Create Build Pipelines using **Jenkins**
-* ~~Deploy SpringBoot applications on VMs and **run as fatjars** on **Vagrant** box(using **Ansible**??)~~ 
-* ~~Deploy SpringBoot applications on VMs and **run as Systemd services** on Vagrant box(using Ansible??)~~
+* ~~Deploy Spring Boot applications on VMs and **run as fatjars** on **Vagrant** box(using **Ansible**??)~~ 
+* ~~Deploy Spring Boot applications on VMs and **run as Systemd services** on Vagrant box(using Ansible??)~~
 * Run applications locally using docker-compose
 * Implement monitoring using **Prometheus** and **Grafana**
 * Implement **centralized logging** using **ELK/EFK** or **Loki**
-* Deploy SpringBoot applications on **Kubernetes(Minikube)**
-* Deploy SpringBoot applications on **AWS ECS** using **Terraform/Pulumi/AWS CDK**
+* Deploy Spring Boot applications on **Kubernetes(Minikube)**
+* Deploy Spring Boot applications on **AWS ECS** using **Terraform/Pulumi/AWS CDK**
 
 ## Important things to keep in mind
 * The **application business logic is intentionally kept very low** because the focus is mainly on deployment automation and monitoring.
@@ -63,7 +63,7 @@ So, here is what I wanted to do:
 ## Services Overview
 
 ### bookmark-service: 
-A micro-service to manage bookmarks using the tech stack **Java 11, SpringBoot 2.x, Postgresql**
+A micro-service to manage bookmarks using the tech stack **Java 11, Spring Boot 2.x, Postgresql**
 
 #### API Endpoints:
 
@@ -108,7 +108,7 @@ A micro-service to manage bookmarks using the tech stack **Java 11, SpringBoot 2
 ```
 
 ### vote-service: 
-A micro-service to manage votes for bookmarks using the tech stack **Java 11, SpringBoot 2.x, Postgresql**
+A micro-service to manage votes for bookmarks using the tech stack **Java 11, Spring Boot 2.x, Postgresql**
 
 #### API Endpoints:
 
@@ -147,7 +147,7 @@ A micro-service to manage votes for bookmarks using the tech stack **Java 11, Sp
 **Request:** PUT http://localhost:8081/api/v1/bookmarks/{bookmarkId}/votes/down
 
 ### bookmarks-ui: 
-A UI application to show bookmarks using tech stack **Java 11, SpringBoot 2.x, SpringCloud Gateway, Thymeleaf, Vue.js**.
+A UI application to show bookmarks using tech stack **Java 11, Spring Boot 2.x, SpringCloud Gateway, Thymeleaf, Vue.js**.
 However, note that it is not a full fledged Vue.js application, 
 we will be using Vue.js just for 2-way data binding because life is too short to create UI component HTML as string from JSON response.
 

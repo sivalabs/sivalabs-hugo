@@ -7,9 +7,9 @@ images:
 date: 2023-07-18T02:32:39.000Z
 url: /blog/spring-boot-tutorials/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /spring-boot-tutorials/
 ---
@@ -28,19 +28,19 @@ aliases:
 * [Spring Boot REST API Best Practices - Part 2 : Implementing Create and Update APIs]({{< relref "10-spring-boot-rest-api-tutorial-part-2.md" >}})
 * [Spring Boot REST API Best Practices - Part 3 : Implementing FindById and DeleteById APIs]({{< relref "11-spring-boot-rest-api-tutorial-part-3.md" >}})
 * [Spring Boot REST API Best Practices - Part 4 : Exception Handling in REST APIs]({{< relref "12-spring-boot-rest-api-tutorial-part-4.md" >}})
-* [Why SpringBoot is so popular and how to learn SpringBoot effectively?]({{< relref "2018-02-22-why-springboot-so-popular-how-to-learn-springboot.md" >}})
-* [Why SpringBoot?]({{< relref "2016-03-13-why-springboot.md" >}})
-* [How SpringBoot AutoConfiguration magic works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
-* [Getting Started with SpringBoot in Intellij IDEA Community Edition]({{< relref "2016-09-07-getting-started-springboot-intellij-idea-community-edition.md" >}})
-* [SpringBoot : Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}})
-* [Creating Custom SpringBoot Starter for Twitter4j]({{< relref "2016-04-08-creating-custom-springboot-starter-for.md" >}})
-* [SpringBoot Messaging with RabbitMQ]({{< relref "2018-02-20-springboot-messaging-rabbitmq.md" >}})
+* [Why Spring Boot is so popular and how to learn Spring Boot effectively?]({{< relref "2018-02-22-why-springboot-so-popular-how-to-learn-springboot.md" >}})
+* [Why Spring Boot?]({{< relref "2016-03-13-why-springboot.md" >}})
+* [How Spring Boot AutoConfiguration magic works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
+* [Getting Started with Spring Boot in Intellij IDEA Community Edition]({{< relref "2016-09-07-getting-started-springboot-intellij-idea-community-edition.md" >}})
+* [Spring Boot : Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}})
+* [Creating Custom Spring Boot Starter for Twitter4j]({{< relref "2016-04-08-creating-custom-springboot-starter-for.md" >}})
+* [Spring Boot Messaging with RabbitMQ]({{< relref "2018-02-20-springboot-messaging-rabbitmq.md" >}})
 * [Session Management using Spring Session with JDBC DataStore]({{< relref "2018-02-07-session-management-using-spring-session-jdbc-datastore.md" >}})
-* [CI/CD for SpringBoot applications using Travis-CI]({{< relref "2018-01-24-ci-cd-springboot-applications-using-travis-ci.md" >}})
-* [SpringBoot Best Practices]({{< relref "2019-05-14-spring-boot-best-practices.md" >}})
-* [Testing SpringBoot Applications]({{< relref "2019-10-07-spring-boot-testing.md" >}})
-* [SpringBoot Integration Testing using TestContainers Starter]({{< relref "2020-02-03-spring-boot-integration-testing-using-testcontainers-starter.md" >}})
-* [Remote debugging SpringBoot application]({{< relref "2020-05-31-remote-debugging-spring-boot-application.md" >}})
+* [CI/CD for Spring Boot applications using Travis-CI]({{< relref "2018-01-24-ci-cd-springboot-applications-using-travis-ci.md" >}})
+* [Spring Boot Best Practices]({{< relref "2019-05-14-spring-boot-best-practices.md" >}})
+* [Testing Spring Boot Applications]({{< relref "2019-10-07-spring-boot-testing.md" >}})
+* [Spring Boot Integration Testing using TestContainers Starter]({{< relref "2020-02-03-spring-boot-integration-testing-using-testcontainers-starter.md" >}})
+* [Remote debugging Spring Boot application]({{< relref "2020-05-31-remote-debugging-spring-boot-application.md" >}})
 * [Retrying Method Execution using Spring AOP]({{< relref "2016-01-05-retrying-method-execution-using-spring-aop.md" >}})
 
 ### Spring Security OAuth 2.0

@@ -289,7 +289,7 @@ Yes, it is verbose, but clear. No background magic going on here. Sometimes a bi
 
 I believe usually programming languages are created by its creator to solve a specific type of problems that they are facing. I don't think Rob Pike or other Go creators were writing any e-commerce web applications, or fancy REST API and they created Go to solve those web app development challenges. To my guess they might have been working on building low-latency, high-performance servers, low level protocol implementations etc using C++ or some other low level programming languages and they were not happy with C++. At least that's what I understood from their talks.
 
-So, comparing Go with Java or Ruby might be apples to oranges comparison. If I want to build a web application may be I am more productive with SpringBoot or Ruby On Rails than Go.
+So, comparing Go with Java or Ruby might be apples to oranges comparison. If I want to build a web application may be I am more productive with Spring Boot or Ruby On Rails than Go.
 
 When I try to learn a new language I looks for sample applications on Github to learn how people usually do something in that language. When I search for Go sample projects, most of the projects are like **Docker, Kubernetes, CLI clients** etc and I hardly find any typical web applications. That doesn't mean you can't use Go for web apps or REST API, but it may not be right tool for those type of applications especially if productivity is a key factor.
 
@@ -297,11 +297,11 @@ When I try to learn a new language I looks for sample applications on Github to 
 
 While learning a new language we might unknowingly compare with our favourite programming language and keep comparing whether the new language is having all the features of our current favourite language. If we keep comparing everything then it is hard to see the beauty of the new language. We should explore the new language and learn its strengths and weaknesses.
 
-While learning Go, I keep comparing it with Java, SpringBoot combo which is the best tech stack in my opinion. I shouldn't have compared Go with Java + SpringBoot.
+While learning Go, I keep comparing it with Java, Spring Boot combo which is the best tech stack in my opinion. I shouldn't have compared Go with Java + Spring Boot.
 
 Also, we shouldn't hang on to little things like **Funky Date Formatting** :-) How hard it is to remember **01 is for month, 02 is for day, 03 is for hour** etc. May be it is better than **"yyyy-mm-dd"** format. How many times we get confuse about does **MM** represents Month or Minutes??!! With Go's notation there is no such confusion.
 
-Java has vast collection library, generics, streams, huge ecosystem of frameworks and libraries. While using Java + SpringBoot I can simply add a bunch of starter which mostly take care of boilerplate code and start working on business logic.
+Java has vast collection library, generics, streams, huge ecosystem of frameworks and libraries. While using Java + Spring Boot I can simply add a bunch of starter which mostly take care of boilerplate code and start working on business logic.
 
 I really get surprised when people keep saying Java is old, java is verbose, Java is all about creating Factories, Builders etc etc. Yes, the frameworks(Spring) might have Factories, Builders etc but I don't even remember when was the last time I had to create Factory in my business application. If anyone think Java is same as it was in EJB 1.x days then please do yourself a favour and take another look at Java.
 

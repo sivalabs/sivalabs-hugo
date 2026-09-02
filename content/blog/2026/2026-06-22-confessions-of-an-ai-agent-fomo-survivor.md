@@ -18,7 +18,7 @@ Then came Context Engineering.
 
 Soon after, people started talking about **Agent Skills, Harness Engineering, Loop Engineering, Ralph Wiggum Loops, Sub-Agent Architectures, Agentic Workflows, Cognitive Tooling**, and probably three more terms while I was writing this sentence.
 
-At this point I fully expect to wake up tomorrow and discover that “Recursive Quantum Harness Context Loop Engineering” is the new must-have skill for AI developers.
+At this point I fully expect to wake up tomorrow and discover that "Recursive Quantum Harness Context Loop Engineering" is the new must-have skill for AI developers.
 
 And honestly?
 
@@ -26,20 +26,20 @@ It can feel overwhelming.
 
 Every new buzzword comes with an implicit message:
 
-> “If you’re not doing this, you’re not leveraging AI capabilities fully.”
+> "If you're not doing this, you're not leveraging AI capabilities fully."
 
 Which immediately triggers a mild form of AI FOMO.
 
 Maybe my setup is outdated.
 
-Maybe I’m missing the secret sauce.
+Maybe I'm missing the secret sauce.
 
 Maybe there is a GitHub repository with 47 agent skills, 12 MCP servers, and a five-level hierarchy of sub-agents that would finally unlock AGI.
 
 So naturally, I spend an hour reading about it instead of actually building software.
 
 ## The Surprising Discovery
-Over the last several months of working with AI coding agents, I’ve discovered something that feels almost disappointing:
+Over the last several months of working with AI coding agents, I've discovered something that feels almost disappointing:
 
 **A minimal setup works surprisingly well.**
 
@@ -47,7 +47,7 @@ Not because all the new ideas are useless.
 
 Many of them are genuinely valuable.
 
-But I’ve found that for day-to-day software development, especially on Java/Spring Boot projects, I don’t need a giant agent infrastructure to be productive.
+But I've found that for day-to-day software development, especially on Java/Spring Boot projects, I don't need a giant agent infrastructure to be productive.
 
 Most of the time, I just need enough structure for the agent to understand the project and enough guidance to keep it from doing creative things that nobody asked for.
 
@@ -58,7 +58,7 @@ Instead, I use a project generator. Spring Initializr exists for a reason.
 
 The generated project uses the latest versions, recommended defaults, and current conventions.
 
-I’d rather start with a project created by the people who maintain the framework than have an AI confidently generate a Maven configuration from six months ago.
+I'd rather start with a project created by the people who maintain the framework than have an AI confidently generate a Maven configuration from six months ago.
 
 Once the project is created, I manually implement one complete end-to-end flow.
 
@@ -96,7 +96,7 @@ Developers learn from examples.
 AI agents do too.
 
 ## The Tiny AGENTS.md
-Another thing I’ve learned is that a bigger context is not automatically better context.
+Another thing I've learned is that a bigger context is not automatically better context.
 
 My AGENTS.md (or CLAUDE.md) files are intentionally small.
 
@@ -107,7 +107,7 @@ I include only things that are genuinely useful:
 * Test commands
 * A few important conventions
 
-That’s it.
+That's it.
 
 Not fifty pages of documentation.
 
@@ -123,7 +123,7 @@ Sometimes I see people stuffing everything imaginable into agent instruction fil
 
 The AI equivalent of:
 
-> “Just in case, let me attach the entire internet.”
+> "Just in case, let me attach the entire internet."
 
 Meanwhile, the agent is trying to figure out how to add a new REST endpoint.
 
@@ -136,17 +136,17 @@ https://github.com/sivaprasadreddy/sivalabs-agent-skills
 
 The key word is relevant.
 
-I choose skills that directly help with the type of software I’m building.
+I choose skills that directly help with the type of software I'm building.
 
 Not because they are trending.
 
-Not because somebody’s GitHub repository got ten thousand stars.
+Not because somebody's GitHub repository got ten thousand stars.
 
-Not because a YouTube thumbnail promised “10X Better Agents.”
+Not because a YouTube thumbnail promised "10X Better Agents."
 
-Just because they’re useful.
+Just because they're useful.
 
-That’s a surprisingly effective selection criterion.
+That's a surprisingly effective selection criterion.
 
 ## MCP Servers: Less Is More
 My MCP server setup is equally boring.
@@ -156,7 +156,7 @@ Typically:
 * Context7 for looking up the latest documentation
 * Playwright for UI testing and fixes
 
-That’s usually enough.
+That's usually enough.
 
 Every MCP server introduces additional capabilities, complexity, and potential distractions.
 
@@ -164,12 +164,12 @@ Sometimes I see screenshots where people have twenty MCP servers connected.
 
 The agent has access to databases, Slack, Jira, GitHub, browsers, calendars, weather reports, stock prices, smart refrigerators, and possibly the International Space Station.
 
-Meanwhile, I’m just trying to implement a pagination endpoint.
+Meanwhile, I'm just trying to implement a pagination endpoint.
 
 ## Specs or Detailed Prompts
 Sometimes I use Spec Driven Development.
 
-Sometimes I don’t.
+Sometimes I don't.
 
 When the task is large or requires multiple iterations, a specification document works well.
 
@@ -223,7 +223,7 @@ Create a new user account with basic profile and credentials.
 - `500 Internal Server Error` (e.g., persistence constraint/unhandled errors)
 ```
 
-I’ve found that the format matters less than the clarity.
+I've found that the format matters less than the clarity.
 
 If the following are clearly defined:
 
@@ -255,9 +255,9 @@ Everyone stars it.
 
 Someone posts:
 
-> “This changed everything.”
+> "This changed everything."
 
-Five minutes later you’ve cloned:
+Five minutes later you've cloned:
 
 * 37 agent skills
 * 12 sub-agent configurations
@@ -269,7 +269,7 @@ The assumption is:
 
 > More agent stuff = better agents.
 
-In my experience, that’s not always true.
+In my experience, that's not always true.
 
 Every skill adds instructions.
 
@@ -283,14 +283,14 @@ You asked for a simple CRUD endpoint.
 
 _The agent delivers a distributed event-driven hexagonal architecture with CQRS and three design patterns nobody can explain._
 
-There’s also the security aspect.
+There's also the security aspect.
 
-Pulling random agent skills from the internet and giving them access to your development workflow deserves at least the same scrutiny you’d apply to any other dependency.
+Pulling random agent skills from the internet and giving them access to your development workflow deserves at least the same scrutiny you'd apply to any other dependency.
 
 Maybe more.
 
 ## About All The Loop Engineering Stuff
-Now, before the internet gets upset, I’m not saying the newer agent techniques are useless.
+Now, before the internet gets upset, I'm not saying the newer agent techniques are useless.
 
 Far from it.
 
@@ -300,11 +300,11 @@ Especially for long-running tasks and highly autonomous workflows.
 
 If your goal is:
 
-> “Here is a backlog. Wake me up when it’s done.”
+> "Here is a backlog. Wake me up when it's done."
 
 Then sophisticated orchestration may be exactly what you need.
 
-But let’s be honest.
+But let's be honest.
 
 Not everyone has unlimited AI budgets.
 
@@ -331,7 +331,7 @@ A couple of useful MCP servers.
 
 Clear requirements.
 
-That’s it.
+That's it.
 
 No revolutionary framework.
 
@@ -343,15 +343,15 @@ Just enough structure for the agent to succeed.
 
 And surprisingly often, that works really well.
 
-Maybe I’ll eventually adopt the latest loop engineering technique.
+Maybe I'll eventually adopt the latest loop engineering technique.
 
-Maybe next year’s buzzword will genuinely change everything.
+Maybe next year's buzzword will genuinely change everything.
 
-Or maybe we’ll discover that software engineering’s oldest lesson still applies:
+Or maybe we'll discover that software engineering's oldest lesson still applies:
 
 > **Simplicity scales surprisingly far.**
 
-I’m curious what kind of setup you’re using.
+I'm curious what kind of setup you're using.
 
 Do you have a minimal agent harness?
 
@@ -361,4 +361,4 @@ What has worked well for you?
 
 And perhaps more importantly...
 
-What didn’t work?
+What didn't work?

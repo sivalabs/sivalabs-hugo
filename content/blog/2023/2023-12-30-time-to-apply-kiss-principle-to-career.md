@@ -106,6 +106,6 @@ I don't even want to think about the third wakeup call.
 
 I need to often remind myself of the following quote:
 
-> **"Take care of your body. It’s the only place you have to live." – Jim Rohn**
+> **"Take care of your body. It's the only place you have to live." – Jim Rohn**
 
 I wish you all a very happy and healthy new year 2024.

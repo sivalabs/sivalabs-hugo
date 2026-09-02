@@ -1,5 +1,5 @@
 ---
-title: My Review of Vlad Mihalcea’s High-Performance Java Persistence book
+title: My Review of Vlad Mihalcea's High-Performance Java Persistence book
 author: Siva
 type: post
 date: 2017-11-05T04:59:17.000Z

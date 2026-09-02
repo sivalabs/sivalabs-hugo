@@ -25,4 +25,4 @@ Agent Skills supporting Spec Driven Development with AI Agents.
 A project generator CLI tool for quickly creating Spring Boot applications with common best practices baked in.
 
 ## [5. generator-springboot](https://github.com/sivaprasadreddy/generator-springboot)
-A Yeoman generator for generating MicroServices with SpringBoot. 
+A Yeoman generator for generating MicroServices with Spring Boot. 

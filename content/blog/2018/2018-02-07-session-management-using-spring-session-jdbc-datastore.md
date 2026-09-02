@@ -7,9 +7,9 @@ type: post
 date: 2018-02-07T02:29:17.000Z
 url: /blog/session-management-using-spring-session-jdbc-datastore/
 categories:
-  - springboot
+  - Spring Boot
 tags:
-  - springboot
+  - Spring Boot
   - springsession
 aliases:
   - /session-management-using-spring-session-jdbc-datastore/
@@ -32,7 +32,7 @@ Traditionally, we have been using the following techniques to manage sessions:
 Let us briefly look at these approaches.
 
 ## 1. Single Node Server
-If your application is not a critical service to your business, there won’t be too many users concurrently, and some downtime is acceptable, then we can have a Single Node Server deployment as shown below:
+If your application is not a critical service to your business, there won't be too many users concurrently, and some downtime is acceptable, then we can have a Single Node Server deployment as shown below:
 
 ![Single Node Sessions](/images/SingleNode-Sessions.webp "Single Node Sessions")
 
@@ -55,7 +55,7 @@ But Session Replication requires better hardware support and involves some serve
 
 ## 4. Multi-Node Server with Session Data in a Persistent DataStore
 
-In this model, the user session data will not be held in the server’s memory; instead, it will be persisted into a data store and associated with a SESSION_ID.
+In this model, the user session data will not be held in the server's memory; instead, it will be persisted into a data store and associated with a SESSION_ID.
 
 ![Multi-Node Server with Spring Session](/images/MultiNode-SpringSession.webp "Multi-Node Server with Spring Session")
 
@@ -219,7 +219,7 @@ Now you can start the application, add some messages to the HttpSession, and you
 By default, Spring Session converts the objects that we are trying to add to the HttpSession into a **ByteArray** and stores it in the table.
 
 ## Spring Session with Spring Security
-Spring Session seamlessly integrates with Spring Security because of Spring Boot’s auto-configuration.
+Spring Session seamlessly integrates with Spring Security because of Spring Boot's auto-configuration.
 Let us add Spring Security to our application.
 
 ```xml

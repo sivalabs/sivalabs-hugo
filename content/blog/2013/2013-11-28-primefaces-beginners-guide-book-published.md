@@ -1,5 +1,5 @@
 ---
-title: PrimeFaces Beginner’s Guide book published
+title: PrimeFaces Beginner's Guide book published
 author: Siva
 type: post
 date: 2013-11-28T04:02:00.000Z

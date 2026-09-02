@@ -10,12 +10,12 @@ tags:
   - jcart
 
 ---
-First we will start with setting up the initial code using SpringBoot. We have already discussed in 
+First we will start with setting up the initial code using Spring Boot. We have already discussed in 
 [JCart: Initial Code SetUp]({{< relref "2015-12-01-jcart-initial-code-setup.md" >}}) 
 article about creating a maven module **jcart-site** which will be our ShoppingCart application. 
 In that article we have shown what springboot dependencies to add as well.
 
-Just to recap we will be using SpringBoot, SpringMVC, Thymeleaf, JPA for our ShoppingCart application.
+Just to recap we will be using Spring Boot, SpringMVC, Thymeleaf, JPA for our ShoppingCart application.
 
 **jcart-site/pom.xml**
 

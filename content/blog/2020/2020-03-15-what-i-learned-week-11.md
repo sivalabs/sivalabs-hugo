@@ -25,7 +25,7 @@ I thought maybe this information could be useful for others too. So, I am going 
 <!--more-->
 
 
-* If you are looking for a detailed and practical guide for implementing Microservices using SpringBoot, then look no further:
+* If you are looking for a detailed and practical guide for implementing Microservices using Spring Boot, then look no further:
 [Java Microservices: A Practical Guide](https://www.marcobehler.com/guides/java-microservices-a-practical-guide)
 
 * While using JPA, how many times do we want to see the generated SQL query with actual parameter values instead of placeholders?
@@ -33,7 +33,7 @@ We can use [p6spy-spring-boot-starter](https://github.com/gavlyukovskiy/spring-b
 
 * I am surprised at how easy it is to create CLI tools using **NodeJS** and
 [inquirer.js](https://github.com/SBoudrias/Inquirer.js).
-At work, I have created a simple CLI tool to build and deploy SpringBoot applications on PCF in just a couple of hours.
+At work, I have created a simple CLI tool to build and deploy Spring Boot applications on PCF in just a couple of hours.
 If you are interested, this is a great tutorial:
 [Build a JavaScript Command Line Interface (CLI) with Node.js](https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/)
 
@@ -43,7 +43,7 @@ If you are interested, this is a great tutorial:
 * If you are new to **Git**, then this post is definitely a good starting point covering various concepts of Git with pictorial representation:
 [How to teach Git](https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html) 
 
-* If your SpringBoot application is starting slowly on your MacOS, then this post has a solution for you:
+* If your Spring Boot application is starting slowly on your MacOS, then this post has a solution for you:
 [Fixing Slow Spring Boot Startup](https://blog.noizwaves.io/2017/09/02/slow-spring-boot-startup.html)
 
 * **Docker** became part of day-to-day work, and once in a while we want to clean up unnecessary stuff:

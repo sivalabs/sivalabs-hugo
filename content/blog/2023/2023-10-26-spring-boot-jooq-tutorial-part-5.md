@@ -11,7 +11,7 @@ toc: true
 categories:
   - Java
 tags:
-  - SpringBoot
+  - Spring Boot
   - jOOQ
 description: In this tutorial, we will learn how to implement fetch Many-to-Many relationships using jOOQ.
 aliases:

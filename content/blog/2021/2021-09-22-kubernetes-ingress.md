@@ -13,7 +13,7 @@ tags:
   - Kubernetes
   - DevOps
   - Java
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /kubernetes-ingress/
 ---
@@ -276,13 +276,13 @@ Finally, we can test our services by using domain names as follows:
 
 ```shell
 curl http://k8sdemo.com:80/v1/
-{"app":"K8S SpringBoot Demo","version":"v1","hostName":"k8s-boot-demo-v1-deployment-657df6b8df-jqgj7"}
+{"app":"K8S Spring Boot Demo","version":"v1","hostName":"k8s-boot-demo-v1-deployment-657df6b8df-jqgj7"}
 curl http://k8sdemo.com:80/v2/
-{"version":"v2","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-v2-deployment-55b6dfd4d4-69sgz"}
+{"version":"v2","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-v2-deployment-55b6dfd4d4-69sgz"}
 curl http://api.k8sdemo-v1.com:80/
-{"app":"K8S SpringBoot Demo","version":"v1","hostName":"k8s-boot-demo-v1-deployment-657df6b8df-jqgj7"}
+{"app":"K8S Spring Boot Demo","version":"v1","hostName":"k8s-boot-demo-v1-deployment-657df6b8df-jqgj7"}
 curl http://api.k8sdemo-v2.com:80/
-{"version":"v2","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-v2-deployment-55b6dfd4d4-69sgz"}
+{"version":"v2","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-v2-deployment-55b6dfd4d4-69sgz"}
 ```
 
 ## Summary

@@ -8,7 +8,7 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 We will provide a link to Forgot Password in Login page and create **jcart-admin/src/main/resources/templates/public/forgotPwd.html** template as follows:
@@ -73,7 +73,7 @@ public class UserAuthController extends JCartAdminBaseController
 
 Instead of preparing the email content by appending Strings, we can use Thymeleaf templates with place-holders and pass the values dynamically.
 
-When we added thymeleaf-starter SpringBoot already registers **ServletContextTemplateResolver** bean automatically.
+When we added thymeleaf-starter Spring Boot already registers **ServletContextTemplateResolver** bean automatically.
   
 In order to register emailTemplateResolver let us configure the **ClassLoaderTemplateResolver** bean in **jcart-admin/src/main/java/com/sivalabs/jcart/admin/config/WebConfig.java**
 

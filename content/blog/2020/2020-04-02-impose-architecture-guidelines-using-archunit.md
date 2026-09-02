@@ -88,7 +88,7 @@ The ArchUnit provides DSL that's pretty clear to understand the intent of the te
 
 ### Rule 2: Should follow Layered Architecture
 
-In a typical SpringBoot application, **Service** layer depends on **Repository** layer, **Web** and **Config** layers depends on **Service** layer. **We don't want Web or Config layer directly talk to Repository layer.**
+In a typical Spring Boot application, **Service** layer depends on **Repository** layer, **Web** and **Config** layers depends on **Service** layer. **We don't want Web or Config layer directly talk to Repository layer.**
 
 We can impose that restriction with the following test.
 

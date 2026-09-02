@@ -8,20 +8,20 @@ draft: false
 date: 2022-11-29T23:29:17.000Z
 url: /blog/spring-boot-3-error-reporting-using-problem-details
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Java
 aliases:
   - /spring-boot-3-error-reporting-using-problem-details
 ---
 Spring Framework 6 implemented the **Problem Details for HTTP APIs** specification, [RFC 7807](https://www.rfc-editor.org/rfc/rfc7807.html). 
-In this article we will learn how to handle exceptions in SpringBoot 3 REST API(which uses Spring Framework 6) and provide error responses using **ProblemDetails** API.
+In this article we will learn how to handle exceptions in Spring Boot 3 REST API(which uses Spring Framework 6) and provide error responses using **ProblemDetails** API.
 
 <!--more-->
 
 
-> We are going to reuse the SpringBoot 3 sample application [spring-boot-jpa-crud-demo](https://github.com/sivaprasadreddy/spring-boot-jpa-crud-demo) which we used for [Using Java Records with Spring Boot 3](https://www.sivalabs.in/using-java-records-with-spring-boot-3/) article.
+> We are going to reuse the Spring Boot 3 sample application [spring-boot-jpa-crud-demo](https://github.com/sivaprasadreddy/spring-boot-jpa-crud-demo) which we used for [Using Java Records with Spring Boot 3](https://www.sivalabs.in/using-java-records-with-spring-boot-3/) article.
 
 Assume we have the following REST API endpoints to create a bookmark and fetch a bookmark by id.
 
@@ -66,7 +66,7 @@ curl --location --request POST 'http://localhost:8080/api/bookmarks' \
 --data-raw '{ "title":"", "url":"" }'
 ```
 
-then you will get a default SpringBoot error response as follows:
+then you will get a default Spring Boot error response as follows:
 
 ```json
 {

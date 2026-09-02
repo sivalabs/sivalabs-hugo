@@ -1,5 +1,5 @@
 ---
-title: Getting Started with SpringBoot in Intellij IDEA Community Edition
+title: Getting Started with Spring Boot in Intellij IDEA Community Edition
 author: Siva
 type: post
 date: 2016-09-07T09:53:35.000Z
@@ -8,7 +8,7 @@ categories:
   - Spring
 tags:
   - IntelliJ IDEA
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /getting-started-springboot-intellij-idea-community-edition/
 ---
@@ -38,7 +38,7 @@ Select **File** -> **New** -> **Project**.
 
 In the **New Project** Dialog, you can see a **User-defined** section. When you click on **User-defined**, you can see all the project templates we have created.
 
-Select the **SpringBootBasic** template we created earlier, provide the **project name**, and click **Finish**.
+Select the **Spring BootBasic** template we created earlier, provide the **project name**, and click **Finish**.
 
 Well, we won't get any fancy Spring support features like the Ultimate Edition provides, but it will help us to get started quickly without requiring us to manually create a Maven/Gradle project, configure `<parent>`, etc.
 

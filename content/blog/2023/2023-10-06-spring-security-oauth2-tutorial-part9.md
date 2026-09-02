@@ -9,9 +9,9 @@ date: 2023-10-06T00:30:00.000Z
 url: /blog/spring-security-oauth2-tutorial-integrating-client-and-resource-server
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - SpringSecurity
   - OAuth2
 description: In this tutorial, we will explore how to invoke the secured Resource Server API endpoints from the Client application.

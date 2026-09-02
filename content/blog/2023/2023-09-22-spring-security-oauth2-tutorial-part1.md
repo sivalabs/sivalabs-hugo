@@ -9,9 +9,9 @@ date: 2023-09-22T00:30:00.000Z
 url: /blog/spring-security-oauth2-tutorial-introduction
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - SpringSecurity
   - OAuth2
 description: In this tutorial, you will learn the basic concepts of OAuth 2.0 using Keycloak.

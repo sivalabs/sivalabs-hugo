@@ -12,7 +12,7 @@ tags:
 
 ---
 As I promised in my article 
-[Developing a simple e-commerce application from scratch to production using SpringBoot]({{< relref "2015-11-20-developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot.md" >}})
+[Developing a simple e-commerce application from scratch to production using Spring Boot]({{< relref "2015-11-20-developing-a-simple-e-commerce-application-from-scratch-to-production-using-springboot.md" >}})
 , I am starting first post by introducing the application **JCart** that we are going to build.
 
 One of my friend makes quilling toys and she sell them by advertising on Facebook or through word of mouth. Now she is getting more and more customers and she wants to expand her business by going online. So, she asked me to help in setting up a simple e-commerce website. After having some conversations on whether to leverage any existing e-commerce platforms or building a new application, we decided to build a new one with the features we just needed for our need.

@@ -1,5 +1,5 @@
 ---
-title: Why SpringBoot?
+title: Why Spring Boot?
 author: Siva
 type: post
 date: 2016-03-13T07:02:10.000Z
@@ -7,7 +7,7 @@ url: /blog/why-springboot/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
 popular: true
 aliases:
   - /why-springboot/
@@ -34,7 +34,7 @@ If you are a Java developer, then there is a high chance that you might have hea
 
 **Spring is very popular for several reasons:**
 
-*   Spring’s dependency injection approach encourages writing testable code.
+*   Spring's dependency injection approach encourages writing testable code.
 *   Easy-to-use but powerful database transaction management capabilities.
 *   Spring simplifies integration with other Java frameworks like JPA/Hibernate ORM, Struts/JSF, etc., web frameworks.
 *   A state-of-the-art Web MVC framework for building web applications.
@@ -472,7 +472,7 @@ In our **SpringWebAppInitializer.java** configuration class, we have done the fo
 
 *   We have configured **AppConfig.class** as **RootConfirationClasses**, which will become the parent **ApplicationContext** that contains bean definitions shared by all child (**DispatcherServlet**) contexts.
 *   We have configured **WebMvcConfig.class** as **ServletConfigClasses**, which is a child **ApplicationContext** that contains WebMvc bean definitions.
-*   We have configured **”/”** as a **ServletMapping**, which means all requests will be handled by **DispatcherServlet**.
+*   We have configured **"/"** as a **ServletMapping**, which means all requests will be handled by **DispatcherServlet**.
 *   We have registered **OpenEntityManagerInViewFilter** as a Servlet Filter so that we can lazy-load the JPA Entity lazy collections while rendering the view.
 
 **Step 5: Create a JPA Entity and a Spring Data JPA Repository**
@@ -553,7 +553,7 @@ You can download Tomcat 8 and configure it in your favorite IDE, run the applica
 
 Yay… We did it.
 
-**But wait... Isn’t it too much work to just show a list of user details pulled from a database table?
+**But wait... Isn't it too much work to just show a list of user details pulled from a database table?
 Let us be honest and fair. All this configuration is not just for this one use case.
 This configuration is the basis for the rest of the application also.**
 
@@ -568,19 +568,19 @@ Apart from writing the same configuration again and again, do you see any other 
 **Well, let me list what problems I am seeing here.**
 
 *   You need to hunt for all the **compatible libraries** for the specific Spring version and configure them.
-*   95% of the time, we configure the **DataSource**, **EntityManagerFactory**, **TransactionManager**, etc., beans in the same way. Wouldn’t it be great if Spring could do it for me automatically?
+*   95% of the time, we configure the **DataSource**, **EntityManagerFactory**, **TransactionManager**, etc., beans in the same way. Wouldn't it be great if Spring could do it for me automatically?
 *   Similarly, we configure Spring MVC beans like **ViewResolver**, **MessageSource**, etc., in the same way most of the time.
 
 > If Spring can automatically do it for me, that would be awesome!
 
 Imagine, what if Spring is capable of configuring beans automatically?
 What if you can customize the automatic configuration using simple, customizable properties?
-For example, instead of mapping the DispatcherServlet URL pattern to “/”, you want to map it to “/app/”.
-Instead of putting Thymeleaf views in the “/WEB-INF/views” folder, you may want to place them in the “/WEB-INF/templates/” folder.
+For example, instead of mapping the DispatcherServlet URL pattern to "/", you want to map it to "/app/".
+Instead of putting Thymeleaf views in the "/WEB-INF/views" folder, you may want to place them in the "/WEB-INF/templates/" folder.
 So basically, you want Spring to do things automatically but provide the flexibility to override the default configuration in a simpler way?
 Well, you are about to enter the world of Spring Boot, where your dreams come true!
 
-## A quick taste of SpringBoot
+## A quick taste of Spring Boot
 
 Welcome to Spring Boot! Spring Boot does exactly what you are looking for. It will do things automatically for you but allows you to override the defaults if you want to.
 
@@ -687,7 +687,7 @@ Now run **Application.java** as a Java Application and point your browser to **h
 
 You should see the list of users in table format. Cool!
 
-OK, OK, I hear you shouting, “What is going on???”
+OK, OK, I hear you shouting, "What is going on???"
 
 Let me explain what just happened.
 
@@ -695,14 +695,14 @@ Let me explain what just happened.
 
 *   The first thing to observe is that we are using some dependencies named like **spring-boot-starter-\***.
 
-    Remember I said, “95% of the time, I use the same configuration.” So when you add the **springboot-starter-web** dependency, by default, it will pull all the commonly used libraries while developing Spring MVC applications, such as **spring-webmvc, jackson-json, validation-api**, and **tomcat**.
+    Remember I said, "95% of the time, I use the same configuration." So when you add the **springboot-starter-web** dependency, by default, it will pull all the commonly used libraries while developing Spring MVC applications, such as **spring-webmvc, jackson-json, validation-api**, and **tomcat**.
 *   We have added the **spring-boot-starter-data-jpa** dependency. This pulls all the **spring-data-jpa** dependencies and also adds **Hibernate** libraries because the majority of applications use Hibernate as the JPA implementation.
 
 **2. Auto-Configuration**
 
 *   Not only does **spring-boot-starter-web** add all these libraries, but it also configures the commonly registered beans like **DispatcherServlet, ResourceHandlers, MessageSource**, etc., with sensible defaults.
 *   We also added **spring-boot-starter-thymeleaf**, which not only adds the Thymeleaf library dependencies but also configures **ThymeleafViewResolver** beans automatically.
-*   We haven’t defined any of the **DataSource, EntityManagerFactory, TransactionManager**, etc., beans, but they are automatically created. **How?**
+*   We haven't defined any of the **DataSource, EntityManagerFactory, TransactionManager**, etc., beans, but they are automatically created. **How?**
 
     If we have any in-memory database drivers like **H2** or **HSQL** in our classpath, then Spring Boot will automatically create an in-memory **DataSource** and then register **EntityManagerFactory, TransactionManager** beans automatically with sensible defaults. But we are using MySQL, so we need to explicitly provide MySQL connection details. We have configured those MySQL connection details in the **application.properties** file, and Spring Boot creates a **DataSource** using these properties.
 
@@ -712,21 +712,21 @@ The most important and surprising thing is that we have created a simple Java cl
 
 **Where does the servlet container come from?**
 
-We have added **spring-boot-starter-web**, which pulls **spring-boot-starter-tomcat** automatically, and when we run the `main()` method, it starts Tomcat as an **embedded container** so that we don’t have to deploy our application on any externally installed Tomcat server.
+We have added **spring-boot-starter-web**, which pulls **spring-boot-starter-tomcat** automatically, and when we run the `main()` method, it starts Tomcat as an **embedded container** so that we don't have to deploy our application on any externally installed Tomcat server.
 
-By the way, have you observed that our packaging type in **pom.xml** is **‘jar’**, not **‘war’**? Wonderful!
+By the way, have you observed that our packaging type in **pom.xml** is **‘jar'**, not **‘war'**? Wonderful!
 
 **OK, but what if I want to use the Jetty server instead of Tomcat?**
 
 Simple, exclude **spring-boot-starter-tomcat** from **spring-boot-starter-web** and include **spring-boot-starter-jetty**.
 
-That’s it.
+That's it.
 
 But this looks all magical!
 
 I can imagine what you are thinking. You are thinking that Spring Boot looks cool and it is doing a lot of things automatically for me. But I still don't fully understand how it is all really working behind the scenes. Right?
 
-I can understand. Watching a magic show is fun normally, but not in Software Development. Don’t worry, we will be looking at each of those things and explaining in detail how things are happening behind the scenes in future articles. But I don’t want to overwhelm you by dumping everything on your head right now in this article.
+I can understand. Watching a magic show is fun normally, but not in Software Development. Don't worry, we will be looking at each of those things and explaining in detail how things are happening behind the scenes in future articles. But I don't want to overwhelm you by dumping everything on your head right now in this article.
 
 ### Summary
 
@@ -734,4 +734,4 @@ In this article, we had a quick overview of various Spring configuration styles 
 
 In the next article, we will deep dive into Spring Boot and understand how it works.
 
-[How SpringBoot AutoConfiguration Works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})
+[How Spring Boot AutoConfiguration Works?]({{< relref "2016-03-13-how-springboot-autoconfiguration-magic.md" >}})

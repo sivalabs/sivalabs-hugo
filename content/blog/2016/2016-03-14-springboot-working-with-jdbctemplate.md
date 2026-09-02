@@ -1,5 +1,5 @@
 ---
-title: 'SpringBoot : Working with JdbcTemplate'
+title: 'Spring Boot : Working with JdbcTemplate'
 author: Siva
 type: post
 date: 2016-03-14T07:08:22.000Z
@@ -7,7 +7,7 @@ url: /blog/springboot-working-with-jdbctemplate/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /springboot-working-with-jdbctemplate/
 ---
@@ -16,7 +16,7 @@ using an annotation-based approach.
 
 <!--more-->
 
-First, let’s take a quick look at how we generally use Spring’s **JdbcTemplate** (**without Spring Boot**) by registering **DataSource**,
+First, let's take a quick look at how we generally use Spring's **JdbcTemplate** (**without Spring Boot**) by registering **DataSource**,
 **TransactionManager**, and **JdbcTemplate** beans. Optionally, we can register a **DataSourceInitializer** bean to initialize our database.
 
 ```java
@@ -122,7 +122,7 @@ You might have observed that most of the time, we use this similar kind of confi
 
 Now let us see how to use **JdbcTemplate** without needing to configure all these beans manually by using **Spring Boot**.
 
-## Using JdbcTemplate with SpringBoot
+## Using JdbcTemplate with Spring Boot
 
 By using Spring Boot, we can take advantage of the auto-configuration feature and eliminate the need to configure beans by ourselves.
 
@@ -139,7 +139,7 @@ By adding the **spring-boot-starter-jdbc** module, we get the following auto-con
 
 *   The `spring-boot-starter-jdbc` module transitively pulls `tomcat-jdbc-{version}.jar`, which is used to configure the `DataSource` bean.
 *   If you have not defined any `DataSource` bean explicitly and if you have any embedded database driver in the classpath, such as H2, HSQL, or Derby, then Spring Boot will automatically register a `DataSource` bean using in-memory database settings.
-*   If you haven’t registered any of the following types of beans, then Spring Boot will register them automatically:
+*   If you haven't registered any of the following types of beans, then Spring Boot will register them automatically:
     *   **PlatformTransactionManager (DataSourceTransactionManager)**
     *   **JdbcTemplate**
     *   **NamedParameterJdbcTemplate**

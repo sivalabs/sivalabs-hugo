@@ -9,11 +9,11 @@ categories:
   - Spring
 tags:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - SpringCloud
 keywords:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - SpringCloud
 aliases:
   - /spring-cloud-tutorials-auto-refresh-config-changes-using-spring-cloud-bus/

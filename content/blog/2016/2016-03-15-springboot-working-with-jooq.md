@@ -1,5 +1,5 @@
 ---
-title: 'SpringBoot : Working with JOOQ'
+title: 'Spring Boot : Working with JOOQ'
 author: Siva
 type: post
 date: 2016-03-15T07:13:21.000Z
@@ -8,11 +8,11 @@ categories:
   - Spring
 tags:
   - jooq
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /springboot-working-with-jooq/
 ---
-In my previous article, [SpringBoot: Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}}), we learned how to use the Spring Boot MyBatis Starter to quickly get up and running with Spring and MyBatis. In this article, we are going to learn about how to use the Spring Boot jOOQ Starter.
+In my previous article, [Spring Boot: Working with MyBatis]({{< relref "2016-03-14-springboot-working-with-mybatis.md" >}}), we learned how to use the Spring Boot MyBatis Starter to quickly get up and running with Spring and MyBatis. In this article, we are going to learn about how to use the Spring Boot jOOQ Starter.
 
 jOOQ (jOOQ Object Oriented Querying) is a persistence framework that embraces SQL.
 

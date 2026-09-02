@@ -7,8 +7,8 @@ draft: false
 date: 2026-01-04T04:59:17+05:30
 url: /blog/the-power-of-value-objects
 toc: true
-categories: [SpringBoot]
-tags: [Java, SpringBoot, DDD]
+categories: [Spring Boot]
+tags: [Java, Spring Boot, DDD]
 ---
 
 A **Value Object** is a domain concept defined by its values rather than by identity.

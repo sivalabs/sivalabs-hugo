@@ -9,9 +9,9 @@ date: 2023-08-03T00:30:00.000Z
 url: /blog/spring-boot-database-transaction-management-tutorial
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to handle database transactions while using SQL databases.
 aliases:

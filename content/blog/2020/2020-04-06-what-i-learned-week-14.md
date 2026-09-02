@@ -26,17 +26,17 @@ Now I am using that time for various other activities including learning some ne
 * I have published a new article on [How to Imposing Code Structure Guidelines using ArchUnit](https://sivalabs.in/impose-architecture-guidelines-using-archunit/)
 
 * I use **Spring Security JWT based authentication** for most of my personal projects. 
-Instead of copy-pasting the same code again and again I created a [SpringBoot JWT Security Starter](https://github.com/sivalabs/spring-boot-jwt-security-starter)
+Instead of copy-pasting the same code again and again I created a [Spring Boot JWT Security Starter](https://github.com/sivalabs/spring-boot-jwt-security-starter)
 
-* Though SpringBoot is very easy, understanding the internal working mechanism of it is a bit challenging and overwhelming.
-**Marco Behler** published the following new articles covering Spring framework, SpringBoot and Spring Security 
+* Though Spring Boot is very easy, understanding the internal working mechanism of it is a bit challenging and overwhelming.
+**Marco Behler** published the following new articles covering Spring framework, Spring Boot and Spring Security 
 and I highly recommend to read them.
 
     * [What is Spring Framework? From Dependency Injection to Web MVC](https://www.marcobehler.com/guides/spring-framework)
     * [What is Spring Boot? Autoconfigurations In-Depth](https://www.marcobehler.com/guides/spring-boot)
     * [Spring Security: Authentication and Authorization In-Depth](https://www.marcobehler.com/guides/spring-security)
 
-* If you are trying to learn **Deploying SpringBoot + SpringCloud Applications on Kubernetes** then 
+* If you are trying to learn **Deploying Spring Boot + SpringCloud Applications on Kubernetes** then 
 I highly recommend this course https://udemy.com/course/kubernetes-crash-course-for-java-developers/ 
 by **Ranga Karanam** [In28Minutes](https://twitter.com/In28Minutes). 
 A very practical and hands-on course covering from basics to advanced topics.

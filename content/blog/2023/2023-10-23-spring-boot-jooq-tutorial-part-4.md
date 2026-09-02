@@ -11,7 +11,7 @@ toc: true
 categories:
   - Java
 tags:
-  - SpringBoot
+  - Spring Boot
   - jOOQ
 description: In this tutorial, we will learn how to implement fetch One-to-Many relationships using jOOQ.
 aliases:
@@ -59,7 +59,7 @@ public record UserWithBookmarks(Long id, String name, String email, List<Bookmar
 We are going to use jOOQ's **MULTISET** value constructor to fetch the list of bookmarks created by the user.
 You can find more details about **MULTISET value constructor** here: https://www.jooq.org/doc/latest/manual/sql-building/column-expressions/multiset-value-constructor/.
 
-Also, I highly recommend reading [How jOOQ 3.15’s New Multiset Operator Will Change How You Think About SQL](https://blog.jooq.org/jooq-3-15s-new-multiset-operator-will-change-how-you-think-about-sql/) article.
+Also, I highly recommend reading [How jOOQ 3.15's New Multiset Operator Will Change How You Think About SQL](https://blog.jooq.org/jooq-3-15s-new-multiset-operator-will-change-how-you-think-about-sql/) article.
 
 Let's implement fetching a user details along with the bookmarks created by that user.
 

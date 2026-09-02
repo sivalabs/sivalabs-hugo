@@ -9,9 +9,9 @@ date: 2023-09-27T00:30:00.000Z
 url: /blog/spring-security-oauth2-tutorial-authorization-code-flow-with-pkce
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - SpringSecurity
   - OAuth2
 description: In this tutorial, you will learn how OAuth 2.0 Authorization Code Flow with PKCE works.

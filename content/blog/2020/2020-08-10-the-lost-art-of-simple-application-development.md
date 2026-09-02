@@ -30,11 +30,11 @@ Some times we may get valid reasons, and most of the times the reply would be
 
 Luckily, I got a wonderful opportunity to work on a new project, and the responsibility of picking up the right tech stack and architectural approach is left to me. Yay!!!
 
-I am very much aware of the latest technology trends such as Java 15, Kotlin, Ktor, SpringBoot, SpringCloud, Spring Cloud Data Streams, Reactive Programming, WebFlux, R2DBC, Docker, Kubernetes, ServiceMesh, Istio, 
+I am very much aware of the latest technology trends such as Java 15, Kotlin, Ktor, Spring Boot, SpringCloud, Spring Cloud Data Streams, Reactive Programming, WebFlux, R2DBC, Docker, Kubernetes, ServiceMesh, Istio, 
 Microservices, Serverless, Quarkus, Kafka, KafkaStream, OAuth2.0, Event Sourcing, Axon Framework, GoLang,  ReactJS, VueJS, Svelt, MicroFrontEnd, GraphQL, RxJS, Redis, ElasticSearch...
 and I have decent working experience with some of these technologies as well.
 
-I could go crazy with my tech stack selection, but I choose to go with the simplest tech stack (boring tech stack you could say) such as Java 11, SpringBoot, Postgresql, ReactJS and AWS.
+I could go crazy with my tech stack selection, but I choose to go with the simplest tech stack (boring tech stack you could say) such as Java 11, Spring Boot, Postgresql, ReactJS and AWS.
 Before telling about why I choose that tech stack I would like share some of my thoughts that made me to go in this route.
 
 ## Evolution of business needs and Tech landscape

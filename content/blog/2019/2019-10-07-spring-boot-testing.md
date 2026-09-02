@@ -1,5 +1,5 @@
 ---
-title: Testing SpringBoot Applications
+title: Testing Spring Boot Applications
 author: Siva
 images:
   - /preview-images/spring-boot-1.webp
@@ -7,10 +7,10 @@ type: post
 date: 2019-10-07T02:29:17.000Z
 url: /blog/spring-boot-testing/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - Testing
 popular: true
 aliases:
@@ -20,7 +20,7 @@ aliases:
 **Spring Boot** is the most popular tech stack for building Java-based REST APIs.
 In this tutorial, we will learn how to write tests for Spring Boot applications.
 
-* Create SpringBoot Application
+* Create Spring Boot Application
 * Unit Testing using [JUnit 5](https://junit.org/junit5/docs/current/user-guide/) and [Mockito](https://site.mockito.org/)
 * Integration Testing using [TestContainers](https://www.testcontainers.org/)
 * Testing MicroService Integrations using [MockServer](http://www.mock-server.com/)
@@ -37,7 +37,7 @@ So, the question is, how do we implement Unit Tests and Integration tests in a S
 
 > Sample application Code for this article can be found at https://github.com/sivaprasadreddy/spring-boot-tutorials/tree/master/testing/springboot-testing-demo
 
-## Create SpringBoot Application
+## Create Spring Boot Application
 
 Let us consider a scenario where we are building a REST API to manage users.
 If we follow a typical 3-tier layered architecture, we might have a JPA entity **User**, Spring Data JPA Repository **UserRepository**,

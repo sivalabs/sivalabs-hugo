@@ -8,10 +8,10 @@ date: 2018-03-15T02:29:17.000Z
 url: /blog/microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 aliases:
   - /microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
@@ -56,9 +56,9 @@ API Gateway, aka Edge Service, provides a unified interface for a set of microse
 
 Spring Cloud provides Zuul proxy, similar to **Nginx**, that can be used to create API Gateway.
 
-Let us create a front-end UI module **shoppingcart-ui** as a SpringBoot application which also acts as Zuul proxy. 
+Let us create a front-end UI module **shoppingcart-ui** as a Spring Boot application which also acts as Zuul proxy. 
 
-Create a SpringBoot project with **Web, Config Client, Eureka Discovery, Zuul** starters and annotate the main entry-point class with 
+Create a Spring Boot project with **Web, Config Client, Eureka Discovery, Zuul** starters and annotate the main entry-point class with 
 **@EnableZuulProxy**.
 
 ```xml
@@ -102,7 +102,7 @@ registered in Eureka Server with service id **service-id**.
 For, ex: From UI application if we make a request to http://localhost:8080/catalog-service/products then it will lookup in 
 Service Registry for ServiceID **catalog-service** and send the request with URL /products to one of the available catalog-service instances.
 
-To make it happen we need to register “shoppingcart-ui” with Eureka Service Registry.
+To make it happen we need to register "shoppingcart-ui" with Eureka Service Registry.
 
 **bootstrap.properties**
 
@@ -123,7 +123,7 @@ $.ajax({
 }.bind(this));
 ```
 
-Here from our UI application, we are making a call to http://localhost:8080/catalog-service/products. Assuming catalog-service is registered with ServiceID “catalog-service” and running on port 8181, this request will be forwarded to http://host:8181/products. But UI is completely unaware of where is the actual catalog-service running, its hostname port number etc.
+Here from our UI application, we are making a call to http://localhost:8080/catalog-service/products. Assuming catalog-service is registered with ServiceID "catalog-service" and running on port 8181, this request will be forwarded to http://host:8181/products. But UI is completely unaware of where is the actual catalog-service running, its hostname port number etc.
 
 We can also use a common prefix for URLs, like **/api**, for which we want Zuul to proxy by setting **zuul.prefix** property.
 

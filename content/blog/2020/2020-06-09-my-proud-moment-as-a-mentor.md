@@ -34,7 +34,7 @@ She had to take a break from career for some personal reasons, and meanwhile the
 After 3 years she thought of restarting her career and want to pick a stream which has more job opportunities.
 
 She asked me to help her to figure out which technologies to learn and if possible to teach her those technologies.
-I suggested her to learn Java, SpringBoot, ReactJS because there are more job opportunities for these technologies.
+I suggested her to learn Java, Spring Boot, ReactJS because there are more job opportunities for these technologies.
 
 I started teaching her Core Java, HTML, JS, CSS. She was able to pick up these fine.
 Then I started teaching her Maven, Git, jQuery, NPM etc and parallelly giving a 30,000 feat overview on Java frameworks like
@@ -46,7 +46,7 @@ That is the time I realized that I didn't get overwhelmed by the number of techn
 But, nowadays if somebody wants to get into software development it's really hard due to the number of tools and technologies to be familiar with.
 
 After 4 months of daily practice she started looking for a job and luckily she got a job opportunity as well.
-She started working on a project in which they used Java, Groovy, SpringBoot, AngularJS 1.x, ReactJS, Vagrant, Git, Maven, Mockito,
+She started working on a project in which they used Java, Groovy, Spring Boot, AngularJS 1.x, ReactJS, Vagrant, Git, Maven, Mockito,
 Postgresql, Docker just to name a few.
 
 Just imagine how intimidating it would be for someone who is new to software development to pick up these many technologies!!

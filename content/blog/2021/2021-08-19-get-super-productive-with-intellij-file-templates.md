@@ -11,7 +11,7 @@ categories:
   - Misc
 tags:
   - Java
-  - SpringBoot
+  - Spring Boot
   - IntelliJ IDEA
   - Productivity
 aliases:
@@ -28,7 +28,7 @@ Recently I came to know about **File Templates**, and I realized I can put it to
 
 First let us discuss the problem I was trying to solve with File Templates.
 
-I work with **SpringBoot** a lot, and I work on implementing REST APIs in most of my projects.
+I work with **Spring Boot** a lot, and I work on implementing REST APIs in most of my projects.
 
 So how do I create a REST Controller?
 

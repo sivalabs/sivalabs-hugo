@@ -9,9 +9,9 @@ date: 2023-07-26T00:30:00.000Z
 url: /blog/spring-boot-application-configuration-tutorial
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to configure your Spring Boot application using properties and YAML files for running in different environments.
 aliases:

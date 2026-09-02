@@ -90,7 +90,7 @@ Some of them are 85% done and are in WIP.
 I can spin up any Backend instance and any Frontend instance, and they should work.
 
 > **NOTE:**
-> Though, I created API and UI as separate apps, nothing prevents me from building a fullstack app using SpringBoot + HTMX or Spring Boot+Vaadin.
+> Though, I created API and UI as separate apps, nothing prevents me from building a fullstack app using Spring Boot + HTMX or Spring Boot+Vaadin.
 > The goal is to learn new technologies.
 
 This way of learning helped me to quickly explore things like:

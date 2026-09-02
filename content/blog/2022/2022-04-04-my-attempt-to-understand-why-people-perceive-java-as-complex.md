@@ -19,7 +19,7 @@ aliases:
 I work as an Architect/TechLead/SeniorDeveloper depending on client engagement. 
 And, **Java** is the primary programming language that I have used most of my career.
 In recent years I got an opportunity to work with **Go**, **NodeJS** and **.Net Core** technologies too.
-I find Java, especially with **SpringBoot**, a solid platform to build enterprise grade applications.
+I find Java, especially with **Spring Boot**, a solid platform to build enterprise grade applications.
 
 <!--more-->
 
@@ -199,7 +199,7 @@ The Java ecosystem grew addressing the enterprise needs, and improving developer
 In a typical enterprise business application you need to build complex business processes by integrating with several other external systems, 
 you need to interact with relational databases, NoSQL databases, messaging systems, cache providers, Cloud Services etc.
 
-Show me a more productive platform to build such enterprise applications rapidly? My money is on **Java/SpringBoot/Quarkus/Micronaut**.
+Show me a more productive platform to build such enterprise applications rapidly? My money is on **Java/Spring Boot/Quarkus/Micronaut**.
 
 Yes, you need to learn/know a shitload of things to make effective use of such rapid application development platform. 
 That is the price you may need to pay to achieve that productivity.

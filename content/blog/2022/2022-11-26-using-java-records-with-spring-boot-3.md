@@ -8,9 +8,9 @@ draft: false
 date: 2022-11-25T23:29:17.000Z
 url: /blog/using-java-records-with-spring-boot-3
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Java
 aliases:
   - /using-java-records-with-spring-boot-3
@@ -82,12 +82,12 @@ That's it. The **equals()**, **hashCode()** and **toString()** methods will be a
 However, note that getters don't follow the usual **getId(), getName()** pattern. 
 Instead, it will generate accessor methods as **person.id()** and **person.name()**.
 
-## Using Records with SpringBoot 3
+## Using Records with Spring Boot 3
 [Spring Boot 3](https://spring.io/blog/2022/11/24/spring-boot-3-0-goes-ga) is released on 24-Nov-2022 which requires Java 17+.
-Let us see how and where can we use Records with SpringBoot.
+Let us see how and where can we use Records with Spring Boot.
 
 ### Binding Application Properties
-If you are familiar with SpringBoot application properties binding to a class, this look like this:
+If you are familiar with Spring Boot application properties binding to a class, this look like this:
 
 ```java
 import jakarta.validation.constraints.Max;
@@ -111,7 +111,7 @@ class ApplicationProperties {
 }
 ```
 
-SpringBoot 2.2.0 introduced support for **ConstructorBinding** which can be used to bind properties to an immutable class.
+Spring Boot 2.2.0 introduced support for **ConstructorBinding** which can be used to bind properties to an immutable class.
 
 ```java
 import jakarta.validation.constraints.Max;
@@ -161,7 +161,7 @@ This is very concise and also prevents accidentally modifying the configuration 
 ## Binding to HTTP Request/Response Payloads
 We usually create DTO classes with setters and getters to bind incoming HTTP request payload because frameworks need a way to bind the request payload to the class properties.
 
-SpringBoot by default uses [Jackson](https://github.com/FasterXML/jackson) library to convert request/response payloads to/from JSON and Jackson 2.12 introduced support for Records.
+Spring Boot by default uses [Jackson](https://github.com/FasterXML/jackson) library to convert request/response payloads to/from JSON and Jackson 2.12 introduced support for Records.
 So, we can use Records to bind incoming request payloads and also return records as response.
 
 Here is a Record with Bean Validation constraints applied:
@@ -209,7 +209,7 @@ public class BookmarkController {
 
 Here we are binding the JSON request payload to Bookmark record and also returning the Bookmark record as response payload which Jackson will convert to JSON.
 
-> You can find a sample project demonstrating the Java records usage with SpringBoot 3 at https://github.com/sivaprasadreddy/spring-boot-jpa-crud-demo
+> You can find a sample project demonstrating the Java records usage with Spring Boot 3 at https://github.com/sivaprasadreddy/spring-boot-jpa-crud-demo
 
 # Conclusion
 Java records are very useful to model the immutable data carrier objects with very concise syntax.

@@ -94,7 +94,7 @@ func (c CustomerService) createCustomer(customer Customer) error {
 }
 ```
 
-### Transaction handling in Java(SpringBoot and JdbcTemplate)
+### Transaction handling in Java(Spring Boot and JdbcTemplate)
 
 ```java
 @Transactional
@@ -105,8 +105,8 @@ void createCustomer(Customer customer) {
 ```
 
 Transaction handling works just fine in both Go and Java cases. 
-SpringBoot takes care starting the transaction and commit/rollback depending on any errors occurred.
-I know Java is not SpringBoot, but the code would be same even with other frameworks like Quarkus and Micronaut too.
+Spring Boot takes care starting the transaction and commit/rollback depending on any errors occurred.
+I know Java is not Spring Boot, but the code would be same even with other frameworks like Quarkus and Micronaut too.
 And, Go code will be same/similar even if I use any framework also because of the Go way of error handling.
 
 Let's take another typical Go code reading from database:
@@ -175,7 +175,7 @@ My comparison was only about "verbosity". When it comes to other aspects I like 
 
 > Fun fact: 
 > 
-> I was [building an application](https://github.com/orgs/sivalabs-bookstore/repositories) with around 7 services using SpringBoot and when I try to run them in Docker I couldn't because of memory/CPU consumption is too high.
+> I was [building an application](https://github.com/orgs/sivalabs-bookstore/repositories) with around 7 services using Spring Boot and when I try to run them in Docker I couldn't because of memory/CPU consumption is too high.
 > I replaced some services with Go implementation, and they run smoothly with very less memory consumption.
 
 I am not saying Go is more verbose than Java based on my gut feeling or my bias towards Java.

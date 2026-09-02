@@ -9,7 +9,7 @@ categories:
   - Spring
 tags:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - SpringCloud
 aliases:
   - /spring-cloud-tutorials-introduction-to-spring-cloud-config-server/

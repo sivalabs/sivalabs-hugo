@@ -1,5 +1,5 @@
 ---
-title: Kafka Tutorial - Producer and Consumer using SpringBoot
+title: Kafka Tutorial - Producer and Consumer using Spring Boot
 author: Siva
 images:
   - /preview-images/springboot-kafka.webp
@@ -10,7 +10,7 @@ categories:
   - Java
 tags:
   - Kafka
-  - SpringBoot
+  - Spring Boot
   - Spring
 aliases:
   - /kafka-tutorial-producer-consumer-using-spring-boot/
@@ -24,7 +24,7 @@ In this post, we are going to look at how to use Spring for Kafka, which provide
 
 > You can find the source code for this article at https://github.com/sivaprasadreddy/kafka-tutorial
 
-## Spring for Kafka without SpringBoot
+## Spring for Kafka without Spring Boot
 First, let's look at how to use Spring for Kafka without Spring Boot magic so that we will understand how to configure the necessary components.
 
 Create a maven based project and configure the dependencies as follows:
@@ -211,7 +211,7 @@ public class MessageListener {
 Well, this is how we can configure a Kafka Producer and Consumer using Spring JavaConfiguration without using Spring Boot.
 As you might have guessed, with Spring Boot auto-configuration, the same application can be implemented with much less code.
 
-## Spring for Kafka with SpringBoot
+## Spring for Kafka with Spring Boot
 
 Let us create a Spring Boot application with the Kafka starter. 
 

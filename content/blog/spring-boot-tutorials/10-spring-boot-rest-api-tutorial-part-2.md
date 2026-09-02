@@ -9,9 +9,9 @@ date: 2023-08-23T00:30:00.000Z
 url: /blog/spring-boot-rest-api-best-practices-part-2
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to create a Spring Boot REST API and use best practices to implement Create and Update API endpoints.
 aliases:

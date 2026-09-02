@@ -1,5 +1,5 @@
 ---
-title: CI/CD for SpringBoot applications using Travis-CI
+title: CI/CD for Spring Boot applications using Travis-CI
 author: Siva
 images:
   - /preview-images/TravisCI-Mascot-1.webp
@@ -7,11 +7,11 @@ type: post
 date: 2018-01-24T02:29:17.000Z
 url: /blog/ci-cd-springboot-applications-using-travis-ci/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
   - DevOps
   - travis-ci
-  - springboot
+  - Spring Boot
 aliases:
   - /ci-cd-springboot-applications-using-travis-ci/
 ---
@@ -295,8 +295,8 @@ We can leverage the **after_success** section to perform this action.
 We need to log in to DockerHub before pushing the image; we are going to configure the DockerHub credentials by encrypting them.
 
 ```shell
-travis encrypt DOCKER_USER=”dockerhub-username”
-travis encrypt DOCKER_PASS=”dockerhub-password”
+travis encrypt DOCKER_USER="dockerhub-username"
+travis encrypt DOCKER_PASS="dockerhub-password"
 ```
 
 Add these 2 secrets to the **env.global** section of `.travis.yml`.

@@ -1,5 +1,5 @@
 ---
-title: Creating Yeoman based SpringBoot Generator
+title: Creating Yeoman based Spring Boot Generator
 author: Siva
 images:
   - /preview-images/yeoman-logo.webp
@@ -7,9 +7,9 @@ type: post
 date: 2020-01-28T23:29:17.000Z
 url: /blog/creating-yeoman-based-springboot-generator/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Yeoman
 aliases:
   - /creating-yeoman-based-springboot-generator/
@@ -82,7 +82,7 @@ To put it simply, a Yeoman generator works as follows:
 
 Okay, enough talk. Let's get to business.
 
-## Create SpringBoot Yeoman Generator
+## Create Spring Boot Yeoman Generator
 
 There are some fundamental concepts to be understood which are explained clearly in the documentation, and repeating them here is redundant.
 So, once again I strongly recommend going through this official documentation to get some basic understanding of concepts https://yeoman.io/authoring/index.html.
@@ -103,7 +103,7 @@ Create a directory called **generator-springboot** and create the following file
 {
   "name": "generator-springboot",
   "version": "0.0.1",
-  "description": "A Yeoman generator for generating SpringBoot microservices",
+  "description": "A Yeoman generator for generating Spring Boot microservices",
   "files": ["generators"],
   "main": "index.js",
   "keywords": [
@@ -175,9 +175,9 @@ Yeoman defines the following priorities so that we can hook up our custom logic 
 The available priorities are (in running order):
 
 1. **initializing** - Your initialization methods (checking current project state, getting configs, etc)
-2. **prompting** - Where you prompt users for options (where you’d call this.prompt())
+2. **prompting** - Where you prompt users for options (where you'd call this.prompt())
 3. **configuring** - Saving configurations and configure the project (creating .editorconfig files and other metadata files)
-4. **default** - If the method name doesn’t match a priority, it will be pushed to this group.
+4. **default** - If the method name doesn't match a priority, it will be pushed to this group.
 5. **writing** - Where you write the generator specific files (routes, controllers, etc)
 6. **conflicts** - Where conflicts are handled (used internally)
 7. **install** - Where installations are run (npm, bower)
@@ -251,7 +251,7 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.log("Generating SpringBoot Application");
+    this.log("Generating Spring Boot Application");
   }
 
   prompting() {
@@ -308,7 +308,7 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.log("Generating SpringBoot Application");
+    this.log("Generating Spring Boot Application");
   }
 
   prompting() {
@@ -545,7 +545,7 @@ module.exports = class extends Generator {
         choices: [
           {
             value: "microservice",
-            name: "SpringBoot MicroService"
+            name: "Spring Boot MicroService"
           },
           {
             value: "config-server",
@@ -576,7 +576,7 @@ Now when you run the main generator and select the **appType**, it will invoke t
 ### Invoking sub-generator directly
 
 We can create sub-generators to add more features to an existing yeoman generated application.
-For example, once we create a SpringBoot application we can use a entity sub-generator to generate a JPA entity.
+For example, once we create a Spring Boot application we can use a entity sub-generator to generate a JPA entity.
 
 We can invoke sub-generator directly as follows:
 
@@ -694,7 +694,7 @@ We can also unit test Yeoman generators by using **mocha**, **yeoman-test**, and
 {
   "name": "generator-springboot",
   "version": "0.0.6",
-  "description": "A Yeoman generator for generating SpringBoot microservices",
+  "description": "A Yeoman generator for generating Spring Boot microservices",
   ...
   ...
   "scripts": {
@@ -723,7 +723,7 @@ const path = require("path");
 const assert = require("yeoman-assert");
 const helpers = require("yeoman-test");
 
-describe("SpringBoot Microservice Generator", () => {
+describe("Spring Boot Microservice Generator", () => {
   describe("Generate minimal microservice with Maven", () => {
     before(done => {
       helpers

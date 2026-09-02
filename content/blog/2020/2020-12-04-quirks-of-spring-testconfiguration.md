@@ -8,9 +8,9 @@ draft: false
 date: 2020-12-03T23:29:17.000Z
 url: /blog/quirks-of-spring-testconfiguration/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /quirks-of-spring-testconfiguration/
 ---
@@ -27,7 +27,7 @@ Most of the times all different ways result in same behaviour, but sometimes it 
 
 Recently I faced one such issue with Spring's `@TestConfiguration` feature, and I would like to share my learnings.
 
-Let's start with creating a simple SpringBoot application, no need to add any starters, but you can add Lombok to avoid boilerplate.
+Let's start with creating a simple Spring Boot application, no need to add any starters, but you can add Lombok to avoid boilerplate.
 
 Create a simple `MyService` class as follows:
 
@@ -79,7 +79,7 @@ public class Application {
 }
 ```
 
-Write the following SpringBoot integration test `ApplicationTest` as follows:
+Write the following Spring Boot integration test `ApplicationTest` as follows:
 
 ```java
 package com.sivalabs.myapp;
@@ -102,7 +102,7 @@ class ApplicationTest {
 
 There is nothing special so far and as you might have expected when you run the test it will print **content-prod**.
 
-In our SpringBoot applications we might want to have different(mock) configurations for testing.
+In our Spring Boot applications we might want to have different(mock) configurations for testing.
 
 > One such usecase is we might want to use Localstack docker container for testing AWS related functionality.
 For production use we register AmazonS3, AmazonSQS etc beans which talks to real AWS services 
@@ -118,8 +118,8 @@ From docs:
 
 ```
 If you want to customize the primary configuration, you can use a nested @TestConfiguration class. 
-Unlike a nested @Configuration class, which would be used instead of your application’s primary configuration, 
-a nested @TestConfiguration class is used in addition to your application’s primary configuration.
+Unlike a nested @Configuration class, which would be used instead of your application's primary configuration, 
+a nested @TestConfiguration class is used in addition to your application's primary configuration.
 ```
 #### Case 1: Using top-level @TestConfiguration class
 

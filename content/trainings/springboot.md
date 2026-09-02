@@ -5,7 +5,7 @@ type: page
 date: 2015-05-31T13:07:25+00:00
 
 ---
-This Spring Boot training aims at Java developers who want to learn Spring and SpringBoot starting from scratch.
+This Spring Boot training aims at Java developers who want to learn Spring and Spring Boot starting from scratch.
 
 Please email me at sivalabs.in@gmail.com for further details.
 
@@ -16,7 +16,7 @@ Please email me at sivalabs.in@gmail.com for further details.
     * Introducing IOC/DI, AOP
     * Spring Portfolio Projects (Spring Security, Spring Data, Spring Integration, Spring Batch etc)
 
-2. **Introduction to SpringBoot**
+2. **Introduction to Spring Boot**
     * Auto Configuration
     * DevTools
 
@@ -92,7 +92,7 @@ Please email me at sivalabs.in@gmail.com for further details.
     * Securing Actuator Endpoints
 
 13. **Testing Spring Boot Applications**
-    * Testing Support in SpringBoot
+    * Testing Support in Spring Boot
     * Testing RESTful Services using RestTemplate
     * Testing Secured Controller/Service Methods
     * Testing with Mockito

@@ -17,7 +17,7 @@ aliases:
 
 {{< youtubepl id="PLuNxlOYbv61g_ytin-wgkecfWDKVCEDmB" >}}
 
-## SpringBoot + Kubernetes Tutorial Series
+## Spring Boot + Kubernetes Tutorial Series
 
 {{< youtubepl id="PLuNxlOYbv61h66_QlcjCEkVAj6RdeplJJ" >}}
 
@@ -25,7 +25,7 @@ aliases:
 
 {{< youtubepl id="PLuNxlOYbv61jZL1IiciTgWezZoqEp4WXh" >}}
 
-## SpringBoot Tips Series
+## Spring Boot Tips Series
 
 {{< youtubepl id="PLuNxlOYbv61jFFX2ARQKnBgkMF6DvEEic" >}}
 

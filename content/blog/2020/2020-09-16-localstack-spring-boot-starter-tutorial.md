@@ -1,5 +1,5 @@
 ---
-title: LocalStack SpringBoot Starter Tutorial
+title: LocalStack Spring Boot Starter Tutorial
 author: Siva
 images:
   - /preview-images/localstack.webp
@@ -11,13 +11,13 @@ categories:
   - Java
 tags:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - Localstack
 aliases:
   - /localstack-spring-boot-starter-tutorial/
 ---
 
-I was working on a SpringBoot application which is planned to deploy on AWS and, we were using S3, SQS and RDS services.
+I was working on a Spring Boot application which is planned to deploy on AWS and, we were using S3, SQS and RDS services.
 
 [LocalStack](https://github.com/localstack/localstack) provides an easy-to-use test/mocking framework 
 for developing AWS based Cloud applications. 
@@ -32,7 +32,7 @@ I want to use Localstack mock services instead of using real AWS services for tw
 
 We can use [Testcontainers](https://www.testcontainers.org/modules/localstack/) to spin up a *Localstack* docker container, 
 but we need to configure Amazon service clients like `AmazonS3`, `AmazonSQSAsync` which is typical boilerplate that we copy-paste from project to project.
-Instead of copy-pasting the code snippets, creating a SpringBoot starter which autoconfigures the Amazon service clients is a better approach and less error prone.
+Instead of copy-pasting the code snippets, creating a Spring Boot starter which autoconfigures the Amazon service clients is a better approach and less error prone.
 So, I have created [localstack-spring-boot-starter](https://github.com/sivalabs/localstack-spring-boot-starter)
 
 ## How to use localstack-spring-boot-starter?
@@ -43,7 +43,7 @@ then activate that profile based on the need.
 
 ### 1. Project Setup
 
-You can go to https://start.spring.io/ and generate a SpringBoot application and then add the following dependencies.
+You can go to https://start.spring.io/ and generate a Spring Boot application and then add the following dependencies.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -256,7 +256,7 @@ cloud.aws.stack.auto=false
 ```
 
 ### 8. Examples
-* [Minimal SpringBoot application](https://github.com/sivalabs/localstack-spring-boot-starter/tree/v1.0.0/examples/localstack-spring-boot-sample)
+* [Minimal Spring Boot application](https://github.com/sivalabs/localstack-spring-boot-starter/tree/v1.0.0/examples/localstack-spring-boot-sample)
 * [SpringCloud AWS application](https://github.com/sivalabs/localstack-spring-boot-starter/tree/v1.0.0/examples/localstack-spring-cloud-aws-sample)
 
 ## 9. What's next?

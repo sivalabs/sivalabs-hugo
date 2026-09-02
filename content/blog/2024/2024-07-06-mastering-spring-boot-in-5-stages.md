@@ -9,9 +9,9 @@ date: 2024-07-05T23:29:17.000Z
 url: /blog/mastering-spring-boot-in-5-stages
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /mastering-spring-boot-in-5-stages
 ---
@@ -77,7 +77,7 @@ In Stage 1, you learn the fundamentals of Spring Boot.
       You may want to configure it to suit your application needs. So, you need to understand how to customize the default logging configuration.
         
       * [Spring Boot Logging Tutorial](https://www.sivalabs.in/spring-boot-logging-tutorial/)
-      * [Spring Boot Tips : Part 3 - How to implement Logging in SpringBoot applications](https://www.youtube.com/watch?v=tmj6QphzAPo)
+      * [Spring Boot Tips : Part 3 - How to implement Logging in Spring Boot applications](https://www.youtube.com/watch?v=tmj6QphzAPo)
 
     * **Spring Boot Application Configuration**: Spring Boot provides support for providing the application configuration properties in a wide variety of ways.
       But you mostly like will be using three or four approaches to provide default configuration and overriding the configuration.
@@ -206,7 +206,7 @@ In stage 5, you can try to understand how things work behind the scenes.
 The most important part of Spring Boot is "Auto Configuration", which many people call as "magic".
 
 Spring Boot auto-configuration is nothing but @Conditional feature on steroids.
-You can read [How SpringBoot AutoConfiguration magic works?](https://www.sivalabs.in/how-springboot-autoconfiguration-magic/) article to understand Spring Boot AutoConfiguration.
+You can read [How Spring Boot AutoConfiguration magic works?](https://www.sivalabs.in/how-springboot-autoconfiguration-magic/) article to understand Spring Boot AutoConfiguration.
 
 At this point of time, you can focus on what is required for your project and be able to use them with Spring Boot.
 Your project may be using Kafka, RabbitMQ, Spring Batch, etc.

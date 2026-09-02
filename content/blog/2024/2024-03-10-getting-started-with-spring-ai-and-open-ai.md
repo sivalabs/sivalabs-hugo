@@ -107,7 +107,7 @@ curl --location 'http://localhost:8080/ai/chat?question=Tell%20me%20about%20Spri
 
 //OUTPUT:
 {
-  "question":"Tell me about SpringBoot",
+  "question":"Tell me about Spring Boot",
   "answer":"Spring Boot is an open-source Java-based framework used for building and 
             deploying stand-alone, production-ready applications. It is a part of the 
             larger Spring ecosystem and provides a simpler and faster way to set up and 

@@ -8,10 +8,10 @@ date: 2018-03-08T02:29:17.000Z
 url: /blog/microservices-springcloud-eureka/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 aliases:
   - /microservices-springcloud-eureka/
@@ -48,7 +48,7 @@ In my previous post, [Part 2: MicroServices: Configuration Management with Sprin
 *   Discovering other services using a Eureka Client
 
 # What is Service Registry and Discovery?
-Suppose we have 2 microservices, **catalog-service** and **inventory-service**, and we are running 2 instances of `inventory-service` at http://localhost:8181/ and http://localhost:8282/. Now let’s say we want to invoke some `inventory-service` REST endpoint from `catalog-service`. Which URL should we hit? Generally, in these scenarios, we use a load balancer, configuring these 2 URLs to be delegated to, and we will invoke the REST endpoint on the load balancer's URL. Fine.
+Suppose we have 2 microservices, **catalog-service** and **inventory-service**, and we are running 2 instances of `inventory-service` at http://localhost:8181/ and http://localhost:8282/. Now let's say we want to invoke some `inventory-service` REST endpoint from `catalog-service`. Which URL should we hit? Generally, in these scenarios, we use a load balancer, configuring these 2 URLs to be delegated to, and we will invoke the REST endpoint on the load balancer's URL. Fine.
 
 But what if you want to spin up new instances dynamically based on load? Even if you are going to run only a few server nodes, manually updating the server node details in the load balancer configuration is error-prone and tedious. This is why we need an automatic Service Registration mechanism and to be able to invoke a service using some logical service ID instead of using a specific IP Address and port number.
 
@@ -121,7 +121,7 @@ With **spring-cloud-starter-netflix-eureka-client** on the classpath, we just ne
 eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
 ```
 
-When a service is registered with the Eureka Server, it keeps sending heartbeats for a certain interval. If the Eureka server doesn’t receive a heartbeat from any service instance, it will assume the service instance is down and take it out of the pool.
+When a service is registered with the Eureka Server, it keeps sending heartbeats for a certain interval. If the Eureka server doesn't receive a heartbeat from any service instance, it will assume the service instance is down and take it out of the pool.
 
 With this configuration in place, start `catalog-service` and visit http://localhost:8761.
 You should see that `catalog-service` is registered with the **SERVICE ID** as **CATALOG-SERVICE**.

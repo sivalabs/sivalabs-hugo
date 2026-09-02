@@ -9,9 +9,9 @@ date: 2023-08-26T00:30:00.000Z
 url: /blog/spring-boot-rest-api-best-practices-part-3
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to implement API endpoints for finding and deleting a resource by ID.
 aliases:

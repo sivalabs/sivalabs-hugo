@@ -8,7 +8,7 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 So far our JCart application is running on Tomcat default port **8080** using **HTTP** protocol. In this article we will configure to use HTTPS by using Self Signed Certificate. For real projects you would have to buy certificate from a Trusted Authority.
@@ -17,7 +17,7 @@ I would like to run ShoppingCart site on **https://host:8443** and if anyone tri
   
 Similarly I would like to run Administration site on **https://host:9443** and if anyone tries to access it from **http://host:9090** it should redirect to https://host:9443.
 
-With SpringBoot it is really very simple. See <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl" target="_blank">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl</a>
+With Spring Boot it is really very simple. See <a href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl" target="_blank">http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl</a>
 
 > You can simply follow this article <a href="https://www.drissamri.be/blog/java/enable-https-in-spring-boot/" target="_blank">https://www.drissamri.be/blog/java/enable-https-in-spring-boot/</a> which describes what exactly we are trying to do. Thanks to Driss Amri. **Give credit where credit is due 🙂**
 

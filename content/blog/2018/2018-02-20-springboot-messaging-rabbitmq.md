@@ -1,5 +1,5 @@
 ---
-title: SpringBoot Messaging with RabbitMQ
+title: Spring Boot Messaging with RabbitMQ
 author: Siva
 images:
   - /preview-images/RabbitMQ.webp
@@ -7,9 +7,9 @@ type: post
 date: 2018-02-20T02:29:17.000Z
 url: /blog/springboot-messaging-rabbitmq/
 categories:
-  - springboot
+  - Spring Boot
 tags:
-  - springboot
+  - Spring Boot
   - rabbitmq
 aliases:
   - /springboot-messaging-rabbitmq/
@@ -215,10 +215,10 @@ public class OrderMessageListener {
 }
 ```
 
-That’s it! By simply adding **@RabbitListener** and defining which queue to listen to, we can create a Listener.
+That's it! By simply adding **@RabbitListener** and defining which queue to listen to, we can create a Listener.
 
 Now, if you send a message to `orders-queue`, it should be consumed by the `OrderMessageListener.processOrder()` method, and
-you should see the log statement “Order Received: “.
+you should see the log statement "Order Received: ".
 
 ## Sending and Receiving Messages as JSON Payloads
 As we have seen, the default serialization mechanism converts the message object into a **byte[]** using **SimpleMessageConverter**, and

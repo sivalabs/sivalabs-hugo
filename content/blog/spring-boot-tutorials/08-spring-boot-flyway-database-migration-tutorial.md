@@ -9,9 +9,9 @@ date: 2023-08-08T00:30:00.000Z
 url: /blog/spring-boot-flyway-database-migration-tutorial
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to use Flyway for performing database migrations in Spring Boot applications.
 aliases:

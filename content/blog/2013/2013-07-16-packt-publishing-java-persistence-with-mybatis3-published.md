@@ -1,5 +1,5 @@
 ---
-title: Packt Publishing “Java Persistence With MyBatis3” published
+title: Packt Publishing "Java Persistence With MyBatis3" published
 author: Siva
 type: post
 date: 2013-07-16T10:01:00.000Z

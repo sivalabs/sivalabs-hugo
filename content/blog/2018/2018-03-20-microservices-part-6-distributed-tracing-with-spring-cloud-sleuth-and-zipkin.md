@@ -8,10 +8,10 @@ date: 2018-03-20T02:29:17.000Z
 url: /blog/microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 aliases:
   - /microservices-part-6-distributed-tracing-with-spring-cloud-sleuth-and-zipkin/
@@ -55,7 +55,7 @@ which in turn calls **inventory-service** REST API http://localhost:8282/api/inv
 
 Suppose, an exception has occurred or the data returned is invalid and you want to investigate what is wrong by looking at logs. But as of now, there is no way to correlate the logs of that particular user across multiple services.
 
-# Poor man’s distributed tracing
+# Poor man's distributed tracing
 One solution to this is at the beginning of the call chain we can create a CORRELATION_ID and add it to all log statements. 
 Along with it, send CORRELATION_ID as a header to all the downstream services as well so that those downstream services 
 also use CORRELATION_ID in logs. This way we can identify all the log statements related to a particular action across services.
@@ -155,13 +155,13 @@ services:
 
 You can also use docker image backed by MySQL datastore by using https://github.com/openzipkin/docker-zipkin/blob/master/docker-compose.yml.
 
-## Create Zipkin Server as SpringBoot application (NOT RECOMMENDED)
+## Create Zipkin Server as Spring Boot application (NOT RECOMMENDED)
 
-> NOTE: Creating custom Zipkin server as a SpringBoot application is not a recommended approach anymore. 
+> NOTE: Creating custom Zipkin server as a Spring Boot application is not a recommended approach anymore. 
 
 We can start Zipkin server as a spring boot application or run in a docker container.
 
-> As of now, Zipkin doesn’t support Spring Boot 2. So we can create a SpringBoot application zipkin-server using 1.5.10.RELEASE version and add the zipkin-server, zipkin-autoconfigure-ui dependencies.
+> As of now, Zipkin doesn't support Spring Boot 2. So we can create a Spring Boot application zipkin-server using 1.5.10.RELEASE version and add the zipkin-server, zipkin-autoconfigure-ui dependencies.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"

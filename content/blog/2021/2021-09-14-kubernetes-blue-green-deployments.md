@@ -13,7 +13,7 @@ tags:
   - Kubernetes
   - DevOps
   - Java
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /kubernetes-blue-green-deployments/
 ---
@@ -123,7 +123,7 @@ $ kubectl apply -f k8s/service-live.yaml
 $ minikube ip
 192.168.99.103
 $ curl 192.168.99.103:30090/api/info
-{"version":"v1","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-deployment-blue-7459fc4bd8-ptmxx"}
+{"version":"v1","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-deployment-blue-7459fc4bd8-ptmxx"}
 ```
 
 So far so good, we have our Blue environment up and running. 
@@ -195,9 +195,9 @@ $ kubectl get all
 $ minikube ip
 192.168.99.103
 $ curl 192.168.99.103:30090/api/info
-{"hostName":"k8s-boot-demo-deployment-blue-7459fc4bd8-rk8kt","app":"K8S SpringBoot Demo","version":"v1"}
+{"hostName":"k8s-boot-demo-deployment-blue-7459fc4bd8-rk8kt","app":"K8S Spring Boot Demo","version":"v1"}
 $ curl 192.168.99.103:30092/api/info
-{"version":"v2","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-5xxgw"}
+{"version":"v2","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-5xxgw"}
 ```
 
 Now our green environment is also up and running.
@@ -230,9 +230,9 @@ $ kubectl apply -f k8s/service-live.yaml
 $ minikube ip
 192.168.99.103
 $ curl 192.168.99.103:30090/api/info
-{"version":"v2","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-bhv9c"}
+{"version":"v2","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-bhv9c"}
 $ curl 192.168.99.103:30092/api/info
-{"version":"v2","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-bhv9c"}
+{"version":"v2","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-deployment-green-d7b94fdc5-bhv9c"}
 ```
 
 That's it. Now the service is pointing to the pods running version v2 of our application. And, immediately any requests to live Service will be pointing to new version.

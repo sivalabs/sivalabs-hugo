@@ -9,9 +9,9 @@ date: 2023-08-27T00:30:00.000Z
 url: /blog/spring-boot-rest-api-best-practices-part-4
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to implement exception handling while creating Spring Boot REST APIs.
 aliases:
@@ -311,7 +311,7 @@ Another popular library that can handle Exceptions and return error responses in
 [problem-spring-web](https://github.com/zalando/problem-spring-web) created by Zalando.
 
 You can learn how to use **problem-spring-web** library by watching my 
-[Spring Boot Tips : Part 7 - Exception Handling in SpringBoot REST APIs using problem-spring-web](https://www.youtube.com/watch?v=hVfajuyEJMQ) video.
+[Spring Boot Tips : Part 7 - Exception Handling in Spring Boot REST APIs using problem-spring-web](https://www.youtube.com/watch?v=hVfajuyEJMQ) video.
 
 {{< youtube hVfajuyEJMQ >}}
 

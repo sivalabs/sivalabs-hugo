@@ -13,7 +13,7 @@ tags:
   - Kubernetes
   - DevOps
   - Java
-  - SpringBoot
+  - Spring Boot
 popular: false
 aliases:
   - /getting-started-with-kubernetes/
@@ -34,20 +34,20 @@ I was curious about Kubernetes and [played with it a bit 3 years ago](https://gi
 
 In this article we will learn:
 
-* Creating a docker image from a SpringBoot application
+* Creating a docker image from a Spring Boot application
 * Understanding the Need for Kubernetes
 * Local kubernetes setup using Minikube
 * Overview of Kubernetes Objects
-* Run the SpringBoot app in a Pod
+* Run the Spring Boot app in a Pod
 * Scaling the application using Deployment
 * Exposing the Deployment as a Service
 
-## 1. Creating a docker image from a SpringBoot application
-We are going to build a simple SpringBoot application which we are going to use for this tutorial.
+## 1. Creating a docker image from a Spring Boot application
+We are going to build a simple Spring Boot application which we are going to use for this tutorial.
 Go to [Spring Initializr](https://start.spring.io/) and select **Web, Actuator and Lombok** starters and generate the application.
 You can click [Here](https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.5.4&packaging=jar&jvmVersion=11&groupId=com.sivalabs&artifactId=k8s-boot-demo&name=k8s-boot-demo&description=Demo%20project%20for%20Spring%20Boot&packageName=com.sivalabs.k8sbootdemo&dependencies=lombok,web,actuator) to generate the application with desired starters already selected.
 
-Our SpringBoot application is going to be a very simple one as our goal here is to learn Kubernetes, not exploring SpringBoot's super powers.
+Our Spring Boot application is going to be a very simple one as our goal here is to learn Kubernetes, not exploring Spring Boot's super powers.
 
 Create a REST Controller as follows:
 
@@ -74,7 +74,7 @@ public class DemoController {
     public Map<String, String> apiInfo()
     {
         log.info("Request for apiInfo at : {}", LocalDateTime.now());
-        return Map.of("app", "K8S SpringBoot Demo",
+        return Map.of("app", "K8S Spring Boot Demo",
                 "hostName", getHostname(),
                 "version", version);
     }
@@ -108,7 +108,7 @@ management.endpoints.web.exposure.include=*
 app.version=v1
 ```
 
-We can use **SpringBoot Maven Plugin** itself to build the Docker image or we can use **Jib plugin**.
+We can use **Spring Boot Maven Plugin** itself to build the Docker image or we can use **Jib plugin**.
 Let's use [Jib Maven plugin](https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin) to build the Docker Image and push it to DockerHub.
 
 Add the following plugin in pom.xml
@@ -165,14 +165,14 @@ Now we should be able to access http://localhost:8080/api/info and see the follo
 ```json
 {
     "version": "v1",
-    "app": "K8S SpringBoot Demo",
+    "app": "K8S Spring Boot Demo",
     "hostName": "61490b6bb05d"
 }
 ```
 
 ## 2. Understanding the Need for Kubernetes
 
-In the previous step we were able to build a docker image from our SpringBoot application and also run it using Docker.
+In the previous step we were able to build a docker image from our Spring Boot application and also run it using Docker.
 We have already verified that it is working fine by invoking an API endpoint.
 
 Let's call another endpoint that we created `http://localhost:8080/api/terminate`
@@ -232,7 +232,7 @@ There are many Kubernetes Objects that we commonly use such as **Pod, Deployment
 
 Knowing about these 3 Object types is enough to start with and we will learn about other Object types along the way.
 
-## 5. Run the SpringBoot app in a Pod
+## 5. Run the Spring Boot app in a Pod
 
 There are 2 ways we can deploy kubernetes objects:
 
@@ -278,7 +278,7 @@ $ kubectl describe pods k8s-boot-demo-pod // to see more details of the pod
 $ kubectl logs k8s-boot-demo-pod //to view logs of the pod
 ```
 
-We are able to see our pod deployed successfully and see all the pod details using **kubectl describe** command, and we can even see our SpringBoot application logs.
+We are able to see our pod deployed successfully and see all the pod details using **kubectl describe** command, and we can even see our Spring Boot application logs.
 
 But we can't invoke any API endpoint as Pod is running within the container only and it is not accessible from outside the cluster.
 
@@ -336,7 +336,7 @@ Now, let us see how we can scale up or scale down the number of pods using **Dep
 
 ## 6. Scaling the application using Deployment
 
-We can use Kubernetes Deployment to make sure N replicas of pods available all the time. In addition to that Deployments can also be used to perform **rolling updates, Blue/Green deployments** etc. But in this article we will just see how we can use Deployments to run 3 replicas of SpringBoot application.
+We can use Kubernetes Deployment to make sure N replicas of pods available all the time. In addition to that Deployments can also be used to perform **rolling updates, Blue/Green deployments** etc. But in this article we will just see how we can use Deployments to run 3 replicas of Spring Boot application.
 
 **k8s/deployment.yaml**
 

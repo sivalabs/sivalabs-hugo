@@ -9,9 +9,9 @@ date: 2023-09-27T03:30:00.000Z
 url: /blog/spring-security-oauth2-tutorial-implicit-and-resource-owner-password-credentials-flow
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - SpringSecurity
   - OAuth2
 description: In this tutorial, you will learn how OAuth 2.0 Implicit Flow and Resource Owner Password Credentials Flow works.

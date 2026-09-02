@@ -13,12 +13,12 @@ tags:
   - Kubernetes
   - DevOps
   - Java
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /kubernetes-deployment-rolling-updates/
 ---
 
-In the previous article [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}}) we have learned how to deploy a SpringBoot application on Kubernetes(Minikube) using **Deployment** and **Service** primitives. We also looked at how to access our application using **NodePort** on Minikube IP address.
+In the previous article [Getting Started with Kubernetes]({{< relref "2021-09-01-getting-started-with-kubernetes.md" >}}) we have learned how to deploy a Spring Boot application on Kubernetes(Minikube) using **Deployment** and **Service** primitives. We also looked at how to access our application using **NodePort** on Minikube IP address.
 
 <!--more-->
 
@@ -33,7 +33,7 @@ In this article, we are going to learn:
 * How to use **Readiness** and **Liveness** probes to route traffic to only fully initialized containers?
 
 ## 1. Build new version of the application
-If you look at the previous article SpringBoot application code we have used **@Value** to bind the **app.version** property and hard coded app title **"K8S SpringBoot Demo"**.
+If you look at the previous article Spring Boot application code we have used **@Value** to bind the **app.version** property and hard coded app title **"K8S Spring Boot Demo"**.
 Let's update the code to use **@ConfigurationProperties** instead of **@Value** and make **app.title** also a configurable parameter.
 
 **ApplicationProperties.java**
@@ -79,7 +79,7 @@ public class K8sBootDemoApplication {
 spring.application.name=k8s-boot-demo
 management.endpoints.web.exposure.include=*
 app.version=v2
-app.title=K8S SpringBoot Demo
+app.title=K8S Spring Boot Demo
 ```
 
 **AppInfo.java**
@@ -200,7 +200,7 @@ $ kubectl get all
 $ minikube ip
 192.168.99.103
 $ curl 192.168.99.103:30090/api/info
-{"version":"v1","app":"K8S SpringBoot Demo","hostName":"k8s-boot-demo-deployment-8595cc898b-lznhf"}
+{"version":"v1","app":"K8S Spring Boot Demo","hostName":"k8s-boot-demo-deployment-8595cc898b-lznhf"}
 ```
 
 {{< figure src="/images/k8s-p2-1.webp" >}}
@@ -247,8 +247,8 @@ You can read more about Readiness and Liveness probes here:
 * [Liveness and Readiness Probes with Spring Boot](https://spring.io/blog/2020/03/25/liveness-and-readiness-probes-with-spring-boot)
 * [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
 
-SpringBoot Actuator provides the support for Readiness and Liveness probes out-of-the-box.
-**SpringBoot can automatically detect that the application is running in a Kubernetes environment and enable the probes.**
+Spring Boot Actuator provides the support for Readiness and Liveness probes out-of-the-box.
+**Spring Boot can automatically detect that the application is running in a Kubernetes environment and enable the probes.**
 
 But if you are running the application locally you need to enable the probes explicitly using following configuration:
 
@@ -256,7 +256,7 @@ But if you are running the application locally you need to enable the probes exp
 management.endpoint.health.probes.enabled=true
 ```
 
-You can check the Readiness and Liveness of our SpringBoot application by accessing 
+You can check the Readiness and Liveness of our Spring Boot application by accessing 
 [http://192.168.99.103:30090/actuator/health/readiness](http://192.168.99.103:30090/actuator/health/readiness) and [http://192.168.99.103:30090/actuator/health/liveness](http://192.168.99.103:30090/actuator/health/liveness) and you will see the response as follows:
 
 ```json

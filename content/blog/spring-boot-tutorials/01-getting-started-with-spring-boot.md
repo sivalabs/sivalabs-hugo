@@ -9,9 +9,9 @@ date: 2023-07-20T23:30:00.000Z
 url: /blog/getting-started-with-spring-boot
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this Spring Boot tutorial, you will learn what are the key features of Spring Boot, how to create a Spring Boot application and build a REST API.
 aliases:
@@ -256,7 +256,7 @@ public class SpringBootHelloWorldApplication {
 * **(1)** Explicitly enabling the configuration properties binding for **ApplicationProperties** class. If we have more such configuration-binding classes, we can list them all.
 * **(2)** Instead of explicitly specifying all the configuration-binding classes, we can use **@ConfigurationPropertiesScan** annotation to scan for all the classes that are annotated with **@ConfigurationProperties**.
 
-We can run the application from the IDE by simply running the **main()** method in **SpringBootHelloWorldApplication**.
+We can run the application from the IDE by simply running the **main()** method in **Spring BootHelloWorldApplication**.
 
 ## Run application using Maven and Gradle
 Spring Boot Maven and Gradle plugins provide the ability to run the application without requiring to build the artifact(jar or war).

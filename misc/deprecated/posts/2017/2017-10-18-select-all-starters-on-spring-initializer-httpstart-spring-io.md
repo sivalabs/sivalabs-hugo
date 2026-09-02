@@ -7,7 +7,7 @@ url: /select-all-starters-on-spring-initializer-httpstart-spring-io/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tips
 
 ---

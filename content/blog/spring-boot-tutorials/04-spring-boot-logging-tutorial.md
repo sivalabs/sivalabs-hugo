@@ -9,9 +9,9 @@ date: 2023-07-28T00:30:00.000Z
 url: /blog/spring-boot-logging-tutorial
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Tutorials
 description: In this tutorial, you will learn how to implement logging in your Spring Boot application using Logback and Log4j2.
 aliases:
@@ -165,7 +165,7 @@ Also, notice that we are using **<springProperty .../>** to use the **logstash.h
 {{< box tip >}}
 **Tip:**
 
-You can also watch my [How to implement Logging in SpringBoot applications](https://www.youtube.com/watch?v=tmj6QphzAPo) video.
+You can also watch my [How to implement Logging in Spring Boot applications](https://www.youtube.com/watch?v=tmj6QphzAPo) video.
 {{< /box >}}
 
 ## Using Log4j2 instead of Logback

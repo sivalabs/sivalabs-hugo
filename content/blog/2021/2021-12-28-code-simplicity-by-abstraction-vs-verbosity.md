@@ -23,7 +23,7 @@ Especially after Java 8 it becomes more and more feature rich and powerful.
 <!--more-->
 
 
-On top of it with frameworks like [SpringBoot](https://spring.io/projects/spring-boot), [Quarkus](https://quarkus.io/) and [Micronaut](https://micronaut.io/) building enterprise grade applications becomes a breeze.
+On top of it with frameworks like [Spring Boot](https://spring.io/projects/spring-boot), [Quarkus](https://quarkus.io/) and [Micronaut](https://micronaut.io/) building enterprise grade applications becomes a breeze.
 **When people from Non-Java community complain about Java being verbose and complex, I actually don't get it.**
 
 In the recent years I got a chance to work with [Go](https://go.dev/) and [DotNet Core](https://dotnet.microsoft.com/en-us/) in my official projects.
@@ -42,7 +42,7 @@ Go is an interesting language and I have shared [my opinion on Go](https://www.s
 Have you ever seen a movie and doesn't like it much but a couple of scenes are top-notch which makes you watch the same movie again just to see those awesome scenes?
 I had that kind of experience with Go. I didn't like it much when I first used it, but few things about Go stuck with me. One of it being Simplicity.
 
-Okay, let's take a look at the following Java/SpringBoot code.
+Okay, let's take a look at the following Java/Spring Boot code.
 
 ```java
 @Service
@@ -59,7 +59,7 @@ public class CustomerService {
 }
 ```
 
-This snippet of code shouldn't need any explanation for any Java developer who used SpringBoot at-least once.
+This snippet of code shouldn't need any explanation for any Java developer who used Spring Boot at-least once.
 But there is a lot going on here.
 
 * The **CustomerService** is marked as a Spring bean which can be injected into other Spring beans
@@ -70,9 +70,9 @@ But there is a lot going on here.
 
 While this looks familiar and easy to read, there are lots of things happening under the hood.
 
-> To fully understand how this simple method behave, one needs to have all the above-mentioned **"How Spring & SpringBoot works behind the scenes"** knowledge.
+> To fully understand how this simple method behave, one needs to have all the above-mentioned **"How Spring & Spring Boot works behind the scenes"** knowledge.
 
-Here I am showing SpringBoot code as an example, but it is the same for Quarkus or Micronaut frameworks also.
+Here I am showing Spring Boot code as an example, but it is the same for Quarkus or Micronaut frameworks also.
 
 Let's take a look at the following Go code which does same as above:
 
@@ -176,13 +176,13 @@ From the enterprise long-term application development point of view this is an a
 
 ## How can we make Java "Simpler"?
 Java is the preferred choice in large enterprises for a reason. Speed of development and quick to market.
-I can confidently say you can create production grade Java application using SpringBoot/Quarkus/Micronaut in few hours, not in weeks or months.
+I can confidently say you can create production grade Java application using Spring Boot/Quarkus/Micronaut in few hours, not in weeks or months.
 As these frameworks already provides the application skeleton with batteries included all you need to do is write business logic.
 
-If I can take few ideas from Go and brought them to Java, specifically to SpringBoot, then those would be:
+If I can take few ideas from Go and brought them to Java, specifically to Spring Boot, then those would be:
 
 * No ORMs unless it is simple CRUD application. I prefer to spend the one-time cost of writing more code than recurring debugging cost. I would prefer [JOOQ](https://www.jooq.org/) over **JPA**.
-* I know backwards compatibility is one of the key reasons for Java/SpringBoot's success. But I like to strip of few things from SpringBoot
+* I know backwards compatibility is one of the key reasons for Java/Spring Boot's success. But I like to strip a few things from Spring Boot
   * Support for XML config, I don't see any greenfield projects using XML config. XML support could be extracted as a separate module.
   * No need for [loading config properties from 14 different sources](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.external-config)
   * Some simpler ways to use and debug AOP ( if you ever tried to debug AOP code then you know what I am talking about)

@@ -1,5 +1,5 @@
 ---
-title: 'My New Book SpringBoot : Learn By Example Published Today'
+title: 'My New Book Spring Boot : Learn By Example Published Today'
 author: Siva
 type: post
 date: 2016-07-20T06:05:31.000Z
@@ -8,17 +8,17 @@ categories:
   - Misc
 tags:
   - Books
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /my-new-book-springboot-learn-by-example/
 ---
-I am happy to announce that my new book, [SpringBoot: Learn By Example](https://leanpub.com/springboot-learn-by-example), was published today on **Leanpub**.
+I am happy to announce that my new book, [Spring Boot: Learn By Example](https://leanpub.com/springboot-learn-by-example), was published today on **Leanpub**.
 
-{{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
+{{< figure src="/images/sblbe.webp" alt="Spring Boot : Learn By Example"  width="250" height="200" >}}
 
 <!--more-->
 
-### What is SpringBoot?
+### What is Spring Boot?
 
 Spring is one of the most popular Java frameworks out there for building web and enterprise applications.
 
@@ -38,7 +38,7 @@ If you are just starting to use Spring Boot and it is working great, but it all 
 
 If you are a seasoned Spring developer with a good grasp of Spring framework concepts and you just want a fast-paced guide to learn Spring Boot quickly, sure, this book is definitely for you!
 
-I see a lot of people asking, **“What is the difference between Spring MVC and Spring Boot?”**, **“Should I use Spring Boot or Spring MVC for my next web application?”**, etc. See [Here](http://stackoverflow.com/questions/29479814/spring-mvc-or-spring-boot), [Here](https://www.quora.com/What-is-the-difference-between-Spring-Boot-and-the-Spring-framework), and [Here](https://www.reddit.com/r/java/comments/4mw91b/spring_mvc_vs_spring_boot/). The short answer is, **Spring Boot is nothing but Spring, but it helps you a lot to build Spring-based applications quickly.** The next question would be, **How?**. The best way to explain it is by creating an application **WITHOUT Spring Boot** and showing how quickly you can develop the same application **WITH Spring Boot**.
+I see a lot of people asking, **"What is the difference between Spring MVC and Spring Boot?"**, **"Should I use Spring Boot or Spring MVC for my next web application?"**, etc. See [Here](http://stackoverflow.com/questions/29479814/spring-mvc-or-spring-boot), [Here](https://www.quora.com/What-is-the-difference-between-Spring-Boot-and-the-Spring-framework), and [Here](https://www.reddit.com/r/java/comments/4mw91b/spring_mvc_vs_spring_boot/). The short answer is, **Spring Boot is nothing but Spring, but it helps you a lot to build Spring-based applications quickly.** The next question would be, **How?**. The best way to explain it is by creating an application **WITHOUT Spring Boot** and showing how quickly you can develop the same application **WITH Spring Boot**.
 
 This book explains how we normally build a Spring application without Spring Boot and shows how we can build the same application using Spring Boot in a much easier way so that you can correlate the concepts and see how Spring Boot increases developer productivity.
 
@@ -46,7 +46,7 @@ Spring Boot does so many things behind the scenes to automatically configure the
 
 ### What does this book cover?
 
-The **SpringBoot: Learn By Example** book covers the concepts that we commonly use in our Spring applications.
+The **Spring Boot: Learn By Example** book covers the concepts that we commonly use in our Spring applications.
 
 *   What is Spring Boot and how to get started with it?
 *   How Spring Boot **AutoConfiguration Works behind the scenes using @Conditional**?
@@ -68,27 +68,27 @@ To get a complete list of topics covered in this book, please see the below **Ta
 
 **Table of Contents:**
 
-**1. Introduction to SpringBoot**
+**1. Introduction to Spring Boot**
 
 *   Overview of the Spring framework
 *   Developing a Web Application using Spring MVC and JPA
 *   A Quick Taste of Spring Boot
 
-**2. Getting Started with SpringBoot**
+**2. Getting Started with Spring Boot**
 
 *   What is Spring Boot?
 *   Our First Spring Boot Application
 
-**3. SpringBoot Behind the scenes**
+**3. Spring Boot Behind the scenes**
 
 *   Exploring the Power of @Conditional
 *   How Spring Boot AutoConfiguration Works
 
-**4. Creating a Custom SpringBoot Starter**
+**4. Creating a Custom Spring Boot Starter**
 
 *   Create a `twitter4j-spring-boot-starter`
 
-**5. SpringBoot Essentials**
+**5. Spring Boot Essentials**
 
 *   Logging
 *   Externalizing Configuration Properties
@@ -120,7 +120,7 @@ To get a complete list of topics covered in this book, please see the below **Ta
 *   Getting Started with MongoDB using the Mongo Shell
 *   Talking to MongoDB using Spring Data Mongo
 
-**11. Web Applications with SpringBoot**
+**11. Web Applications with Spring Boot**
 
 *   Developing a Web Application using Spring Boot
 *   Using Tomcat, Jetty, and Undertow Embedded Servlet Containers
@@ -132,20 +132,20 @@ To get a complete list of topics covered in this book, please see the below **Ta
 *   File Uploading
 *   Using ResourceBundles for Internationalization (I18N)
 
-**12. Building a REST API using SpringBoot**
+**12. Building a REST API using Spring Boot**
 
 *   Introduction to RESTful Web Services
 *   A REST API using Spring MVC
 *   A REST API using Spring Data REST
 *   Consuming a REST API from AngularJS
 
-**13. Securing Web Applications using SpringBoot**
+**13. Securing Web Applications using Spring Boot**
 
 *   Spring Security in a Spring Boot Web Application
 *   Method-Level Security
 *   Securing a REST API using Spring Security
 
-**14. SpringBoot Actuator**
+**14. Spring Boot Actuator**
 
 *   Exploring Actuator Endpoints
 *   Customizing Actuator Endpoints
@@ -154,7 +154,7 @@ To get a complete list of topics covered in this book, please see the below **Ta
 *   Monitoring and management over JMX
 *   Monitoring and management using a remote shell
 
-**15. Testing SpringBoot Applications**
+**15. Testing Spring Boot Applications**
 
 *   Testing Support in Spring Boot
 *   Testing RESTful Services using RestTemplate

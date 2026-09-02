@@ -8,7 +8,7 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 Once the Admin User clicked on Password Reset Link that we sent via Email, we will validate the Token and if is valid then we will show a form to enter New Password, otherwise shows an error. 

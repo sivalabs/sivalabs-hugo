@@ -25,11 +25,11 @@ It used to take minimum 2 to 3 hours of daily commute for office, now that I hav
 ### Following are few notable things for me in 2020:
 
 * Learned and [worked on GoLang]({{< relref "2020-07-02-golang-from-a-java-developer-perspective.md" >}}) for a project.
-* Created Yeoman based [SpringBoot application Generator]({{< relref "2020-01-29-creating-yeoman-based-springboot-generator.md" >}}).
-* Created [Localstack SpringBoot Starter]({{< relref "2020-09-16-localstack-spring-boot-starter-tutorial.md" >}})
+* Created Yeoman based [Spring Boot application Generator]({{< relref "2020-01-29-creating-yeoman-based-springboot-generator.md" >}}).
+* Created [Localstack Spring Boot Starter]({{< relref "2020-09-16-localstack-spring-boot-starter-tutorial.md" >}})
 * Reviewed Phillip's [Testing Spring Boot Applications Masterclass Course]({{< relref "2020-10-15-philip-testing-spring-boot-applications-masterclass-review.md" >}}) and learned many testing tips along the way.
 * Used [HypersistenceOptimizer]({{< relref "2021-01-02-improve-jpa-performance-using-hypersistence-optimizer.md" >}}) created by [Vlad Mihalcea](https://twitter.com/vlad_mihalcea) to improve JPA applications and got mind blown away by its fantastic developer experience.
-* I taught Java, SpringBoot and few other things to someone, and she is really doing well at her job. A [proud moment for me as a mentor]({{< relref "2020-06-09-my-proud-moment-as-a-mentor.md" >}}).
+* I taught Java, Spring Boot and few other things to someone, and she is really doing well at her job. A [proud moment for me as a mentor]({{< relref "2020-06-09-my-proud-moment-as-a-mentor.md" >}}).
 
 ### Few lessons learnt:
 

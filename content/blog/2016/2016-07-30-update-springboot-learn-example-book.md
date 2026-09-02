@@ -1,5 +1,5 @@
 ---
-title: 'Update on SpringBoot : Learn By Example book'
+title: 'Update on Spring Boot : Learn By Example book'
 author: Siva
 type: post
 date: 2016-07-30T02:53:50.000Z
@@ -7,14 +7,14 @@ url: /blog/update-springboot-learn-example-book/
 categories:
   - Misc
 tags:
-  - SpringBoot
+  - Spring Boot
   - Books
 aliases:
   - /update-springboot-learn-example-book/
 ---
-I would like to let you know that I have updated/added the following sections to my [SpringBoot: Learn By Example][1] book.
+I would like to let you know that I have updated/added the following sections to my [Spring Boot: Learn By Example][1] book.
 
-{{< figure src="/images/sblbe.webp" alt="SpringBoot : Learn By Example"  width="250" height="200" >}}
+{{< figure src="/images/sblbe.webp" alt="Spring Boot : Learn By Example"  width="250" height="200" >}}
 
 ## Additions to existing chapters:
 
@@ -29,7 +29,7 @@ The section **Working with Multiple Databases** explains how to configure multip
 
 As Spring Boot can't auto-configure components such as **TransactionManagers**, **EntityManagerFactoryBeans**, and **DataSourceInitializers** for multiple databases automatically, this section will show how to turn off the auto-configuration mechanism for a specific **AutoConfiguration** class and provide the required configuration explicitly.
 
-## Added new chapter: Chapter 16: Deploying SpringBoot Applications.
+## Added new chapter: Chapter 16: Deploying Spring Boot Applications.
 
 *   **Running Spring Boot applications in production mode**
 *   **Deploying a Spring Boot application on Heroku**

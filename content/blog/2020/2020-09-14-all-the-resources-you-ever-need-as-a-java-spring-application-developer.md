@@ -11,7 +11,7 @@ categories:
   - Java
 tags:
   - Spring
-  - SpringBoot
+  - Spring Boot
   - Java
 popular: false
 aliases:
@@ -25,7 +25,7 @@ There are lots of official documentation, blog posts, Udemy courses, YouTube vid
 <!--more-->
 
 
-As a backend developer who primarily work on JVM based languages/frameworks like **Java, Kotlin, SpringBoot** etc, 
+As a backend developer who primarily work on JVM based languages/frameworks like **Java, Kotlin, Spring Boot** etc, 
 following are a collection of resources I usually follow to learn new things. Thought of sharing with you, it could be helpful for you too.
 
 ## Spring
@@ -39,9 +39,9 @@ following are a collection of resources I usually follow to learn new things. Th
 * For high quality Spring content go to https://reflectoring.io/ by [Tom Hombergs](https://twitter.com/TomHombergs)
 * Another nice blog to learn Spring is https://rieckpil.de/ by [Philip Riecks](https://twitter.com/rieckpil) 
 and his [YouTube Channel](https://www.youtube.com/channel/UCEbZTcePN9QwMr1Lr1SED0Q)
-* If you want to lean SpringBoot, SpringCloud and Kubernetes then https://piotrminkowski.com/ by [Piotr Mińkowski](https://twitter.com/piotr_minkowski) 
+* If you want to lean Spring Boot, SpringCloud and Kubernetes then https://piotrminkowski.com/ by [Piotr Mińkowski](https://twitter.com/piotr_minkowski) 
 and his [YouTube Channel](https://www.youtube.com/channel/UCAieNgran7umupT_D50KaGw)
-* There is nothing you can't find about SpringBoot on [HowToDoInJava](https://howtodoinjava.com/) by [Lokesh Gupta](https://twitter.com/HowToDoInJava)
+* There is nothing you can't find about Spring Boot on [HowToDoInJava](https://howtodoinjava.com/) by [Lokesh Gupta](https://twitter.com/HowToDoInJava)
 * Of course https://www.baeldung.com/ by [Eugen](https://twitter.com/baeldung)
 * Another interesting blog https://shekhargulati.com/ by [Shekhar Gulati](https://twitter.com/shekhargulati). 
 Don't miss his "A Handcrafted Monthly Newsletter For Software Developers" series.

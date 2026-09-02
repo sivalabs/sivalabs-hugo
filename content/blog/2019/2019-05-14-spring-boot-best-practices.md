@@ -1,5 +1,5 @@
 ---
-title: SpringBoot Best Practices
+title: Spring Boot Best Practices
 author: Siva
 images:
   - /preview-images/spring-boot-1.webp
@@ -7,25 +7,25 @@ type: post
 date: 2019-05-14T02:29:17.000Z
 url: /blog/spring-boot-best-practices/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - BestPractices
 popular: true
 aliases:
   - /spring-boot-best-practices/
 ---
 
-I have been working with [SpringBoot](https://spring.io/projects/spring-boot) for many years, and over time, I have worked with many Spring Boot-based codebases.
+I have been working with [Spring Boot](https://spring.io/projects/spring-boot) for many years, and over time, I have worked with many Spring Boot-based codebases.
 There are a few common mistakes that I observe in projects that use Spring Boot. So, I thought of writing down a few good practices that can be followed while using Spring Boot.
 
 <!--more-->
 
 
-## 1. Understand SpringBoot Core Concepts
+## 1. Understand Spring Boot Core Concepts
 I know this sounds very obvious, but I see many developers jumping into using Spring Boot without having any prior knowledge of Spring or Dependency Injection. So they just keep adding annotations and **@Bean** definitions here and there until it works.
 
-SpringBoot is an opinionated framework with a powerful **auto-configuration** mechanism based on the **convention-over-configuration** philosophy. 
+Spring Boot is an opinionated framework with a powerful **auto-configuration** mechanism based on the **convention-over-configuration** philosophy. 
 So, it is very important to understand the following things:
 
 * **How to structure application code?**
@@ -33,10 +33,10 @@ A typical Spring Boot application has a main entry-point class that is annotated
 Make sure to read and understand the section https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-structuring-your-code.
 
 * **How does AutoConfiguration work?** 
-The most important aspect of Spring Boot is its AutoConfiguration mechanism. Without properly understanding how AutoConfiguration works, it all looks like magic. You can read my blog post [How SpringBoot AutoConfiguration magic works?](https://sivalabs.in/how-springboot-autoconfiguration-magic/) to learn about how AutoConfiguration works.
+The most important aspect of Spring Boot is its AutoConfiguration mechanism. Without properly understanding how AutoConfiguration works, it all looks like magic. You can read my blog post [How Spring Boot AutoConfiguration magic works?](https://sivalabs.in/how-springboot-autoconfiguration-magic/) to learn about how AutoConfiguration works.
 
-## 2. Leverage SpringBoot's built-in customization features
-SpringBoot auto-configures many beans based on various criteria, like the existence of a class in the classpath or the absence of a property, and also provides the ability to customize the configuration using properties.
+## 2. Leverage Spring Boot's built-in customization features
+Spring Boot auto-configures many beans based on various criteria, like the existence of a class in the classpath or the absence of a property, and also provides the ability to customize the configuration using properties.
 
 I sometimes see people configuring the entire bean definition using **@Bean** just to customize one property of it, whereas they can simply customize it using a property in the **application.properties** file.
 
@@ -48,7 +48,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-app
 ## 3. Don't add unnecessary starters and turn off unnecessary features
 One of the primary reasons for the popularity of Spring Boot is its getting-started experience. You can simply go to https://start.spring.io/, select the starters you want to add, and run the application. Spring Boot creates a lot of beans behind the scenes based on the starters we add, and hence it may increase the memory footprint and also increase the startup time. So, just add the starters you absolutely need.
 
-SpringBoot automatically registers beans using AutoConfiguration. Sometimes we may not need all those features, and we can turn them off.
+Spring Boot automatically registers beans using AutoConfiguration. Sometimes we may not need all those features, and we can turn them off.
 
 For example, if we are not planning to use JMX feature we can turn it off using **spring.jmx.enabled=false**.
 
@@ -107,7 +107,7 @@ Spring Security makes it easy to implement security, but still, implementing sec
 ## 9. Use dedicated configuration classes
 In our projects, we may need to create several Spring Configuration classes to define or customize beans. For example, we may want to configure **Swagger**, **Jackson**, **AWS**, **ElasticSearch**, **Redis**, etc. Instead of configuring all of them in one configuration class, it would be better to have separate, dedicated Configuration classes for each one of them.
 
-## 10. Avoid boilerplate code with custom SpringBoot starter
+## 10. Avoid boilerplate code with custom Spring Boot starter
 In some organizations, there will be some homegrown libraries to achieve some common functionality like security, secrets management, caching, etc. We can create a custom Spring Boot starter to auto-configure the library features so that we don't need to repeat the boilerplate code for every application. 
 
 You can refer to my post [Creating a Custom Spring Boot Starter for Twitter4j](https://sivalabs.in/creating-custom-springboot-starter-for/) on how to create a custom Spring Boot starter.

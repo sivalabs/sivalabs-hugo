@@ -142,7 +142,7 @@ Now run **JCartAdminApplication.java** and login and go click on Roles menu in L
 
 ## Create New Role
 
-In our List Roles screen we have added a button “New Role” which will take you to “roles/new” URL. Let us implement SpringMVC controller methods to handle showing new role form and role creation POST method.
+In our List Roles screen we have added a button "New Role" which will take you to "roles/new" URL. Let us implement SpringMVC controller methods to handle showing new role form and role creation POST method.
 
 While showing New Role form we should also show list of permission that we would like to add to the newly creating Role.
 

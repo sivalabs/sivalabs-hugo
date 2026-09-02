@@ -8,10 +8,10 @@ date: 2018-03-02T02:29:17.000Z
 url: /blog/microservices-using-springboot-spring-cloud-part-1-overview/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 popular: false
 aliases:
@@ -89,7 +89,7 @@ The following are just a few of the Spring Cloud modules that can be used to add
 
 These are just a few of the Spring Cloud features. To explore more, visit https://projects.spring.io/spring-cloud/.
 
-> You may also like to read about [Why SpringBoot is so popular and how to learn SpringBoot effectively?](http://sivalabs.in/why-springboot-so-popular-how-to-learn-springboot/)
+> You may also like to read about [Why Spring Boot is so popular and how to learn Spring Boot effectively?](http://sivalabs.in/why-springboot-so-popular-how-to-learn-springboot/)
 
 # Our Sample application
 I strongly believe in learning by example. So, let us learn how to build MicroServices using Spring Boot and Spring Cloud with a sample application. I will deliberately keep the application's business logic very simple so that we can focus on understanding the Spring Boot and Spring Cloud features.

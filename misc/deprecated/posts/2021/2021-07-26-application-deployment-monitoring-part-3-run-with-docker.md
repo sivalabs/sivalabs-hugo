@@ -1,16 +1,16 @@
 ---
-title: SpringBoot application deployment and monitoring series - Part 3 - Run Services using DockerCompose
+title: Spring Boot application deployment and monitoring series - Part 3 - Run Services using DockerCompose
 author: Siva
 images: ["/preview-images/jenkins-setup.webp"]
 type: post
 draft: true
 date: 2021-07-25T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-part-3-run-with-docker/
-categories: [SpringBoot]
-tags: [SpringBoot, DevOps, Jenkins, Docker, docker-compose]
+categories: [Spring Boot]
+tags: [Spring Boot, DevOps, Jenkins, Docker, docker-compose]
 ---
 
-This is the 3rd part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
+This is the 3rd part of our [journey to learn Spring Boot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
 We are going to setup [Jenkins](https://www.jenkins.io/) build server and configure Pipelines for **vote-service, bookmark-service and bookmarks-ui** microservices.
 
 In this article we are going to learn:

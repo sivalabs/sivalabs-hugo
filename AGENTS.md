@@ -45,8 +45,8 @@ draft: false
 date: 2026-01-01T00:00:00+05:30
 url: /blog/<slug>
 toc: true                          # show table of contents
-categories: [SpringBoot]
-tags: [Java, SpringBoot]
+categories: [Spring Boot]
+tags: [Java, Spring Boot]
 ---
 ```
 

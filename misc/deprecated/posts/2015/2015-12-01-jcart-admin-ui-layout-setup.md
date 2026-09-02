@@ -8,7 +8,7 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 As I am not really a good UI designer I searched for a free good looking UI website Admin templates and I found this fantastic template <a href="https://almsaeedstudio.com/preview" target="_blank">https://almsaeedstudio.com/preview</a>. We will be using this template for our Administration web application.

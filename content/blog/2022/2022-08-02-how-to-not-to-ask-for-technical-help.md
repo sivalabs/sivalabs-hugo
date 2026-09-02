@@ -52,7 +52,7 @@ But if you ask them to build the whole application for you then there is very le
 Occasionally I come across questions on StackOverflow as follows:
 
 * I am using Spring Security and I am getting 403 error. Please help.
-* I am using SpringBoot and when I start the application it is throwing error. Why?
+* I am using Spring Boot and when I start the application it is throwing error. Why?
 * I am getting CORS issue even after configuring CORS. How to resolve it?
 
 These are not just the titles, these are the whole questions. No code snippets, no Exception StackTraces, nothing.

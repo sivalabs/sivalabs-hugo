@@ -8,10 +8,10 @@ date: 2018-03-12T02:29:17.000Z
 url: /blog/spring-cloud-netflix-circuit-breaker/
 categories:
   - Microservices
-  - SpringBoot
+  - Spring Boot
 tags:
   - microservices
-  - springboot
+  - Spring Boot
   - springcloud
 aliases:
   - /spring-cloud-netflix-circuit-breaker/
@@ -146,8 +146,8 @@ public class ProductInventoryResponse {
 }
 ```
 
-We have annotated the method from where we are making a REST call with **@HystrixCommand(fallbackMethod = “getDefaultProductInventoryByCode”)** 
-so that if it doesn’t receive the response within the certain time limit the call gets timed out and invoke the configured fallback method. 
+We have annotated the method from where we are making a REST call with **@HystrixCommand(fallbackMethod = "getDefaultProductInventoryByCode")** 
+so that if it doesn't receive the response within the certain time limit the call gets timed out and invoke the configured fallback method. 
 The fallback method should be defined in the same class and should have the same signature. 
 In the fallback method **getDefaultProductInventoryByCode()** we are setting the **availableQuantity** to 50, obviously, 
 this behavior depends on what business wants.
@@ -193,7 +193,7 @@ You can find all the configuration options available here https://github.com/Net
 
 # How to propagate ThreadLocal variables
 By default, the methods with **@HystrixCommand** will be executed on a different thread because the default **execution.isolation.strategy** 
-is **ExecutionIsolationStrategy.THREAD**. So, the **ThreadLocal** variables we set before invoking **@HystrixCommand** methods won’t be 
+is **ExecutionIsolationStrategy.THREAD**. So, the **ThreadLocal** variables we set before invoking **@HystrixCommand** methods won't be 
 available within **@HystrixCommand** methods.
 
 One option to make the ThreadLocal variables available is using **execution.isolation.strategy=SEMAPHORE**.
@@ -302,7 +302,7 @@ public Optional<ProductInventoryResponse> getProductInventoryByCode(String produ
 ```
 
 This is just one example of how to propagate the data to the Hystrix command. 
-Similarly we can pass any data available in current HTTP Request, let’s say by using Spring components like **RequestContextHolder** etc.
+Similarly we can pass any data available in current HTTP Request, let's say by using Spring components like **RequestContextHolder** etc.
 
 > Jakub Narloch wrote a nice article on how to propagate Request Context and even created a Spring Boot starter too. Please look at his blog https://jmnarloch.wordpress.com/2016/07/06/spring-boot-hystrix-and-threadlocals/ and GitHub Repo https://github.com/jmnarloch/hystrix-context-spring-boot-starter.
 

@@ -1,16 +1,16 @@
 ---
-title: SpringBoot application deployment and monitoring series - Part 2 - Build Server Setup using Jenkins
+title: Spring Boot application deployment and monitoring series - Part 2 - Build Server Setup using Jenkins
 author: Siva
 images: ["/preview-images/jenkins-setup.webp"]
 type: post
 draft: false
 date: 2021-03-10T04:59:17+05:30
 url: /springboot-application-deployment-monitoring-part-2-jenkins-setup/
-categories: [SpringBoot]
-tags: [SpringBoot, DevOps, Jenkins, Vagrant]
+categories: [Spring Boot]
+tags: [Spring Boot, DevOps, Jenkins, Vagrant]
 ---
 
-This is the 2nd part of our [journey to learn SpringBoot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
+This is the 2nd part of our [journey to learn Spring Boot application deployment and monitoring series]({{< relref "2021-02-26-application-deployment-monitoring-series.md" >}}).
 We are going to setup [Jenkins](https://www.jenkins.io/) build server and configure Pipelines for **vote-service, bookmark-service and bookmarks-ui** microservices.
 
 In this article we are going to learn:
@@ -223,7 +223,7 @@ node {
 }
 ```
 We are checking out the code, running maven build by executing unit and integration tests and publishing the generated JaCoCo reports.
-Then we are building a docker image using SpringBoot's buildpacks support and if it is `main` or `master` branch we are pushing it to DockerHub.
+Then we are building a docker image using Spring Boot's buildpacks support and if it is `main` or `master` branch we are pushing it to DockerHub.
 Easy-peasy.
 
 Add `Jenkinsfile` to the root of `vote-service` and commit it.

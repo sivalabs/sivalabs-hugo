@@ -7,8 +7,8 @@ draft: false
 date: 2026-06-16T04:59:17+05:30
 url: /blog/dont-pollute-spring-boot-main-class
 toc: false
-categories: ["SpringBoot"]
-tags: ["Java", "SpringBoot"]
+categories: ["Spring Boot"]
+tags: ["Java", "Spring Boot"]
 ---
 
 Most Spring Boot applications start with a beautifully boring main class.

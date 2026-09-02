@@ -1,5 +1,5 @@
 ---
-title: Creating Custom SpringBoot Starter for Twitter4j
+title: Creating Custom Spring Boot Starter for Twitter4j
 author: Siva
 type: post
 date: 2016-04-08T06:57:23.000Z
@@ -7,11 +7,11 @@ url: /blog/creating-custom-springboot-starter-for/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /creating-custom-springboot-starter-for/
 ---
-**Spring Boot** provides a lot of starter modules to get up and running quickly. Spring Boot’s auto-configure mechanism takes care of configuring Spring Beans on our behalf based on various criteria.
+**Spring Boot** provides a lot of starter modules to get up and running quickly. Spring Boot's auto-configure mechanism takes care of configuring Spring Beans on our behalf based on various criteria.
 
 In addition to the Spring Boot starters that come out-of-the-box provided by the Core Spring Team, we can also create our own starter modules.
 
@@ -76,7 +76,7 @@ First, we are going to create a parent `pom` type module to define dependency ve
 </project>
 ```
 
-In this **pom.xml**, we are defining the Spring Boot and Twitter4j versions in the `<dependencyManagement>` section so that we don’t need to specify versions all over the place.
+In this **pom.xml**, we are defining the Spring Boot and Twitter4j versions in the `<dependencyManagement>` section so that we don't need to specify versions all over the place.
 
 ### Create twitter4j-spring-boot-autoconfigure module
 
@@ -348,11 +348,11 @@ Create a child module with the name `twitter4j-spring-boot-starter` in our paren
 
 Note that in this Maven module, we are actually pulling in the `twitter4j-core` dependency.
 
-We don’t need to add any code in this module, but optionally we can specify what dependencies we are going to provide through this starter in the `src/main/resources/META-INF/spring.provides` file as follows:
+We don't need to add any code in this module, but optionally we can specify what dependencies we are going to provide through this starter in the `src/main/resources/META-INF/spring.provides` file as follows:
 
 `provides: twitter4j-core`
 
-That’s all for our starter.
+That's all for our starter.
 
 Let us create a sample using our brand-new starter, `twitter4j-spring-boot-starter`.
 

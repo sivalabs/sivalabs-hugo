@@ -1,5 +1,5 @@
 ---
-title: SpringBoot Integration Testing using TestContainers Starter
+title: Spring Boot Integration Testing using TestContainers Starter
 author: Siva
 images:
   - /preview-images/testcontainers.webp
@@ -7,15 +7,15 @@ type: post
 date: 2020-02-02T23:29:17.000Z
 url: /blog/spring-boot-integration-testing-using-testcontainers-starter/
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Testcontainers
 aliases:
   - /spring-boot-integration-testing-using-testcontainers-starter/
 ---
 
-One of the many reasons for the huge popularity of Spring and SpringBoot is
+One of the many reasons for the huge popularity of Spring and Spring Boot is
 its great support for [Testing](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-testing).
 We can write unit tests using [Mockito](https://site.mockito.org/) without requiring any Spring features. 
 And, we can write Integration Tests using Spring testing support by creating Spring ApplicationContext. 
@@ -23,7 +23,7 @@ And, we can write Integration Tests using Spring testing support by creating Spr
 <!--more-->
 
 
-> Read [Guide to Testing SpringBoot Applications](https://sivalabs.in/spring-boot-testing/)
+> Read [Guide to Testing Spring Boot Applications](https://sivalabs.in/spring-boot-testing/)
     
 While running integration tests, we might need to interact with external services like relational databases, NoSQL datastores, Kafka, etc. 
 We can spin up those external services as Docker containers and run tests against them.
@@ -35,7 +35,7 @@ We can spin up those external services as Docker containers and run tests agains
 > Testcontainers is a Java library that supports JUnit tests, providing lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker container.
 
 We can use Testcontainers to spin up a [Singleton docker container](https://www.testcontainers.org/test_framework_integration/manual_lifecycle_control/#singleton-containers) 
-in a SpringBoot integration test as follows:
+in a Spring Boot integration test as follows:
 
 ```java
 @SpringBootTest
@@ -72,11 +72,11 @@ class UserServiceIntegrationTest {
 }
 ```
 
-This is such a common requirement in SpringBoot applications, so the community built
-[Testcontainers SpringBoot starter](https://github.com/testcontainers/testcontainers-spring-boot) to make it easier.
+This is such a common requirement in Spring Boot applications, so the community built
+[Testcontainers Spring Boot starter](https://github.com/testcontainers/testcontainers-spring-boot) to make it easier.
 
-## Testcontainers SpringBoot starter
-The Testcontainers SpringBoot starter depends on **spring-cloud-starter**. 
+## Testcontainers Spring Boot starter
+The Testcontainers Spring Boot starter depends on **spring-cloud-starter**. 
 If you are NOT already using any SpringCloud starters in the application, then include **spring-cloud-starter** as a **test** dependency.
 
 ```xml
@@ -153,7 +153,7 @@ embedded.postgresql.dockerImage=postgres:10.7
 embedded.postgresql.enabled=true
 ```
 
-The Testcontainers SpringBoot starter already provides support for most commonly used containers like
+The Testcontainers Spring Boot starter already provides support for most commonly used containers like
 Postgresql, MariaDB, MongoDB, Redis, RabbitMQ, Kafka, Elasticsearch, etc.
 
 To my surprise, there is no direct support for MySQL as of now. But there is a simple workaround

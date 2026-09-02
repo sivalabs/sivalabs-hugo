@@ -8,7 +8,7 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 Let us create a root pom type maven project with 3 sub-modules jcart-core, jcart-admin and jcart-site.
@@ -19,7 +19,7 @@ Let us create a root pom type maven project with 3 sub-modules jcart-core, jcart
 
 **jcart-site** module will contain all the shoppingcart related web functionality like Controllers, Security, Validators etc.
 
-All these modules use SpringBoot, but as of now STS/IntellijIdea are not providing option to create multi-module SpringBoot application, we will be creating Maven modules and then configure SpringBoot dependencies manually.
+All these modules use Spring Boot, but as of now STS/IntellijIdea are not providing option to create multi-module Spring Boot application, we will be creating Maven modules and then configure Spring Boot dependencies manually.
 
 **jcart/pom.xml**
 

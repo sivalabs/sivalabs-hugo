@@ -8,12 +8,12 @@ categories:
   - Java
 tags:
   - jcart
-  - SpringBoot
+  - Spring Boot
 
 ---
 We are going to implement Admin User Forgot Password functionality where we need to send the Password Reset link to User email address. So let us look at how to configure Email server and send emails.
 
-Spring provides support for sending Emails using **JavaMailSender**. SpringBoot makes it even easier by providing a starter for emailing support.
+Spring provides support for sending Emails using **JavaMailSender**. Spring Boot makes it even easier by providing a starter for emailing support.
 
 As we need Emailing feature in both Admin and ShoppingCart modules, we will implement the emailing functionality in jcart-core module.
 

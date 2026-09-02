@@ -9,9 +9,9 @@ date: 2024-06-08T23:29:17.000Z
 url: /blog/thymeleaf-layouts-using-fragment-expressions
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - Thymeleaf
   - GraalVM
 aliases:

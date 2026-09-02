@@ -1,5 +1,5 @@
 ---
-title: 'SpringBoot : Working with MyBatis'
+title: 'Spring Boot : Working with MyBatis'
 author: Siva
 type: post
 date: 2016-03-14T07:10:42.000Z
@@ -7,13 +7,13 @@ url: /blog/springboot-working-with-mybatis/
 categories:
   - Spring
 tags:
-  - SpringBoot
+  - Spring Boot
 aliases:
   - /springboot-working-with-mybatis/
 ---
 **MyBatis** is an SQL Mapping framework with support for custom SQL, stored procedures, and advanced mappings.
 
-> Spring Boot doesn’t provide official support for MyBatis integration, but the MyBatis community built a Spring Boot starter for MyBatis.
+> Spring Boot doesn't provide official support for MyBatis integration, but the MyBatis community built a Spring Boot starter for MyBatis.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ You can read about the Spring Boot MyBatis Starter release announcement at http:
 </dependency>
 ```
 
-We will be reusing the **User.java, schema.sql, and data.sql** files created in my previous article, [SpringBoot: Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}}).
+We will be reusing the **User.java, schema.sql, and data.sql** files created in my previous article, [Spring Boot: Working with JdbcTemplate]({{< relref "2016-03-14-springboot-working-with-jdbctemplate.md" >}}).
 
 Create a MyBatis SQL Mapper interface, **UserMapper.java**, with a few database operations as follows:
 

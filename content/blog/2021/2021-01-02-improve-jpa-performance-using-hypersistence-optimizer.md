@@ -53,12 +53,12 @@ Anybody working with JPA/Hibernate surely ends up spending good amount of time o
 Basically, Hypersistence Optimizer profiles your JPA/Hibernate code and give you a report of issues.
 Not just reporting issues, but also explain what is the issue and how to fix it.
 
-Let's see how to use HypersistenceOptimizer in a SpringBoot application.
+Let's see how to use HypersistenceOptimizer in a Spring Boot application.
 
 You can get trial version or buy full version of HypersistenceOptimizer at https://vladmihalcea.com/hypersistence-optimizer/.
 You can follow the [Installation Guide](https://vladmihalcea.com/hypersistence-optimizer/docs/installation-guide/) to setup HypersistenceOptimizer depending on your application type.
 
-For a simple SpringBoot application we can setup as follows:
+For a simple Spring Boot application we can setup as follows:
 
 * Configure dependencies
 

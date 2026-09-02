@@ -9,9 +9,9 @@ date: 2023-10-02T00:30:00.000Z
 url: /blog/spring-security-oauth2-tutorial-securing-resource-server
 toc: true
 categories:
-  - SpringBoot
+  - Spring Boot
 tags:
-  - SpringBoot
+  - Spring Boot
   - SpringSecurity
   - OAuth2
 description: In this tutorial, we will create a Spring Boot Resource Server and secure it with Spring Security OAuth 2.0 using Keycloak.
