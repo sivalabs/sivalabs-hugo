@@ -81,6 +81,8 @@ TELEGRAM_CHAT_ID=258745896
 
 This gives every developer one obvious place for local values while leaving production free to provide real environment variables.
 
+{{< youtube bpQJpFXLFBk >}}
+
 ## One important precaution
 
 These files often contain credentials. Do not commit them. 
