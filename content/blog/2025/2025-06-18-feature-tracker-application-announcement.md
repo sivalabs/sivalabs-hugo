@@ -1,7 +1,7 @@
 ---
 title: "Announcing FeatureTracker Application"
 author: Siva
-images: ["/images/feature-tracker.webp"]
+images: ["/preview-images/feature-tracker.webp"]
 type: post
 draft: false
 date: 2025-06-18T04:59:17+05:30

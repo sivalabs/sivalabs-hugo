@@ -1,7 +1,7 @@
 ---
 title: "Don't Pollute Your Spring Boot Main EntryPoint Class"
 author: Siva
-images: ["/images/dont-pollute-springboot-main-class.webp"]
+images: ["/preview-images/dont-pollute-springboot-main-class.webp"]
 type: post
 draft: false
 date: 2026-06-16T04:59:17+05:30

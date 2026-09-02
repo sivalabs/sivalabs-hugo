@@ -1,7 +1,7 @@
 ---
 title: "Before You Judge, Get Curious"
 author: Siva
-images: ["/images/before-you-judge-get-curious.webp"]
+images: ["/preview-images/before-you-judge-get-curious.webp"]
 type: post
 draft: false
 date: 2026-04-22T04:59:17+05:30

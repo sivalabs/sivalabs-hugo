@@ -1,7 +1,7 @@
 ---
 title: "Feeling Left Behind in Tech? This Is Your 90-Day Comeback Plan"
 author: Siva
-images: ["/images/90-day-comeback-plan.webp"]
+images: ["/preview-images/90-day-comeback-plan.webp"]
 type: post
 draft: false
 date: 2026-03-18T04:59:17+05:30

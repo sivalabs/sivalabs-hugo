@@ -1,7 +1,7 @@
 ---
 title: "AI Agents Are Doing The Heavy Lifting, Then Why Am I So Tired?"
 author: Siva
-images: ["/images/ai-code-review.webp"]
+images: ["/preview-images/ai-code-review.webp"]
 type: post
 draft: false
 date: 2026-06-30T04:59:17+05:30
