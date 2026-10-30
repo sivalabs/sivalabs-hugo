@@ -1,7 +1,7 @@
 ---
 title: "Harness Engineering for Java and Spring Boot Applications"
 author: "Siva"
-images: ["/preview-images/harness-engineering.webp"]
+images: ["/preview-images/harness-engineering-for-java-spring.webp"]
 type: post
 draft: false
 date: 2026-10-30T12:00:00+05:30
@@ -11,29 +11,66 @@ categories: ["Java", "Spring Boot"]
 tags: ["AI", "Harness Engineering", "Testing", "Architecture", "Code Quality"]
 ---
 
-# Harness Engineering for Java and Spring Boot Applications
-
 I want to accelerate development using AI coding agents, but I don't want to give up on code quality to get there. Generating code faster is useful only if I can keep the application understandable, maintainable, and correct as it grows.
 
 An agent can implement a feature, generate tests, and refactor several classes in a few minutes. Reviewing all those changes carefully still takes time. If every review requires me to point out formatting issues, explain package boundaries again, and ask for missing authorization tests, I have moved the bottleneck rather than removed it.
 
 So I set up a harness to take care of as much code quality verification as possible. Formatting, coverage checks, architecture rules, and behavioral tests become part of the development workflow. The agent gets feedback from executable checks, and I can spend more of my review time on product behavior and design decisions.
 
-I'll use [FeedbackHub](../README.md), a Spring Boot application for employee feedback and discussions, to show what this looks like. It has user management, messages, replies, voting, moderation, and AI-assisted content analysis. That gives us meaningful application boundaries and business rules to protect.
+{{< box info >}}
+**Reference application: FeedbackHub**
+
+I'll use [FeedbackHub](https://github.com/sivaprasadreddy/feedback-hub), a Spring Boot application for employee feedback and discussions, to show what this looks like. It has user management, messages, replies, voting, moderation, and AI-assisted content analysis. That gives us meaningful application with boundaries and business rules to protect.
+{{< /box >}}
 
 For my Java projects, the basic expectation is concrete:
 
 ```shell
-# Run from the repository root.
-./mvnw -pl feedbackhub spotless:apply
-./mvnw -pl feedbackhub clean verify
+./mvnw spotless:apply <-- should automatically format the code
+./mvnw verify         <-- should verify coding standards, architecture violations and run behaviour tests
 ```
 
 These commands don't prove that a change is perfect. They provide a repeatable baseline that every change must meet.
 
+## Agent Skills: Teach Your Coding Standards to AI Agents
+
+Before any check runs, the agent has to know how I like to build applications. Package structure, how to write REST APIs, how to test them, which build plugins to configure: I don't want to explain these in every prompt.
+
+**Agent Skills** are a good fit. A skill is a folder with a `SKILL.md` file, and optionally supporting files, that the agent loads when the task matches its description. I keep my coding standards and architecture guidelines in skills, and the agent imports them when it works on a Spring Boot application.
+
+I use the Spring Boot skills from [sivalabs-agent-skills](https://github.com/sivaprasadreddy/sivalabs-agent-skills). They capture how I structure packages, build modular monoliths, write REST APIs and persistence code, and test them. Install them once and every project starts from the same baseline instead of a prompt I rewrite from memory.
+
+### Guidelines, Not Rules
+
+Skills are **guidelines**, not rules. A skill is text that goes into the agent's context, and the agent decides how much weight to give it. Most of the time it follows the guidance. Sometimes it doesn't:
+
+- The skill is never loaded because the agent didn't think the task matched its description.
+- The agent loads it, then drifts from it in the middle of a long task as the context fills up.
+- It follows the spirit of a guideline but not the letter. For example, it makes a repository package-private in one module and public in another.
+- A direct instruction in the prompt wins over a skill, even when that instruction contradicts it.
+
+**Nothing in a skill forces the agent to comply. That is the main difference between a skill and the build checks. A failing test blocks the build. A skill that says "keep repositories package-private" only makes it more likely.**
+
+So I use both:
+
+```text
+Agent Skills        -> shape the first draft so fewer things need fixing
+Executable  checks  -> catch what the agent ignored, misread, or forgot
+```
+
+A skill reduces the number of violations the agent produces. [Spotless](https://github.com/diffplug/spotless), [ArchUnit](https://www.archunit.org/), [Taikai](https://github.com/enofex/taikai), [Spring Modulith](https://spring.io/projects/spring-modulith), and the coverage gate are what verify the result. 
+
+{{< box important >}}
+**Golden Rule**
+
+If a guideline matters enough that you would reject a pull request for breaking it, you should turn it into an executable rule.
+{{< /box >}}
+
+I also still review the diff against these standards. A skill saves me from repeating myself, but it doesn't remove my responsibility for the result.
+
 ## Give the Agent a Feedback Loop
 
-In this article, **harness engineering** means designing the instructions, tools, checks, and feedback loops around an AI coding agent so that it can produce changes we can verify.
+**Harness Engineering** means designing the instructions, tools, checks, and feedback loops around an AI coding agent so that it can produce changes we can verify.
 
 A prompt such as “follow best practices” expresses an intention. It doesn't tell us whether the resulting code follows our architecture or preserves an authorization rule.
 
@@ -57,29 +94,20 @@ We already have much of the tooling in the Java ecosystem. The interesting work 
 
 Formatting is an easy place to start because the expected result is deterministic. I don't want either a developer or an AI agent spending time arguing about import order and line wrapping.
 
-FeedbackHub uses Spotless with Palantir Java Format. This configuration appears in the application's Maven build; the version properties below are the values currently pinned in the project:
-
-```xml
-<properties>
-    <spotless.version>3.10.4</spotless.version>
-    <palantir-java-format.version>2.102.0</palantir-java-format.version>
-</properties>
-```
-
-The plugin configuration supplies both the formatter and the enforcement point:
+FeedbackHub uses [Spotless](https://github.com/diffplug/spotless) with [Palantir Java Format](https://github.com/palantir/palantir-java-format) to automatically verify whether code formatted properly or not:
 
 ```xml
 <plugin>
     <groupId>com.diffplug.spotless</groupId>
     <artifactId>spotless-maven-plugin</artifactId>
-    <version>${spotless.version}</version>
+    <version>3.10.4</version>
     <configuration>
         <java>
             <importOrder/>
             <removeUnusedImports/>
             <formatAnnotations/>
             <palantirJavaFormat>
-                <version>${palantir-java-format.version}</version>
+                <version>2.103.0</version>
             </palantirJavaFormat>
         </java>
     </configuration>
@@ -94,31 +122,27 @@ The plugin configuration supplies both the formatter and the enforcement point:
 </plugin>
 ```
 
-`spotless:apply` updates the files. `spotless:check` reports violations and fails without fixing them. Binding the check to `compile` means ordinary builds enforce the formatting policy early.
+With the plugin configured, you can use the following goals:
 
 ```shell
-./mvnw -pl feedbackhub spotless:apply
-./mvnw -pl feedbackhub spotless:check
+./mvnw spotless:apply   <-- formats the code
+./mvnw spotless:check   <-- report violations and fails the build without fixing them
 ```
+Binding the `check` goal to `compile` phase means builds enforce the formatting policy early.
 
-## Make Missing Test Coverage Visible
+## JaCoCo: Make Missing Test Coverage Visible
 
 AI can generate tests quickly. That doesn't mean the tests exercise the important behavior.
 
-FeedbackHub uses JaCoCo to collect coverage, generate a report, and enforce a minimum of 80% line coverage across the application bundle. These are the relevant properties:
+FeedbackHub uses [JaCoCo](https://www.jacoco.org/jacoco/) to collect coverage, generate a report, and enforce a minimum of 80% line coverage across the application bundle.
 
-```xml
-<jacoco-maven-plugin.version>0.8.16</jacoco-maven-plugin.version>
-<jacoco.minimum.coverage>80%</jacoco.minimum.coverage>
-```
-
-The plugin binds the report and coverage check to `verify`:
+The plugin binds the `report` and coverage `check` goals to `verify` phase:
 
 ```xml
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
-    <version>${jacoco-maven-plugin.version}</version>
+    <version>0.8.16</version>
     <executions>
         <execution>
             <goals>
@@ -146,7 +170,7 @@ The plugin binds the report and coverage check to `verify`:
                             <limit>
                                 <counter>LINE</counter>
                                 <value>COVEREDRATIO</value>
-                                <minimum>${jacoco.minimum.coverage}</minimum>
+                                <minimum>80%</minimum>
                             </limit>
                         </limits>
                     </rule>
@@ -161,20 +185,21 @@ This distinction matters when giving an agent verification instructions:
 
 ```shell
 # Runs tests, but does not reach the verify-phase coverage gate.
-./mvnw -pl feedbackhub test
+./mvnw test
 
-# Also generates the coverage report and checks the threshold.
-./mvnw -pl feedbackhub verify
+# Runs tests, and also generates the coverage report and checks the threshold.
+./mvnw verify
 ```
 
 Coverage is a useful signal, not a correctness score. A test can execute an authorization branch without checking whether the wrong user was rejected. A bundle-wide threshold can also hide an under-tested feature behind well-covered code elsewhere. I use coverage to identify gaps, then look at the assertions and acceptance criteria to judge whether those gaps matter.
 
 
-## Turn Architecture Decisions into Tests
+## ArchUnit: Turn Architecture Decisions into Tests
 
 Architecture tends to drift through small, convenient changes. A controller reaches directly into another module's repository. A domain service imports a web type. An entity becomes public because it is easier to pass around.
+These are easy changes for an agent to make when its immediate goal is to get a feature working. 
 
-These are easy changes for an agent to make when its immediate goal is to get a feature working. ArchUnit lets us encode boundaries as executable rules.
+[ArchUnit](https://www.archunit.org/) lets us encode boundaries as executable rules.
 
 FeedbackHub's `ArchUnitTests` includes these rules:
 
@@ -246,13 +271,13 @@ public class UsersAPI {
         this.userService = userService;
     }
 
-    public Optional<String> findNameById(Long userId) {
-        return userService.findById(userId).map(UserDto::name);
+    public Optional<UserDto> findNameById(Long userId) {
+        return userService.findById(userId);
     }
 }
 ```
 
-Other modules can ask for a user's name through this facade. They don't need access to the repository or entity.
+Other modules can ask for a user's info through this facade. They don't need access to the repository or entity.
 
 ArchUnit also supports layered and onion architecture rules. You can use those rules if you want to follow those architecture style for your application. 
 
@@ -282,7 +307,7 @@ static final ArchRule shouldFollowOnionArchitecture =
 
 ## Use Taikai for Recurring Java and Spring Conventions
 
-ArchUnit is useful for project-specific boundaries. Taikai, built on top of ArchUnit, provides a fluent API for many recurring Java, testing, JPA, and Spring conventions.
+[Taikai](https://github.com/enofex/taikai), built on top of ArchUnit, provides a fluent API for many recurring Java, testing, JPA, and Spring conventions.
 
 The following is a shortened selection of rules from FeedbackHub's `TaikaiTests`:
 
@@ -292,32 +317,32 @@ class TaikaiTests {
     @Test
     void shouldFulfillConstraints() {
         Taikai.builder()
-                .namespace("dev.sivalabs.feedbackhub")
-                .java(java -> java
-                        .noUsageOfDeprecatedAPIs()
-                        .methodsShouldNotDeclareGenericExceptions())
-                .test(test -> test.junit(junit -> junit
-                        .classesShouldNotBeAnnotatedWithDisabled()
-                        .methodsShouldNotBeAnnotatedWithDisabled()))
-                .jpa(jpa -> jpa.entities(entities -> entities
-                        .shouldBePackagePrivate()
-                        .shouldHaveFieldAnnotatedWithVersion()
-                        .namesShouldMatch(".+Entity")))
-                .spring(spring -> spring
-                        .noAutowiredFields()
-                        .controllers(controllers -> controllers
-                                .namesShouldEndWithController()
-                                .shouldNotDependOnOtherControllers()
-                                .shouldBePackagePrivate())
-                        .repositories(repositories -> repositories
-                                .shouldNotDependOnServices()
-                                .namesShouldEndWithRepository()
-                                .shouldBePackagePrivate())
-                        .transactional(transactional -> transactional
-                                .methodsShouldBePublic()
-                                .shouldNotBeUsedInControllers()))
-                .build()
-                .checkAll();
+            .namespace("dev.sivalabs.feedbackhub")
+            .java(java -> java
+                .noUsageOfDeprecatedAPIs()
+                .methodsShouldNotDeclareGenericExceptions())
+            .test(test -> test.junit(junit -> junit
+                .classesShouldNotBeAnnotatedWithDisabled()
+                .methodsShouldNotBeAnnotatedWithDisabled()))
+            .jpa(jpa -> jpa.entities(entities -> entities
+                .shouldBePackagePrivate()
+                .shouldHaveFieldAnnotatedWithVersion()
+                .namesShouldMatch(".+Entity")))
+            .spring(spring -> spring
+                .noAutowiredFields()
+                .controllers(controllers -> controllers
+                    .namesShouldEndWithController()
+                    .shouldNotDependOnOtherControllers()
+                    .shouldBePackagePrivate())
+                .repositories(repositories -> repositories
+                    .shouldNotDependOnServices()
+                    .namesShouldEndWithRepository()
+                    .shouldBePackagePrivate())
+                .transactional(transactional -> transactional
+                    .methodsShouldBePublic()
+                    .shouldNotBeUsedInControllers()))
+            .build()
+            .checkAll();
     }
 }
 ```
@@ -326,27 +351,21 @@ These checks reduce recurring review comments: use constructor injection, keep t
 
 Some rules are team preferences rather than universal truths. FeedbackHub's full test also checks logger conventions, entity identifier types, naming, and date types. Adopt a rule because you can explain its value for your application. A harness full of arbitrary restrictions creates work without improving the design.
 
-## Verify Module Boundaries with Spring Modulith
+## Spring Modulith: Verify Module Boundaries 
 
-Spring Modulith adds another level of verification: the relationships between application modules.
+[Spring Modulith](https://spring.io/projects/spring-modulith) adds another level of verification: the relationships between application modules.
 
-By default, it discovers modules in the direct subpackages of the application class's package. FeedbackHub has business areas such as `users` and `messages`, alongside packages such as `dashboard`, `config`, and `shared`.
+By default, it discovers modules in the direct subpackages of the application class's package. FeedbackHub has business areas such as `users` and `messages`, alongside packages such as `config`, and `shared`.
 
 The core verification test is small:
 
 ```java
 class ModularityTests {
-    private final ApplicationModules modules =
-            ApplicationModules.of(Application.class);
+    private final ApplicationModules modules = ApplicationModules.of(Application.class);
 
     @Test
     void verifyModuleStructure() {
         modules.verify();
-    }
-
-    @Test
-    void shouldCreateModuleDocumentation() {
-        new Documenter(modules).writeDocumentation();
     }
 }
 ```
@@ -373,7 +392,7 @@ package dev.sivalabs.feedbackhub.shared;
 import org.springframework.modulith.ApplicationModule;
 ```
 
-These declarations document deliberate exposure. An open module allows access to its internal packages, so it deserves a conscious decision. Making every module open would remove much of the protection we wanted.
+These declarations document deliberate exposure. An **open** module allows access to its internal packages, so it deserves a conscious decision. Making every module **open** would remove much of the protection we wanted.
 
 Together, module verification and the custom ArchUnit service rule help preserve the distinction between a module's implementation and its supported entry points.
 
@@ -401,7 +420,8 @@ The response assertion checks that the request was rejected. The database assert
 
 The test class also verifies that an owner can soft-delete a message, that its original content remains stored, that normal views hide the content, and that a deleted message cannot be deleted again.
 
-These tests inherit the shared Spring Boot test setup in `BaseIT`. The application uses Testcontainers for PostgreSQL and Mailpit; here is the database bean:
+These tests inherit the shared Spring Boot test setup in `BaseIT`. 
+The application uses [Testcontainers](https://testcontainers.com/) for PostgreSQL:
 
 ```java
 @Bean
@@ -411,7 +431,7 @@ PostgreSQLContainer postgres() {
 }
 ```
 
-This exercises the application against PostgreSQL rather than assuming an in-memory substitute behaves identically. It also means the verification environment needs Docker and access to the required images.
+This exercises the application against PostgreSQL rather than assuming an in-memory substitute behaves identically.
 
 When asking an agent for tests, I want acceptance criteria translated into observable outcomes: authorization, validation, persistence, privacy, and failure behavior. The number of test methods is much less interesting.
 
@@ -419,7 +439,7 @@ When asking an agent for tests, I want acceptance criteria translated into obser
 
 Consistent formatting makes a diff easier to read. It doesn't tell us whether a method contains a likely bug, whether code is duplicated, or whether a security-sensitive implementation deserves attention. JaCoCo tells us what the tests executed. We still need something that looks at the code itself.
 
-Checkstyle, SpotBugs, and PMD offer automated checks for coding conventions and potential defects. FeedbackHub uses SonarQube because it combines several kinds of feedback in one place.
+[Checkstyle](https://checkstyle.sourceforge.io/), [SpotBugs](https://spotbugs.github.io/), and [PMD](https://pmd.github.io/) offer automated checks for coding conventions and potential defects. FeedbackHub uses [SonarQube](https://www.sonarsource.com/products/sonarqube/) because it combines several kinds of feedback in one place.
 
 ### What SonarQube Can Catch
 
@@ -459,7 +479,7 @@ sonar.junit.reportPaths=target/surefire-reports
 Run the verification build first, so the JaCoCo and Surefire reports exist, then run the scan:
 
 ```shell
-./mvnw -pl feedbackhub clean verify
+./mvnw clean verify
 
 # Run from feedbackhub/ after the verification build.
 mvn initialize sonar:sonar \
@@ -504,7 +524,7 @@ Use the SonarQube MCP server to list the open issues for the feedbackhub project
 on this branch, starting with bugs and vulnerabilities.
 For each issue, read the rule description before changing code.
 Fix the root cause, don't suppress the warning.
-Run ./mvnw -pl feedbackhub spotless:apply and ./mvnw -pl feedbackhub verify,
+Run ./mvnw spotless:apply and ./mvnw verify,
 then re-run the scan and report the quality gate status.
 ```
 
@@ -540,11 +560,9 @@ That puts useful structure around the requirement-to-implementation loop. For a 
 Use $implement-usecase to implement UC-008 from docs/requirements.md.
 ```
 
-Skills also help preserve framework conventions and testing expectations across tasks. But instructions alone remain advisory. If keeping repositories package-private matters enough to mention repeatedly, it is a good candidate for an executable rule too.
-
 ## BootUI: Give the Agent Access to Runtime Evidence
 
-Some problems only become clear when the application runs. BootUI provides a developer console for Spring Boot and Quarkus, with advisors for inspecting best-practice violations and MCP access to findings and runtime diagnostics.
+Some problems only become clear when the application runs. [BootUI](https://www.julien-dubois.com/boot-ui/) provides a developer console for Spring Boot and Quarkus, with advisors for inspecting best-practice violations and MCP access to findings and runtime diagnostics.
 
 FeedbackHub includes the BootUI starter:
 
@@ -567,7 +585,7 @@ For a local development session, those switches can be enabled when starting the
 
 ```shell
 BOOTUI_ENABLED=on BOOTUI_MCP_ENABLED=on \
-  ./mvnw -pl feedbackhub spring-boot:run
+  ./mvnw spring-boot:run
 ```
 
 Now, configure the BootUI MCP server for your AI Agent:
@@ -582,11 +600,15 @@ Now, configure the BootUI MCP server for your AI Agent:
   }
 }
 ```
-With the corresponding MCP connection configured, the agent can use runtime findings as evidence for investigation. Enabling the server doesn't itself configure the agent's connection or turn every advisor finding into a build failure.
+With the corresponding MCP connection configured, the agent can use runtime findings as evidence for investigation.
 
-The same feedback principle applies to the repository's SonarQube MCP setup. A developer can ask the agent to inspect open issues and repair relevant findings. This extends the harness beyond the compiler's view of the code while keeping automated build checks as a separate enforcement layer.
+{{< youtube 9V5IeBmGI14 >}}
 
-## Make the Same Checks Available Locally and in CI
+With BootUI MMCP configured, you can ask AI Agent to fetch advisor findings and fix them.
+
+The same feedback principle applies to the SonarQube MCP setup. A developer can ask the agent to inspect open issues and repair relevant findings. This extends the harness beyond the compiler's view of the code while keeping automated build checks as a separate enforcement layer.
+
+## Run Architecture Verification Tests Early
 
 A harness is easier to use when the developer, the agent, and CI share the same verification commands.
 
@@ -606,12 +628,12 @@ class ArchUnitTests {
     // Project-specific architecture rules
 }
 
-@Order(1)
+@Order(2)
 class TaikaiTests {
     // Java, Spring, and JPA conventions
 }
 
-@Order(2)
+@Order(3)
 class ModularityTests {
     // Module boundary verification and documentation
 }
@@ -633,7 +655,13 @@ Coverage gate failure -> identify meaningful untested behavior
 Analysis finding -> assess and fix the relevant issue
 ```
 
-One expectation I would put directly into a task is: don't lower thresholds, disable tests, or weaken architecture rules merely to make a change pass. Changes to the quality policy deserve their own explanation and review. Or, include it in `AGENTS.md` development workflow instructions.
+One expectation I would put directly in `AGENTS.md` development workflow instructions: 
+
+```
+DON'T LOWER THRESHOLDS, DISABLE TESTS, OR WEAKEN ARCHITECTURE RULES MERELY TO MAKE A CHANGE PASS.
+```
+
+Changes to the quality policy deserve their own explanation and review.
 
 ## Start with the Rules You Keep Repeating
 
@@ -644,8 +672,8 @@ A practical task instruction for this project could be:
 ```text
 Implement the selected use case using the existing module structure.
 Add tests for its success, authorization, and failure behavior.
-Run ./mvnw -pl feedbackhub spotless:apply.
-Run ./mvnw -pl feedbackhub verify.
+Run ./mvnw spotless:apply.
+Run ./mvnw verify.
 Fix relevant failures without weakening the checks.
 Review the final diff and report any verification that could not run.
 ```
