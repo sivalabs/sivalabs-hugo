@@ -1,14 +1,22 @@
 ---
 title: "Harness Engineering for Java and Spring Boot Applications"
 author: "Siva"
-images: ["/preview-images/harness-engineering-for-java-spring.webp"]
+images:
+  - /preview-images/harness-engineering-for-java-spring.webp
 type: post
 draft: false
-date: 2026-10-30T12:00:00+05:30
-url: /harness-engineering-for-java-and-spring-boot-applications
+date: 2026-10-29T06:00:00+05:30
+url: /blog/harness-engineering-for-java-and-spring-boot-applications
 toc: true
-categories: ["Java", "Spring Boot"]
-tags: ["AI", "Harness Engineering", "Testing", "Architecture", "Code Quality"]
+categories:
+  - AI
+tags:
+  - AI
+  - HarnessEngineering
+  - Java
+  - SpringBoot
+aliases:
+  - /harness-engineering-for-java-and-spring-boot-applications
 ---
 
 I want to accelerate development using AI coding agents, but I don't want to give up on code quality to get there. Generating code faster is useful only if I can keep the application understandable, maintainable, and correct as it grows.
