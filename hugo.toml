@@ -6,6 +6,15 @@ enableRobotsTXT = true
 enableEmoji = true
 pygmentsCodeFences = true
 
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  baseName = "rss"
+
 [menus]
     [[menus.main]]
         name = 'Home'
@@ -48,6 +57,8 @@ pygmentsCodeFences = true
         weight = 65
 
 [services]
+  [services.rss]
+    limit = 50
   [services.googleAnalytics]
     id = 'G-N5019E5MWE'
   [services.disqus]

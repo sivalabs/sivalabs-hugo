@@ -153,6 +153,7 @@ a:hover {
 
 .site-menu-button,
 .site-coffee-button,
+.site-rss-button,
 .site-search-button {
   align-items: center;
   aspect-ratio: 1;
@@ -179,12 +180,14 @@ a:hover {
 
 .site-menu-button:hover,
 .site-coffee-button:hover,
+.site-rss-button:hover,
 .site-search-button:hover {
   background: #eff6ff;
   color: #1d4ed8;
 }
 
-.site-coffee-button:hover {
+.site-coffee-button:hover,
+.site-rss-button:hover {
   text-decoration: none;
 }
 
@@ -1342,7 +1345,8 @@ time {
     width: 2.25rem;
   }
 
-  .site-coffee-button {
+  .site-coffee-button,
+  .site-rss-button {
     height: 2.25rem;
     width: 2.25rem;
   }
