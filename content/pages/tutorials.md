@@ -3,7 +3,7 @@ title: Tutorials
 author: Siva
 type: page
 date: 2020-11-30T02:32:39.000Z
-url: /tutorials/
+slug: tutorials
 categories:
   - Java
 tags:

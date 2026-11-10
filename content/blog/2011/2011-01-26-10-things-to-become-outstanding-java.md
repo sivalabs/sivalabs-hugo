@@ -3,7 +3,7 @@ title: 10 things to become an outstanding Java developer
 author: Siva
 type: post
 date: 2011-01-26T07:11:00.000Z
-url: /blog/10-things-to-become-outstanding-java/
+slug: 10-things-to-become-outstanding-java
 categories:
   - Java
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-01-25T23:29:17.000Z
-url: /blog/tips-to-work-with-traditional-enterprise-organizations/
+slug: tips-to-work-with-traditional-enterprise-organizations
 categories:
   - Thoughts
 tags:

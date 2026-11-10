@@ -5,7 +5,7 @@ images: ["/preview-images/structuring-spring-boot-applications.webp"]
 type: post
 draft: false
 date: 2026-06-12T04:59:17+05:30
-url: /blog/a-few-hard-learned-lessons-on-structuring
+slug: a-few-hard-learned-lessons-on-structuring
 toc: true
 categories: [Spring Boot]
 tags: [Java, Spring Boot, Spring Modulith]

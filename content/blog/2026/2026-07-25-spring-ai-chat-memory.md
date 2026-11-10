@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2026-07-25T06:00:00+05:30
-url: /blog/spring-ai-chat-memory
+slug: spring-ai-chat-memory
 toc: true
 categories:
   - Spring AI

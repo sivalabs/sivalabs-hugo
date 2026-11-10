@@ -7,7 +7,7 @@ type: post
 draft: false
 toc: true
 date: 2023-11-24T23:29:17.000Z
-url: /blog/go-for-java-springboot-developers
+slug: go-for-java-springboot-developers
 categories:
   - GoLang
 tags:

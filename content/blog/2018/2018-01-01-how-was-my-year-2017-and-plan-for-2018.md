@@ -5,7 +5,7 @@ images:
   - /preview-images/2018-year.webp
 type: post
 date: 2018-01-01T02:29:17.000Z
-url: /blog/how-was-my-year-2017-and-plan-for-2018/
+slug: how-was-my-year-2017-and-plan-for-2018
 categories:
   - Misc
 tags:

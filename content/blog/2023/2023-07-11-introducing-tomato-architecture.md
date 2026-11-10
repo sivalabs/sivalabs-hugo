@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-10T23:29:17.000Z
-url: /blog/tomato-architecture-pragmatic-approach-to-software-design
+slug: tomato-architecture-pragmatic-approach-to-software-design
 categories:
   - Architecture
 tags:

@@ -5,7 +5,7 @@ images:
   - /preview-images/learn.webp
 type: post
 date: 2018-02-22T02:29:17.000Z
-url: /blog/why-springboot-so-popular-how-to-learn-springboot/
+slug: why-springboot-so-popular-how-to-learn-springboot
 categories:
   - Spring Boot
 tags:

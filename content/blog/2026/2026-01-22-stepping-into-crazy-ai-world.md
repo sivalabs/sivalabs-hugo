@@ -5,7 +5,7 @@ images: ["/preview-images/ai-stressed-awe.webp"]
 type: post
 draft: false
 date: 2026-01-22T04:59:17+05:30
-url: /blog/stepping-into-crazy-ai-world
+slug: stepping-into-crazy-ai-world
 toc: false
 categories: [Thoughts]
 tags: ["Thoughts", "Career", "AI"]

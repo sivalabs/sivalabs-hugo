@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-09-06T23:29:17.000Z
-url: /blog/running-custom-spring-initializr
+slug: running-custom-spring-initializr
 toc: false
 categories:
   - Spring Boot

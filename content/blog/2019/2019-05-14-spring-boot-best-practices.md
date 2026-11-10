@@ -5,7 +5,7 @@ images:
   - /preview-images/spring-boot-1.webp
 type: post
 date: 2019-05-14T02:29:17.000Z
-url: /blog/spring-boot-best-practices/
+slug: spring-boot-best-practices
 categories:
   - Spring Boot
 tags:

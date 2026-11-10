@@ -3,7 +3,7 @@ title: My Review of Vlad Mihalcea's High-Performance Java Persistence book
 author: Siva
 type: post
 date: 2017-11-05T04:59:17.000Z
-url: /blog/my-review-of-vlad-mihalceas-high-performance-java-persistence-book/
+slug: my-review-of-vlad-mihalceas-high-performance-java-persistence-book
 categories:
   - Misc
 tags:

@@ -5,7 +5,7 @@ images:
   - /preview-images/yeoman-logo.webp
 type: post
 date: 2020-01-28T23:29:17.000Z
-url: /blog/creating-yeoman-based-springboot-generator/
+slug: creating-yeoman-based-springboot-generator
 categories:
   - Spring Boot
 tags:

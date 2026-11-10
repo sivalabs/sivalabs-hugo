@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-10-31T23:29:17.000Z
-url: /blog/my-first-year-at-atomicjar
+slug: my-first-year-at-atomicjar
 categories:
   - Career
 tags:

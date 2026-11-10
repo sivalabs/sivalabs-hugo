@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-02-20T23:29:17.000Z
-url: /blog/generative-ai-conversations-using-langchain4j-chat-memory
+slug: generative-ai-conversations-using-langchain4j-chat-memory
 toc: true
 categories:
   - AI

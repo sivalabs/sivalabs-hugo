@@ -5,7 +5,7 @@ images: ["/preview-images/power-of-value-objects.webp"]
 type: post
 draft: false
 date: 2026-01-04T04:59:17+05:30
-url: /blog/the-power-of-value-objects
+slug: the-power-of-value-objects
 toc: true
 categories: [Spring Boot]
 tags: [Java, Spring Boot, DDD]

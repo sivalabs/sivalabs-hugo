@@ -5,7 +5,7 @@ images:
   - /preview-images/spring-boot-1.webp
 type: post
 date: 2019-10-07T02:29:17.000Z
-url: /blog/spring-boot-testing/
+slug: spring-boot-testing
 categories:
   - Spring Boot
 tags:

@@ -3,7 +3,7 @@ title: Are frameworks making developers dumb?
 author: Siva
 type: post
 date: 2011-08-22T01:16:00.000Z
-url: /blog/frameworks-making-developers-dumb/
+slug: frameworks-making-developers-dumb
 categories:
   - Thoughts
 tags:

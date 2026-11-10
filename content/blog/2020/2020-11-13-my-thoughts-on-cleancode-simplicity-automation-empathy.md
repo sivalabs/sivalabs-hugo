@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2020-11-12T23:29:17.000Z
-url: /blog/my-thoughts-on-cleancode-simplicity-automation-empathy/
+slug: my-thoughts-on-cleancode-simplicity-automation-empathy
 categories:
   - Thoughts
 tags:

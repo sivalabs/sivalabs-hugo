@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-07-05T23:29:17.000Z
-url: /blog/mastering-spring-boot-in-5-stages
+slug: mastering-spring-boot-in-5-stages
 toc: true
 categories:
   - Spring Boot

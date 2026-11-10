@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-08-01T23:29:17.000Z
-url: /blog/how-to-not-to-ask-for-technical-help/
+slug: how-to-not-to-ask-for-technical-help
 categories:
   - Misc
 tags:

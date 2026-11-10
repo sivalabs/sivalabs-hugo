@@ -3,7 +3,7 @@ title: My Life as a Software Developer in India
 author: Siva
 type: post
 date: 2015-07-06T16:17:00.000Z
-url: /blog/my-life-as-software-developer-in-india/
+slug: my-life-as-software-developer-in-india
 categories:
   - Java
 tags:

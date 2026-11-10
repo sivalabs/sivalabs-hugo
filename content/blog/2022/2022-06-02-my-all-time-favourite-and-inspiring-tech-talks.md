@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-06-01T23:29:17.000Z
-url: /blog/my-all-time-favourite-20-inspiring-tech-talks/
+slug: my-all-time-favourite-20-inspiring-tech-talks
 categories:
   - Misc
 tags:

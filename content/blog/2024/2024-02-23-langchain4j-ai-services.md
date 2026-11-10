@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-02-22T23:29:17.000Z
-url: /blog/langchain4j-ai-services-tutorial
+slug: langchain4j-ai-services-tutorial
 toc: true
 categories:
   - AI

@@ -3,7 +3,7 @@ title: Contact Me
 author: Siva
 type: page
 date: 2023-10-15T06:06:31.000Z
-url: /blog/contact-me/
+slug: blog/contact-me
 aliases:
   - /contact-me/
 ---

@@ -5,7 +5,7 @@ images:
   - /preview-images/ArchUnit-Logo.webp
 type: post
 date: 2020-04-01T23:29:17.000Z
-url: /blog/impose-architecture-guidelines-using-archunit/
+slug: impose-architecture-guidelines-using-archunit
 categories:
   - Java
 tags:

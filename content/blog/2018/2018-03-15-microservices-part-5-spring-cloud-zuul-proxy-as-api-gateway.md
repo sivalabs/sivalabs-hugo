@@ -5,7 +5,7 @@ images:
   - /preview-images/proxy.webp
 type: post
 date: 2018-03-15T02:29:17.000Z
-url: /blog/microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
+slug: microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway
 categories:
   - Microservices
   - Spring Boot

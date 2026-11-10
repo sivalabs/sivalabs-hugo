@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2026-07-30T06:00:00+05:30
-url: /blog/spring-ai-advisors-api
+slug: spring-ai-advisors-api
 toc: true
 categories:
   - Spring AI

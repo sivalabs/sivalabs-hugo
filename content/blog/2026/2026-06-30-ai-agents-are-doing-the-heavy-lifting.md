@@ -5,7 +5,7 @@ images: ["/preview-images/ai-code-review.webp"]
 type: post
 draft: false
 date: 2026-06-30T04:59:17+05:30
-url: /blog/ai-agents-are-doing-the-heavy-lifting
+slug: ai-agents-are-doing-the-heavy-lifting
 toc: false
 categories: [AI]
 tags: [AI]

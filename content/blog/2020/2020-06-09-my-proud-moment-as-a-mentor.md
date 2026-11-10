@@ -5,7 +5,7 @@ images:
   - /preview-images/strong-women.webp
 type: post
 date: 2020-06-07T23:29:17.000Z
-url: /blog/my-proud-moment-as-a-mentor/
+slug: my-proud-moment-as-a-mentor
 categories:
   - Career
 tags:

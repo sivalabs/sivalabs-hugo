@@ -5,7 +5,7 @@ images:
   - /preview-images/golang.webp
 type: post
 date: 2020-07-01T23:29:17.000Z
-url: /blog/golang-from-a-java-developer-perspective/
+slug: golang-from-a-java-developer-perspective
 categories:
   - GoLang
 tags:

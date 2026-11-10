@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-21T00:30:00.000Z
-url: /blog/sivalabs-weekly-newsletter-2023-29
+slug: sivalabs-weekly-newsletter-2023-29
 toc: true
 categories:
   - Misc

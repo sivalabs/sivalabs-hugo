@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-09-13T23:29:17.000Z
-url: /blog/kubernetes-blue-green-deployments/
+slug: kubernetes-blue-green-deployments
 categories:
   - Kubernetes
 tags:

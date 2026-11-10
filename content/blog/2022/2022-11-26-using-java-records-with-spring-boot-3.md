@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-11-25T23:29:17.000Z
-url: /blog/using-java-records-with-spring-boot-3
+slug: using-java-records-with-spring-boot-3
 categories:
   - Spring Boot
 tags:

@@ -3,7 +3,7 @@ title: 'Update on Spring Boot : Learn By Example book'
 author: Siva
 type: post
 date: 2016-07-30T02:53:50.000Z
-url: /blog/update-springboot-learn-example-book/
+slug: update-springboot-learn-example-book
 categories:
   - Misc
 tags:

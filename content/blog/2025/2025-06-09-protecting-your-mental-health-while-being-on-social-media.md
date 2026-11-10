@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2025-06-08T23:29:17.000Z
-url: /blog/protecting-your-mental-health-while-being-on-social-media
+slug: protecting-your-mental-health-while-being-on-social-media
 toc: false
 categories:
   - Career

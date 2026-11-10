@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-26T00:30:00.000Z
-url: /blog/spring-boot-application-configuration-tutorial
+slug: spring-boot-application-configuration-tutorial
 toc: true
 categories:
   - Spring Boot

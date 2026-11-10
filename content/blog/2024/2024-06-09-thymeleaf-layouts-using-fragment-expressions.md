@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-06-08T23:29:17.000Z
-url: /blog/thymeleaf-layouts-using-fragment-expressions
+slug: thymeleaf-layouts-using-fragment-expressions
 toc: true
 categories:
   - Spring Boot

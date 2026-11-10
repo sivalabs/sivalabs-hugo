@@ -5,7 +5,7 @@ images:
   - /preview-images/man-reading.webp
 type: post
 date: 2020-03-14T23:29:17.000Z
-url: /blog/what-i-learned-2020-week-11/
+slug: what-i-learned-2020-week-11
 categories:
   - Java
 tags:

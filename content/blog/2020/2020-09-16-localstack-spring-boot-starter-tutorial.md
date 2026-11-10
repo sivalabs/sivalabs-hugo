@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2020-09-15T23:29:17.000Z
-url: /blog/localstack-spring-boot-starter-tutorial/
+slug: localstack-spring-boot-starter-tutorial
 categories:
   - Java
 tags:

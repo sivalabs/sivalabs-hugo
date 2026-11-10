@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-02T23:29:17.000Z
-url: /blog/sharing-thoughts-and-knowledge-via-twitter-vs-blogging
+slug: sharing-thoughts-and-knowledge-via-twitter-vs-blogging
 categories:
   - Thoughts
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-08-10T23:29:17.000Z
-url: /blog/few-things-i-learned-the-hardway-in-15-years-of-my-career/
+slug: few-things-i-learned-the-hardway-in-15-years-of-my-career
 categories:
   - Career
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-12-19T23:29:17.000Z
-url: /blog/how-i-dealt-with-burnout/
+slug: how-i-dealt-with-burnout
 categories:
   - Career
 tags:

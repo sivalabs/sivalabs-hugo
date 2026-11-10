@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-02-18T23:29:17.000Z
-url: /blog/getting-started-with-generative-ai-using-java-langchain4j-openai-ollama
+slug: getting-started-with-generative-ai-using-java-langchain4j-openai-ollama
 toc: true
 categories:
   - AI

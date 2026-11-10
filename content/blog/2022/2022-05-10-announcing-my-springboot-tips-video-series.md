@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-05-09T23:29:17.000Z
-url: /blog/announcing-my-springboot-tips-video-series/
+slug: announcing-my-springboot-tips-video-series
 categories:
   - Spring Boot
 tags:

@@ -3,7 +3,7 @@ title: A Developers Perspective on Spring vs JavaEE
 author: Siva
 type: post
 date: 2015-06-15T13:04:00.000Z
-url: /blog/a-developers-perspective-on-spring-vs-javaee/
+slug: a-developers-perspective-on-spring-vs-javaee
 categories:
   - Java
 tags:

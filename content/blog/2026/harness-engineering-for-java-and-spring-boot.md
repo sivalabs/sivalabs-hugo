@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2026-10-29T06:00:00+05:30
-url: /blog/harness-engineering-for-java-and-spring-boot-applications
+slug: harness-engineering-for-java-and-spring-boot-applications
 toc: true
 categories:
   - AI

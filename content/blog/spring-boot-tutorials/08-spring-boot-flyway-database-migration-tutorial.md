@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-08-08T00:30:00.000Z
-url: /blog/spring-boot-flyway-database-migration-tutorial
+slug: spring-boot-flyway-database-migration-tutorial
 toc: true
 categories:
   - Spring Boot

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-19T23:29:17.000Z
-url: /blog/creating-blog-using-hugo-asciidoc-netlify
+slug: creating-blog-using-hugo-asciidoc-netlify
 categories:
   - Misc
 tags:

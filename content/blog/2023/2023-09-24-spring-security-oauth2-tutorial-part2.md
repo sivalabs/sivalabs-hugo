@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-09-24T00:30:00.000Z
-url: /blog/spring-security-oauth2-tutorial-authorization-code-flow
+slug: spring-security-oauth2-tutorial-authorization-code-flow
 toc: true
 categories:
   - Spring Boot

@@ -5,7 +5,7 @@ images:
   - /preview-images/TravisCI-Mascot-1.webp
 type: post
 date: 2018-01-24T02:29:17.000Z
-url: /blog/ci-cd-springboot-applications-using-travis-ci/
+slug: ci-cd-springboot-applications-using-travis-ci
 categories:
   - Spring Boot
 tags:

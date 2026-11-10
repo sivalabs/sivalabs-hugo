@@ -6,7 +6,7 @@ images:
 type: post
 draft: true
 date: 2020-08-05T23:29:17.000Z
-url: /blog/the-lost-art-of-simple-application-development/
+slug: the-lost-art-of-simple-application-development
 categories:
   - Architecture
 tags:

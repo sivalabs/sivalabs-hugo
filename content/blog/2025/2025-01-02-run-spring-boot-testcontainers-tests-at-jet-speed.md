@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2025-01-01T23:29:17.000Z
-url: /blog/run-spring-boot-testcontainers-tests-at-jet-speed
+slug: run-spring-boot-testcontainers-tests-at-jet-speed
 toc: true
 categories:
   - Spring Boot

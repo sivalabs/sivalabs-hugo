@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-01-20T23:29:17.000Z
-url: /blog/my-2020-review-and-plans-for-2021/
+slug: my-2020-review-and-plans-for-2021
 categories:
   - Career
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-08-29T00:30:00.000Z
-url: /blog/spring-boot-jdbcclient-tutorial
+slug: spring-boot-jdbcclient-tutorial
 toc: true
 categories:
   - Spring Boot

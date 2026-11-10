@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-09-28T03:30:00.000Z
-url: /blog/spring-security-oauth2-tutorial-securing-springmvc-client-application
+slug: spring-security-oauth2-tutorial-securing-springmvc-client-application
 toc: true
 categories:
   - Spring Boot

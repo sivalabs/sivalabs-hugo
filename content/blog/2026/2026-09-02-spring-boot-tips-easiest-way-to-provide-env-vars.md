@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2026-09-02T06:00:00+05:30
-url: /blog/spring-boot-tips-easiest-way-to-provide-env-vars
+slug: spring-boot-tips-easiest-way-to-provide-env-vars
 toc: true
 categories:
   - Spring Boot

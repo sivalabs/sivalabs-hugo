@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-28T00:30:00.000Z
-url: /blog/spring-boot-logging-tutorial
+slug: spring-boot-logging-tutorial
 toc: true
 categories:
   - Spring Boot

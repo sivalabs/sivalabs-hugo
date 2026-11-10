@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-03-09T23:29:17.000Z
-url: /blog/getting-started-with-spring-ai-and-open-ai
+slug: getting-started-with-spring-ai-and-open-ai
 toc: true
 categories:
   - AI

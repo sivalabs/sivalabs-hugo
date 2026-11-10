@@ -3,7 +3,7 @@ title: Getting Started with Spring Boot in Intellij IDEA Community Edition
 author: Siva
 type: post
 date: 2016-09-07T09:53:35.000Z
-url: /blog/getting-started-springboot-intellij-idea-community-edition/
+slug: getting-started-springboot-intellij-idea-community-edition
 categories:
   - Spring
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-03-14T23:29:17.000Z
-url: /blog/spring-ai-rag-using-embedding-models-vector-databases
+slug: spring-ai-rag-using-embedding-models-vector-databases
 toc: true
 categories:
   - AI

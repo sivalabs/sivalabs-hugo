@@ -3,7 +3,7 @@ title: JOOQ Tutorials
 author: Siva
 type: page
 date: 2020-11-30T02:32:39.000Z
-url: /blog/jooq-tutorials/
+slug: blog/jooq-tutorials
 categories:
   - Java
 tags:

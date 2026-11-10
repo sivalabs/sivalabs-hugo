@@ -5,7 +5,7 @@ images:
   - /preview-images/remote-1.webp
 type: post
 date: 2020-05-30T23:29:17.000Z
-url: /blog/remote-debugging-spring-boot-application/
+slug: remote-debugging-spring-boot-application
 categories:
   - Java
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-11-15T23:29:17.000Z
-url: /blog/my-first-impression-of-notebooklm
+slug: my-first-impression-of-notebooklm
 toc: false
 categories:
   - AI

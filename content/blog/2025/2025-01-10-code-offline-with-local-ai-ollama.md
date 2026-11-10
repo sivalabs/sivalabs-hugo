@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2025-01-09T23:29:17.000Z
-url: /blog/code-offline-with-local-ai-ollama
+slug: code-offline-with-local-ai-ollama
 toc: true
 categories:
   - AI

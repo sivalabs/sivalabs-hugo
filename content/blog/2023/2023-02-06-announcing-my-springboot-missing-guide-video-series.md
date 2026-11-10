@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-02-05T23:29:17.000Z
-url: /blog/announcing-my-springboot-missing-guide-video-series/
+slug: announcing-my-springboot-missing-guide-video-series
 categories:
   - Spring Boot
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-10-09T00:30:00.000Z
-url: /blog/spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
+slug: spring-security-oauth2-tutorial-service-to-service-communication-using-client-credentials-flow
 toc: true
 categories:
   - Spring Boot

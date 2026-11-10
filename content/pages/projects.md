@@ -3,7 +3,7 @@ title: Projects
 author: Siva
 type: page
 date: 2026-07-08T06:36:31.000Z
-url: /projects/
+slug: projects
 aliases:
   - /blog/projects/
 ---

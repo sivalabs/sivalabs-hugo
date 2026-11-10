@@ -7,6 +7,10 @@ enableEmoji = true
 pygmentsCodeFences = true
 uglyURLs = true
 
+[permalinks.page]
+blog = "/blog/:slug/"
+pages = "/:slug/"
+
 [outputs]
 home = ["HTML", "RSS", "llms", "llms-full"]
 page = ["HTML", "markDown"]

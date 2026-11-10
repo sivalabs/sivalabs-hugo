@@ -3,7 +3,7 @@ title: Why Spring Boot?
 author: Siva
 type: post
 date: 2016-03-13T07:02:10.000Z
-url: /blog/why-springboot/
+slug: why-springboot
 categories:
   - Spring
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-24T00:30:00.000Z
-url: /blog/spring-boot-testing-tutorial
+slug: spring-boot-testing-tutorial
 toc: true
 categories:
   - Spring Boot

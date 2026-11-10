@@ -3,7 +3,7 @@ title: 'MyBatis Tutorial: Part1 – CRUD Operations'
 author: Siva
 type: post
 date: 2012-10-21T11:10:00.000Z
-url: /blog/mybatis-tutorial-part1-crud-operations/
+slug: mybatis-tutorial-part1-crud-operations
 categories:
   - Java
 tags:

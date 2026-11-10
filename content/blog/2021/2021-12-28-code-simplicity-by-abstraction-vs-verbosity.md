@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-12-27T23:29:17.000Z
-url: /blog/code-simplicity-by-abstraction-vs-verbosity/
+slug: code-simplicity-by-abstraction-vs-verbosity
 categories:
   - GoLang
 tags:

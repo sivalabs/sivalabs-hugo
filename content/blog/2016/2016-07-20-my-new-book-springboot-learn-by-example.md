@@ -3,7 +3,7 @@ title: 'My New Book Spring Boot : Learn By Example Published Today'
 author: Siva
 type: post
 date: 2016-07-20T06:05:31.000Z
-url: /blog/my-new-book-springboot-learn-by-example/
+slug: my-new-book-springboot-learn-by-example
 categories:
   - Misc
 tags:

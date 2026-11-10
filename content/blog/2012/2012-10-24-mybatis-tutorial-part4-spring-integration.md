@@ -3,7 +3,7 @@ title: 'MyBatis Tutorial : Part4 – Spring Integration'
 author: Siva
 type: post
 date: 2012-10-24T00:40:00.000Z
-url: /blog/mybatis-tutorial-part4-spring-integration/
+slug: mybatis-tutorial-part4-spring-integration
 categories:
   - Java
 tags:

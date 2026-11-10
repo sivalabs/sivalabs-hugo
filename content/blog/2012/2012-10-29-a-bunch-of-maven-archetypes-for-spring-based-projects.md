@@ -3,7 +3,7 @@ title: A bunch of Maven Archetypes for Spring based Projects
 author: Siva
 type: post
 date: 2012-10-29T12:18:00.000Z
-url: /blog/a-bunch-of-maven-archetypes-for-spring-based-projects/
+slug: a-bunch-of-maven-archetypes-for-spring-based-projects
 categories:
   - Spring
 tags:

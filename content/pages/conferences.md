@@ -3,7 +3,7 @@ title: Conferences
 author: Siva
 type: page
 date: 2026-07-09T00:00:00+05:30
-url: /conferences/
+slug: conferences
 ---
 
 I speak at developer conferences, Java user groups, meetups, and internal engineering events on Java, Spring Boot, 

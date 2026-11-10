@@ -6,7 +6,7 @@ images:
 type: post
 draft: true
 date: 2024-07-01T23:29:17.000Z
-url: /blog/a-path-to-become-polyglot-programmer
+slug: a-path-to-become-polyglot-programmer
 toc: false
 categories:
   - Misc

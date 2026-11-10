@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-11-06T23:29:17.000Z
-url: /blog/rethinking-about-my-social-media-usage/
+slug: rethinking-about-my-social-media-usage
 categories:
   - Thoughts
 tags:

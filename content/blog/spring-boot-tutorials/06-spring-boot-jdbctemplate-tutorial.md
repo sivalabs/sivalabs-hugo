@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-08-01T00:30:00.000Z
-url: /blog/spring-boot-jdbctemplate-tutorial
+slug: spring-boot-jdbctemplate-tutorial
 toc: true
 categories:
   - Spring Boot

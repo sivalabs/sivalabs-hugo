@@ -5,7 +5,7 @@ images: ["/preview-images/feature-tracker.webp"]
 type: post
 draft: false
 date: 2025-06-18T04:59:17+05:30
-url: /blog/feature-tracker-application-announcement
+slug: feature-tracker-application-announcement
 aliases: ['/feature-tracker-application-announcement']
 toc: false
 categories: [Microservices]

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-04-24T23:29:17.000Z
-url: /blog/should-you-use-lombok-or-is-it-bad-for-you/
+slug: should-you-use-lombok-or-is-it-bad-for-you
 categories:
   - Java
 tags:

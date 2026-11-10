@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-11T23:29:17.000Z
-url: /blog/my-thoughts-on-devops-platform-engineering-and-fullstack-developer
+slug: my-thoughts-on-devops-platform-engineering-and-fullstack-developer
 categories:
   - Thoughts
 tags:

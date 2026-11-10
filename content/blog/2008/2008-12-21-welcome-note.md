@@ -3,7 +3,7 @@ title: Welcome note
 author: Siva
 type: post
 date: 2008-12-21T08:05:00.000Z
-url: /blog/welcome-note/
+slug: welcome-note
 categories:
   - Java
 tags:

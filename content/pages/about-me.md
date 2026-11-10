@@ -4,7 +4,7 @@ author: Siva
 type: page
 layout: about
 date: 2024-07-17T13:06:31.000Z
-url: /about/
+slug: about
 profile:
   image: /images/Siva.webp
   alt: K. Siva Prasad Reddy

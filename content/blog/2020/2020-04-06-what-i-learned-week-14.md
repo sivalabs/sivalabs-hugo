@@ -5,7 +5,7 @@ images:
   - /preview-images/WIL-3.webp
 type: post
 date: 2020-04-05T23:29:17.000Z
-url: /blog/what-i-learned-2020-week-14/
+slug: what-i-learned-2020-week-14
 categories:
   - Java
 tags:

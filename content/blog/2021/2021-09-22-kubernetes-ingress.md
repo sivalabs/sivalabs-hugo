@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-09-21T23:29:17.000Z
-url: /blog/kubernetes-ingress/
+slug: kubernetes-ingress
 categories:
   - Kubernetes
 tags:

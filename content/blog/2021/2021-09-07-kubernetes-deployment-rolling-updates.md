@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-09-06T23:29:17.000Z
-url: /blog/kubernetes-deployment-rolling-updates/
+slug: kubernetes-deployment-rolling-updates
 categories:
   - Kubernetes
 tags:

@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-01-22T23:29:17.000Z
-url: /blog/should-i-use-framework-or-libraries
+slug: should-i-use-framework-or-libraries
 categories:
   - Java
 tags:

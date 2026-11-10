@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-08-27T00:30:00.000Z
-url: /blog/spring-boot-rest-api-best-practices-part-4
+slug: spring-boot-rest-api-best-practices-part-4
 toc: true
 categories:
   - Spring Boot

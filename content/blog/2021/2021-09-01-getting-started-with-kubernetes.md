@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-08-31T23:29:17.000Z
-url: /blog/getting-started-with-kubernetes/
+slug: getting-started-with-kubernetes
 categories:
   - Kubernetes
 tags:

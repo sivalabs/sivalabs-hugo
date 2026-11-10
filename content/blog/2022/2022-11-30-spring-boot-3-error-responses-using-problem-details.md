@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2022-11-29T23:29:17.000Z
-url: /blog/spring-boot-3-error-reporting-using-problem-details
+slug: spring-boot-3-error-reporting-using-problem-details
 categories:
   - Spring Boot
 tags:

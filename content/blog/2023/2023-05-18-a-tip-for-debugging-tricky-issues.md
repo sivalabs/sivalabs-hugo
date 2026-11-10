@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-05-17T23:29:17.000Z
-url: /blog/a-tip-for-debugging-tricky-software-bugs-issues/
+slug: a-tip-for-debugging-tricky-software-bugs-issues
 categories:
   - Misc
 tags:

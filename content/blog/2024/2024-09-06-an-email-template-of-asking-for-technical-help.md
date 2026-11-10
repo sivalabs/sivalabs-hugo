@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-09-05T23:29:17.000Z
-url: /blog/an-email-template-of-asking-for-technical-help
+slug: an-email-template-of-asking-for-technical-help
 toc: false
 categories:
   - Career

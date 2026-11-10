@@ -3,7 +3,7 @@ title: "Clean Code: Don't mix different levels of abstractions"
 author: Siva
 type: post
 date: 2013-12-29T00:53:00.000Z
-url: /blog/clean-code-dont-mix-different-levels-of-abstractions/
+slug: clean-code-dont-mix-different-levels-of-abstractions
 categories:
   - Java
 tags:

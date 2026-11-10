@@ -6,7 +6,7 @@ images:
 type: post
 draft: true
 date: 2022-10-31T23:29:17.000Z
-url: /blog/why-i-joined-atomicjar/
+slug: why-i-joined-atomicjar
 categories:
   - Career
 tags:

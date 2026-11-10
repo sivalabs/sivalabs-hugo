@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-10-12T00:30:00.000Z
-url: /blog/spring-boot-jooq-tutorial-getting-started
+slug: spring-boot-jooq-tutorial-getting-started
 toc: true
 categories:
   - Java

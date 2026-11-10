@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-12-29T23:29:17.000Z
-url: /blog/time-to-apply-kiss-principle-to-career
+slug: time-to-apply-kiss-principle-to-career
 categories:
   - Career
 tags:

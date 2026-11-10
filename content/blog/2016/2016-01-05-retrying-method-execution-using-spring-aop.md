@@ -3,7 +3,7 @@ title: Retrying Method Execution using Spring AOP
 author: Siva
 type: post
 date: 2016-01-05T15:40:36.000Z
-url: /blog/retrying-method-execution-using-spring-aop/
+slug: retrying-method-execution-using-spring-aop
 categories:
   - Spring
 tags:

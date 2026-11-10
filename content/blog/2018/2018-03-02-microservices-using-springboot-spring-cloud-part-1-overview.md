@@ -5,7 +5,7 @@ images:
   - /preview-images/e-learning.webp
 type: post
 date: 2018-03-02T02:29:17.000Z
-url: /blog/microservices-using-springboot-spring-cloud-part-1-overview/
+slug: microservices-using-springboot-spring-cloud-part-1-overview
 categories:
   - Microservices
   - Spring Boot

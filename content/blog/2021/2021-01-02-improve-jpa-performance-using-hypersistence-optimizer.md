@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-01-01T23:29:17.000Z
-url: /blog/improve-jpa-performance-using-hypersistence-optimizer/
+slug: improve-jpa-performance-using-hypersistence-optimizer
 categories:
   - Java
 tags:

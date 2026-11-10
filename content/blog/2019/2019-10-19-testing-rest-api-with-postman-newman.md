@@ -5,7 +5,7 @@ images:
   - /preview-images/postman.webp
 type: post
 date: 2019-10-20T02:29:17.000Z
-url: /blog/testing-rest-apis-with-postman-newman/
+slug: testing-rest-apis-with-postman-newman
 categories:
   - Testing
 tags:

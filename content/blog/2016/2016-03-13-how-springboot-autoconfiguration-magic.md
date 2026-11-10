@@ -3,7 +3,7 @@ title: How Spring Boot AutoConfiguration magic works?
 author: Siva
 type: post
 date: 2016-03-13T07:04:56.000Z
-url: /blog/how-springboot-autoconfiguration-magic/
+slug: how-springboot-autoconfiguration-magic
 categories:
   - Spring
 tags:

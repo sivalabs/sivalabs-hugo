@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2020-12-03T23:29:17.000Z
-url: /blog/quirks-of-spring-testconfiguration/
+slug: quirks-of-spring-testconfiguration
 categories:
   - Spring Boot
 tags:

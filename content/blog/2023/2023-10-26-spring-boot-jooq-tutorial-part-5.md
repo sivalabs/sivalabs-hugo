@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-10-26T00:30:00.000Z
-url: /blog/spring-boot-jooq-tutorial-fetching-many-to-many-associations
+slug: spring-boot-jooq-tutorial-fetching-many-to-many-associations
 toc: true
 categories:
   - Java

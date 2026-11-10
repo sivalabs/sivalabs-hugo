@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-10-19T00:30:00.000Z
-url: /blog/spring-boot-jooq-tutorial-fetching-one-to-one-associations
+slug: spring-boot-jooq-tutorial-fetching-one-to-one-associations
 toc: true
 categories:
   - Java

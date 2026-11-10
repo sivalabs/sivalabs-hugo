@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-08-03T00:30:00.000Z
-url: /blog/spring-boot-database-transaction-management-tutorial
+slug: spring-boot-database-transaction-management-tutorial
 toc: true
 categories:
   - Spring Boot

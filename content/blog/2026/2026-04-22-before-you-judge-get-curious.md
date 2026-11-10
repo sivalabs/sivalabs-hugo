@@ -5,7 +5,7 @@ images: ["/preview-images/before-you-judge-get-curious.webp"]
 type: post
 draft: false
 date: 2026-04-22T04:59:17+05:30
-url: /blog/before-you-judge-get-curious
+slug: before-you-judge-get-curious
 toc: false
 categories: [Thoughts]
 tags: ["Thoughts", "Career", "AI"]

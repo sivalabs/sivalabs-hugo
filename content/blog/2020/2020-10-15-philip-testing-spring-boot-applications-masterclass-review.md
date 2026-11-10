@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2020-10-14T23:29:17.000Z
-url: /blog/philip-testing-spring-boot-applications-masterclass-course-review/
+slug: philip-testing-spring-boot-applications-masterclass-course-review
 categories:
   - Java
 tags:

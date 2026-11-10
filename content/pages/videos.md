@@ -3,7 +3,7 @@ title: Videos
 author: Siva
 type: page
 date: 2016-04-10T04:03:33.000Z
-url: /blog/videos/
+slug: blog/videos
 tags:
   - videos
 categories:

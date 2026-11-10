@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2020-09-13T23:29:17.000Z
-url: /blog/all-the-resources-you-ever-need-as-a-java-spring-application-developer/
+slug: all-the-resources-you-ever-need-as-a-java-spring-application-developer
 categories:
   - Java
 tags:

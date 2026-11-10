@@ -3,7 +3,7 @@ title: 'Keep The Code Clean: WatchDog & SpotTheBug Approach'
 author: Siva
 type: post
 date: 2012-08-28T04:55:00.000Z
-url: /blog/keep-code-clean-watchdog-spotthebug/
+slug: keep-code-clean-watchdog-spotthebug
 categories:
   - Java
 tags:

@@ -5,7 +5,7 @@ images:
   - /preview-images/testcontainers.webp
 type: post
 date: 2020-02-02T23:29:17.000Z
-url: /blog/spring-boot-integration-testing-using-testcontainers-starter/
+slug: spring-boot-integration-testing-using-testcontainers-starter
 categories:
   - Spring Boot
 tags:

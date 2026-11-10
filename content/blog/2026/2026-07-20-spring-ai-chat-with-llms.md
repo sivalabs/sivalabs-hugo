@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2026-07-20T06:00:00+05:30
-url: /blog/spring-ai-chat-with-llms
+slug: spring-ai-chat-with-llms
 toc: true
 categories:
   - Spring AI

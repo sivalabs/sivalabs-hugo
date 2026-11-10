@@ -5,7 +5,7 @@ images: ["/preview-images/confessions-of-an-ai-agent-fomo-survivor.webp"]
 type: post
 draft: false
 date: 2026-06-22T04:59:17+05:30
-url: /blog/confessions-of-an-ai-agent-fomo-survivor
+slug: confessions-of-an-ai-agent-fomo-survivor
 toc: false
 categories: [AI]
 tags: [AI]

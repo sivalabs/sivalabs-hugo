@@ -5,7 +5,7 @@ type: page
 images:
   - /preview-images/sivalabs-springboot-tutorials.webp
 date: 2023-07-18T02:32:39.000Z
-url: /blog/spring-boot-tutorials/
+slug: blog/spring-boot-tutorials
 categories:
   - Spring Boot
 tags:

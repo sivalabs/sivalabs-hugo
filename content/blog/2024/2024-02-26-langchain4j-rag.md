@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2024-02-25T23:29:17.000Z
-url: /blog/langchain4j-retrieval-augmented-generation-tutorial
+slug: langchain4j-retrieval-augmented-generation-tutorial
 toc: true
 categories:
   - AI

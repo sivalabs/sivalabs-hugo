@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2023-07-20T23:30:00.000Z
-url: /blog/getting-started-with-spring-boot
+slug: getting-started-with-spring-boot
 toc: true
 categories:
   - Spring Boot

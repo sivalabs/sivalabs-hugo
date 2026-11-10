@@ -6,7 +6,7 @@ images:
 type: post
 draft: false
 date: 2021-08-18T23:29:17.000Z
-url: /blog/get-super-productive-with-intellij-file-templates/
+slug: get-super-productive-with-intellij-file-templates
 categories:
   - Misc
 tags:

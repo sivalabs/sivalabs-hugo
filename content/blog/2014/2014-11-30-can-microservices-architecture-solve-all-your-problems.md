@@ -3,7 +3,7 @@ title: Can MicroServices Architecture Solve All Your Problems?
 author: Siva
 type: post
 date: 2014-11-30T01:21:00.000Z
-url: /blog/can-microservices-architecture-solve-all-your-problems/
+slug: can-microservices-architecture-solve-all-your-problems
 categories:
   - Thoughts
 tags:
