@@ -690,21 +690,3 @@ I still need to review whether a requirement is right, an API is well designed, 
 
 The payoff I want from AI is faster delivery of changes I can trust. Every important convention I turn into an executable check makes that goal easier to sustain as the application grows.
 
-<!--
-Cover image prompt:
-A stream of glowing code-like geometric fragments passing through a series of
-precisely aligned inspection frames and emerging as a cohesive modular structure,
-clean modern digital illustration, deep navy with warm amber and cyan accents,
-focused and confident atmosphere, soft directional lighting.
-No text. No logos. No people.
-
-Source material:
-- docs/harness-eng-for-java.md
-- docs/harness-eng-for-java-notes.md
-- feedbackhub/pom.xml and the application/test sources referenced above
-- .github/workflows/ci.yml, mise.toml, and .agents/skills/implement-usecase/SKILL.md
-
-Documentation cross-checks:
-- https://github.com/diffplug/spotless/blob/main/plugin-maven/README.md
-- https://docs.spring.io/spring-modulith/reference/verification.html
--->
