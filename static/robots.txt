@@ -1,2 +1,7 @@
+# Content usage preferences: https://contentsignals.org/
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
 Sitemap: {{ "sitemap.xml" | absURL }}
+# LLM index: {{ "llms.txt" | absURL }}

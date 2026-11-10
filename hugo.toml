@@ -11,6 +11,9 @@ uglyURLs = true
 blog = "/blog/:slug/"
 pages = "/:slug/"
 
+[minify.tdewolff.html]
+  keepQuotes = true
+
 [outputs]
 home = ["HTML", "RSS", "llms", "llms-full"]
 page = ["HTML", "markDown"]

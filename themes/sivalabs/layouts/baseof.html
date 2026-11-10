@@ -4,6 +4,13 @@
   {{ partial "head.html" . }}
 </head>
 <body>
+  <noscript>
+    <p>Machine-readable versions of this site:
+      <a href="{{ "llms.txt" | absURL }}">llms.txt</a> (index),
+      <a href="{{ "llms-full.txt" | absURL }}">llms-full.txt</a> (full corpus),
+      <a href="{{ "sitemap.xml" | absURL }}">sitemap.xml</a>
+      {{- with .OutputFormats.Get "markDown" }}, <a href="{{ .Permalink }}">Markdown version of this page</a>{{ end }}.</p>
+  </noscript>
   <header class="site-header">
     <div class="site-header__inner">
       {{ partial "header.html" . }}
