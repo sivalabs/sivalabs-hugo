@@ -5,25 +5,38 @@ theme = "sivalabs"
 enableRobotsTXT = true
 enableEmoji = true
 pygmentsCodeFences = true
+uglyURLs = true
 
 [outputs]
-  home = ["HTML", "RSS", "llms", "llms-full"]
-  section = ["HTML", "RSS"]
-  taxonomy = ["HTML"]
-  term = ["HTML", "RSS"]
+home = ["HTML", "RSS", "llms", "llms-full"]
+page = ["HTML", "markDown"]
+section = ["HTML", "RSS"]
+taxonomy = ["HTML"]
+term = ["HTML", "RSS"]
+
+[outputFormats.HTML]
+noUgly = true
 
 [outputFormats.RSS]
-  baseName = "rss"
+baseName = "rss"
+noUgly = true
+
+[outputFormats.markDown]
+mediaType = "text/markdown"
+isPlainText = true
+noUgly = false
 
 [outputFormats.llms]
-  baseName = "llms"
-  mediaType = "text/plain"
-  isPlainText = true
+baseName = "llms"
+mediaType = "text/plain"
+isPlainText = true
+noUgly = true
 
 [outputFormats.llms-full]
-  baseName = "llms-full"
-  mediaType = "text/plain"
-  isPlainText = true
+baseName = "llms-full"
+mediaType = "text/plain"
+isPlainText = true
+noUgly = true
 
 [menus]
     [[menus.main]]
@@ -75,11 +88,11 @@ pygmentsCodeFences = true
     shortname = 'sivalabs'
 
 [taxonomies]
-  category = "categories"
-  tag = "tags"
+category = "categories"
+tag = "tags"
 
 [params.pagination]
-  blogPerPage = 12
+blogPerPage = 12
 
 [related]
   includeNewer = true

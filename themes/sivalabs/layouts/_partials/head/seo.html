@@ -2,7 +2,12 @@
 {{- with $description }}
   <meta name="description" content="{{ . }}">
 {{- end }}
-<link rel="canonical" href="{{ .Permalink }}">
+<link rel="canonical" href="{{ if .Params.canonical }}{{ .Params.canonical }}{{ else }}{{ .Permalink }}{{ end }}">
+<link rel="alternate" type="text/plain" href="{{ "llms.txt" | absURL }}" title="LLMs.txt (Summary & Index)">
+<link rel="alternate" type="text/plain" href="{{ "llms-full.txt" | absURL }}" title="LLMs-full.txt (Full Corpus)">
+{{ with .OutputFormats.Get "markDown" -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s (Markdown)">` .Rel .MediaType.Type .Permalink $.Title | safeHTML }}
+{{- end }}
 {{- with .OutputFormats.Get "RSS" }}
   <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ site.Title }}">
 {{- end }}

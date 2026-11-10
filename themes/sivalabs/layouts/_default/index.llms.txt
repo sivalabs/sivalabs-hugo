@@ -4,11 +4,20 @@
 
 You can find [more information about this site here](/about).
 
+## Programmatic access
+
+Agents and automated tools can access this blog's content in clean Markdown without HTML chrome:
+- Fetch [llms.txt]({{ .Site.BaseURL }}llms.txt) for a structured index of all articles with direct links to their `.md` versions.
+- Fetch [llms-full.txt]({{ .Site.BaseURL }}llms-full.txt) to ingest the entire blog corpus in a single Markdown document.
+- Append `.md` to any article URL (or follow the `<link rel="alternate" type="text/markdown">` tag in any page's HTML `<head>`) to retrieve the raw Markdown twin of that article.
+
 ## All articles
 {{ range .Site.RegularPages.GroupByDate "2006" }}
 
 ### {{ .Key }}
 {{ range .Pages }}
-- [{{- .Title -}}]({{- .Site.BaseURL -}}{{- .RelPermalink -}})
+{{- $url := .Permalink -}}
+{{- with .OutputFormats.Get "markDown" -}}{{- $url = .Permalink -}}{{- end }}
+- [{{- .Title -}}]({{- $url -}})
 {{- end -}}
 {{ end }}
