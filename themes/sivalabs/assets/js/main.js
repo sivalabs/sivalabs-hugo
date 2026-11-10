@@ -125,3 +125,21 @@
     window.location.href = `https://www.google.com/search?q=${query}`;
   });
 })();
+
+(() => {
+  const root = document.querySelector("[data-agents-menu]");
+  if (!root) return;
+  const toggle = root.querySelector("[data-agents-toggle]");
+  const menu = root.querySelector(".site-agents__menu");
+  const setOpen = (open) => {
+    menu.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+  };
+  toggle.addEventListener("click", () => setOpen(menu.hidden));
+  document.addEventListener("click", (e) => {
+    if (!root.contains(e.target)) setOpen(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
+})();

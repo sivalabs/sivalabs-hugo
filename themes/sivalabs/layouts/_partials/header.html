@@ -9,6 +9,19 @@
 </button>
 {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
 <div class="site-header__actions">
+  {{ $llms := site.Home.OutputFormats.Get "llms" }}
+  {{ $llmsFull := site.Home.OutputFormats.Get "llms-full" }}
+  {{ if or $llms $llmsFull }}
+  <div class="site-agents" data-agents-menu>
+    <button class="site-agents-button" type="button" aria-label="AI Agents" title="AI Agents" aria-haspopup="true" aria-expanded="false" data-agents-toggle>
+      {{ partial "icon.html" "agent" }}
+    </button>
+    <div class="site-agents__menu" role="menu" hidden>
+      {{ with $llms }}<a role="menuitem" href="{{ .RelPermalink }}" target="_blank">llms.txt</a>{{ end }}
+      {{ with $llmsFull }}<a role="menuitem" href="{{ .RelPermalink }}" target="_blank">llms-full.txt</a>{{ end }}
+    </div>
+  </div>
+  {{ end }}
   {{ with site.Home.OutputFormats.Get "rss" }}
   <a class="site-rss-button" href="{{ .RelPermalink }}" target="_blank" aria-label="RSS Feed" title="RSS Feed">
     {{ partial "icon.html" "rss" }}
