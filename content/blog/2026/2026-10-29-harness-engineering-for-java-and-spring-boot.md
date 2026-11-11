@@ -111,6 +111,7 @@ FeedbackHub uses [Spotless](https://github.com/diffplug/spotless) with [Palantir
     <version>3.10.4</version>
     <configuration>
         <java>
+            <shortenFullyQualifiedTypes/>
             <importOrder/>
             <removeUnusedImports/>
             <formatAnnotations/>
