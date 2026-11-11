@@ -81,9 +81,9 @@ I don't generate a detailed specification for the entire application upfront. I 
 
 This keeps the discussion focused and leaves room to adjust later use cases as we learn.
 
-I use a *GrillMe-style agent skill* to challenge the requirement. The request is along these lines:
+I use an [agent skill](https://github.com/sivaprasadreddy/feedback-hub/tree/main/.agents/skills/create-spec) to challenge the requirement. The request is along these lines:
 
-> Before writing the spec, question my assumptions. Ask about ambiguous behavior, permissions, edge cases, and failure scenarios.
+**Before writing the spec, question my assumptions. Ask about ambiguous behavior, permissions, edge cases, and failure scenarios.**
 
 Take “users can submit feedback.” That sounds straightforward until we ask:
 
@@ -133,10 +133,17 @@ Reviewing every line manually from the start is an option, too. I prefer to let 
 
 ## Then Do It Again
 
-Once the use case is implemented, verified, and reviewed, I select the next one.
+Before moving to the next use case, I look for lessons from the review that should carry forward.
 
+If the same issues keep coming up, I turn them into automated tests or update the relevant agent skills. For example, if the agent repeatedly misses an authorization rule, I add a test for that behavior. If it keeps ignoring a project convention, I update the skill that guides that work. I don't want to leave the same review comment on every use case.
+
+If we made any significant design decisions during implementation or review, I record them in the Architecture Decision Records (ADRs) or architecture docs, including the reasoning and tradeoffs. That gives both future contributors and the agent the context to understand why the code is structured that way.
+
+Once the use case is implemented, verified, reviewed, and those lessons are captured, I select the next one.
 
 ## Conclusion
 My approach described in this article takes more preparation than asking the agent to build everything in one go. For a throwaway prototype, that extra preparation may not be worthwhile.
 
 For an application I intend to maintain, I prefer these smaller iterations. **Keep each use case small enough that you can understand the spec and review the resulting change.** That's what makes this workflow practical for me.
+
+I also don't multitask across several agent sessions using Git worktrees. I prefer to focus on one use case at a time and give it the attention it needs. I'd rather go a little slower than burn out fast.
